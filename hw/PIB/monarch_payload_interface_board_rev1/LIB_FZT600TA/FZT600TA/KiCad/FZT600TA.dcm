@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP FZT600TA
+D Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223
+K
+F https://www.diodes.com//assets/Datasheets/FZT600A.pdf
+$ENDCMP
+#
+#End Doc Library

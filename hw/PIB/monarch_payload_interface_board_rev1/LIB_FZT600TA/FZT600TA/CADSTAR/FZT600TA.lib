@@ -1,0 +1,16 @@
+.FZT600TA :1 ;Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223
+SOT230P700X170-4N
+*STM Q
+*NGS
+*PLB 1="B" 2="C_1" 3="E" 4="C_2"
+*MXP 4
+*DFN FZT600TA
+~!Mouser Part Number (522-FZT600TA)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D)
+~!Manufacturer_Name (Diodes Incorporated)
+~!Manufacturer_Part_Number (FZT600TA)
+~!Link Datasheet (https://www.diodes.com//assets/Datasheets/FZT600A.pdf)
+~!Height (1.7mm)
+~!3D_Model (FZT600TA)
+FZT600TA
+1.1!U 2.1!U 3.1!U 4.1!U 
