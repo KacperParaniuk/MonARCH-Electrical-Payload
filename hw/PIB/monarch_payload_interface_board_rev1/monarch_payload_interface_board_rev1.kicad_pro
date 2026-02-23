@@ -625,6 +625,14 @@
     [
       "a2bfffae-2726-4c89-b39f-8220e8b58362",
       "Valves"
+    ],
+    [
+      "c9f26218-865c-403f-bb45-a126d537922c",
+      "12V Power Supply"
+    ],
+    [
+      "4eb43b0e-6885-46a5-9a94-7deafa1b26d8",
+      "TCs"
     ]
   ],
   "text_variables": {}
