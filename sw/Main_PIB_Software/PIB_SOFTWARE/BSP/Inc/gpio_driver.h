@@ -10,5 +10,22 @@
 
 
 
+typedef struct{
+
+
+
+
+
+
+} halGPIO_t;
+
+
+
+
+
+
+
+
+
 
 #endif /* INC_GPIO_DRIVER_H_ */

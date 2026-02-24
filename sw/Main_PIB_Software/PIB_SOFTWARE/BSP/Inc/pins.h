@@ -9,13 +9,15 @@
 #define INC_PINS_H_
 
 
-#include "main.h"
+#include "main.h" // get pin assignments <- Be able to include pins.h and get everything.
 
 // Aliases
 
 // define constants.
 
 // Board Level Constants:
+
+
 
 
 
