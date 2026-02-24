@@ -1,19 +1,19 @@
 {
   "board": {
     "active_layer": 0,
-    "active_layer_preset": "All Layers",
-    "auto_track_width": true,
+    "active_layer_preset": "",
+    "auto_track_width": false,
     "hidden_netclasses": [],
     "hidden_nets": [],
     "high_contrast_mode": 0,
     "net_color_mode": 1,
     "opacity": {
-      "images": 0.6,
+      "images": 1.0,
       "pads": 1.0,
       "shapes": 1.0,
       "tracks": 1.0,
       "vias": 1.0,
-      "zones": 0.6
+      "zones": 1.0
     },
     "selection_filter": {
       "dimensions": true,
@@ -33,6 +33,7 @@
       "footprint_text",
       "footprint_anchors",
       "ratsnest",
+      "grid",
       "footprints_front",
       "footprints_back",
       "footprint_values",
@@ -72,8 +73,6 @@
       false,
       false,
       false,
-      false,
-      false,
       false
     ],
     "col_order": [
@@ -86,14 +85,9 @@
       6,
       7,
       8,
-      9,
-      10,
-      11
+      9
     ],
     "col_widths": [
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
       222,
       207,
       136,
@@ -103,25 +97,7 @@
       136,
       98,
       136,
-      136,
-      136,
       136
-=======
->>>>>>> Stashed changes
-      186,
-      171,
-      112,
-      79,
-      112,
-      112,
-      112,
-      83,
-      112,
-      112
-<<<<<<< Updated upstream
-=======
->>>>>>> a2a4114ff1f26d2045e62050657a539a3d0ad470
->>>>>>> Stashed changes
     ],
     "custom_group_rules": [],
     "expanded_rows": [],
