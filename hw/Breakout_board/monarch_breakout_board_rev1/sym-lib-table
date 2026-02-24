@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "INA226-Q1")(type "KiCad")(uri "${KIPRJMOD}/INA226-Q1/INA226-Q1.kicad_sym")(options "")(descr ""))
+  (lib (name "FDC2214")(type "KiCad")(uri "${KIPRJMOD}/FDC2214/FDC2214.kicad_sym")(options "")(descr ""))
+)
