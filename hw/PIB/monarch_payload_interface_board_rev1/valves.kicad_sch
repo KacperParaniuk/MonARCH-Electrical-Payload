@@ -1,0 +1,10008 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "6b6be0ee-1a94-4849-92e1-77fa406dc81a")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Device:R_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "Value" "R_Small"
+				(at 1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_Small_0_1"
+				(rectangle
+					(start -0.762 1.778)
+					(end 0.762 -1.778)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_Small_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 0.762)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 0.762)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "FZT600TA:FZT600TA"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 21.59 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "FZT600TA"
+				(at 21.59 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "SOT230P700X170-4N"
+				(at 21.59 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+				(at 21.59 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "1.7"
+				(at 21.59 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "522-FZT600TA"
+				(at 21.59 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+				(at 21.59 -594.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Diodes Incorporated"
+				(at 21.59 -694.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "FZT600TA"
+				(at 21.59 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "FZT600TA_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 20.32 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "C_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "E"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 25.4 0 180)
+					(length 5.08)
+					(name "C_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "s1j:S1J-13-F"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "CR"
+				(at 5.08 4.445 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "S1J-13-F"
+				(at 5.08 -3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "SMA_DIO"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "S1J-13-F"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "S1J-13-F"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SMA_DIO SMA_DIO-M SMA_DIO-L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "S1J-13-F_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.4798 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 0) (xy 3.81 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 1.905) (xy 3.81 -1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -1.905) (xy 6.35 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 0) (xy 3.81 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 -1.905) (xy 6.35 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "S1J-13-F_1_2"
+				(polyline
+					(pts
+						(xy -1.905 3.81) (xy 1.905 3.81)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 6.35) (xy -1.905 3.81)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 6.35) (xy 0 7.62)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 3.175) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 6.35) (xy -1.905 6.35)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 3.81) (xy 0 6.35)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 10.16 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(rectangle
+		(start 22.86 59.69)
+		(end 72.898 101.6)
+		(stroke
+			(width 0.5)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 0092ed08-f6fd-4bab-b385-14a0a8220db1)
+	)
+	(rectangle
+		(start 22.86 101.6)
+		(end 72.898 143.51)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 06dce0af-7eaa-4eca-b7d9-b03cdda0cb00)
+	)
+	(rectangle
+		(start 72.898 101.6)
+		(end 122.936 143.51)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 1e1cde84-b6c7-444f-a294-26f9e093ab5d)
+	)
+	(rectangle
+		(start 122.936 143.51)
+		(end 172.974 185.42)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 2530a999-40f6-4b68-9235-fb04e86fab67)
+	)
+	(rectangle
+		(start 172.974 17.78)
+		(end 223.012 59.69)
+		(stroke
+			(width 0.5)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 391f3272-ba39-469f-9512-98bec4459646)
+	)
+	(rectangle
+		(start 72.898 143.51)
+		(end 122.936 185.42)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 3ec89480-0a69-439d-9a5f-47b5ceb78606)
+	)
+	(rectangle
+		(start 15.24 17.78)
+		(end 22.86 59.69)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 62600eef-313d-4dde-9288-d0c410a0c09b)
+	)
+	(rectangle
+		(start 22.86 17.78)
+		(end 72.898 59.69)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 69fc9d17-aae7-4920-9bc6-b71a7862e701)
+	)
+	(rectangle
+		(start 223.012 101.6)
+		(end 273.05 143.51)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 7283bf55-4271-4cf1-92a1-2a8e9d20e8b7)
+	)
+	(rectangle
+		(start 122.936 17.78)
+		(end 172.974 59.69)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 87ab3371-7d91-45cb-b8f4-c6f9de0d9a99)
+	)
+	(rectangle
+		(start 22.86 143.51)
+		(end 72.898 185.42)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 88efe3dc-d1e1-4581-8255-56ab45700166)
+	)
+	(rectangle
+		(start 122.936 59.69)
+		(end 172.974 101.6)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 8f869710-e051-4e9d-af38-61ad845bb6a7)
+	)
+	(rectangle
+		(start 172.974 59.69)
+		(end 223.012 101.6)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 8f9ff925-93e7-4790-a6ba-d0c997bd3137)
+	)
+	(rectangle
+		(start 223.012 17.78)
+		(end 273.05 59.69)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 90f400cc-1de3-4821-956f-8b9990258471)
+	)
+	(rectangle
+		(start 172.974 101.6)
+		(end 223.012 143.51)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid c0b37c06-07b1-495c-bb6f-697788b47324)
+	)
+	(rectangle
+		(start 72.898 17.78)
+		(end 122.936 59.69)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid c0cf19ce-d9ea-4080-a2a7-6c6adb226912)
+	)
+	(rectangle
+		(start 72.898 59.69)
+		(end 122.936 101.6)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid c981418c-04a3-43dd-b67e-d06a2dc679b4)
+	)
+	(rectangle
+		(start 223.012 59.69)
+		(end 273.05 101.6)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid d17586bf-e6ff-4073-812e-65f4c7e12eff)
+	)
+	(rectangle
+		(start 122.936 101.6)
+		(end 172.974 143.51)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid d8c9b9ea-47f4-4e8e-a139-bda2d30dfaec)
+	)
+	(junction
+		(at 199.644 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "000bb476-da33-4c20-8e6c-52feeea7f18e")
+	)
+	(junction
+		(at 162.306 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "025da572-77e7-4d5f-b2f6-3d5d0fa3c9b3")
+	)
+	(junction
+		(at 249.682 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "06bbc1f3-2d3a-41e8-a38d-475641884528")
+	)
+	(junction
+		(at 149.606 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0b025f5f-fb8a-47bd-838d-1c5fa07427da")
+	)
+	(junction
+		(at 55.88 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0b90be5a-dae5-4e15-8495-b6599cc9fd6a")
+	)
+	(junction
+		(at 199.644 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0b928fc5-848c-42ee-bc7e-c20a0aa8173e")
+	)
+	(junction
+		(at 112.268 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0cf94282-f8b5-4c42-a475-95b67f2f71a0")
+	)
+	(junction
+		(at 155.956 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0dc0432d-e576-4fcf-b3a5-32faf35fb665")
+	)
+	(junction
+		(at 99.568 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0de9598d-4094-432d-ad2f-b6b1dc88183d")
+	)
+	(junction
+		(at 199.644 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "114ba777-825f-4f28-9e01-3abaa96f7463")
+	)
+	(junction
+		(at 212.344 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1314eb69-6488-4f90-ab65-ed5cac081daf")
+	)
+	(junction
+		(at 256.032 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "13c5e1a9-bc20-4feb-8721-2f6274623266")
+	)
+	(junction
+		(at 149.606 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "14132d40-6d83-4904-960b-babf4949a3f7")
+	)
+	(junction
+		(at 62.23 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1417620a-76da-4fa7-b492-0dcb6ab625ce")
+	)
+	(junction
+		(at 205.994 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "15ab8eca-369f-46f2-afd5-b84f7c8fdb2f")
+	)
+	(junction
+		(at 49.53 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1bbb9900-d24d-4da2-9539-8f68c91d7b87")
+	)
+	(junction
+		(at 262.382 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "23e1394c-96ee-4843-b1bb-61af6fc89310")
+	)
+	(junction
+		(at 162.306 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "26e0064e-8816-4d0d-aa63-2d77388323e6")
+	)
+	(junction
+		(at 262.382 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "29bd876f-9f21-4e6c-acf5-97a6dafe2772")
+	)
+	(junction
+		(at 99.568 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2b04cc02-09fa-4dc7-9b3c-3cda5c6eb731")
+	)
+	(junction
+		(at 155.956 149.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3154bc55-dd40-40f9-b8e6-c88c33ec26cc")
+	)
+	(junction
+		(at 212.344 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "41234142-1dd4-40dd-bd60-df8f09940305")
+	)
+	(junction
+		(at 62.23 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5a54f291-69ae-43bd-a00b-9c88853282c3")
+	)
+	(junction
+		(at 112.268 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "616ef9b7-9762-4210-9535-5b5892dafdf3")
+	)
+	(junction
+		(at 149.606 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6a3abe32-4d12-439c-b377-c3d4e5f9d00e")
+	)
+	(junction
+		(at 49.53 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "70556fde-268e-4ca3-a00e-7806049277d4")
+	)
+	(junction
+		(at 49.53 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7fc01a54-b8f5-4c7f-a75b-12e656c1f7c7")
+	)
+	(junction
+		(at 212.344 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "82ce0c9c-2683-4061-9be3-57412e6fa5ed")
+	)
+	(junction
+		(at 105.918 149.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "82f02d4c-4da7-4c9b-9d7e-673c761318c4")
+	)
+	(junction
+		(at 155.956 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "904306d1-a8e6-484b-ac2b-be07209bcd9f")
+	)
+	(junction
+		(at 55.88 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9302eaa6-1b79-4628-89aa-130913cadc4f")
+	)
+	(junction
+		(at 55.88 149.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9bb36323-2f6e-4892-8a23-0dd8ce8ed3b0")
+	)
+	(junction
+		(at 49.53 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9dbf1136-9de8-4b9f-9985-ea28f412d25f")
+	)
+	(junction
+		(at 105.918 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a5a60ab5-f151-40b2-a0f4-3f194f72eda2")
+	)
+	(junction
+		(at 112.268 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a60fa848-4f3b-4b96-9c4e-0edb14d7b3e6")
+	)
+	(junction
+		(at 205.994 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a7057b46-34ac-41a3-b8dc-b975623ef7dd")
+	)
+	(junction
+		(at 155.956 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b2c60834-c5d2-4676-bd8a-4e9b42acfd3f")
+	)
+	(junction
+		(at 256.032 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b40b52b9-e23f-47bb-b294-e1cce2948503")
+	)
+	(junction
+		(at 62.23 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b5f22acd-f551-45b6-9f5f-e0fd134bcaca")
+	)
+	(junction
+		(at 99.568 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b8079509-514d-4489-957a-38c2c6a73d25")
+	)
+	(junction
+		(at 55.88 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b86b439e-404b-4d97-b2a5-830cb0cce06d")
+	)
+	(junction
+		(at 162.306 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c01757f3-09bb-4da7-9953-1217b11c52ed")
+	)
+	(junction
+		(at 205.994 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c6663223-b9fc-40a9-b24f-209fdfbd3c22")
+	)
+	(junction
+		(at 262.382 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c88cf5c4-938d-4cdb-ac99-e85321f335d5")
+	)
+	(junction
+		(at 149.606 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d61f1d47-e4b3-4b2a-8a9c-241b67cc6f51")
+	)
+	(junction
+		(at 99.568 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "de8bea3e-00f2-4a2f-8d1b-67ab94649465")
+	)
+	(junction
+		(at 256.032 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dff9c50f-2509-47ab-b4b2-b856fc8520f9")
+	)
+	(junction
+		(at 62.23 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e6bf66e2-78b5-4430-afb9-ec51b5ea8975")
+	)
+	(junction
+		(at 105.918 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eaa77130-e1ed-44be-9aab-e1cfb1679018")
+	)
+	(junction
+		(at 249.682 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ee7f0754-6daa-47fd-bae5-00535da0846f")
+	)
+	(junction
+		(at 105.918 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f5947a34-5bfc-4a11-a25a-066917cf8bc7")
+	)
+	(junction
+		(at 162.306 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f5b4886a-e727-45fd-adf1-4acc3339d57e")
+	)
+	(junction
+		(at 112.268 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f63483c5-acb7-4688-952c-b85205491149")
+	)
+	(junction
+		(at 249.682 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "feada988-e212-444e-8fe6-9a5c84f0b79a")
+	)
+	(wire
+		(pts
+			(xy 83.058 171.45) (xy 85.598 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0162dd0f-6fe7-4266-92a5-96d95fa5e274")
+	)
+	(wire
+		(pts
+			(xy 19.05 24.13) (xy 19.05 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "016ee09d-da80-4955-a4b6-b829c4907c96")
+	)
+	(wire
+		(pts
+			(xy 105.918 24.13) (xy 112.268 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "022a6466-544e-4dcd-9008-15895e8fee2b")
+	)
+	(wire
+		(pts
+			(xy 112.268 66.04) (xy 112.268 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02a7e98c-c40b-4654-a1b1-572fa867a1dc")
+	)
+	(wire
+		(pts
+			(xy 55.88 107.95) (xy 55.88 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0381b88c-2ede-4139-9dd1-70db7fb983b1")
+	)
+	(wire
+		(pts
+			(xy 91.948 173.99) (xy 91.948 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03b332be-2d76-43a2-8ea1-de09340743ce")
+	)
+	(wire
+		(pts
+			(xy 199.644 121.92) (xy 199.644 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04d98bfc-d5e6-4cba-81a9-68813200df3b")
+	)
+	(wire
+		(pts
+			(xy 149.606 82.55) (xy 162.306 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "050e7bf0-a358-4e21-92f3-b3e34f731e96")
+	)
+	(wire
+		(pts
+			(xy 243.332 90.17) (xy 242.062 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "050eae0c-f1ce-474f-8e1b-3f0180bd67db")
+	)
+	(wire
+		(pts
+			(xy 249.682 124.46) (xy 262.382 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "058aa206-4505-442e-851f-9ac5d4469228")
+	)
+	(wire
+		(pts
+			(xy 118.618 124.46) (xy 118.618 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0665210b-1e22-4669-98ab-ba80ff11c774")
+	)
+	(wire
+		(pts
+			(xy 112.268 80.01) (xy 112.268 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08abab5c-1a30-4a6f-9f5e-3108a5ef261f")
+	)
+	(wire
+		(pts
+			(xy 40.64 171.45) (xy 43.18 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a645344-7eda-4544-9412-1320066f610f")
+	)
+	(wire
+		(pts
+			(xy 256.032 107.95) (xy 256.032 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a646eec-7b4e-452f-b49d-d6de12a31080")
+	)
+	(wire
+		(pts
+			(xy 192.024 40.64) (xy 199.644 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d4670e2-ebae-4ce2-903e-f2ebfad57b2a")
+	)
+	(wire
+		(pts
+			(xy 31.75 87.63) (xy 35.56 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0de26981-873f-4415-8018-d0dd15224117")
+	)
+	(wire
+		(pts
+			(xy 268.732 40.64) (xy 268.732 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f2f49eb-2422-4ad4-aa76-4ea1ea185fee")
+	)
+	(wire
+		(pts
+			(xy 143.256 92.71) (xy 141.986 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10137a35-002a-47f9-850c-67d05b3b28c1")
+	)
+	(wire
+		(pts
+			(xy 249.682 38.1) (xy 249.682 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "107d75ba-0b2d-47a8-9cd1-2b266fb7068a")
+	)
+	(wire
+		(pts
+			(xy 91.948 132.08) (xy 91.948 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10a4fc44-7d3e-4e86-901a-e361edb66812")
+	)
+	(wire
+		(pts
+			(xy 205.994 107.95) (xy 205.994 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "110b5033-7dd5-4d03-91a5-674d736a73b8")
+	)
+	(wire
+		(pts
+			(xy 43.18 50.8) (xy 41.91 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11cbec98-fd46-483d-990a-5154ef615f34")
+	)
+	(wire
+		(pts
+			(xy 249.682 82.55) (xy 262.382 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14c7ebb5-ce09-4554-9665-e3a375e07576")
+	)
+	(wire
+		(pts
+			(xy 99.568 107.95) (xy 105.918 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15b696d7-812d-49d1-9ec3-86ea30fc2017")
+	)
+	(wire
+		(pts
+			(xy 43.18 48.26) (xy 41.91 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17955d66-ee22-4846-9ebd-238d751fd548")
+	)
+	(wire
+		(pts
+			(xy 268.732 124.46) (xy 268.732 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17999f9e-ceb4-4601-9b7a-a297f525dc13")
+	)
+	(wire
+		(pts
+			(xy 218.694 40.64) (xy 218.694 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17d836b2-faef-4b78-934c-77c82f4653ac")
+	)
+	(wire
+		(pts
+			(xy 249.682 40.64) (xy 262.382 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "184cd00f-b0b8-414f-90f8-c78e2cffac7e")
+	)
+	(wire
+		(pts
+			(xy 112.268 82.55) (xy 118.618 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18a77f5d-e414-4fa7-a19b-d46ee14cc251")
+	)
+	(wire
+		(pts
+			(xy 162.306 163.83) (xy 162.306 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18b1a9a3-7f1c-47aa-8daa-6c044f7e0187")
+	)
+	(wire
+		(pts
+			(xy 33.02 129.54) (xy 35.56 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18d30773-30a0-431c-8adb-7d2137fd4235")
+	)
+	(wire
+		(pts
+			(xy 99.568 111.76) (xy 99.568 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19b7a7b7-d08d-44d9-a70d-04f154583574")
+	)
+	(wire
+		(pts
+			(xy 262.382 38.1) (xy 262.382 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b4bc9b2-4771-42c3-8567-504cb89d7b22")
+	)
+	(wire
+		(pts
+			(xy 155.956 24.13) (xy 155.956 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b953dac-4745-454b-9984-3e03affaed4a")
+	)
+	(wire
+		(pts
+			(xy 192.024 82.55) (xy 199.644 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bc4a01d-2bfb-41de-ae39-75c0833280ab")
+	)
+	(wire
+		(pts
+			(xy 99.568 149.86) (xy 105.918 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1be4bac8-3c1d-42d2-9a21-ad0da534bd63")
+	)
+	(wire
+		(pts
+			(xy 199.644 40.64) (xy 212.344 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bfe5f36-bb6a-4ab0-bd1f-aba785836476")
+	)
+	(wire
+		(pts
+			(xy 93.218 176.53) (xy 91.948 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1dcffa01-6d1d-4c8c-aa87-355a3f295257")
+	)
+	(wire
+		(pts
+			(xy 99.568 66.04) (xy 105.918 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1eb78ca5-342f-4d75-a777-ddab6c7d3978")
+	)
+	(wire
+		(pts
+			(xy 91.948 124.46) (xy 99.568 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f31309e-edf2-4738-8e77-a34aeb1a4103")
+	)
+	(wire
+		(pts
+			(xy 55.88 149.86) (xy 62.23 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f3e48ba-b190-43cf-af49-52e19789430c")
+	)
+	(wire
+		(pts
+			(xy 243.332 92.71) (xy 242.062 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21652524-3cf8-43aa-83da-afee5c9dd68e")
+	)
+	(wire
+		(pts
+			(xy 162.306 80.01) (xy 162.306 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "219ab693-1c69-4962-b2e1-ade308d0439f")
+	)
+	(wire
+		(pts
+			(xy 40.64 87.63) (xy 43.18 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21b4f479-8057-450c-847f-f9012d253231")
+	)
+	(wire
+		(pts
+			(xy 49.53 111.76) (xy 49.53 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21ea185b-528e-4fa5-8f2d-0d3aaf986fa6")
+	)
+	(wire
+		(pts
+			(xy 149.606 80.01) (xy 149.606 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "225fab6b-9fcc-4640-82d4-e8daa62ce207")
+	)
+	(wire
+		(pts
+			(xy 41.91 173.99) (xy 41.91 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22d3c29f-2ccf-478b-abc7-f781dfaf151c")
+	)
+	(wire
+		(pts
+			(xy 49.53 24.13) (xy 55.88 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2388b444-792a-46e9-b940-05fa685fde3d")
+	)
+	(wire
+		(pts
+			(xy 62.23 40.64) (xy 68.58 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23c428b1-3adc-4ed6-af21-1ac624bdc484")
+	)
+	(wire
+		(pts
+			(xy 155.956 66.04) (xy 155.956 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25a4c040-3ce8-48f6-b8ee-706f88436ff4")
+	)
+	(wire
+		(pts
+			(xy 41.91 166.37) (xy 49.53 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2699509b-46f2-4c88-a5f7-f300d0777f90")
+	)
+	(wire
+		(pts
+			(xy 155.956 149.86) (xy 155.956 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "282aaf61-7033-4b7e-9fd3-ef474c12f145")
+	)
+	(wire
+		(pts
+			(xy 140.716 45.72) (xy 143.256 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "283629c7-6001-4987-b8e3-79a428a4fb91")
+	)
+	(wire
+		(pts
+			(xy 218.694 124.46) (xy 218.694 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a20fafc-780e-44b7-a742-92c5c3bcfa16")
+	)
+	(wire
+		(pts
+			(xy 162.306 40.64) (xy 168.656 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a718c4c-113d-4429-be4d-566cf3c5c667")
+	)
+	(wire
+		(pts
+			(xy 199.644 66.04) (xy 205.994 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bc37adf-c4ae-4a32-9352-e8b8b902ea66")
+	)
+	(wire
+		(pts
+			(xy 149.606 40.64) (xy 162.306 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e367288-3b19-40ba-8ff3-f1549608c2e5")
+	)
+	(wire
+		(pts
+			(xy 118.618 82.55) (xy 118.618 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f3bc0c2-4c02-4a79-8178-683c6e69e810")
+	)
+	(wire
+		(pts
+			(xy 43.18 132.08) (xy 41.91 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30e01239-436b-42ff-9210-e8f07264b046")
+	)
+	(wire
+		(pts
+			(xy 149.606 107.95) (xy 155.956 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31c5ab1e-c933-49cb-af1e-5c49d50f73ef")
+	)
+	(wire
+		(pts
+			(xy 149.606 149.86) (xy 155.956 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "338582b3-75c9-4fc4-90c0-cd6b8a0d1921")
+	)
+	(wire
+		(pts
+			(xy 193.294 90.17) (xy 192.024 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33fc3797-03be-4f29-8dcb-d3c55e1370d4")
+	)
+	(wire
+		(pts
+			(xy 62.23 24.13) (xy 62.23 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3416e7e7-6524-47f1-85e4-c7afc1be9139")
+	)
+	(wire
+		(pts
+			(xy 49.53 69.85) (xy 49.53 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3434e5a8-1b68-4b42-80e2-ba8dab36773a")
+	)
+	(wire
+		(pts
+			(xy 141.986 82.55) (xy 149.606 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "346b9265-5d1c-4d23-b55d-0446757ce465")
+	)
+	(wire
+		(pts
+			(xy 205.994 66.04) (xy 205.994 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34bafb9e-aab0-4b04-bebf-743aa7901ed2")
+	)
+	(wire
+		(pts
+			(xy 43.18 92.71) (xy 41.91 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "359ae806-961f-4831-84e2-53887dd38c30")
+	)
+	(wire
+		(pts
+			(xy 49.53 38.1) (xy 49.53 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36c0044f-53b2-45fb-b71f-904a22f392a8")
+	)
+	(wire
+		(pts
+			(xy 31.75 45.72) (xy 35.56 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "370dfddc-4fa7-4e14-ad4d-673ee9b0b599")
+	)
+	(wire
+		(pts
+			(xy 68.58 82.55) (xy 68.58 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3962ff0d-b43b-4b41-a9f6-ad970fa7700b")
+	)
+	(wire
+		(pts
+			(xy 181.864 45.72) (xy 185.674 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b85e81e-0c8e-4401-94df-2748cfcb3f30")
+	)
+	(wire
+		(pts
+			(xy 249.682 121.92) (xy 249.682 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b96b14d-7141-418b-a984-d9b39df9fb41")
+	)
+	(wire
+		(pts
+			(xy 168.656 40.64) (xy 168.656 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bccfbfd-9807-472a-add1-91ae8517ecc4")
+	)
+	(wire
+		(pts
+			(xy 162.306 149.86) (xy 162.306 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3dd2650e-f202-446f-b8c1-bc7bb29feac6")
+	)
+	(wire
+		(pts
+			(xy 93.218 90.17) (xy 91.948 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3de25418-9730-408f-a599-f2f68835ee7f")
+	)
+	(wire
+		(pts
+			(xy 141.986 124.46) (xy 149.606 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f7e981e-fe12-4cb3-9496-c480e5e308d2")
+	)
+	(wire
+		(pts
+			(xy 262.382 124.46) (xy 268.732 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3fc7b904-193a-4337-ad25-da8abe9c73f2")
+	)
+	(wire
+		(pts
+			(xy 190.754 129.54) (xy 193.294 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40660988-9d7e-4892-99e1-929ae991d87d")
+	)
+	(wire
+		(pts
+			(xy 43.18 176.53) (xy 41.91 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4076dd2d-fbbd-4fa5-b37d-b658b3e13e8f")
+	)
+	(wire
+		(pts
+			(xy 99.568 82.55) (xy 112.268 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "423ba80e-5e5a-4af2-b8be-85682d53a4c7")
+	)
+	(wire
+		(pts
+			(xy 212.344 24.13) (xy 212.344 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42e785fd-297f-438c-86b9-b23a2b5c8ce5")
+	)
+	(wire
+		(pts
+			(xy 55.88 149.86) (xy 55.88 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "431e90ff-18b9-495a-a4d6-07b135f58d77")
+	)
+	(wire
+		(pts
+			(xy 49.53 40.64) (xy 62.23 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "433e134c-c6d4-4e56-9fd3-1ea808dcc96b")
+	)
+	(wire
+		(pts
+			(xy 212.344 82.55) (xy 218.694 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4371181c-17c6-4afc-bde5-af8aad55688b")
+	)
+	(wire
+		(pts
+			(xy 49.53 107.95) (xy 55.88 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "442de224-8bb0-43b5-a002-debc2c5414d4")
+	)
+	(wire
+		(pts
+			(xy 118.618 40.64) (xy 118.618 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45e49f37-5e21-42eb-9193-79e4e1cdcde9")
+	)
+	(wire
+		(pts
+			(xy 193.294 134.62) (xy 192.024 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "466f7a3b-6eb3-45e7-a025-1360e63bbc8d")
+	)
+	(wire
+		(pts
+			(xy 62.23 82.55) (xy 68.58 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4821c4ad-c4f8-4775-aca9-c59102c66170")
+	)
+	(wire
+		(pts
+			(xy 81.788 45.72) (xy 85.598 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4985d78d-9ca3-416b-bbe2-7739c14811b2")
+	)
+	(wire
+		(pts
+			(xy 143.256 48.26) (xy 141.986 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c5f3500-a837-4f20-9308-e1672463aeb5")
+	)
+	(wire
+		(pts
+			(xy 243.332 132.08) (xy 242.062 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c654c67-15e0-4127-ad4c-d1cde4df8b66")
+	)
+	(wire
+		(pts
+			(xy 81.788 87.63) (xy 85.598 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e5f02d5-ce96-42d2-8fc4-74663a0ef292")
+	)
+	(wire
+		(pts
+			(xy 193.294 50.8) (xy 192.024 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ece909b-4c12-4b28-901e-d7271d5dfc91")
+	)
+	(wire
+		(pts
+			(xy 218.694 82.55) (xy 218.694 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4eda5036-386f-4f0e-9300-7eb2eac080f9")
+	)
+	(wire
+		(pts
+			(xy 149.606 24.13) (xy 155.956 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50117202-413b-4a41-a3b3-e5a0e3a02157")
+	)
+	(wire
+		(pts
+			(xy 62.23 163.83) (xy 62.23 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "508697e5-e0e5-4e12-9fea-768ad5701561")
+	)
+	(wire
+		(pts
+			(xy 212.344 38.1) (xy 212.344 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50afb238-92f6-4ebf-aadd-34ab6bee0531")
+	)
+	(wire
+		(pts
+			(xy 149.606 66.04) (xy 155.956 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5133152a-ff14-452b-9a5a-3c9891e74a6d")
+	)
+	(wire
+		(pts
+			(xy 199.644 82.55) (xy 212.344 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51c05f44-78bd-4729-897b-29fd9309965c")
+	)
+	(wire
+		(pts
+			(xy 41.91 48.26) (xy 41.91 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "543d1464-ee48-4a33-9692-ca4accc742c1")
+	)
+	(wire
+		(pts
+			(xy 91.948 48.26) (xy 91.948 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55ac2739-4fde-42fc-88b0-6e5ae52c3602")
+	)
+	(wire
+		(pts
+			(xy 90.678 129.54) (xy 93.218 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5834071f-a4db-4982-b2f1-e4130b308f18")
+	)
+	(wire
+		(pts
+			(xy 105.918 66.04) (xy 105.918 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58601ac0-bb22-4acc-bd7e-c1c22da878e8")
+	)
+	(wire
+		(pts
+			(xy 155.956 149.86) (xy 162.306 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5948f550-598d-4a8a-b43a-1bf3212e3a7e")
+	)
+	(wire
+		(pts
+			(xy 82.55 129.54) (xy 85.598 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "597a797e-96ba-4b8f-bd3d-0394e0a83d7e")
+	)
+	(wire
+		(pts
+			(xy 140.716 171.45) (xy 143.256 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59e1cbd4-8b5c-46de-966b-902190043a15")
+	)
+	(wire
+		(pts
+			(xy 199.644 27.94) (xy 199.644 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b1455e8-81d6-4368-863c-3b162070b725")
+	)
+	(wire
+		(pts
+			(xy 105.918 107.95) (xy 112.268 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c08d1c9-f2cf-4b97-a6f4-91f3baac7c7a")
+	)
+	(wire
+		(pts
+			(xy 168.656 124.46) (xy 168.656 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e0c5296-ad20-48a6-aca5-f765b2bfa6ae")
+	)
+	(wire
+		(pts
+			(xy 162.306 124.46) (xy 168.656 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f741aef-6250-490b-8bf1-71547f666a38")
+	)
+	(wire
+		(pts
+			(xy 112.268 124.46) (xy 118.618 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f767686-51b4-491a-9d08-b7378899bc61")
+	)
+	(wire
+		(pts
+			(xy 62.23 66.04) (xy 62.23 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f9e072b-bb12-46b7-a435-90e0368dfbf3")
+	)
+	(wire
+		(pts
+			(xy 140.716 87.63) (xy 143.256 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60461205-7c33-4059-b00e-81c0647f3987")
+	)
+	(wire
+		(pts
+			(xy 40.64 129.54) (xy 43.18 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61c41bc2-927b-4188-996d-f33c1aa73747")
+	)
+	(wire
+		(pts
+			(xy 192.024 132.08) (xy 192.024 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63f5e6d8-92ec-4f9c-95d4-af35f2ac9aff")
+	)
+	(wire
+		(pts
+			(xy 112.268 24.13) (xy 112.268 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "645a263f-d2e9-4b3d-be05-9d35e34f39b1")
+	)
+	(wire
+		(pts
+			(xy 162.306 107.95) (xy 162.306 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64eae9b9-95f1-44d4-b5a4-c3a123c73e50")
+	)
+	(wire
+		(pts
+			(xy 162.306 38.1) (xy 162.306 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65775128-622a-445e-b99a-b6c84ad30727")
+	)
+	(wire
+		(pts
+			(xy 55.88 107.95) (xy 62.23 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66b0cfcf-5deb-43a0-b6af-4ee9798fcf9b")
+	)
+	(wire
+		(pts
+			(xy 143.256 90.17) (xy 141.986 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6703d00b-b088-4b2d-92da-8de9fc3ead75")
+	)
+	(wire
+		(pts
+			(xy 242.062 132.08) (xy 242.062 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "672c7ee3-17f3-4e67-b009-5baed1045cf1")
+	)
+	(wire
+		(pts
+			(xy 199.644 80.01) (xy 199.644 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67420ed4-2246-498f-9f30-d3c1233493b6")
+	)
+	(wire
+		(pts
+			(xy 212.344 80.01) (xy 212.344 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67aa1da0-2ad8-4679-9782-d1aff0f3a9dc")
+	)
+	(wire
+		(pts
+			(xy 55.88 66.04) (xy 55.88 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6906c165-7f59-45b1-828b-27539cbb501d")
+	)
+	(wire
+		(pts
+			(xy 99.568 80.01) (xy 99.568 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "698cb0fa-cf29-4ddc-918c-bcf14bdba311")
+	)
+	(wire
+		(pts
+			(xy 249.682 80.01) (xy 249.682 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ac5f447-28e0-4715-9beb-7ebecde6566a")
+	)
+	(wire
+		(pts
+			(xy 62.23 124.46) (xy 68.58 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6af0d660-cb84-4064-8ee2-25b8fb98a582")
+	)
+	(wire
+		(pts
+			(xy 199.644 111.76) (xy 199.644 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b793e57-6685-44d3-b50e-3217626a6e12")
+	)
+	(wire
+		(pts
+			(xy 240.792 45.72) (xy 243.332 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e5102fa-9906-41fb-a332-526182c40956")
+	)
+	(wire
+		(pts
+			(xy 49.53 27.94) (xy 49.53 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f0e9a23-4412-4114-b267-42c1e7e388fc")
+	)
+	(wire
+		(pts
+			(xy 62.23 166.37) (xy 68.58 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f28ccff-f62c-4d4a-986d-b06f878f894e")
+	)
+	(wire
+		(pts
+			(xy 99.568 69.85) (xy 99.568 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6fd35293-4e8c-412a-955e-3f1eb405d434")
+	)
+	(wire
+		(pts
+			(xy 262.382 66.04) (xy 262.382 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "700a584c-b406-4bbe-96a2-6a940607a244")
+	)
+	(wire
+		(pts
+			(xy 99.568 38.1) (xy 99.568 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70e98db5-c30c-4194-8173-f2ccbc748b63")
+	)
+	(wire
+		(pts
+			(xy 141.986 166.37) (xy 149.606 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "712fe9a7-cdb2-4f67-8ef3-bf889175bcdd")
+	)
+	(wire
+		(pts
+			(xy 182.88 129.54) (xy 185.674 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7218d0d0-ab85-451a-9bc8-4c76e074d3c0")
+	)
+	(wire
+		(pts
+			(xy 268.732 82.55) (xy 268.732 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75b36c9a-9912-4a14-bbda-134dcdb1afed")
+	)
+	(wire
+		(pts
+			(xy 149.606 121.92) (xy 149.606 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "769872a8-3ebe-4c18-9145-0bbc8c117979")
+	)
+	(wire
+		(pts
+			(xy 205.994 24.13) (xy 205.994 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7763580a-3f94-4489-aeb3-ef5594ddfc03")
+	)
+	(wire
+		(pts
+			(xy 242.062 90.17) (xy 242.062 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77ca4156-718c-44c6-be96-52e496237f30")
+	)
+	(wire
+		(pts
+			(xy 149.606 153.67) (xy 149.606 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7809d559-3741-44d0-94de-945d8ef7e74c")
+	)
+	(wire
+		(pts
+			(xy 41.91 82.55) (xy 49.53 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "784fe4de-8ea8-4e6d-afcf-a3c7b8473cb4")
+	)
+	(wire
+		(pts
+			(xy 149.606 27.94) (xy 149.606 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "797ee48c-9012-44ec-9914-da74ac6a0c83")
+	)
+	(wire
+		(pts
+			(xy 99.568 163.83) (xy 99.568 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a0f294b-ddb6-40c0-ba54-aae6c48d5f62")
+	)
+	(wire
+		(pts
+			(xy 162.306 166.37) (xy 168.656 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ad201dc-5dcc-41c9-8346-fd733dd5b573")
+	)
+	(wire
+		(pts
+			(xy 190.754 45.72) (xy 193.294 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7be7defe-2d6f-45de-a39f-4513c23f7a4f")
+	)
+	(wire
+		(pts
+			(xy 112.268 121.92) (xy 112.268 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c1f4bc6-6c17-44b7-85ee-4e337c8b6216")
+	)
+	(wire
+		(pts
+			(xy 93.218 132.08) (xy 91.948 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7cedfbea-cd6c-4894-984c-56d0bd174272")
+	)
+	(wire
+		(pts
+			(xy 242.062 82.55) (xy 249.682 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e99005f-696e-4252-bc7a-d6702af30641")
+	)
+	(wire
+		(pts
+			(xy 99.568 27.94) (xy 99.568 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7eaeed50-54c6-4132-b98b-99adbb383c74")
+	)
+	(wire
+		(pts
+			(xy 143.256 132.08) (xy 141.986 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f8a506f-854d-4760-886a-a0a9ec5fbb5f")
+	)
+	(wire
+		(pts
+			(xy 149.606 124.46) (xy 162.306 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ffc4413-68eb-4f15-9686-c31b1bda2755")
+	)
+	(wire
+		(pts
+			(xy 33.02 171.45) (xy 35.56 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ffc839d-5c68-44e1-9551-bffdbe82ec3a")
+	)
+	(wire
+		(pts
+			(xy 112.268 40.64) (xy 118.618 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "803ecd75-06cb-4aac-9110-2b3299e2d6af")
+	)
+	(wire
+		(pts
+			(xy 242.062 40.64) (xy 249.682 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "803f45c3-5c36-497e-9229-54a6713f862b")
+	)
+	(wire
+		(pts
+			(xy 168.656 166.37) (xy 168.656 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80959bff-9c08-4338-9c9c-ac007f0597c3")
+	)
+	(wire
+		(pts
+			(xy 105.918 24.13) (xy 105.918 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8145a184-087c-438e-ae9e-8629ce64ae00")
+	)
+	(wire
+		(pts
+			(xy 131.826 87.63) (xy 135.636 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "816d6794-169b-4a09-9a6b-a428dca455aa")
+	)
+	(wire
+		(pts
+			(xy 143.256 176.53) (xy 141.986 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82881b31-d4b1-451a-94da-2c59f31d6325")
+	)
+	(wire
+		(pts
+			(xy 199.644 124.46) (xy 212.344 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82adb49b-5dda-4ad2-86fa-4a08c904be0f")
+	)
+	(wire
+		(pts
+			(xy 99.568 40.64) (xy 112.268 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82ba0e18-9443-47a3-81a7-d461f58903f1")
+	)
+	(wire
+		(pts
+			(xy 62.23 121.92) (xy 62.23 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "838bb6c3-0b4f-472a-a46f-e0e90e35735a")
+	)
+	(wire
+		(pts
+			(xy 90.678 171.45) (xy 93.218 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "849cacb1-c3e4-4090-a7b3-e641eebc54a5")
+	)
+	(wire
+		(pts
+			(xy 105.918 149.86) (xy 105.918 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85a4154e-376c-488b-8a65-5be2d283f5fb")
+	)
+	(wire
+		(pts
+			(xy 49.53 166.37) (xy 62.23 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85f8b187-a20d-48c9-a456-b123bc616404")
+	)
+	(wire
+		(pts
+			(xy 143.256 173.99) (xy 141.986 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8707df56-2868-430d-ae45-5da1c0b6c9fb")
+	)
+	(wire
+		(pts
+			(xy 91.948 82.55) (xy 99.568 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87427df5-4c10-46f6-ba7f-456a87633e4f")
+	)
+	(wire
+		(pts
+			(xy 199.644 69.85) (xy 199.644 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "875f205a-ccd7-4be0-845c-761c5a781db7")
+	)
+	(wire
+		(pts
+			(xy 199.644 107.95) (xy 205.994 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "890c3e74-538e-496c-97f8-6563fb7d6f45")
+	)
+	(wire
+		(pts
+			(xy 40.64 45.72) (xy 43.18 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89ac4e03-8ab1-4d7f-befb-34b4b695c403")
+	)
+	(wire
+		(pts
+			(xy 212.344 40.64) (xy 218.694 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89f5bdce-ccea-495c-bb76-5ed4bcea478f")
+	)
+	(wire
+		(pts
+			(xy 49.53 163.83) (xy 49.53 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cf28e50-e7e5-4d0f-808f-e28945ad3167")
+	)
+	(wire
+		(pts
+			(xy 162.306 66.04) (xy 162.306 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e10db0a-468b-4e52-86e4-1078b2f07e7b")
+	)
+	(wire
+		(pts
+			(xy 62.23 80.01) (xy 62.23 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e236f42-5b44-4d83-9c1c-1c29e8898a17")
+	)
+	(wire
+		(pts
+			(xy 193.294 132.08) (xy 192.024 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e66943f-e684-4cb2-bf42-1969b7ac97d2")
+	)
+	(wire
+		(pts
+			(xy 256.032 66.04) (xy 262.382 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9091f166-ba28-40cc-827c-5cd152ece06a")
+	)
+	(wire
+		(pts
+			(xy 192.024 48.26) (xy 192.024 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92069758-5df1-46c8-a2db-a3fec5065881")
+	)
+	(wire
+		(pts
+			(xy 256.032 24.13) (xy 262.382 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9282c0c6-f881-4175-889c-ff85a79a8eac")
+	)
+	(wire
+		(pts
+			(xy 243.332 48.26) (xy 242.062 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93accc39-50cc-4205-985b-52a32144bcee")
+	)
+	(wire
+		(pts
+			(xy 149.606 111.76) (xy 149.606 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94d43eeb-3b62-435d-84da-87c2497eaa98")
+	)
+	(wire
+		(pts
+			(xy 99.568 124.46) (xy 112.268 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95adc816-d907-4f64-89f0-75d629ec8eab")
+	)
+	(wire
+		(pts
+			(xy 43.18 90.17) (xy 41.91 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "960c1714-65ec-4d03-bfb5-e7f5d5358537")
+	)
+	(wire
+		(pts
+			(xy 199.644 24.13) (xy 205.994 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96cc32b5-4652-4785-a57c-19fa5d1d4f3b")
+	)
+	(wire
+		(pts
+			(xy 249.682 69.85) (xy 249.682 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97d84ef8-8282-4e54-b949-ed841d50e770")
+	)
+	(wire
+		(pts
+			(xy 256.032 66.04) (xy 256.032 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9892fe7c-7d8f-4d5d-a636-7ff55b40756d")
+	)
+	(wire
+		(pts
+			(xy 205.994 24.13) (xy 212.344 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9aa2d58f-a51d-4ee7-8a2e-2453ce11e55a")
+	)
+	(wire
+		(pts
+			(xy 99.568 121.92) (xy 99.568 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bce0068-c96b-4952-83ed-6aac6ed86564")
+	)
+	(wire
+		(pts
+			(xy 90.678 87.63) (xy 93.218 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c0981e6-1fce-4073-891b-7b31b4a8fb8c")
+	)
+	(wire
+		(pts
+			(xy 41.91 132.08) (xy 41.91 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c2f33eb-0d1b-4718-88a3-065d1347a782")
+	)
+	(wire
+		(pts
+			(xy 105.918 66.04) (xy 112.268 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cbb658b-bd9f-4391-aa10-1d67ef6e592d")
+	)
+	(wire
+		(pts
+			(xy 49.53 149.86) (xy 55.88 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cdd6975-341a-4718-9ef5-95c1830d0644")
+	)
+	(wire
+		(pts
+			(xy 141.986 173.99) (xy 141.986 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d143186-87ef-495b-a71c-2daaae76dbae")
+	)
+	(wire
+		(pts
+			(xy 162.306 24.13) (xy 162.306 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a21d90eb-7d9e-4877-83f2-930d8c9dfe1d")
+	)
+	(wire
+		(pts
+			(xy 41.91 124.46) (xy 49.53 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2b1eae2-6150-48fb-b348-67b7394a89b0")
+	)
+	(wire
+		(pts
+			(xy 62.23 38.1) (xy 62.23 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a33044d1-ea6a-437b-955a-fe4a37a5adc7")
+	)
+	(wire
+		(pts
+			(xy 262.382 107.95) (xy 262.382 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4fba43b-0637-4738-8bd0-5de5ef192126")
+	)
+	(wire
+		(pts
+			(xy 256.032 24.13) (xy 256.032 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a530b9f6-ad53-4bbb-8530-bc9b1e2e13f5")
+	)
+	(wire
+		(pts
+			(xy 91.948 166.37) (xy 99.568 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a741feb4-c299-4fd9-a6ce-69274b27c304")
+	)
+	(wire
+		(pts
+			(xy 105.918 149.86) (xy 112.268 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a784f096-274a-48ba-8e33-683219773bc8")
+	)
+	(wire
+		(pts
+			(xy 99.568 166.37) (xy 112.268 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a86d30e2-c014-47c5-ba54-9be8d4b33498")
+	)
+	(wire
+		(pts
+			(xy 43.18 173.99) (xy 41.91 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8b1cf2c-69bf-4dcd-becf-290d04783238")
+	)
+	(wire
+		(pts
+			(xy 212.344 124.46) (xy 218.694 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8f3b44f-c905-498d-b1a5-1c0045080fed")
+	)
+	(wire
+		(pts
+			(xy 162.306 82.55) (xy 168.656 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aac78a80-8d8e-414f-85ba-8a6318fb3cb9")
+	)
+	(wire
+		(pts
+			(xy 193.294 48.26) (xy 192.024 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aba88894-9133-42f8-8e82-5156bc0e06b7")
+	)
+	(wire
+		(pts
+			(xy 112.268 163.83) (xy 112.268 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aca48828-7fb6-45b9-ac1d-3a5ebec40dee")
+	)
+	(wire
+		(pts
+			(xy 149.606 38.1) (xy 149.606 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "adc03669-6b4c-4a0b-ac21-cfd15d8663a7")
+	)
+	(wire
+		(pts
+			(xy 112.268 149.86) (xy 112.268 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "adf20c9a-143b-4241-883f-68c854674d1d")
+	)
+	(wire
+		(pts
+			(xy 49.53 124.46) (xy 62.23 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aea11e22-bb3a-4100-bf5c-25eb877a4b97")
+	)
+	(wire
+		(pts
+			(xy 249.682 27.94) (xy 249.682 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b17b087f-6f29-4067-a1ff-5bf9e2a4ecd8")
+	)
+	(wire
+		(pts
+			(xy 41.91 40.64) (xy 49.53 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1d8d409-5a7f-491e-a167-1b99ccc645ad")
+	)
+	(wire
+		(pts
+			(xy 55.88 66.04) (xy 62.23 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1e7397d-f606-41dd-bbee-b98abc4240e3")
+	)
+	(wire
+		(pts
+			(xy 199.644 38.1) (xy 199.644 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2de3319-a38d-4992-b6eb-179647cf5c04")
+	)
+	(wire
+		(pts
+			(xy 256.032 107.95) (xy 262.382 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5e5c784-a653-48a4-bce5-0c3e5232b022")
+	)
+	(wire
+		(pts
+			(xy 43.18 134.62) (xy 41.91 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6b671be-c584-4983-9a0a-dfb82c192448")
+	)
+	(wire
+		(pts
+			(xy 49.53 121.92) (xy 49.53 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8171965-512c-4fab-8489-192d38395f1e")
+	)
+	(wire
+		(pts
+			(xy 232.664 87.63) (xy 235.712 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b991aa4a-4d9f-41c8-978f-f3b555731c61")
+	)
+	(wire
+		(pts
+			(xy 212.344 121.92) (xy 212.344 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcb02fa9-274d-4bf9-8569-64f8485f9c53")
+	)
+	(wire
+		(pts
+			(xy 149.606 69.85) (xy 149.606 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "beaa8e41-e04c-4094-8b68-5ba5ed111518")
+	)
+	(wire
+		(pts
+			(xy 262.382 121.92) (xy 262.382 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bffc7b97-e12b-4326-aa25-fa3935bb5ed5")
+	)
+	(wire
+		(pts
+			(xy 99.568 24.13) (xy 105.918 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0ffba3c-b4c3-43db-8d22-577a95edcae8")
+	)
+	(wire
+		(pts
+			(xy 155.956 24.13) (xy 162.306 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1dac78d-7212-4b44-855a-6c46c357787d")
+	)
+	(wire
+		(pts
+			(xy 205.994 107.95) (xy 212.344 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2b18ea4-2f32-45a9-8b53-bbcb1b7ce2d5")
+	)
+	(wire
+		(pts
+			(xy 162.306 121.92) (xy 162.306 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6359fa1-9b47-4764-b102-69b6e2366d2e")
+	)
+	(wire
+		(pts
+			(xy 133.35 129.54) (xy 135.636 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7703055-7ae5-480b-90e6-7ffce6982cec")
+	)
+	(wire
+		(pts
+			(xy 249.682 111.76) (xy 249.682 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c795721d-3c15-4642-bd3c-61a9fbe5db68")
+	)
+	(wire
+		(pts
+			(xy 192.024 124.46) (xy 199.644 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8fe55f9-b0b0-45da-9a0e-6de132474d48")
+	)
+	(wire
+		(pts
+			(xy 55.88 24.13) (xy 62.23 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c91110c0-2cd8-4b3b-8a4b-ac97fddc981b")
+	)
+	(wire
+		(pts
+			(xy 242.062 124.46) (xy 249.682 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca7a0213-6a08-4c81-828e-b99443af6227")
+	)
+	(wire
+		(pts
+			(xy 55.88 24.13) (xy 55.88 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca8aaa0e-9cb4-4c11-9c70-354c2afc74ef")
+	)
+	(wire
+		(pts
+			(xy 49.53 80.01) (xy 49.53 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca91010e-3520-41ed-b0aa-1ae8503a209d")
+	)
+	(wire
+		(pts
+			(xy 41.91 90.17) (xy 41.91 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc0cc8f3-476b-413c-b062-981dde02cdb6")
+	)
+	(wire
+		(pts
+			(xy 133.096 171.45) (xy 135.636 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc21cd46-0395-4e8d-b071-77836ac8219f")
+	)
+	(wire
+		(pts
+			(xy 68.58 124.46) (xy 68.58 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccbf324a-2a14-47f2-bac2-60675d6a7e38")
+	)
+	(wire
+		(pts
+			(xy 49.53 66.04) (xy 55.88 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd8eb73b-611e-4b61-95c1-c9402c887511")
+	)
+	(wire
+		(pts
+			(xy 262.382 24.13) (xy 262.382 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf085c3b-2b9f-4aab-82ea-a1603b4f1be0")
+	)
+	(wire
+		(pts
+			(xy 93.218 48.26) (xy 91.948 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0983229-9a93-40f6-8079-b7fa2baf1eed")
+	)
+	(wire
+		(pts
+			(xy 118.618 166.37) (xy 118.618 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0fe2abc-659c-41e4-a7a7-7544a9f68ec2")
+	)
+	(wire
+		(pts
+			(xy 143.256 134.62) (xy 141.986 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d11cb0f4-4ef5-429b-985b-d7abdf84a94a")
+	)
+	(wire
+		(pts
+			(xy 141.986 48.26) (xy 141.986 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d33a1914-7ea2-4980-957e-5ef02c98ac8e")
+	)
+	(wire
+		(pts
+			(xy 212.344 66.04) (xy 212.344 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3a9f528-d36d-4130-bc4b-c038db974194")
+	)
+	(wire
+		(pts
+			(xy 190.754 87.63) (xy 193.294 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d549b26b-9990-4f50-9255-bfc1f5ea8a88")
+	)
+	(wire
+		(pts
+			(xy 140.716 129.54) (xy 143.256 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7972237-e45b-4b5d-bc8e-82fbc0509a6c")
+	)
+	(wire
+		(pts
+			(xy 93.218 92.71) (xy 91.948 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7ae9d6c-1253-426b-9a81-92feda27ec4a")
+	)
+	(wire
+		(pts
+			(xy 91.948 40.64) (xy 99.568 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d90730ed-0e02-4368-a18b-d85374478baf")
+	)
+	(wire
+		(pts
+			(xy 143.256 50.8) (xy 141.986 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d908e01f-cdaa-481d-acc8-c1f5005c228f")
+	)
+	(wire
+		(pts
+			(xy 62.23 149.86) (xy 62.23 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9c02921-3b55-4a41-ae17-e18283292131")
+	)
+	(wire
+		(pts
+			(xy 141.986 40.64) (xy 149.606 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db19d26b-71a7-45b7-b87d-e6273ca2dfca")
+	)
+	(wire
+		(pts
+			(xy 93.218 50.8) (xy 91.948 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc47fea2-f248-4ca3-96db-6cca605e0666")
+	)
+	(wire
+		(pts
+			(xy 232.41 129.54) (xy 235.712 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc509e30-a988-44e0-9ea9-844f864e0312")
+	)
+	(wire
+		(pts
+			(xy 112.268 166.37) (xy 118.618 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc8e66b7-be8e-469e-8874-1f8787eb5a6d")
+	)
+	(wire
+		(pts
+			(xy 49.53 82.55) (xy 62.23 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd4610f3-8e35-46e4-84bd-6394b0cc14ec")
+	)
+	(wire
+		(pts
+			(xy 155.956 107.95) (xy 162.306 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df8ae6cd-3fbe-44e3-81ba-ed296a42a2ae")
+	)
+	(wire
+		(pts
+			(xy 193.294 92.71) (xy 192.024 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfccb13b-7c46-4cd7-9b6a-f2b29cddbe8f")
+	)
+	(wire
+		(pts
+			(xy 181.864 87.63) (xy 185.674 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1a86cc0-abdd-4a95-aad8-f515ae7a6f58")
+	)
+	(wire
+		(pts
+			(xy 91.948 90.17) (xy 91.948 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1f3474f-dedc-4307-b2cc-276dd7949181")
+	)
+	(wire
+		(pts
+			(xy 212.344 107.95) (xy 212.344 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2553732-5b5a-4045-b82a-0b322795f34f")
+	)
+	(wire
+		(pts
+			(xy 149.606 163.83) (xy 149.606 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4835fdf-69f0-47fe-935d-cbc8683956d6")
+	)
+	(wire
+		(pts
+			(xy 90.678 45.72) (xy 93.218 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5e7178d-abf3-4881-aabb-45bb59c393a2")
+	)
+	(wire
+		(pts
+			(xy 192.024 90.17) (xy 192.024 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e694bd7e-84ec-4ff0-bcdf-7a529ede2994")
+	)
+	(wire
+		(pts
+			(xy 168.656 82.55) (xy 168.656 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e827b03b-219e-4e98-add5-c7cd45b6fdf2")
+	)
+	(wire
+		(pts
+			(xy 205.994 66.04) (xy 212.344 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea9ee2cc-7694-4bfa-ad38-f9d73e784278")
+	)
+	(wire
+		(pts
+			(xy 149.606 166.37) (xy 162.306 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eae1e932-129f-4bc2-876a-1947ca199ef7")
+	)
+	(wire
+		(pts
+			(xy 231.902 45.72) (xy 235.712 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebbf0847-d618-4e26-a700-e191ab2928bc")
+	)
+	(wire
+		(pts
+			(xy 68.58 40.64) (xy 68.58 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec99bd2d-b5e2-4396-8bf5-f7dc1e30fb41")
+	)
+	(wire
+		(pts
+			(xy 242.062 48.26) (xy 242.062 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed4849c8-3ff2-4954-8b5c-cde2a778623d")
+	)
+	(wire
+		(pts
+			(xy 249.682 107.95) (xy 256.032 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee6eb9c9-8899-4a51-985d-a543eed35ded")
+	)
+	(wire
+		(pts
+			(xy 249.682 66.04) (xy 256.032 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eee5aa97-659f-43a8-a561-be69a590698d")
+	)
+	(wire
+		(pts
+			(xy 141.986 90.17) (xy 141.986 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef8c66bf-081b-414c-acb1-e36d1fdb41c0")
+	)
+	(wire
+		(pts
+			(xy 99.568 153.67) (xy 99.568 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f01a625f-fdca-415f-bdd1-b3b9eacca008")
+	)
+	(wire
+		(pts
+			(xy 262.382 82.55) (xy 268.732 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1a1d50b-a66f-4092-be0c-9ff8f35f491e")
+	)
+	(wire
+		(pts
+			(xy 240.792 87.63) (xy 243.332 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2d755e5-2a84-4db8-b57c-d869fd747b3a")
+	)
+	(wire
+		(pts
+			(xy 155.956 107.95) (xy 155.956 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3186945-8ff0-45fd-b469-38453907fef5")
+	)
+	(wire
+		(pts
+			(xy 262.382 80.01) (xy 262.382 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f324577e-c98d-4d2d-8b8b-97e8fb98041f")
+	)
+	(wire
+		(pts
+			(xy 141.986 132.08) (xy 141.986 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f330f601-6cde-4a89-a0be-b089f9000c57")
+	)
+	(wire
+		(pts
+			(xy 62.23 107.95) (xy 62.23 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f536b000-aa07-4bbd-b82c-8bb2c925d810")
+	)
+	(wire
+		(pts
+			(xy 93.218 134.62) (xy 91.948 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f57949bb-48ce-41a0-84f8-850999cc7bd6")
+	)
+	(wire
+		(pts
+			(xy 131.826 45.72) (xy 135.636 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6a7b1a6-47b5-43b6-8e39-a30601ab681e")
+	)
+	(wire
+		(pts
+			(xy 240.792 129.54) (xy 243.332 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6d8f7f2-de27-4b03-a016-f0da205bab67")
+	)
+	(wire
+		(pts
+			(xy 112.268 107.95) (xy 112.268 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f83bd81f-96a0-49b0-b98b-9f249afc0f3c")
+	)
+	(wire
+		(pts
+			(xy 155.956 66.04) (xy 162.306 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f885c6d5-1090-47cb-a120-42ab78327912")
+	)
+	(wire
+		(pts
+			(xy 112.268 38.1) (xy 112.268 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa8725f3-8b19-4bc4-8a1b-a6095f4b6e58")
+	)
+	(wire
+		(pts
+			(xy 243.332 50.8) (xy 242.062 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "faa17413-3006-4d24-ada8-b4dc19f69251")
+	)
+	(wire
+		(pts
+			(xy 243.332 134.62) (xy 242.062 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc1b18e0-0533-43ff-a94c-861cf436e52c")
+	)
+	(wire
+		(pts
+			(xy 93.218 173.99) (xy 91.948 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc60a3d1-16c8-4fa1-95ea-0143c9201580")
+	)
+	(wire
+		(pts
+			(xy 262.382 40.64) (xy 268.732 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd1ba62d-6259-4409-b811-b90ee185eb03")
+	)
+	(wire
+		(pts
+			(xy 105.918 107.95) (xy 105.918 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe897300-c5e8-4cdf-bcc6-56c36fb15894")
+	)
+	(wire
+		(pts
+			(xy 49.53 153.67) (xy 49.53 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff09d8d3-c952-4258-a6ed-ae7056f211df")
+	)
+	(wire
+		(pts
+			(xy 68.58 166.37) (xy 68.58 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff9ae9b9-d909-43b1-b57a-4e63421722fa")
+	)
+	(wire
+		(pts
+			(xy 249.682 24.13) (xy 256.032 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fff0b9b6-6b18-4297-b640-d3f5c77214aa")
+	)
+	(hierarchical_label "Valve10"
+		(shape input)
+		(at 232.664 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "03441dae-59c8-42ac-abbd-bc32728a47f7")
+	)
+	(hierarchical_label "Valve7-"
+		(shape input)
+		(at 112.268 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "09034923-ef7a-4289-8d10-c511a2e8ccf4")
+	)
+	(hierarchical_label "Valve2-"
+		(shape input)
+		(at 112.268 38.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0e0020eb-93ab-441e-9543-b850ede5159a")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 155.956 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "12db1a87-c2ad-4045-a5b0-fb41599e327d")
+	)
+	(hierarchical_label "Valve16+"
+		(shape input)
+		(at 62.23 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "15ccdd26-f5b5-4d9e-8ceb-180606403bb9")
+	)
+	(hierarchical_label "Valve12-"
+		(shape input)
+		(at 112.268 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "16222c99-c542-4839-a273-64e11e9b44fa")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 256.032 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "16d817b5-9c5c-45d5-bc20-7a9e955e90c4")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 192.024 92.71 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1ada991a-76e5-4e4a-9949-3b8d310fb8b4")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 91.948 92.71 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "21d2dafa-e75f-4910-9ccb-fa58a4f9fa9f")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 205.994 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "25378c81-ace3-4a60-83ff-813cd90e5d15")
+	)
+	(hierarchical_label "Valve17-"
+		(shape input)
+		(at 112.268 163.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "26dcf974-3bbe-458d-be7b-895e07dc6431")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 55.88 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2b2239f4-de88-472c-ac3e-b9d716bd8f94")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 19.05 24.13 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2e6937eb-bd0c-4c75-b10a-bff4aab4a0c5")
+	)
+	(hierarchical_label "Valve11+"
+		(shape input)
+		(at 62.23 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3707a8c4-eb6c-433a-b226-a28c637cbbd9")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 105.918 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "38e7bddd-a525-4154-be3e-1b2d9ff223d6")
+	)
+	(hierarchical_label "12VB"
+		(shape input)
+		(at 55.88 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "404a155b-bab4-463c-8049-647ee08beca3")
+	)
+	(hierarchical_label "Valve12"
+		(shape input)
+		(at 82.55 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4067087e-b0e2-48c3-b1ad-7673ef9923a0")
+	)
+	(hierarchical_label "Valve2+"
+		(shape input)
+		(at 112.268 27.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "444080ba-8708-43b5-8dfd-b47f91fd8fcf")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 242.062 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "44ed6cca-f169-4ec1-909f-70ad82271fbb")
+	)
+	(hierarchical_label "Valve11"
+		(shape input)
+		(at 33.02 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "48f78651-6313-45ed-a1b0-3518bb7d9f15")
+	)
+	(hierarchical_label "Valve14+"
+		(shape input)
+		(at 212.344 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4927b7b7-9a9c-4427-b350-e41d21d48b11")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 41.91 176.53 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4aca2953-99b6-4f82-a737-889e6be92be7")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 141.986 92.71 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4d931158-7393-461f-8d69-1f9d224ea94a")
+	)
+	(hierarchical_label "Valve5-"
+		(shape input)
+		(at 262.382 38.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4ed71b7f-ad81-460a-991d-2c77a573c384")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 242.062 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5367798b-8b5e-4b4b-9a3b-4659e2c18437")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 141.986 176.53 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "537683be-ae37-41b2-9555-8a7aa888534b")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 91.948 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5a4b99ee-9281-4257-87e0-74be69a2f221")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 41.91 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5ca56ecd-3d3d-447f-b2e2-bd94f9dc64be")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 55.88 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5d005e4b-b0f3-47ef-b288-bae67e3173cb")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 141.986 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5e37a4f2-be41-4c25-a8c1-c2ac6c888d88")
+	)
+	(hierarchical_label "Valve18+"
+		(shape input)
+		(at 162.306 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5e3bdfe9-7e57-4d57-a5f3-5c7f7089d2e4")
+	)
+	(hierarchical_label "Valve14"
+		(shape input)
+		(at 182.88 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5e5972e6-d4e3-45bd-9887-33577395c274")
+	)
+	(hierarchical_label "Valve11-"
+		(shape input)
+		(at 62.23 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5f30d657-a2e8-465e-bc45-8dffc5c800e0")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 41.91 92.71 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5fc96db6-7f58-4476-a52b-f18cf90fcb94")
+	)
+	(hierarchical_label "Valve16-"
+		(shape input)
+		(at 62.23 163.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "60ddbf0b-2e41-4a02-9063-570771f6bbd5")
+	)
+	(hierarchical_label "Valve3"
+		(shape input)
+		(at 131.826 45.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6120bab3-2886-4a69-8752-3259146c6958")
+	)
+	(hierarchical_label "Valve9"
+		(shape input)
+		(at 181.864 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "64308ef9-fddf-4d06-9863-e559b1411c06")
+	)
+	(hierarchical_label "Valve13"
+		(shape input)
+		(at 133.35 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6ba04b3c-040e-48d8-b4d6-b13b427a49c8")
+	)
+	(hierarchical_label "Valve15+"
+		(shape input)
+		(at 262.382 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6c1a0f24-2f68-4895-85d0-67397a113a8d")
+	)
+	(hierarchical_label "Valve7+"
+		(shape input)
+		(at 112.268 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6e957d0a-27ea-4d6b-8f0a-911a73e939c2")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 192.024 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6f0775cc-498e-42aa-9c2e-f3e30a48c6b7")
+	)
+	(hierarchical_label "Valve1-"
+		(shape input)
+		(at 62.23 38.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6fe45989-6d15-41e1-a7b7-92247a752f54")
+	)
+	(hierarchical_label "Valve9+"
+		(shape input)
+		(at 212.344 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "70020f6d-6a49-4f45-af2a-ad0948ab9ebe")
+	)
+	(hierarchical_label "Valve13+"
+		(shape input)
+		(at 162.306 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "783d6260-a653-4f2f-bea3-175970d1a274")
+	)
+	(hierarchical_label "Valve3-"
+		(shape input)
+		(at 162.306 38.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7924f2b4-6557-45d0-9588-03c368c00b5f")
+	)
+	(hierarchical_label "Valve6"
+		(shape input)
+		(at 31.75 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7cdf30fa-76b7-4dcc-9040-d30240f725ef")
+	)
+	(hierarchical_label "Valve6+"
+		(shape input)
+		(at 62.23 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7d76df4a-d4c3-4aba-a4a5-0f3440beeb0a")
+	)
+	(hierarchical_label "Valve1"
+		(shape input)
+		(at 31.75 45.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8634adf0-d3bd-4888-a40e-447553b48bfa")
+	)
+	(hierarchical_label "Valve5"
+		(shape input)
+		(at 231.902 45.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8915da77-1e96-46ff-abf6-baa9ea7b33c9")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 41.91 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8c2cb209-1a17-4ffe-9c33-ba42058bf40c")
+	)
+	(hierarchical_label "Valve5+"
+		(shape input)
+		(at 262.382 27.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8ce47bc0-67c6-40c9-9fb1-3967899eb7f3")
+	)
+	(hierarchical_label "Valve3+"
+		(shape input)
+		(at 162.306 27.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8d857928-183a-43c8-9717-d059b0f9663b")
+	)
+	(hierarchical_label "Valve17+"
+		(shape input)
+		(at 112.268 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8d957074-c955-4efa-a97b-cdaeb81c494b")
+	)
+	(hierarchical_label "Valve9-"
+		(shape input)
+		(at 212.344 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "99dcfbb5-0326-4331-b4d3-5af801492434")
+	)
+	(hierarchical_label "Valve18-"
+		(shape input)
+		(at 162.306 163.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9ddd641f-da0a-4e46-963a-e75e5af9b704")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 155.956 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a0ab82e4-96ae-4e06-8435-7d73a99aafd9")
+	)
+	(hierarchical_label "Valve15"
+		(shape input)
+		(at 232.41 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a4a8c847-13eb-4854-9ab8-95a355cfe9a7")
+	)
+	(hierarchical_label "Valve12+"
+		(shape input)
+		(at 112.268 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a68ef097-676b-4af1-ae5b-55124f2d4c38")
+	)
+	(hierarchical_label "Valve8+"
+		(shape input)
+		(at 162.306 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ac513fdc-98f9-46dc-a951-e5c7e9e8f1ae")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 205.994 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ad53cb43-db88-4c1c-8f7d-b9a8587b4b73")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 141.986 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b48890cf-505d-4e1a-ab0f-85d439faeda1")
+	)
+	(hierarchical_label "Valve17"
+		(shape input)
+		(at 83.058 171.45 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b525c82d-f55e-40a4-8a14-1a97a1c6d26e")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 256.032 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b91e124c-301d-44cf-b8fc-6bc01bda8ddd")
+	)
+	(hierarchical_label "Valve13-"
+		(shape input)
+		(at 162.306 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "be81d6c2-96af-4b03-a597-578fc836a00d")
+	)
+	(hierarchical_label "12VB"
+		(shape input)
+		(at 205.994 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c1477401-5c3d-47e3-805d-0093ebda668a")
+	)
+	(hierarchical_label "Valve2"
+		(shape input)
+		(at 81.788 45.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c1b74e6d-0838-44ab-ad4f-662938011ec0")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 105.918 146.05 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c598d81e-5f5e-4674-a34d-1ff08dba25a2")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 155.956 146.05 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c7da08e2-f9f3-4e2f-8d39-f68d9beeb62d")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 105.918 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cd805246-2f3d-4ee9-9758-2ac1a3679227")
+	)
+	(hierarchical_label "Valve8"
+		(shape input)
+		(at 131.826 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d2a5799d-f69b-4250-be15-1e38d0eea692")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 192.024 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d34cd2c5-778d-49ab-94bd-6e0df2443ed7")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 105.918 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d6b5d5cd-2796-4c64-9e96-8cbeaf27253a")
+	)
+	(hierarchical_label "Valve6-"
+		(shape input)
+		(at 62.23 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d6e4a656-ce94-4c3e-8280-368046c53bdb")
+	)
+	(hierarchical_label "Valve14-"
+		(shape input)
+		(at 212.344 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d72e08ea-c010-469e-8dc3-00c53b73ee96")
+	)
+	(hierarchical_label "Valve16"
+		(shape input)
+		(at 33.02 171.45 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d8411f2b-dc21-42d4-8b61-50887fc742d4")
+	)
+	(hierarchical_label "Valve10+"
+		(shape input)
+		(at 262.382 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d8bd46b5-cd9a-4a0d-9514-56b552a734d9")
+	)
+	(hierarchical_label "Valve4"
+		(shape input)
+		(at 181.864 45.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d8eef95a-9cd7-47c5-8559-e8898a80ba56")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 256.032 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dd686f52-7566-44a8-b164-28889a7da7dd")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 55.88 146.05 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "de43a712-a20b-4719-8499-717390ce8652")
+	)
+	(hierarchical_label "Valve4+"
+		(shape input)
+		(at 212.344 27.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e0ab6c54-900f-41cc-a779-123eab4a3803")
+	)
+	(hierarchical_label "Valve15-"
+		(shape input)
+		(at 262.382 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e48eac6f-08e7-4151-b00b-1f55c7ca496b")
+	)
+	(hierarchical_label "12VA"
+		(shape input)
+		(at 155.956 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e4f272e6-04a6-4c45-8bd3-9e2ac485fe21")
+	)
+	(hierarchical_label "Valve4-"
+		(shape input)
+		(at 212.344 38.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ea419346-6c33-4816-90e7-17b9aeb88b58")
+	)
+	(hierarchical_label "Valve7"
+		(shape input)
+		(at 81.788 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "eb198a56-ea51-4cef-aa73-1a15ecc9f851")
+	)
+	(hierarchical_label "Valve10-"
+		(shape input)
+		(at 262.382 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ef8e58ef-fd7e-452b-87e9-9e6c53104194")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 91.948 176.53 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f13fb2a7-eab2-4845-80ae-fbe6e0da394d")
+	)
+	(hierarchical_label "Valve18"
+		(shape input)
+		(at 133.096 171.45 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f3bbe502-8dac-4368-b746-62e280629441")
+	)
+	(hierarchical_label "Valve8-"
+		(shape input)
+		(at 162.306 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f676acf6-109d-496c-b5d5-70fc93c4c7ec")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 242.062 92.71 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f6b583c9-a12b-45cc-86c2-7009489385d2")
+	)
+	(hierarchical_label "Valve1+"
+		(shape input)
+		(at 62.23 27.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fbc4b817-f247-45f4-9f6c-a1b5a7744dcf")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 91.948 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fede15e8-ed65-47bd-9b44-21e7b36760ab")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 19.05 29.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0790ffb9-b924-46e8-a319-6ae421ac39c0")
+		(property "Reference" "#PWR08"
+			(at 19.05 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 19.05 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 19.05 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 19.05 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 19.05 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0bffc007-3796-4f87-91e2-4de33f9fd3e2")
+		)
+		(instances
+			(project ""
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 138.176 45.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "09f0f5ce-4870-408f-9694-e0c61d1bd2da")
+		(property "Reference" "R3"
+			(at 138.176 40.64 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 138.176 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 138.176 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 138.176 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 138.176 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ebed6d1f-22f3-44d9-afd9-65306d263008")
+		)
+		(pin "2"
+			(uuid "b4607b0b-3ab8-4bb5-9c38-f042dcd1331b")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 38.1 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0c527bb1-d5de-426b-8502-58be02912287")
+		(property "Reference" "R6"
+			(at 38.1 82.55 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 38.1 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 38.1 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 38.1 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 38.1 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dd3dd880-1a6b-4b2f-8e8f-03925bf43066")
+		)
+		(pin "2"
+			(uuid "4f4230e5-e436-4fca-a5a1-4256ebb5ebc7")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 43.18 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0f17a5d8-64f3-4d0c-bfa1-207398b36de4")
+		(property "Reference" "Q6"
+			(at 56.134 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 55.88 99.314 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 64.77 182.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 64.77 282.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 43.18 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 64.77 482.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 64.77 582.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 64.77 682.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 64.77 782.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 64.77 882.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "87bc1be5-b6ac-447f-9f3c-5ac4bae7445a")
+		)
+		(pin "3"
+			(uuid "f4a114ca-324b-44f0-a818-00908e482061")
+		)
+		(pin "2"
+			(uuid "36fb44eb-cc4b-485a-80f2-8723f4d29ecb")
+		)
+		(pin "4"
+			(uuid "7f920cdc-fa5b-4785-a361-d32511e81eb0")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 238.252 45.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1513e428-3d04-4e9d-b956-62d937ddeff5")
+		(property "Reference" "R5"
+			(at 238.252 40.64 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 238.252 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 238.252 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 238.252 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 238.252 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "79ee4848-527a-4ce9-b71b-7818ad71ae4e")
+		)
+		(pin "2"
+			(uuid "6603a422-b117-4e2e-813e-4deb9f2bbaaf")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 99.568 163.83 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "16c98318-4678-42e4-a124-41a7ec6fe80b")
+		(property "Reference" "CR17"
+			(at 88.138 156.464 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 84.328 160.02 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 99.568 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 99.568 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 99.568 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b5b42ef9-5a59-4398-9350-99a66ed72b6c")
+		)
+		(pin "1"
+			(uuid "60b8ffc3-e949-4337-82ba-483e9d9f51f8")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 199.644 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "18f9b370-7f15-424d-9766-6a0ee7087cf4")
+		(property "Reference" "CR9"
+			(at 188.214 72.644 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 184.404 76.2 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 199.644 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 199.644 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 199.644 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "200f6514-e73c-4367-8e82-9a9b9ca87fd6")
+		)
+		(pin "1"
+			(uuid "31a5ffa9-aca9-4173-b581-0fb82f960110")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 149.606 163.83 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1c012537-3122-4063-a60b-a480e9a683e2")
+		(property "Reference" "CR18"
+			(at 138.176 156.464 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 134.366 160.02 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 149.606 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 149.606 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 149.606 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ff58a66a-e0d8-436e-a670-b5a95088f0b3")
+		)
+		(pin "1"
+			(uuid "e7cca032-2e48-4d29-98e6-c9fc3c38f1b0")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 49.53 38.1 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "20302e1b-9b4d-4761-9121-623b2b9acb3b")
+		(property "Reference" "CR1"
+			(at 38.1 30.734 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 34.29 34.29 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 49.53 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 49.53 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 49.53 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f2ffaa62-2f75-4b80-8693-66fa297a1986")
+		)
+		(pin "1"
+			(uuid "7fa90a87-e259-4671-a479-bf5f8561d630")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 238.252 129.54 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "24a12e67-cd6e-4ce2-9520-9138f10e7bec")
+		(property "Reference" "R15"
+			(at 238.252 124.46 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 238.252 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 238.252 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 238.252 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 238.252 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "16acf0b6-4440-45a6-a254-7f071fd4cab2")
+		)
+		(pin "2"
+			(uuid "a9dbb524-06ad-470f-8c51-0b40b6610306")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 149.606 38.1 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "24abc009-9d66-4a44-9368-fd758d153f1d")
+		(property "Reference" "CR3"
+			(at 138.176 30.734 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 134.366 34.29 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 149.606 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 149.606 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 149.606 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "256feb94-a5ae-43f5-a8cc-66c695c9f847")
+		)
+		(pin "1"
+			(uuid "5773f348-459a-43b0-8db8-25e02f19e686")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 143.256 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "252744d6-a0d8-48f0-8bf0-0f7d24f525a0")
+		(property "Reference" "Q8"
+			(at 156.21 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 155.956 99.314 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 164.846 182.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 164.846 282.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 143.256 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 164.846 482.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 164.846 582.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 164.846 682.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 164.846 782.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 164.846 882.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "231e9306-01ec-486d-a695-ac8c0ecb59f9")
+		)
+		(pin "3"
+			(uuid "63b95bca-d8fc-4f5b-af16-beecfd839530")
+		)
+		(pin "2"
+			(uuid "3a54b4c4-8161-455d-8eda-d589fe6ed94b")
+		)
+		(pin "4"
+			(uuid "0eee11fb-6869-44fe-a70a-3690e51153e3")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 93.218 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "25383f3d-d559-4a8b-ba19-48deabd3010b")
+		(property "Reference" "Q12"
+			(at 106.172 138.684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 105.918 141.224 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 114.808 224.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 114.808 324.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 93.218 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 114.808 524.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 114.808 624.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 114.808 724.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 114.808 824.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 114.808 924.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bc30312e-cc8d-4d0a-885b-e30de81a17a0")
+		)
+		(pin "3"
+			(uuid "1304f483-018a-44ff-ac6d-54049e7f1e27")
+		)
+		(pin "2"
+			(uuid "b19d4559-5fd0-4711-b83c-28070d2b66a2")
+		)
+		(pin "4"
+			(uuid "314161b2-7dae-4763-b75e-6d59e31af91a")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 88.138 129.54 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "282ba369-1bd1-4e51-9151-f2a706df20a7")
+		(property "Reference" "R12"
+			(at 88.138 124.46 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 88.138 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 88.138 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 88.138 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 88.138 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6730ffdc-bb61-469b-8f3f-f8ffb53453e7")
+		)
+		(pin "2"
+			(uuid "8b9b0a26-585b-43a9-9a46-b250875e23be")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 93.218 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2b3cf0df-866c-4ca6-b229-911513d4adad")
+		(property "Reference" "Q7"
+			(at 106.172 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 105.918 99.314 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 114.808 182.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 114.808 282.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 93.218 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 114.808 482.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 114.808 582.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 114.808 682.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 114.808 782.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 114.808 882.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "131b2317-afa3-4b9e-aacd-45bfe1293193")
+		)
+		(pin "3"
+			(uuid "f2960585-665c-4f08-97bf-ec36458e325f")
+		)
+		(pin "2"
+			(uuid "40eb616d-f135-43af-9b0c-7d3d7c02380c")
+		)
+		(pin "4"
+			(uuid "32c5f015-9eee-4560-85e7-995a2576ca29")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 143.256 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "386f4687-6488-4ff7-b1ca-dc0ec6cf6c81")
+		(property "Reference" "Q13"
+			(at 156.21 138.684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 155.956 141.224 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 164.846 224.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 164.846 324.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 143.256 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 164.846 524.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 164.846 624.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 164.846 724.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 164.846 824.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 164.846 924.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3076f412-ba5d-4912-b9cc-5e89d0a7da19")
+		)
+		(pin "3"
+			(uuid "c17a714f-f97c-4085-80d6-dbad4d9f2b44")
+		)
+		(pin "2"
+			(uuid "99f8d34d-ea27-428e-923c-887aa568d4a6")
+		)
+		(pin "4"
+			(uuid "ef5b81e4-7fea-4fed-b731-11ca525e1c4f")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 99.568 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3928a6d4-7c9f-40d7-915b-960c267b1ee9")
+		(property "Reference" "CR7"
+			(at 88.138 72.644 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 84.328 76.2 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 99.568 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 99.568 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 99.568 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "15d560e7-cf23-4caa-90e5-6e3f379637ca")
+		)
+		(pin "1"
+			(uuid "db6ce128-634d-4e8d-a878-0a28454708c5")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 99.568 38.1 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4135c541-98ee-4e71-8b7e-c53f99d3d8b4")
+		(property "Reference" "CR2"
+			(at 88.138 30.734 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 84.328 34.29 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 99.568 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 99.568 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 99.568 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1a9a79c1-fbd5-4b61-8667-5ad2bf87f4e4")
+		)
+		(pin "1"
+			(uuid "099055f6-ac5c-4d9d-b466-45199a3ed787")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 249.682 121.92 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "44b8dc08-eebd-427d-8f07-33129793302a")
+		(property "Reference" "CR15"
+			(at 238.252 114.554 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 234.442 118.11 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 249.682 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 249.682 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 249.682 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "54492100-0dd7-4eaa-8a61-fc97c2174027")
+		)
+		(pin "1"
+			(uuid "9e6a0124-9070-45da-b45e-ea8f57343b74")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 193.294 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "44d5cf12-03b4-4762-b7b3-fbbcf536efc4")
+		(property "Reference" "Q14"
+			(at 206.248 138.684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 205.994 141.224 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 214.884 224.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 214.884 324.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 193.294 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 214.884 524.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 214.884 624.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 214.884 724.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 214.884 824.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 214.884 924.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8bf094b8-06a8-4a43-b06e-e811881cbd99")
+		)
+		(pin "3"
+			(uuid "613e73e5-1270-4469-8b36-52d66a13abe0")
+		)
+		(pin "2"
+			(uuid "0bf6cf5a-b888-40a7-a4f0-061d4910dd11")
+		)
+		(pin "4"
+			(uuid "8981a518-0cda-4c8c-b283-9aaa3a1ad33f")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 149.606 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "48794381-8416-43c0-8c7b-3bd70a9ab783")
+		(property "Reference" "CR8"
+			(at 138.176 72.644 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 134.366 76.2 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 149.606 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 149.606 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 149.606 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "47b40ba9-cf44-46bb-af89-01d85ecc0654")
+		)
+		(pin "1"
+			(uuid "0ff6e6a4-ba3a-4bb3-a145-dd83ea0aa351")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 138.176 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4895b7bd-1154-49a7-b351-c045cf3f39bf")
+		(property "Reference" "R8"
+			(at 138.176 82.55 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 138.176 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 138.176 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 138.176 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 138.176 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "99ac9d63-f08e-464a-9366-36f437303f05")
+		)
+		(pin "2"
+			(uuid "6ceb76ce-3bb1-4271-94a7-edb77f45e2d2")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 188.214 129.54 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "48f19181-b5cf-41d9-b5fd-b536c0b28059")
+		(property "Reference" "R14"
+			(at 188.214 124.46 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 188.214 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 188.214 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 188.214 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 188.214 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "abe42756-6102-4d8f-8f3b-5e99782c07bc")
+		)
+		(pin "2"
+			(uuid "e03489d4-fb17-4120-8fe4-2004451fcff2")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 249.682 38.1 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "49d0b6e5-2b23-46ee-bd43-f5eef266b3e7")
+		(property "Reference" "CR5"
+			(at 238.252 30.734 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 234.442 34.29 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 249.682 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 249.682 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 249.682 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4eb126dd-6500-404b-ba82-57d0703f3b52")
+		)
+		(pin "1"
+			(uuid "c85545f4-001f-497d-be0d-9aabc6c832d1")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 199.644 38.1 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4df1f8fc-981c-43c5-a861-7d5fb43e0b4e")
+		(property "Reference" "CR4"
+			(at 188.214 30.734 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 184.404 34.29 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 199.644 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 199.644 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 199.644 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1ea1a705-2d2a-4f30-b4dd-24224a0ec4f8")
+		)
+		(pin "1"
+			(uuid "b9c9d85d-72f2-4dd9-a6bf-86ee2d95f8ba")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 193.294 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "52094f44-d8ae-498d-8830-eb7c6db5ae44")
+		(property "Reference" "Q4"
+			(at 206.248 54.864 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 205.994 57.404 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 214.884 140.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 214.884 240.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 193.294 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 214.884 440.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 214.884 540.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 214.884 640.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 214.884 740.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 214.884 840.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b64528d7-ed3f-4029-b8a4-4a6cf6b21a88")
+		)
+		(pin "3"
+			(uuid "832d6eb8-f670-491a-a27c-0aefc9830033")
+		)
+		(pin "2"
+			(uuid "1f78dddb-a4cb-4a9a-96ee-47c5b4935c89")
+		)
+		(pin "4"
+			(uuid "a5a76112-d05a-4801-ad1d-26710a57cc66")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 93.218 171.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "58c901ce-71c5-458d-878e-16c43e7630f9")
+		(property "Reference" "Q17"
+			(at 106.172 180.594 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 105.918 183.134 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 114.808 266.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 114.808 366.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 93.218 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 114.808 566.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 114.808 666.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 114.808 766.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 114.808 866.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 114.808 966.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "65da297b-a4a4-4a64-9f16-5a00694c7946")
+		)
+		(pin "3"
+			(uuid "55753534-51b9-4c46-a821-d93d17640988")
+		)
+		(pin "2"
+			(uuid "6364ec00-335b-4233-9e86-c4b62e518610")
+		)
+		(pin "4"
+			(uuid "cf40988d-65c2-44f6-8eb6-3e731b98be80")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 38.1 171.45 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5fbe4662-fc2e-4276-819b-4a68a92c733b")
+		(property "Reference" "R16"
+			(at 38.1 166.37 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 38.1 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 38.1 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 38.1 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 38.1 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "31b44e3a-a838-4356-a695-53a123f827a7")
+		)
+		(pin "2"
+			(uuid "14664202-d7ca-484b-810b-a8dc4ba0c613")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 49.53 121.92 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "60b3ddaf-5873-483d-bc09-fe3b76f9506e")
+		(property "Reference" "CR11"
+			(at 38.1 114.554 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 34.29 118.11 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 49.53 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 49.53 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 49.53 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2123b58c-63d3-4966-92ae-0d41e0ef9a06")
+		)
+		(pin "1"
+			(uuid "2a240b73-1ad2-46f4-b98d-250378ae59c2")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 88.138 45.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "64a75483-53cb-41bd-b07f-15b56745f45b")
+		(property "Reference" "R2"
+			(at 88.138 40.64 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 88.138 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 88.138 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 88.138 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 88.138 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "47db9a5a-d540-4cb4-937f-f0e7b77ea7c6")
+		)
+		(pin "2"
+			(uuid "acebe878-22c2-48ac-aff3-6a7630c152d1")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 243.332 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "653f3c10-6df9-407b-a558-e5c759edfd4f")
+		(property "Reference" "Q10"
+			(at 256.286 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 256.032 99.314 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 264.922 182.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 264.922 282.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 243.332 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 264.922 482.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 264.922 582.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 264.922 682.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 264.922 782.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 264.922 882.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a43db987-5e57-4c9a-9cc1-6c0dcf3ae02b")
+		)
+		(pin "3"
+			(uuid "4a221f2a-08df-45db-bb2f-64649806659c")
+		)
+		(pin "2"
+			(uuid "70003301-f706-489a-8bae-2b3726ad53f2")
+		)
+		(pin "4"
+			(uuid "dd531564-ed8d-41bb-bc57-0bb2eb156d6d")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 93.218 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6708b213-0763-4c76-8c48-fe3cc9347abc")
+		(property "Reference" "Q2"
+			(at 106.172 54.864 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 105.918 57.404 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 114.808 140.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 114.808 240.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 93.218 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 114.808 440.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 114.808 540.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 114.808 640.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 114.808 740.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 114.808 840.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "30e332e2-1c7c-47c3-b526-31b70aadf3a8")
+		)
+		(pin "3"
+			(uuid "8a6874e6-5409-43ce-8d9f-e9b14d4ddbbd")
+		)
+		(pin "2"
+			(uuid "9ae19521-89f5-478d-bb32-914d61b0a6d1")
+		)
+		(pin "4"
+			(uuid "6c474ac4-1944-408a-8b65-b98b1ed8c3ad")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 138.176 129.54 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6bc0cda3-839f-4c01-8d8b-3f9f900f1ef5")
+		(property "Reference" "R13"
+			(at 138.176 124.46 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 138.176 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 138.176 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 138.176 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 138.176 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8a214a5d-e541-4be9-b934-5936d3128d3a")
+		)
+		(pin "2"
+			(uuid "1e798199-8c53-4770-9b43-4caca1f58aa0")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 238.252 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "70797632-ad4f-4220-845e-da35beee9da7")
+		(property "Reference" "R10"
+			(at 238.252 82.55 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 238.252 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 238.252 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 238.252 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 238.252 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3d078ea0-3a00-45fe-8ca7-545fd5b93ffb")
+		)
+		(pin "2"
+			(uuid "cb58d295-56de-4883-8775-e0de8421f190")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 38.1 45.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "79234f73-5ad1-4a54-a136-893228353590")
+		(property "Reference" "R1"
+			(at 38.1 40.64 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 38.1 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 38.1 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 38.1 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 38.1 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f06db450-431e-4943-867f-a27db20cb4fc")
+		)
+		(pin "2"
+			(uuid "381f9ec4-021a-4d74-916f-d8dace6c63d3")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 88.138 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8581eb82-ed5b-4050-b9d3-12c216860e8a")
+		(property "Reference" "R7"
+			(at 88.138 82.55 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 88.138 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 88.138 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 88.138 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 88.138 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2cd956a5-b0c1-4753-b4e1-899f9910415a")
+		)
+		(pin "2"
+			(uuid "a6d4ecac-7a7d-45ca-a67f-96d83c54cbdd")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 143.256 171.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "86a51991-6826-459a-80c8-369e14688090")
+		(property "Reference" "Q18"
+			(at 156.21 180.594 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 155.956 183.134 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 164.846 266.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 164.846 366.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 143.256 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 164.846 566.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 164.846 666.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 164.846 766.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 164.846 866.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 164.846 966.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4058d3c5-829c-40fc-a2c0-5fb3948dae57")
+		)
+		(pin "3"
+			(uuid "09461f2a-82c5-4c12-beab-890642acceb1")
+		)
+		(pin "2"
+			(uuid "84ebf6a3-afc3-41e8-a048-0e47f1fb8c55")
+		)
+		(pin "4"
+			(uuid "3b7e5180-073f-4ca2-b430-c3a063607854")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 43.18 171.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8b4f6e1c-dd3d-4610-8fa6-f7fa433fc4ce")
+		(property "Reference" "Q16"
+			(at 56.134 180.594 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 55.88 183.134 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 64.77 266.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 64.77 366.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 43.18 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 64.77 566.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 64.77 666.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 64.77 766.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 64.77 866.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 64.77 966.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2199077d-77a0-4bb8-9eb7-024a47ca8a4d")
+		)
+		(pin "3"
+			(uuid "04bf0c95-d42c-4cc8-b5dc-5462609ab698")
+		)
+		(pin "2"
+			(uuid "c160d4ef-b504-4871-be45-3fe75b8c8eb0")
+		)
+		(pin "4"
+			(uuid "bf13801e-5877-404c-bfd7-07d2b6163686")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 243.332 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8fc4268d-29f9-494a-9a68-ba2f0855c022")
+		(property "Reference" "Q5"
+			(at 256.286 54.864 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 256.032 57.404 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 264.922 140.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 264.922 240.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 243.332 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 264.922 440.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 264.922 540.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 264.922 640.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 264.922 740.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 264.922 840.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bb7e32f1-32dd-418f-b9a1-e31776f24aca")
+		)
+		(pin "3"
+			(uuid "778daca6-765f-4215-b00b-6a0a78620554")
+		)
+		(pin "2"
+			(uuid "25fa302e-0e47-45b4-a4e9-c52a92c0b43e")
+		)
+		(pin "4"
+			(uuid "e0561210-03f8-4e5e-b884-b81d3ffc7ac9")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 188.214 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a38552af-86a2-419b-9c73-1a72745745fa")
+		(property "Reference" "R9"
+			(at 188.214 82.55 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 188.214 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 188.214 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 188.214 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 188.214 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c559ec98-9dd5-49af-bec0-6326c5724df7")
+		)
+		(pin "2"
+			(uuid "bbe77bbb-902c-421b-9cb9-7c86534c5a22")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 243.332 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a3ab8c61-1045-4c5f-b7e8-162b4af94fe5")
+		(property "Reference" "Q15"
+			(at 256.286 138.684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 256.032 141.224 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 264.922 224.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 264.922 324.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 243.332 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 264.922 524.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 264.922 624.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 264.922 724.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 264.922 824.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 264.922 924.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aba4b2e2-b46e-42b3-b5b7-52032a4161ea")
+		)
+		(pin "3"
+			(uuid "cfa5ca5f-89f9-4365-97f6-f19a32702ef3")
+		)
+		(pin "2"
+			(uuid "0b7dc6fc-964e-41b6-8838-6196eee95045")
+		)
+		(pin "4"
+			(uuid "03413a85-0e4b-483d-9a55-c9b13b985f17")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 49.53 163.83 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "afa3b19a-ee2e-4adb-a1f7-96ba0dabe818")
+		(property "Reference" "CR16"
+			(at 38.1 156.464 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 34.29 160.02 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 49.53 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 49.53 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 49.53 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0b51a5db-1e0d-4efa-9b5b-2145ba5adcbe")
+		)
+		(pin "1"
+			(uuid "13d0a992-30aa-4c70-928b-729cff025893")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 49.53 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bd292f29-883d-4072-893c-19de9fa10a72")
+		(property "Reference" "CR6"
+			(at 38.1 72.644 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 34.29 76.2 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 49.53 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 49.53 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 49.53 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c669c551-b60e-4b52-abec-2a1b129212c4")
+		)
+		(pin "1"
+			(uuid "f89a2b0a-13d6-4e4a-901d-0227164a7355")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 43.18 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bf0154d1-c913-4bab-a18c-9474fb88c924")
+		(property "Reference" "Q11"
+			(at 56.134 138.684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 55.88 141.224 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 64.77 224.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 64.77 324.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 43.18 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 64.77 524.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 64.77 624.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 64.77 724.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 64.77 824.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 64.77 924.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "da9a8e0e-7911-48e0-987d-2c466badbe72")
+		)
+		(pin "3"
+			(uuid "191ccd33-3ee1-4761-a4a1-f8351ea47787")
+		)
+		(pin "2"
+			(uuid "258d6d1b-aa55-4406-a51a-f1a00df12909")
+		)
+		(pin "4"
+			(uuid "e9435fa2-ca87-4547-9a0f-21aac5d63baf")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 199.644 121.92 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c1c869b3-0ee8-420f-b5fa-325b5074ff99")
+		(property "Reference" "CR14"
+			(at 188.214 114.554 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 184.404 118.11 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 199.644 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 199.644 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 199.644 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "beca7d1f-9a58-4119-97f3-2c5fbc550729")
+		)
+		(pin "1"
+			(uuid "cd265f2d-e3ad-4293-a938-b55b37bb093c")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 149.606 121.92 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c6be5d36-5ed9-4bb2-8d6c-f9b525d75f36")
+		(property "Reference" "CR13"
+			(at 138.176 114.554 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 134.366 118.11 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 149.606 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 149.606 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 149.606 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ad9036ee-dbdd-439e-aef9-a54a86b6482f")
+		)
+		(pin "1"
+			(uuid "74440a58-16b0-4ad9-bdc6-249c94580b6d")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 38.1 129.54 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "caa6a01c-825a-40cd-8afb-a2d9c9ced859")
+		(property "Reference" "R11"
+			(at 38.1 124.46 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 38.1 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 38.1 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 38.1 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 38.1 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "31272a68-b8a4-47e7-9174-596491f7bdbc")
+		)
+		(pin "2"
+			(uuid "14b176b6-41d1-496e-8a28-a1db02085620")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 138.176 171.45 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cc532cfc-8a2f-4507-9d66-c220f839178f")
+		(property "Reference" "R31"
+			(at 138.176 166.37 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 138.176 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 138.176 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 138.176 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 138.176 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "534aa908-fe4c-41e1-8ba9-d0bc2d7b9573")
+		)
+		(pin "2"
+			(uuid "5e2e696b-fed3-493e-b717-bf8013e628bf")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 188.214 45.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d0fbfebc-4ddf-478f-9435-4655ff4e417d")
+		(property "Reference" "R4"
+			(at 188.214 40.64 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 188.214 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 188.214 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 188.214 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 188.214 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6c883ea1-f79e-49f5-8f37-7a1b5edf074b")
+		)
+		(pin "2"
+			(uuid "d2cbecd7-caa5-4f68-8894-f6d5b35af3b2")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 43.18 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d3cf8b67-6f37-4a0d-aa7a-67541904281b")
+		(property "Reference" "Q1"
+			(at 56.134 54.864 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 55.88 57.404 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 64.77 140.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 64.77 240.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 43.18 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 64.77 440.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 64.77 540.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 64.77 640.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 64.77 740.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 64.77 840.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9f4a8c28-5d9d-4052-b01c-1d96504c0d4f")
+		)
+		(pin "3"
+			(uuid "2c14fc8b-8c0c-4c80-9af0-8c9bb043a396")
+		)
+		(pin "2"
+			(uuid "1d638586-8410-4557-804b-4854212ebe1e")
+		)
+		(pin "4"
+			(uuid "62f50ecb-5fe1-4d51-a874-df74a0b75e66")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 193.294 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "db3a8a3b-6ad1-4c0d-8c77-d4194c5b3c80")
+		(property "Reference" "Q9"
+			(at 206.248 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 205.994 99.314 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 214.884 182.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 214.884 282.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 193.294 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 214.884 482.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 214.884 582.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 214.884 682.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 214.884 782.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 214.884 882.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d1571c8e-db21-4fd8-b3a7-3a0c3d00c237")
+		)
+		(pin "3"
+			(uuid "74a8abaa-1d7b-4a4e-9a8e-b02c1974bb68")
+		)
+		(pin "2"
+			(uuid "67672568-78d5-4839-b413-2f30dda16a7a")
+		)
+		(pin "4"
+			(uuid "4e860921-8bc8-45f5-ab58-14189574524e")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 249.682 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e82073d2-22c6-4cbb-b858-b4d71b8e0cdc")
+		(property "Reference" "CR10"
+			(at 238.252 72.644 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 234.442 76.2 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 249.682 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 249.682 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 249.682 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "01850ddd-b2ee-446f-94b9-3a5693f67066")
+		)
+		(pin "1"
+			(uuid "15e8bf95-f20a-4c60-8584-373cf957d0d9")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FZT600TA:FZT600TA")
+		(at 143.256 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f40dc765-9b13-4322-bacb-9bbd75deaa7b")
+		(property "Reference" "Q3"
+			(at 156.21 54.864 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FZT600TA"
+			(at 155.956 57.404 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "fzt:SOT230P700X170-4N"
+			(at 164.846 140.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
+			(at 164.846 240.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
+			(at 143.256 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.7"
+			(at 164.846 440.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "522-FZT600TA"
+			(at 164.846 540.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
+			(at 164.846 640.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 164.846 740.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FZT600TA"
+			(at 164.846 840.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "453f850d-277c-4a41-aac5-38ee54ac926a")
+		)
+		(pin "3"
+			(uuid "03f8788a-1505-4e37-b0a5-64d6df30720b")
+		)
+		(pin "2"
+			(uuid "c12ea878-ad30-4058-bc30-93864dd8c0e8")
+		)
+		(pin "4"
+			(uuid "418f98fd-b1ed-45cb-9f04-a9eae1e35555")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "s1j:S1J-13-F")
+		(at 99.568 121.92 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fe9be6c5-a509-42d9-b4d5-a723eff957a0")
+		(property "Reference" "CR12"
+			(at 88.138 114.554 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "S1J-13-F"
+			(at 84.328 118.11 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "s1j:SMA_DIO-L"
+			(at 99.568 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds16003.pdf"
+			(at 99.568 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1N4005 Replacement"
+			(at 99.568 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4a104b0c-69d4-4e72-be9e-c06dc95736f5")
+		)
+		(pin "1"
+			(uuid "30d3e1a4-e0a8-469b-9ad3-760a5a01a986")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "CR12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 88.138 171.45 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ffe05db8-ff90-4f7c-a339-1899815fc941")
+		(property "Reference" "R30"
+			(at 88.138 166.37 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "125"
+			(at 88.138 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 88.138 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 88.138 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 88.138 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d3ac38ca-8a3a-45e4-a265-b757b168e1ea")
+		)
+		(pin "2"
+			(uuid "2a1cfba9-1657-499b-88a4-922655412e59")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/a2bfffae-2726-4c89-b39f-8220e8b58362"
+					(reference "R30")
+					(unit 1)
+				)
+			)
+		)
+	)
+)
