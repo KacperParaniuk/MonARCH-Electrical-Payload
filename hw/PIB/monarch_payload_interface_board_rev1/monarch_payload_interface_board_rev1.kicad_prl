@@ -1,7 +1,7 @@
 {
   "board": {
     "active_layer": 0,
-    "active_layer_preset": "",
+    "active_layer_preset": "All Layers",
     "auto_track_width": true,
     "hidden_netclasses": [],
     "hidden_nets": [],
@@ -72,6 +72,8 @@
       false,
       false,
       false,
+      false,
+      false,
       false
     ],
     "col_order": [
@@ -84,9 +86,28 @@
       6,
       7,
       8,
-      9
+      9,
+      10,
+      11
     ],
     "col_widths": [
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      222,
+      207,
+      136,
+      92,
+      136,
+      136,
+      136,
+      98,
+      136,
+      136,
+      136,
+      136
+=======
+>>>>>>> Stashed changes
       186,
       171,
       112,
@@ -97,6 +118,10 @@
       83,
       112,
       112
+<<<<<<< Updated upstream
+=======
+>>>>>>> a2a4114ff1f26d2045e62050657a539a3d0ad470
+>>>>>>> Stashed changes
     ],
     "custom_group_rules": [],
     "expanded_rows": [],

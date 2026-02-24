@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 26442218837368083
+35SVT82M
+CAP_35SVT82M
+=======
+<<<<<<< HEAD
+26815092535294305
 35SVT82M
 CAP_35SVT82M
 
@@ -6,6 +12,68 @@ CAP_35SVT82M
 0
 2
 2
+282837_6
+TE_282837-6
+
+
+0
+6
+6
+5037630291
+CONN_5037630000-SD_02_MOL
+
+5037630291 
+0
+4
+4
+5037630491
+CONN_5037630000-SD_04_MOL
+
+5037630491 
+0
+6
+6
+5037630691
+CONN_5037630000-SD_06_MOL
+
+5037630691 
+0
+8
+8
+ABLS7M2_12_288MHZ_D2Y_T
+XTAL_ABLS7M2-12.288MHZ-D2Y-T
+=======
+26442218837368083
+35SVT82M
+CAP_35SVT82M
+>>>>>>> a2a4114ff1f26d2045e62050657a539a3d0ad470
+>>>>>>> Stashed changes
+
+
+0
+2
+2
+AD7124
+CP-32-12_ADI
+
+AD7124-8BCPZ-RL 
+0
+33
+33
+AD7124
+CP-32-12_ADI-L
+
+AD7124-8BCPZ-RL 
+0
+33
+33
+AD7124
+CP-32-12_ADI-M
+
+AD7124-8BCPZ-RL 
+0
+33
+33
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -61249,6 +61317,13 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
+EXLA1V0402-R82-R
+IND_EXLA1V0402-R82-R
+
+
+0
+2
+2
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -70193,6 +70268,33 @@ SOP65P640X110-14N
 
 
 0
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+16
+16
+MAX232
+SOIC127P600X175-16N
+
+
+0
+16
+16
+MAX232
+TSSOP16
+
+
+0
+16
+16
+MAX31856MUD_T
+SOP65P640X110-14N
+
+
+0
+=======
+>>>>>>> a2a4114ff1f26d2045e62050657a539a3d0ad470
+>>>>>>> Stashed changes
 14
 14
 Module
@@ -105655,6 +105757,26 @@ SMA_DIO
 
 S1J-13-F 
 0
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+5
+5
+fzt
+SOT230P700X170-4N
+FZT600TA-
+Transistor BJT NPN
+0
+4
+4
+s1j
+SMA_DIO
+
+S1J-13-F 
+0
+=======
+>>>>>>> a2a4114ff1f26d2045e62050657a539a3d0ad470
+>>>>>>> Stashed changes
 2
 2
 s1j

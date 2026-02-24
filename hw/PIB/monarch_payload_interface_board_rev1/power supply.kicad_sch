@@ -485,45 +485,46 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "XEL:XEL4020-561MEC"
+		(symbol "EXLA1V0402-R82-R:EXLA1V0402-R82-R"
 			(pin_names
-				(offset 0.254)
+				(offset 1.016)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "L"
-				(at 6.985 5.08 0)
+				(at -5.08 3.302 0)
 				(effects
 					(font
-						(size 1.524 1.524)
+						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Value" "XEL4020-561MEC"
-				(at 6.985 -2.54 0)
+			(property "Value" "EXLA1V0402-R82-R"
+				(at -5.08 -2.54 0)
 				(effects
 					(font
-						(size 1.524 1.524)
+						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Footprint" "IND_XEL4020_COC"
+			(property "Footprint" "EXLA1V0402-R82-R:IND_EXLA1V0402-R82-R"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
-						(italic yes)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "XEL4020-561MEC"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
-						(italic yes)
 					)
 					(hide yes)
 				)
@@ -537,39 +538,177 @@
 					(hide yes)
 				)
 			)
-			(property "ki_locked" ""
+			(property "DigiKey_Part_Number" "283-EXLA1V0402-R82-RCT-ND"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-				)
-			)
-			(property "ki_keywords" "XEL4020-561MEC"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "IND_XEL4020_COC IND_XEL4020_COC-M IND_XEL4020_COC-L"
+			(property "SnapEDA_Link" "https://www.snapeda.com/parts/EXLA1V0402-R82-R/Eaton/view-part/?ref=snap"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
-			(symbol "XEL4020-561MEC_1_1"
+			(property "MAXIMUM_PACKAGE_HEIGHT" "2.1mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "CREATOR" "ASHISH"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Package" "None"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Check_prices" "https://www.snapeda.com/parts/EXLA1V0402-R82-R/Eaton/view-part/?ref=eda"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "DUPLICATE" "EXLA1V0402-1R5-R-,-EXLA1V0402-R82-R-,-EXLA1V0402-2R2-R-,-EXLA1V0402-R60-R-,-EXLA1V0402-4R7-R-,-EXLA1V0402-R68-R-,-EXLA1V0402-R47-R-,-EXLA1V0402-2R0-R-,-EXLA1V0402-3R3-R-,-EXLA1V0402-1R0-R-,-EXLA1V0402-R56-R"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "PARTREV" "July 2022"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "VERIFIER" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MF" "Eaton - Electronics Division"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MP" "EXLA1V0402-R82-R"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "IND MOLDED SHLD 0.82UH 8.5A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MANUFACTURER" "Eaton"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(symbol "EXLA1V0402-R82-R_0_0"
 				(polyline
 					(pts
-						(xy 2.54 0) (xy 2.54 1.27)
+						(xy -5.08 2.54) (xy 5.08 2.54)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 1.905) (xy 5.08 1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 0) (xy -7.62 0)
+					)
+					(stroke
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -577,23 +716,11 @@
 					)
 				)
 				(arc
-					(start 2.54 1.27)
-					(mid 3.81 2.5344)
-					(end 5.08 1.27)
+					(start -5.08 0)
+					(mid -3.81 1.2645)
+					(end -2.54 0)
 					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 0) (xy 5.08 1.27)
-					)
-					(stroke
-						(width 0.2032)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -601,23 +728,11 @@
 					)
 				)
 				(arc
-					(start 5.08 1.27)
-					(mid 6.35 2.5344)
-					(end 7.62 1.27)
+					(start -2.54 0)
+					(mid -1.27 1.2645)
+					(end 0 0)
 					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.62 0) (xy 7.62 1.27)
-					)
-					(stroke
-						(width 0.2032)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -625,23 +740,11 @@
 					)
 				)
 				(arc
-					(start 7.62 1.27)
-					(mid 8.89 2.5344)
-					(end 10.16 1.27)
+					(start 0 0)
+					(mid 1.27 1.2645)
+					(end 2.54 0)
 					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 0) (xy 10.16 1.27)
-					)
-					(stroke
-						(width 0.2032)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -649,11 +752,11 @@
 					)
 				)
 				(arc
-					(start 10.16 1.27)
-					(mid 11.43 2.5344)
-					(end 12.7 1.27)
+					(start 2.54 0)
+					(mid 3.81 1.2645)
+					(end 5.08 0)
 					(stroke
-						(width 0.2032)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -662,194 +765,48 @@
 				)
 				(polyline
 					(pts
-						(xy 12.7 0) (xy 12.7 1.27)
+						(xy 5.08 0) (xy 7.62 0)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-				(pin unspecified line
-					(at 0 0 0)
-					(length 2.54)
-					(name "2"
+				(pin passive line
+					(at -12.7 0 0)
+					(length 5.08)
+					(name "~"
 						(effects
 							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 15.24 0 180)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-			)
-			(symbol "XEL4020-561MEC_1_2"
-				(arc
-					(start -1.27 10.16)
-					(mid -2.5344 11.43)
-					(end -1.27 12.7)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.27 7.62)
-					(mid -2.5344 8.89)
-					(end -1.27 10.16)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.27 5.08)
-					(mid -2.5344 6.35)
-					(end -1.27 7.62)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.27 2.54)
-					(mid -2.5344 3.81)
-					(end -1.27 5.08)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 12.7) (xy -1.27 12.7)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 10.16) (xy -1.27 10.16)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 7.62) (xy -1.27 7.62)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 5.08) (xy -1.27 5.08)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy -1.27 2.54)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at 0 15.24 270)
-					(length 2.54)
-					(name "1"
+				(pin passive line
+					(at 12.7 0 180)
+					(length 5.08)
+					(name "~"
 						(effects
 							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 0 0 90)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1546,10 +1503,10 @@
 		(uuid "70b07487-1e0c-447f-8594-65153de410f3")
 	)
 	(junction
-		(at 72.39 67.31)
+		(at 77.47 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "976493c4-dd71-4b30-aa40-8379d7f33859")
+		(uuid "763274f2-15a0-4df3-aa91-02cb2c753f37")
 	)
 	(junction
 		(at 82.55 100.33)
@@ -1588,6 +1545,12 @@
 		(uuid "e970f176-9a3e-4eb3-973c-99999614e543")
 	)
 	(junction
+		(at 68.58 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ed931d8f-2f5d-4bbc-94fd-941a8efe52a5")
+	)
+	(junction
 		(at 149.86 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1608,6 +1571,16 @@
 			(type default)
 		)
 		(uuid "0170d78c-7ca9-41cb-ad47-faaf5cac679f")
+	)
+	(wire
+		(pts
+			(xy 68.58 67.31) (xy 77.47 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03fb0580-8a2d-47f6-8743-a4eed3ca63ff")
 	)
 	(wire
 		(pts
@@ -1641,23 +1614,13 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 68.58) (xy 121.92 68.58)
+			(xy 104.14 68.58) (xy 118.11 68.58)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "1df40238-c1c8-4b12-a416-015422bbf26e")
-	)
-	(wire
-		(pts
-			(xy 137.16 68.58) (xy 167.64 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23e01efd-3ba7-4031-8a8a-51ddff1783ec")
 	)
 	(wire
 		(pts
@@ -1811,16 +1774,6 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 83.82) (xy 72.39 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5f8eb022-a0fc-484c-9136-845e7dfcf65c")
-	)
-	(wire
-		(pts
 			(xy 182.88 116.84) (xy 182.88 121.92)
 		)
 		(stroke
@@ -1828,6 +1781,16 @@
 			(type default)
 		)
 		(uuid "63c964a9-93f2-4fc9-9512-5f948c78dcb3")
+	)
+	(wire
+		(pts
+			(xy 77.47 67.31) (xy 85.09 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65ab77dd-1af2-49a6-8512-31672d3dc63f")
 	)
 	(wire
 		(pts
@@ -1851,7 +1814,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 76.2) (xy 72.39 78.74)
+			(xy 77.47 74.93) (xy 77.47 77.47)
 		)
 		(stroke
 			(width 0)
@@ -2061,6 +2024,16 @@
 	)
 	(wire
 		(pts
+			(xy 143.51 68.58) (xy 167.64 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf8af392-6e8c-4cf6-896c-fa3bfed1cba8")
+	)
+	(wire
+		(pts
 			(xy 85.09 77.47) (xy 85.09 78.74)
 		)
 		(stroke
@@ -2078,6 +2051,16 @@
 			(type default)
 		)
 		(uuid "c3447b75-d834-4b02-9d64-a66fef967160")
+	)
+	(wire
+		(pts
+			(xy 68.58 74.93) (xy 68.58 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c37e97e0-a817-46ac-9cd9-6b803bdb35e0")
 	)
 	(wire
 		(pts
@@ -2131,7 +2114,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 67.31) (xy 72.39 67.31)
+			(xy 64.77 67.31) (xy 68.58 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2161,6 +2144,16 @@
 	)
 	(wire
 		(pts
+			(xy 68.58 69.85) (xy 68.58 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc9abd2f-27e9-43bc-a6e9-31f7f8f70b78")
+	)
+	(wire
+		(pts
 			(xy 176.53 68.58) (xy 176.53 85.09)
 		)
 		(stroke
@@ -2171,7 +2164,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 67.31) (xy 72.39 71.12)
+			(xy 77.47 67.31) (xy 77.47 69.85)
 		)
 		(stroke
 			(width 0)
@@ -2278,16 +2271,6 @@
 			(type default)
 		)
 		(uuid "f00daf4a-a5aa-491c-9791-649b70d0e76c")
-	)
-	(wire
-		(pts
-			(xy 72.39 67.31) (xy 85.09 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f07ea70d-1bc8-4274-8383-e236370fc78d")
 	)
 	(wire
 		(pts
@@ -2537,6 +2520,76 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
+		(at 68.58 72.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "497cc0cd-d7d9-4686-9844-1df4786c7f49")
+		(property "Reference" "C9"
+			(at 71.12 71.1262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22u"
+			(at 71.12 73.6662 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 68.58 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 68.58 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 68.58 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ff479504-a233-4646-9658-84ab8f2de3e4")
+		)
+		(pin "2"
+			(uuid "37d76c48-60e2-4f8c-a333-2bc2ee6619d0")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
 		(at 106.68 113.03 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2665,76 +2718,6 @@
 			(project "monarch_payload_interface_board_rev1"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "C6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "XEL:XEL4020-561MEC")
-		(at 121.92 68.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "58e8762d-711c-48b2-92fe-9378212c54c2")
-		(property "Reference" "L1"
-			(at 129.54 60.96 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "XEL4020-561MEC"
-			(at 129.54 63.5 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "XEL:IND_XEL4020_COC-L"
-			(at 121.92 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "XEL4020-561MEC"
-			(at 121.92 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 121.92 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "5b103d08-ad61-4cfe-ade6-02eaa03b38e9")
-		)
-		(pin "1"
-			(uuid "c91ced61-d918-417c-999f-7ba5980cc8d2")
-		)
-		(instances
-			(project ""
-				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
-					(reference "L1")
 					(unit 1)
 				)
 			)
@@ -3341,76 +3324,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
-		(at 72.39 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7c3a20a6-a90a-4558-bd5f-0c50e7fe9750")
-		(property "Reference" "C9"
-			(at 74.93 80.0162 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "22u"
-			(at 74.93 82.5562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 72.39 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 72.39 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 72.39 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a662ff14-9966-46a4-94a0-5346e260059e")
-		)
-		(pin "2"
-			(uuid "078dac1d-0f06-45ab-9b27-0d293905f9aa")
-		)
-		(instances
-			(project "monarch_payload_interface_board_rev1"
-				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
-					(reference "C9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
 		(at 176.53 87.63 0)
 		(unit 1)
@@ -3475,6 +3388,215 @@
 			(project ""
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "EXLA1V0402-R82-R:EXLA1V0402-R82-R")
+		(at 130.81 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "88bfd1a6-00a4-44a1-af3d-9159da0f176c")
+		(property "Reference" "L1"
+			(at 130.81 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "EXLA1V0402-R82-R"
+			(at 130.81 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "EXLA1V0402-R82-R:IND_EXLA1V0402-R82-R"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey_Part_Number" "283-EXLA1V0402-R82-RCT-ND"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/EXLA1V0402-R82-R/Eaton/view-part/?ref=snap"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2.1mm"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CREATOR" "ASHISH"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/EXLA1V0402-R82-R/Eaton/view-part/?ref=eda"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "DUPLICATE" "EXLA1V0402-1R5-R-,-EXLA1V0402-R82-R-,-EXLA1V0402-2R2-R-,-EXLA1V0402-R60-R-,-EXLA1V0402-4R7-R-,-EXLA1V0402-R68-R-,-EXLA1V0402-R47-R-,-EXLA1V0402-2R0-R-,-EXLA1V0402-3R3-R-,-EXLA1V0402-1R0-R-,-EXLA1V0402-R56-R"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "July 2022"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MF" "Eaton - Electronics Division"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "EXLA1V0402-R82-R"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "IND MOLDED SHLD 0.82UH 8.5A"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Eaton"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f63a80dd-ae2e-4538-b354-3148eb371401")
+		)
+		(pin "1"
+			(uuid "d04e7e34-4f8d-473a-bf9f-4a2d3fc19292")
+		)
+		(instances
+			(project ""
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "L1")
 					(unit 1)
 				)
 			)
@@ -3822,6 +3944,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 68.58 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b716776c-1940-4666-802b-b600f42ea542")
+		(property "Reference" "#PWR053"
+			(at 68.58 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 68.58 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 68.58 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 68.58 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 68.58 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a7a3b05d-f4dc-4c7d-ab53-15b34530622e")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 182.88 114.3 0)
 		(unit 1)
@@ -3893,7 +4081,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 72.39 73.66 0)
+		(at 77.47 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3902,7 +4090,7 @@
 		(fields_autoplaced yes)
 		(uuid "be698707-9147-4144-be0c-0b89e9a6b68d")
 		(property "Reference" "C10"
-			(at 74.93 72.3962 0)
+			(at 80.01 71.1262 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3911,7 +4099,7 @@
 			)
 		)
 		(property "Value" "22u"
-			(at 74.93 74.9362 0)
+			(at 80.01 73.6662 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3920,7 +4108,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 72.39 73.66 0)
+			(at 77.47 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3929,7 +4117,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 72.39 73.66 0)
+			(at 77.47 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3938,7 +4126,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 72.39 73.66 0)
+			(at 77.47 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4163,7 +4351,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 72.39 85.09 0)
+		(at 77.47 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4172,7 +4360,7 @@
 		(fields_autoplaced yes)
 		(uuid "e8d761ac-b88e-4b34-8051-a833af8638f2")
 		(property "Reference" "#PWR018"
-			(at 72.39 91.44 0)
+			(at 77.47 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4181,7 +4369,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 72.39 90.17 0)
+			(at 77.47 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4189,7 +4377,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 72.39 85.09 0)
+			(at 77.47 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4198,7 +4386,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 72.39 85.09 0)
+			(at 77.47 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4207,7 +4395,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 72.39 85.09 0)
+			(at 77.47 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)

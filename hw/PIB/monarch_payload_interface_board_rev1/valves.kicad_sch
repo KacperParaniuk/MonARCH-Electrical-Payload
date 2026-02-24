@@ -4231,7 +4231,7 @@
 		(uuid "12db1a87-c2ad-4045-a5b0-fb41599e327d")
 	)
 	(hierarchical_label "Valve16+"
-		(shape input)
+		(shape output)
 		(at 62.23 153.67 0)
 		(effects
 			(font
@@ -4330,7 +4330,7 @@
 		(uuid "2e6937eb-bd0c-4c75-b10a-bff4aab4a0c5")
 	)
 	(hierarchical_label "Valve11+"
-		(shape input)
+		(shape output)
 		(at 62.23 111.76 0)
 		(effects
 			(font
@@ -4374,7 +4374,7 @@
 		(uuid "4067087e-b0e2-48c3-b1ad-7673ef9923a0")
 	)
 	(hierarchical_label "Valve2+"
-		(shape input)
+		(shape output)
 		(at 112.268 27.94 0)
 		(effects
 			(font
@@ -4407,7 +4407,7 @@
 		(uuid "48f78651-6313-45ed-a1b0-3518bb7d9f15")
 	)
 	(hierarchical_label "Valve14+"
-		(shape input)
+		(shape output)
 		(at 212.344 111.76 0)
 		(effects
 			(font
@@ -4517,7 +4517,7 @@
 		(uuid "5e37a4f2-be41-4c25-a8c1-c2ac6c888d88")
 	)
 	(hierarchical_label "Valve18+"
-		(shape input)
+		(shape output)
 		(at 162.306 153.67 0)
 		(effects
 			(font
@@ -4605,7 +4605,7 @@
 		(uuid "6ba04b3c-040e-48d8-b4d6-b13b427a49c8")
 	)
 	(hierarchical_label "Valve15+"
-		(shape input)
+		(shape output)
 		(at 262.382 111.76 0)
 		(effects
 			(font
@@ -4616,7 +4616,7 @@
 		(uuid "6c1a0f24-2f68-4895-85d0-67397a113a8d")
 	)
 	(hierarchical_label "Valve7+"
-		(shape input)
+		(shape output)
 		(at 112.268 69.85 0)
 		(effects
 			(font
@@ -4649,7 +4649,7 @@
 		(uuid "6fe45989-6d15-41e1-a7b7-92247a752f54")
 	)
 	(hierarchical_label "Valve9+"
-		(shape input)
+		(shape output)
 		(at 212.344 69.85 0)
 		(effects
 			(font
@@ -4660,7 +4660,7 @@
 		(uuid "70020f6d-6a49-4f45-af2a-ad0948ab9ebe")
 	)
 	(hierarchical_label "Valve13+"
-		(shape input)
+		(shape output)
 		(at 162.306 111.76 0)
 		(effects
 			(font
@@ -4693,7 +4693,7 @@
 		(uuid "7cdf30fa-76b7-4dcc-9040-d30240f725ef")
 	)
 	(hierarchical_label "Valve6+"
-		(shape input)
+		(shape output)
 		(at 62.23 69.85 0)
 		(effects
 			(font
@@ -4737,7 +4737,7 @@
 		(uuid "8c2cb209-1a17-4ffe-9c33-ba42058bf40c")
 	)
 	(hierarchical_label "Valve5+"
-		(shape input)
+		(shape output)
 		(at 262.382 27.94 0)
 		(effects
 			(font
@@ -4748,7 +4748,7 @@
 		(uuid "8ce47bc0-67c6-40c9-9fb1-3967899eb7f3")
 	)
 	(hierarchical_label "Valve3+"
-		(shape input)
+		(shape output)
 		(at 162.306 27.94 0)
 		(effects
 			(font
@@ -4759,7 +4759,7 @@
 		(uuid "8d857928-183a-43c8-9717-d059b0f9663b")
 	)
 	(hierarchical_label "Valve17+"
-		(shape input)
+		(shape output)
 		(at 112.268 153.67 0)
 		(effects
 			(font
@@ -4814,7 +4814,7 @@
 		(uuid "a4a8c847-13eb-4854-9ab8-95a355cfe9a7")
 	)
 	(hierarchical_label "Valve12+"
-		(shape input)
+		(shape output)
 		(at 112.268 111.76 0)
 		(effects
 			(font
@@ -4825,7 +4825,7 @@
 		(uuid "a68ef097-676b-4af1-ae5b-55124f2d4c38")
 	)
 	(hierarchical_label "Valve8+"
-		(shape input)
+		(shape output)
 		(at 162.306 69.85 0)
 		(effects
 			(font
@@ -5012,7 +5012,7 @@
 		(uuid "d8411f2b-dc21-42d4-8b61-50887fc742d4")
 	)
 	(hierarchical_label "Valve10+"
-		(shape input)
+		(shape output)
 		(at 262.382 69.85 0)
 		(effects
 			(font
@@ -5056,7 +5056,7 @@
 		(uuid "de43a712-a20b-4719-8499-717390ce8652")
 	)
 	(hierarchical_label "Valve4+"
-		(shape input)
+		(shape output)
 		(at 212.344 27.94 0)
 		(effects
 			(font
@@ -5166,7 +5166,7 @@
 		(uuid "f6b583c9-a12b-45cc-86c2-7009489385d2")
 	)
 	(hierarchical_label "Valve1+"
-		(shape input)
+		(shape output)
 		(at 62.23 27.94 0)
 		(effects
 			(font
