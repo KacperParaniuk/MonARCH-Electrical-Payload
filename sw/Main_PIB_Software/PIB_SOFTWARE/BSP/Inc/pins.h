@@ -1,0 +1,25 @@
+/*
+ * pins.h
+ *
+ *  Created on: Feb 24, 2026
+ *      Author: Kacper Paraniuk
+ */
+
+#ifndef INC_PINS_H_
+#define INC_PINS_H_
+
+
+#include "main.h"
+
+// Aliases
+
+// define constants.
+
+// Board Level Constants:
+
+
+
+
+#endif /* INC_PINS_H_ */
+
+
