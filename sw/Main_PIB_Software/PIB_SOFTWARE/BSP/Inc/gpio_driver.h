@@ -11,13 +11,21 @@
 
 
 typedef struct{
-
+	void (init*);
 
 
 
 
 
 } halGPIO_t;
+
+
+
+
+void init();
+void read();
+void write();
+void toggle();
 
 
 

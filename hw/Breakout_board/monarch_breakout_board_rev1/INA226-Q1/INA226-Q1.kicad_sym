@@ -220,7 +220,7 @@
 				)
 			)
 			(pin power_in line
-				(at 20.32 3.81 90)
+				(at 20.32 11.43 270)
 				(length 7.62)
 				(name "VS"
 					(effects
