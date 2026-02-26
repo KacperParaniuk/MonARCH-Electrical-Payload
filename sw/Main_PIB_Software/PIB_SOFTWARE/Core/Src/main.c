@@ -22,6 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "gpio_driver.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -74,6 +76,14 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
+  GPIO_PinConfig_t LED_BLINK = {
+	  .port = GPIOA,
+	  .pin = 5, // fill when we have LED_BLINK_PIN
+	  .mode = GPIO_MODE_OUTPUT_PP,
+	  .pull = GPIO_NOPULL,
+	  .speed = GPIO_SPEED_FREQ_LOW
+  };
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -81,18 +91,32 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 
+  GPIO_Driver_Init(&LED_BLINK);
+
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
 
+
+
   /* USER CODE END 2 */
+
+
+
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
+
+
+	  // Test Build Code.
+
+	  GPIO_Driver_Toggle(LED_BLINK.port, LED_BLINK.pin);
+	  HAL_Delay(500);
 
 
     /* USER CODE BEGIN 3 */

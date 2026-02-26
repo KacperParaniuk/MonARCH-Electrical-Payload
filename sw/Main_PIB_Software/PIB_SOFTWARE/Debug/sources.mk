@@ -22,6 +22,8 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+App/Src \
+BSP/Sensors/Src \
 BSP/Src \
 Core/Src \
 Core/Startup \
