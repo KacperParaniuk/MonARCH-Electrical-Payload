@@ -2940,7 +2940,7 @@
 		)
 		(uuid "05ca39f7-b3e8-48c4-8870-cfeb3670122c")
 	)
-	(hierarchical_label "3V3"
+	(hierarchical_label "+3V3"
 		(shape input)
 		(at 167.64 83.82 180)
 		(effects
@@ -3845,7 +3845,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CONN_5037630000-SD_04_MOL"
+		(property "Footprint" "5037630491:CONN_5037630000-SD_04_MOL"
 			(at 101.6 119.38 0)
 			(effects
 				(font
@@ -4067,7 +4067,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CONN_5037630000-SD_04_MOL"
+		(property "Footprint" "5037630491:CONN_5037630000-SD_04_MOL"
 			(at 171.45 96.52 0)
 			(effects
 				(font
@@ -4742,7 +4742,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CONN_5037630000-SD_04_MOL"
+		(property "Footprint" "5037630491:CONN_5037630000-SD_04_MOL"
 			(at 44.45 101.6 0)
 			(effects
 				(font
