@@ -1,4 +1,4 @@
-26424499783489672
+26431587642853211
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -6845,6 +6845,13 @@ tag connect programming header pogo pins
 0
 14
 14
+Connector 4 Pin
+CONN_5037630000-SD_04_MOL
+
+5037630491 
+0
+6
+6
 Connector_AMASS
 AMASS_MR30PW-FB_1x03_P3.50mm_Horizontal
 Connector MR30 Horizontal PCB Female, https://www.tme.eu/Document/4a6895c4a2c7eddf355b391fd904cb53/MR30PW-FB.pdf
@@ -61242,6 +61249,13 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
+FDC2214
+RGH0016A
+
+FDC2214RGHR 
+0
+22
+18
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -62537,6 +62551,27 @@ heatsink
 0
 0
 0
+INA226-Q1
+DGS10_TEX
+
+INA226AQDGSRQ1 
+0
+10
+10
+INA226-Q1
+DGS10_TEX-L
+
+INA226AQDGSRQ1 
+0
+10
+10
+INA226-Q1
+DGS10_TEX-M
+
+INA226AQDGSRQ1 
+0
+10
+10
 Inductor_SMD
 L_6.3x6.3_H3
 Choke, SMD, 6.3x6.3mm 3mm height
@@ -105601,10 +105636,3 @@ Varistor VF
 0
 2
 2
-footprints
-RGH0016A
-
-FDC2214RGHR 
-0
-22
-18

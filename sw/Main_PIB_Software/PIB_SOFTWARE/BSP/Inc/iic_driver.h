@@ -13,8 +13,6 @@
 
 
 
-
-
 void iic_read();
 void iic_write();
 
