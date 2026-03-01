@@ -1,4 +1,4 @@
-	/* USER CODE BEGIN Header */
+/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
   * @file           : main.c
@@ -18,6 +18,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "i2c.h"
+#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -76,13 +78,16 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
+
   GPIO_PinConfig_t LED_BLINK = {
-	  .port = GPIOA,
-	  .pin = 5, // fill when we have LED_BLINK_PIN
+	  .port = LED_PIN_GPIO_Port,
+	  .pin = LED_PIN_Pin,
 	  .mode = GPIO_MODE_OUTPUT_PP,
 	  .pull = GPIO_NOPULL,
 	  .speed = GPIO_SPEED_FREQ_LOW
   };
+
+
 
   /* USER CODE END Init */
 
@@ -97,27 +102,22 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_I2C4_Init();
+  MX_I2C1_Init();
+  MX_I2C2_Init();
+  MX_I2C3_Init();
   /* USER CODE BEGIN 2 */
 
 
 
   /* USER CODE END 2 */
 
-
-
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-
-
-	  // Test Build Code.
-
-	  GPIO_Driver_Toggle(LED_BLINK.port, LED_BLINK.pin);
-	  HAL_Delay(500);
-
 
     /* USER CODE BEGIN 3 */
   }
@@ -169,6 +169,8 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+
 
 /* USER CODE END 4 */
 

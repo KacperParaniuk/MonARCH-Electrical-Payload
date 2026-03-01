@@ -9,7 +9,8 @@
 #define INC_GPIO_DRIVER_H_
 
 
-#include "stm32l4xx_hal.h"
+#include "main.h"
+
 
 // Struct for Pin Config
 typedef struct{

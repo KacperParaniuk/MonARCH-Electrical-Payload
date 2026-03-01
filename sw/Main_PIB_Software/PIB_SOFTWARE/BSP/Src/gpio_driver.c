@@ -20,7 +20,6 @@ void GPIO_Driver_Init(GPIO_PinConfig_t *config){
 	 GPIO_InitStruct.Speed = config->speed;
 
 	 HAL_GPIO_Init(config->port, &GPIO_InitStruct);
-
 }
 
 
