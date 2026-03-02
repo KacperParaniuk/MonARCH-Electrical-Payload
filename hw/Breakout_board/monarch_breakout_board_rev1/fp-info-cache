@@ -1,4 +1,4 @@
-26431587642853211
+26433359642000739
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -6845,6 +6845,13 @@ tag connect programming header pogo pins
 0
 14
 14
+Connector 2 Pin
+CONN_5037630000-SD_02_MOL
+
+5037630291 
+0
+4
+4
 Connector 4 Pin
 CONN_5037630000-SD_04_MOL
 
