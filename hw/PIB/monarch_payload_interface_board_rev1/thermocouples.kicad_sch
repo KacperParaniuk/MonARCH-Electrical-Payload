@@ -1321,12 +1321,6 @@
 		(uuid "0d6e203a-0ad4-4d2f-a7a0-8962a5f2c3af")
 	)
 	(junction
-		(at 219.71 59.69)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "10e86e3f-fd0f-435f-ac1e-965eae9ec64f")
-	)
-	(junction
 		(at 177.8 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2098,16 +2092,6 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 59.69) (xy 219.71 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5edc7bed-46da-4473-806e-03ca0d1bd4b7")
-	)
-	(wire
-		(pts
 			(xy 59.69 72.39) (xy 66.04 72.39)
 		)
 		(stroke
@@ -2608,16 +2592,6 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 59.69) (xy 220.98 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a3cb6712-665f-4c73-80d4-2c4bfb316ded")
-	)
-	(wire
-		(pts
 			(xy 212.09 114.3) (xy 212.09 115.57)
 		)
 		(stroke
@@ -2898,7 +2872,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 59.69) (xy 219.71 59.69)
+			(xy 215.9 59.69) (xy 220.98 59.69)
 		)
 		(stroke
 			(width 0)
@@ -6670,6 +6644,73 @@
 			(project ""
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/4eb43b0e-6885-46a5-9a94-7deafa1b26d8"
 					(reference "C21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 219.71 62.23 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "599b1027-9308-4e0d-bc8d-df5751de95f2")
+		(property "Reference" "#PWR0218"
+			(at 215.9 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 223.52 62.2299 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 219.71 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 219.71 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c35f06ed-4339-45fa-9a76-cc9f7424481f")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/4eb43b0e-6885-46a5-9a94-7deafa1b26d8"
+					(reference "#PWR0218")
 					(unit 1)
 				)
 			)
