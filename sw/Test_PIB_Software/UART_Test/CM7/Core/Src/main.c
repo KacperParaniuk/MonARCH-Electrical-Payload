@@ -77,11 +77,6 @@ static void MX_LPUART1_UART_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
-
-//
-//uint8_t tx_buff[]={65,66,67,68,69,70,71,72,73,74};
-
-
 int main(void)
 {
 
@@ -179,6 +174,46 @@ Error_Handler();
 	  // Turn LED OFF
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
 	  HAL_Delay(500);
+
+	  HAL_GPIO_WritePin(val, GPIO_Pin, PinState)
+
+
+
+
+
+
+
+
+	  // to be implemented -> Test Code for UART interrupt from OBC
+
+//
+//	  while(uart receive){
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+//	  }
+
+
+
+
+
+
+
+
+
+
 
 
 

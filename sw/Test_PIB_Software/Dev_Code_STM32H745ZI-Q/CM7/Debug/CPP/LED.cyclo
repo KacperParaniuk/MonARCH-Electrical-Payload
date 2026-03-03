@@ -1,6 +1,0 @@
-../CPP/LED.cpp:12:1:LED::LED(GPIO_TypeDef*, uint16_t)	1
-../CPP/LED.cpp:21:1:LED::~LED()	1
-../CPP/LED.cpp:21:1:virtual LED::~LED()	1
-../CPP/LED.cpp:25:6:void LED::On()	1
-../CPP/LED.cpp:32:6:void LED::Off()	1
-../CPP/LED.cpp:37:6:void LED::Toggle()	1

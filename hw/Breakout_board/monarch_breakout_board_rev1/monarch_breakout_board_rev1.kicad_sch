@@ -1724,6 +1724,224 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "SIT5000AI-2E-33N0-40.000000X:SIT5000_1"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Y"
+				(at -7.366 9.144 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SIT5000_1_1_1"
+				(rectangle
+					(start -8.89 8.89)
+					(end 8.89 -8.89)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type color)
+						(color 255 255 194 1)
+					)
+				)
+				(pin input line
+					(at -11.43 0 0)
+					(length 2.54)
+					(name "VC/OE/NST"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 11.43 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 0 -11.43 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 11.43 0 180)
+					(length 2.54)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3.3V"
 			(power)
 			(pin_numbers
@@ -2071,7 +2289,7 @@
 		)
 	)
 	(rectangle
-		(start 213.36 16.256)
+		(start 213.36 16.51)
 		(end 283.21 60.96)
 		(stroke
 			(width 0)
@@ -2095,6 +2313,18 @@
 		(uuid 843fa58c-1a90-4db2-bdf0-d4f7b4358f4c)
 	)
 	(rectangle
+		(start 172.72 105.41)
+		(end 212.09 137.16)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 881c70e5-0053-43f4-af4b-b4dec651eb22)
+	)
+	(rectangle
 		(start 112.268 110.236)
 		(end 112.268 110.236)
 		(stroke
@@ -2107,8 +2337,8 @@
 		(uuid b27e9189-3be5-4b75-abb5-f78098f53702)
 	)
 	(rectangle
-		(start 101.6 105.41)
-		(end 171.45 135.89)
+		(start 100.33 105.41)
+		(end 171.45 137.16)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2131,8 +2361,8 @@
 		(uuid ba2cea39-f002-47e4-88ac-10817c0f27f2)
 	)
 	(rectangle
-		(start 128.27 15.748)
-		(end 210.82 104.14)
+		(start 127 15.748)
+		(end 212.09 104.14)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2154,9 +2384,21 @@
 		)
 		(uuid d72bfee3-6129-46f4-a8fb-a0777c641f77)
 	)
+	(rectangle
+		(start 100.33 138.43)
+		(end 171.45 177.8)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid e4314194-7e85-48f9-bac1-a035ae1bfaf2)
+	)
 	(text "POWER LED\n"
 		(exclude_from_sim no)
-		(at 102.87 108.712 0)
+		(at 101.346 108.458 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2269,6 +2511,32 @@
 			(justify left bottom)
 		)
 		(uuid "9d5f8460-3076-4766-b81a-23cede730ef3")
+	)
+	(text "MEMS Clock "
+		(exclude_from_sim no)
+		(at 101.6 141.986 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "a2af9a84-9003-4700-bbc7-af527d2dcb59")
+	)
+	(text "Mounting Holes\n"
+		(exclude_from_sim no)
+		(at 173.482 108.458 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "b23e5d24-48df-4077-8bf0-49efe864c271")
 	)
 	(text "Ammeter #1\n"
 		(exclude_from_sim no)
@@ -3614,6 +3882,17 @@
 		)
 		(uuid "3152bcf3-94b1-4465-8239-7dfa37cc1d72")
 	)
+	(hierarchical_label "CLK_40MHz"
+		(shape input)
+		(at 71.12 44.45 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3c246b30-32ac-47fc-a4f9-096e11e364a8")
+	)
 	(hierarchical_label "SCL"
 		(shape bidirectional)
 		(at 110.49 52.07 0)
@@ -3923,6 +4202,70 @@
 			(project "monarch_breakout_board_rev1"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
 					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 176.53 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "05146420-5dd3-4b5f-a347-e180ab49f303")
+		(property "Reference" "H1"
+			(at 179.07 114.2999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 179.07 116.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 176.53 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 176.53 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 176.53 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -4350,6 +4693,70 @@
 			(project "monarch_breakout_board_rev1"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
 					(reference "R122")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 176.53 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4454a289-db7f-4299-a4dc-203cb6690fe9")
+		(property "Reference" "H3"
+			(at 179.07 125.7299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 179.07 128.2699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 176.53 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 176.53 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 176.53 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "monarch_breakout_board_rev1"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -5054,6 +5461,80 @@
 			(project "monarch_breakout_board_rev1"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
 					(reference "R141")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SIT5000AI-2E-33N0-40.000000X:SIT5000_1")
+		(at 134.62 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "62fac13b-87b0-48b0-972d-aea68498efbc")
+		(property "Reference" "Y1"
+			(at 146.05 151.0598 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 146.05 153.5998 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 134.62 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/sitime/SIT5000AI-2E-33N0-40-000000X/7793972?s=N4IgTCBcDaIMoEkAqBWADBggggtGAojgMxEByaOALGgHQb1oAaIAugL5A"
+			(at 134.62 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 134.62 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e19f6100-0ddf-4564-aaa1-95bdd42f9db2")
+		)
+		(pin "3"
+			(uuid "001cd3a8-a484-4362-8e7c-aac30fa1c048")
+		)
+		(pin "2"
+			(uuid "55d30169-d987-4375-a94f-c35793e0910f")
+		)
+		(pin "4"
+			(uuid "ae7b3f03-aa32-4d13-8593-81bb23dbbc4f")
+		)
+		(instances
+			(project ""
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
+					(reference "Y1")
 					(unit 1)
 				)
 			)
@@ -5978,6 +6459,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 194.31 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bb0ceb23-f3aa-4fc2-a508-b47eec9f0399")
+		(property "Reference" "H2"
+			(at 196.85 114.2999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 196.85 116.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 194.31 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 194.31 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 143.51 118.11 180)
 		(unit 1)
@@ -6441,6 +6986,70 @@
 			(project ""
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 194.31 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d9947273-2a50-4861-8bc0-6fda48ac0039")
+		(property "Reference" "H4"
+			(at 196.85 125.7299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 196.85 128.2699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 194.31 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 194.31 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "monarch_breakout_board_rev1"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
+					(reference "H4")
 					(unit 1)
 				)
 			)

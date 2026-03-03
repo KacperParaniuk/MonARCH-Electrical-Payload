@@ -54,7 +54,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 COM_InitTypeDef BspCOMInit;
-__IO uint32_t BspButtonState = BUTTON_RELEASED;
 
 /* USER CODE BEGIN PV */
 
@@ -135,38 +134,11 @@ int main(void)
     Error_Handler();
   }
 
-  /* USER CODE BEGIN BSP */
-
-  /* -- Sample board code to send message over COM1 port ---- */
-  printf("Welcome to STM32 world !\n\r");
-
-  /* -- Sample board code to switch on leds ---- */
-  BSP_LED_On(LED_GREEN);
-  BSP_LED_On(LED_YELLOW);
-  BSP_LED_On(LED_RED);
-
-
-
-  /* USER CODE END BSP */
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
 
-
-    /* -- Sample board code for User push-button in interrupt mode ---- */
-    if (BspButtonState == BUTTON_PRESSED)
-    {
-      /* Update button state */
-      BspButtonState = BUTTON_RELEASED;
-      /* -- Sample board code to toggle leds ---- */
-      BSP_LED_Toggle(LED_GREEN);
-      BSP_LED_Toggle(LED_YELLOW);
-      BSP_LED_Toggle(LED_RED); // turned off so that I can utilize them.
-
-      /* ..... Perform your action ..... */
-    }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -177,19 +149,6 @@ int main(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
-
-/**
-  * @brief BSP Push Button callback
-  * @param Button Specifies the pressed button
-  * @retval None
-  */
-void BSP_PB_Callback(Button_TypeDef Button)
-{
-  if (Button == BUTTON_USER)
-  {
-    BspButtonState = BUTTON_PRESSED;
-  }
-}
 
 /**
   * @brief  This function is executed in case of error occurrence.

@@ -61,8 +61,8 @@ all: main-build
 main-build: UART_Test_CM7.elf secondary-outputs
 
 # Tool invocations
-UART_Test_CM7.elf UART_Test_CM7.map: $(OBJS) $(USER_OBJS) C:\dev\MonARCH_Payload_Electronics\Software\Test_PIB_Software\UART_Test\CM7\STM32H745ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "UART_Test_CM7.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\dev\MonARCH_Payload_Electronics\Software\Test_PIB_Software\UART_Test\CM7\STM32H745ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Test_CM7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+UART_Test_CM7.elf UART_Test_CM7.map: $(OBJS) $(USER_OBJS) C:\dev\monarch-payload-interface-board\sw\Test_PIB_Software\UART_Test\CM7\STM32H745ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "UART_Test_CM7.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\dev\monarch-payload-interface-board\sw\Test_PIB_Software\UART_Test\CM7\STM32H745ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Test_CM7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
