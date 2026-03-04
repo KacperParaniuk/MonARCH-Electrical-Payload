@@ -1708,269 +1708,137 @@
 		)
 		(uuid "ec82b199-5186-48cc-9b36-16f54128948a")
 	)
-	(global_label "Cap1+"
-		(shape input)
-		(at 39.37 81.28 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2d50b941-3c32-41aa-bd23-aeb3010f6e90")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 30.0349 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Electro2"
-		(shape input)
-		(at 107.95 38.1 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2eb6f8ab-c08b-4f8e-9473-26bc0cdeb0c8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 97.103 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Cap4-"
-		(shape input)
-		(at 109.22 83.82 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "59e4316f-a532-46af-95a7-586d3cea88eb")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 99.8849 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Cap7+"
-		(shape input)
-		(at 106.68 128.27 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "68126678-5c0c-46ca-9113-6340dcc85e58")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 97.3449 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Electro1"
-		(shape input)
-		(at 107.95 35.56 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9a35db8d-6eba-494b-a3f1-0dd621225c14")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 97.103 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "I2C4_SDA"
-		(shape bidirectional)
-		(at 46.99 29.21 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a11be8c9-cb66-4e67-89df-a63eb2e2008c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 34.064 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Cap3+"
-		(shape input)
-		(at 109.22 81.28 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a56a8b2d-52a7-489c-911d-78a969e5bfef")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 99.8849 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "I2C4_SCL"
-		(shape bidirectional)
-		(at 38.1 35.56 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ba36cbe0-2f66-4e67-b106-1efbb12aa68e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 25.2345 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Cap2-"
-		(shape input)
-		(at 39.37 83.82 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d3cab15e-339e-4799-87ab-bfb582da484f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 30.0349 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Cap5+"
+	(hierarchical_label "Cap5+"
 		(shape input)
 		(at 35.56 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "d95060fb-280d-4744-bd29-67e0059349c2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 26.2249 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "048cf236-6a8a-405a-8f9d-363363f8e1b8")
 	)
-	(global_label "Cap8-"
+	(hierarchical_label "Cap4-"
 		(shape input)
-		(at 106.68 130.81 180)
-		(fields_autoplaced yes)
+		(at 109.22 83.82 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "e182fe31-4d1c-4e2c-9f51-1508cad216f7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 97.3449 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "1ef0179f-2203-4dd2-80ee-a293bf59e86c")
 	)
-	(global_label "Cap6-"
+	(hierarchical_label "I2C4_SCL"
+		(shape bidirectional)
+		(at 38.1 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "21113bde-e3f1-4047-a5fe-4b8e913aeee5")
+	)
+	(hierarchical_label "Cap3+"
+		(shape input)
+		(at 109.22 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2b2912a8-fefa-42d3-aad1-787a1ae6494c")
+	)
+	(hierarchical_label "Electro2"
+		(shape input)
+		(at 107.95 38.1 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2c88732c-f279-42cc-a0ea-52297c48c0b4")
+	)
+	(hierarchical_label "Cap2-"
+		(shape input)
+		(at 39.37 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3ddf5547-ec5c-441d-b569-9f7ea0dfd6e9")
+	)
+	(hierarchical_label "Cap6-"
 		(shape input)
 		(at 35.56 132.08 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "fb41c06f-a01c-478e-bbf7-60c92281636a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 26.2249 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
+		(uuid "4cb9941c-b72b-4fa6-8b07-0408758e4eb5")
+	)
+	(hierarchical_label "Cap8-"
+		(shape input)
+		(at 106.68 130.81 180)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
+		(uuid "4eeea096-98d9-401c-8732-66cff3678592")
+	)
+	(hierarchical_label "Electro1"
+		(shape input)
+		(at 107.95 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5442e191-c467-42bc-9952-b69e196356f4")
+	)
+	(hierarchical_label "Cap7+"
+		(shape input)
+		(at 106.68 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5a8cec01-338b-4c90-bb28-dd5fbcf5ec31")
+	)
+	(hierarchical_label "Cap1+"
+		(shape input)
+		(at 39.37 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7ab911e7-69a3-4123-8965-f3e12b69e6f7")
+	)
+	(hierarchical_label "I2C4_SDA"
+		(shape bidirectional)
+		(at 46.99 29.21 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "83f3a64a-99c1-4662-94a7-68cc312d3d92")
 	)
 	(symbol
 		(lib_id "Connectors 2 Pin:5037630291")
