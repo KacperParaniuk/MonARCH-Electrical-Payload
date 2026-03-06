@@ -4,4 +4,5 @@
   (lib (name "INA226-Q1")(type "KiCad")(uri "${KIPRJMOD}/INA226-Q1/footprints.pretty")(options "")(descr ""))
   (lib (name "Connector 4 Pin")(type "KiCad")(uri "${KIPRJMOD}/5037630491/KiCADv6/footprints.pretty")(options "")(descr ""))
   (lib (name "Connector 2 Pin")(type "KiCad")(uri "${KIPRJMOD}/5037630291/KiCADv6/footprints.pretty")(options "")(descr ""))
+  (lib (name "OPA320")(type "KiCad")(uri "${KIPRJMOD}/OPA320/KiCADv6/footprints.pretty")(options "")(descr ""))
 )
