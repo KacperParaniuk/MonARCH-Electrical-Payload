@@ -1,5 +1,5 @@
 Common/Src/system_stm32h7xx_dualcore_boot_cm4_cm7.o: \
- C:/dev/MonARCH_Payload_Electronics/Software/Test_PIB_Software/Dev_Code_STM32H745ZI-Q/Common/Src/system_stm32h7xx_dualcore_boot_cm4_cm7.c \
+ C:/dev/monarch-payload-interface-board/sw/Test_PIB_Software/Dev_Code_STM32H745ZI-Q/Common/Src/system_stm32h7xx_dualcore_boot_cm4_cm7.c \
  ../../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
  ../../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h745xx.h \
  ../../Drivers/CMSIS/Include/core_cm4.h \

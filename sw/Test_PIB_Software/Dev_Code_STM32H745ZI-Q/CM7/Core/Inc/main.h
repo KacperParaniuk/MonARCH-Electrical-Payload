@@ -31,8 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "string.h"
-#include "stdio.h"
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -54,12 +53,20 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-void CppMain();
+
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define LED_PIN_Pin GPIO_PIN_8
-#define LED_PIN_GPIO_Port GPIOB
+#define val1_Pin GPIO_PIN_8
+#define val1_GPIO_Port GPIOC
+#define val2_Pin GPIO_PIN_9
+#define val2_GPIO_Port GPIOC
+#define val3_Pin GPIO_PIN_10
+#define val3_GPIO_Port GPIOC
+#define val4_Pin GPIO_PIN_11
+#define val4_GPIO_Port GPIOC
+#define LED_EXT_Pin GPIO_PIN_8
+#define LED_EXT_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

@@ -18,6 +18,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "usart.h"
+#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -53,19 +55,6 @@
 
 /* Private variables ---------------------------------------------------------*/
 
-UART_HandleTypeDef hlpuart1;
-
-uint8_t rx_buff[10]; // Buffer to store received data
-
-char msg1[] = "I got your Message!\r\n";
-char msg2[] = "I didn't get a message\r\n";
-
-unsigned int LED_ON = 1;
-unsigned int LED_OFF = 0;
-
-
-
-
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -73,8 +62,6 @@ unsigned int LED_OFF = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MPU_Config(void);
-static void MX_GPIO_Init(void);
-static void MX_LPUART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -121,6 +108,9 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
+  uint8_t rx_buf[8];
+
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -152,18 +142,7 @@ Error_Handler();
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_LPUART1_UART_Init();
-
-
   /* USER CODE BEGIN 2 */
-
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-  GPIO_InitStruct.Pin = GPIO_PIN_8;           // Change pin as needed
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);     // Change port as needed
-
-//  HAL_GPIO_WritePin(LED_PIN_GPIO_Port, LED_PIN_Pin, 1);
 
   /* USER CODE END 2 */
 
@@ -171,42 +150,30 @@ Error_Handler();
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//	if (HAL_UART_Receive(&hlpuart1, rx_buff, 10, HAL_MAX_DELAY) == HAL_OK){
-//
-////		HAL_GPIO_TogglePin(LED_PIN_GPIO_Port, LED_PIN_Pin);
-//		HAL_GPIO_WritePin(LED_PIN_GPIO_Port, LED_PIN_Pin, 1);
-//
-////	     HAL_UART_Transmit(&huartX, rx_buff, 10, HAL_MAX_DELAY);
-//
-////		HAL_UART_Transmit(&hlpuart1, (uint8_t*)msg1, strlen(msg1), HAL_MAX_DELAY);
-//
-//
-//	}
-//	else{
-
-//  }
-
-	HAL_GPIO_WritePin(LED_PIN_GPIO_Port, LED_PIN_Pin, 1);
-
-	HAL_UART_Transmit(&hlpuart1, (uint8_t*)"1\r\n", 3, HAL_MAX_DELAY);
-
-	HAL_Delay(100);
-
-	HAL_UART_Transmit(&hlpuart1, (uint8_t*)"0\r\n", 3, HAL_MAX_DELAY);
-
-
-	HAL_GPIO_WritePin(LED_PIN_GPIO_Port, LED_PIN_Pin, 0);
-
-
-
-	HAL_Delay(100);
-
-
-//	 CppMain();// will run until the CppMain code returns from the loop in which will return to here and then terminate the program completely.
-////
-//
-
     /* USER CODE END WHILE */
+
+	  HAL_GPIO_TogglePin(LED_EXT_GPIO_Port, LED_EXT_Pin);
+
+	  if(HAL_UART_Receive(&hlpuart1, (uint8_t *)rx_buf, 8, HAL_MAX_DELAY)== HAL_OK){
+		  if(*rx_buf==0x01){
+			  HAL_GPIO_TogglePin(val1_GPIO_Port, val1_Pin);
+		  }
+		  else if(*rx_buf==0x02){
+			  HAL_GPIO_TogglePin(val2_GPIO_Port, val2_Pin);
+		  }
+		  else if(*rx_buf==0x03){
+			  HAL_GPIO_TogglePin(val3_GPIO_Port, val3_Pin);
+		  }
+		  else if(*rx_buf==0x04){
+			  HAL_GPIO_TogglePin(val4_GPIO_Port, val4_Pin);
+		  }
+		  else{
+			  HAL_GPIO_TogglePin(LED_EXT_GPIO_Port, LED_EXT_Pin);
+			  HAL_Delay(200);
+			  HAL_GPIO_TogglePin(LED_EXT_GPIO_Port, LED_EXT_Pin);
+			  HAL_Delay(200);
+		  }
+	  }
 
     /* USER CODE BEGIN 3 */
   }
@@ -261,84 +228,6 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-}
-
-/**
-  * @brief LPUART1 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_LPUART1_UART_Init(void)
-{
-
-  /* USER CODE BEGIN LPUART1_Init 0 */
-
-  /* USER CODE END LPUART1_Init 0 */
-
-  /* USER CODE BEGIN LPUART1_Init 1 */
-
-  /* USER CODE END LPUART1_Init 1 */
-  hlpuart1.Instance = LPUART1;
-  hlpuart1.Init.BaudRate = 115200;
-  hlpuart1.Init.WordLength = UART_WORDLENGTH_8B;
-  hlpuart1.Init.StopBits = UART_STOPBITS_1;
-  hlpuart1.Init.Parity = UART_PARITY_NONE;
-  hlpuart1.Init.Mode = UART_MODE_TX_RX;
-  hlpuart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  hlpuart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  hlpuart1.Init.ClockPrescaler = UART_PRESCALER_DIV1;
-  hlpuart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  hlpuart1.FifoMode = UART_FIFOMODE_DISABLE;
-  if (HAL_UART_Init(&hlpuart1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_SetTxFifoThreshold(&hlpuart1, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_SetRxFifoThreshold(&hlpuart1, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_DisableFifoMode(&hlpuart1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN LPUART1_Init 2 */
-
-  /* USER CODE END LPUART1_Init 2 */
-
-}
-
-/**
-  * @brief GPIO Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_GPIO_Init(void)
-{
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-  /* USER CODE BEGIN MX_GPIO_Init_1 */
-
-  /* USER CODE END MX_GPIO_Init_1 */
-
-  /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LED_PIN_GPIO_Port, LED_PIN_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : LED_PIN_Pin */
-  GPIO_InitStruct.Pin = LED_PIN_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LED_PIN_GPIO_Port, &GPIO_InitStruct);
-
-  /* USER CODE BEGIN MX_GPIO_Init_2 */
-
-  /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */

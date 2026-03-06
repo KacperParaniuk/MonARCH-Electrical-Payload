@@ -9,8 +9,6 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include Drivers/STM32H7xx_HAL_Driver/subdir.mk
--include Drivers/BSP/STM32H7xx_Nucleo/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include Common/Src/subdir.mk
@@ -62,8 +60,8 @@ all: main-build
 main-build: Dev_Code_STM32H745ZI-Q_CM4.elf secondary-outputs
 
 # Tool invocations
-Dev_Code_STM32H745ZI-Q_CM4.elf Dev_Code_STM32H745ZI-Q_CM4.map: $(OBJS) $(USER_OBJS) C:\dev\MonARCH_Payload_Electronics\Software\Test_PIB_Software\Dev_Code_STM32H745ZI-Q\CM4\STM32H745ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Dev_Code_STM32H745ZI-Q_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\dev\MonARCH_Payload_Electronics\Software\Test_PIB_Software\Dev_Code_STM32H745ZI-Q\CM4\STM32H745ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Dev_Code_STM32H745ZI-Q_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Dev_Code_STM32H745ZI-Q_CM4.elf Dev_Code_STM32H745ZI-Q_CM4.map: $(OBJS) $(USER_OBJS) C:\dev\monarch-payload-interface-board\sw\Test_PIB_Software\Dev_Code_STM32H745ZI-Q\CM4\STM32H745ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Dev_Code_STM32H745ZI-Q_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\dev\monarch-payload-interface-board\sw\Test_PIB_Software\Dev_Code_STM32H745ZI-Q\CM4\STM32H745ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Dev_Code_STM32H745ZI-Q_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
