@@ -3014,7 +3014,7 @@
 	)
 	(hierarchical_label "T4+"
 		(shape output)
-		(at 35.56 106.68 180)
+		(at 35.56 109.22 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3033,6 +3033,17 @@
 			(justify right)
 		)
 		(uuid "1ee043fb-0d5b-4423-86c9-0c9b6a9be4cc")
+	)
+	(hierarchical_label "T2-"
+		(shape output)
+		(at 35.56 88.9 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1fe80abd-d2be-4a56-b2ee-238fc3f51a37")
 	)
 	(hierarchical_label "P5-"
 		(shape output)
@@ -3102,7 +3113,7 @@
 	)
 	(hierarchical_label "T3+"
 		(shape output)
-		(at 35.56 101.6 180)
+		(at 35.56 104.14 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3199,6 +3210,17 @@
 		)
 		(uuid "5d9e9208-3b3f-49e0-8f71-f5e569280fe2")
 	)
+	(hierarchical_label "T2+"
+		(shape output)
+		(at 35.56 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5fe546bb-7fbd-4983-b03d-843c2be47879")
+	)
 	(hierarchical_label "Valve12-"
 		(shape output)
 		(at 35.56 46.99 180)
@@ -3276,9 +3298,20 @@
 		)
 		(uuid "767aac46-6749-42e6-ba80-dbc0d962d1d3")
 	)
+	(hierarchical_label "T1+"
+		(shape output)
+		(at 35.56 86.36 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7726e300-1198-4465-9896-7fcd3d25f938")
+	)
 	(hierarchical_label "T3-"
 		(shape output)
-		(at 35.56 104.14 180)
+		(at 35.56 101.6 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3342,17 +3375,6 @@
 		)
 		(uuid "846e784e-b9c5-43ed-9626-f54a1f88d7d9")
 	)
-	(hierarchical_label "T1-"
-		(shape output)
-		(at 35.56 86.36 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "86500a7f-d7fa-4ed5-a665-898162f62f70")
-	)
 	(hierarchical_label "Valve6+"
 		(shape input)
 		(at 40.64 34.29 180)
@@ -3385,6 +3407,17 @@
 			(justify right)
 		)
 		(uuid "8af30253-c0cc-4c2c-a2ab-935725de17ac")
+	)
+	(hierarchical_label "T1-"
+		(shape output)
+		(at 35.56 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "91ddefc1-e58e-431d-be96-e2ea49b0d7c9")
 	)
 	(hierarchical_label "Valve2-"
 		(shape output)
@@ -3474,28 +3507,6 @@
 		)
 		(uuid "ae6fbb0c-0529-4c05-96dd-ab3d7ea8202b")
 	)
-	(hierarchical_label "T1+"
-		(shape output)
-		(at 35.56 83.82 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b24aeaed-9c6c-410a-ba62-f137bb600f09")
-	)
-	(hierarchical_label "T2-"
-		(shape output)
-		(at 35.56 91.44 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b2a82473-3d0f-467c-bc54-1f1718d53a80")
-	)
 	(hierarchical_label "P1-"
 		(shape output)
 		(at 92.71 86.36 180)
@@ -3553,7 +3564,7 @@
 	)
 	(hierarchical_label "T4-"
 		(shape output)
-		(at 35.56 109.22 180)
+		(at 35.56 106.68 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3627,17 +3638,6 @@
 			(justify right)
 		)
 		(uuid "e06f32b5-01d0-402b-b3a9-aa5b4264e270")
-	)
-	(hierarchical_label "T2+"
-		(shape output)
-		(at 35.56 88.9 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "eddc7a1c-db72-4076-9e10-4957b12bb429")
 	)
 	(hierarchical_label "Heater0+"
 		(shape input)
