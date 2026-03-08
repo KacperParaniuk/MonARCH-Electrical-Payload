@@ -15,4 +15,5 @@
   (lib (name "5037630491")(type "KiCad")(uri "${KIPRJMOD}/5037630491/KiCADv6/2026-02-24_17-38-04.kicad_sym")(options "")(descr ""))
   (lib (name "SBH11")(type "KiCad")(uri "${KIPRJMOD}/SBH11_NBPC_D10_SM_BK/KiCADv6/2026-02-26_00-40-34.kicad_sym")(options "")(descr ""))
   (lib (name "WSK")(type "KiCad")(uri "${KIPRJMOD}/ul_WSK06121L000FEA/KiCADv6/2026-02-26_00-44-57.kicad_sym")(options "")(descr ""))
+  (lib (name "20021121")(type "KiCad")(uri "${KIPRJMOD}/20021121-00008C4LF/20021121-00008C4LF.kicad_sym")(options "")(descr ""))
 )
