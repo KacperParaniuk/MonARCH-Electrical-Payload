@@ -412,6 +412,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 132.08) (xy 54.61 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2156ff99-873d-4e0f-8395-36f9c3c99876")
+	)
+	(wire
+		(pts
 			(xy 199.39 54.61) (xy 199.39 63.5)
 		)
 		(stroke
@@ -612,7 +622,7 @@
 	)
 	(wire
 		(pts
-			(xy 270.51 36.83) (xy 270.51 102.87)
+			(xy 275.59 21.59) (xy 275.59 102.87)
 		)
 		(stroke
 			(width 0)
@@ -662,7 +672,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 59.69) (xy 48.26 59.69)
+			(xy 50.8 59.69) (xy 53.34 59.69)
 		)
 		(stroke
 			(width 0)
@@ -682,7 +692,7 @@
 	)
 	(wire
 		(pts
-			(xy 267.97 39.37) (xy 267.97 102.87)
+			(xy 273.05 25.4) (xy 273.05 102.87)
 		)
 		(stroke
 			(width 0)
@@ -752,7 +762,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 57.15) (xy 45.72 57.15)
+			(xy 62.23 57.15) (xy 50.8 57.15)
 		)
 		(stroke
 			(width 0)
@@ -782,7 +792,7 @@
 	)
 	(wire
 		(pts
-			(xy 262.89 39.37) (xy 267.97 39.37)
+			(xy 262.89 25.4) (xy 273.05 25.4)
 		)
 		(stroke
 			(width 0)
@@ -852,7 +862,7 @@
 	)
 	(wire
 		(pts
-			(xy 262.89 36.83) (xy 270.51 36.83)
+			(xy 262.89 21.59) (xy 275.59 21.59)
 		)
 		(stroke
 			(width 0)
@@ -1402,7 +1412,7 @@
 	)
 	(wire
 		(pts
-			(xy 21.59 59.69) (xy 24.13 59.69)
+			(xy 26.67 59.69) (xy 29.21 59.69)
 		)
 		(stroke
 			(width 0)
@@ -1592,7 +1602,7 @@
 	)
 	(wire
 		(pts
-			(xy 21.59 57.15) (xy 24.13 57.15)
+			(xy 26.67 57.15) (xy 29.21 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1993,7 +2003,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 48.26 59.69 270)
+		(at 53.34 59.69 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2001,7 +2011,7 @@
 		(dnp no)
 		(uuid "4a17c9ad-09f3-4085-bdc6-20814c520a91")
 		(property "Reference" "#PWR0114"
-			(at 44.45 59.69 0)
+			(at 49.53 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2010,7 +2020,7 @@
 			)
 		)
 		(property "Value" "+12VB"
-			(at 52.07 59.6899 90)
+			(at 57.15 59.6899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2019,7 +2029,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 48.26 59.69 0)
+			(at 53.34 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2028,7 +2038,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 59.69 0)
+			(at 53.34 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2037,7 +2047,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 48.26 59.69 0)
+			(at 53.34 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2059,7 +2069,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 21.59 57.15 90)
+		(at 26.67 57.15 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2067,7 +2077,7 @@
 		(dnp no)
 		(uuid "50e6c21d-5c7e-4deb-9bd9-29b388018174")
 		(property "Reference" "#PWR0113"
-			(at 25.4 57.15 0)
+			(at 30.48 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2076,7 +2086,7 @@
 			)
 		)
 		(property "Value" "VBAT"
-			(at 17.78 57.1501 90)
+			(at 22.86 57.1501 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2085,7 +2095,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 21.59 57.15 0)
+			(at 26.67 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2094,7 +2104,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 21.59 57.15 0)
+			(at 26.67 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2103,7 +2113,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 21.59 57.15 0)
+			(at 26.67 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2192,7 +2202,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 21.59 59.69 270)
+		(at 26.67 59.69 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2200,7 +2210,7 @@
 		(dnp no)
 		(uuid "552f7765-2f4a-4313-935c-34a301e03aef")
 		(property "Reference" "#PWR020"
-			(at 15.24 59.69 0)
+			(at 20.32 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2209,7 +2219,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 18.034 59.944 90)
+			(at 23.114 59.944 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2218,7 +2228,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 21.59 59.69 0)
+			(at 26.67 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2227,7 +2237,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 21.59 59.69 0)
+			(at 26.67 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2236,7 +2246,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 21.59 59.69 0)
+			(at 26.67 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2988,6 +2998,72 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
+		(at 50.8 132.08 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e4af4ebe-58b2-48a7-803f-7acc994be60a")
+		(property "Reference" "#PWR0189"
+			(at 54.61 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12VA"
+			(at 46.99 132.0801 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 50.8 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "49cabfeb-f399-4f2f-9635-e7ef7f36aa08")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev1"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737"
+					(reference "#PWR0189")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
 		(at 71.12 27.94 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3339,28 +3415,8 @@
 				(justify left)
 			)
 		)
-		(pin "I2C2_SCL" bidirectional
-			(at 262.89 26.67 0)
-			(uuid "9e690a9f-197f-4bad-8be8-faef1ce49a72")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "I2C2_SDA" bidirectional
-			(at 262.89 29.21 0)
-			(uuid "af7d0b8c-5e8e-4731-9022-301f1816e59d")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "I2C4_SCL" bidirectional
-			(at 262.89 36.83 0)
+			(at 262.89 21.59 0)
 			(uuid "c77dae35-b7aa-4cb9-9ef6-72ea0de1efe4")
 			(effects
 				(font
@@ -3370,7 +3426,7 @@
 			)
 		)
 		(pin "I2C4_SDA" bidirectional
-			(at 262.89 39.37 0)
+			(at 262.89 25.4 0)
 			(uuid "7cba6b49-d1e4-4e5b-abaf-167b40fa415b")
 			(effects
 				(font
@@ -3387,46 +3443,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-		(pin "I2C1_SCL" bidirectional
-			(at 262.89 21.59 0)
-			(uuid "c0315293-088e-4813-b49a-de1f27892a77")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "I2C1_SDA" bidirectional
-			(at 262.89 24.13 0)
-			(uuid "988a2b5b-7e31-402d-8abe-3e56bd0c3283")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "I2C3_SCL" bidirectional
-			(at 262.89 31.75 0)
-			(uuid "60ef4140-4afb-4845-b1ff-7b93248563aa")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "I2C3_SDA" bidirectional
-			(at 262.89 34.29 0)
-			(uuid "5d6922ce-ec41-4e4a-bb34-24476451b118")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 			)
 		)
 		(pin "Valve1" output
@@ -3609,36 +3625,6 @@
 				(justify left)
 			)
 		)
-		(pin "SPI3_MISO" input
-			(at 194.31 46.99 270)
-			(uuid "3fec3a3e-7daf-40cd-9713-699b15b20fe7")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "SPI3_MOSI" output
-			(at 196.85 46.99 270)
-			(uuid "a4253a72-47d0-406a-8418-5b381d7e6c85")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "SPI3_SCK" bidirectional
-			(at 199.39 46.99 270)
-			(uuid "ba35d36c-c9da-4fc9-9628-15ff58e1efe3")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "T1" output
 			(at 181.61 46.99 270)
 			(uuid "f2c55e3e-cc12-47ba-ac84-aeec6b3508c8")
@@ -3769,6 +3755,36 @@
 				(justify left)
 			)
 		)
+		(pin "SPI2_MISO" input
+			(at 194.31 46.99 270)
+			(uuid "3fa6abd5-5125-4420-adaa-2ca3d3a86ddd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SPI2_MOSI" output
+			(at 196.85 46.99 270)
+			(uuid "ced3876b-0d54-445c-af40-0e7d959cdcde")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SPI2_SCK" bidirectional
+			(at 199.39 46.99 270)
+			(uuid "1f064d51-5def-4256-8c96-9b393f79c22b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(instances
 			(project "monarch_payload_interface_board_rev1"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737"
@@ -3830,7 +3846,7 @@
 				(justify right)
 			)
 		)
-		(pin "SPI3_MISO" output
+		(pin "SPI2_MISO" output
 			(at 194.31 63.5 90)
 			(uuid "aaca76c7-ccf0-4268-be4e-f7431463a58c")
 			(effects
@@ -3840,7 +3856,7 @@
 				(justify right)
 			)
 		)
-		(pin "SPI3_MOSI" input
+		(pin "SPI2_MOSI" input
 			(at 196.85 63.5 90)
 			(uuid "db7d0ee2-5c80-4045-805a-6eaf3ed16b36")
 			(effects
@@ -3850,7 +3866,7 @@
 				(justify right)
 			)
 		)
-		(pin "SPI3_SCK" bidirectional
+		(pin "SPI2_SCK" bidirectional
 			(at 199.39 63.5 90)
 			(uuid "ba3f35c9-e0fe-4db7-a766-9bafaf42b66d")
 			(effects
@@ -4802,7 +4818,7 @@
 		)
 	)
 	(sheet
-		(at 24.13 54.61)
+		(at 29.21 54.61)
 		(size 21.59 9.652)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4817,7 +4833,7 @@
 		)
 		(uuid "c9f26218-865c-403f-bb45-a126d537922c")
 		(property "Sheetname" "12V Power Supply"
-			(at 24.13 53.8984 0)
+			(at 29.21 53.8984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4826,7 +4842,7 @@
 			)
 		)
 		(property "Sheetfile" "power supply.kicad_sch"
-			(at 18.034 64.77 0)
+			(at 23.114 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4835,7 +4851,7 @@
 			)
 		)
 		(pin "+12VB" output
-			(at 45.72 59.69 0)
+			(at 50.8 59.69 0)
 			(uuid "a395cd04-5ed1-4a41-af8c-95fe495b02d4")
 			(effects
 				(font
@@ -4845,7 +4861,7 @@
 			)
 		)
 		(pin "GND" input
-			(at 24.13 59.69 180)
+			(at 29.21 59.69 180)
 			(uuid "ed475149-cbc8-42ce-a665-77cd1d693803")
 			(effects
 				(font
@@ -4855,7 +4871,7 @@
 			)
 		)
 		(pin "VBAT" input
-			(at 24.13 57.15 180)
+			(at 29.21 57.15 180)
 			(uuid "279a7da1-ddd2-428c-9c83-556033c8cf21")
 			(effects
 				(font
@@ -4865,7 +4881,7 @@
 			)
 		)
 		(pin "EN" input
-			(at 45.72 57.15 0)
+			(at 50.8 57.15 0)
 			(uuid "de4fb7f3-6f72-4ea8-b8c0-444a55afd4a2")
 			(effects
 				(font
@@ -5115,7 +5131,7 @@
 				(justify right)
 			)
 		)
-		(pin "SPI3_MISO" input
+		(pin "SPI2_MISO" input
 			(at 224.79 74.93 90)
 			(uuid "378916d2-3fc4-40ee-891b-927a43b995bf")
 			(effects
@@ -5125,7 +5141,7 @@
 				(justify right)
 			)
 		)
-		(pin "SPI3_MOSI" input
+		(pin "SPI2_MOSI" input
 			(at 227.33 74.93 90)
 			(uuid "1b7587a0-3834-4ac1-af3b-6e29d064bf3a")
 			(effects
@@ -5135,7 +5151,7 @@
 				(justify right)
 			)
 		)
-		(pin "SPI3_SCK" bidirectional
+		(pin "SPI2_SCK" bidirectional
 			(at 229.87 74.93 90)
 			(uuid "d71bda00-a484-42b5-9678-00953f5c28d8")
 			(effects
@@ -5827,7 +5843,7 @@
 			)
 		)
 		(pin "I2C4_SCL" bidirectional
-			(at 270.51 102.87 90)
+			(at 275.59 102.87 90)
 			(uuid "58befd8b-f04e-4f33-ab64-448bd3c40a48")
 			(effects
 				(font
@@ -5837,7 +5853,7 @@
 			)
 		)
 		(pin "I2C4_SDA" bidirectional
-			(at 267.97 102.87 90)
+			(at 273.05 102.87 90)
 			(uuid "5fa7c740-fe3a-4f5d-be94-82455919ee25")
 			(effects
 				(font
@@ -5859,6 +5875,36 @@
 		(pin "Heater0-" output
 			(at 72.39 102.87 90)
 			(uuid "2098a0e4-dbd4-4b0d-ba26-eb3e3467bc2a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "+12VA" input
+			(at 54.61 132.08 180)
+			(uuid "4473dd08-289e-4227-8055-cde2603416fd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "UART_PPU_RX" output
+			(at 267.97 102.87 90)
+			(uuid "32161a08-c4cd-4df5-bdfd-d9e1a800d0f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "UART_PPU_TX" input
+			(at 270.51 102.87 90)
+			(uuid "5b1e2a37-e03f-4c69-bf4c-c1e7e0a83ba1")
 			(effects
 				(font
 					(size 1.27 1.27)
