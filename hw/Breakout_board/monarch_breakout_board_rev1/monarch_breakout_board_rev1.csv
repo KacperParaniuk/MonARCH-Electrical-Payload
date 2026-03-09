@@ -1,0 +1,10 @@
+Reference,Qty,Value,Footprint,Datasheet
+R141,1,470 ohms,Resistor_SMD:R_0402_1005Metric,~
+"L1,L2,L5,L6",4,18uH,Inductor_SMD:L_0805_2012Metric,https://www.digikey.com/en/products/detail/tdk-corporation/MLF2012C180KT000/504231
+D104,1,RED LED,LED_SMD:LED_0603_1608Metric,~
+C3,1,0.01 uF,Capacitor_SMD:C_0603_1608Metric,~
+"C2,C5,C9,C10",4,33pF,Capacitor_SMD:C_0603_1608Metric,~
+C1,1,1uF,Capacitor_SMD:C_0603_1608Metric,~
+U2,1,FDC2214RGHR,FDC2214:RGH0016A,https://www.ti.com/lit/gpn/fdc2214
+J2,1,5037630491,Connector 4 Pin:CONN_5037630000-SD_04_MOL,https://www.molex.com/en-us/products/part-detail-pdf/5037630491?display=pdf
+"J3,J4,J5,J6",4,5037630291,Connector 2 Pin:CONN_5037630000-SD_02_MOL,https://www.molex.com/en-us/products/part-detail-pdf/5037630291?display=pdf
