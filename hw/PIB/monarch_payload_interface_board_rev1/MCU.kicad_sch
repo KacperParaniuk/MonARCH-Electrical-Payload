@@ -4018,6 +4018,16 @@
 	)
 	(wire
 		(pts
+			(xy 153.67 48.26) (xy 156.21 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "314a01dd-471a-49b0-bcb2-cdca8981bb31")
+	)
+	(wire
+		(pts
 			(xy 153.67 116.84) (xy 172.72 116.84)
 		)
 		(stroke
@@ -4035,16 +4045,6 @@
 			(type default)
 		)
 		(uuid "36a4ab7a-44e6-4e1a-a54d-127adf8c41cd")
-	)
-	(wire
-		(pts
-			(xy 153.67 55.88) (xy 156.21 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "36ad937a-5ec6-4598-8222-548d0b40f34f")
 	)
 	(wire
 		(pts
@@ -4658,16 +4658,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 41.91) (xy 156.21 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a7b311aa-e10c-421d-8953-65e98cdae717")
-	)
-	(wire
-		(pts
 			(xy 63.5 83.82) (xy 68.58 83.82)
 		)
 		(stroke
@@ -4895,16 +4885,6 @@
 			(type default)
 		)
 		(uuid "e76c8159-fe72-4329-bfd6-fba8b11345a8")
-	)
-	(wire
-		(pts
-			(xy 153.67 53.34) (xy 156.21 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e81915a0-c74b-4bd1-8370-95ff62282a19")
 	)
 	(wire
 		(pts
@@ -5322,6 +5302,17 @@
 		)
 		(uuid "0e64f0d0-d191-4e09-befa-45d307080b36")
 	)
+	(hierarchical_label "UART4_TX"
+		(shape output)
+		(at 156.21 48.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "118bface-4dec-42a6-bd64-2c878fc95d70")
+	)
 	(hierarchical_label "Valve6"
 		(shape output)
 		(at 105.41 93.98 180)
@@ -5344,7 +5335,7 @@
 		)
 		(uuid "178bf331-edaa-49ea-9bb0-7cafa12afd75")
 	)
-	(hierarchical_label "UART_TX"
+	(hierarchical_label "USART3_TX"
 		(shape output)
 		(at 156.21 144.78 0)
 		(effects
@@ -5388,7 +5379,7 @@
 		)
 		(uuid "4d05e677-047b-41af-98f0-fcebf381471c")
 	)
-	(hierarchical_label "UART_RX"
+	(hierarchical_label "USART3_RX"
 		(shape input)
 		(at 156.21 147.32 0)
 		(effects
@@ -5541,6 +5532,17 @@
 			(justify left)
 		)
 		(uuid "8888b0cb-9a31-44e5-92bb-ffe2c632651d")
+	)
+	(hierarchical_label "UART4_RX"
+		(shape input)
+		(at 156.21 50.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8bb27fd5-3888-4a43-ba91-96f91e70a1a7")
 	)
 	(hierarchical_label "Valve15"
 		(shape output)
@@ -6056,7 +6058,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 156.21 43.18 0)
+		(at 156.21 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6064,7 +6066,7 @@
 		(dnp no)
 		(uuid "230b2922-2612-4fef-aa8b-27659d4a9f63")
 		(property "Reference" "#PWR041"
-			(at 156.21 49.53 0)
+			(at 156.21 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6073,7 +6075,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 156.21 46.736 0)
+			(at 156.21 45.466 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6081,7 +6083,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 156.21 43.18 0)
+			(at 156.21 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6090,7 +6092,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 43.18 0)
+			(at 156.21 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6099,7 +6101,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 156.21 43.18 0)
+			(at 156.21 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)

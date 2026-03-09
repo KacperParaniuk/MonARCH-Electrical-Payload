@@ -272,6 +272,16 @@
 	)
 	(wire
 		(pts
+			(xy 262.89 30.48) (xy 267.97 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0439b43a-c4da-4ac4-94fc-6c437b949db4")
+	)
+	(wire
+		(pts
 			(xy 237.49 100.33) (xy 237.49 102.87)
 		)
 		(stroke
@@ -599,6 +609,16 @@
 			(type default)
 		)
 		(uuid "3275dfc7-31c1-4287-9535-5b6553fe31e1")
+	)
+	(wire
+		(pts
+			(xy 270.51 27.94) (xy 270.51 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "339645a4-383c-4ae6-b015-1375897d1db8")
 	)
 	(wire
 		(pts
@@ -1272,6 +1292,16 @@
 	)
 	(wire
 		(pts
+			(xy 267.97 30.48) (xy 267.97 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1e9c056-3a99-4d51-b16d-d3b402aec73f")
+	)
+	(wire
+		(pts
 			(xy 245.11 100.33) (xy 245.11 102.87)
 		)
 		(stroke
@@ -1289,6 +1319,16 @@
 			(type default)
 		)
 		(uuid "c4f6fba9-26bc-4a60-94c9-7887cb3a7dc3")
+	)
+	(wire
+		(pts
+			(xy 262.89 27.94) (xy 270.51 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c629ce18-de6f-4591-9bf4-40bddedd34f0")
 	)
 	(wire
 		(pts
@@ -3385,26 +3425,6 @@
 				(justify left top)
 			)
 		)
-		(pin "UART_RX" input
-			(at 73.66 22.86 180)
-			(uuid "c99788bc-eef5-4808-b5e0-63c01f67b2c1")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "UART_TX" output
-			(at 73.66 25.4 180)
-			(uuid "74cdbf82-8852-489f-94b8-9b151a3126c9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "GND" input
 			(at 73.66 30.48 180)
 			(uuid "a1939713-a607-4108-b03a-0f4ad8251dd3")
@@ -3783,6 +3803,46 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(pin "UART4_TX" output
+			(at 262.89 30.48 0)
+			(uuid "7fed6fe9-27a5-4eed-a389-0c8360cbb602")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USART3_RX" input
+			(at 73.66 22.86 180)
+			(uuid "f15d6c5e-2100-4bbd-afd2-83896d945720")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USART3_TX" output
+			(at 73.66 25.4 180)
+			(uuid "500d797a-0fcb-4ea1-9d93-9e10351525f3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "UART4_RX" input
+			(at 262.89 27.94 0)
+			(uuid "cc9315d4-c1a1-4f56-a1d5-1333b45fad8b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -5892,7 +5952,7 @@
 				(justify left)
 			)
 		)
-		(pin "UART_PPU_RX" output
+		(pin "UART_PPU_RX" input
 			(at 267.97 102.87 90)
 			(uuid "32161a08-c4cd-4df5-bdfd-d9e1a800d0f7")
 			(effects
@@ -5902,7 +5962,7 @@
 				(justify right)
 			)
 		)
-		(pin "UART_PPU_TX" input
+		(pin "UART_PPU_TX" output
 			(at 270.51 102.87 90)
 			(uuid "5b1e2a37-e03f-4c69-bf4c-c1e7e0a83ba1")
 			(effects

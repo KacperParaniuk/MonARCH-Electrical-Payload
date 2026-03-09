@@ -3352,7 +3352,7 @@
 		(uuid "34527a3b-85ea-4882-bc59-209f954530b9")
 	)
 	(hierarchical_label "UART_PPU_RX"
-		(shape output)
+		(shape input)
 		(at 166.37 116.84 180)
 		(effects
 			(font
@@ -3363,7 +3363,7 @@
 		(uuid "3f1a8931-d766-46ea-88eb-08328f328cf8")
 	)
 	(hierarchical_label "UART_PPU_TX"
-		(shape input)
+		(shape output)
 		(at 166.37 114.3 180)
 		(effects
 			(font
