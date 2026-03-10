@@ -4637,7 +4637,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CONN_5037630000-SD_06_MOL"
+		(property "Footprint" "5037630691:CONN_5037630000-SD_06_MOL"
 			(at 171.45 109.22 0)
 			(effects
 				(font

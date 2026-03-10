@@ -5588,17 +5588,6 @@
 		)
 		(uuid "a6ab58f5-5977-4a0a-8eaf-2502ccf1d9ce")
 	)
-	(hierarchical_label "EN"
-		(shape output)
-		(at 156.21 -27.94 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a8e06f90-4432-4589-98f0-df5b8d43e83b")
-	)
 	(hierarchical_label "T4"
 		(shape output)
 		(at 105.41 76.2 180)
@@ -8022,7 +8011,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "125"
 			(at 100.33 106.68 90)
 			(effects
 				(font

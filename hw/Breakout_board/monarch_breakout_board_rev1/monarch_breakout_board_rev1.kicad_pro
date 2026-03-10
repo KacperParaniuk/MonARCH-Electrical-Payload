@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.3,
-          "height": 0.5,
-          "width": 0.5
+          "drill": 0.2032,
+          "height": 0.499999,
+          "width": 0.499999
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -516,7 +516,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "monarch_breakout_board_rev1.csv",
+    "bom_export_filename": "..\\..\\..\\..\\..\\Users\\Kacper Paraniuk\\Downloads\\monarch_breakout_board_rev1.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
