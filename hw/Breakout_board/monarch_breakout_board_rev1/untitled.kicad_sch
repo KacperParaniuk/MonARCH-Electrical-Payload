@@ -8,7 +8,7 @@
 		(comment 4 "Kacper Paraniuk")
 	)
 	(lib_symbols
-		(symbol "Connectors 2 Pin:5037630291"
+		(symbol "Connectors 4 Pin:5037630491"
 			(pin_names
 				(offset 0.254)
 			)
@@ -23,7 +23,7 @@
 					)
 				)
 			)
-			(property "Value" "5037630291"
+			(property "Value" "5037630491"
 				(at 0 0 0)
 				(effects
 					(font
@@ -31,7 +31,7 @@
 					)
 				)
 			)
-			(property "Footprint" "CONN_5037630000-SD_02_MOL"
+			(property "Footprint" "CONN_5037630000-SD_04_MOL"
 				(at 0 0 0)
 				(effects
 					(font
@@ -41,7 +41,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630291?display=pdf"
+			(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630491?display=pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -68,7 +68,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "5037630291"
+			(property "ki_keywords" "5037630491"
 				(at 0 0 0)
 				(effects
 					(font
@@ -77,7 +77,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "CONN_5037630000-SD_02_MOL"
+			(property "ki_fp_filters" "CONN_5037630000-SD_04_MOL"
 				(at 0 0 0)
 				(effects
 					(font
@@ -86,10 +86,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "5037630291_1_1"
+			(symbol "5037630491_1_1"
 				(polyline
 					(pts
-						(xy 5.08 2.54) (xy 5.08 -5.08)
+						(xy 5.08 2.54) (xy 5.08 -10.16)
 					)
 					(stroke
 						(width 0.127)
@@ -101,7 +101,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 -5.08) (xy 12.7 -5.08)
+						(xy 5.08 -10.16) (xy 12.7 -10.16)
 					)
 					(stroke
 						(width 0.127)
@@ -185,6 +185,78 @@
 				)
 				(polyline
 					(pts
+						(xy 10.16 -5.08) (xy 5.08 -5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -5.08) (xy 8.89 -4.2333)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -5.08) (xy 8.89 -5.9267)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -7.62) (xy 5.08 -7.62)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -7.62) (xy 8.89 -6.7733)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -7.62) (xy 8.89 -8.4667)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
 						(xy 12.7 2.54) (xy 5.08 2.54)
 					)
 					(stroke
@@ -197,7 +269,7 @@
 				)
 				(polyline
 					(pts
-						(xy 12.7 -5.08) (xy 12.7 2.54)
+						(xy 12.7 -10.16) (xy 12.7 2.54)
 					)
 					(stroke
 						(width 0.127)
@@ -207,7 +279,7 @@
 						(type none)
 					)
 				)
-				(pin input line
+				(pin unspecified line
 					(at 0 0 0)
 					(length 5.08)
 					(name "1"
@@ -225,7 +297,7 @@
 						)
 					)
 				)
-				(pin input line
+				(pin unspecified line
 					(at 0 -2.54 0)
 					(length 5.08)
 					(name "2"
@@ -243,11 +315,47 @@
 						)
 					)
 				)
+				(pin unspecified line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
-			(symbol "5037630291_1_2"
+			(symbol "5037630491_1_2"
 				(polyline
 					(pts
-						(xy 5.08 2.54) (xy 5.08 -5.08)
+						(xy 5.08 2.54) (xy 5.08 -10.16)
 					)
 					(stroke
 						(width 0.127)
@@ -259,7 +367,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 -5.08) (xy 12.7 -5.08)
+						(xy 5.08 -10.16) (xy 12.7 -10.16)
 					)
 					(stroke
 						(width 0.127)
@@ -343,6 +451,78 @@
 				)
 				(polyline
 					(pts
+						(xy 7.62 -5.08) (xy 5.08 -5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -5.08) (xy 8.89 -4.2333)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -5.08) (xy 8.89 -5.9267)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -7.62) (xy 5.08 -7.62)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -7.62) (xy 8.89 -6.7733)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -7.62) (xy 8.89 -8.4667)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
 						(xy 12.7 2.54) (xy 5.08 2.54)
 					)
 					(stroke
@@ -355,7 +535,7 @@
 				)
 				(polyline
 					(pts
-						(xy 12.7 -5.08) (xy 12.7 2.54)
+						(xy 12.7 -10.16) (xy 12.7 2.54)
 					)
 					(stroke
 						(width 0.127)
@@ -401,37 +581,49 @@
 						)
 					)
 				)
+				(pin unspecified line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(embedded_fonts no)
 		)
 	)
 	(rectangle
-		(start 15.24 60.96)
-		(end 85.09 105.664)
-		(stroke
-			(width 0)
-			(type dash)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 3cedc899-7ff4-4f5c-85bc-3811898ec72a)
-	)
-	(rectangle
-		(start 86.36 60.96)
-		(end 156.21 105.664)
-		(stroke
-			(width 0)
-			(type dash)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 80b84802-8a80-458a-8282-b16cbf6352b6)
-	)
-	(rectangle
 		(start 15.24 15.24)
-		(end 85.09 59.944)
+		(end 87.63 59.944)
 		(stroke
 			(width 0)
 			(type dash)
@@ -442,8 +634,8 @@
 		(uuid c51c22e4-a27a-43b1-abab-2640b496cf24)
 	)
 	(rectangle
-		(start 86.36 15.24)
-		(end 156.21 59.944)
+		(start 88.9 15.24)
+		(end 161.29 59.944)
 		(stroke
 			(width 0)
 			(type dash)
@@ -453,33 +645,7 @@
 		)
 		(uuid f9a22466-62f9-42f4-a38a-7bec39a44fd3)
 	)
-	(text "Feed System Accumulator #2 Connection"
-		(exclude_from_sim no)
-		(at 16.256 64.77 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "9a886888-9df2-42bc-ad68-a307a8fb522e")
-	)
-	(text "Feed System Accumulator #2 Connection"
-		(exclude_from_sim no)
-		(at 87.376 64.77 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "acf306a1-a4ca-479e-9107-8056990aab7c")
-	)
-	(text "Feed System Accumulator #1 Connection"
+	(text "Feed System Accumulator #1/#2 Connection"
 		(exclude_from_sim no)
 		(at 16.256 19.05 0)
 		(effects
@@ -492,9 +658,9 @@
 		)
 		(uuid "df23851d-5e0f-4aca-a8a7-f2e465bc3191")
 	)
-	(text "Feed System Accumulator #1 Connection"
+	(text "Feed System Accumulator #3/#4 Connection"
 		(exclude_from_sim no)
-		(at 87.376 19.05 0)
+		(at 89.916 19.05 0)
 		(effects
 			(font
 				(size 2 2)
@@ -507,17 +673,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 81.28) (xy 113.03 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "28ac9e50-bcca-4bd0-9287-0626daacf68d")
-	)
-	(wire
-		(pts
-			(xy 107.95 38.1) (xy 113.03 38.1)
+			(xy 39.37 40.64) (xy 44.45 40.64)
 		)
 		(stroke
 			(width 0)
@@ -527,7 +683,17 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 35.56) (xy 40.64 35.56)
+			(xy 113.03 31.75) (xy 118.11 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4eb37085-df88-4df9-a36f-916f7ba00b4c")
+	)
+	(wire
+		(pts
+			(xy 39.37 33.02) (xy 44.45 33.02)
 		)
 		(stroke
 			(width 0)
@@ -537,7 +703,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 35.56) (xy 113.03 35.56)
+			(xy 39.37 38.1) (xy 44.45 38.1)
 		)
 		(stroke
 			(width 0)
@@ -547,7 +713,17 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 38.1) (xy 40.64 38.1)
+			(xy 113.03 39.37) (xy 118.11 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a1021b2-214e-4f4b-84eb-eb324b1466d4")
+	)
+	(wire
+		(pts
+			(xy 39.37 35.56) (xy 44.45 35.56)
 		)
 		(stroke
 			(width 0)
@@ -557,37 +733,49 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 83.82) (xy 113.03 83.82)
+			(xy 113.03 36.83) (xy 118.11 36.83)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "94fcf199-eac2-43e1-b5fe-76b14c0ecd59")
+		(uuid "a7f80dfe-4e12-4ba7-817f-263f269237d7")
 	)
 	(wire
 		(pts
-			(xy 35.56 86.36) (xy 40.64 86.36)
+			(xy 113.03 34.29) (xy 118.11 34.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c146987e-1362-4353-a89b-7a2f726714e6")
+		(uuid "d0cff9ef-919e-420d-9ac2-2d658fcba9d8")
 	)
-	(wire
-		(pts
-			(xy 35.56 83.82) (xy 40.64 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d3723d04-f13b-48d1-8372-df99b2d9b978")
-	)
-	(global_label "Cap1+"
+	(global_label "Cap2-"
 		(shape input)
-		(at 35.56 35.56 180)
+		(at 113.03 34.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "27da0416-d694-4c1f-86fe-4e80f74c045b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 103.6949 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Cap0+"
+		(shape input)
+		(at 39.37 33.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -597,7 +785,7 @@
 		)
 		(uuid "2d50b941-3c32-41aa-bd23-aeb3010f6e90")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 26.2249 35.56 0)
+			(at 30.0349 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -607,9 +795,9 @@
 			)
 		)
 	)
-	(global_label "Cap4-"
+	(global_label "Cap1-"
 		(shape input)
-		(at 107.95 38.1 180)
+		(at 39.37 40.64 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -619,7 +807,7 @@
 		)
 		(uuid "59e4316f-a532-46af-95a7-586d3cea88eb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 98.6149 38.1 0)
+			(at 30.0349 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -629,9 +817,9 @@
 			)
 		)
 	)
-	(global_label "Cap7+"
+	(global_label "Cap3-"
 		(shape input)
-		(at 107.95 81.28 180)
+		(at 113.03 39.37 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -639,9 +827,75 @@
 			)
 			(justify right)
 		)
-		(uuid "68126678-5c0c-46ca-9113-6340dcc85e58")
+		(uuid "811c3237-5332-4889-bc56-4e7c0421ba59")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 98.6149 81.28 0)
+			(at 103.6949 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Cap1+"
+		(shape input)
+		(at 39.37 38.1 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a56a8b2d-52a7-489c-911d-78a969e5bfef")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 30.0349 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Cap0-"
+		(shape input)
+		(at 39.37 35.56 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d3cab15e-339e-4799-87ab-bfb582da484f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 30.0349 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Cap2+"
+		(shape input)
+		(at 113.03 31.75 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d5995f88-58ab-44a2-9a7c-5b6be226de99")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 103.6949 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -653,7 +907,7 @@
 	)
 	(global_label "Cap3+"
 		(shape input)
-		(at 107.95 35.56 180)
+		(at 113.03 36.83 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -661,97 +915,9 @@
 			)
 			(justify right)
 		)
-		(uuid "a56a8b2d-52a7-489c-911d-78a969e5bfef")
+		(uuid "edede020-239c-4dfd-807e-38daa6020831")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 98.6149 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Cap2-"
-		(shape input)
-		(at 35.56 38.1 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d3cab15e-339e-4799-87ab-bfb582da484f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 26.2249 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Cap5+"
-		(shape input)
-		(at 35.56 83.82 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d95060fb-280d-4744-bd29-67e0059349c2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 26.2249 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Cap8-"
-		(shape input)
-		(at 107.95 83.82 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e182fe31-4d1c-4e2c-9f51-1508cad216f7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 98.6149 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Cap6-"
-		(shape input)
-		(at 35.56 86.36 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "fb41c06f-a01c-478e-bbf7-60c92281636a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 26.2249 86.36 0)
+			(at 103.6949 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -762,89 +928,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Connectors 2 Pin:5037630291")
-		(at 113.03 35.56 0)
+		(lib_id "Connectors 4 Pin:5037630491")
+		(at 118.11 31.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "0c026f81-14c0-4bb0-9303-5feaf65001ef")
-		(property "Reference" "J5"
-			(at 127 35.5599 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "5037630291"
-			(at 127 38.0999 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector 2 Pin:CONN_5037630000-SD_02_MOL"
-			(at 113.03 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630291?display=pdf"
-			(at 113.03 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 113.03 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ca731108-2db7-4d2d-b084-1312cfbec5fe")
-		)
-		(pin "1"
-			(uuid "cf620643-76a1-443c-951f-5976745e01dd")
-		)
-		(instances
-			(project ""
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connectors 2 Pin:5037630291")
-		(at 40.64 83.82 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8e95e205-3f59-4efa-a475-b615adb1103c")
+		(uuid "20f30e97-b0ad-4591-a0aa-970660fa2216")
 		(property "Reference" "J3"
-			(at 54.61 83.8199 0)
+			(at 132.08 34.2899 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -852,8 +946,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "5037630291"
-			(at 54.61 86.3599 0)
+		(property "Value" "5037630491"
+			(at 132.08 36.8299 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -861,8 +955,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector 2 Pin:CONN_5037630000-SD_02_MOL"
-			(at 40.64 83.82 0)
+		(property "Footprint" "Connector 4 Pin:CONN_5037630000-SD_04_MOL"
+			(at 118.11 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -871,8 +965,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630291?display=pdf"
-			(at 40.64 83.82 0)
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630491?display=pdf"
+			(at 118.11 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -882,7 +976,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 40.64 83.82 0)
+			(at 118.11 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -890,11 +984,17 @@
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "28c8e5ba-412e-4fca-b877-ed15af69dcdd")
-		)
 		(pin "1"
-			(uuid "40dff278-d82e-4fec-a689-47cfadd9c1fb")
+			(uuid "e0a491fd-5af6-4c46-a86f-6b6d83282ed3")
+		)
+		(pin "4"
+			(uuid "8530de3d-92d9-47c9-aecc-a6f1be600063")
+		)
+		(pin "2"
+			(uuid "d30e8eb0-da0b-422e-b7e3-66f496023143")
+		)
+		(pin "3"
+			(uuid "eac4adbb-6e10-4724-97ba-cb67defff476")
 		)
 		(instances
 			(project "monarch_breakout_board_rev1"
@@ -906,17 +1006,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Connectors 2 Pin:5037630291")
-		(at 40.64 35.56 0)
+		(lib_id "Connectors 4 Pin:5037630491")
+		(at 44.45 33.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c5084dca-b8c1-49fb-9d72-3759158d26ec")
-		(property "Reference" "J4"
-			(at 54.61 35.5599 0)
+		(uuid "ba7c2e13-80e3-4243-b315-a61611ab1741")
+		(property "Reference" "J2"
+			(at 58.42 35.5599 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -924,8 +1024,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "5037630291"
-			(at 54.61 38.0999 0)
+		(property "Value" "5037630491"
+			(at 58.42 38.0999 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -933,8 +1033,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector 2 Pin:CONN_5037630000-SD_02_MOL"
-			(at 40.64 35.56 0)
+		(property "Footprint" "Connector 4 Pin:CONN_5037630000-SD_04_MOL"
+			(at 44.45 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -943,8 +1043,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630291?display=pdf"
-			(at 40.64 35.56 0)
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630491?display=pdf"
+			(at 44.45 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -954,96 +1054,30 @@
 			)
 		)
 		(property "Description" ""
-			(at 40.64 35.56 0)
+			(at 44.45 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "3a17ffea-9546-43cf-b1c3-b1f8e2973b62")
 		)
 		(pin "1"
-			(uuid "47836fd6-539b-4d9a-93b7-c73564c1b40a")
+			(uuid "65f8f3fa-cd52-458b-9ece-8aa3609ab443")
 		)
-		(instances
-			(project ""
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connectors 2 Pin:5037630291")
-		(at 113.03 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f7fe04f2-bd5e-47e2-912b-9cf346308a14")
-		(property "Reference" "J6"
-			(at 127 81.2799 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "5037630291"
-			(at 127 83.8199 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector 2 Pin:CONN_5037630000-SD_02_MOL"
-			(at 113.03 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630291?display=pdf"
-			(at 113.03 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 113.03 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
+		(pin "4"
+			(uuid "4cf3aebc-c423-45e2-b70d-0c24b5ead3ee")
 		)
 		(pin "2"
-			(uuid "2c6c63a0-0633-49d6-9e3b-0c51dcac1e68")
+			(uuid "328bdf63-71db-4f00-a213-af81ae5d95c7")
 		)
-		(pin "1"
-			(uuid "32aac03c-a5ab-4fa2-b19d-a87c91c0f8d8")
+		(pin "3"
+			(uuid "2e9cd2c5-559f-4bf4-825b-9d37f18bd439")
 		)
 		(instances
 			(project "monarch_breakout_board_rev1"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J6")
+					(reference "J2")
 					(unit 1)
 				)
 			)
