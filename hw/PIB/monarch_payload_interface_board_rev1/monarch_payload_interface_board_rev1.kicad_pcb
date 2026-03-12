@@ -5378,7 +5378,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C15"
-			(at 2.185 0.08 0)
+			(at -0.235 2.52 0)
 			(layer "F.SilkS")
 			(uuid "79b0f913-93ec-4cf1-af67-4a1def7cd19e")
 			(effects
@@ -64321,6 +64321,29 @@
 			)
 		)
 	)
+	(gr_rect
+		(start 68.25 47)
+		(end 87.75 50.4)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "6c9abe88-9bfb-4f55-8666-16b17f27effa")
+	)
+	(gr_text "MonARCH Payload Interface Board Rev. 1\nSIROTA 3/12/2026"
+		(at 78 49.95 0)
+		(layer "F.SilkS")
+		(uuid "fa90a37d-672f-4e67-997a-c16a94fd29d5")
+		(effects
+			(font
+				(size 0.9 0.6)
+				(thickness 0.15)
+			)
+			(justify bottom)
+		)
+	)
 	(segment
 		(start 61.74712 38.2778)
 		(end 61.76492 38.26)
@@ -66616,6 +66639,15 @@
 		(uuid "7f260a5b-4888-44fd-9210-b25092cabd44")
 	)
 	(via
+		(at 80.4 34.5)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(free yes)
+		(net 3)
+		(uuid "815f9c83-7fd3-4cb2-9d97-8d4c94f4dba7")
+	)
+	(via
 		(at 83.9402 42.306)
 		(size 0.6)
 		(drill 0.3)
@@ -66672,6 +66704,15 @@
 		(layers "F.Cu" "B.Cu")
 		(net 3)
 		(uuid "8a260c7d-48f5-4789-99ed-05a25e11c010")
+	)
+	(via
+		(at 85.15 30.9)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(free yes)
+		(net 3)
+		(uuid "8e3285d5-bec6-4842-b83c-5da7d78ee53d")
 	)
 	(via
 		(at 69.0792 31.587)
