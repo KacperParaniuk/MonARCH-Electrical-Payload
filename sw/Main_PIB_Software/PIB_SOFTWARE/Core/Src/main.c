@@ -22,11 +22,14 @@
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
+#include "usart.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
 #include "gpio_driver.h"
+#include "uart_handler.h"
+
 
 /* USER CODE END Includes */
 
@@ -81,13 +84,21 @@ int main(void)
   /* USER CODE BEGIN Init */
 
 
-  GPIO_PinConfig_t LED_BLINK = {
-	  .port = LED_PIN_GPIO_Port,
-	  .pin = LED_PIN_Pin,
-	  .mode = GPIO_MODE_OUTPUT_PP,
-	  .pull = GPIO_NOPULL,
-	  .speed = GPIO_SPEED_FREQ_LOW
-  };
+  uint8_t RX_Buffer[8]; // c automatically decays the array assignment to a pointer bc that's how arrays work in c.
+
+
+  uint8_t TX_Buffer[] = "Hello, World!\r\n";
+  // "\r" move cursor to start of line
+  // "\n" new line
+
+
+//  GPIO_PinConfig_t LED_BLINK = {
+//	  .port = LED_PIN_GPIO_Port,
+//	  .pin = LED_PIN_Pin,
+//	  .mode = GPIO_MODE_OUTPUT_PP,
+//	  .pull = GPIO_NOPULL,
+//	  .speed = GPIO_SPEED_FREQ_LOW
+//  };
 
 
 
@@ -98,7 +109,7 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 
-  GPIO_Driver_Init(&LED_BLINK);
+//  GPIO_Driver_Init(&LED_BLINK);
 
 
   /* USER CODE END SysInit */
@@ -120,6 +131,26 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  HAL_GPIO_TogglePin(LED_PIN_GPIO_Port, LED_PIN_Pin);
+
+	  HAL_UART_Transmit(&huart3,TX_Buffer,sizeof(TX_Buffer),1000); // "Hello World!" // UART Direct Test
+
+	  HAL_Delay(200);
+
+	  Serial_Print("Transmitting"); // Serial_Print custom function test.
+
+	  Serial_Printf("Temperature Test %d C\r\n", 100); // Serial_Print custom formatted print function
+
+
+	  HAL_GPIO_TogglePin(LED_PIN_GPIO_Port, LED_PIN_Pin);
+
+	  HAL_Delay(200);
+
+	  // polling method -> Blocks CPU until UART receive is done.
+	  while(HAL_UART_Receive(&huart3, RX_Buffer, 8,1000)){ // uart receive block will continously try to fetch.
+
+
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

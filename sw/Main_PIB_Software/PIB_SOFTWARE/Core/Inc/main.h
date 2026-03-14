@@ -77,6 +77,10 @@ void Error_Handler(void);
 #define SPI1_MISO_BAT_GPIO_Port GPIOA
 #define SPI1_MOSI_BAT_Pin GPIO_PIN_7
 #define SPI1_MOSI_BAT_GPIO_Port GPIOA
+#define USART3_TX_OBC_Pin GPIO_PIN_4
+#define USART3_TX_OBC_GPIO_Port GPIOC
+#define USART3_RX_OBC_Pin GPIO_PIN_5
+#define USART3_RX_OBC_GPIO_Port GPIOC
 #define valve6_Pin GPIO_PIN_9
 #define valve6_GPIO_Port GPIOE
 #define LED_PIN_Pin GPIO_PIN_15

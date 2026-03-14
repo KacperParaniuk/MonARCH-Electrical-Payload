@@ -19,8 +19,12 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "usart.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /* USER CODE BEGIN 0 */
+
+
 
 /* USER CODE END 0 */
 
@@ -151,7 +155,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     PC4     ------> USART3_TX
     PC5     ------> USART3_RX
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_5;
+    GPIO_InitStruct.Pin = USART3_TX_OBC_Pin|USART3_RX_OBC_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
@@ -197,7 +201,7 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
     PC4     ------> USART3_TX
     PC5     ------> USART3_RX
     */
-    HAL_GPIO_DeInit(GPIOC, GPIO_PIN_4|GPIO_PIN_5);
+    HAL_GPIO_DeInit(GPIOC, USART3_TX_OBC_Pin|USART3_RX_OBC_Pin);
 
   /* USER CODE BEGIN USART3_MspDeInit 1 */
 
