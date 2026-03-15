@@ -150,6 +150,19 @@ int main(void)
 	  while(HAL_UART_Receive(&huart3, RX_Buffer, 8,1000)){ // uart receive block will continously try to fetch.
 
 
+
+		  if(RX_Buffer ){
+
+
+		  }
+
+
+
+
+
+
+
+
 	  }
     /* USER CODE END WHILE */
 

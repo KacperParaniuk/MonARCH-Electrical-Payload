@@ -1,0 +1,3 @@
+../Drivers/no-OS/platform/stm32/stm32_delay.c:43:6:no_os_udelay	3
+../Drivers/no-OS/platform/stm32/stm32_delay.c:71:6:no_os_mdelay	1
+../Drivers/no-OS/platform/stm32/stm32_delay.c:80:19:no_os_get_time	1

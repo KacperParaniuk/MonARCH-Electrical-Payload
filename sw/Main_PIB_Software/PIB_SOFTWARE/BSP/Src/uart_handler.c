@@ -27,6 +27,7 @@ void Serial_Printf(const char *format, ...){ // used for Serial_Printf("Temperat
 }
 
 
+
 //%d      // integer          → 42
 //%f      // float            → 3.140000
 //%.2f    // float 2 decimals → 3.14
