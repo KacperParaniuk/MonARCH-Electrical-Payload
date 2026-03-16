@@ -28,5 +28,4 @@ BSP/Src \
 Core/Src \
 Core/Startup \
 Drivers/STM32L4xx_HAL_Driver/Src \
-Drivers/no-OS/platform/stm32 \
 

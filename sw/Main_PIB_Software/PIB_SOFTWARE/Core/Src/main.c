@@ -30,6 +30,9 @@
 #include "gpio_driver.h"
 #include "uart_handler.h"
 
+#include "ad7124.h"
+#include "ad7124_regs.h"
+
 
 /* USER CODE END Includes */
 
@@ -74,6 +77,9 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 
+	int32_t			ret = 0;	/* Return value */
+
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -82,6 +88,8 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+
+
 
 
   uint8_t RX_Buffer[8]; // c automatically decays the array assignment to a pointer bc that's how arrays work in c.
@@ -124,6 +132,28 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 
+  // ADC7124 || PT Readings Init
+
+  struct ad7124_dev *dev;  // device handle
+
+  struct ad7124_init_param ad7124_init_param = {
+	  .hspi = &hspi2,
+      .cs_port = PT_EN_GPIO_Port,            // ← pt en pointer
+      .cs_pin = PT_EN_Pin,       //
+      .regs = ad7124_regs,         // these are register values of the ad7124
+      .spi_rdy_poll_cnt = 25000
+  };
+
+  ret = ad7124_setup(&dev, &ad7124_init_param);
+  	if (ret != 0)
+  		return ret;
+
+
+
+
+
+
+
 
   /* USER CODE END 2 */
 
@@ -146,12 +176,20 @@ int main(void)
 
 	  HAL_Delay(200);
 
+	  // TEST READS...
+
+	  Serial_Print("Test IC Reads"); // Serial_Print custom function test.
+
+
+
+
 	  // polling method -> Blocks CPU until UART receive is done.
 	  while(HAL_UART_Receive(&huart3, RX_Buffer, 8,1000)){ // uart receive block will continously try to fetch.
 
 
 
-		  if(RX_Buffer ){
+		  if(*RX_Buffer == 0x01){
+
 
 
 		  }

@@ -33,11 +33,13 @@
 #ifndef __AD7124_H__
 #define __AD7124_H__
 
+#include "stm32l4xx_hal.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "no_os_spi.h"
-#include "no_os_delay.h"
-#include "no_os_util.h"
+
+//#include "no_os_spi.h"
+//#include "no_os_delay.h"
+//#include "no_os_util.h"
 
 #define	AD7124_RW 1   /* Read and Write */
 #define	AD7124_R  2   /* Read only */
@@ -266,16 +268,28 @@
 #define AD7124_CRC8_POLYNOMIAL_REPRESENTATION 0x07 /* x8 + x2 + x + 1 */
 #define AD7124_DISABLE_CRC 0
 #define AD7124_USE_CRC 1
-#define AD7124_CHMAP_REG_SETUP_SEL_MSK  	NO_OS_GENMASK(14,12)
-#define AD7124_CHMAP_REG_AINPOS_MSK    		NO_OS_GENMASK(9,5)
-#define AD7124_CHMAP_REG_AINNEG_MSK    		NO_OS_GENMASK(4,0)
-#define AD7124_ADC_CTRL_REG_MODE_MSK   		NO_OS_GENMASK(5,2)
-#define AD7124_SETUP_CONF_REG_BURNOUT_MSK	NO_OS_GENMASK(10,9)
-#define AD7124_SETUP_CONF_REG_REF_SEL_MSK	NO_OS_GENMASK(4,3)
-#define AD7124_SETUP_CONF_REG_PGA_MSK       NO_OS_GENMASK(2,0)
-#define AD7124_REF_BUF_MSK                  NO_OS_GENMASK(8,7)
-#define AD7124_AIN_BUF_MSK                  NO_OS_GENMASK(6,5)
-#define AD7124_POWER_MODE_MSK			    NO_OS_GENMASK(7,6)
+
+#define AD7124_CHMAP_REG_SETUP_SEL_MSK      0x7000  // bits 14,13,12
+#define AD7124_CHMAP_REG_AINPOS_MSK         0x03E0  // bits 9,8,7,6,5
+#define AD7124_CHMAP_REG_AINNEG_MSK         0x001F  // bits 4,3,2,1,0
+#define AD7124_ADC_CTRL_REG_MODE_MSK        0x003C  // bits 5,4,3,2
+#define AD7124_SETUP_CONF_REG_BURNOUT_MSK   0x0600  // bits 10,9
+#define AD7124_SETUP_CONF_REG_REF_SEL_MSK   0x0018  // bits 4,3
+#define AD7124_SETUP_CONF_REG_PGA_MSK       0x0007  // bits 2,1,0
+#define AD7124_REF_BUF_MSK                  0x0180  // bits 8,7
+#define AD7124_AIN_BUF_MSK                  0x0060  // bits 6,5
+#define AD7124_POWER_MODE_MSK               0x00C0  // bits 7,6
+
+//#define AD7124_CHMAP_REG_SETUP_SEL_MSK  	NO_OS_GENMASK(14,12)
+//#define AD7124_CHMAP_REG_AINPOS_MSK    		NO_OS_GENMASK(9,5)
+//#define AD7124_CHMAP_REG_AINNEG_MSK    		NO_OS_GENMASK(4,0)
+//#define AD7124_ADC_CTRL_REG_MODE_MSK   		NO_OS_GENMASK(5,2)
+//#define AD7124_SETUP_CONF_REG_BURNOUT_MSK	NO_OS_GENMASK(10,9)
+//#define AD7124_SETUP_CONF_REG_REF_SEL_MSK	NO_OS_GENMASK(4,3)
+//#define AD7124_SETUP_CONF_REG_PGA_MSK       NO_OS_GENMASK(2,0)
+//#define AD7124_REF_BUF_MSK                  NO_OS_GENMASK(8,7)
+//#define AD7124_AIN_BUF_MSK                  NO_OS_GENMASK(6,5)
+//#define AD7124_POWER_MODE_MSK			    NO_OS_GENMASK(7,6)
 
 /**
  * @enum	ad7124_device_type
@@ -505,7 +519,10 @@ enum ad7124_registers {
  **/
 struct ad7124_dev {
 	/* SPI */
-	struct no_os_spi_desc		*spi_desc;
+	SPI_HandleTypeDef    *hspi; // changed to integrate with HAL // used to be struct no_os_spi_desc  *spi_desc;
+	GPIO_TypeDef         *cs_port;   // ← CS port
+	uint16_t             cs_pin;     // ← add CS pin
+
 	/* Device Settings */
 	struct ad7124_st_reg	*regs;
 	int16_t use_crc;
@@ -526,8 +543,12 @@ struct ad7124_dev {
 
 struct ad7124_init_param {
 	/* SPI */
-	struct no_os_spi_init_param		*spi_init;
+//	struct no_os_spi_init_param		*spi_init; //<- Do not need because CubeMX inits SPI.
 	/* Device Settings */
+	SPI_HandleTypeDef    *hspi; // changed to integrate with HAL // used to be struct no_os_spi_desc  *spi_desc;
+	GPIO_TypeDef         *cs_port;   // ← CS port
+	uint16_t             cs_pin;     // ← add CS pin
+
 	struct ad7124_st_reg	*regs;
 	int16_t use_crc;
 	int16_t check_ready;
@@ -680,7 +701,8 @@ int ad7124_set_power_mode(struct ad7124_dev *device,
 
 /* Initializes the AD7124 */
 int32_t ad7124_setup(struct ad7124_dev **device,
-		     struct ad7124_init_param *init_param);
+	     struct ad7124_init_param *init_param);
+//		     struct ad7124_init_param *init_param);
 
 /* Free the resources allocated by ad7124_setup(). */
 int32_t ad7124_remove(struct ad7124_dev *dev);
