@@ -774,7 +774,6 @@ int ad7124_set_adc_mode(struct ad7124_dev *device, enum ad7124_mode adc_mode)
 		return ret;
 
 	device->mode = adc_mode;
-
 	return 0;
 }
 
