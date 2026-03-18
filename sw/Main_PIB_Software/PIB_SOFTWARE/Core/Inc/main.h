@@ -127,7 +127,7 @@ void Error_Handler(void);
 #define TC_SPI2_SCK_GPIO_Port GPIOD
 #define valve15_Pin GPIO_PIN_2
 #define valve15_GPIO_Port GPIOD
-#define TC_SPI2_MISO_Pin GPIO_PIN_3 // TC AN PT
+#define TC_SPI2_MISO_Pin GPIO_PIN_3
 #define TC_SPI2_MISO_GPIO_Port GPIOD
 #define TC_SPI2_MOSI_Pin GPIO_PIN_4
 #define TC_SPI2_MOSI_GPIO_Port GPIOD

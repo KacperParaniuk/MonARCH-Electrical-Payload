@@ -22,7 +22,6 @@
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
-#include "usart.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -34,6 +33,8 @@
 #include "ad7124.h"
 #include "ad7124_regs.h"
 #include "ad7124_sensor.h"
+
+#include "max31856.h"
 
 
 /* USER CODE END Includes */
@@ -141,6 +142,7 @@ int main(void)
   // ADC7124 || PT Readings Init
 
   int32_t value;		/* Stores raw value read from the ADC */
+  float temp; /* stores value for any TC */
   int32_t ret = 0;	/* Return value */
 
 
@@ -187,19 +189,130 @@ int main(void)
   ret = ad7124_setup(&ad7124, &ad7124_init_param);
   	if (ret != 0)
   		return ret;
-//
-//
-//  	for (reg_nr = AD7124_Status; (reg_nr < AD7124_REG_NO) && !(ret < 0); reg_nr++) { << ?? Do we need to read from every register?
-//  			ret = ad7124_read_register(dev, &ad7124_regs[reg_nr]);
-//  			if (ret != 0)
-//  				return ret;
-//  	}
-
 
   	// MAX31856 Setup || Temp K-Type Thermocouples Readings INIT
 
 
+  	// T1
 
+  	max31856_gpio_t max31856T1PIN = {
+  	    .gpio_port = T1_EN_GPIO_Port,
+  	    .gpio_pin  = T1_EN_Pin
+  	};
+
+  	max31856_t max31856T1 = {
+  			.spi_handle = &hspi2,
+			.cs_pin = max31856T1PIN
+
+  	};
+
+
+
+  	max31856_init(&max31856T1);
+
+  	max31856_set_noise_filter(&max31856T1, CR0_FILTER_OUT_60Hz); // Noise filter is for filtering out EMI in very long wires
+  	max31856_set_cold_junction_enable(&max31856T1, CR0_CJ_ENABLED); // External Sensor which measures the cold junction and references
+  	max31856_set_thermocouple_type(&max31856T1, CR1_TC_TYPE_K); // K - type thermocouple
+  	max31856_set_average_samples(&max31856T1, CR1_AVG_TC_SAMPLES_2);
+  	max31856_set_open_circuit_fault_detection(&max31856T1, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
+  	max31856_set_conversion_mode(&max31856T1, CR0_CJ_DISABLED); // need to disable for single we don't have access to the DRDY pins thus we have to estimate polling time.
+
+
+
+  	// T2
+
+  	max31856_gpio_t max31856T2PIN = {
+  			.gpio_port = T2_EN_GPIO_Port,
+			.gpio_pin  = T2_EN_Pin
+  	  	};
+
+  	max31856_t max31856T2 = {
+  			.spi_handle = &hspi2,
+  			.cs_pin = max31856T2PIN
+  	};
+
+	max31856_init(&max31856T2);
+
+  	max31856_set_noise_filter(&max31856T2, CR0_FILTER_OUT_60Hz);
+  	max31856_set_cold_junction_enable(&max31856T2, CR0_CJ_ENABLED); // External Sensor which measures the cold junction and references
+  	max31856_set_thermocouple_type(&max31856T2, CR1_TC_TYPE_K); // K - type thermocouple
+  	max31856_set_average_samples(&max31856T2, CR1_AVG_TC_SAMPLES_2);
+  	max31856_set_open_circuit_fault_detection(&max31856T2, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
+  	max31856_set_conversion_mode(&max31856T2, CR0_CONV_CONTINUOUS); // continous mode for testing
+
+
+  	// T3
+
+  	max31856_gpio_t max31856T3PIN = {
+  		.gpio_port = T3_EN_GPIO_Port,
+		.gpio_pin  = T3_EN_Pin
+  	};
+
+  	max31856_t max31856T3 = {
+  			.spi_handle = &hspi2,
+  			.cs_pin = max31856T3PIN
+  	};
+
+	max31856_init(&max31856T3);
+
+  	max31856_set_noise_filter(&max31856T3, CR0_FILTER_OUT_60Hz);
+  	max31856_set_cold_junction_enable(&max31856T3, CR0_CJ_ENABLED);
+  	max31856_set_thermocouple_type(&max31856T3, CR1_TC_TYPE_K);
+  	max31856_set_average_samples(&max31856T3, CR1_AVG_TC_SAMPLES_2);
+  	max31856_set_open_circuit_fault_detection(&max31856T3, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
+  	max31856_set_conversion_mode(&max31856T3, CR0_CONV_CONTINUOUS);
+
+
+
+
+  	// T4
+
+  	max31856_gpio_t max31856T4PIN = {
+  		.gpio_port = T4_EN_GPIO_Port,
+		.gpio_pin  = T4_EN_Pin
+  	};
+
+  	max31856_t max31856T4 = {
+  			.spi_handle = &hspi2,
+  			.cs_pin = max31856T4PIN
+  	};
+
+	max31856_init(&max31856T4);
+
+  	max31856_set_noise_filter(&max31856T4, CR0_FILTER_OUT_60Hz);
+  	max31856_set_cold_junction_enable(&max31856T4, CR0_CJ_ENABLED);
+  	max31856_set_thermocouple_type(&max31856T4, CR1_TC_TYPE_K);
+  	max31856_set_average_samples(&max31856T4, CR1_AVG_TC_SAMPLES_2);
+  	max31856_set_open_circuit_fault_detection(&max31856T4, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
+  	max31856_set_conversion_mode(&max31856T4, CR0_CONV_CONTINUOUS);
+
+
+
+  	// T5
+
+  	max31856_gpio_t max31856T5PIN = {
+  		.gpio_port = T5_EN_GPIO_Port,
+		.gpio_pin = T5_EN_Pin
+  	};
+
+  	max31856_t max31856T5 = {
+  			.spi_handle = &hspi2,
+  			.cs_pin = max31856T5PIN
+  	};
+
+	max31856_init(&max31856T5);
+
+  	max31856_set_noise_filter(&max31856T5, CR0_FILTER_OUT_60Hz);
+  	max31856_set_cold_junction_enable(&max31856T5, CR0_CJ_ENABLED);
+  	max31856_set_thermocouple_type(&max31856T5, CR1_TC_TYPE_K);
+  	max31856_set_average_samples(&max31856T5, CR1_AVG_TC_SAMPLES_2);
+  	max31856_set_open_circuit_fault_detection(&max31856T5, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
+  	max31856_set_conversion_mode(&max31856T5, CR0_CONV_CONTINUOUS);
+
+
+
+
+  	//
 
   /* USER CODE END 2 */
 
@@ -245,30 +358,75 @@ int main(void)
 
 				// will need to convert the voltage value to a current / temp reading function eventually in ad7124.h
 
-				Serial_Printf("Pressure Reading %d \r\n", value);
+				Serial_Printf("Pressure Reading PT 1: %d \r\n", value);
 			case CMD_READ_PT2:
 				value = ad7124_read_channel_voltage(CH_READ_PT1);
-				Serial_Printf("Pressure Reading %d \r\n", value);
+				Serial_Printf("Pressure Reading PT 2: %d \r\n", value);
 			case CMD_READ_PT3:
 				value = ad7124_read_channel_voltage(CH_READ_PT2);
-				Serial_Printf("Pressure Reading %d \r\n", value);
+				Serial_Printf("Pressure Reading PT 3: %d \r\n", value);
 			case CMD_READ_PT4:
 				value = ad7124_read_channel_voltage(CH_READ_PT3);
-				Serial_Printf("Pressure Reading %d \r\n", value);
+				Serial_Printf("Pressure Reading PT 4: %d \r\n", value);
 			case CMD_READ_PT5:
 				value = ad7124_read_channel_voltage(CH_READ_PT4);
-				Serial_Printf("Pressure Reading %d \r\n", value);
+				Serial_Printf("Pressure Reading PT 5: %d \r\n", value);
 			case CMD_READ_PT6:
 				value = ad7124_read_channel_voltage(CH_READ_PT5);
-				Serial_Printf("Pressure Reading %d \r\n", value);
+				Serial_Printf("Pressure Reading PT 6: %d \r\n", value);
 			case CMD_READ_PT7:
 				value = ad7124_read_channel_voltage(CH_READ_PT6);
-				Serial_Printf("Pressure Reading %d \r\n", value);
+				Serial_Printf("Pressure Reading PT 7: %d \r\n", value);
 			case CMD_READ_PT8:
 				value = ad7124_read_channel_voltage(CH_READ_PT7);
-				Serial_Printf("Pressure Reading %d \r\n", value);
+				Serial_Printf("Pressure Reading PT 8: %d \r\n", value);
 
 
+			case CMD_READ_TC1:
+
+				max31856_trigger_one_shot(&max31856T1);
+				HAL_Delay(200); // Wait until single is ready
+				temp = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
+				max31856_read_fault(&max31856T1);
+				  	if (max31856T1.sr.val) {
+				  	  Serial_Print("TC1 Read Fail");
+				  	}
+				Serial_Printf("Temperature Reading TC1: %f \r\n", temp);
+
+
+			case CMD_READ_TC2:
+				temp = max31856_read_TC_temp(&max31856T2);
+				max31856_read_fault(&max31856T2);
+				if (max31856T2.sr.val) {
+					Serial_Print("TC2 Read Fail");
+				}
+				Serial_Printf("Temperature Reading TC2: %f \r\n", temp);
+
+			case CMD_READ_TC3:
+				temp = max31856_read_TC_temp(&max31856T3);
+				max31856_read_fault(&max31856T3);
+				if (max31856T3.sr.val) {
+					Serial_Print("TC3 Read Fail");
+			    }
+				Serial_Printf("Temperature Reading TC3: %f \r\n", temp);
+
+
+			case CMD_READ_TC4:
+				temp = max31856_read_TC_temp(&max31856T4);
+				max31856_read_fault(&max31856T4);
+				if (max31856T4.sr.val) {
+					Serial_Print("TC4 Read Fail");
+			    }
+				Serial_Printf("Temperature Reading TC4: %f \r\n", temp);
+
+
+			case CMD_READ_TC5:
+				temp = max31856_read_TC_temp(&max31856T5);
+				max31856_read_fault(&max31856T5);
+				if (max31856T5.sr.val) {
+					Serial_Print("TC5 Read Fail");
+			    }
+				Serial_Printf("Temperature Reading TC5: %f \r\n", temp);
 
 
 
