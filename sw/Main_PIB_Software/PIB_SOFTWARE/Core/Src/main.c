@@ -348,16 +348,14 @@ int main(void)
 
 		  // Polling for Seperate Pressure Sensors.
 
-
 		switch(RX_CMD){
 
 		  // Read AD7124
 
+// Read PT Valves
 			case CMD_READ_PT1:
 				value = ad7124_read_channel_voltage(CH_READ_PT0);
-
 				// will need to convert the voltage value to a current / temp reading function eventually in ad7124.h
-
 				Serial_Printf("Pressure Reading PT 1: %d \r\n", value);
 			case CMD_READ_PT2:
 				value = ad7124_read_channel_voltage(CH_READ_PT1);
@@ -382,6 +380,7 @@ int main(void)
 				Serial_Printf("Pressure Reading PT 8: %d \r\n", value);
 
 
+// Read TC Valves
 			case CMD_READ_TC1:
 
 				max31856_trigger_one_shot(&max31856T1);
@@ -429,8 +428,115 @@ int main(void)
 				Serial_Printf("Temperature Reading TC5: %f \r\n", temp);
 
 
+// Open Solenoids (ON/OFF)
+			case CMD_OPEN_SOL1:
+				HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
 
-			}
+			case CMD_OPEN_SOL2:
+				HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL3:
+				HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL4:
+				HAL_GPIO_WritePin(valve4_GPIO_Port, valve4_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL5:
+				HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL6:
+				HAL_GPIO_WritePin(valve6_GPIO_Port, valve6_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL7:
+				HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL8:
+				HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL9:
+				HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL10:
+				HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL11:
+				HAL_GPIO_WritePin(valve11_GPIO_Port, valve11_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL12:
+				HAL_GPIO_WritePin(valve12_GPIO_Port, valve12_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL13:
+				HAL_GPIO_WritePin(valve13_GPIO_Port, valve13_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL14:
+				HAL_GPIO_WritePin(valve14_GPIO_Port, valve14_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL15:
+				HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL16:
+				HAL_GPIO_WritePin(valve16_GPIO_Port, valve16_Pin, GPIO_PIN_SET);
+
+			case CMD_OPEN_SOL17:
+				HAL_GPIO_WritePin(valve17_GPIO_Port, valve17_Pin, GPIO_PIN_SET);
+
+// Close Valves
+			case CMD_CLOSE_SOL1:
+				HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL2:
+				HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL3:
+				HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL4:
+				HAL_GPIO_WritePin(valve4_GPIO_Port, valve4_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL5:
+				HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL6:
+				HAL_GPIO_WritePin(valve6_GPIO_Port, valve6_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL7:
+				HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL8:
+				HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL9:
+				HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL10:
+				HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL11:
+				HAL_GPIO_WritePin(valve11_GPIO_Port, valve11_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL12:
+				HAL_GPIO_WritePin(valve12_GPIO_Port, valve12_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL13:
+				HAL_GPIO_WritePin(valve13_GPIO_Port, valve13_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL14:
+				HAL_GPIO_WritePin(valve14_GPIO_Port, valve14_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL15:
+				HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL16:
+				HAL_GPIO_WritePin(valve16_GPIO_Port, valve16_Pin, GPIO_PIN_RESET);
+
+			case CMD_CLOSE_SOL17:
+				HAL_GPIO_WritePin(valve17_GPIO_Port, valve17_Pin, GPIO_PIN_RESET);
+
+		}
+
+
+
+
 
 
 
