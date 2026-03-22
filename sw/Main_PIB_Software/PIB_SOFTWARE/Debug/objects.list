@@ -3,6 +3,7 @@
 "./BSP/Sensors/Src/ad7124_regs.o"
 "./BSP/Sensors/Src/ad7124_sensor.o"
 "./BSP/Sensors/Src/driver_ina226.o"
+"./BSP/Sensors/Src/fdc2214.o"
 "./BSP/Sensors/Src/max31856.o"
 "./BSP/Src/gpio_driver.o"
 "./BSP/Src/iic_driver.o"

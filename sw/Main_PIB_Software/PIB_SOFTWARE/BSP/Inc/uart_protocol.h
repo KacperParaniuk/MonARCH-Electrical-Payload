@@ -21,12 +21,24 @@
 #define CMD_READ_PT8    0x08
 
 
+// UART Commands for ADC7124 PC104 Stack Readings
+
+#define CMD_READ_12VA 0x33  // Valves
+#define CMD_READ_3V3 0x34
+#define CMD_READ_VBAT 0x35
+#define CMD_READ_12VB 0x36
+
+
+// UART Commands for MAX31856 TC Readings
+
 #define CMD_READ_TC1    0x09
 #define CMD_READ_TC2	0x0A
 #define CMD_READ_TC3	0x0B
 #define CMD_READ_TC4	0x0C
 #define CMD_READ_TC5	0x0D
 
+
+// UART Commands for Solenoid Valves
 
 #define CMD_OPEN_SOL1  0x0E
 #define CMD_OPEN_SOL2  0x0F
@@ -68,6 +80,40 @@
 #define CMD_CLOSE_SOL18  0x32
 
 
+// UART Commands for FDC2214
+
+#define READ_CAPACITANCE_A1 0X37
+#define READ_CAPACITANCE_A2 0X38
+#define READ_CATALYST_LEVEL_A1 0X39
+#define READ_CATALYST_LEVEL_A2 0X3A
+
+
+// UART Command for heater
+
+#define HEAT_CATALYST 0X3B
+
+
+// UART Commands for Pressure Regulation (PWM / PID)
+
+#define REGULATE_PRESSURE_INPUT_VALUE 0X3C
+#define REGULATE_PRESSURE_2_INPUT_VALUE 0X3D
+
+
+// UART Commands for PPU Control (OBC -> PIB)
+
+#define PPU_CURRENT_READ_1 0X3E
+#define PPU_CURRENT_READ_2 0X3F
+#define PPU_ON 0X40
+#define PPU_OFF 0X41
+
+
+// CMDS (PIB -> PPU)
+
+
+#define PIB_PPU_ON 0X00
+#define PIB_PPU_OFF 0X01
+#define PIB_PPU_CURRENT_READ_1 0X02
+#define PIB_PPU_CURRENT_READ_2 0X03
 
 
 

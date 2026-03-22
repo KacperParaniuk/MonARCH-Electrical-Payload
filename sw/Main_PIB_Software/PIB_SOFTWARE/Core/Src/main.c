@@ -30,11 +30,15 @@
 #include "uart_handler.h"
 #include "uart_protocol.h"
 
+// Sensor Includes
 #include "ad7124.h"
 #include "ad7124_regs.h"
 #include "ad7124_sensor.h"
-
 #include "max31856.h"
+#include "fdc2214.h"
+
+
+
 
 
 /* USER CODE END Includes */
@@ -70,6 +74,8 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 
 struct ad7124_dev *ad7124;  // device handle (Defined Globally)
+struct ad7124_dev *ad7124_pc104;  // device handle (Defined Globally)
+
 
 
 struct max31856_t *max31856;
@@ -143,6 +149,8 @@ int main(void)
 
   int32_t value;		/* Stores raw value read from the ADC */
   float temp; /* stores value for any TC */
+  float capacitance;  /* stores value from FDC2214 capacitance reading */
+  uint8_t level; /* stores the level of a given accumulator from the FDC2214 */
   int32_t ret = 0;	/* Return value */
 
 
@@ -189,6 +197,58 @@ int main(void)
   ret = ad7124_setup(&ad7124, &ad7124_init_param);
   	if (ret != 0)
   		return ret;
+
+
+
+    // ADC7124 || Voltage Readings Init PC104 Stack
+
+
+   struct ad7124_init_param ad7124_init_param_pc104 = {
+  	 .hspi = &hspi1,
+       .cs_port = ADC_EN_GPIO_Port,            // ← pt en pointer
+       .cs_pin = ADC_EN_Pin,       //
+       .regs = ad7124_regs,         // these are register values of the ad7124
+       .spi_rdy_poll_cnt = 25000,
+
+  	 .mode = AD7124_SINGLE, // continuous equals IC constantly converting || single equal we tell it when to convert / read otherwise the chip is powered down.
+  	 .active_device = ID_AD7124_8,
+  	 .ref_en = false, // 2.5 internal reference (not using) b/c reading might go over this.
+  	 .power_mode = AD7124_LOW_POWER, // << What are the differences?
+
+  	 .setups[0] = {
+  		  .bi_unipolar = false,  // unipolar (don't have differential pairs) NEED TO LOOK INTO THIS FOR THIS VOLTAGE READING
+  		  .burnout = AD7124_BURNOUT_OFF,
+  		  .ref_source = AVDD_AVSS, // reference source is important and what we are doing calculations in REFERENCE to... 3.3v
+  		  .ain_buff = true, // buffers analog input to present high impedance (strengthens signal integrity)
+  		  .ref_buff = false, // sets reference source for high impedance
+  		  .pga = AD7124_PGA_1, // amplification of input signal.
+  	 },
+
+
+  	  // channel map SET UP THESE CHANEELS.
+
+  	 .chan_map[0] = { .ain = {.ainp = AD7124_AIN0, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
+  	 .chan_map[1] = { .ain = {.ainp = AD7124_AIN1, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
+  	 .chan_map[2] = { .ain = {.ainp = AD7124_AIN2, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
+  	 .chan_map[3] = { .ain = {.ainp = AD7124_AIN3, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable =  true },
+  	 .chan_map[4] = { .ain = {.ainp = AD7124_AIN4, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
+  	 .chan_map[5] = { .ain = {.ainp = AD7124_AIN5, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
+  	 .chan_map[6] = { .ain = {.ainp = AD7124_AIN6, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
+  	 .chan_map[7] = { .ain = {.ainp = AD7124_AIN7, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
+  	 .chan_map[8] = { .ain = {.ainp = AD7124_AIN8, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
+  	 .chan_map[9] = { .ain = {.ainp = AD7124_AIN9, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
+  	 .chan_map[10] = { .ain = {.ainp = AD7124_AIN10, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
+  	 .chan_map[11] = { .ain = {.ainp = AD7124_AIN11, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
+  	 .chan_map[12] = { .ain = {.ainp = AD7124_AIN12, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
+  	 .chan_map[13] = { .ain = {.ainp = AD7124_AIN13, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
+
+    };
+
+    ret = ad7124_setup(&ad7124_pc104, &ad7124_init_param_pc104);
+    	if (ret != 0)
+    		return ret;
+
+
 
   	// MAX31856 Setup || Temp K-Type Thermocouples Readings INIT
 
@@ -312,7 +372,27 @@ int main(void)
 
 
 
-  	//
+
+  	// FDC2214 SETUP
+
+  	// Reset Registers in Device.
+
+  	reset_fdc2214();
+
+  	// Init FDC2214 ALL FOUR CHANNELS w/ config AND adequate register settings
+
+  	FDC2214_Init();
+
+
+
+
+
+
+
+
+
+
+
 
   /* USER CODE END 2 */
 
@@ -429,6 +509,7 @@ int main(void)
 
 
 // Open Solenoids (ON/OFF)
+
 			case CMD_OPEN_SOL1:
 				HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
 
@@ -532,7 +613,26 @@ int main(void)
 			case CMD_CLOSE_SOL17:
 				HAL_GPIO_WritePin(valve17_GPIO_Port, valve17_Pin, GPIO_PIN_RESET);
 
+// READ FDC2214 Capacitance Measurements.
+
+			case READ_CAPACITANCE_A1:
+				capacitance = FDC2214_read_differential_capacitance(1);
+				Serial_Printf("Differential Capacitance Reading FDC2214 A1: %f \r\n", capacitance);
+			case READ_CAPACITANCE_A2:
+				capacitance = FDC2214_read_differential_capacitance(2);
+				Serial_Printf("Differential Capacitance Reading FDC2214 A2: %f \r\n", capacitance);
+			case READ_CATALYST_LEVEL_A1:
+				level = FDC2214_read_accumulator_height(1);
+				Serial_Printf("Catalyst Height Reading FDC2214 A1: %d \r\n", level);
+			case READ_CATALYST_LEVEL_A2:
+				level = FDC2214_read_accumulator_height(2);
+				Serial_Printf("Catalyst Height Reading FDC2214 A2: %d \r\n", level);
+
+
 		}
+
+
+
 
 
 

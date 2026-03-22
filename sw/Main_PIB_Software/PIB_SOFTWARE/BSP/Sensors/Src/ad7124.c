@@ -67,6 +67,10 @@
  *               register structure.
  * @return Returns 0 for success or negative error code otherwise.
 *******************************************************************************/
+
+// Edited by Kacper Paraniuk
+
+
 int32_t ad7124_no_check_read_register(struct ad7124_dev *dev,
 				      struct ad7124_st_reg* p_reg)
 {

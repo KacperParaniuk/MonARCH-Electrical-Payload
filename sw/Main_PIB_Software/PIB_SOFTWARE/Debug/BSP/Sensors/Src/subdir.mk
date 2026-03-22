@@ -9,6 +9,7 @@ C_SRCS += \
 ../BSP/Sensors/Src/ad7124_regs.c \
 ../BSP/Sensors/Src/ad7124_sensor.c \
 ../BSP/Sensors/Src/driver_ina226.c \
+../BSP/Sensors/Src/fdc2214.c \
 ../BSP/Sensors/Src/max31856.c 
 
 OBJS += \
@@ -16,6 +17,7 @@ OBJS += \
 ./BSP/Sensors/Src/ad7124_regs.o \
 ./BSP/Sensors/Src/ad7124_sensor.o \
 ./BSP/Sensors/Src/driver_ina226.o \
+./BSP/Sensors/Src/fdc2214.o \
 ./BSP/Sensors/Src/max31856.o 
 
 C_DEPS += \
@@ -23,6 +25,7 @@ C_DEPS += \
 ./BSP/Sensors/Src/ad7124_regs.d \
 ./BSP/Sensors/Src/ad7124_sensor.d \
 ./BSP/Sensors/Src/driver_ina226.d \
+./BSP/Sensors/Src/fdc2214.d \
 ./BSP/Sensors/Src/max31856.d 
 
 
@@ -33,7 +36,7 @@ BSP/Sensors/Src/%.o BSP/Sensors/Src/%.su BSP/Sensors/Src/%.cyclo: ../BSP/Sensors
 clean: clean-BSP-2f-Sensors-2f-Src
 
 clean-BSP-2f-Sensors-2f-Src:
-	-$(RM) ./BSP/Sensors/Src/ad7124.cyclo ./BSP/Sensors/Src/ad7124.d ./BSP/Sensors/Src/ad7124.o ./BSP/Sensors/Src/ad7124.su ./BSP/Sensors/Src/ad7124_regs.cyclo ./BSP/Sensors/Src/ad7124_regs.d ./BSP/Sensors/Src/ad7124_regs.o ./BSP/Sensors/Src/ad7124_regs.su ./BSP/Sensors/Src/ad7124_sensor.cyclo ./BSP/Sensors/Src/ad7124_sensor.d ./BSP/Sensors/Src/ad7124_sensor.o ./BSP/Sensors/Src/ad7124_sensor.su ./BSP/Sensors/Src/driver_ina226.cyclo ./BSP/Sensors/Src/driver_ina226.d ./BSP/Sensors/Src/driver_ina226.o ./BSP/Sensors/Src/driver_ina226.su ./BSP/Sensors/Src/max31856.cyclo ./BSP/Sensors/Src/max31856.d ./BSP/Sensors/Src/max31856.o ./BSP/Sensors/Src/max31856.su
+	-$(RM) ./BSP/Sensors/Src/ad7124.cyclo ./BSP/Sensors/Src/ad7124.d ./BSP/Sensors/Src/ad7124.o ./BSP/Sensors/Src/ad7124.su ./BSP/Sensors/Src/ad7124_regs.cyclo ./BSP/Sensors/Src/ad7124_regs.d ./BSP/Sensors/Src/ad7124_regs.o ./BSP/Sensors/Src/ad7124_regs.su ./BSP/Sensors/Src/ad7124_sensor.cyclo ./BSP/Sensors/Src/ad7124_sensor.d ./BSP/Sensors/Src/ad7124_sensor.o ./BSP/Sensors/Src/ad7124_sensor.su ./BSP/Sensors/Src/driver_ina226.cyclo ./BSP/Sensors/Src/driver_ina226.d ./BSP/Sensors/Src/driver_ina226.o ./BSP/Sensors/Src/driver_ina226.su ./BSP/Sensors/Src/fdc2214.cyclo ./BSP/Sensors/Src/fdc2214.d ./BSP/Sensors/Src/fdc2214.o ./BSP/Sensors/Src/fdc2214.su ./BSP/Sensors/Src/max31856.cyclo ./BSP/Sensors/Src/max31856.d ./BSP/Sensors/Src/max31856.o ./BSP/Sensors/Src/max31856.su
 
 .PHONY: clean-BSP-2f-Sensors-2f-Src
 

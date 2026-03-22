@@ -1,0 +1,6 @@
+../BSP/Sensors/Src/fdc2214.c:9:9:FDC2214_Init	32	static
+../BSP/Sensors/Src/fdc2214.c:234:10:FDC2214_read_data	40	static
+../BSP/Sensors/Src/fdc2214.c:288:7:FDC2214_read_capacitance	32	static
+../BSP/Sensors/Src/fdc2214.c:312:7:FDC2214_read_differential_capacitance	24	static
+../BSP/Sensors/Src/fdc2214.c:340:9:FDC2214_read_accumulator_height	24	static
+../BSP/Sensors/Src/fdc2214.c:350:6:reset_fdc2214	32	static
