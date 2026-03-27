@@ -38,6 +38,9 @@
 #include "fdc2214.h"
 
 
+// Serial Interface For Debugging || Serial wire JTAG debug port (SWJ-DP)
+
+#include <stdio.h>
 
 
 
@@ -145,6 +148,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 
+
   // ADC7124 || PT Readings Init
 
   int32_t value;		/* Stores raw value read from the ADC */
@@ -204,7 +208,7 @@ int main(void)
 
 
    struct ad7124_init_param ad7124_init_param_pc104 = {
-  	 .hspi = &hspi1,
+  	 .hspi = &hspi1, // PC104 Stack AD7124 is on this SPI line.
        .cs_port = ADC_EN_GPIO_Port,            // ← pt en pointer
        .cs_pin = ADC_EN_Pin,       //
        .regs = ad7124_regs,         // these are register values of the ad7124
@@ -507,7 +511,6 @@ int main(void)
 			    }
 				Serial_Printf("Temperature Reading TC5: %f \r\n", temp);
 
-
 // Open Solenoids (ON/OFF)
 
 			case CMD_OPEN_SOL1:
@@ -630,25 +633,50 @@ int main(void)
 
 
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	  }
+
+
+
+	  // TESTING DEBUG PURPOSES w/ ST-LINK
+
+	  printf("TESTING DEBUG PURPOSES LOADING... \n");
+
+	  printf("Reading Device ID's... \n");
+
+
+
+	  printf("Reading Pressure Voltage Readings... \n");
+
+	  value = ad7124_read_channel_voltage(CH_READ_PT0);
+	  printf("Pressure Reading PT 1: %d \r\n", value);
+	  value = ad7124_read_channel_voltage(CH_READ_PT1);
+	  printf("Pressure Reading PT 2: %d \r\n", value);
+	  value = ad7124_read_channel_voltage(CH_READ_PT2);
+	  printf("Pressure Reading PT 3: %d \r\n", value);
+	  value = ad7124_read_channel_voltage(CH_READ_PT3);
+	  printf("Pressure Reading PT 4: %d \r\n", value);
+	  value = ad7124_read_channel_voltage(CH_READ_PT4);
+	  printf("Pressure Reading PT 5: %d \r\n", value);
+	  value = ad7124_read_channel_voltage(CH_READ_PT5);
+	  printf("Pressure Reading PT 6: %d \r\n", value);
+	  value = ad7124_read_channel_voltage(CH_READ_PT6);
+	  printf("Pressure Reading PT 7: %d \r\n", value);
+	  value = ad7124_read_channel_voltage(CH_READ_PT7);
+	  printf("Pressure Reading PT 8: %d \r\n", value);
+
+
+	  printf("Reading Temperature Voltage Readings... \n");
+
+
+
+
+
+
+
+
+
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -703,6 +731,19 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 
+// Retarget __io_putchar(*ptr++) to a specific hardware function for printf to work.
+
+int _write(int file, char *ptr, int len)
+{
+  (void)file;
+  int DataIdx;
+
+  for (DataIdx = 0; DataIdx < len; DataIdx++)
+  {
+    ITM_SendChar(*ptr++);
+  }
+  return len;
+}
 
 /* USER CODE END 4 */
 
