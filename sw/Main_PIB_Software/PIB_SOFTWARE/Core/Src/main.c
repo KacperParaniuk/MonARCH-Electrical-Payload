@@ -231,20 +231,20 @@ int main(void)
 
   	  // channel map SET UP THESE CHANEELS.
 
-  	 .chan_map[0] = { .ain = {.ainp = AD7124_AIN0, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
+  	 .chan_map[0] = { .ain = {.ainp = AD7124_AIN0, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
   	 .chan_map[1] = { .ain = {.ainp = AD7124_AIN1, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
   	 .chan_map[2] = { .ain = {.ainp = AD7124_AIN2, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
   	 .chan_map[3] = { .ain = {.ainp = AD7124_AIN3, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable =  true },
   	 .chan_map[4] = { .ain = {.ainp = AD7124_AIN4, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
   	 .chan_map[5] = { .ain = {.ainp = AD7124_AIN5, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-  	 .chan_map[6] = { .ain = {.ainp = AD7124_AIN6, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-  	 .chan_map[7] = { .ain = {.ainp = AD7124_AIN7, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
+  	 .chan_map[6] = { .ain = {.ainp = AD7124_AIN6, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
+  	 .chan_map[7] = { .ain = {.ainp = AD7124_AIN7, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
   	 .chan_map[8] = { .ain = {.ainp = AD7124_AIN8, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
   	 .chan_map[9] = { .ain = {.ainp = AD7124_AIN9, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
   	 .chan_map[10] = { .ain = {.ainp = AD7124_AIN10, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-  	 .chan_map[11] = { .ain = {.ainp = AD7124_AIN11, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-  	 .chan_map[12] = { .ain = {.ainp = AD7124_AIN12, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-  	 .chan_map[13] = { .ain = {.ainp = AD7124_AIN13, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
+  	 .chan_map[11] = { .ain = {.ainp = AD7124_AIN11, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
+  	 .chan_map[12] = { .ain = {.ainp = AD7124_AIN12, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
+  	 .chan_map[13] = { .ain = {.ainp = AD7124_AIN13, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
 
     };
 
@@ -438,29 +438,29 @@ int main(void)
 
 // Read PT Valves
 			case CMD_READ_PT1:
-				value = ad7124_read_channel_voltage(CH_READ_PT0);
+				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT0);
 				// will need to convert the voltage value to a current / temp reading function eventually in ad7124.h
 				Serial_Printf("Pressure Reading PT 1: %d \r\n", value);
 			case CMD_READ_PT2:
-				value = ad7124_read_channel_voltage(CH_READ_PT1);
+				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT1);
 				Serial_Printf("Pressure Reading PT 2: %d \r\n", value);
 			case CMD_READ_PT3:
-				value = ad7124_read_channel_voltage(CH_READ_PT2);
+				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT2);
 				Serial_Printf("Pressure Reading PT 3: %d \r\n", value);
 			case CMD_READ_PT4:
-				value = ad7124_read_channel_voltage(CH_READ_PT3);
+				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT3);
 				Serial_Printf("Pressure Reading PT 4: %d \r\n", value);
 			case CMD_READ_PT5:
-				value = ad7124_read_channel_voltage(CH_READ_PT4);
+				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT4);
 				Serial_Printf("Pressure Reading PT 5: %d \r\n", value);
 			case CMD_READ_PT6:
-				value = ad7124_read_channel_voltage(CH_READ_PT5);
+				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT5);
 				Serial_Printf("Pressure Reading PT 6: %d \r\n", value);
 			case CMD_READ_PT7:
-				value = ad7124_read_channel_voltage(CH_READ_PT6);
+				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT6);
 				Serial_Printf("Pressure Reading PT 7: %d \r\n", value);
 			case CMD_READ_PT8:
-				value = ad7124_read_channel_voltage(CH_READ_PT7);
+				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT7);
 				Serial_Printf("Pressure Reading PT 8: %d \r\n", value);
 
 
@@ -510,6 +510,71 @@ int main(void)
 					Serial_Print("TC5 Read Fail");
 			    }
 				Serial_Printf("Temperature Reading TC5: %f \r\n", temp);
+
+
+// Read PC104 Voltages
+
+			case CMD_READ_12VA_VB:
+				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VB);
+				Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
+			case CMD_READ_12VA_VA:
+				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VA);
+				Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
+			case CMD_READ_3V3_VB:
+				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VB);
+				Serial_Printf("PC104 Voltage Reading 3V3_VB: %d \r\n", value);
+			case CMD_READ_3V3_VA:
+				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VA);
+				Serial_Printf("PC104 Voltage Reading 3V3_VA: %d \r\n", value);
+
+			case CMD_READ_VBAT_VA:
+				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VA);
+				Serial_Printf("PC104 Voltage Reading VBAT_VA: %d \r\n", value);
+			case CMD_READ_VBAT_VB:
+				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VB);
+				Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
+
+			case CMD_READ_12VB_VA:
+				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VA);
+				Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
+
+			case CMD_READ_12VB_VB:
+				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VB);
+				Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
+
+// Read PC104 Currents
+			case CMD_READ_12VA_VB_CURRENT:
+				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VB);
+				Serial_Printf("PC104 Current Reading 12VA_VB: %d \r\n", value);
+
+			case CMD_READ_12VA_VA_CURRENT:
+				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VA);
+				Serial_Printf("PC104 Current Reading 12VA_VA: %d \r\n", value);
+
+			case CMD_READ_3V3_VB_CURRENT:
+				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VB);
+				Serial_Printf("PC104 Current Reading 3V3_VB : %d \r\n", value);
+
+			case CMD_READ_3V3_VA_CURRENT:
+				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VA);
+				Serial_Printf("PC104 Current Reading 3V3_VA : %d \r\n", value);
+
+			case CMD_READ_VBAT_VA_CURRENT:
+				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VA);
+				Serial_Printf("PC104 Current Reading VBAT_VA : %d \r\n", value);
+
+			case CMD_READ_VBAT_VB_CURRENT:
+				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VB);
+				Serial_Printf("PC104 Current Reading VBAT_VB : %d \r\n", value);
+
+			case CMD_READ_12VB_VA_CURRENT:
+				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VA);
+				Serial_Printf("PC104 Current Reading 12VB_VA: %d \r\n",  value);
+
+			case CMD_READ_12VB_VB_CURRENT:
+				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VB);
+				Serial_Printf("PC104 Current Reading 12VB_VB: %d \r\n", value);
+
 
 // Open Solenoids (ON/OFF)
 
@@ -632,6 +697,7 @@ int main(void)
 				Serial_Printf("Catalyst Height Reading FDC2214 A2: %d \r\n", level);
 
 
+
 		}
 	  }
 
@@ -645,24 +711,68 @@ int main(void)
 
 
 
+
+
+	  printf("Reading PC104 Voltages...");
+
+	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VB);
+	  printf("PC104 Voltage Reading 12VA_VB: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VA);
+	  printf("PC104 Voltage Reading 12VA_VA: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VB);
+	  printf("PC104 Voltage Reading 3V3_VB: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VA);
+	  printf("PC104 Voltage Reading 3V3_VA: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VA);
+	  printf("PC104 Voltage Reading VBAT_VA: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VB);
+	  printf("PC104 Voltage Reading VBAT_VB: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VA);
+	  printf("PC104 Voltage Reading 12VB_VA: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VB);
+	  printf("PC104 Voltage Reading 12VB_VB: %d \r\n", (int)value);
+
+
+	  printf("Reading PC104 Currents...");
+
+
+	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VB);
+	  printf("PC104 Current Reading 12VA_VB: %d \r\n", (int)value);
+	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VA);
+	  printf("PC104 Current Reading 12VA_VA: %d \r\n", (int)value);
+	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VB);
+	  printf("PC104 Current Reading 3V3_VB : %d \r\n", (int)value);
+	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VA);
+	  printf("PC104 Current Reading 3V3_VA : %d \r\n", (int)value);
+	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VA);
+	  printf("PC104 Current Reading VBAT_VA : %d \r\n", (int)value);
+	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VB);
+	  printf("PC104 Current Reading VBAT_VB : %d \r\n", (int)value);
+	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VA);
+	  printf("PC104 Current Reading 12VB_VA: %d \r\n", (int)value);
+	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VB);
+	  printf("PC104 Current Reading 12VB_VB: %d \r\n", (int)value);
+
+
+
 	  printf("Reading Pressure Voltage Readings... \n");
 
-	  value = ad7124_read_channel_voltage(CH_READ_PT0);
-	  printf("Pressure Reading PT 1: %d \r\n", value);
-	  value = ad7124_read_channel_voltage(CH_READ_PT1);
-	  printf("Pressure Reading PT 2: %d \r\n", value);
-	  value = ad7124_read_channel_voltage(CH_READ_PT2);
-	  printf("Pressure Reading PT 3: %d \r\n", value);
-	  value = ad7124_read_channel_voltage(CH_READ_PT3);
-	  printf("Pressure Reading PT 4: %d \r\n", value);
-	  value = ad7124_read_channel_voltage(CH_READ_PT4);
-	  printf("Pressure Reading PT 5: %d \r\n", value);
-	  value = ad7124_read_channel_voltage(CH_READ_PT5);
-	  printf("Pressure Reading PT 6: %d \r\n", value);
-	  value = ad7124_read_channel_voltage(CH_READ_PT6);
-	  printf("Pressure Reading PT 7: %d \r\n", value);
-	  value = ad7124_read_channel_voltage(CH_READ_PT7);
-	  printf("Pressure Reading PT 8: %d \r\n", value);
+	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT0);
+	  printf("Pressure Reading PT 1: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT1);
+	  printf("Pressure Reading PT 2: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT2);
+	  printf("Pressure Reading PT 3: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT3);
+	  printf("Pressure Reading PT 4: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT4);
+	  printf("Pressure Reading PT 5: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT5);
+	  printf("Pressure Reading PT 6: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT6);
+	  printf("Pressure Reading PT 7: %d \r\n", (int)value);
+	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT7);
+	  printf("Pressure Reading PT 8: %d \r\n", (int)value);
 
 
 	  printf("Reading Temperature Voltage Readings... \n");

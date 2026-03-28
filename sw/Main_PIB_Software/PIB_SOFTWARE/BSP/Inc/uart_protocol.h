@@ -23,10 +23,23 @@
 
 // UART Commands for ADC7124 PC104 Stack Readings
 
-#define CMD_READ_12VA 0x33  // Valves
-#define CMD_READ_3V3 0x34
-#define CMD_READ_VBAT 0x35
-#define CMD_READ_12VB 0x36
+#define CMD_READ_12VA_VB 0x33
+#define CMD_READ_12VA_VA 0x34 // Valves
+#define CMD_READ_3V3_VB 0x35
+#define CMD_READ_3V3_VA 0x36
+#define CMD_READ_VBAT_VA 0x42
+#define CMD_READ_VBAT_VB 0x43
+#define CMD_READ_12VB_VA 0x44
+#define CMD_READ_12VB_VB 0x45
+
+#define CMD_READ_12VA_VB_CURRENT 0x46
+#define CMD_READ_12VA_VA_CURRENT 0x47 // Valves
+#define CMD_READ_3V3_VB_CURRENT 0x48
+#define CMD_READ_3V3_VA_CURRENT 0x49
+#define CMD_READ_VBAT_VA_CURRENT 0x4A
+#define CMD_READ_VBAT_VB_CURRENT 0x4B
+#define CMD_READ_12VB_VA_CURRENT 0x4C
+#define CMD_READ_12VB_VB_CURRENT 0x4D
 
 
 // UART Commands for MAX31856 TC Readings
@@ -107,6 +120,8 @@
 #define PPU_OFF 0X41
 
 
+
+
 // CMDS (PIB -> PPU)
 
 
@@ -114,6 +129,8 @@
 #define PIB_PPU_OFF 0X01
 #define PIB_PPU_CURRENT_READ_1 0X02
 #define PIB_PPU_CURRENT_READ_2 0X03
+
+
 
 
 
