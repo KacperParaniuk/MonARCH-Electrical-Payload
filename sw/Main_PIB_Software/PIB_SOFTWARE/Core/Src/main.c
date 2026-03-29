@@ -108,12 +108,18 @@ int main(void)
 
 
 
+  // Device ID's
+
+  char device_id[20];
+
+
+
+  // UART Inits
   uint8_t RX_CMD= 0; // single byte for all UART commands.
-
-
   uint8_t TX_Buffer[] = "Hello, World!\r\n";
   // "\r" move cursor to start of line
   // "\n" new line
+
 
 
 //  GPIO_PinConfig_t LED_BLINK = {
@@ -708,6 +714,24 @@ int main(void)
 	  printf("TESTING DEBUG PURPOSES LOADING... \n");
 
 	  printf("Reading Device ID's... \n");
+
+	  bool val = FDC2214_Check_Device_ID();
+	  printf("FDC2214 Device Read: %d\n", val);
+
+	  FDC2214_Device_ID(device_id);
+	  printf("FDC2214 Device ID: %d\n", *device_id);
+
+
+	  ad7124_read_register(ad7124, &ad7124->regs[AD7124_ID_REG]);
+	  printf("Pressure ADC7124 Device ID: %d\n", (int) ad7124->regs[AD7124_ID_REG].value);
+
+
+	  ad7124_read_register(ad7124_pc104, &ad7124_pc104->regs[AD7124_ID_REG]);
+	  printf("PC104 Stack Voltage ADC7124 Device ID: %d\n", (int) ad7124_pc104->regs[AD7124_ID_REG].value);
+
+
+
+	  // MAX31856 Error Reading
 
 
 

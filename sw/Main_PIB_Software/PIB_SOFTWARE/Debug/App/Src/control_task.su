@@ -1,0 +1,3 @@
+../App/Src/control_task.c:15:6:open_solenoid	16	static
+../App/Src/control_task.c:20:6:close_solenoid	16	static
+../App/Src/control_task.c:29:6:fill_accumulators	4	static

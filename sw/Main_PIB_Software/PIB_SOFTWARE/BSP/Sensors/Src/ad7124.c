@@ -1294,5 +1294,9 @@ int32_t ad7124_remove(struct ad7124_dev *dev)
 //
 //	no_os_free(dev);
 
+
 	return 0;
 }
+
+
+

@@ -59,6 +59,10 @@ float FDC2214_read_capacitance(uint8_t channel, float *cap_pf);
 float FDC2214_read_differential_capacitance(uint8_t accumulator);
 uint8_t FDC2214_read_accumulator_height(uint8_t accumulator);
 
+void FDC2214_Device_ID(char* buffer);
+int FDC2214_Check_Device_ID();
+
+
 void reset_fdc2214();
 
 

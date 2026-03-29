@@ -5,15 +5,17 @@
 extern I2C_HandleTypeDef hi2c4;
 
 
+uint8_t cof[2];
+volatile uint16_t check[2];
+
+
 // INIT ALL CHANNELS.
 uint8_t FDC2214_Init(void)
 
 {
 
 
-//	uint8_t i = 0; uneffective way to create a timer, may be worth testing without HAL_Delay
-	uint8_t cof[2];
-	volatile uint16_t check[2];
+//	uint8_t i = 0; ineffective way to create a timer, may be worth testing without HAL_Delay
 
 
 	// FDC2214 Register Setup.
@@ -358,6 +360,30 @@ void reset_fdc2214(){
 
 
 }
+
+int FDC2214_Check_Device_ID(){
+	check[0] = cof[1] | cof[0] << 8;
+
+	HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	HAL_Delay(20);
+
+	check[1] = cof[1] | cof[0] << 8;
+	if ((check[0] == MANUFACTURER_ID_val) && (check[1] == DEVICE_ID_val))
+		return 0;
+	else
+		return 1;
+}
+
+
+void FDC2214_Device_ID(char* buffer){
+
+	HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	HAL_Delay(20);
+
+	buffer = cof[1];
+	 // DEVICE ID in second position
+}
+
 // Functions to implement (if needed)
 
 
