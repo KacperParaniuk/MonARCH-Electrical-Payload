@@ -1,0 +1,4 @@
+../App/Src/control_task.c:18:6:open_solenoid	16	static
+../App/Src/control_task.c:23:6:close_solenoid	16	static
+../App/Src/control_task.c:29:6:fill_accumulators	4	static
+../App/Src/control_task.c:37:5:heat_catalyst	16	static

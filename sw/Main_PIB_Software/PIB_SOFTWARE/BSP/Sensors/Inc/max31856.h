@@ -16,7 +16,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include "stm32f4xx_hal.h"
+#include "stm32l4xx_hal.h"
 
 /* Register addresses */
 #define MAX31856_CR0 0x00

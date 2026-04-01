@@ -1,0 +1,8 @@
+../BSP/Sensors/Src/fdc2214.c:13:9:FDC2214_Init	3
+../BSP/Sensors/Src/fdc2214.c:236:10:FDC2214_read_data	5
+../BSP/Sensors/Src/fdc2214.c:290:7:FDC2214_read_capacitance	1
+../BSP/Sensors/Src/fdc2214.c:314:7:FDC2214_read_differential_capacitance	3
+../BSP/Sensors/Src/fdc2214.c:342:9:FDC2214_read_accumulator_height	1
+../BSP/Sensors/Src/fdc2214.c:352:6:reset_fdc2214	1
+../BSP/Sensors/Src/fdc2214.c:364:5:FDC2214_Check_Device_ID	3
+../BSP/Sensors/Src/fdc2214.c:378:6:FDC2214_Device_ID	1

@@ -1,0 +1,2 @@
+../BSP/Sensors/Src/ad7124_sensor.c:16:7:ad7124_read_channel_voltage	24	static
+../BSP/Sensors/Src/ad7124_sensor.c:44:7:ad7124_read_channel_current_pc104	32	static

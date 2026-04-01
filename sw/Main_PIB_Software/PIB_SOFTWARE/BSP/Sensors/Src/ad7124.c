@@ -34,9 +34,12 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "ad7124.h"
-#include "no_os_delay.h"
-#include "no_os_alloc.h"
-#include "no_os_error.h"
+#include "errno.h"
+
+
+//#include "no_os_delay.h"
+//#include "no_os_alloc.h"
+//#include "no_os_error.h"
 
 /*
  * Post reset delay required to ensure all internal config done
@@ -44,20 +47,35 @@
  * chosen to provide enough margin, in case mdelay is not accurate.
  */
 #define AD7124_POST_RESET_DELAY	4
+#define	EINVAL 22 // INVALID ARGUMENT.
+#define	ENOMEM 12	/* Not enough space */
+#define EBADMSG 77
+
+
 
 /***************************************************************************//**
  * @brief Reads the value of the specified register without checking if the
  *        device is ready to accept user requests.
  * @param dev   - The handler of the instance of the driver.
  * @param p_reg - Pointer to the register structure holding info about the
+ * 	l
+ * 	l
+ * 	l
+ * 	lll
+ * 	ll
  *               register to be read. The read value is stored inside the
  *               register structure.
  * @return Returns 0 for success or negative error code otherwise.
 *******************************************************************************/
+
+// Edited by Kacper Paraniuk
+
+
 int32_t ad7124_no_check_read_register(struct ad7124_dev *dev,
 				      struct ad7124_st_reg* p_reg)
 {
-	int32_t ret = 0;
+//	int32_t ret = 0;
+
 	uint8_t buffer[8] = { 0 };
 	uint8_t i = 0;
 	uint8_t check8 = 0, add_status_length = 0;
@@ -79,12 +97,22 @@ int32_t ad7124_no_check_read_register(struct ad7124_dev *dev,
 		add_status_length = 1;
 
 	/* Read data from the device */
-	ret = no_os_spi_write_and_read(dev->spi_desc,
-				       buffer,
-				       ((dev->use_crc != AD7124_DISABLE_CRC) ? p_reg->size + 1
-					: p_reg->size) + 1 + add_status_length);
-	if (ret)
-		return ret;
+//
+//	ret = no_os_spi_write_and_read(dev->spi_desc,
+//				       buffer,
+//				       ((dev->use_crc != AD7124_DISABLE_CRC) ? p_reg->size + 1
+//					: p_reg->size) + 1 + add_status_length);
+
+	// replaced with
+
+	uint8_t transfer_size = ((dev->use_crc != AD7124_DISABLE_CRC) ? p_reg->size + 1 // different bytes for different registers.
+	                        : p_reg->size) + 1 + add_status_length;
+
+	HAL_GPIO_WritePin(dev->cs_port, dev->cs_pin, GPIO_PIN_RESET);
+	if (HAL_SPI_TransmitReceive(dev->hspi, buffer, buffer, transfer_size, 100) != HAL_OK)
+		    return -EIO;
+	HAL_GPIO_WritePin(dev->cs_port, dev->cs_pin, GPIO_PIN_SET);
+
 
 	/* Check the CRC */
 	if (dev->use_crc == AD7124_USE_CRC) {
@@ -103,6 +131,7 @@ int32_t ad7124_no_check_read_register(struct ad7124_dev *dev,
 	 * if reading Data with 4 bytes, need to copy the status byte to the STATUS
 	 * register struct value member
 	 */
+
 	if (add_status_length)
 		dev->regs[AD7124_Status].value = buffer[p_reg->size + 1];
 
@@ -151,11 +180,26 @@ int32_t ad7124_no_check_write_register(struct ad7124_dev *dev,
 		wr_buf[reg.size + 1] = crc8;
 	}
 
-	return no_os_spi_write_and_read(dev->spi_desc,
-					wr_buf,
-					(dev->use_crc != AD7124_DISABLE_CRC) ? reg.size + 2
-					: reg.size + 1);
+	uint8_t size = (dev->use_crc != AD7124_DISABLE_CRC) ? reg.size + 2
+			: reg.size + 1;
+
+	HAL_GPIO_WritePin(dev->cs_port, dev->cs_pin, GPIO_PIN_RESET);
+	if (HAL_SPI_TransmitReceive(dev->hspi, wr_buf, wr_buf, size, 100)
+			!= HAL_OK)
+		return -EIO;
+	HAL_GPIO_WritePin(dev->cs_port, dev->cs_pin, GPIO_PIN_SET);
+
+
+//
+//		no_os_spi_write_and_read(dev->spi_desc,
+//						wr_buf,
+//						(dev->use_crc != AD7124_DISABLE_CRC) ? reg.size + 2
+//						: reg.size + 1);
+
+	return 0;
 }
+
+
 
 /***************************************************************************//**
  * @brief Reads the value of the specified register only when the device is ready
@@ -260,9 +304,15 @@ int32_t ad7124_reset(struct ad7124_dev *dev)
 	if (!dev)
 		return -EINVAL;
 
-	ret = no_os_spi_write_and_read(dev->spi_desc, wr_buf, 8);
-	if (ret)
-		return ret;
+//	ret = no_os_spi_write_and_read(dev->spi_desc, wr_buf, 8);
+	HAL_GPIO_WritePin(dev->cs_port, dev->cs_pin, GPIO_PIN_RESET);
+	if (HAL_SPI_Transmit(dev->hspi, wr_buf, 8, 100) != HAL_OK)
+		    return -EIO;
+	HAL_GPIO_WritePin(dev->cs_port,  dev->cs_pin, GPIO_PIN_SET);
+
+
+//	if (ret)
+//		return ret;
 
 	/* CRC is disabled after reset */
 	dev->use_crc = AD7124_DISABLE_CRC;
@@ -272,7 +322,10 @@ int32_t ad7124_reset(struct ad7124_dev *dev)
 	if (ret)
 		return ret;
 
-	no_os_mdelay(AD7124_POST_RESET_DELAY);
+//	no_os_mdelay(AD7124_POST_RESET_DELAY);
+
+	HAL_Delay(AD7124_POST_RESET_DELAY);
+
 
 	return 0;
 }
@@ -407,7 +460,7 @@ int32_t ad7124_read_data(struct ad7124_dev *dev,
 	/* Get the read result */
 	*p_data = regs[AD7124_Data].value;
 
-	return 0;
+	return ret;
 }
 
 /***************************************************************************//**
@@ -525,9 +578,7 @@ int32_t ad7124_fclk_get(struct ad7124_dev *dev, float *f_clk)
 		*f_clk = f_clk_mp;
 		break;
 	case 2:
-	case 3:
 		*f_clk = f_clk_fp;
-		break;
 	default:
 		return ret;
 	}
@@ -719,13 +770,14 @@ int ad7124_set_adc_mode(struct ad7124_dev *device, enum ad7124_mode adc_mode)
 
 	ret = ad7124_reg_write_msk(device,
 				   AD7124_ADC_CTRL_REG,
-				   no_os_field_prep(AD7124_ADC_CTRL_REG_MODE_MSK, adc_mode),
+				   (adc_mode << 4) & AD7124_ADC_CTRL_REG_MODE_MSK,
 				   AD7124_ADC_CTRL_REG_MODE_MSK);
+
+	// no_os_field_prep(AD7124_ADC_CTRL_REG_MODE_MSK, adc_mode) < Replaced
 	if (ret)
 		return ret;
 
 	device->mode = adc_mode;
-
 	return 0;
 }
 
@@ -776,16 +828,22 @@ int ad7124_connect_analog_input(struct ad7124_dev *device,
 	/* Select the Positive Analog Input */
 	ret = ad7124_reg_write_msk(device,
 				   AD7124_CH0_MAP_REG + chn_num,
-				   no_os_field_prep(AD7124_CHMAP_REG_AINPOS_MSK, analog_input.ainp),
+				   (analog_input.ainp << 5) & AD7124_CHMAP_REG_AINPOS_MSK,
 				   AD7124_CHMAP_REG_AINPOS_MSK);
+
+//	no_os_field_prep(AD7124_CHMAP_REG_AINPOS_MSK, analog_input.ainp)
+
 	if (ret)
 		return ret;
 
 	/* Select the Negative Analog Input */
 	ret = ad7124_reg_write_msk(device,
 				   AD7124_CH0_MAP_REG + chn_num,
-				   no_os_field_prep(AD7124_CHMAP_REG_AINNEG_MSK, analog_input.ainm),
+				   (analog_input.ainm << 0) & AD7124_CHMAP_REG_AINNEG_MSK,
 				   AD7124_CHMAP_REG_AINNEG_MSK);
+
+//	no_os_field_prep(AD7124_CHMAP_REG_AINNEG_MSK, analog_input.ainm)
+
 	if (ret)
 		return ret;
 
@@ -813,10 +871,14 @@ int ad7124_assign_setup(struct ad7124_dev *device,
 	/* Assign setup to the Channel Register. */
 	ret = ad7124_reg_write_msk(device,
 				   AD7124_CH0_MAP_REG + chn_num,
-				   no_os_field_prep(AD7124_CHMAP_REG_SETUP_SEL_MSK, setup),
+				   (setup << 12) & AD7124_CHMAP_REG_SETUP_SEL_MSK,
 				   AD7124_CHMAP_REG_SETUP_SEL_MSK);
+
+//	no_os_field_prep(AD7124_CHMAP_REG_SETUP_SEL_MSK, setup)
+
 	if (ret)
 		return (ret);
+
 
 	device->chan_map[chn_num].setup_sel = setup;
 
@@ -870,9 +932,10 @@ int ad7124_set_burnout(struct ad7124_dev* device,
 
 	ret = ad7124_reg_write_msk(device,
 				   AD7124_CFG0_REG + setup_id,
-				   no_os_field_prep(AD7124_SETUP_CONF_REG_BURNOUT_MSK, burnout),
+				   (burnout << 9) & AD7124_SETUP_CONF_REG_BURNOUT_MSK,
 				   AD7124_SETUP_CONF_REG_BURNOUT_MSK);
 
+//	no_os_field_prep(AD7124_SETUP_CONF_REG_BURNOUT_MSK, burnout)
 	if (ret)
 		return ret;
 
@@ -901,8 +964,10 @@ int ad7124_set_reference_source(struct ad7124_dev* device,
 
 	ret = ad7124_reg_write_msk(device,
 				   AD7124_CFG0_REG + setup_id,
-				   no_os_field_prep(AD7124_SETUP_CONF_REG_REF_SEL_MSK, ref_source),
+				   (ref_source<<3) & AD7124_SETUP_CONF_REG_REF_SEL_MSK,
 				   AD7124_SETUP_CONF_REG_REF_SEL_MSK);
+
+//	no_os_field_prep(AD7124_SETUP_CONF_REG_REF_SEL_MSK, ref_source)
 	if (ret)
 		return ret;
 
@@ -993,9 +1058,10 @@ int ad7124_set_pga(struct ad7124_dev* device,
 
 	ret = ad7124_reg_write_msk(device,
 				   AD7124_CFG0_REG + setup_id,
-				   no_os_field_prep(AD7124_SETUP_CONF_REG_PGA_MSK, pga),
+				   (pga & AD7124_SETUP_CONF_REG_PGA_MSK),
 				   AD7124_SETUP_CONF_REG_PGA_MSK);
 
+	// no_os_field_prep(AD7124_SETUP_CONF_REG_PGA_MSK, pga)
 	if (ret)
 		return ret;
 
@@ -1017,8 +1083,10 @@ int ad7124_set_power_mode(struct ad7124_dev *device,
 
 	ret = ad7124_reg_write_msk(device,
 				   AD7124_ADC_CTRL_REG,
-				   no_os_field_prep(AD7124_POWER_MODE_MSK, mode),
+				   (mode <<6) & AD7124_POWER_MODE_MSK,
 				   AD7124_POWER_MODE_MSK);
+
+//	no_os_field_prep(AD7124_POWER_MODE_MSK, mode)
 	if (ret)
 		return ret;
 
@@ -1042,30 +1110,56 @@ int32_t ad7124_setup(struct ad7124_dev **device,
 	uint8_t setup_index;
 	uint8_t ch_index;
 
-	dev = (struct ad7124_dev *)no_os_malloc(sizeof(*dev));
+//	dev = (struct ad7124_dev *)no_os_malloc(sizeof(*dev)); -- DYNAMIC ALLOCATION MAY GO BAD.
+
+	static struct ad7124_dev ad7124_static; // used for when we have only one
+
+	dev = &ad7124_static;
 	if (!dev)
 		return -ENOMEM;
 
 	dev->regs = init_param->regs;
+	// copies the register map (ad7124_regs array) into the device struct
+	// this is essential — the driver uses this to track all register values
+
+
 	dev->spi_rdy_poll_cnt = init_param->spi_rdy_poll_cnt;
+	// sets how many times to poll before timing out
+	// e.g. 25000 polls before giving up waiting for SPI ready
 
 	/* Initialize the SPI communication. */
-	ret = no_os_spi_init(&dev->spi_desc, init_param->spi_init);
-	if (ret)
-		goto error_dev;
+	// DONT NEED AS CUBE MX INITS.
+//	ret = no_os_spi_init(&dev->spi_desc, init_param->spi_init);
+//	if (ret)
+//		goto error_dev;
+
+	// NEED TO FINISH WHAT OS_SPI does.
+
+	// 2. ad7124_setup() copies it into dev
+
+	// MAY need to look into this more.
+
+	dev->hspi = init_param->hspi;
+	dev->cs_port = init_param->cs_port;
+	dev->cs_pin = init_param->cs_pin;
+
+
+
+
 
 	/* Update the device structure with power-on/reset settings. */
 	dev->check_ready = init_param->check_ready;
 
 	/*  Reset the device interface.*/
 	ret = ad7124_reset(dev);
+
 	if (ret)
-		goto error_spi;
+		goto error_dev;
 
 	/* Initialize ADC mode register. */
 	ret = ad7124_write_register(dev, dev->regs[AD7124_ADC_CTRL_REG]);
 	if (ret)
-		goto error_spi;
+		goto error_dev;
 
 	/* Get CRC State. */
 	ad7124_update_crcsetting(dev);
@@ -1073,10 +1167,12 @@ int32_t ad7124_setup(struct ad7124_dev **device,
 
 	dev->active_device = init_param->active_device;
 
+
 	/* Read ID register to identify the part. */
 	ret = ad7124_read_register(dev, &dev->regs[AD7124_ID_REG]);
+
 	if (ret)
-		goto error_spi;
+		goto error_dev;
 
 	if (dev->active_device == ID_AD7124_4) {
 		switch (dev->regs[AD7124_ID_REG].value) {
@@ -1086,7 +1182,7 @@ int32_t ad7124_setup(struct ad7124_dev **device,
 			break;
 
 		default:
-			goto error_spi;
+			goto error_dev;
 		}
 	}
 
@@ -1098,7 +1194,7 @@ int32_t ad7124_setup(struct ad7124_dev **device,
 			break;
 
 		default:
-			goto error_spi;
+			goto error_dev;
 		}
 	}
 
@@ -1107,74 +1203,74 @@ int32_t ad7124_setup(struct ad7124_dev **device,
 					  init_param->setups[setup_index].bi_unipolar,
 					  setup_index);
 		if (ret)
-			goto error_spi;
+			goto error_dev;
 
 		ret = ad7124_set_burnout(dev,
 					 init_param->setups[setup_index].burnout,
 					 setup_index);
 
 		if (ret)
-			goto error_spi;
+			goto error_dev;
 
 		ret = ad7124_set_reference_source(dev,
 						  init_param->setups[setup_index].ref_source,
 						  setup_index,
 						  init_param->ref_en);
 		if (ret)
-			goto error_spi;
+			goto error_dev;
 
 		ret = ad7124_enable_buffers(dev,
 					    init_param->setups[setup_index].ain_buff,
 					    init_param->setups[setup_index].ref_buff,
 					    setup_index);
 		if (ret)
-			goto error_spi;
+			goto error_dev;
 
 		ret = ad7124_set_pga(dev,
 				     init_param->setups[setup_index].pga,
 				     setup_index);
 
 		if (ret)
-			goto error_spi;
+			goto error_dev;
 	}
 
 	ret = ad7124_set_adc_mode(dev, init_param->mode);
 	if (ret)
-		goto error_spi;
+		goto error_dev;
 
 	ret = ad7124_set_power_mode(dev,
 				    init_param->power_mode);
 	if (ret)
-		goto error_spi;
+		goto error_dev;
 
 	for (ch_index = 0; ch_index < AD7124_MAX_CHANNELS; ch_index++) {
 		ret = ad7124_connect_analog_input(dev,
 						  ch_index,
 						  init_param->chan_map[ch_index].ain);
 		if (ret)
-			goto error_spi;
+			goto error_dev;
 
 		ret = ad7124_assign_setup(dev,
 					  ch_index,
 					  init_param->chan_map[ch_index].setup_sel);
 		if (ret)
-			goto error_spi;
+			goto error_dev;
 
 		ret = ad7124_set_channel_status(dev,
 						ch_index,
 						init_param->chan_map[ch_index].channel_enable);
 		if (ret)
-			goto error_spi;
+			goto error_dev;
 	}
 
 	*device = dev;
 
 	return 0;
-
-error_spi:
-	no_os_spi_remove(dev->spi_desc);
-error_dev:
-	free(dev);
+//
+//error_spi:
+//	no_os_spi_remove(dev->spi_desc);
+	error_dev:
+		return ret;
 
 	return ret;
 }
@@ -1186,13 +1282,21 @@ error_dev:
 *******************************************************************************/
 int32_t ad7124_remove(struct ad7124_dev *dev)
 {
-	int32_t ret;
 
-	ret = no_os_spi_remove(dev->spi_desc);
-	if (ret)
-		return ret;
+	// don't need this entire function because we statically allocate.
 
-	no_os_free(dev);
+
+//	int32_t ret;
+//
+//	ret = no_os_spi_remove(dev->spi_desc);
+//	if (ret)
+//		return ret;
+//
+//	no_os_free(dev);
+
 
 	return 0;
 }
+
+
+

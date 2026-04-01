@@ -41,62 +41,76 @@ void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, valve9_Pin|valve10_Pin|valve11_Pin|valve12_Pin
-                          |valve13_Pin|T1_CS_Pin|GPIO_PIN_11, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, T4_EN_Pin|T2_EN_Pin|PT_EN_Pin|valve6_Pin
+                          |LED_PIN_Pin|T3_EN_Pin|T5_EN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, valve14_Pin|valve15_Pin|valve4_Pin|valve18_Pin
-                          |valve16_Pin|valve17_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(POW12_EN_GPIO_Port, POW12_EN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(valve_1_GPIO_Port, valve_1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, ADC_EN_Pin|valve12_Pin|heater_en_Pin|valve18_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, valve2_Pin|valve3_Pin|LED_PIN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, valve1_Pin|valve2_Pin|valve3_Pin|valve5_Pin
+                          |T1_EN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, valve6_Pin|valve5_Pin|valve7_Pin|valve8_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, valve7_Pin|valve8_Pin|valve17_Pin|valve15_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : valve9_Pin valve10_Pin valve11_Pin valve12_Pin
-                           valve13_Pin T1_CS_Pin PE11 */
-  GPIO_InitStruct.Pin = valve9_Pin|valve10_Pin|valve11_Pin|valve12_Pin
-                          |valve13_Pin|T1_CS_Pin|GPIO_PIN_11;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, valve4_Pin|valve9_Pin|valve10_Pin|valve11_Pin
+                          |valve13_Pin|valve14_Pin|valve16_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : T4_EN_Pin T2_EN_Pin PT_EN_Pin valve6_Pin
+                           LED_PIN_Pin T3_EN_Pin T5_EN_Pin */
+  GPIO_InitStruct.Pin = T4_EN_Pin|T2_EN_Pin|PT_EN_Pin|valve6_Pin
+                          |LED_PIN_Pin|T3_EN_Pin|T5_EN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : valve14_Pin valve15_Pin valve4_Pin valve18_Pin
-                           valve16_Pin valve17_Pin */
-  GPIO_InitStruct.Pin = valve14_Pin|valve15_Pin|valve4_Pin|valve18_Pin
-                          |valve16_Pin|valve17_Pin;
+  /*Configure GPIO pin : POW12_EN_Pin */
+  GPIO_InitStruct.Pin = POW12_EN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(POW12_EN_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : ADC_EN_Pin valve12_Pin heater_en_Pin valve18_Pin */
+  GPIO_InitStruct.Pin = ADC_EN_Pin|valve12_Pin|heater_en_Pin|valve18_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : valve_1_Pin */
-  GPIO_InitStruct.Pin = valve_1_Pin;
+  /*Configure GPIO pins : valve1_Pin valve2_Pin valve3_Pin valve5_Pin
+                           T1_EN_Pin */
+  GPIO_InitStruct.Pin = valve1_Pin|valve2_Pin|valve3_Pin|valve5_Pin
+                          |T1_EN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(valve_1_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : valve2_Pin valve3_Pin LED_PIN_Pin */
-  GPIO_InitStruct.Pin = valve2_Pin|valve3_Pin|LED_PIN_Pin;
+  /*Configure GPIO pins : valve7_Pin valve8_Pin valve17_Pin valve15_Pin */
+  GPIO_InitStruct.Pin = valve7_Pin|valve8_Pin|valve17_Pin|valve15_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : valve6_Pin valve5_Pin valve7_Pin valve8_Pin */
-  GPIO_InitStruct.Pin = valve6_Pin|valve5_Pin|valve7_Pin|valve8_Pin;
+  /*Configure GPIO pins : valve4_Pin valve9_Pin valve10_Pin valve11_Pin
+                           valve13_Pin valve14_Pin valve16_Pin */
+  GPIO_InitStruct.Pin = valve4_Pin|valve9_Pin|valve10_Pin|valve11_Pin
+                          |valve13_Pin|valve14_Pin|valve16_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

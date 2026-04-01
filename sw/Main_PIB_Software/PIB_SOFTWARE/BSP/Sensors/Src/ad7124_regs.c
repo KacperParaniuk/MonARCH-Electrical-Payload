@@ -93,3 +93,5 @@ struct ad7124_st_reg ad7124_regs[AD7124_REG_NO] = {
 	{0x37, 0x500000, 3, 1}, /* AD7124_Gain_6 */
 	{0x38, 0x500000, 3, 1}, /* AD7124_Gain_7 */
 };
+
+// needed for register values.
