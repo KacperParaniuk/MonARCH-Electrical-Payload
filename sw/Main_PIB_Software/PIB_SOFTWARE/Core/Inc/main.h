@@ -81,8 +81,8 @@ void Error_Handler(void);
 #define USART3_TX_OBC_GPIO_Port GPIOC
 #define USART3_RX_OBC_Pin GPIO_PIN_5
 #define USART3_RX_OBC_GPIO_Port GPIOC
-#define valve6_Pin GPIO_PIN_9
-#define valve6_GPIO_Port GPIOE
+#define TIM__CH1_VALVE6_Pin GPIO_PIN_9 // IEP VALVE 6
+#define TIM__CH1_VALVE6_GPIO_Port GPIOE
 #define LED_PIN_Pin GPIO_PIN_15
 #define LED_PIN_GPIO_Port GPIOE
 #define I2C4_SCL_BREAKOUT_Pin GPIO_PIN_10
@@ -101,8 +101,8 @@ void Error_Handler(void);
 #define valve7_GPIO_Port GPIOD
 #define valve8_Pin GPIO_PIN_9
 #define valve8_GPIO_Port GPIOD
-#define valve4_Pin GPIO_PIN_6
-#define valve4_GPIO_Port GPIOC
+#define TIM8_CH1_VALVE4_Pin GPIO_PIN_6 // IEP VALVE 4
+#define TIM8_CH1_VALVE4_GPIO_Port GPIOC
 #define valve9_Pin GPIO_PIN_7
 #define valve9_GPIO_Port GPIOC
 #define valve10_Pin GPIO_PIN_8

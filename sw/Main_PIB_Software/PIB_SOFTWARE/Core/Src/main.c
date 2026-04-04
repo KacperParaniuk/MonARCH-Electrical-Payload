@@ -20,6 +20,7 @@
 #include "main.h"
 #include "i2c.h"
 #include "spi.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -151,6 +152,8 @@ int main(void)
   MX_SPI2_Init();
   MX_UART4_Init();
   MX_USART3_UART_Init();
+  MX_TIM1_Init();
+  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
 
 
@@ -593,14 +596,14 @@ int main(void)
 			case CMD_OPEN_SOL3:
 				HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_SET);
 
-			case CMD_OPEN_SOL4:
-				HAL_GPIO_WritePin(valve4_GPIO_Port, valve4_Pin, GPIO_PIN_SET);
+			case CMD_OPEN_SOL4: // IEP VALVE (PWM)
+				HAL_GPIO_WritePin(TIM8_CH1_VALVE4_GPIO_Port, TIM8_CH1_VALVE4_Pin, GPIO_PIN_SET);
 
 			case CMD_OPEN_SOL5:
 				HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_SET);
 
-			case CMD_OPEN_SOL6:
-				HAL_GPIO_WritePin(valve6_GPIO_Port, valve6_Pin, GPIO_PIN_SET);
+			case CMD_OPEN_SOL6: // IEP VALVE (PWM)
+				HAL_GPIO_WritePin(TIM__CH1_VALVE6_GPIO_Port, TIM__CH1_VALVE6_Pin, GPIO_PIN_SET);
 
 			case CMD_OPEN_SOL7:
 				HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_SET);
@@ -645,14 +648,14 @@ int main(void)
 			case CMD_CLOSE_SOL3:
 				HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_RESET);
 
-			case CMD_CLOSE_SOL4:
-				HAL_GPIO_WritePin(valve4_GPIO_Port, valve4_Pin, GPIO_PIN_RESET);
+			case CMD_CLOSE_SOL4: // IEP VALVE 4
+				HAL_GPIO_WritePin(TIM8_CH1_VALVE4_GPIO_Port, TIM8_CH1_VALVE4_Pin, GPIO_PIN_RESET);
 
 			case CMD_CLOSE_SOL5:
 				HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_RESET);
 
-			case CMD_CLOSE_SOL6:
-				HAL_GPIO_WritePin(valve6_GPIO_Port, valve6_Pin, GPIO_PIN_RESET);
+			case CMD_CLOSE_SOL6: // IEP VALVE 6
+				HAL_GPIO_WritePin(TIM__CH1_VALVE6_GPIO_Port, TIM__CH1_VALVE6_Pin, GPIO_PIN_RESET);
 
 			case CMD_CLOSE_SOL7:
 				HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_RESET);
