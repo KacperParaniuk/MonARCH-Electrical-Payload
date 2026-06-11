@@ -47,7 +47,9 @@
 // Circuit Values
 
 #define FDC2214_L_HENRY       18e-6f   /* 18 uH inductor */
-#define FDC2214_C_PARALLEL    33e-12f  /* 33 pF fixed cap */
+//#define FDC2214_C_PARALLEL    33e-12f  /* 33 pF fixed cap */
+#define FDC2214_C_PARALLEL    100e-9f  /* 33 pF fixed cap */
+
 #define FDC2214_F_REF         43400000.0f /* internal clock Hz Typical: 43.4 MHz */
 #define FDC2214_CAP_EMPTY   0 // insert capacitance reading when container is empty
 #define FDC2214_ACUM_HREF  500 // (mm)  insert height of container (units of desire)
@@ -59,7 +61,7 @@ float FDC2214_read_capacitance(uint8_t channel, float *cap_pf);
 float FDC2214_read_differential_capacitance(uint8_t accumulator);
 uint8_t FDC2214_read_accumulator_height(uint8_t accumulator);
 
-void FDC2214_Device_ID(char* buffer);
+void FDC2214_Device_ID(uint8_t buffer);
 int FDC2214_Check_Device_ID();
 
 
