@@ -7,7 +7,7 @@ extern I2C_HandleTypeDef hi2c4;
 
 uint8_t cof[2];
 volatile uint16_t check[2];
-
+HAL_StatusTypeDef ret;
 
 // INIT ALL CHANNELS.
 uint8_t FDC2214_Init(void)
@@ -24,46 +24,80 @@ uint8_t FDC2214_Init(void)
 
 	cof[0] = 0xFF;
 	cof[1] = 0xFF;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, RCOUNT_CH0, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);      //	for (i = 0; i < 20; i++)
-	HAL_Delay(20);                                                                          //		;
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, RCOUNT_CH0, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);      //	for (i = 0; i < 20; i++)
+	HAL_Delay(20);
+
+	//;
+
+	if(ret != HAL_OK){
+		return -1;
+	}
 
 	cof[0] = 0xFF;
 	cof[1] = 0xFF;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, RCOUNT_CH1, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, RCOUNT_CH1, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -2;
+	}
 
 	cof[0] = 0xFF;
 	cof[1] = 0xFF;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, RCOUNT_CH2, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, RCOUNT_CH2, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -3;
+	}
 
 	cof[0] = 0xFF;
 	cof[1] = 0xFF;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, RCOUNT_CH3, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, RCOUNT_CH3, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
 
+	if(ret != HAL_OK){
+		return -4;
+	}
 
 	// OFFSET || NO OFFSET
 
 	cof[0] = 0x00;
 	cof[1] = 0x00;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, OFFSET_CH0, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, OFFSET_CH0, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -5;
+	}
 
 	cof[0] = 0x00;
 	cof[1] = 0x00;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, OFFSET_CH1, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, OFFSET_CH1, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -6;
+	}
 
 	cof[0] = 0x00;
 	cof[1] = 0x00;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, OFFSET_CH2, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, OFFSET_CH2, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -7;
+	}
+
 
 	cof[0] = 0x00;
 	cof[1] = 0x00;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, OFFSET_CH3, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, OFFSET_CH3, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -8;
+	}
 
 	// SETTLE COUNT ||
 //
@@ -93,47 +127,79 @@ uint8_t FDC2214_Init(void)
 
 	cof[0] = 0x00;
 	cof[1] = 0x64;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, SETTLECOUNT_CH0, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, SETTLECOUNT_CH0, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -9;
+	}
 
 	cof[0] = 0x00;
 	cof[1] = 0x64;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, SETTLECOUNT_CH1, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, SETTLECOUNT_CH1, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -10;
+	}
 
 	cof[0] = 0x00;
 	cof[1] = 0x64;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, SETTLECOUNT_CH2, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, SETTLECOUNT_CH2, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+
+	if(ret != HAL_OK){
+		return -11;
+	}
 
 	cof[0] = 0x00;
 	cof[1] = 0x64;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, SETTLECOUNT_CH3, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, SETTLECOUNT_CH3, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
 
+	if(ret != HAL_OK){
+		return -12;
+	}
 
 	// CLOCK DIVIDERS || This register configures both F_IN_SEL & F_REF_Divder -> CHx_FIN_SEL -> b01 for differential config and between 0.01 Mhz and 8.75 Mhz
 	// Bit pattern: 00 01 00 0000000001 = 0x1001
 
 	cof[0] = 0x10; // differential pair divide by sensor F_IN by 1 (Divide by two for single is setting byte value to 0x11)
 	cof[1] = 0x01; // 0x01 equals full clock speed. fREFx = (f_clk / FREF_divider)
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, CLOCK_DIVIDERS_C_CH0, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, CLOCK_DIVIDERS_C_CH0, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -13;
+	}
 
 	cof[0] = 0x10; // [13:12]
 	cof[1] = 0x01; // [9:0]
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, CLOCK_DIVIDERS_C_CH1, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, CLOCK_DIVIDERS_C_CH1, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -14;
+	}
 
 	cof[0] = 0x10;
 	cof[1] = 0x01;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, CLOCK_DIVIDERS_C_CH2, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, CLOCK_DIVIDERS_C_CH2, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -15;
+	}
 
 	cof[0] = 0x10;
 	cof[1] = 0x01;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, CLOCK_DIVIDERS_C_CH3, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, CLOCK_DIVIDERS_C_CH3, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -16;
+	}
 
 	// Error CONFIG
 	// controls which error conditions drive the interrupt pin.
@@ -141,8 +207,12 @@ uint8_t FDC2214_Init(void)
 
 	cof[0] = 0x00;
 	cof[1] = 0x00;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, ERROR_CONFIG, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, ERROR_CONFIG, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -17;
+	}
 
 	// DRIVE CURRENT
 
@@ -155,22 +225,35 @@ uint8_t FDC2214_Init(void)
 
 	cof[0] = 0xF8;
 	cof[1] = 0x00;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, DRIVE_CURRENT_CH0, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, DRIVE_CURRENT_CH0, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -18;
+	}
+
+	cof[0] = 0xF8;
+	cof[1] = 0x00;
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, DRIVE_CURRENT_CH1, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	HAL_Delay(20);
+
+
+	if(ret != HAL_OK){
+	    return -19;
+	}
+
+	cof[0] = 0xF8;
+	cof[1] = 0x00;
 	HAL_Delay(20);
 
 	cof[0] = 0xF8;
 	cof[1] = 0x00;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, DRIVE_CURRENT_CH1, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, DRIVE_CURRENT_CH3, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
 
-	cof[0] = 0xF8;
-	cof[1] = 0x00;
-	HAL_Delay(20);
-
-	cof[0] = 0xF8;
-	cof[1] = 0x00;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, DRIVE_CURRENT_CH3, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
-	HAL_Delay(20);
+	if(ret != HAL_OK){
+		return -20;
+	}
 
 
 	// MUX CONFIG
@@ -181,9 +264,13 @@ uint8_t FDC2214_Init(void)
 	cof[0] = 0xC2; // 1100 0010
 	cof[1] = 0x0C; // 0000 1101
 
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, MUX_CONFIG, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, MUX_CONFIG, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
 
+
+	if(ret != HAL_OK){
+		return -21;
+	}
 
 
 	// CONFIG - takes chip out of sleep mode and begins convertsions.
@@ -206,27 +293,38 @@ uint8_t FDC2214_Init(void)
 
 	cof[0] = 0x1A;
 	cof[1] = 0x81;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, CONFIG, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, CONFIG, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(200);
+
+	if(ret != HAL_OK){
+		return -22;
+	}
 
 
 	// ID's
 
-	HAL_I2C_Mem_Read(&hi2c4, FDC2214, MANUFACTURER_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Read(&hi2c4, FDC2214, MANUFACTURER_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
 
+	if(ret != HAL_OK){
+		return -23;
+	}
 	// Verify Device / Manufacturer ID.
 
 	check[0] = cof[1] | cof[0] << 8;
 
-	HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -24;
+	}
 
 	check[1] = cof[1] | cof[0] << 8;
 	if ((check[0] == MANUFACTURER_ID_val) && (check[1] == DEVICE_ID_val))
-		return 0;
-	else
 		return 1;
+	else
+		return 0;
 }
 
 
@@ -289,8 +387,8 @@ uint32_t FDC2214_read_data(uint8_t channel) // read 28 bit value. (RAW)
 
 float FDC2214_read_capacitance(uint8_t channel, float *cap_pf){
 
-	uint32_t raw = FDC2214_read_data(channel);
-	uint32_t f_sensor;
+	uint64_t raw = FDC2214_read_data(channel);
+	uint64_t f_sensor;
 
 	// convert into f_sensor data
 
@@ -355,32 +453,51 @@ void reset_fdc2214(){
 	uint8_t cof[2];
 	cof[0] = 0x80;
 	cof[1] = 0x00;
-	HAL_I2C_Mem_Write(&hi2c4, FDC2214, DRIVE_CURRENT_CH3, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, RESET_DEV, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(200);
+	if(ret != HAL_OK){
 
+	}
 
 }
 
 int FDC2214_Check_Device_ID(){
+
+
+	HAL_I2C_Mem_Read(&hi2c4, FDC2214, MANUFACTURER_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	HAL_Delay(20);
+
+
 	check[0] = cof[1] | cof[0] << 8;
+
+	if(check[0] == MANUFACTURER_ID_val){
+		return 1;
+	}
+	else{
+		return -1;
+	}
 
 	HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
 
 	check[1] = cof[1] | cof[0] << 8;
+
 	if ((check[0] == MANUFACTURER_ID_val) && (check[1] == DEVICE_ID_val))
-		return 0;
-	else
 		return 1;
+	else
+		return 0;
+
+
 }
 
 
-void FDC2214_Device_ID(char* buffer){
+void FDC2214_Device_ID(uint8_t buffer){
 
 	HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
 
 	buffer = cof[1];
+
 	 // DEVICE ID in second position
 }
 
