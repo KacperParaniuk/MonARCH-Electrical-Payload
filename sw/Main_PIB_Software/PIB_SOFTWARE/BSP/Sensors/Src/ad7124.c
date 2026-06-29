@@ -46,208 +46,168 @@
  * A time of 2ms should be enough based on the data sheet, but 4ms
  * chosen to provide enough margin, in case mdelay is not accurate.
  */
-#define AD7124_POST_RESET_DELAY	4
-#define	EINVAL 22 // INVALID ARGUMENT.
-#define	ENOMEM 12	/* Not enough space */
-#define EBADMSG 77
+AD7124_ConfigTypeDef AD7124_Handler;
+
+/**
+ * @brief Storage for ADC channel samples.
+ *
+ * This array holds the sampled data for each enabled ADC channel.
+ * The size is defined by @c AD7124_ENABLED_CHANNELS.
+ *
+ * @note Use @c extern uint32_t AD7124_ChannelSamples[]; to access the data externally.
+ */
+uint32_t AD7124_ChannelSamples[AD7124_ENABLED_CHANNELS] = {0U};
+
+/**
+ * @brief  CRC8 Lookup Table.
+ *
+ * This lookup table is used to calculate the CRC8 checksum,
+ * which ensures data integrity during communication.
+ */
+static const uint8_t CRC8_LOOKUP_TABLE[256U] = {
+    0x00U, 0x07U, 0x0EU, 0x09U, 0x1CU, 0x1BU, 0x12U, 0x15U,
+    0x38U, 0x3FU, 0x36U, 0x31U, 0x24U, 0x23U, 0x2AU, 0x2DU,
+    0x70U, 0x77U, 0x7EU, 0x79U, 0x6CU, 0x6BU, 0x62U, 0x65U,
+    0x48U, 0x4FU, 0x46U, 0x41U, 0x54U, 0x53U, 0x5AU, 0x5DU,
+    0xE0U, 0xE7U, 0xEEU, 0xE9U, 0xFCU, 0xFBU, 0xF2U, 0xF5U,
+    0xD8U, 0xDFU, 0xD6U, 0xD1U, 0xC4U, 0xC3U, 0xCAU, 0xCDU,
+    0x90U, 0x97U, 0x9EU, 0x99U, 0x8CU, 0x8BU, 0x82U, 0x85U,
+    0xA8U, 0xAFU, 0xA6U, 0xA1U, 0xB4U, 0xB3U, 0xBAU, 0xBDU,
+    0xC7U, 0xC0U, 0xC9U, 0xCEU, 0xDBU, 0xDCU, 0xD5U, 0xD2U,
+    0xFFU, 0xF8U, 0xF1U, 0xF6U, 0xE3U, 0xE4U, 0xEDU, 0xEAU,
+    0xB7U, 0xB0U, 0xB9U, 0xBEU, 0xABU, 0xACU, 0xA5U, 0xA2U,
+    0x8FU, 0x88U, 0x81U, 0x86U, 0x93U, 0x94U, 0x9DU, 0x9AU,
+    0x27U, 0x20U, 0x29U, 0x2EU, 0x3BU, 0x3CU, 0x35U, 0x32U,
+    0x1FU, 0x18U, 0x11U, 0x16U, 0x03U, 0x04U, 0x0DU, 0x0AU,
+    0x57U, 0x50U, 0x59U, 0x5EU, 0x4BU, 0x4CU, 0x45U, 0x42U,
+    0x6FU, 0x68U, 0x61U, 0x66U, 0x73U, 0x74U, 0x7DU, 0x7AU,
+    0x89U, 0x8EU, 0x87U, 0x80U, 0x95U, 0x92U, 0x9BU, 0x9CU,
+    0xB1U, 0xB6U, 0xBFU, 0xB8U, 0xADU, 0xAAU, 0xA3U, 0xA4U,
+    0xF9U, 0xFEU, 0xF7U, 0xF0U, 0xE5U, 0xE2U, 0xEBU, 0xECU,
+    0xC1U, 0xC6U, 0xCFU, 0xC8U, 0xDDU, 0xDAU, 0xD3U, 0xD4U,
+    0x69U, 0x6EU, 0x67U, 0x60U, 0x75U, 0x72U, 0x7BU, 0x7CU,
+    0x51U, 0x56U, 0x5FU, 0x58U, 0x4DU, 0x4AU, 0x43U, 0x44U,
+    0x19U, 0x1EU, 0x17U, 0x10U, 0x05U, 0x02U, 0x0BU, 0x0CU,
+    0x21U, 0x26U, 0x2FU, 0x28U, 0x3DU, 0x3AU, 0x33U, 0x34U,
+    0x4EU, 0x49U, 0x40U, 0x47U, 0x52U, 0x55U, 0x5CU, 0x5BU,
+    0x76U, 0x71U, 0x78U, 0x7FU, 0x6AU, 0x6DU, 0x64U, 0x63U,
+    0x3EU, 0x39U, 0x30U, 0x37U, 0x22U, 0x25U, 0x2CU, 0x2BU,
+    0x06U, 0x01U, 0x08U, 0x0FU, 0x1AU, 0x1DU, 0x14U, 0x13U,
+    0xAEU, 0xA9U, 0xA0U, 0xA7U, 0xB2U, 0xB5U, 0xBCU, 0xBBU,
+    0x96U, 0x91U, 0x98U, 0x9FU, 0x8AU, 0x8DU, 0x84U, 0x83U,
+    0xDEU, 0xD9U, 0xD0U, 0xD7U, 0xC2U, 0xC5U, 0xCCU, 0xCBU,
+    0xE6U, 0xE1U, 0xE8U, 0xEFU, 0xFAU, 0xFDU, 0xF4U, 0xF3U
+};
 
 
 
-/***************************************************************************//**
- * @brief Reads the value of the specified register without checking if the
- *        device is ready to accept user requests.
- * @param dev   - The handler of the instance of the driver.
- * @param p_reg - Pointer to the register structure holding info about the
- * 	l
- * 	l
- * 	l
- * 	lll
- * 	ll
- *               register to be read. The read value is stored inside the
- *               register structure.
- * @return Returns 0 for success or negative error code otherwise.
-*******************************************************************************/
+/* ------------------------------------- Functions ------------------------------------ */
 
-// Edited by Kacper Paraniuk
-
-
-int32_t ad7124_no_check_read_register(struct ad7124_dev *dev,
-				      struct ad7124_st_reg* p_reg)
+/**
+ * @brief Compute CRC8 checksum using lookup table.
+ *
+ * This function calculates the CRC8 checksum over a buffer using a precomputed lookup table.
+ * It is used for data integrity checks during SPI communication with the AD7124-4 ADC.
+ *
+ * @param[in] pBuf     Pointer to the data buffer.
+ * @param[in] bufSize  Number of bytes in the buffer.
+ *
+ * @retval CRC8 checksum value of the input buffer.
+ * @retval 0 If @p pBuf is NULL or @p bufSize is 0.
+ */
+static inline uint8_t AD7124_ComputeCRC8(const uint8_t *pBuf, uint8_t bufSize)
 {
-//	int32_t ret = 0;
+    uint8_t crc = 0U;
+       
+    if ( (pBuf != NULL) && (bufSize > 0U) )
+    {
+        for (uint8_t index = 0U; index < bufSize; index++)
+        {
+            crc = CRC8_LOOKUP_TABLE[crc ^ pBuf[index]];
+        }
+    }
+    
+    return crc; 
+}
 
-	uint8_t buffer[8] = { 0 };
-	uint8_t i = 0;
-	uint8_t check8 = 0, add_status_length = 0;
-	uint8_t msg_buf[8] = { 0 };
-
-	if (!dev || !p_reg)
-		return -EINVAL;
-
-	/* Build the Command word */
-	buffer[0] = AD7124_COMM_REG_WEN | AD7124_COMM_REG_RD |
-		    AD7124_COMM_REG_RA(p_reg->addr);
-
-	/*
-	 * If this is an AD7124_DATA register read, and the DATA_STATUS bit is set
-	 * in ADC_CONTROL, need to read 4, not 3 bytes for DATA with STATUS
-	 */
-	if ((p_reg->addr == AD7124_DATA_REG) &&
-	    (dev->regs[AD7124_ADC_Control].value & AD7124_ADC_CTRL_REG_DATA_STATUS))
-		add_status_length = 1;
-
-	/* Read data from the device */
+/**
+ * @brief Reads a register value from the AD7124-4 via SPI.
+ *
+ * Performs an SPI transaction to read `dataSize` bytes from the specified
+ * AD7124 register at `regAddr`. The read data is validated using CRC8 to ensure communication integrity.
+ *
+ * @param[in]  pADC       Pointer to the AD7124-4 configuration structure containing SPI settings and communication parameters.
+ * @param[in]  regAddr    Address of the target register to read.
+ * @param[in]  dataSize   Number of bytes to read from the register.
+ * @param[out] pRegValue  Pointer to a variable where the read register value will be stored.
+ *
+ * @retval AD7124_OK      Register read completed successfully.
+ * @retval AD7124_ERROR   Communication failure, CRC mismatch, or invalid parameters.
+ */
+AD7124_StatusTypeDef AD7124_ReadRegister(const AD7124_ConfigTypeDef *pADC, uint8_t regAddr, uint8_t dataSize, uint32_t *pRegValue)
+{
+    AD7124_StatusTypeDef status = AD7124_ERROR;
+    uint32_t data = 0U;
+    uint8_t rx_buf [8U] = {0U};
+    uint8_t msg_buf[8U] = {0U};
+    uint8_t *rx_ptr = NULL;
+    uint8_t msg_length = 1U;
+    
+    // Build the Command word
+    uint8_t tx_buf = (uint8_t)(0x40U | (regAddr & 0x3FU));                     
+    uint8_t add_status_length = (regAddr == AD7124_DATA_REG) ? 1U : 0U;  
+    uint8_t total_bytes_to_receive = (uint8_t)(2U + dataSize + add_status_length); 
+           
+    if ( (pADC == NULL) || (dataSize == 0U) )
+    {
+        status = AD7124_ERROR;  
+    }
+    else
+    {  
+        // SPI write transaction
+        HAL_GPIO_WritePin(pADC->csPort, pADC->csPin, GPIO_PIN_RESET);
+        status = (AD7124_StatusTypeDef) HAL_SPI_TransmitReceive(pADC->SPIx, &tx_buf, rx_buf, total_bytes_to_receive, AD7124_MAX_DELAY);
+        HAL_GPIO_WritePin(pADC->csPort, pADC->csPin, GPIO_PIN_SET);
+ 
+        if (status == AD7124_OK)
+        {
+//            msg_buf[0U] = tx_buf;  // Store command byte for CRC calculation
+//            rx_ptr = &rx_buf[1U];  // Pointer to received data (skip first byte: command echo)
 //
-//	ret = no_os_spi_write_and_read(dev->spi_desc,
-//				       buffer,
-//				       ((dev->use_crc != AD7124_DISABLE_CRC) ? p_reg->size + 1
-//					: p_reg->size) + 1 + add_status_length);
-
-	// replaced with
-
-	uint8_t transfer_size = ((dev->use_crc != AD7124_DISABLE_CRC) ? p_reg->size + 1 // different bytes for different registers.
-	                        : p_reg->size) + 1 + add_status_length;
-
-	HAL_GPIO_WritePin(dev->cs_port, dev->cs_pin, GPIO_PIN_RESET);
-	if (HAL_SPI_TransmitReceive(dev->hspi, buffer, buffer, transfer_size, 100) != HAL_OK)
-		    return -EIO;
-	HAL_GPIO_Writ ePin(dev->cs_port, dev->cs_pin, GPIO_PIN_SET);
-
-
-	/* Check the CRC */
-	if (dev->use_crc == AD7124_USE_CRC) {
-		msg_buf[0] = AD7124_COMM_REG_WEN | AD7124_COMM_REG_RD |
-			     AD7124_COMM_REG_RA(p_reg->addr);
-		for (i = 1; i < p_reg->size + 2 + add_status_length; ++i)
-			msg_buf[i] = buffer[i];
-		check8 = ad7124_compute_crc8(msg_buf, p_reg->size + 2 + add_status_length);
-	}
-
-	if (check8)
-		/* ReadRegister checksum failed. */
-		return -EBADMSG;
-
-	/*
-	 * if reading Data with 4 bytes, need to copy the status byte to the STATUS
-	 * register struct value member
-	 */
-
-	if (add_status_length)
-		dev->regs[AD7124_Status].value = buffer[p_reg->size + 1];
-
-	/* Build the result */
-	p_reg->value = 0;
-	for (i = 1; i < p_reg->size + 1; i++) {
-		p_reg->value <<= 8;
-		p_reg->value += buffer[i];
-	}
-
-	return 0;
-}
-
-/***************************************************************************//**
- * @brief Writes the value of the specified register without checking if the
- *        device is ready to accept user requests.
- * @param dev - The handler of the instance of the driver.
- * @param reg - Register structure holding info about the register to be written
- * @return Returns 0 for success or negative error code otherwise.
-*******************************************************************************/
-int32_t ad7124_no_check_write_register(struct ad7124_dev *dev,
-				       struct ad7124_st_reg reg)
-{
-	int32_t reg_value = 0;
-	uint8_t wr_buf[8] = { 0 };
-	uint8_t i = 0;
-	uint8_t crc8 = 0;
-
-	if (!dev)
-		return -EINVAL;
-
-	/* Build the Command word */
-	wr_buf[0] = AD7124_COMM_REG_WEN | AD7124_COMM_REG_WR |
-		    AD7124_COMM_REG_RA(reg.addr);
-
-	/* Fill the write buffer */
-	reg_value = reg.value;
-	for (i = 0; i < reg.size; i++) {
-		wr_buf[reg.size - i] = reg_value & 0xFF;
-		reg_value >>= 8;
-	}
-
-	/* Compute the CRC */
-	if (dev->use_crc != AD7124_DISABLE_CRC) {
-		crc8 = ad7124_compute_crc8(wr_buf, reg.size + 1);
-		wr_buf[reg.size + 1] = crc8;
-	}
-
-	uint8_t size = (dev->use_crc != AD7124_DISABLE_CRC) ? reg.size + 2
-			: reg.size + 1;
-
-	HAL_GPIO_WritePin(dev->cs_port, dev->cs_pin, GPIO_PIN_RESET);
-	if (HAL_SPI_TransmitReceive(dev->hspi, wr_buf, wr_buf, size, 100)
-			!= HAL_OK)
-		return -EIO;
-	HAL_GPIO_WritePin(dev->cs_port, dev->cs_pin, GPIO_PIN_SET);
-
-
+//            // Copy received bytes (data + status if any) for CRC calculation
+//            for (uint8_t i = 0U; i < (uint8_t)(dataSize + add_status_length); i++)
+//            {
+//                msg_buf[msg_length++] = *rx_ptr++;
+//            }
 //
-//		no_os_spi_write_and_read(dev->spi_desc,
-//						wr_buf,
-//						(dev->use_crc != AD7124_DISABLE_CRC) ? reg.size + 2
-//						: reg.size + 1);
+//            // Compute CRC8 of received message (command + data)
+//            uint8_t crc_calculated = AD7124_ComputeCRC8(msg_buf, msg_length);
+//            uint8_t crc_received   = rx_buf[total_bytes_to_receive - 1U];
+//
+//            if (crc_calculated == crc_received)
+//            {
+                rx_ptr = &rx_buf[1U];
+                
+                // Build the result
+                for (uint8_t i = 0U; i < dataSize; i++)
+                {
+                    data = (data << 8U) | *rx_ptr++;
+                }
 
-	return 0;
-}
+                *pRegValue = data; 
+            }
+//            else
+//            {
+//            	// CRC ERROR
+//                status = AD7124_ERROR;
+//
+//                // read error
 
 
 
-/***************************************************************************//**
- * @brief Reads the value of the specified register only when the device is ready
- *        to accept user requests. If the device ready flag is deactivated the
- *        read operation will be executed without checking the device state.
- *        DEPRECATED, use ad7124_read_register2.
- * @param dev   - The handler of the instance of the driver.
- * @param p_reg - Pointer to the register structure holding info about the
- *               register to be read. The read value is stored inside the
- *               register structure.
- * @return Returns 0 for success or negative error code otherwise.
-*******************************************************************************/
-int32_t ad7124_read_register(struct ad7124_dev *dev,
-			     struct ad7124_st_reg* p_reg)
-{
-	int32_t ret;
-
-	if (p_reg->addr != AD7124_ERR_REG && dev->check_ready) {
-		ret = ad7124_wait_for_spi_ready(dev,
-						dev->spi_rdy_poll_cnt);
-		if (ret)
-			return ret;
-	}
-
-	return ad7124_no_check_read_register(dev,
-					     p_reg);
-}
-
-/***************************************************************************//**
- * @brief Wrap the read register function to give it a modern signature.
- * @param [in] dev - Driver handler pointer.
- * @param [in] reg - Address of the register to be read.
- * @param [out] readval - Pointer to the register value.
- * @return Returns 0 for success or negative error code otherwise.
-***************************************************************************/
-int32_t ad7124_read_register2(struct ad7124_dev *dev,
-			      uint32_t reg,
-			      uint32_t *readval)
-{
-	int32_t ret;
-
-	ret = ad7124_read_register(dev, &dev->regs[reg]);
-	if (ret)
-		return ret;
-
-	*readval = dev->regs[reg].value;
-
-	return 0;
+    }
+    
+    return status;
 }
 
 /**

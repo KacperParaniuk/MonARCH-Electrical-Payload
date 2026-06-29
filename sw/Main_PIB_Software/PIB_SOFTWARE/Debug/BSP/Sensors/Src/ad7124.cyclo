@@ -1,5 +1,5 @@
 ../BSP/Sensors/Src/ad7124.c:125:23:AD7124_ComputeCRC8	4
-../BSP/Sensors/Src/ad7124.c:154:22:AD7124_ReadRegister	7
+../BSP/Sensors/Src/ad7124.c:154:22:AD7124_ReadRegister	6
 ../BSP/Sensors/Src/ad7124.c:233:22:AD7124_WriteRegister	4
 ../BSP/Sensors/Src/ad7124.c:279:22:AD7124_Reset	8
 ../BSP/Sensors/Src/ad7124.c:338:22:AD7124_Config	13
