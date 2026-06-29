@@ -178,21 +178,21 @@ AD7124_StatusTypeDef AD7124_ReadRegister(const AD7124_ConfigTypeDef *pADC, uint8
  
         if (status == AD7124_OK)
         {
-            msg_buf[0U] = tx_buf;  // Store command byte for CRC calculation
-            rx_ptr = &rx_buf[1U];  // Pointer to received data (skip first byte: command echo)
-            
-            // Copy received bytes (data + status if any) for CRC calculation
-            for (uint8_t i = 0U; i < (uint8_t)(dataSize + add_status_length); i++) 
-            {
-                msg_buf[msg_length++] = *rx_ptr++;
-            }
-            
-            // Compute CRC8 of received message (command + data)
-            uint8_t crc_calculated = AD7124_ComputeCRC8(msg_buf, msg_length);   
-            uint8_t crc_received   = rx_buf[total_bytes_to_receive - 1U];
-            
-            if (crc_calculated == crc_received || 1)
-            {
+//            msg_buf[0U] = tx_buf;  // Store command byte for CRC calculation
+//            rx_ptr = &rx_buf[1U];  // Pointer to received data (skip first byte: command echo)
+//
+//            // Copy received bytes (data + status if any) for CRC calculation
+//            for (uint8_t i = 0U; i < (uint8_t)(dataSize + add_status_length); i++)
+//            {
+//                msg_buf[msg_length++] = *rx_ptr++;
+//            }
+//
+//            // Compute CRC8 of received message (command + data)
+//            uint8_t crc_calculated = AD7124_ComputeCRC8(msg_buf, msg_length);
+//            uint8_t crc_received   = rx_buf[total_bytes_to_receive - 1U];
+//
+//            if (crc_calculated == crc_received)
+//            {
                 rx_ptr = &rx_buf[1U];
                 
                 // Build the result
@@ -203,15 +203,15 @@ AD7124_StatusTypeDef AD7124_ReadRegister(const AD7124_ConfigTypeDef *pADC, uint8
 
                 *pRegValue = data; 
             }
-            else
-            {
-            	// CRC ERROR
-                status = AD7124_ERROR;
+//            else
+//            {
+//            	// CRC ERROR
+//                status = AD7124_ERROR;
+//
+//                // read error
 
-                // read error
 
-            }
-        }
+
     }
     
     return status;
