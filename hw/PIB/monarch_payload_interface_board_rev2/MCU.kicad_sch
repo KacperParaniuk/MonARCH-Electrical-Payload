@@ -4673,7 +4673,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 39.37) (xy 220.98 39.37)
+			(xy 226.06 39.37) (xy 218.44 39.37)
 		)
 		(stroke
 			(width 0)
@@ -4823,7 +4823,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 31.75) (xy 220.98 31.75)
+			(xy 226.06 31.75) (xy 218.44 31.75)
 		)
 		(stroke
 			(width 0)
@@ -5073,7 +5073,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 34.29) (xy 220.98 34.29)
+			(xy 226.06 34.29) (xy 218.44 34.29)
 		)
 		(stroke
 			(width 0)
@@ -5713,7 +5713,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 36.83) (xy 220.98 36.83)
+			(xy 226.06 36.83) (xy 218.44 36.83)
 		)
 		(stroke
 			(width 0)
@@ -6291,7 +6291,7 @@
 	)
 	(global_label "JTMS"
 		(shape input)
-		(at 228.6 34.29 0)
+		(at 226.06 34.29 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6301,7 +6301,7 @@
 		)
 		(uuid "644ad423-bba2-4dbf-bedc-cf34be6a2838")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 235.5271 34.29 0)
+			(at 232.9871 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6411,7 +6411,7 @@
 	)
 	(global_label "NJTRST"
 		(shape input)
-		(at 228.6 31.75 0)
+		(at 226.06 31.75 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6421,7 +6421,7 @@
 		)
 		(uuid "db3af072-2726-4faf-88ec-72bf00ce089f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 237.6438 31.75 0)
+			(at 235.1038 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6459,7 +6459,7 @@
 	)
 	(global_label "JTDO"
 		(shape input)
-		(at 228.6 36.83 0)
+		(at 226.06 36.83 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6469,7 +6469,7 @@
 		)
 		(uuid "fb9f6081-b10a-4127-842a-342c2f3e97fe")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 235.4667 36.83 0)
+			(at 232.9267 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7689,10 +7689,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "17621552-062d-4694-8df3-a8c405f54975")
 		(property "Reference" "R58"
-			(at 205.74 99.06 90)
+			(at 205.74 91.948 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7701,7 +7700,7 @@
 				)
 			)
 		)
-		(property "Value" "125"
+		(property "Value" "1000"
 			(at 205.74 96.52 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8073,7 +8072,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 228.6 39.37 90)
+		(at 226.06 39.37 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8084,7 +8083,7 @@
 		(fields_autoplaced yes)
 		(uuid "39d2f433-88cd-4b86-ad71-f0edab10fa45")
 		(property "Reference" "#PWR028"
-			(at 234.95 39.37 0)
+			(at 232.41 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8095,7 +8094,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 232.41 39.3701 90)
+			(at 229.87 39.3701 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8106,7 +8105,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 228.6 39.37 0)
+			(at 226.06 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8117,7 +8116,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 228.6 39.37 0)
+			(at 226.06 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8128,7 +8127,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 228.6 39.37 0)
+			(at 226.06 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11542,10 +11541,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "e3e8e0ad-680f-44b0-9505-5b2d8a057f01")
 		(property "Reference" "R56"
-			(at 205.74 86.36 90)
+			(at 205.486 78.994 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11554,8 +11552,8 @@
 				)
 			)
 		)
-		(property "Value" "125"
-			(at 205.74 83.82 90)
+		(property "Value" "1000"
+			(at 205.74 84.328 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
