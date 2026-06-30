@@ -612,8 +612,8 @@
 		)
 	)
 	(rectangle
-		(start 116.84 63.5)
-		(end 146.05 71.12)
+		(start 16.51 60.96)
+		(end 45.72 68.58)
 		(stroke
 			(width 0)
 			(type default)
@@ -624,8 +624,8 @@
 		(uuid "25d786fb-6488-4983-82a8-4b92ab287a1b")
 	)
 	(rectangle
-		(start 116.84 71.12)
-		(end 146.05 78.74)
+		(start 16.51 68.58)
+		(end 45.72 76.2)
 		(stroke
 			(width 0)
 			(type default)
@@ -636,8 +636,8 @@
 		(uuid "abb55ef1-1f1d-445c-a3dc-b157d0e9988b")
 	)
 	(rectangle
-		(start 116.84 78.74)
-		(end 168.91 120.65)
+		(start 16.51 19.05)
+		(end 68.58 60.96)
 		(stroke
 			(width 0)
 			(type default)
@@ -648,14 +648,14 @@
 		(uuid "cfb3da80-e4ad-4d65-8e7d-7133c43042d9")
 	)
 	(junction
-		(at 148.59 101.6)
+		(at 46.99 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "617d46a2-f406-4539-bc73-b97c4a112785")
 	)
 	(wire
 		(pts
-			(xy 137.16 101.6) (xy 148.59 101.6)
+			(xy 35.56 36.83) (xy 46.99 36.83)
 		)
 		(stroke
 			(width 0)
@@ -665,7 +665,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 111.76) (xy 135.89 111.76)
+			(xy 36.83 46.99) (xy 34.29 46.99)
 		)
 		(stroke
 			(width 0)
@@ -675,7 +675,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 109.22) (xy 137.16 109.22)
+			(xy 36.83 44.45) (xy 35.56 44.45)
 		)
 		(stroke
 			(width 0)
@@ -685,7 +685,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 74.93) (xy 137.16 74.93)
+			(xy 25.4 72.39) (xy 36.83 72.39)
 		)
 		(stroke
 			(width 0)
@@ -695,7 +695,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 88.9) (xy 148.59 93.98)
+			(xy 46.99 24.13) (xy 46.99 29.21)
 		)
 		(stroke
 			(width 0)
@@ -705,7 +705,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 106.68) (xy 138.43 106.68)
+			(xy 34.29 41.91) (xy 36.83 41.91)
 		)
 		(stroke
 			(width 0)
@@ -715,7 +715,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 101.6) (xy 163.83 101.6)
+			(xy 46.99 36.83) (xy 62.23 36.83)
 		)
 		(stroke
 			(width 0)
@@ -725,7 +725,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 99.06) (xy 148.59 101.6)
+			(xy 46.99 34.29) (xy 46.99 36.83)
 		)
 		(stroke
 			(width 0)
@@ -735,7 +735,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 109.22) (xy 137.16 101.6)
+			(xy 35.56 44.45) (xy 35.56 36.83)
 		)
 		(stroke
 			(width 0)
@@ -745,7 +745,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 67.31) (xy 134.62 67.31)
+			(xy 25.4 64.77) (xy 34.29 64.77)
 		)
 		(stroke
 			(width 0)
@@ -755,7 +755,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 106.68) (xy 130.81 106.68)
+			(xy 25.4 41.91) (xy 29.21 41.91)
 		)
 		(stroke
 			(width 0)
@@ -765,7 +765,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 101.6) (xy 163.83 106.68)
+			(xy 62.23 36.83) (xy 62.23 41.91)
 		)
 		(stroke
 			(width 0)
@@ -775,7 +775,7 @@
 	)
 	(hierarchical_label "Heater0+"
 		(shape output)
-		(at 148.59 93.98 0)
+		(at 46.99 29.21 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -786,7 +786,7 @@
 	)
 	(hierarchical_label "Heater0"
 		(shape input)
-		(at 127 106.68 180)
+		(at 25.4 41.91 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -797,7 +797,7 @@
 	)
 	(hierarchical_label "+12VA"
 		(shape input)
-		(at 125.73 67.31 180)
+		(at 25.4 64.77 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -808,7 +808,7 @@
 	)
 	(hierarchical_label "GND"
 		(shape input)
-		(at 125.73 74.93 180)
+		(at 25.4 72.39 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -819,7 +819,7 @@
 	)
 	(hierarchical_label "Heater0-"
 		(shape input)
-		(at 148.59 99.06 0)
+		(at 46.99 34.29 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -830,7 +830,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 137.16 74.93 90)
+		(at 36.83 72.39 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -841,7 +841,7 @@
 		(fields_autoplaced yes)
 		(uuid "82d9d3f6-673d-4903-9e9c-ff313ce83d8b")
 		(property "Reference" "#PWR0211"
-			(at 143.51 74.93 0)
+			(at 43.18 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -852,7 +852,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 140.97 74.9299 90)
+			(at 40.64 72.3899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -863,7 +863,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 137.16 74.93 0)
+			(at 36.83 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -874,7 +874,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 74.93 0)
+			(at 36.83 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -885,7 +885,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 137.16 74.93 0)
+			(at 36.83 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -909,7 +909,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 134.62 67.31 270)
+		(at 34.29 64.77 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -920,7 +920,7 @@
 		(fields_autoplaced yes)
 		(uuid "904bd7d4-3f13-496c-8bb9-ffa5d896a556")
 		(property "Reference" "#PWR0210"
-			(at 130.81 67.31 0)
+			(at 30.48 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -931,7 +931,7 @@
 			)
 		)
 		(property "Value" "+12VA"
-			(at 138.43 67.3099 90)
+			(at 38.1 64.7699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -942,7 +942,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 134.62 67.31 0)
+			(at 34.29 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -953,7 +953,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 134.62 67.31 0)
+			(at 34.29 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -964,7 +964,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 134.62 67.31 0)
+			(at 34.29 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -988,7 +988,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 135.89 111.76 270)
+		(at 34.29 46.99 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -999,7 +999,7 @@
 		(fields_autoplaced yes)
 		(uuid "948050d3-d21f-4f4d-ba87-4007d1a7f703")
 		(property "Reference" "#PWR0213"
-			(at 129.54 111.76 0)
+			(at 27.94 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1010,7 +1010,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.08 111.7599 90)
+			(at 30.48 46.9899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1021,7 +1021,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 135.89 111.76 0)
+			(at 34.29 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1032,7 +1032,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 135.89 111.76 0)
+			(at 34.29 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1043,7 +1043,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 135.89 111.76 0)
+			(at 34.29 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1067,7 +1067,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 133.35 106.68 90)
+		(at 31.75 41.91 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1078,7 +1078,7 @@
 		(fields_autoplaced yes)
 		(uuid "ac6a6bec-dc9c-44d0-b25d-f0cbbba58585")
 		(property "Reference" "R40"
-			(at 133.35 101.6 90)
+			(at 31.75 36.83 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1088,7 +1088,7 @@
 			)
 		)
 		(property "Value" "125"
-			(at 133.35 104.14 90)
+			(at 31.75 39.37 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1098,7 +1098,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 133.35 106.68 0)
+			(at 31.75 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1109,7 +1109,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 133.35 106.68 0)
+			(at 31.75 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1120,7 +1120,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 133.35 106.68 0)
+			(at 31.75 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1147,7 +1147,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 148.59 88.9 0)
+		(at 46.99 24.13 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1157,7 +1157,7 @@
 		(dnp no)
 		(uuid "c88862c8-964e-4007-a210-3bc0f9b4408f")
 		(property "Reference" "#PWR0212"
-			(at 148.59 92.71 0)
+			(at 46.99 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1168,7 +1168,7 @@
 			)
 		)
 		(property "Value" "+12VA"
-			(at 144.018 87.122 0)
+			(at 42.418 22.352 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1178,7 +1178,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 148.59 88.9 0)
+			(at 46.99 24.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1189,7 +1189,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 148.59 88.9 0)
+			(at 46.99 24.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1200,7 +1200,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 148.59 88.9 0)
+			(at 46.99 24.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1224,7 +1224,7 @@
 	)
 	(symbol
 		(lib_id "FZT600TA:FZT600TA")
-		(at 138.43 106.68 0)
+		(at 36.83 41.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1234,7 +1234,7 @@
 		(dnp no)
 		(uuid "e227f585-2f44-48fc-9121-7e85b47c6088")
 		(property "Reference" "Q19"
-			(at 151.384 115.824 0)
+			(at 49.784 51.054 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1244,7 +1244,7 @@
 			)
 		)
 		(property "Value" "FZT600TA"
-			(at 151.13 118.364 0)
+			(at 49.53 53.594 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1254,7 +1254,7 @@
 			)
 		)
 		(property "Footprint" "fzt:SOT230P700X170-4N"
-			(at 160.02 201.6 0)
+			(at 58.42 136.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1266,7 +1266,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.diodes.com//assets/Datasheets/FZT600A.pdf"
-			(at 160.02 301.6 0)
+			(at 58.42 236.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1278,7 +1278,7 @@
 			)
 		)
 		(property "Description" "Darlington Transistors NPN Darlington 140V NPN DARLINGTON TRANSISTOR IN SOT223"
-			(at 138.43 106.68 0)
+			(at 36.83 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1289,7 +1289,7 @@
 			)
 		)
 		(property "Height" "1.7"
-			(at 160.02 501.6 0)
+			(at 58.42 436.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1301,7 +1301,7 @@
 			)
 		)
 		(property "Mouser Part Number" "522-FZT600TA"
-			(at 160.02 601.6 0)
+			(at 58.42 536.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1313,7 +1313,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/FZT600TA?qs=fpoYs8%2FwAu8bOWo5PH7jWg%3D%3D"
-			(at 160.02 701.6 0)
+			(at 58.42 636.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1325,7 +1325,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Diodes Incorporated"
-			(at 160.02 801.6 0)
+			(at 58.42 736.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1337,7 +1337,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "FZT600TA"
-			(at 160.02 901.6 0)
+			(at 58.42 836.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

@@ -1504,10 +1504,26 @@
 		(uuid "e39e45e1-0b5b-41c1-9147-49e4ca989850")
 	)
 	(junction
+		(at 204.47 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ea1da940-fe86-4953-b0f4-5f86f0188f05")
+	)
+	(junction
 		(at 231.14 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fd597ecf-4b41-449e-b2aa-1eb55a48f90a")
+	)
+	(wire
+		(pts
+			(xy 204.47 59.69) (xy 204.47 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "039050de-2654-427a-ac3b-51f445d55326")
 	)
 	(wire
 		(pts
@@ -1618,6 +1634,16 @@
 			(type default)
 		)
 		(uuid "1e4d79b1-6b51-4f15-bf22-3c93d8be9247")
+	)
+	(wire
+		(pts
+			(xy 204.47 60.96) (xy 219.71 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24da9628-d679-491b-8afd-b0fe10352356")
 	)
 	(wire
 		(pts
@@ -2031,6 +2057,16 @@
 	)
 	(wire
 		(pts
+			(xy 199.39 60.96) (xy 204.47 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cac53be6-555d-43f6-bc28-20e43a6be745")
+	)
+	(wire
+		(pts
 			(xy 177.8 25.4) (xy 177.8 30.48)
 		)
 		(stroke
@@ -2248,6 +2284,16 @@
 			(type default)
 		)
 		(uuid "fcfe3501-ef37-4123-acd0-1d2a9ecf2ea7")
+	)
+	(label "needs to be connected to gnd"
+		(at 204.47 59.69 0)
+		(effects
+			(font
+				(size 0.635 0.635)
+			)
+			(justify left bottom)
+		)
+		(uuid "0976b217-c436-4616-b027-d2727db43130")
 	)
 	(global_label "P7"
 		(shape input)
@@ -4702,6 +4748,84 @@
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/dd3c8404-7b7b-4e20-8fce-52b620531aa5"
 					(reference "C63")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 219.71 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "64d508d4-e08a-4f47-a846-c708f7df5281")
+		(property "Reference" "#PWR03"
+			(at 219.71 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 219.71 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 219.71 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 219.71 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f7930d35-ca6a-461e-944f-07d65e38b757")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev2"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/dd3c8404-7b7b-4e20-8fce-52b620531aa5"
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)

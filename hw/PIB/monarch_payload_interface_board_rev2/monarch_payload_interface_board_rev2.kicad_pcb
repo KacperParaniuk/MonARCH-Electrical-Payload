@@ -63987,6 +63987,29 @@
 			)
 		)
 	)
+	(gr_rect
+		(start 68.25 47)
+		(end 87.75 50.4)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "6c9abe88-9bfb-4f55-8666-16b17f27effa")
+	)
+	(gr_text "MonARCH Payload Interface Board Rev. 2\n"
+		(at 78 48.7 0)
+		(layer "F.SilkS")
+		(uuid "fa90a37d-672f-4e67-997a-c16a94fd29d5")
+		(effects
+			(font
+				(size 0.9 0.6)
+				(thickness 0.15)
+			)
+			(justify bottom)
+		)
+	)
 	(segment
 		(start 61.74712 38.2778)
 		(end 61.76492 38.26)
