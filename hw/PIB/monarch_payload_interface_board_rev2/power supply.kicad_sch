@@ -770,18 +770,6 @@
 			(symbol "WSK06121L000FEA_0_1"
 				(polyline
 					(pts
-						(xy 7.62 5.08) (xy 7.62 -7.62)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy 7.62 -7.62) (xy 33.02 -7.62)
 					)
 					(stroke
@@ -886,6 +874,20 @@
 								(size 1.27 1.27)
 							)
 						)
+					)
+				)
+			)
+			(symbol "WSK06121L000FEA_1_1"
+				(rectangle
+					(start 7.62 5.08)
+					(end 33.02 -7.62)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type color)
+						(color 255 255 194 1)
 					)
 				)
 			)
@@ -1381,54 +1383,6 @@
 				)
 			)
 			(symbol "TPS61088QRHLRQ1_0_1"
-				(polyline
-					(pts
-						(xy -12.7 30.48) (xy -12.7 -30.48)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -12.7 -30.48) (xy 12.7 -30.48)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 12.7 30.48) (xy -12.7 30.48)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 12.7 -30.48) (xy 12.7 30.48)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(pin power_in line
 					(at -17.78 20.32 0)
 					(length 5.08)
@@ -1805,6 +1759,20 @@
 								(size 1.27 1.27)
 							)
 						)
+					)
+				)
+			)
+			(symbol "TPS61088QRHLRQ1_1_1"
+				(rectangle
+					(start -12.7 30.48)
+					(end 12.7 -30.48)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type color)
+						(color 255 255 194 1)
 					)
 				)
 			)
@@ -4605,7 +4573,7 @@
 				)
 			)
 		)
-		(property "Footprint" "tps6:RHL0020A"
+		(property "Footprint" "RHL0020A"
 			(at 120.65 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -5139,7 +5107,7 @@
 				)
 			)
 		)
-		(property "Footprint" "WSK:SMT_121L000FEA_VIS"
+		(property "Footprint" "SMT_121L000FEA_VIS"
 			(at 242.57 64.77 0)
 			(hide yes)
 			(show_name no)
