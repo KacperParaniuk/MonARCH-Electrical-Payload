@@ -749,6 +749,129 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C_Small"
 			(pin_numbers
 				(hide yes)
@@ -4454,10 +4577,28 @@
 		(uuid "30734adc-1f67-44a8-b25e-99dad7fa8ec9")
 	)
 	(junction
+		(at 114.3 194.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3a6ca170-c5f5-4f75-84c1-7d6f6659b73a")
+	)
+	(junction
 		(at 148.59 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3d438ccf-262f-4bd7-ac0b-4c6d19ccc291")
+	)
+	(junction
+		(at 114.3 180.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3ff73ec7-1ac9-4859-9879-eec8696289da")
+	)
+	(junction
+		(at 114.3 170.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "45580e9e-7ef7-4011-aba2-42f40a9cf23c")
 	)
 	(junction
 		(at 245.11 130.81)
@@ -4472,10 +4613,22 @@
 		(uuid "4e773d7c-bbc0-4c64-bfda-85471158e68e")
 	)
 	(junction
+		(at 114.3 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4f39d7ac-762a-40bf-b072-6f3b4e70b11e")
+	)
+	(junction
 		(at 64.77 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6ef105ea-e7f3-45d4-a9b5-c9b60fd6f0a5")
+	)
+	(junction
+		(at 114.3 189.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "726345b9-cab1-4901-aaad-e756b96d79f6")
 	)
 	(junction
 		(at 45.72 115.57)
@@ -4608,6 +4761,16 @@
 			(type default)
 		)
 		(uuid "0dbe10b9-d87e-4737-a467-b035646ac9b4")
+	)
+	(wire
+		(pts
+			(xy 114.3 180.34) (xy 119.38 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0dfb474b-b855-4d24-b96c-628c77801373")
 	)
 	(wire
 		(pts
@@ -4761,7 +4924,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 167.64) (xy 119.38 167.64)
+			(xy 109.22 170.18) (xy 114.3 170.18)
 		)
 		(stroke
 			(width 0)
@@ -4791,7 +4954,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 193.04) (xy 120.65 193.04)
+			(xy 109.22 194.31) (xy 114.3 194.31)
 		)
 		(stroke
 			(width 0)
@@ -4848,6 +5011,16 @@
 			(type default)
 		)
 		(uuid "3dc17c9d-751c-48e6-a8c3-2176be15da45")
+	)
+	(wire
+		(pts
+			(xy 114.3 194.31) (xy 119.38 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3dcd4d90-ffbd-438d-ba71-6f198cc078b0")
 	)
 	(wire
 		(pts
@@ -5081,6 +5254,16 @@
 	)
 	(wire
 		(pts
+			(xy 114.3 170.18) (xy 119.38 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e2a5817-6668-475f-8cc2-1ba252bd6074")
+	)
+	(wire
+		(pts
 			(xy 102.87 83.82) (xy 105.41 83.82)
 		)
 		(stroke
@@ -5158,6 +5341,16 @@
 			(type default)
 		)
 		(uuid "900b4834-f757-466d-bafa-21c42ae62ee2")
+	)
+	(wire
+		(pts
+			(xy 114.3 175.26) (xy 119.38 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92696b14-517e-4833-80c4-75950317e9c7")
 	)
 	(wire
 		(pts
@@ -5371,7 +5564,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 187.96) (xy 120.65 187.96)
+			(xy 109.22 189.23) (xy 114.3 189.23)
 		)
 		(stroke
 			(width 0)
@@ -5471,7 +5664,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 177.8) (xy 119.38 177.8)
+			(xy 109.22 180.34) (xy 114.3 180.34)
 		)
 		(stroke
 			(width 0)
@@ -5521,13 +5714,23 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 172.72) (xy 119.38 172.72)
+			(xy 109.22 175.26) (xy 114.3 175.26)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "d3cb334e-b81f-466e-9c8c-5e5d712d0cca")
+	)
+	(wire
+		(pts
+			(xy 114.3 189.23) (xy 119.38 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d605fb7e-6bbb-495f-a052-423b52d2672e")
 	)
 	(wire
 		(pts
@@ -6315,7 +6518,7 @@
 	)
 	(hierarchical_label "VBAT"
 		(shape input)
-		(at 110.49 193.04 180)
+		(at 109.22 194.31 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6337,7 +6540,7 @@
 	)
 	(hierarchical_label "GND"
 		(shape input)
-		(at 110.49 187.96 180)
+		(at 109.22 189.23 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6348,7 +6551,7 @@
 	)
 	(hierarchical_label "+3V3"
 		(shape input)
-		(at 109.22 167.64 180)
+		(at 109.22 170.18 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6392,7 +6595,7 @@
 	)
 	(hierarchical_label "+12VB"
 		(shape input)
-		(at 109.22 177.8 180)
+		(at 109.22 180.34 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6403,7 +6606,7 @@
 	)
 	(hierarchical_label "+12VA"
 		(shape input)
-		(at 109.22 172.72 180)
+		(at 109.22 175.26 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6433,6 +6636,84 @@
 			(justify left)
 		)
 		(uuid "e18371c0-ba49-45cb-81b8-861ca25ebdd4")
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 114.3 175.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "04efeba0-bdae-42ab-9267-ef5cfde5b827")
+		(property "Reference" "TP4"
+			(at 115.824 172.466 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 104.14 172.466 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 114.3 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "729accaa-d56b-4bee-9de7-7e09d7ea7d8a")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev2"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/81ccae2f-e61f-4b96-9ca0-f4ef99d1e909"
+					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -7178,6 +7459,84 @@
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/81ccae2f-e61f-4b96-9ca0-f4ef99d1e909"
 					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 114.3 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2691eb6b-ca9a-4903-83bf-743431edcfc8")
+		(property "Reference" "TP5"
+			(at 115.824 167.132 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 104.14 167.132 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 114.3 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1b5c663f-e0ca-4ec0-a99b-b54e28b55cc3")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev2"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/81ccae2f-e61f-4b96-9ca0-f4ef99d1e909"
+					(reference "TP5")
 					(unit 1)
 				)
 			)
@@ -8642,7 +9001,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 119.38 172.72 270)
+		(at 119.38 175.26 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8653,7 +9012,7 @@
 		(fields_autoplaced yes)
 		(uuid "6583a330-93ac-45f2-a5a0-76013138cbbf")
 		(property "Reference" "#PWR0136"
-			(at 115.57 172.72 0)
+			(at 115.57 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8664,7 +9023,7 @@
 			)
 		)
 		(property "Value" "+12VA"
-			(at 123.19 172.7199 90)
+			(at 123.19 175.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8675,7 +9034,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 119.38 172.72 0)
+			(at 119.38 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8686,7 +9045,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 119.38 172.72 0)
+			(at 119.38 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8697,7 +9056,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 119.38 172.72 0)
+			(at 119.38 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8969,8 +9328,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 120.65 187.96 90)
+		(lib_id "Connector:TestPoint")
+		(at 114.3 180.34 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8978,32 +9337,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7af19c60-bf28-4887-bfe4-7a6f9c436aca")
-		(property "Reference" "#PWR0121"
-			(at 127 187.96 0)
-			(hide yes)
+		(uuid "786a7067-b530-45b7-8f82-682df1f51860")
+		(property "Reference" "TP3"
+			(at 115.824 177.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 124.46 187.9599 90)
+		(property "Value" "TestPoint"
+			(at 104.14 177.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 120.65 187.96 0)
+			(at 119.38 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9014,7 +9372,86 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 187.96 0)
+			(at 119.38 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 114.3 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4cd03d21-ff3e-484b-9a98-873652e5764f")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev2"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/81ccae2f-e61f-4b96-9ca0-f4ef99d1e909"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 119.38 189.23 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7af19c60-bf28-4887-bfe4-7a6f9c436aca")
+		(property "Reference" "#PWR0121"
+			(at 125.73 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 123.19 189.2299 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9025,7 +9462,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 120.65 187.96 0)
+			(at 119.38 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9607,7 +10044,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 120.65 193.04 270)
+		(at 119.38 194.31 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9618,7 +10055,7 @@
 		(fields_autoplaced yes)
 		(uuid "8707fad3-4251-4c18-b994-1df81a45b523")
 		(property "Reference" "#PWR0122"
-			(at 116.84 193.04 0)
+			(at 115.57 194.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9629,7 +10066,7 @@
 			)
 		)
 		(property "Value" "VBAT"
-			(at 124.46 193.0399 90)
+			(at 123.19 194.3099 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9640,7 +10077,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 120.65 193.04 0)
+			(at 119.38 194.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9651,7 +10088,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 193.04 0)
+			(at 119.38 194.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9662,7 +10099,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 120.65 193.04 0)
+			(at 119.38 194.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11120,6 +11557,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 114.3 189.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "abe4b242-5d45-458a-83f8-bd33dbe606d7")
+		(property "Reference" "TP1"
+			(at 116.332 187.452 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 103.886 187.198 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 114.3 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "eae5ae12-b64c-4099-9770-b3653f02c0f2")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev2"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/81ccae2f-e61f-4b96-9ca0-f4ef99d1e909"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 201.93 55.88 270)
 		(unit 1)
@@ -11200,7 +11715,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 119.38 177.8 270)
+		(at 119.38 180.34 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11211,7 +11726,7 @@
 		(fields_autoplaced yes)
 		(uuid "b7460b96-03e7-4fa6-ba36-085ce7fff9b8")
 		(property "Reference" "#PWR0182"
-			(at 115.57 177.8 0)
+			(at 115.57 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11222,7 +11737,7 @@
 			)
 		)
 		(property "Value" "+12VB"
-			(at 123.19 177.7999 90)
+			(at 123.19 180.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11233,7 +11748,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 119.38 177.8 0)
+			(at 119.38 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11244,7 +11759,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 119.38 177.8 0)
+			(at 119.38 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11255,7 +11770,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 119.38 177.8 0)
+			(at 119.38 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11509,6 +12024,84 @@
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/81ccae2f-e61f-4b96-9ca0-f4ef99d1e909"
 					(reference "#PWR0199")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 114.3 194.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c417571d-64fd-47a9-9a42-3464ff3a3fd8")
+		(property "Reference" "TP2"
+			(at 116.332 191.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 103.886 191.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 114.3 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "19b07554-dff7-49b9-ab58-96874d2a640c")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev2"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/81ccae2f-e61f-4b96-9ca0-f4ef99d1e909"
+					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -12693,7 +13286,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 119.38 167.64 270)
+		(at 119.38 170.18 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12704,7 +13297,7 @@
 		(fields_autoplaced yes)
 		(uuid "f3c02c6f-801e-4fff-9b59-2382ca2c575f")
 		(property "Reference" "#PWR0133"
-			(at 115.57 167.64 0)
+			(at 115.57 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12715,7 +13308,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 123.19 167.6399 90)
+			(at 123.19 170.1799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12726,7 +13319,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 119.38 167.64 0)
+			(at 119.38 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12737,7 +13330,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 119.38 167.64 0)
+			(at 119.38 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12748,7 +13341,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 119.38 167.64 0)
+			(at 119.38 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

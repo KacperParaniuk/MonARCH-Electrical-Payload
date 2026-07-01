@@ -2337,6 +2337,16 @@
 		)
 		(uuid "fcfe3501-ef37-4123-acd0-1d2a9ecf2ea7")
 	)
+	(label "*SYNC floating shouldn't be a problem but something I'd like to test"
+		(at 198.12 80.01 0)
+		(effects
+			(font
+				(size 0.635 0.635)
+			)
+			(justify left bottom)
+		)
+		(uuid "55a26174-cebf-4994-ad6c-685efed6b74f")
+	)
 	(global_label "P7"
 		(shape input)
 		(at 231.14 35.56 180)
