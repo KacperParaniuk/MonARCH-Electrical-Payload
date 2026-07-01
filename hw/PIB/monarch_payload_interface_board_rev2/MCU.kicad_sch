@@ -7292,7 +7292,7 @@
 				)
 			)
 		)
-		(property "Value" "1000"
+		(property "Value" "125"
 			(at 205.74 96.52 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10949,7 +10949,7 @@
 				)
 			)
 		)
-		(property "Value" "1000"
+		(property "Value" "125"
 			(at 205.74 84.328 90)
 			(show_name no)
 			(do_not_autoplace no)

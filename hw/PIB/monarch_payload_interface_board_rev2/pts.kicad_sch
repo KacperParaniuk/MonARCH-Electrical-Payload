@@ -1452,6 +1452,12 @@
 		(uuid "390d59ac-d22a-4675-a384-0ea429e685c7")
 	)
 	(junction
+		(at 217.17 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "493998cf-51e9-4289-9042-76d397fed66e")
+	)
+	(junction
 		(at 124.46 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1510,6 +1516,56 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fd597ecf-4b41-449e-b2aa-1eb55a48f90a")
+	)
+	(no_connect
+		(at 82.55 93.98)
+		(uuid "1966f41e-235e-4f06-ba82-00325f063ac7")
+	)
+	(no_connect
+		(at 82.55 68.58)
+		(uuid "24e7beac-60e6-4920-a072-6b695d561e8d")
+	)
+	(no_connect
+		(at 82.55 96.52)
+		(uuid "6124be48-2e54-4f9c-bd6f-5e863bf0078b")
+	)
+	(no_connect
+		(at 199.39 88.9)
+		(uuid "61fbbc7d-a040-4185-a040-9de24f36022c")
+	)
+	(no_connect
+		(at 199.39 66.04)
+		(uuid "75d18347-bb92-4972-b43a-3245b3dd2fe8")
+	)
+	(no_connect
+		(at 199.39 76.2)
+		(uuid "92c11a4d-d6e2-4c8e-8c4f-2fa38dd1c025")
+	)
+	(no_connect
+		(at 82.55 99.06)
+		(uuid "a615a57a-54eb-478e-aad3-47d967c0577d")
+	)
+	(no_connect
+		(at 199.39 81.28)
+		(uuid "b3a05ed2-7a24-4251-af5e-db5526db549c")
+	)
+	(no_connect
+		(at 199.39 93.98)
+		(uuid "f47a4078-64d0-46ee-8721-bad68a2edec4")
+	)
+	(no_connect
+		(at 199.39 91.44)
+		(uuid "f91e0e0d-38d3-425d-a994-fe11e7ae2d4d")
+	)
+	(wire
+		(pts
+			(xy 217.17 62.23) (xy 217.17 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04f549fb-124e-4f2c-b9d0-109cd70aac45")
 	)
 	(wire
 		(pts
@@ -1993,6 +2049,16 @@
 	)
 	(wire
 		(pts
+			(xy 217.17 58.42) (xy 217.17 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "afdf2a8e-ee1b-46a7-8c1e-a231e5677eca")
+	)
+	(wire
+		(pts
 			(xy 72.39 88.9) (xy 82.55 88.9)
 		)
 		(stroke
@@ -2033,7 +2099,7 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 60.96) (xy 204.47 60.96)
+			(xy 199.39 60.96) (xy 217.17 60.96)
 		)
 		(stroke
 			(width 0)
@@ -2210,6 +2276,16 @@
 			(type default)
 		)
 		(uuid "ec94102d-83b5-471c-b6ef-09e8cc0bc077")
+	)
+	(wire
+		(pts
+			(xy 217.17 52.07) (xy 217.17 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed633df3-c3f8-4144-937b-269c4e023115")
 	)
 	(wire
 		(pts
@@ -2971,6 +3047,84 @@
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/dd3c8404-7b7b-4e20-8fce-52b620531aa5"
 					(reference "#PWR0227")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 217.17 52.07 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "09315ecc-bd39-42b3-a142-61ae4fff81b8")
+		(property "Reference" "#PWR0239"
+			(at 217.17 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 217.17 46.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 217.17 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 217.17 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f9ddacf6-a56d-4159-b4d0-3173d25f8b1a")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev2"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/dd3c8404-7b7b-4e20-8fce-52b620531aa5"
+					(reference "#PWR0239")
 					(unit 1)
 				)
 			)
@@ -5683,6 +5837,83 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 217.17 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8b13ec10-6558-4794-9525-80ec1f51ac47")
+		(property "Reference" "#PWR0240"
+			(at 217.17 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 217.17 65.786 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 217.17 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 217.17 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d5fb6dc9-5109-47c9-b215-207abbea5a12")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev2"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/dd3c8404-7b7b-4e20-8fce-52b620531aa5"
+					(reference "#PWR0240")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 243.84 30.48 90)
 		(unit 1)
 		(body_style 1)
@@ -6475,6 +6706,87 @@
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/dd3c8404-7b7b-4e20-8fce-52b620531aa5"
 					(reference "R35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 217.17 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e9eaafea-0516-4544-a17e-d0484e85260f")
+		(property "Reference" "C70"
+			(at 219.71 55.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 219.71 57.658 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 217.17 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 217.17 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0b4e8ca0-cbea-49f0-8021-9aaa4c403410")
+		)
+		(pin "2"
+			(uuid "1531c1e6-dd07-44a2-8fe8-4176b8fcb477")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev2"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/dd3c8404-7b7b-4e20-8fce-52b620531aa5"
+					(reference "C70")
 					(unit 1)
 				)
 			)
