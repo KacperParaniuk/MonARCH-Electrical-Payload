@@ -36,7 +36,7 @@
 // ---------------- DEFINES --------------------- \\
 
 
-#define AD7124
+//#define AD7124
 //#define FDC2213
 //#define MAX31856
 
@@ -143,7 +143,7 @@ int main(void)
   // Device ID's
 
 
-   uint32_t device_id;
+//   uint32_t device_id;
 
 
 //   // UART Inits
@@ -192,13 +192,13 @@ int main(void)
   //    DEACTIVATE ALL SPI2 ICs
 
 
-  HAL_GPIO_WritePin(T1_EN_GPIO_Port, T1_EN_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(T2_EN_GPIO_Port, T2_EN_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(T3_EN_GPIO_Port, T3_EN_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(T4_EN_GPIO_Port, T4_EN_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(T5_EN_GPIO_Port, T5_EN_Pin, GPIO_PIN_SET);
-
-  HAL_GPIO_WritePin(PT_EN_GPIO_Port, PT_EN_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(T1_EN_GPIO_Port, T1_EN_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(T2_EN_GPIO_Port, T2_EN_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(T3_EN_GPIO_Port, T3_EN_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(T4_EN_GPIO_Port, T4_EN_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(T5_EN_GPIO_Port, T5_EN_Pin, GPIO_PIN_SET);
+//
+//  HAL_GPIO_WritePin(PT_EN_GPIO_Port, PT_EN_Pin, GPIO_PIN_SET);
 
 
 
@@ -553,7 +553,7 @@ int main(void)
 
 //
 
-/*#ifdef AD7124*/
+#ifdef AD7124
 //	  printf("We made it 2 ");
 	  status[2U] = AD7124_ReadRegister(&AD7124_Handler, AD7124_ID_REG, 1, &val);
 
@@ -606,7 +606,7 @@ int main(void)
 		  }
 	  }
 
-//#endif
+#endif
 
 
 
