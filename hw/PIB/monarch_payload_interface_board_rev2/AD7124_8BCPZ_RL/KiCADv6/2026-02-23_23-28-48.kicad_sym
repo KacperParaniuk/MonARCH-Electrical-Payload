@@ -352,7 +352,7 @@
 				)
 			)
 			(pin input line
-				(at 0 -30.48 0)
+				(at 0 -33.02 0)
 				(length 7.62)
 				(name "REFIN1(-)"
 					(effects
@@ -370,7 +370,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 0 -33.02 0)
+				(at 0 -35.56 0)
 				(length 7.62)
 				(name "AIN8/IOUT/VBIAS"
 					(effects
@@ -388,7 +388,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 0 -35.56 0)
+				(at 0 -38.1 0)
 				(length 7.62)
 				(name "AIN9/IOUT/VBIAS"
 					(effects
@@ -406,7 +406,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 0 -38.1 0)
+				(at 0 -40.64 0)
 				(length 7.62)
 				(name "AIN10/IOUT/VBIAS"
 					(effects
@@ -424,7 +424,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 116.84 -40.64 180)
+				(at 116.84 -38.1 180)
 				(length 7.62)
 				(name "AIN11/IOUT/VBIAS"
 					(effects
@@ -442,7 +442,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 116.84 -38.1 180)
+				(at 116.84 -35.56 180)
 				(length 7.62)
 				(name "AIN12/IOUT/VBIAS"
 					(effects
@@ -460,7 +460,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 116.84 -35.56 180)
+				(at 116.84 -33.02 180)
 				(length 7.62)
 				(name "AIN13/IOUT/VBIAS"
 					(effects
@@ -478,7 +478,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 116.84 -33.02 180)
+				(at 116.84 -30.48 180)
 				(length 7.62)
 				(name "AIN14/IOUT/VBIAS/REFIN2(+)"
 					(effects
@@ -496,7 +496,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 116.84 -30.48 180)
+				(at 116.84 -27.94 180)
 				(length 7.62)
 				(name "AIN15/IOUT/VBIAS/REFIN2(-)"
 					(effects
@@ -514,7 +514,7 @@
 				)
 			)
 			(pin output line
-				(at 116.84 -27.94 180)
+				(at 0 -30.48 0)
 				(length 7.62)
 				(name "REFOUT"
 					(effects
