@@ -4528,12 +4528,356 @@
 		(uuid "f8f7216a-206b-430a-a502-32ccbdcbb9c7")
 	)
 	(no_connect
+		(at 82.55 48.26)
+		(uuid "00abd0c3-dfc1-412a-8bf8-99b276669eff")
+	)
+	(no_connect
+		(at 82.55 45.72)
+		(uuid "071a6dab-c501-449b-9517-8ac8e31e1f3c")
+	)
+	(no_connect
+		(at 43.18 50.8)
+		(uuid "08561764-ed9f-4b1c-a9d8-73d13d4e86fc")
+	)
+	(no_connect
 		(at 204.47 133.35)
 		(uuid "0d3404ec-d1e8-4bfd-a10f-fe563be5005e")
 	)
 	(no_connect
+		(at 43.18 38.1)
+		(uuid "0f4042b9-a07b-4b45-91c5-9558ce16a22f")
+	)
+	(no_connect
+		(at 82.55 76.2)
+		(uuid "11df57b4-46a3-4501-afee-75afc08627a2")
+	)
+	(no_connect
+		(at 105.41 68.58)
+		(uuid "18b0b728-eadd-4bd6-a7d3-3a6c6e06b1db")
+	)
+	(no_connect
+		(at 105.41 86.36)
+		(uuid "1acb4d26-f783-432e-809e-442c61e7369a")
+	)
+	(no_connect
+		(at 82.55 58.42)
+		(uuid "1b434eaa-a538-43df-8ded-7b935b34eb1a")
+	)
+	(no_connect
+		(at 82.55 30.48)
+		(uuid "1c1d46e9-1248-49bd-96c2-78014666cc00")
+	)
+	(no_connect
+		(at 43.18 58.42)
+		(uuid "21d2fad3-7c75-4dea-ae17-e3ea6478be0b")
+	)
+	(no_connect
+		(at 144.78 43.18)
+		(uuid "222b4d90-eaa4-4753-95c6-ff0c345f1099")
+	)
+	(no_connect
+		(at 43.18 30.48)
+		(uuid "22e3ddb2-d91f-4445-9896-25fdc7d94b90")
+	)
+	(no_connect
+		(at 43.18 73.66)
+		(uuid "24ca229b-3ca7-4fa4-8557-28e56481914b")
+	)
+	(no_connect
+		(at 82.55 27.94)
+		(uuid "25697c58-dd06-4c5b-b426-a942de3ec5aa")
+	)
+	(no_connect
+		(at 82.55 25.4)
+		(uuid "27f7cf53-a35a-4445-89c4-7113559824ac")
+	)
+	(no_connect
+		(at 82.55 63.5)
+		(uuid "302c9926-4ba0-487f-8325-a65f2f091728")
+	)
+	(no_connect
+		(at 144.78 86.36)
+		(uuid "3a3786e0-d7f1-4467-bb7d-4641000d4520")
+	)
+	(no_connect
 		(at 204.47 118.11)
 		(uuid "3b230878-d7ba-4a52-b27d-49b8add956e5")
+	)
+	(no_connect
+		(at 144.78 66.04)
+		(uuid "3f8a7e86-9d18-4a16-9c37-0182c23b91ee")
+	)
+	(no_connect
+		(at 144.78 55.88)
+		(uuid "42cc2509-ae7a-4721-99e8-e3e5e456f295")
+	)
+	(no_connect
+		(at 82.55 35.56)
+		(uuid "45c240b6-f0da-4161-a479-e79ae2caf17a")
+	)
+	(no_connect
+		(at 105.41 43.18)
+		(uuid "49b058a2-e733-48b6-bf4b-0a53d2755fef")
+	)
+	(no_connect
+		(at 82.55 86.36)
+		(uuid "4a70cc59-8e52-491e-866a-d553f4f96489")
+	)
+	(no_connect
+		(at 144.78 76.2)
+		(uuid "4add60ae-993b-41dc-a4c2-62c6ee84574e")
+	)
+	(no_connect
+		(at 82.55 81.28)
+		(uuid "4b41cf1d-1b55-476d-a26d-74285752ed60")
+	)
+	(no_connect
+		(at 105.41 55.88)
+		(uuid "5472701c-56ba-4ec6-b6be-0e3880d1fedc")
+	)
+	(no_connect
+		(at 82.55 66.04)
+		(uuid "5b62d754-533e-4537-b554-200d743e31c9")
+	)
+	(no_connect
+		(at 82.55 71.12)
+		(uuid "5be38427-6077-43b0-b059-0187cff1a326")
+	)
+	(no_connect
+		(at 105.41 88.9)
+		(uuid "5c7b2dab-a9de-496e-a026-1e579f291707")
+	)
+	(no_connect
+		(at 144.78 38.1)
+		(uuid "640e9ae5-2555-4b7c-bc5e-fb718d06ffd8")
+	)
+	(no_connect
+		(at 144.78 30.48)
+		(uuid "657390b6-1d80-4ec2-8481-380f4e2fec11")
+	)
+	(no_connect
+		(at 82.55 53.34)
+		(uuid "664948f1-0a31-462e-ab5b-b3752a637817")
+	)
+	(no_connect
+		(at 82.55 55.88)
+		(uuid "6764a4dd-cb09-457e-938e-b4d0a6b9e52d")
+	)
+	(no_connect
+		(at 144.78 45.72)
+		(uuid "683b496a-dc9f-466e-8aa5-ffccd459797e")
+	)
+	(no_connect
+		(at 43.18 33.02)
+		(uuid "6a511232-61cb-44c1-84e4-546a3ed3d135")
+	)
+	(no_connect
+		(at 144.78 33.02)
+		(uuid "6d7d31ac-d207-41b3-aa56-8664215a580f")
+	)
+	(no_connect
+		(at 82.55 43.18)
+		(uuid "6d8ba862-033a-4d6f-a72f-2d237ce66d2d")
+	)
+	(no_connect
+		(at 43.18 27.94)
+		(uuid "7563d019-eda1-45d3-ba1c-01a6932fb3e8")
+	)
+	(no_connect
+		(at 144.78 88.9)
+		(uuid "78d354bd-575e-47f1-9172-4d1de82f5865")
+	)
+	(no_connect
+		(at 82.55 83.82)
+		(uuid "798f3c15-2a04-4181-a013-1454895b2f75")
+	)
+	(no_connect
+		(at 43.18 43.18)
+		(uuid "7d82cada-964d-4525-8199-73306ba28930")
+	)
+	(no_connect
+		(at 105.41 25.4)
+		(uuid "84ab23ee-676f-4f15-814d-2df350e1dd14")
+	)
+	(no_connect
+		(at 43.18 78.74)
+		(uuid "86ddea34-457d-45a1-9876-189d9457fea2")
+	)
+	(no_connect
+		(at 43.18 55.88)
+		(uuid "8c69e2fe-0141-4ee4-a95e-a7e7caf925d2")
+	)
+	(no_connect
+		(at 82.55 73.66)
+		(uuid "9193300a-7659-4bd1-9d33-8edab6afaa33")
+	)
+	(no_connect
+		(at 43.18 35.56)
+		(uuid "91d4ac94-aa53-415c-b7e7-2c1a6004888a")
+	)
+	(no_connect
+		(at 144.78 73.66)
+		(uuid "91d740f0-d0f2-4d9d-85b2-e7ab691e8e8e")
+	)
+	(no_connect
+		(at 105.41 73.66)
+		(uuid "94f46870-600a-40aa-975e-85441743ddff")
+	)
+	(no_connect
+		(at 82.55 60.96)
+		(uuid "97e1777c-c35a-4857-a286-fbd866f93312")
+	)
+	(no_connect
+		(at 82.55 78.74)
+		(uuid "99ee51a1-abcc-48b0-8bff-cc74e5fc355c")
+	)
+	(no_connect
+		(at 82.55 40.64)
+		(uuid "9a1e897c-67d9-4563-b907-fbea2fc6dcc6")
+	)
+	(no_connect
+		(at 43.18 45.72)
+		(uuid "9bc57d4a-ebe9-4802-8ec1-be7fd13402c6")
+	)
+	(no_connect
+		(at 105.41 30.48)
+		(uuid "9bd82b3f-f8f3-4473-af27-a136fc64edec")
+	)
+	(no_connect
+		(at 105.41 48.26)
+		(uuid "9ca6ad14-9bd3-4227-8963-e29279fbdc63")
+	)
+	(no_connect
+		(at 43.18 71.12)
+		(uuid "9cf320a0-e9e0-4742-a77c-7dc1b8126ace")
+	)
+	(no_connect
+		(at 43.18 81.28)
+		(uuid "a95172b7-57a1-42dd-aa9f-9d26d6ad874a")
+	)
+	(no_connect
+		(at 105.41 40.64)
+		(uuid "aaab8873-35fc-4243-9950-dbb8b5f503c0")
+	)
+	(no_connect
+		(at 82.55 88.9)
+		(uuid "ab5d321e-805c-419c-921f-31a68a2a1920")
+	)
+	(no_connect
+		(at 105.41 27.94)
+		(uuid "add38723-9a7d-44d9-a756-dd6132d48c15")
+	)
+	(no_connect
+		(at 105.41 33.02)
+		(uuid "b0f6606b-80bc-4f1f-b866-4649a4cdefa7")
+	)
+	(no_connect
+		(at 82.55 50.8)
+		(uuid "b62709cc-91a3-4619-9063-541e33df28a8")
+	)
+	(no_connect
+		(at 82.55 68.58)
+		(uuid "b6cd26ca-056c-4377-b74e-810e603e81e6")
+	)
+	(no_connect
+		(at 43.18 53.34)
+		(uuid "bad2db60-4b1c-4ca3-85e2-93395074b4fc")
+	)
+	(no_connect
+		(at 144.78 27.94)
+		(uuid "c113948f-0982-4e35-801e-9e0bc39fc499")
+	)
+	(no_connect
+		(at 43.18 48.26)
+		(uuid "c46a2fb5-81c5-46f2-b663-5f6b0b8ea5c7")
+	)
+	(no_connect
+		(at 105.41 38.1)
+		(uuid "c8d24644-b69c-4eea-9df2-22092702b31d")
+	)
+	(no_connect
+		(at 157.48 72.39)
+		(uuid "cb744a10-f3d4-446c-8714-2a6a3780c128")
+	)
+	(no_connect
+		(at 105.41 78.74)
+		(uuid "cefe4070-67d8-4c24-b597-5900787525ff")
+	)
+	(no_connect
+		(at 144.78 25.4)
+		(uuid "d42deb1c-1781-44a1-aae3-2f7e46608fa7")
+	)
+	(no_connect
+		(at 144.78 71.12)
+		(uuid "d5b388ae-854d-459c-8d85-ea2a4aaea2bd")
+	)
+	(no_connect
+		(at 105.41 76.2)
+		(uuid "d7fd2019-4648-487d-b9aa-70c2a9840e79")
+	)
+	(no_connect
+		(at 105.41 71.12)
+		(uuid "da3d8c36-e06e-4548-95e6-57d94813cb03")
+	)
+	(no_connect
+		(at 82.55 33.02)
+		(uuid "dbf049a4-f995-4ad5-b312-2c9a79a2487f")
+	)
+	(no_connect
+		(at 43.18 60.96)
+		(uuid "dc096897-6d7b-44a3-abcc-44589a7a8dbf")
+	)
+	(no_connect
+		(at 43.18 83.82)
+		(uuid "dc16cb1c-b406-4432-bbc1-28e4750cbedb")
+	)
+	(no_connect
+		(at 43.18 76.2)
+		(uuid "ddbacfc6-5f9e-44ef-87e6-04a4e7996122")
+	)
+	(no_connect
+		(at 144.78 78.74)
+		(uuid "e0925c04-a58d-4b31-b048-8b9fc9f4cf0d")
+	)
+	(no_connect
+		(at 43.18 40.64)
+		(uuid "e1afd507-c770-4d06-a20e-bce10b64b606")
+	)
+	(no_connect
+		(at 43.18 25.4)
+		(uuid "e63372e9-4ec9-4272-8b2a-ddf96f2689e8")
+	)
+	(no_connect
+		(at 105.41 63.5)
+		(uuid "e7f9e785-5d98-4bf6-9dfb-928297bd6195")
+	)
+	(no_connect
+		(at 144.78 35.56)
+		(uuid "e80395fb-02b6-4f3f-8463-b7cb283a0d70")
+	)
+	(no_connect
+		(at 82.55 38.1)
+		(uuid "ed8de993-34bb-4658-905c-c08a23bae9ff")
+	)
+	(no_connect
+		(at 144.78 48.26)
+		(uuid "ef99bea8-db99-4b36-8f82-5fb7b2985bed")
+	)
+	(no_connect
+		(at 144.78 68.58)
+		(uuid "f1a81e85-3319-4c6f-9319-6a048aad25b2")
+	)
+	(no_connect
+		(at 43.18 88.9)
+		(uuid "f26268fd-785b-4e4e-a455-e6faa30bcfd4")
+	)
+	(no_connect
+		(at 43.18 86.36)
+		(uuid "f2ea6cde-3175-4956-b732-2e270e905226")
+	)
+	(no_connect
+		(at 105.41 66.04)
+		(uuid "f52077e9-ea77-4655-a2ee-03b54d6eb99c")
 	)
 	(wire
 		(pts
@@ -6381,17 +6725,17 @@
 	)
 	(global_label "3V3_VB+"
 		(shape output)
-		(at 77.47 153.67 0)
+		(at 87.63 153.67 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "6d68090c-68cd-438f-a6a4-5e1c7645775b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 88.2072 153.67 0)
+			(at 76.8928 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6399,7 +6743,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 	)

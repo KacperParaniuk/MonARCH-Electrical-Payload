@@ -1910,16 +1910,16 @@
 		(uuid "9f60dd79-2ebe-42c1-bd4f-8767d3889591")
 	)
 	(junction
-		(at 220.98 64.77)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a12325ad-3ea2-4b92-9a9b-15d9006de425")
-	)
-	(junction
 		(at 73.66 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b437f2ad-124a-467d-8e70-1aa14dd09e24")
+	)
+	(junction
+		(at 220.98 64.77)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c2b7a340-2138-4309-87d5-b4571bd6afc1")
 	)
 	(junction
 		(at 228.6 64.77)
