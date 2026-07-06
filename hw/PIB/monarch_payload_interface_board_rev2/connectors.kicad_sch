@@ -5658,17 +5658,6 @@
 		)
 		(uuid "07379641-9cf5-4796-b55e-50831f83eb2b")
 	)
-	(hierarchical_label "UART4_RX"
-		(shape input)
-		(at 92.71 77.47 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "085a1ef6-d841-49bb-82f8-6793c65c5073")
-	)
 	(hierarchical_label "Valve5+"
 		(shape input)
 		(at 132.08 21.59 180)
@@ -6373,6 +6362,17 @@
 		)
 		(uuid "c8c6148e-135b-4204-b6b4-35a0acf20b5e")
 	)
+	(hierarchical_label "UART_PPU_TX"
+		(shape output)
+		(at 92.71 77.47 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cb57aefa-ecc9-40f4-bfc9-30d01718cc15")
+	)
 	(hierarchical_label "USART3_TX"
 		(shape output)
 		(at 92.71 85.09 180)
@@ -6438,6 +6438,17 @@
 			(justify right)
 		)
 		(uuid "d3f894e7-95b1-43b3-a2f7-b4e6ac1039c2")
+	)
+	(hierarchical_label "UART_PPU_RX"
+		(shape input)
+		(at 92.71 80.01 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d74ca33a-2e96-43d1-b469-423a3528f26b")
 	)
 	(hierarchical_label "Valve3-"
 		(shape output)
@@ -6537,17 +6548,6 @@
 			(justify right)
 		)
 		(uuid "f8aaaf39-a9d9-4c3a-b157-0a510e98321a")
-	)
-	(hierarchical_label "UART4_TX"
-		(shape output)
-		(at 92.71 80.01 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "fa8db954-6855-436d-a199-6a99b9be586b")
 	)
 	(hierarchical_label "P0-"
 		(shape output)
