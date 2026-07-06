@@ -6939,7 +6939,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 163.83 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -7176,7 +7176,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SMT_121L000FEA_VIS"
+		(property "Footprint" "WSK:SMT_121L000FEA_VIS"
 			(at 226.06 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -7504,7 +7504,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 163.83 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -7582,7 +7582,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SMT_121L000FEA_VIS"
+		(property "Footprint" "WSK:SMT_121L000FEA_VIS"
 			(at 226.06 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -8146,7 +8146,7 @@
 				)
 			)
 		)
-		(property "Footprint" "CP-32-12_ADI"
+		(property "Footprint" "AD7124:CP-32-12_ADI"
 			(at 87.63 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -9356,7 +9356,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 163.83 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -10386,7 +10386,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SMT_121L000FEA_VIS"
+		(property "Footprint" "WSK:SMT_121L000FEA_VIS"
 			(at 226.06 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -11273,7 +11273,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 163.83 189.23 0)
 			(hide yes)
 			(show_name no)
@@ -11748,7 +11748,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 163.83 194.31 0)
 			(hide yes)
 			(show_name no)

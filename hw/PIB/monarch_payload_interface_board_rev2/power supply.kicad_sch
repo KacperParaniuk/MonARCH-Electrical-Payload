@@ -4673,7 +4673,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RHL0020A"
+		(property "Footprint" "tps6:RHL0020A"
 			(at 120.65 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -5207,7 +5207,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SMT_121L000FEA_VIS"
+		(property "Footprint" "WSK:SMT_121L000FEA_VIS"
 			(at 242.57 64.77 0)
 			(hide yes)
 			(show_name no)

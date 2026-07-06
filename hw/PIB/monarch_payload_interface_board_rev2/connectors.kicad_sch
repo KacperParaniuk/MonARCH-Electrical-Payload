@@ -6585,97 +6585,6 @@
 	(symbol
 		(lib_name "5037630491_3")
 		(lib_id "5037630491:5037630491")
-		(at 194.31 87.63 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "031d9ab6-f7a0-42a0-88e9-33275c30d290")
-		(property "Reference" "J15"
-			(at 208.28 90.1699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "5037630491"
-			(at 208.28 92.7099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "CONN_5037630000-SD_04_MOL"
-			(at 194.31 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630491?display=pdf"
-			(at 194.31 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 194.31 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "aff75427-85cb-4b84-b088-83f7b5816f00")
-		)
-		(pin "2"
-			(uuid "497c3eb0-e013-400b-a178-c26b17776978")
-		)
-		(pin "3"
-			(uuid "e63c59c4-6b2c-4b02-aba9-16c296aca57a")
-		)
-		(pin "1"
-			(uuid "35fda098-41d0-411b-811d-b14524f6716b")
-		)
-		(instances
-			(project "monarch_payload_interface_board_rev2"
-				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/ef907aa1-ebae-4134-aea0-07912ab07993"
-					(reference "J15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "5037630491_3")
-		(lib_id "5037630491:5037630491")
 		(at 41.91 88.9 0)
 		(unit 1)
 		(body_style 1)
@@ -6697,7 +6606,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "5037630491"
+		(property "Value" "2200980471"
 			(at 55.88 93.9799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6708,7 +6617,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CONN_5037630000-SD_04_MOL"
+		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
 			(at 41.91 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -6720,7 +6629,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630491?display=pdf"
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/2200980471"
 			(at 41.91 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -6895,7 +6804,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x05_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"
 			(at 146.05 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -7156,7 +7065,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 			(at 97.79 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -7211,6 +7120,97 @@
 		)
 	)
 	(symbol
+		(lib_name "5037630491_2")
+		(lib_id "5037630491:5037630491")
+		(at 247.65 38.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1d91b442-539f-47f5-ae2a-66873b0debb0")
+		(property "Reference" "J25"
+			(at 261.62 40.6399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2200980471"
+			(at 261.62 43.1799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
+			(at 247.65 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/2200980471"
+			(at 247.65 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "accb460b-3cba-4818-88b5-01c784bcd82f")
+		)
+		(pin "2"
+			(uuid "962d1775-7236-41c8-961f-6f80de5ca1fa")
+		)
+		(pin "1"
+			(uuid "465bde35-00f2-46bb-a35b-a56d450291ca")
+		)
+		(pin "3"
+			(uuid "257ddb07-4459-4926-a009-bb0b01e3f8e9")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev2"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/ef907aa1-ebae-4134-aea0-07912ab07993"
+					(reference "J25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x05")
 		(at 146.05 93.98 0)
 		(unit 1)
@@ -7244,7 +7244,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x05_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"
 			(at 146.05 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -7563,97 +7563,6 @@
 		)
 	)
 	(symbol
-		(lib_name "5037630491_3")
-		(lib_id "5037630491:5037630491")
-		(at 247.65 38.1 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "39d91d6b-02b2-4db6-964f-839cf8d0a400")
-		(property "Reference" "J25"
-			(at 261.62 40.6399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "5037630491"
-			(at 261.62 43.1799 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "CONN_5037630000-SD_04_MOL"
-			(at 247.65 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630491?display=pdf"
-			(at 247.65 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 247.65 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "b5371d43-253b-47e5-ae3e-1b383f3877a9")
-		)
-		(pin "2"
-			(uuid "2e4f55d9-bfba-4fc1-8831-472900afe740")
-		)
-		(pin "3"
-			(uuid "a16520b6-71cd-4f6f-85d4-bf45de960416")
-		)
-		(pin "1"
-			(uuid "00b70470-6a14-4fd9-8807-a6ba44099c29")
-		)
-		(instances
-			(project "monarch_payload_interface_board_rev2"
-				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/ef907aa1-ebae-4134-aea0-07912ab07993"
-					(reference "J25")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 259.08 21.59 90)
 		(unit 1)
@@ -7766,7 +7675,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical"
 			(at 252.73 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -8123,7 +8032,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "5037630691"
+		(property "Value" "2200980671"
 			(at 55.88 73.6599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8134,7 +8043,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CONN_5037630000-SD_06_MOL"
+		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980671_1x06_P1.25mm_Horizontal"
 			(at 41.91 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -8146,7 +8055,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630691?display=pdf"
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/2200980671"
 			(at 41.91 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -8623,6 +8532,97 @@
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/ef907aa1-ebae-4134-aea0-07912ab07993"
 					(reference "J24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "5037630491_2")
+		(lib_id "5037630491:5037630491")
+		(at 194.31 87.63 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9cdab576-56ee-4391-a937-0f67d41ade70")
+		(property "Reference" "J15"
+			(at 208.28 90.1699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2200980471"
+			(at 208.28 92.7099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
+			(at 194.31 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/2200980471"
+			(at 194.31 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 194.31 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "578633e4-f655-486e-9a9d-891fd9244281")
+		)
+		(pin "2"
+			(uuid "71712bbf-4732-4970-a443-b950570ea20c")
+		)
+		(pin "1"
+			(uuid "970d998c-ff44-426f-a2e8-72ef55f0deb1")
+		)
+		(pin "3"
+			(uuid "81a7151f-cc46-4225-9797-254bfd19b32e")
+		)
+		(instances
+			(project "monarch_payload_interface_board_rev2"
+				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/ef907aa1-ebae-4134-aea0-07912ab07993"
+					(reference "J15")
 					(unit 1)
 				)
 			)

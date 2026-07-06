@@ -6104,7 +6104,7 @@
 				)
 			)
 		)
-		(property "Footprint" "CP-32-12_ADI"
+		(property "Footprint" "AD7124:CP-32-12_ADI"
 			(at 82.55 60.96 0)
 			(hide yes)
 			(show_name no)
