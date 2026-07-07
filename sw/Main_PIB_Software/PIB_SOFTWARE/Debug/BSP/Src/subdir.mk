@@ -8,21 +8,24 @@ C_SRCS += \
 ../BSP/Src/gpio_driver.c \
 ../BSP/Src/iic_driver.c \
 ../BSP/Src/mosfet_ctrl.c \
-../BSP/Src/spi_driver.c \
+../BSP/Src/platform_support.c \
+../BSP/Src/spi.c \
 ../BSP/Src/uart_handler.c 
 
 OBJS += \
 ./BSP/Src/gpio_driver.o \
 ./BSP/Src/iic_driver.o \
 ./BSP/Src/mosfet_ctrl.o \
-./BSP/Src/spi_driver.o \
+./BSP/Src/platform_support.o \
+./BSP/Src/spi.o \
 ./BSP/Src/uart_handler.o 
 
 C_DEPS += \
 ./BSP/Src/gpio_driver.d \
 ./BSP/Src/iic_driver.d \
 ./BSP/Src/mosfet_ctrl.d \
-./BSP/Src/spi_driver.d \
+./BSP/Src/platform_support.d \
+./BSP/Src/spi.d \
 ./BSP/Src/uart_handler.d 
 
 
@@ -33,7 +36,7 @@ BSP/Src/%.o BSP/Src/%.su BSP/Src/%.cyclo: ../BSP/Src/%.c BSP/Src/subdir.mk
 clean: clean-BSP-2f-Src
 
 clean-BSP-2f-Src:
-	-$(RM) ./BSP/Src/gpio_driver.cyclo ./BSP/Src/gpio_driver.d ./BSP/Src/gpio_driver.o ./BSP/Src/gpio_driver.su ./BSP/Src/iic_driver.cyclo ./BSP/Src/iic_driver.d ./BSP/Src/iic_driver.o ./BSP/Src/iic_driver.su ./BSP/Src/mosfet_ctrl.cyclo ./BSP/Src/mosfet_ctrl.d ./BSP/Src/mosfet_ctrl.o ./BSP/Src/mosfet_ctrl.su ./BSP/Src/spi_driver.cyclo ./BSP/Src/spi_driver.d ./BSP/Src/spi_driver.o ./BSP/Src/spi_driver.su ./BSP/Src/uart_handler.cyclo ./BSP/Src/uart_handler.d ./BSP/Src/uart_handler.o ./BSP/Src/uart_handler.su
+	-$(RM) ./BSP/Src/gpio_driver.cyclo ./BSP/Src/gpio_driver.d ./BSP/Src/gpio_driver.o ./BSP/Src/gpio_driver.su ./BSP/Src/iic_driver.cyclo ./BSP/Src/iic_driver.d ./BSP/Src/iic_driver.o ./BSP/Src/iic_driver.su ./BSP/Src/mosfet_ctrl.cyclo ./BSP/Src/mosfet_ctrl.d ./BSP/Src/mosfet_ctrl.o ./BSP/Src/mosfet_ctrl.su ./BSP/Src/platform_support.cyclo ./BSP/Src/platform_support.d ./BSP/Src/platform_support.o ./BSP/Src/platform_support.su ./BSP/Src/spi.cyclo ./BSP/Src/spi.d ./BSP/Src/spi.o ./BSP/Src/spi.su ./BSP/Src/uart_handler.cyclo ./BSP/Src/uart_handler.d ./BSP/Src/uart_handler.o ./BSP/Src/uart_handler.su
 
 .PHONY: clean-BSP-2f-Src
 

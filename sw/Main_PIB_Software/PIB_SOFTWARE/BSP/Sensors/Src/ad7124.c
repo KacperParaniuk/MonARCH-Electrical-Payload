@@ -4,648 +4,552 @@
 *   	     Devices: AD7124-4, AD7124-8
 *
 ********************************************************************************
-* Copyright 2015-2019, 2023(c) Analog Devices, Inc.
+* Copyright 2015-2019(c) Analog Devices, Inc.
 *
-* Redistribution and use in source and binary forms, with or without
-* modification, are permitted provided that the following conditions are met:
+* All rights reserved.
 *
-* 1. Redistributions of source code must retain the above copyright notice,
-*    this list of conditions and the following disclaimer.
+* Redistribution and use in source and binary forms, with or without modification,
+* are permitted provided that the following conditions are met:
+*  - Redistributions of source code must retain the above copyright
+*    notice, this list of conditions and the following disclaimer.
+*  - Redistributions in binary form must reproduce the above copyright
+*    notice, this list of conditions and the following disclaimer in
+*    the documentation and/or other materials provided with the
+*    distribution.
+*  - Neither the name of Analog Devices, Inc. nor the names of its
+*    contributors may be used to endorse or promote products derived
+*    from this software without specific prior written permission.
+*  - The use of this software may or may not infringe the patent rights
+*    of one or more patent holders.  This license does not release you
+*    from the requirement that you obtain separate licenses from these
+*    patent holders to use this software.
+*  - Use of the software either in source or binary form, must be run
+*    on or directly connected to an Analog Devices Inc. component.
 *
-* 2. Redistributions in binary form must reproduce the above copyright notice,
-*    this list of conditions and the following disclaimer in the documentation
-*    and/or other materials provided with the distribution.
-*
-* 3. Neither the name of Analog Devices, Inc. nor the names of its
-*    contributors may be used to endorse or promote products derived from this
-*    software without specific prior written permission.
-*
-* THIS SOFTWARE IS PROVIDED BY ANALOG DEVICES, INC. “AS IS” AND ANY EXPRESS OR
-* IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-* MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
-* EVENT SHALL ANALOG DEVICES, INC. BE LIABLE FOR ANY DIRECT, INDIRECT,
-* INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-* LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
-* OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-* LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-* NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-* EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.******************************************************************************/
+* THIS SOFTWARE IS PROVIDED BY ANALOG DEVICES "AS IS" AND ANY EXPRESS OR IMPLIED
+* WARRANTIES, INCLUDING, BUT NOT LIMITED TO, NON-INFRINGEMENT, MERCHANTABILITY
+* AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+* IN NO EVENT SHALL ANALOG DEVICES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+* SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+* INTELLECTUAL PROPERTY RIGHTS, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+* LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+* ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+* (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+* SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*******************************************************************************/
 
+/******************************************************************************/
+/***************************** Include Files **********************************/
+/******************************************************************************/
 #include <stdlib.h>
 #include <stdbool.h>
 #include "ad7124.h"
-#include "errno.h"
 
-
-//#include "no_os_delay.h"
-//#include "no_os_alloc.h"
-//#include "no_os_error.h"
+/* Error codes */
+#define INVALID_VAL -1 /* Invalid argument */
+#define COMM_ERR    -2 /* Communication error on receive */
+#define TIMEOUT     -3 /* A timeout has occured */
 
 /*
  * Post reset delay required to ensure all internal config done
  * A time of 2ms should be enough based on the data sheet, but 4ms
  * chosen to provide enough margin, in case mdelay is not accurate.
  */
-AD7124_ConfigTypeDef AD7124_Handler;
-
-/**
- * @brief Storage for ADC channel samples.
- *
- * This array holds the sampled data for each enabled ADC channel.
- * The size is defined by @c AD7124_ENABLED_CHANNELS.
- *
- * @note Use @c extern uint32_t AD7124_ChannelSamples[]; to access the data externally.
- */
-uint32_t AD7124_ChannelSamples[AD7124_ENABLED_CHANNELS] = {0U};
-
-/**
- * @brief  CRC8 Lookup Table.
- *
- * This lookup table is used to calculate the CRC8 checksum,
- * which ensures data integrity during communication.
- */
-static const uint8_t CRC8_LOOKUP_TABLE[256U] = {
-    0x00U, 0x07U, 0x0EU, 0x09U, 0x1CU, 0x1BU, 0x12U, 0x15U,
-    0x38U, 0x3FU, 0x36U, 0x31U, 0x24U, 0x23U, 0x2AU, 0x2DU,
-    0x70U, 0x77U, 0x7EU, 0x79U, 0x6CU, 0x6BU, 0x62U, 0x65U,
-    0x48U, 0x4FU, 0x46U, 0x41U, 0x54U, 0x53U, 0x5AU, 0x5DU,
-    0xE0U, 0xE7U, 0xEEU, 0xE9U, 0xFCU, 0xFBU, 0xF2U, 0xF5U,
-    0xD8U, 0xDFU, 0xD6U, 0xD1U, 0xC4U, 0xC3U, 0xCAU, 0xCDU,
-    0x90U, 0x97U, 0x9EU, 0x99U, 0x8CU, 0x8BU, 0x82U, 0x85U,
-    0xA8U, 0xAFU, 0xA6U, 0xA1U, 0xB4U, 0xB3U, 0xBAU, 0xBDU,
-    0xC7U, 0xC0U, 0xC9U, 0xCEU, 0xDBU, 0xDCU, 0xD5U, 0xD2U,
-    0xFFU, 0xF8U, 0xF1U, 0xF6U, 0xE3U, 0xE4U, 0xEDU, 0xEAU,
-    0xB7U, 0xB0U, 0xB9U, 0xBEU, 0xABU, 0xACU, 0xA5U, 0xA2U,
-    0x8FU, 0x88U, 0x81U, 0x86U, 0x93U, 0x94U, 0x9DU, 0x9AU,
-    0x27U, 0x20U, 0x29U, 0x2EU, 0x3BU, 0x3CU, 0x35U, 0x32U,
-    0x1FU, 0x18U, 0x11U, 0x16U, 0x03U, 0x04U, 0x0DU, 0x0AU,
-    0x57U, 0x50U, 0x59U, 0x5EU, 0x4BU, 0x4CU, 0x45U, 0x42U,
-    0x6FU, 0x68U, 0x61U, 0x66U, 0x73U, 0x74U, 0x7DU, 0x7AU,
-    0x89U, 0x8EU, 0x87U, 0x80U, 0x95U, 0x92U, 0x9BU, 0x9CU,
-    0xB1U, 0xB6U, 0xBFU, 0xB8U, 0xADU, 0xAAU, 0xA3U, 0xA4U,
-    0xF9U, 0xFEU, 0xF7U, 0xF0U, 0xE5U, 0xE2U, 0xEBU, 0xECU,
-    0xC1U, 0xC6U, 0xCFU, 0xC8U, 0xDDU, 0xDAU, 0xD3U, 0xD4U,
-    0x69U, 0x6EU, 0x67U, 0x60U, 0x75U, 0x72U, 0x7BU, 0x7CU,
-    0x51U, 0x56U, 0x5FU, 0x58U, 0x4DU, 0x4AU, 0x43U, 0x44U,
-    0x19U, 0x1EU, 0x17U, 0x10U, 0x05U, 0x02U, 0x0BU, 0x0CU,
-    0x21U, 0x26U, 0x2FU, 0x28U, 0x3DU, 0x3AU, 0x33U, 0x34U,
-    0x4EU, 0x49U, 0x40U, 0x47U, 0x52U, 0x55U, 0x5CU, 0x5BU,
-    0x76U, 0x71U, 0x78U, 0x7FU, 0x6AU, 0x6DU, 0x64U, 0x63U,
-    0x3EU, 0x39U, 0x30U, 0x37U, 0x22U, 0x25U, 0x2CU, 0x2BU,
-    0x06U, 0x01U, 0x08U, 0x0FU, 0x1AU, 0x1DU, 0x14U, 0x13U,
-    0xAEU, 0xA9U, 0xA0U, 0xA7U, 0xB2U, 0xB5U, 0xBCU, 0xBBU,
-    0x96U, 0x91U, 0x98U, 0x9FU, 0x8AU, 0x8DU, 0x84U, 0x83U,
-    0xDEU, 0xD9U, 0xD0U, 0xD7U, 0xC2U, 0xC5U, 0xCCU, 0xCBU,
-    0xE6U, 0xE1U, 0xE8U, 0xEFU, 0xFAU, 0xFDU, 0xF4U, 0xF3U
-};
+#define AD7124_POST_RESET_DELAY      4
 
 
-
-/* ------------------------------------- Functions ------------------------------------ */
-
-/**
- * @brief Compute CRC8 checksum using lookup table.
+/***************************************************************************//**
+ * @brief Reads the value of the specified register without checking if the
+ *        device is ready to accept user requests.
  *
- * This function calculates the CRC8 checksum over a buffer using a precomputed lookup table.
- * It is used for data integrity checks during SPI communication with the AD7124-4 ADC.
+ * @param dev   - The handler of the instance of the driver.
+ * @param p_reg - Pointer to the register structure holding info about the
+ *               register to be read. The read value is stored inside the
+ *               register structure.
  *
- * @param[in] pBuf     Pointer to the data buffer.
- * @param[in] bufSize  Number of bytes in the buffer.
- *
- * @retval CRC8 checksum value of the input buffer.
- * @retval 0 If @p pBuf is NULL or @p bufSize is 0.
- */
-static inline uint8_t AD7124_ComputeCRC8(const uint8_t *pBuf, uint8_t bufSize)
+ * @return Returns 0 for success or negative error code.
+*******************************************************************************/
+int32_t ad7124_no_check_read_register(struct ad7124_dev *dev,
+				      struct ad7124_st_reg* p_reg)
 {
-    uint8_t crc = 0U;
-       
-    if ( (pBuf != NULL) && (bufSize > 0U) )
-    {
-        for (uint8_t index = 0U; index < bufSize; index++)
-        {
-            crc = CRC8_LOOKUP_TABLE[crc ^ pBuf[index]];
-        }
-    }
-    
-    return crc; 
+	int32_t ret = 0;
+	uint8_t buffer[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+	uint8_t i = 0;
+	uint8_t check8 = 0, add_status_length = 0;
+	uint8_t msg_buf[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+	if(!dev || !p_reg)
+		return INVALID_VAL;
+
+	/* Build the Command word */
+	buffer[0] = AD7124_COMM_REG_WEN | AD7124_COMM_REG_RD |
+		    AD7124_COMM_REG_RA(p_reg->addr);
+
+	/*
+	 * If this is an AD7124_DATA register read, and the DATA_STATUS bit is set
+	 * in ADC_CONTROL, need to read 4, not 3 bytes for DATA with STATUS
+	 */
+	if ((p_reg->addr == AD7124_DATA_REG) &&
+	    (dev->regs[AD7124_ADC_Control].value & AD7124_ADC_CTRL_REG_DATA_STATUS)) {
+		add_status_length = 1;
+	}
+
+	/* Read data from the device */
+	ret = spi_write_and_read(dev->spi_desc,
+				 buffer,
+				 ((dev->use_crc != AD7124_DISABLE_CRC) ? p_reg->size + 1
+				  : p_reg->size) + 1 + add_status_length);
+	if(ret < 0)
+		return ret;
+
+	/* Check the CRC */
+	if(dev->use_crc == AD7124_USE_CRC) {
+		msg_buf[0] = AD7124_COMM_REG_WEN | AD7124_COMM_REG_RD |
+			     AD7124_COMM_REG_RA(p_reg->addr);
+		for(i = 1; i < p_reg->size + 2 + add_status_length; ++i) {
+			msg_buf[i] = buffer[i];
+		}
+		check8 = ad7124_compute_crc8(msg_buf, p_reg->size + 2 + add_status_length);
+	}
+
+	if(check8 != 0) {
+		/* ReadRegister checksum failed. */
+		return COMM_ERR;
+	}
+
+	/*
+	 * if reading Data with 4 bytes, need to copy the status byte to the STATUS
+	 * register struct value member
+	 */
+	if (add_status_length) {
+		dev->regs[AD7124_Status].value = buffer[p_reg->size + 1];
+	}
+
+	/* Build the result */
+	p_reg->value = 0;
+	for(i = 1; i < p_reg->size + 1; i++) {
+		p_reg->value <<= 8;
+		p_reg->value += buffer[i];
+	}
+
+	return ret;
 }
 
-/**
- * @brief Reads a register value from the AD7124-4 via SPI.
+/***************************************************************************//**
+ * @brief Writes the value of the specified register without checking if the
+ *        device is ready to accept user requests.
  *
- * Performs an SPI transaction to read `dataSize` bytes from the specified
- * AD7124 register at `regAddr`. The read data is validated using CRC8 to ensure communication integrity.
+ * @param dev - The handler of the instance of the driver.
+ * @param reg - Register structure holding info about the register to be written
  *
- * @param[in]  pADC       Pointer to the AD7124-4 configuration structure containing SPI settings and communication parameters.
- * @param[in]  regAddr    Address of the target register to read.
- * @param[in]  dataSize   Number of bytes to read from the register.
- * @param[out] pRegValue  Pointer to a variable where the read register value will be stored.
- *
- * @retval AD7124_OK      Register read completed successfully.
- * @retval AD7124_ERROR   Communication failure, CRC mismatch, or invalid parameters.
- */
-AD7124_StatusTypeDef AD7124_ReadRegister(const AD7124_ConfigTypeDef *pADC, uint8_t regAddr, uint8_t dataSize, uint32_t *pRegValue)
+ * @return Returns 0 for success or negative error code.
+*******************************************************************************/
+int32_t ad7124_no_check_write_register(struct ad7124_dev *dev,
+				       struct ad7124_st_reg reg)
 {
-    AD7124_StatusTypeDef status = AD7124_ERROR;
-    uint32_t data = 0U;
-    uint8_t rx_buf [8U] = {0U};
-    uint8_t msg_buf[8U] = {0U};
-    uint8_t *rx_ptr = NULL;
-    uint8_t msg_length = 1U;
-    
-    // Build the Command word
-    uint8_t tx_buf = (uint8_t)(0x40U | (regAddr & 0x3FU));                     
-    uint8_t add_status_length = (regAddr == AD7124_DATA_REG) ? 1U : 0U;  
-    uint8_t total_bytes_to_receive = (uint8_t)(2U + dataSize + add_status_length); 
-           
-    if ( (pADC == NULL) || (dataSize == 0U) )
-    {
-        status = AD7124_ERROR;  
-    }
-    else
-    {  
-        // SPI write transaction
-        HAL_GPIO_WritePin(pADC->csPort, pADC->csPin, GPIO_PIN_RESET);
-        status = (AD7124_StatusTypeDef) HAL_SPI_TransmitReceive(pADC->SPIx, &tx_buf, rx_buf, total_bytes_to_receive, AD7124_MAX_DELAY);
-        HAL_GPIO_WritePin(pADC->csPort, pADC->csPin, GPIO_PIN_SET);
- 
-        if (status == AD7124_OK)
-        {
-//            msg_buf[0U] = tx_buf;  // Store command byte for CRC calculation
-//            rx_ptr = &rx_buf[1U];  // Pointer to received data (skip first byte: command echo)
-//
-//            // Copy received bytes (data + status if any) for CRC calculation
-//            for (uint8_t i = 0U; i < (uint8_t)(dataSize + add_status_length); i++)
-//            {
-//                msg_buf[msg_length++] = *rx_ptr++;
-//            }
-//
-//            // Compute CRC8 of received message (command + data)
-//            uint8_t crc_calculated = AD7124_ComputeCRC8(msg_buf, msg_length);
-//            uint8_t crc_received   = rx_buf[total_bytes_to_receive - 1U];
-//
-//            if (crc_calculated == crc_received)
-//            {
-                rx_ptr = &rx_buf[1U];
-                
-                // Build the result
-                for (uint8_t i = 0U; i < dataSize; i++)
-                {
-                    data = (data << 8U) | *rx_ptr++;
-                }
+	int32_t ret = 0;
+	int32_t reg_value = 0;
+	uint8_t wr_buf[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+	uint8_t i = 0;
+	uint8_t crc8 = 0;
 
-                *pRegValue = data; 
-            }
-//            else
-//            {
-//            	// CRC ERROR
-//                status = AD7124_ERROR;
-//
-//                // read error
+	if(!dev)
+		return INVALID_VAL;
 
+	/* Build the Command word */
+	wr_buf[0] = AD7124_COMM_REG_WEN | AD7124_COMM_REG_WR |
+		    AD7124_COMM_REG_RA(reg.addr);
 
+	/* Fill the write buffer */
+	reg_value = reg.value;
+	for(i = 0; i < reg.size; i++) {
+		wr_buf[reg.size - i] = reg_value & 0xFF;
+		reg_value >>= 8;
+	}
 
-    }
-    
-    return status;
+	/* Compute the CRC */
+	if(dev->use_crc != AD7124_DISABLE_CRC) {
+		crc8 = ad7124_compute_crc8(wr_buf, reg.size + 1);
+		wr_buf[reg.size + 1] = crc8;
+	}
+
+	/* Write data to the device */
+	ret = spi_write_and_read(dev->spi_desc,
+				 wr_buf,
+				 (dev->use_crc != AD7124_DISABLE_CRC) ? reg.size + 2
+				 : reg.size + 1);
+
+	return ret;
 }
 
-/**
- * @brief Writes data to a specified register of the AD7124-4 ADC via SPI.
+/***************************************************************************//**
+ * @brief Reads the value of the specified register only when the device is ready
+ *        to accept user requests. If the device ready flag is deactivated the
+ *        read operation will be executed without checking the device state.
  *
- * Performs an SPI transaction to write `dataSize` bytes of `regValue` to the AD7124 register specified by `regAddr`.
+ * @param dev   - The handler of the instance of the driver.
+ * @param p_reg - Pointer to the register structure holding info about the
+ *               register to be read. The read value is stored inside the
+ *               register structure.
  *
- * @param[in] pADC      Pointer to the AD7124-4 configuration structure containing SPI settings and communication parameters.
- * @param[in] regAddr   8-bit address of the register to write to.
- * @param[in] dataSize  Number of bytes to write to the register.
- * @param[in] regValue  Value to write into the register.
- *
- * @retval AD7124_OK     Register write completed successfully.
- * @retval AD7124_ERROR  Communication failure, CRC mismatch, or invalid parameters.
- */
-AD7124_StatusTypeDef AD7124_WriteRegister(const AD7124_ConfigTypeDef *pADC, uint8_t regAddr, uint8_t dataSize, uint32_t regValue)
+ * @return Returns 0 for success or negative error code.
+*******************************************************************************/
+int32_t ad7124_read_register(struct ad7124_dev *dev,
+			     struct ad7124_st_reg* p_reg)
 {
-    AD7124_StatusTypeDef status = AD7124_ERROR;
-    uint8_t tx_buf[8U] = {0U};
-    uint8_t crc = 0U;
-    
-    if ( (pADC == NULL) || (dataSize == 0U) )
-    {
-        status = AD7124_ERROR;  
-    }
-    else
-    {
-        // Build the Command word
-        tx_buf[0U] = (uint8_t)(regAddr & 0x3FU);
-        
-        // Fill the write buffer
-        for (uint8_t i = 0U; i < dataSize; i++)
-        {
-            tx_buf[i + 1U] = (uint8_t)( (regValue >> (8U * (dataSize - 1U - i) ) ) & 0xFFU);
-        }
-        
-        // Compute the CRC
-        crc = AD7124_ComputeCRC8(tx_buf, (uint8_t)(dataSize + 1U));  
-        tx_buf[dataSize + 1U] = crc;  
-        
-        // SPI write transaction
-        HAL_GPIO_WritePin(pADC->csPort, pADC->csPin, GPIO_PIN_RESET);
-        status = (AD7124_StatusTypeDef) HAL_SPI_Transmit(pADC->SPIx, tx_buf, (dataSize + 2U), AD7124_MAX_DELAY);
-        HAL_GPIO_WritePin(pADC->csPort, pADC->csPin, GPIO_PIN_SET);
-    }
-    
-    return status;
+	int32_t ret;
+
+	if (p_reg->addr != AD7124_ERR_REG && dev->check_ready) {
+		ret = ad7124_wait_for_spi_ready(dev,
+						dev->spi_rdy_poll_cnt);
+		if (ret < 0)
+			return ret;
+	}
+	ret = ad7124_no_check_read_register(dev,
+					    p_reg);
+
+	return ret;
 }
 
-/**
- * @brief Performs a hardware reset of the AD7124-4 ADC via SPI.
+/***************************************************************************//**
+ * @brief Writes the value of the specified register only when the device is
+ *        ready to accept user requests. If the device ready flag is deactivated
+ *        the write operation will be executed without checking the device state.
  *
- * Sends the predefined reset sequence over SPI to the AD7124 ADC, restoring all registers to their default reset values.
+ * @param dev - The handler of the instance of the driver.
+ * @param p_reg - Register structure holding info about the register to be written
  *
- * @param[in] pADC     Pointer to the AD7124-4 configuration structure containing SPI settings and communication parameters.
- * @param[in] timeout  Maximum time (in milliseconds) to wait for the reset operation to complete.
- *
- * @retval AD7124_OK      Reset completed successfully.
- * @retval AD7124_ERROR   Communication failure, CRC mismatch, or invalid parameters.
- * @retval AD7124_TIMEOUT The reset operation timed out before completion.
- */
-AD7124_StatusTypeDef AD7124_Reset(const AD7124_ConfigTypeDef *pADC, uint32_t timeout)
-{  
-    AD7124_StatusTypeDef status = AD7124_ERROR;
-    const uint8_t reset_sequence[8U] = {0xFFU, 0xFFU, 0xFFU, 0xFFU, 0xFFU, 0xFFU, 0xFFU, 0xFFU};  
-    uint32_t start_time   = 0U;
-    uint32_t status_value = 0U;        
-    
-    if ( (pADC == NULL) || (timeout == 0U) )
-    {
-        status = AD7124_ERROR; 
-    }
-    else
-    { 
-        // SPI write transaction
-        HAL_GPIO_WritePin(pADC->csPort, pADC->csPin, GPIO_PIN_RESET);
-        status = (AD7124_StatusTypeDef) HAL_SPI_Transmit(pADC->SPIx, reset_sequence, 8U, AD7124_MAX_DELAY);
-        HAL_GPIO_WritePin(pADC->csPort, pADC->csPin, GPIO_PIN_SET);
-
-        if (status == AD7124_OK)
-        {           
-            start_time = HAL_GetTick();        
-            do 
-            {
-                // Wait for STATUS register until RDY bit is cleared or timeout expires
-                if (AD7124_ReadRegister(pADC, AD7124_STATUS_REG, 1U, &status_value) != AD7124_OK)
-                {
-                    status = AD7124_ERROR;
-                    break;
-                }
-            } while ( ( (status_value & 0x10U) != 0U) && ( (HAL_GetTick() - start_time) < timeout) );
-
-            if ( (status_value & 0x10U) != 0U)
-            {
-                status = AD7124_TIMEOUT; 
-            }
-            else
-            {               
-                HAL_Delay(4U);  // Allow ADC stabilization               
-                status = AD7124_WriteRegister(pADC, AD7124_ERREN_REG, 3U, 0x00004U);  // Enable CRC error detection
-            }
-        }      
-    }
-    
-    return status;
-}
-
-/**
- * @brief Initializes and configures the AD7124-4 ADC registers.
- *
- * Writes predefined settings to the ADC's channel mapping, configuration,
- * and filter registers to prepare the device for data acquisition.
- *
- * @param[in] pADC     Pointer to the AD7124-4 configuration structure containing SPI settings and communication parameters.
- * @param[in] pConfig  Pointer to the AD7124-4 register configuration structure specifying
- *                    the desired settings for channels, filters, and configurations.
- *
- * @retval AD7124_OK     Registers configured successfully.
- * @retval AD7124_ERROR  Communication failure, CRC mismatch, or invalid parameters.
- */
-AD7124_StatusTypeDef AD7124_Config(const AD7124_ConfigTypeDef *pADC, AD7124_RegisterTypeDef *pConfig)
+ * @return Returns 0 for success or negative error code.
+*******************************************************************************/
+int32_t ad7124_write_register(struct ad7124_dev *dev,
+			      struct ad7124_st_reg p_reg)
 {
-    AD7124_StatusTypeDef status = AD7124_OK;
-    
-    static const uint8_t channelRegs[16U] = // changed to 16
-    {
-        AD7124_CH0_MAP_REG, AD7124_CH1_MAP_REG, AD7124_CH2_MAP_REG,
-        AD7124_CH3_MAP_REG, AD7124_CH4_MAP_REG, AD7124_CH5_MAP_REG,
-        AD7124_CH6_MAP_REG, AD7124_CH7_MAP_REG, AD7124_CH8_MAP_REG,
-		AD7124_CH9_MAP_REG, AD7124_CH10_MAP_REG, AD7124_CH11_MAP_REG,
-		AD7124_CH12_MAP_REG, AD7124_CH13_MAP_REG, AD7124_CH14_MAP_REG,
-		AD7124_CH15_MAP_REG
-    };
+	int32_t ret;
 
-    static const uint8_t configRegs[8U] =
-    {
-        AD7124_CFG0_REG, AD7124_CFG1_REG, AD7124_CFG2_REG,
-        AD7124_CFG3_REG, AD7124_CFG4_REG, AD7124_CFG5_REG,
-        AD7124_CFG6_REG, AD7124_CFG7_REG
-    };
-    
-    static const uint8_t filterRegs[8U] =
-    {
-        AD7124_FILT0_REG, AD7124_FILT1_REG, AD7124_FILT2_REG,
-        AD7124_FILT3_REG, AD7124_FILT4_REG, AD7124_FILT5_REG,
-        AD7124_FILT6_REG, AD7124_FILT7_REG
-    };
-    
-    if ( (pADC == NULL) || (pConfig == NULL) )
-    {
-        status = AD7124_ERROR;
-    }
-    else
-    {
-        for (int8_t i = AD7124_CHANNEL_COUNT-1; i >= 0; i--)
-        {
-            if (AD7124_WriteRegister(pADC, channelRegs[i], 2U, pConfig->channels[i]) != AD7124_OK)
-            {
-                status = AD7124_ERROR;
-                break;
-            }
-        }
+	if (dev->check_ready) {
+		ret = ad7124_wait_for_spi_ready(dev,
+						dev->spi_rdy_poll_cnt);
+		if (ret < 0)
+			return ret;
+	}
+	ret = ad7124_no_check_write_register(dev,
+					     p_reg);
 
-        for (int8_t i = 7; i >= 0; i--)
-        {
-            if (AD7124_WriteRegister(pADC, configRegs[i],  2U, pConfig->configs[i])  != AD7124_OK ||
-                AD7124_WriteRegister(pADC, filterRegs[i],  3U, pConfig->filters[i])  != AD7124_OK)
-            {
-                status = AD7124_ERROR;
-                break;
-            }
-        }
-        if (status == AD7124_OK)
-        {
-            if (AD7124_WriteRegister(pADC, AD7124_CONTROL_REG,  2U, pConfig->adc_control)  != AD7124_OK ||
-                AD7124_WriteRegister(pADC, AD7124_IO_CTRL1_REG, 3U, pConfig->io_control_1) != AD7124_OK ||
-                AD7124_WriteRegister(pADC, AD7124_IO_CTRL2_REG, 2U, pConfig->io_control_2) != AD7124_OK ||
-                AD7124_WriteRegister(pADC, AD7124_ERREN_REG,    3U, pConfig->error_enable) != AD7124_OK)
-            {
-                status = AD7124_ERROR;
-            }
-        }
-    }
-    
-    return status;
+	return ret;
 }
 
-/**
- * @brief Reads ADC conversion data from the AD7124-4 and updates the channel samples array.
+/***************************************************************************//**
+ * @brief Resets the device.
  *
- * Retrieves the latest conversion result from the AD7124-4 over SPI and stores the sample
- * value in the corresponding element of the external `AD7124_ChannelSamples` array.
- * Supports reading from multiple enabled and configured ADC channels.
+ * @param dev - The handler of the instance of the driver.
  *
- * @param[in] pADC  Pointer to the AD7124 configuration structure containing SPI settings and communication parameters.
- *
- * @retval AD7124_OK     Sample data read successfully.
- * @retval AD7124_ERROR  Communication failure, CRC mismatch, or invalid parameters.
- *
- * @note The `AD7124_ChannelSamples` array must be defined and managed by the user.
- */
-AD7124_StatusTypeDef AD7124_ReadSampleData(const AD7124_ConfigTypeDef *pADC)
+ * @return Returns 0 for success or negative error code.
+*******************************************************************************/
+int32_t ad7124_reset(struct ad7124_dev *dev)
 {
-    AD7124_StatusTypeDef status = AD7124_OK;
-    uint32_t  sample_data  = 0U;
-    uint32_t  status_reg   = 0U;
-    uint8_t active_channel = 0U;
-    
-    if (pADC == NULL)
-    {
-        status = AD7124_ERROR;
-    }
-    else
-    {
-        // Read samples for the number of enabled channels
-        for (uint8_t i = 0U; i < AD7124_ENABLED_CHANNELS; i++)
-        {
-            // Read ADC data and status registers
-            if ( (AD7124_ReadRegister(pADC, AD7124_DATA_REG, 3U, &sample_data) != AD7124_OK) || 
-                 (AD7124_ReadRegister(pADC, AD7124_STATUS_REG, 1U, &status_reg) != AD7124_OK) )
-            {
-                status = AD7124_ERROR;
-                break;
-            }
-            
-            // Extract active channel index (lower 4 bits)
-            active_channel = (uint8_t)(status_reg & 0x0FU);
-            
-            // Store sample if channel index is valid
-            if (active_channel < AD7124_ENABLED_CHANNELS)
-            {
-                AD7124_ChannelSamples[active_channel] = sample_data;
-            }
-        }
-    }
+	int32_t ret = 0;
+	uint8_t wr_buf[8] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
-    return status;
+	if(!dev)
+		return INVALID_VAL;
+
+	ret = spi_write_and_read(dev->spi_desc,
+				 wr_buf,
+				 8);
+
+	/* CRC is disabled after reset */
+	dev->use_crc = AD7124_DISABLE_CRC;
+
+	/* Read POR bit to clear */
+	ret = ad7124_wait_to_power_on(dev,
+				      dev->spi_rdy_poll_cnt);
+
+	mdelay(AD7124_POST_RESET_DELAY);
+
+	return ret;
 }
 
-/**
- * @brief Checks the AD7124-4 ADC error status by reading the error register.
+/***************************************************************************//**
+ * @brief Waits until the device can accept read and write user actions.
  *
- * Reads the error register of the AD7124-4 via SPI to detect any ADC errors.
- * The error status is stored at the location pointed to by `pErrorReg`.
- * If the read operation fails, `*pErrorReg` is set to -1 to indicate failure.
+ * @param dev     - The handler of the instance of the driver.
+ * @param timeout - Count representing the number of polls to be done until the
+ *                  function returns.
  *
- * @param[in]  pADC       Pointer to the AD7124 configuration structure containing SPI settings and communication parameters.
- * @param[out] pErrorReg  Pointer to an integer where the error register value will be stored.
- *
- * @retval AD7124_OK      Error register read successfully.
- * @retval AD7124_ERROR   Communication failure, CRC mismatch, or invalid parameters.
- */
-AD7124_StatusTypeDef AD7124_ErrorCheck(const AD7124_ConfigTypeDef *pADC, int32_t *pErrorReg)
+ * @return Returns 0 for success or negative error code.
+*******************************************************************************/
+int32_t ad7124_wait_for_spi_ready(struct ad7124_dev *dev,
+				  uint32_t timeout)
 {
-    AD7124_StatusTypeDef status = AD7124_ERROR;
-    uint32_t data = 0U;
-    
-    if (pADC == NULL)
-    {
-//        status = AD7124_ERROR;
-    	status = 10;
-    }
-    else
-    {     
-        if (AD7124_ReadRegister(pADC, AD7124_ERR_REG, 3U, &data) == AD7124_OK)
-        {
-            *pErrorReg = (int32_t)data;
-            status = AD7124_OK;
-        }
-        else
-        {
-            *pErrorReg = -1;
-//            status = AD7124_ERROR;
-            status = 11;
-        }
-    }
-    
-    return status;
+	struct ad7124_st_reg *regs;
+	int32_t ret;
+	int8_t ready = 0;
+
+	if(!dev)
+		return INVALID_VAL;
+
+	regs = dev->regs;
+
+	while(!ready && --timeout) {
+		/* Read the value of the Error Register */
+		ret = ad7124_read_register(dev, &regs[AD7124_Error]);
+		if(ret < 0)
+			return ret;
+
+		/* Check the SPI IGNORE Error bit in the Error Register */
+		ready = (regs[AD7124_Error].value &
+			 AD7124_ERR_REG_SPI_IGNORE_ERR) == 0;
+	}
+
+	return timeout ? 0 : TIMEOUT;
 }
 
-/**
- * @brief Performs gain and offset calibration on the AD7124-4 ADC.
+/***************************************************************************//**
+ * @brief Waits until the device finishes the power-on reset operation.
  *
- * Executes internal full-scale and zero-scale calibrations to improve accuracy of the AD7124.
- * Reads the updated gain and offset coefficients from the device and updates the provided
- * configuration structure accordingly. After calibration, the ADC settings are restored to
- * their default operational values.
+ * @param dev     - The handler of the instance of the driver.
+ * @param timeout - Count representing the number of polls to be done until the
+ *                  function returns.
  *
- * @param[in]     pADC     Pointer to the AD7124-4 configuration structure
- *                        containing SPI settings and communication parameters.
- * @param[in,out] pConfig  Pointer to the register configuration structure, which will be
- *                        updated with calibrated gain and offset values upon success.
- * @param[in]     timeout  Maximum time (in ticks) to wait for each calibration step to complete.
- *
- * @retval AD7124_OK       Calibration completed successfully.
- * @retval AD7124_ERROR    Communication failure, CRC mismatch, or invalid parameters.
- * @retval AD7124_TIMEOUT  Calibration timed out before completion.
- */
-AD7124_StatusTypeDef AD7124_Calibration(const AD7124_ConfigTypeDef *pADC, AD7124_RegisterTypeDef *pConfig, uint32_t timeout)
+ * @return Returns 0 for success or negative error code.
+*******************************************************************************/
+int32_t ad7124_wait_to_power_on(struct ad7124_dev *dev,
+				uint32_t timeout)
 {
-    AD7124_StatusTypeDef status = AD7124_OK;
-    uint16_t default_config = pConfig->adc_control; 
-    uint32_t start_tick = 0U;
-    uint32_t  data      = 0U;
-       
-    if ( (pADC == NULL) || (pConfig == NULL) || (timeout == 0U) )
-    {
-        status = AD7124_ERROR;
-    }
-    else
-    {    
-        // Internal full-scale (gain) calibration
-        pConfig->adc_control = (pConfig->adc_control & ~AD7124_CONTROL_MODE_MASK) | AD7124_CONTROL_CAL_GAIN;       
-        if (AD7124_WriteRegister(pADC, AD7124_CONTROL_REG, 2U, pConfig->adc_control) != AD7124_OK)
-        {
-            status = AD7124_ERROR;
-        }
-        else
-        {
-            start_tick = HAL_GetTick();           
-            // Wait until calibration completes or timeout occurs
-            do
-            {
-                if (AD7124_ReadRegister(pADC, AD7124_STATUS_REG, 1U, &data) != AD7124_OK)
-                {
-                    status = AD7124_ERROR;
-                    break;
-                }
-                if ( (HAL_GetTick() - start_tick) >= timeout)
-                {
-                    status = AD7124_TIMEOUT;
-                    break;
-                }
-            } while ( (data & 0x80U) != 0U);
-        }
+	struct ad7124_st_reg *regs;
+	int32_t ret;
+	int8_t powered_on = 0;
 
-        if (status == AD7124_OK)
-        {
-            // Internal zero-scale (offset) calibration
-            pConfig->adc_control = (pConfig->adc_control & ~AD7124_CONTROL_MODE_MASK) | AD7124_CONTROL_CAL_OFFSET;
-            if (AD7124_WriteRegister(pADC, AD7124_CONTROL_REG, 2U, pConfig->adc_control) != AD7124_OK)
-            {
-                status = AD7124_ERROR;
-            }
-            else
-            {
-                start_tick = HAL_GetTick();              
-                // Wait until calibration completes or timeout occurs
-                do
-                {
-                    if (AD7124_ReadRegister(pADC, AD7124_STATUS_REG, 1U, &data) != AD7124_OK)
-                    {
-                        status = AD7124_ERROR;
-                        break;
-                    }
-                    if ((HAL_GetTick() - start_tick) >= timeout)
-                    {
-                        status = AD7124_TIMEOUT;
-                        break;
-                    }
-                } while ( (data & 0x80U) != 0U);
-            }
-        }
+	if(!dev)
+		return INVALID_VAL;
 
-        if (status == AD7124_OK)
-        {
-            // Standby mode to read/write calibration coefficients
-            pConfig->adc_control = (pConfig->adc_control & ~AD7124_CONTROL_MODE_MASK) | AD7124_CONTROL_STANDBY;
-            if (AD7124_WriteRegister(pADC, AD7124_CONTROL_REG, 2U, pConfig->adc_control) != AD7124_OK)
-            {
-                status = AD7124_ERROR;
-            }
-        }
+	regs = dev->regs;
 
-        if (status == AD7124_OK)
-        {
-            // Read gain coefficients after calibration
-            for (uint8_t i = 0U; i < 8U; i++)
-            {
-                if (AD7124_ReadRegister(pADC, AD7124_GAIN0_REG + i, 3U, &pConfig->gains[i]) != AD7124_OK)
-                {
-                    status = AD7124_ERROR;
-                    break;
-                }
-            }
-        }
+	while(!powered_on && timeout--) {
+		ret = ad7124_read_register(dev,
+					   &regs[AD7124_Status]);
+		if(ret < 0)
+			return ret;
 
-        if (status == AD7124_OK)
-        {
-            // Read offset coefficients after calibration
-            for (uint8_t i = 0U; i < 8U; i++)
-            {
-                if (AD7124_ReadRegister(pADC, AD7124_OFFS0_REG + i, 3U, &pConfig->offsets[i]) != AD7124_OK)
-                {
-                    status = AD7124_ERROR;
-                    break;
-                }
-            }
-        }
+		/* Check the POR_FLAG bit in the Status Register */
+		powered_on = (regs[AD7124_Status].value &
+			      AD7124_STATUS_REG_POR_FLAG) == 0;
+	}
 
-        if (status == AD7124_OK)
-        {
-            // Write calibrated gain coefficients
-            for (uint8_t i = 0U; i < 8U; i++)
-            {
-                if (AD7124_WriteRegister(pADC, AD7124_GAIN0_REG + i, 3U, pConfig->gains[i]) != AD7124_OK)
-                {
-                    status = AD7124_ERROR;
-                    break;
-                }
-            }
-        }
-
-        if (status == AD7124_OK)
-        {
-            // Write calibrated offset coefficients
-            for (uint8_t i = 0U; i < 8U; i++)
-            {
-                if (AD7124_WriteRegister(pADC, AD7124_OFFS0_REG + i, 3U, pConfig->offsets[i]) != AD7124_OK)
-                {
-                    status = AD7124_ERROR;
-                    break;
-                }
-            }
-        }
-
-        if (status == AD7124_OK)
-        {
-            // Restore original ADC control configuration
-            if (AD7124_WriteRegister(pADC, AD7124_CONTROL_REG, 2U, default_config) != AD7124_OK)
-            {
-                status = AD7124_ERROR;
-            }
-        }
-    } 
-
-    return status; 
+	return (timeout || powered_on) ? 0 : TIMEOUT;
 }
 
+/***************************************************************************//**
+ * @brief Waits until a new conversion result is available.
+ *
+ * @param dev     - The handler of the instance of the driver.
+ * @param timeout - Count representing the number of polls to be done until the
+ *                  function returns if no new data is available.
+ *
+ * @return Returns 0 for success or negative error code.
+*******************************************************************************/
+int32_t ad7124_wait_for_conv_ready(struct ad7124_dev *dev,
+				   uint32_t timeout)
+{
+	struct ad7124_st_reg *regs;
+	int32_t ret;
+	int8_t ready = 0;
 
-/* ad7124.c */
+	if(!dev)
+		return INVALID_VAL;
+
+	regs = dev->regs;
+
+	while(!ready && --timeout) {
+		/* Read the value of the Status Register */
+		ret = ad7124_read_register(dev, &regs[AD7124_Status]);
+		if(ret < 0)
+			return ret;
+
+		/* Check the RDY bit in the Status Register */
+		ready = (regs[AD7124_Status].value &
+			 AD7124_STATUS_REG_RDY) == 0;
+	}
+
+	return timeout ? 0 : TIMEOUT;
+}
+
+/***************************************************************************//**
+ * @brief Reads the conversion result from the device.
+ *
+ * @param dev     - The handler of the instance of the driver.
+ * @param p_data  - Pointer to store the read data.
+ *
+ * @return Returns 0 for success or negative error code.
+*******************************************************************************/
+int32_t ad7124_read_data(struct ad7124_dev *dev,
+			 int32_t* p_data)
+{
+	struct ad7124_st_reg *regs;
+	int32_t ret;
+
+	if(!dev)
+		return INVALID_VAL;
+
+	regs = dev->regs;
+
+	/* Read the value of the Status Register */
+	ret = ad7124_read_register(dev, &regs[AD7124_Data]);
+
+	/* Get the read result */
+	*p_data = regs[AD7124_Data].value;
+
+	return ret;
+}
+
+/***************************************************************************//**
+ * @brief Computes the CRC checksum for a data buffer.
+ *
+ * @param p_buf    - Data buffer
+ * @param buf_size - Data buffer size in bytes
+ *
+ * @return Returns the computed CRC checksum.
+*******************************************************************************/
+uint8_t ad7124_compute_crc8(uint8_t * p_buf, uint8_t buf_size)
+{
+	uint8_t i = 0;
+	uint8_t crc = 0;
+
+	while(buf_size) {
+		for(i = 0x80; i != 0; i >>= 1) {
+			bool cmp1 = (crc & 0x80) != 0;
+			bool cmp2 = (*p_buf & i) != 0;
+			if(cmp1 != cmp2) { /* MSB of CRC register XOR input Bit from Data */
+				crc <<= 1;
+				crc ^= AD7124_CRC8_POLYNOMIAL_REPRESENTATION;
+			} else {
+				crc <<= 1;
+			}
+		}
+		p_buf++;
+		buf_size--;
+	}
+	return crc;
+}
+
+/***************************************************************************//**
+ * @brief Updates the CRC settings.
+ *
+ * @param dev - The handler of the instance of the driver.
+ *
+ * @return None.
+*******************************************************************************/
+void ad7124_update_crcsetting(struct ad7124_dev *dev)
+{
+	struct ad7124_st_reg *regs;
+
+	if(!dev)
+		return;
+
+	regs = dev->regs;
+
+	/* Get CRC State. */
+	if (regs[AD7124_Error_En].value & AD7124_ERREN_REG_SPI_CRC_ERR_EN) {
+		dev->use_crc = AD7124_USE_CRC;
+	} else {
+		dev->use_crc = AD7124_DISABLE_CRC;
+	}
+}
+
+/***************************************************************************//**
+ * @brief Updates the device SPI interface settings.
+ *
+ * @param dev - The handler of the instance of the driver.
+ *
+ * @return None.
+*******************************************************************************/
+void ad7124_update_dev_spi_settings(struct ad7124_dev *dev)
+{
+	struct ad7124_st_reg *regs;
+
+	if(!dev)
+		return;
+
+	regs = dev->regs;
+
+	if (regs[AD7124_Error_En].value & AD7124_ERREN_REG_SPI_IGNORE_ERR_EN) {
+		dev->check_ready = 1;
+	} else {
+		dev->check_ready = 0;
+	}
+}
+
+/***************************************************************************//**
+ * @brief Initializes the AD7124.
+ *
+ * @param device     - The device structure.
+ * @param init_param - The structure that contains the device initial
+ * 		       parameters.
+ *
+ * @return Returns 0 for success or negative error code.
+*******************************************************************************/
+int32_t ad7124_setup(struct ad7124_dev **device,
+		     struct ad7124_init_param init_param)
+{
+	int32_t ret;
+	enum ad7124_registers reg_nr;
+	struct ad7124_dev *dev;
+
+	dev = (struct ad7124_dev *)malloc(sizeof(*dev));
+	if (!dev)
+		return INVALID_VAL;
+
+	dev->regs = init_param.regs;
+	dev->spi_rdy_poll_cnt = init_param.spi_rdy_poll_cnt;
+
+	/* Initialize the SPI communication. */
+	ret = spi_init(&dev->spi_desc, &init_param.spi_init);
+	if (ret < 0)
+		return ret;
+
+	/*  Reset the device interface.*/
+	ret = ad7124_reset(dev);
+	if (ret < 0)
+		return ret;
+
+	/* Update the device structure with power-on/reset settings */
+	dev->check_ready = 1;
+
+	/* Initialize registers AD7124_ADC_Control through AD7124_Filter_7. */
+	for(reg_nr = AD7124_Status; (reg_nr < AD7124_Offset_0) && !(ret < 0);
+	    reg_nr++) {
+		if (dev->regs[reg_nr].rw == AD7124_RW) {
+			ret = ad7124_write_register(dev, dev->regs[reg_nr]);
+			if (ret < 0)
+				break;
+		}
+
+		/* Get CRC State and device SPI interface settings */
+		if (reg_nr == AD7124_Error_En) {
+			ad7124_update_crcsetting(dev);
+			ad7124_update_dev_spi_settings(dev);
+		}
+	}
+
+	*device = dev;
+
+	return ret;
+}
+
+/***************************************************************************//**
+ * @brief Free the resources allocated by AD7124_Setup().
+ *
+ * @param dev - The device structure.
+ *
+ * @return SUCCESS in case of success, negative error code otherwise.
+*******************************************************************************/
+int32_t ad7124_remove(struct ad7124_dev *dev)
+{
+	int32_t ret;
+
+	ret = spi_remove(dev->spi_desc);
+
+	free(dev);
+
+	return ret;
+}

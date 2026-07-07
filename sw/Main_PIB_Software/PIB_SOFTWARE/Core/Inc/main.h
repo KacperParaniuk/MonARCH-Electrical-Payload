@@ -32,6 +32,9 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+extern SPI_HandleTypeDef hspi1;
+extern UART_HandleTypeDef huart2;
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
