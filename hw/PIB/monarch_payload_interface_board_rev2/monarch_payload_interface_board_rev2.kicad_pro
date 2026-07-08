@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 0.7112,
-          "width": 0.254
+          "drill": 0.2032,
+          "height": 0.499999,
+          "width": 0.499999
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -63,7 +63,7 @@
           "min_clearance": 0.4,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
-          "pad_connection": 1,
+          "pad_connection": 2,
           "remove_islands": 0,
           "thermal_relief_gap": 0.5,
           "thermal_relief_spoke_width": 0.5
@@ -76,12 +76,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        [
-          "clearance|94901900|100345801|7b57ac22-e0fb-4e79-ad9c-3414171e63a9|98dd50e1-a574-4c9d-a1e1-7807db62d9f6",
-          ""
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -151,21 +146,21 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
-        "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.5,
+        "min_clearance": 0.127,
+        "min_connection": 0.127,
+        "min_copper_edge_clearance": 0.381,
         "min_groove_width": 0.0,
-        "min_hole_clearance": 0.25,
-        "min_hole_to_hole": 0.25,
-        "min_microvia_diameter": 0.2,
-        "min_microvia_drill": 0.1,
+        "min_hole_clearance": 0.127,
+        "min_hole_to_hole": 0.127,
+        "min_microvia_diameter": 0.4572,
+        "min_microvia_drill": 0.254,
         "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
-        "min_text_height": 0.8,
-        "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.0,
-        "min_via_annular_width": 0.1,
+        "min_text_height": 0.0,
+        "min_text_thickness": 0.127,
+        "min_through_hole_diameter": 0.254,
+        "min_track_width": 0.127,
+        "min_via_annular_width": 0.1016,
         "min_via_diameter": 0.5,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
@@ -516,7 +511,7 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.127,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -686,7 +681,7 @@
         "uuid": "bf7ee58d-ac53-49d1-a6b2-96a87d67b737"
       }
     ],
-    "used_designators": "#PWR3,#PWR96,#PWR108,#PWR189,#PWR191-194,#PWR196,#PWR199-200,#PWR219-220,#PWR224,#PWR226,#PWR230-261,D2-7,R29,R50,R56-60,R64-67,J2-5,J7-8,J14-25,J103,C60,C62,C65-93,TP1-5",
+    "used_designators": "#PWR3,#PWR96,#PWR108,#PWR189,#PWR191-194,#PWR196,#PWR199-200,#PWR219-221,#PWR224,#PWR226,#PWR230-261,D2-7,R29,R50,R56-60,R64-67,J2-5,J7-8,J14-25,J103,C60,C62,C65-93,TP1-5",
     "variants": []
   },
   "sheets": [

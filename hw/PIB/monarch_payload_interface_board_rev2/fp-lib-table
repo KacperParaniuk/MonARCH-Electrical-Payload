@@ -17,4 +17,5 @@
 	(lib (name "WSK") (type "KiCad") (uri "${KIPRJMOD}/ul_WSK06121L000FEA/KiCADv6/footprints.pretty") (options "") (descr ""))
 	(lib (name "20021121") (type "KiCad") (uri "${KIPRJMOD}/20021121-00008C4LF") (options "") (descr ""))
 	(lib (name "Connector_Molex_Micro-Lock-Plus") (type "KiCad") (uri "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/Connector_Molex_Micro-Lock-Plus.pretty") (options "") (descr ""))
+	(lib (name "Connector_PPU") (type "KiCad") (uri "${KIPRJMOD}/Connector_PPU/footprints.pretty") (options "") (descr ""))
 )

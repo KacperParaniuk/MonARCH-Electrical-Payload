@@ -6421,7 +6421,7 @@
 		(uuid "178bf331-edaa-49ea-9bb0-7cafa12afd75")
 	)
 	(hierarchical_label "GREEN_LED"
-		(shape output)
+		(shape input)
 		(at 199.39 93.98 180)
 		(effects
 			(font
@@ -6443,7 +6443,7 @@
 		(uuid "31da32fa-2250-4e9a-b1ce-71426569ce97")
 	)
 	(hierarchical_label "BLUE_LED"
-		(shape output)
+		(shape input)
 		(at 71.12 111.76 180)
 		(effects
 			(font
@@ -6531,7 +6531,7 @@
 		(uuid "594fbe63-0b57-4572-8e31-49a668f0aa46")
 	)
 	(hierarchical_label "RED_LED"
-		(shape output)
+		(shape input)
 		(at 199.39 69.85 180)
 		(effects
 			(font
@@ -6586,7 +6586,7 @@
 		(uuid "6844486f-8985-4d0c-8f59-35d4c7d29c2a")
 	)
 	(hierarchical_label "BLUE_LED"
-		(shape output)
+		(shape input)
 		(at 199.39 81.28 180)
 		(effects
 			(font
@@ -6619,7 +6619,7 @@
 		(uuid "79c5e7c8-8314-4c67-992a-78cde05f8039")
 	)
 	(hierarchical_label "RED_LED"
-		(shape output)
+		(shape input)
 		(at 71.12 116.84 180)
 		(effects
 			(font
@@ -6762,7 +6762,7 @@
 		(uuid "c624d79f-3d13-4466-b1e2-4a0dbfb7fa75")
 	)
 	(hierarchical_label "GREEN_LED"
-		(shape output)
+		(shape input)
 		(at 71.12 114.3 180)
 		(effects
 			(font

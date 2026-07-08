@@ -4335,6 +4335,16 @@
 		)
 		(uuid "5172bacc-48d1-481b-ba86-97b4bc7eb399")
 	)
+	(text "exposed pad needs to be connected to GND according to datasheet\n"
+		(exclude_from_sim no)
+		(at 197.866 106.172 0)
+		(effects
+			(font
+				(size 0.635 0.635)
+			)
+		)
+		(uuid "a84a4518-1a8a-4c70-9f41-1d1783b97a40")
+	)
 	(junction
 		(at 204.47 86.36)
 		(diameter 0)
@@ -4536,10 +4546,6 @@
 		(uuid "071a6dab-c501-449b-9517-8ac8e31e1f3c")
 	)
 	(no_connect
-		(at 43.18 50.8)
-		(uuid "08561764-ed9f-4b1c-a9d8-73d13d4e86fc")
-	)
-	(no_connect
 		(at 204.47 133.35)
 		(uuid "0d3404ec-d1e8-4bfd-a10f-fe563be5005e")
 	)
@@ -4568,6 +4574,10 @@
 		(uuid "1c1d46e9-1248-49bd-96c2-78014666cc00")
 	)
 	(no_connect
+		(at 82.55 53.34)
+		(uuid "20947738-10e9-4f15-9c73-b72a25e555a7")
+	)
+	(no_connect
 		(at 43.18 58.42)
 		(uuid "21d2fad3-7c75-4dea-ae17-e3ea6478be0b")
 	)
@@ -4594,6 +4604,10 @@
 	(no_connect
 		(at 82.55 63.5)
 		(uuid "302c9926-4ba0-487f-8325-a65f2f091728")
+	)
+	(no_connect
+		(at 43.18 53.34)
+		(uuid "3367709a-3f97-45c2-8475-8af0c0507572")
 	)
 	(no_connect
 		(at 144.78 86.36)
@@ -4656,10 +4670,6 @@
 		(uuid "657390b6-1d80-4ec2-8481-380f4e2fec11")
 	)
 	(no_connect
-		(at 82.55 53.34)
-		(uuid "664948f1-0a31-462e-ab5b-b3752a637817")
-	)
-	(no_connect
 		(at 82.55 55.88)
 		(uuid "6764a4dd-cb09-457e-938e-b4d0a6b9e52d")
 	)
@@ -4678,6 +4688,10 @@
 	(no_connect
 		(at 82.55 43.18)
 		(uuid "6d8ba862-033a-4d6f-a72f-2d237ce66d2d")
+	)
+	(no_connect
+		(at 43.18 50.8)
+		(uuid "6f11a6bb-c9a6-423b-b6f3-c0caf7280d01")
 	)
 	(no_connect
 		(at 43.18 27.94)
@@ -4752,6 +4766,10 @@
 		(uuid "9cf320a0-e9e0-4742-a77c-7dc1b8126ace")
 	)
 	(no_connect
+		(at 82.55 50.8)
+		(uuid "a3b5a8af-a526-4f07-8761-7a113282480b")
+	)
+	(no_connect
 		(at 43.18 81.28)
 		(uuid "a95172b7-57a1-42dd-aa9f-9d26d6ad874a")
 	)
@@ -4772,16 +4790,8 @@
 		(uuid "b0f6606b-80bc-4f1f-b866-4649a4cdefa7")
 	)
 	(no_connect
-		(at 82.55 50.8)
-		(uuid "b62709cc-91a3-4619-9063-541e33df28a8")
-	)
-	(no_connect
 		(at 82.55 68.58)
 		(uuid "b6cd26ca-056c-4377-b74e-810e603e81e6")
-	)
-	(no_connect
-		(at 43.18 53.34)
-		(uuid "bad2db60-4b1c-4ca3-85e2-93395074b4fc")
 	)
 	(no_connect
 		(at 144.78 27.94)
@@ -6198,16 +6208,6 @@
 			(type default)
 		)
 		(uuid "f85aad56-1cea-4dfc-b88c-7a7998898e65")
-	)
-	(label "exposed pad needs to be connected to GND according to datasheet"
-		(at 190.5 106.68 0)
-		(effects
-			(font
-				(size 0.635 0.635)
-			)
-			(justify left bottom)
-		)
-		(uuid "2384c2de-887a-4067-904b-fa8b7be03d4d")
 	)
 	(label "added pull up to prevent undefined state -> I saw schematics that leave this floating"
 		(at 205.74 132.08 0)
@@ -9996,7 +9996,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "7fb516b8-f800-49c7-907c-72530596cc4f")
 		(property "Reference" "#PWR0131"
 			(at 96.52 50.8 0)
@@ -10010,7 +10009,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 99.06 50.7999 90)
+			(at 99.822 50.8 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
