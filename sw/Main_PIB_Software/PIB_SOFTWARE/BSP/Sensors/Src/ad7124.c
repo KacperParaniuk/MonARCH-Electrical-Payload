@@ -111,7 +111,7 @@ int32_t ad7124_no_check_read_register(struct ad7124_dev *dev,
 	HAL_GPIO_WritePin(dev->cs_port, dev->cs_pin, GPIO_PIN_RESET);
 	if (HAL_SPI_TransmitReceive(dev->hspi, buffer, buffer, transfer_size, 100) != HAL_OK)
 		    return -EIO;
-	HAL_GPIO_WritePin(dev->cs_port, dev->cs_pin, GPIO_PIN_SET);
+	HAL_GPIO_Writ ePin(dev->cs_port, dev->cs_pin, GPIO_PIN_SET);
 
 
 	/* Check the CRC */
