@@ -566,6 +566,16 @@
 		)
 		(uuid "10b96b9e-c9d1-4a92-86f2-ed07f7f4fe74")
 	)
+	(text "Solenoid LED Connector\n"
+		(exclude_from_sim no)
+		(at 29.972 15.748 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f165c2ff-6893-42d6-b725-7d2d928352d4")
+	)
 	(wire
 		(pts
 			(xy 29.21 30.48) (xy 27.94 30.48)
@@ -655,16 +665,6 @@
 			(type default)
 		)
 		(uuid "ee6a6edc-c969-426d-a4f2-0a244819a168")
-	)
-	(label "LED"
-		(at 19.05 16.51 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "573baaa9-3b14-4beb-acda-7d65834ab0db")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
