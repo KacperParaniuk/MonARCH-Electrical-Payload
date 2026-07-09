@@ -17,6 +17,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "stm32l4xx_hal.h"
+#include <stdio.h>
 
 /* Register addresses */
 #define MAX31856_CR0 0x00
@@ -147,6 +148,43 @@ typedef struct {
     volatile max31856_mask_t mask;
     volatile max31856_sr_t sr;
 } max31856_t;
+
+
+typedef enum {
+    MAX31856_FAULT_OPEN    = 0x01,
+    MAX31856_FAULT_OVUV    = 0x02,
+    MAX31856_FAULT_TCLOW   = 0x04,
+    MAX31856_FAULT_TCHIGH  = 0x08,
+    MAX31856_FAULT_CJLOW   = 0x10,
+    MAX31856_FAULT_CJHIGH  = 0x20,
+    MAX31856_FAULT_TCRANGE = 0x40,
+    MAX31856_FAULT_CJRANGE = 0x80,
+} max31856_fault_t;
+
+
+//"""A dictionary with the status of each fault type where the key is the fault type and the
+// value is a bool if the fault is currently active
+//
+// ===================   =================================
+// Key                   Fault type
+// ===================   =================================
+// "cj_range"            Cold junction range fault
+// "tc_range"            Thermocouple range fault
+// "cj_high"             Cold junction high threshold fault
+// "cj_low"              Cold junction low threshold fault
+// "tc_high"             Thermocouple high threshold fault
+// "tc_low"              Thermocouple low threshold fault
+// "voltage"             Over/under voltage fault
+// "open_tc"             Thermocouple open circuit fault
+// ===================   =================================
+//
+// """"
+
+
+// can create error detection code for this.
+
+
+
 
 void max31856_init(max31856_t *max31856);
 

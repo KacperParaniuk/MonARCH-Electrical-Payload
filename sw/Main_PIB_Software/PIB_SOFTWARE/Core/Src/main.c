@@ -32,14 +32,26 @@
 #include "uart_protocol.h"
 
 
-// ---------------- DEFINES --------------------- \\
+// ---------------- DEFINES ---------------------
 
 
 
 //#define AD7124
-//#define FDC2213
+//#define FDC2214
 //#define MAX31856
+//#define MAX31856_T1
+//#define MAX31856_T2
+//#define MAX31856_T3
+//#define MAX31856_T4
+//#define MAX31856_T5
+//#define B2B
+//#define VALVE_TEST
+//#define I2C_SCANNER
 
+
+
+
+// ----------------- HARDWARE TESTS -----------------------
 
 #ifdef AD7124
 
@@ -51,8 +63,6 @@
 
 #endif
 
-// OLD #include "ad7124_regs.h"
-// OLD #include "ad7124_sensor.h"
 
 #ifdef MAX31856
 
@@ -69,7 +79,6 @@
 
 
 // Serial Interface For Debugging || Serial wire JTAG debug port (SWJ-DP)
-
 #include <stdio.h>
 
 
@@ -106,11 +115,6 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-// OLD struct ad7124_dev *ad7124;  // device handle (Defined Globally)
-// OLD struct ad7124_dev *ad7124_pc104;  // device handle (Defined Globally)
-
-
-
 // struct max31856_t *max31856;
 
 
@@ -142,25 +146,17 @@ int main(void)
 
   // Device ID's
 
-
 //   uint32_t device_id;
 
+#ifdef B2B
+   // UART Inits
+   uint8_t RX_CMD= 0; // single byte for all UART commands.
+   uint8_t TX_Buffer[] = "Hello, World!\r\n";
+   // "\r" move cursor to start of line
+   // "\n" new line
 
-//   // UART Inits
-//   uint8_t RX_CMD= 0; // single byte for all UART commands.
-//   uint8_t TX_Buffer[] = "Hello, World!\r\n";
-//   // "\r" move cursor to start of line
-//   // "\n" new line
+#endif
 
-
-
-//  GPIO_PinConfig_t LED_BLINK = {
-//	  .port = LED_PIN_GPIO_Port,
-//	  .pin = LED_PIN_Pin,
-//	  .mode = GPIO_MODE_OUTPUT_PP,
-//	  .pull = GPIO_NOPULL,
-//	  .speed = GPIO_SPEED_FREQ_LOW
-//  };
 
 
 
@@ -189,26 +185,31 @@ int main(void)
 
   HAL_GPIO_WritePin(LED_PIN_GPIO_Port, LED_PIN_Pin, GPIO_PIN_SET);
 
-  //    DEACTIVATE ALL SPI2 ICs
 
 
-//  HAL_GPIO_WritePin(T1_EN_GPIO_Port, T1_EN_Pin, GPIO_PIN_SET);
-//  HAL_GPIO_WritePin(T2_EN_GPIO_Port, T2_EN_Pin, GPIO_PIN_SET);
-//  HAL_GPIO_WritePin(T3_EN_GPIO_Port, T3_EN_Pin, GPIO_PIN_SET);
-//  HAL_GPIO_WritePin(T4_EN_GPIO_Port, T4_EN_Pin, GPIO_PIN_SET);
-//  HAL_GPIO_WritePin(T5_EN_GPIO_Port, T5_EN_Pin, GPIO_PIN_SET);
-//
-//  HAL_GPIO_WritePin(PT_EN_GPIO_Port, PT_EN_Pin, GPIO_PIN_SET);
+// DEACTIVATE ALL SPI2 ICs
+
+// (NOT CS) So if a pin is pulled low the chip will be selected.
 
 
+  // SPI 2
+  HAL_GPIO_WritePin(T1_EN_GPIO_Port, T1_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(T2_EN_GPIO_Port, T2_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(T3_EN_GPIO_Port, T3_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(T4_EN_GPIO_Port, T4_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(T5_EN_GPIO_Port, T5_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(PT_EN_GPIO_Port, PT_EN_Pin, GPIO_PIN_SET);
+
+  // SPI 1
+
+  HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
 
 
-//  HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_SET);
+// External driver structures and buffers
 
 
-//
+// ADC7124 || PT Readings Init
 
-//  // External driver structures and buffers
 
 #ifdef AD7124
 
@@ -225,7 +226,6 @@ int main(void)
 //////  // Variables for error status, voltage, and temperature calculation
   int32_t ad7124_error = 0U;
 //  double voltage;
-//  float temperature;
   float voltage1;
   float voltage2;
   uint32_t val;
@@ -249,261 +249,159 @@ int main(void)
 #endif
 
 
-  // ADC7124 || PT Readings Init
-//
-//   int32_t value;		/* Stores raw value read from the ADC */
-////   float temp; /* stores value for any TC */
-////   float capacitance;  /* stores value from FDC2214 capacitance reading */
-////   uint8_t level; /* stores the level of a given accumulator from the FDC2214 */
-//   int32_t ret = 0;	/* Return value */
-//
-//   float c1;
+#ifdef MAX31856
 
-//
+float temperature;
 
-   // OLD
-
-//   struct ad7124_init_param ad7124_init_param = {
-// 	  .hspi = &hspi2,
-//       .cs_port = PT_EN_GPIO_Port,            // ← pt en pointer
-//       .cs_pin = PT_EN_Pin,       //
-//       .regs = ad7124_regs,         // these are register values of the ad7124
-//       .spi_rdy_poll_cnt = 25000,
-//
-// 	  .mode = AD7124_SINGLE, // continuous equals IC constantly converting || single equal we tell it when to convert / read otherwise the chip is powered down.
-// 	  .active_device = ID_AD7124_8,
-// 	  .ref_en = false, // 2.5 internal reference (not using) b/c reading might go over this.
-// 	  .power_mode = AD7124_LOW_POWER, // << What are the differences?
-//
-// 	  .setups[0] = {
-// 		  .bi_unipolar = false,  // unipolar (don't have differential pairs)
-// 		  .burnout = AD7124_BURNOUT_OFF,
-// 		  .ref_source = AVDD_AVSS, // reference source is important and what we are doing calculations in REFERENCE to... 3.3v
-// 		  .ain_buff = true, // buffers analog input to present high impedance (strengthens signal integrity)
-// 		  .ref_buff = false, // sets reference source for high impedance
-// 		  .pga = AD7124_PGA_1, // amplification of input signal.
-// 	  },
-//
-// 	  // channel map
-//
-// 	  .chan_map[0] = { .ain = {.ainp = AD7124_AIN0, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-// 	  .chan_map[1] = { .ain = {.ainp = AD7124_AIN1, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-// 	  .chan_map[2] = { .ain = {.ainp = AD7124_AIN2, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-// 	  .chan_map[3] = { .ain = {.ainp = AD7124_AIN3, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable =  true },
-// 	  .chan_map[4] = { .ain = {.ainp = AD7124_AIN4, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-// 	  .chan_map[5] = { .ain = {.ainp = AD7124_AIN5, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-// 	  .chan_map[6] = { .ain = {.ainp = AD7124_AIN6, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-// 	  .chan_map[7] = { .ain = {.ainp = AD7124_AIN7, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-// 	  .chan_map[8] = { .ain = {.ainp = AD7124_AIN8, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-// 	  .chan_map[9] = { .ain = {.ainp = AD7124_AIN9, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-// 	  .chan_map[10] = { .ain = {.ainp = AD7124_AIN10, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-// 	  .chan_map[11] = { .ain = {.ainp = AD7124_AIN11, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-// 	  .chan_map[12] = { .ain = {.ainp = AD7124_AIN12, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-// 	  .chan_map[13] = { .ain = {.ainp = AD7124_AIN13, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-//
-//   };
-//
-//   ret = ad7124_setup(&ad7124, &ad7124_init_param);
-//   if (ret != 0){
-//	   printf("Error: ADC Setup");
-//   }
-//
+#endif
 
 
+// MAX31856 Setup || Temperature Reading K-Type Thermocouples Readings INIT
+
+// T1
+
+#ifdef MAX31856_T1
+   	max31856_gpio_t max31856T1PIN = {
+   	    .gpio_port = T1_EN_GPIO_Port,
+   	    .gpio_pin  = T1_EN_Pin
+   	};
+
+   	max31856_t max31856T1 = {
+   			.spi_handle = &hspi2,
+ 			.cs_pin = max31856T1PIN
+
+   	};
 
 
-//     // ADC7124 || Voltage Readings Init PC104 Stack
+   	max31856_init(&max31856T1);
 
-   // OLD
+   	max31856_set_noise_filter(&max31856T1, CR0_FILTER_OUT_60Hz); // Noise filter is for filtering out EMI in very long wires
+   	max31856_set_cold_junction_enable(&max31856T1, CR0_CJ_ENABLED); // External Sensor which measures the cold junction and references
+   	max31856_set_thermocouple_type(&max31856T1, CR1_TC_TYPE_K); // K - type thermocouple
+   	max31856_set_average_samples(&max31856T1, CR1_AVG_TC_SAMPLES_2);
+   	max31856_set_open_circuit_fault_detection(&max31856T1, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
+   	max31856_set_conversion_mode(&max31856T1, CR0_CJ_DISABLED); // need to disable for single we don't have access to the DRDY pins thus we have to estimate polling time.
 
-//    struct ad7124_init_param ad7124_init_param_pc104 = {
-//   	 .hspi = &hspi1, // PC104 Stack AD7124 is on this SPI line.
-//        .cs_port = ADC_EN_GPIO_Port,            // ← pt en pointer
-//        .cs_pin = ADC_EN_Pin,       //
-//        .regs = ad7124_regs,         // these are register values of the ad7124
-//        .spi_rdy_poll_cnt = 25000,
-//
-//   	 .mode = AD7124_SINGLE, // continuous equals IC constantly converting || single equal we tell it when to convert / read otherwise the chip is powered down.
-//   	 .active_device = ID_AD7124_8,
-//   	 .ref_en = false, // 2.5 internal reference (not using) b/c reading might go over this.
-//   	 .power_mode = AD7124_LOW_POWER, // << What are the differences?
-//
-//   	 .setups[0] = {
-//   		  .bi_unipolar = false,  // unipolar (don't have differential pairs) NEED TO LOOK INTO THIS FOR THIS VOLTAGE READING
-//   		  .burnout = AD7124_BURNOUT_OFF,
-//   		  .ref_source = AVDD_AVSS, // reference source is important and what we are doing calculations in REFERENCE to... 3.3v
-//   		  .ain_buff = true, // buffers analog input to present high impedance (strengthens signal integrity)
-//   		  .ref_buff = false, // sets reference source for high impedance
-//   		  .pga = AD7124_PGA_1, // amplification of input signal.
-//   	 },
-//
-//
-//   	  // channel map SET UP THESE CHANEELS.
-//
-//   	 .chan_map[0] = { .ain = {.ainp = AD7124_AIN0, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-//   	 .chan_map[1] = { .ain = {.ainp = AD7124_AIN1, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-//   	 .chan_map[2] = { .ain = {.ainp = AD7124_AIN2, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-//   	 .chan_map[3] = { .ain = {.ainp = AD7124_AIN3, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable =  true },
-//   	 .chan_map[4] = { .ain = {.ainp = AD7124_AIN4, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-//   	 .chan_map[5] = { .ain = {.ainp = AD7124_AIN5, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-//   	 .chan_map[6] = { .ain = {.ainp = AD7124_AIN6, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-//   	 .chan_map[7] = { .ain = {.ainp = AD7124_AIN7, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = true },
-//   	 .chan_map[8] = { .ain = {.ainp = AD7124_AIN8, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-//   	 .chan_map[9] = { .ain = {.ainp = AD7124_AIN9, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-//   	 .chan_map[10] = { .ain = {.ainp = AD7124_AIN10, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-//   	 .chan_map[11] = { .ain = {.ainp = AD7124_AIN11, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-//   	 .chan_map[12] = { .ain = {.ainp = AD7124_AIN12, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-//   	 .chan_map[13] = { .ain = {.ainp = AD7124_AIN13, .ainm = AD7124_AVDD_AVSS_M}, .setup_sel = 0, .channel_enable = false },
-//
-//     };
-//
-//     ret = ad7124_setup(&ad7124_pc104, &ad7124_init_param_pc104);
-//     	if (ret != 0)
-//     		printf("ERROR AD7124: %b ", ret);
-//     		return ret;
-//
-
-
-//   	// MAX31856 Setup || Temp K-Type Thermocouples Readings INIT
-
-
-//   	// T1
-//
-//   	max31856_gpio_t max31856T1PIN = {
-//   	    .gpio_port = T1_EN_GPIO_Port,
-//   	    .gpio_pin  = T1_EN_Pin
-//   	};
-//
-//   	max31856_t max31856T1 = {
-//   			.spi_handle = &hspi2,
-// 			.cs_pin = max31856T1PIN
-//
-//   	};
-//
-//
-//
-//   	max31856_init(&max31856T1);
-//
-//   	max31856_set_noise_filter(&max31856T1, CR0_FILTER_OUT_60Hz); // Noise filter is for filtering out EMI in very long wires
-//   	max31856_set_cold_junction_enable(&max31856T1, CR0_CJ_ENABLED); // External Sensor which measures the cold junction and references
-//   	max31856_set_thermocouple_type(&max31856T1, CR1_TC_TYPE_K); // K - type thermocouple
-//   	max31856_set_average_samples(&max31856T1, CR1_AVG_TC_SAMPLES_2);
-//   	max31856_set_open_circuit_fault_detection(&max31856T1, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
-//   	max31856_set_conversion_mode(&max31856T1, CR0_CJ_DISABLED); // need to disable for single we don't have access to the DRDY pins thus we have to estimate polling time.
-//
-
+#endif
 
 //   	// T2
 
-//   	max31856_gpio_t max31856T2PIN = {
-//   			.gpio_port = T2_EN_GPIO_Port,
-// 			.gpio_pin  = T2_EN_Pin
-//   	  	};
-//
-//   	max31856_t max31856T2 = {
-//   			.spi_handle = &hspi2,
-//   			.cs_pin = max31856T2PIN
-//   	};
-//
-// 	max31856_init(&max31856T2);
-//
-//   	max31856_set_noise_filter(&max31856T2, CR0_FILTER_OUT_60Hz);
-//   	max31856_set_cold_junction_enable(&max31856T2, CR0_CJ_ENABLED); // External Sensor which measures the cold junction and references
-//   	max31856_set_thermocouple_type(&max31856T2, CR1_TC_TYPE_K); // K - type thermocouple
-//   	max31856_set_average_samples(&max31856T2, CR1_AVG_TC_SAMPLES_2);
-//   	max31856_set_open_circuit_fault_detection(&max31856T2, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
-//   	max31856_set_conversion_mode(&max31856T2, CR0_CONV_CONTINUOUS); // continous mode for testing
+#ifdef MAX31856_T2
+
+   	max31856_gpio_t max31856T2PIN = {
+   			.gpio_port = T2_EN_GPIO_Port,
+ 			.gpio_pin  = T2_EN_Pin
+   	  	};
+
+   	max31856_t max31856T2 = {
+   			.spi_handle = &hspi2,
+   			.cs_pin = max31856T2PIN
+   	};
+
+ 	max31856_init(&max31856T2);
+
+   	max31856_set_noise_filter(&max31856T2, CR0_FILTER_OUT_60Hz);
+   	max31856_set_cold_junction_enable(&max31856T2, CR0_CJ_ENABLED); // External Sensor which measures the cold junction and references
+   	max31856_set_thermocouple_type(&max31856T2, CR1_TC_TYPE_K); // K - type thermocouple
+   	max31856_set_average_samples(&max31856T2, CR1_AVG_TC_SAMPLES_2);
+   	max31856_set_open_circuit_fault_detection(&max31856T2, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
+   	max31856_set_conversion_mode(&max31856T2, CR0_CONV_CONTINUOUS); // continous mode for testing
 
 
-//   	// T3
+   	// T3
 
-//   	max31856_gpio_t max31856T3PIN = {
-//   		.gpio_port = T3_EN_GPIO_Port,
-// 		.gpio_pin  = T3_EN_Pin
-//   	};
+#endif
 
-//   	max31856_t max31856T3 = {
-//   			.spi_handle = &hspi2,
-//   			.cs_pin = max31856T3PIN
-//   	};
+#ifdef MAX31856_T3
 
-// 	max31856_init(&max31856T3);
+   	max31856_gpio_t max31856T3PIN = {
+   		.gpio_port = T3_EN_GPIO_Port,
+ 		.gpio_pin  = T3_EN_Pin
+   	};
 
-//   	max31856_set_noise_filter(&max31856T3, CR0_FILTER_OUT_60Hz);
-//   	max31856_set_cold_junction_enable(&max31856T3, CR0_CJ_ENABLED);
-//   	max31856_set_thermocouple_type(&max31856T3, CR1_TC_TYPE_K);
-//   	max31856_set_average_samples(&max31856T3, CR1_AVG_TC_SAMPLES_2);
-//   	max31856_set_open_circuit_fault_detection(&max31856T3, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
-//   	max31856_set_conversion_mode(&max31856T3, CR0_CONV_CONTINUOUS);
+   	max31856_t max31856T3 = {
+   			.spi_handle = &hspi2,
+   			.cs_pin = max31856T3PIN
+   	};
+
+ 	max31856_init(&max31856T3);
+
+   	max31856_set_noise_filter(&max31856T3, CR0_FILTER_OUT_60Hz);
+   	max31856_set_cold_junction_enable(&max31856T3, CR0_CJ_ENABLED);
+   	max31856_set_thermocouple_type(&max31856T3, CR1_TC_TYPE_K);
+   	max31856_set_average_samples(&max31856T3, CR1_AVG_TC_SAMPLES_2);
+   	max31856_set_open_circuit_fault_detection(&max31856T3, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
+   	max31856_set_conversion_mode(&max31856T3, CR0_CONV_CONTINUOUS);
+
+#endif
+
+#ifdef MAX31856_T4
 
 
+   	// T4
+
+   	max31856_gpio_t max31856T4PIN = {
+   		.gpio_port = T4_EN_GPIO_Port,
+ 		.gpio_pin  = T4_EN_Pin
+   	};
+
+   	max31856_t max31856T4 = {
+   			.spi_handle = &hspi2,
+   			.cs_pin = max31856T4PIN
+   	};
+
+ 	max31856_init(&max31856T4);
+
+   	max31856_set_noise_filter(&max31856T4, CR0_FILTER_OUT_60Hz);
+   	max31856_set_cold_junction_enable(&max31856T4, CR0_CJ_ENABLED);
+   	max31856_set_thermocouple_type(&max31856T4, CR1_TC_TYPE_K);
+   	max31856_set_average_samples(&max31856T4, CR1_AVG_TC_SAMPLES_2);
+   	max31856_set_open_circuit_fault_detection(&max31856T4, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
+   	max31856_set_conversion_mode(&max31856T4, CR0_CONV_CONTINUOUS);
 
 
-//   	// T4
-//
-//   	max31856_gpio_t max31856T4PIN = {
-//   		.gpio_port = T4_EN_GPIO_Port,
-// 		.gpio_pin  = T4_EN_Pin
-//   	};
-//
-//   	max31856_t max31856T4 = {
-//   			.spi_handle = &hspi2,
-//   			.cs_pin = max31856T4PIN
-//   	};
-//
-// 	max31856_init(&max31856T4);
-//
-//   	max31856_set_noise_filter(&max31856T4, CR0_FILTER_OUT_60Hz);
-//   	max31856_set_cold_junction_enable(&max31856T4, CR0_CJ_ENABLED);
-//   	max31856_set_thermocouple_type(&max31856T4, CR1_TC_TYPE_K);
-//   	max31856_set_average_samples(&max31856T4, CR1_AVG_TC_SAMPLES_2);
-//   	max31856_set_open_circuit_fault_detection(&max31856T4, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
-//   	max31856_set_conversion_mode(&max31856T4, CR0_CONV_CONTINUOUS);
-//
-
+#endif
 
 //   	// T5
 
-//   	max31856_gpio_t max31856T5PIN = {
-//   		.gpio_port = T5_EN_GPIO_Port,
-// 		.gpio_pin = T5_EN_Pin
-//   	};
+#ifdef MAX31856_T5
 
-//   	max31856_t max31856T5 = {
-//   			.spi_handle = &hspi2,
-//   			.cs_pin = max31856T5PIN
-//   	};
+   	max31856_gpio_t max31856T5PIN = {
+   		.gpio_port = T5_EN_GPIO_Port,
+ 		.gpio_pin = T5_EN_Pin
+   	};
 
-// 	max31856_init(&max31856T5);
+   	max31856_t max31856T5 = {
+   			.spi_handle = &hspi2,
+   			.cs_pin = max31856T5PIN
+   	};
 
-//   	max31856_set_noise_filter(&max31856T5, CR0_FILTER_OUT_60Hz);
-//   	max31856_set_cold_junction_enable(&max31856T5, CR0_CJ_ENABLED);
-//   	max31856_set_thermocouple_type(&max31856T5, CR1_TC_TYPE_K);
-//   	max31856_set_average_samples(&max31856T5, CR1_AVG_TC_SAMPLES_2);
-//   	max31856_set_open_circuit_fault_detection(&max31856T5, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
-//   	max31856_set_conversion_mode(&max31856T5, CR0_CONV_CONTINUOUS);
+ 	max31856_init(&max31856T5);
+
+   	max31856_set_noise_filter(&max31856T5, CR0_FILTER_OUT_60Hz);
+   	max31856_set_cold_junction_enable(&max31856T5, CR0_CJ_ENABLED);
+   	max31856_set_thermocouple_type(&max31856T5, CR1_TC_TYPE_K);
+   	max31856_set_average_samples(&max31856T5, CR1_AVG_TC_SAMPLES_2);
+   	max31856_set_open_circuit_fault_detection(&max31856T5, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
+   	max31856_set_conversion_mode(&max31856T5, CR0_CONV_CONTINUOUS);
 
 
 
-
+#endif
 
 //   	// FDC2214 SETUP
 
 //   	// Reset Registers in Device.
-//
-//   	reset_fdc2214();
-//
-////   	// Init FDC2214 ALL FOUR CHANNELS w/ config AND adequate register settings
-//
-//   	FDC2214_Init();
-//
 
+#ifdef FDC2214
 
+   	reset_fdc2214();
 
+//  Init FDC2214 ALL FOUR CHANNELS w/ config AND adequate register settings
 
+   	FDC2214_Init();
 
-
-
+#endif
 
 
 
@@ -517,44 +415,68 @@ int main(void)
 	  HAL_GPIO_TogglePin(LED_PIN_GPIO_Port, LED_PIN_Pin);
 
 	  HAL_Delay(200);
-//	  printf("We made it 1 ");
+
+#ifdef B2B
+
+	  HAL_UART_Transmit(&huart3,TX_Buffer,sizeof(TX_Buffer),1000); // "Hello World!" // UART Direct Test
+
+
+#endif
+
+
+#ifdef VALVE_TEST
+	  printf("Actuation of Valve 15 Starting... in 15 seconds");
+
+	  HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
+
+	  HAL_Delay(5000);
+
+	  HAL_Delay(5000);
+
+	  printf("Actuation of Valve 15 Starting... in 10 seconds");
+
+
+	  HAL_Delay(5000);
+
+	  printf("Actuation of Valve 15 Starting... in 5 seconds");
+
+	  HAL_Delay(5000);
+
+
+	  HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
+
+	  printf("Valve 15 Actuated");
+
+#endif
+
+
+
+#ifdef I2C_SCANNER
+
+//	  0x3054 Device ID (FDC2112, FDC2114 only)
+//	  0x3055 Device ID (FDC2212, FDC2214 only)
+
+	  // 0x7F
+
+
+	  // take a look at obsidian for tutorial
 
 
 
 
-
-//	  HAL_UART_Transmit(&huart3,TX_Buffer,sizeof(TX_Buffer),1000); // "Hello World!" // UART Direct Test
-
-//	  printf("Actuation of Valve 15 Starting... in 15 seconds");
-
-//	  HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
-
-//	  HAL_Delay(5000);
-
-
-
-//	  HAL_Delay(5000);
-//
-//	  printf("Actuation of Valve 15 Starting... in 10 seconds");
-//
-//
-//	  HAL_Delay(5000);
-//
-//	  printf("Actuation of Valve 15 Starting... in 5 seconds");
-//
-//	  HAL_Delay(5000);
-//
-//
-//	  HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
-//
-//	  printf("Valve 15 Actuated");
-
-
-
-//
+#endif
 
 #ifdef AD7124
-//	  printf("We made it 2 ");
+
+
+	  // Create new with new driver
+
+
+
+
+
+
+
 	  status[2U] = AD7124_ReadRegister(&AD7124_Handler, AD7124_ID_REG, 1, &val);
 
 	  if(status[2U]){
@@ -609,7 +531,7 @@ int main(void)
 #endif
 
 
-
+#ifdef B2B
 //	  Serial_Print("Transmitting"); // Serial_Print custom function test.
 
 //	   Serial_Printf("Temperature Test %d C\r\n", 100); // Serial_Print custom formatted print function
@@ -625,6 +547,9 @@ int main(void)
 	  // polling method -> Blocks CPU until UART receive is done.
 // 	  while(HAL_UART_Receive(&huart3, &RX_CMD, 8,1000)){ // uart receive block will continously try to fetch.
 
+
+
+#endif
 
 // 		  // Polling for Seperate Pressure Sensors.
 
@@ -892,86 +817,82 @@ int main(void)
 // 				level = FDC2214_read_accumulator_height(2);
 // 				Serial_Printf("Catalyst Height Reading FDC2214 A2: %d \r\n", level);
 
-
-
 // 		}
 // 	  }
 
 
-//
+#ifdef MAX31856_T1
+
 //	   max31856_trigger_one_shot(&max31856T1);
 //	   HAL_Delay(200); // Wait until single is ready
-//	   temperature = max31856_read_CJ_temp(&max31856T1); // compensates already for cold junction reading
-//	   max31856_read_fault(&max31856T1);
-//	   if (max31856T1.sr.val) {
-//	   		printf("TC Read Fail ");
-//	   		printf("ERROR TC1 #: %d ",max31856T1.sr.val);
-//
-//	   }
-//	   printf("Temperature Reading TC1: %f \r\n", temperature);
-//
-//
-//	   temperature = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
-//	   if (max31856T1.sr.val) {
-//	   	   	printf("TC TEMP Read Fail ");
-//	   	   	printf("ERROR TC1 #: %d ",max31856T1.sr.val);
-//
-//	   }
-//	   printf("Temperature Reading TC1: %f \r\n", temperature);
+	   temperature = max31856_read_CJ_temp(&max31856T1);
+	   max31856_read_fault(&max31856T1);
+	   if (max31856T1.sr.val) {
+	   		printf("TC Read Fail ");
+	   		printf("ERROR TC1 #: %d ",max31856T1.sr.val);
+
+	   }
+	   printf("Cold Junction Temperature Reading TC1: %f \r\n", temperature);
+
+	   temperature = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
+	   if (max31856T1.sr.val) {
+	   	   	printf("TC TEMP Read Fail ");
+	   	   	printf("ERROR TC1 #: %d ",max31856T1.sr.val);
+
+	   }
+	   printf("Temperature Reading TC1: %f \r\n", temperature);
+
+#endif
 
 // 	  // TESTING DEBUG PURPOSES w/ ST-LINK
 //
-// 	  printf("TESTING DEBUG PURPOSES LOADING... \n");
-//
-// 	  printf("Reading Device ID's... \n");
-//
-// 	  bool val = FDC2214_Check_Device_ID();
-// 	  if(val){
-// 		  printf("FDC NOMINAL \n");
-// 	  }
-// 	  else{
-// 		  printf("FDC FAIL \n");
-// 	  }
-// 	  printf("FDC2214 Device Read: %d\n", val);
-//
-// 	  FDC2214_Device_ID(device_id);
-// 	  printf("FDC2214 Device ID: %d\n", device_id);
-//
+
+#ifdef FDC2214
+ 	  printf("TESTING DEBUG PURPOSES LOADING... \n");
+
+ 	  printf("Reading Device ID's... \n");
+
+ 	  bool val = FDC2214_Check_Device_ID();
+ 	  if(val){
+ 		  printf("FDC NOMINAL \n");
+ 	  }
+ 	  else{
+ 		  printf("FDC FAIL \n");
+ 	  }
+ 	  printf("FDC2214 Device Read: %d\n", val);
+
+ 	  FDC2214_Device_ID(device_id);
+ 	  printf("FDC2214 Device ID: %d\n", device_id);
+
 //
 //// 	  The float formatting support is not enabled, check your MCU Settings from "Project Properties >
 // 	  // C/C++ Build > Settings > Tool Settings", or add manually "-u _printf_float" in linker flags.
 //
 //
-// 	for(int i =0; i<4; i++){
-//
-// 		uint64_t raw = FDC2214_read_data(i);
-// 		double f_sensor;
-//
-// 		f_sensor = (((float) raw) / ((float)(1UL << 28))) * FDC2214_F_REF; // datasheet equation
-//
-// 		double omega = 2.0f * 3.14159265f * f_sensor;
-// 		double total_c = (1.0f/(FDC2214_L_HENRY * omega * omega));
-//
-// 		// 	 capacitance = FDC2214_read_capacitance(3, &c1);
-// 		// 	 capacitance = FDC2214_read_capacitance(3, &c2);
-// 		printf("Channel: %d \n", i);
-// 		printf("F_Sensor: %lf \r\n", f_sensor);
-// 		printf("Omega: %lf \r\n", omega);
-// 		printf("total_c: %lf \r\n", total_c);
+ 	for(int i =0; i<4; i++){
+
+ 		uint64_t raw = FDC2214_read_data(i);
+ 		double f_sensor;
+
+ 		f_sensor = (((float) raw) / ((float)(1UL << 28))) * FDC2214_F_REF; // datasheet equation
+
+ 		double omega = 2.0f * 3.14159265f * f_sensor;
+ 		double total_c = (1.0f/(FDC2214_L_HENRY * omega * omega));
+
+ 		// 	 capacitance = FDC2214_read_capacitance(3, &c1);
+ 		// 	 capacitance = FDC2214_read_capacitance(3, &c2);
+ 		printf("Channel: %d \n", i);
+ 		printf("F_Sensor: %lf \r\n", f_sensor);
+ 		printf("Omega: %lf \r\n", omega);
+ 		printf("total_c: %lf \r\n", total_c);
 
 
-// 	}
+ 	}
+
+#endif
 
 
 
-// 	  ad7124_read_register(ad7124, &ad7124->regs[AD7124_ID_REG]);
-// 	  printf("Pressure ADC7124 Device ID: %d\n", (int) ad7124->regs[AD7124_ID_REG].value);
-//
-
-// 	  ad7124_read_register(ad7124_pc104, &ad7124_pc104->regs[AD7124_ID_REG]);
-// 	  printf("PC104 Stack Voltage ADC7124 Device ID: 0x %X\n", (int) ad7124_pc104->regs[AD7124_ID_REG].value);
-//
-//
 //
 //// 	  // MAX31856 Error Reading
 //
