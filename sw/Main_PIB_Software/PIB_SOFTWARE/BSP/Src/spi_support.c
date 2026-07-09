@@ -1,5 +1,5 @@
 /***************************************************************************//**
- *   @file   spi.h
+ *   @file   spi.c
  *   @author DBogdan (dragos.bogdan@analog.com)
 ********************************************************************************
  * Copyright 2019(c) Analog Devices, Inc.
@@ -36,61 +36,113 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *******************************************************************************/
 
-#ifndef SPI_H_
-#define SPI_H_
-
 /******************************************************************************/
 /***************************** Include Files **********************************/
 /******************************************************************************/
-
 #include <stdint.h>
+#include <string.h>
+
+#include "spi_support.h"
+
+#include "platform_support.h"
+
+// Due to a pre-processor name conflict, this must follow platform_support.h
+#include "error.h"
 
 /******************************************************************************/
-/********************** Macros and Constants Definitions **********************/
+/***************************** #defines ***************************************/
 /******************************************************************************/
 
-#define	SPI_CPHA	0x01
-#define	SPI_CPOL	0x02
+#define SPI_BUFFER_SIZE 255
+
 
 /******************************************************************************/
-/*************************** Types Declarations *******************************/
+/************************ Variable Declarations *******************************/
 /******************************************************************************/
 
-typedef enum spi_mode {
-	SPI_MODE_0 = (0 | 0),
-	SPI_MODE_1 = (0 | SPI_CPHA),
-	SPI_MODE_2 = (SPI_CPOL | 0),
-	SPI_MODE_3 = (SPI_CPOL | SPI_CPHA)
-} spi_mode;
-
-typedef struct spi_init_param {
-	uint32_t	max_speed_hz;
-	uint8_t		chip_select;
-	enum spi_mode	mode;
-	void		*extra;
-} spi_init_param;
-
-typedef struct spi_desc {
-	uint32_t	max_speed_hz;
-	uint8_t		chip_select;
-	enum spi_mode	mode;
-	void		*extra;
-} spi_desc;
+static uint8_t spi_rx_buffer[SPI_BUFFER_SIZE] = {0};
 
 /******************************************************************************/
-/************************ Functions Declarations ******************************/
+/************************ Functions Definitions *******************************/
 /******************************************************************************/
 
-/* Initialize the SPI communication peripheral. */
+/**
+ * @brief Initialize the SPI communication peripheral.
+ * @param desc - The SPI descriptor.
+ * @param init_param - The structure that contains the SPI parameters.
+ * @return SUCCESS in case of success, FAILURE otherwise.
+ */
 int32_t spi_init(struct spi_desc **desc,
-		 const struct spi_init_param *param);
+		 const struct spi_init_param *param)
+{
+	/* Set up CS to AD7124 chip */
 
-/* Free the resources allocated by spi_init(). */
-int32_t spi_remove(struct spi_desc *desc);
 
-/* Write and read data to/from SPI. */
+	if (desc) {
+		// Unused variable - fix compiler warning
+		if(param->chip_select){
+			(*desc)->GPIO_Pin = PT_EN_Pin; // insert the pressure chip select
+			(*desc)->GPIOx = PT_EN_GPIO_Port;
+		}
+		else{
+			(*desc)->GPIO_Pin = ADC_EN_Pin; // insert the voltage chip select
+			(*desc)->GPIOx = ADC_EN_GPIO_Port;
+		}
+	}
+
+	if (param->max_speed_hz) {
+		// Unused variable - fix compiler warning
+	}
+
+
+
+
+
+	return SUCCESS;
+}
+
+/**
+ * @brief Free the resources allocated by spi_init().
+ * @param desc - The SPI descriptor.
+ * @return SUCCESS in case of success, FAILURE otherwise.
+ */
+int32_t spi_remove(struct spi_desc *desc)
+{
+	if (desc) {
+		// Unused variable - fix compiler warning
+	}
+
+	return SUCCESS;
+}
+
+/**
+ * @brief Write and read data to/from SPI.
+ * @param desc - The SPI descriptor.
+ * @param data - The buffer with the transmitted/received data.
+ * @param bytes_number - Number of bytes to write/read.
+ * @return SUCCESS in case of success, FAILURE otherwise.
+ */
 int32_t spi_write_and_read(struct spi_desc *desc,
 			   uint8_t *data,
-			   uint8_t bytes_number);
+			   uint8_t bytes_number)
+{
+	if (desc) {
+		// Unused variable - fix compiler warning
+	}
+	/*
+	 * GPIO is not controlled by the SPI master.
+	 * There are STM32 parts that have hardware support for
+	 * Chip select but this uses software to make it more
+	 * general, and flexible with pin choice.
+	 */
+	HAL_GPIO_WritePin(desc->GPIOx, desc->GPIO_Pin, GPIO_PIN_RESET);
+    if (HAL_SPI_TransmitReceive(&hspi1, data, (uint8_t *)spi_rx_buffer, bytes_number, 5000) != HAL_OK) {
+	    return FAILURE;
+	}
+    HAL_GPIO_WritePin(desc->GPIOx, desc->GPIO_Pin, GPIO_PIN_SET);
 
-#endif // SPI_H_
+	/* Copy the SPI receive buffer to the supplied data buffer to return to caller*/
+    memcpy(data, spi_rx_buffer, bytes_number);
+
+    return SUCCESS;
+}

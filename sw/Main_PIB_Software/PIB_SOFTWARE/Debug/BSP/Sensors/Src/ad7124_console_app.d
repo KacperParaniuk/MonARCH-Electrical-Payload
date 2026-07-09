@@ -1,8 +1,6 @@
-BSP/Sensors/Src/ad7124_regs_config_a.o: \
- ../BSP/Sensors/Src/ad7124_regs_config_a.c \
- ../BSP/Sensors/Inc/ad7124_regs.h ../BSP/Sensors/Inc/ad7124.h \
- ../BSP/Inc/spi_support.h ../Core/Inc/main.h \
- ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h \
+BSP/Sensors/Src/ad7124_console_app.o: \
+ ../BSP/Sensors/Src/ad7124_console_app.c ../BSP/Inc/platform_support.h \
+ ../Core/Inc/main.h ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h \
  ../Core/Inc/stm32l4xx_hal_conf.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h \
@@ -35,10 +33,13 @@ BSP/Sensors/Src/ad7124_regs_config_a.o: \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
- ../BSP/Sensors/Inc/delay.h
-../BSP/Sensors/Inc/ad7124_regs.h:
-../BSP/Sensors/Inc/ad7124.h:
-../BSP/Inc/spi_support.h:
+ ../Core/Inc/spi.h ../Core/Inc/main.h ../BSP/Sensors/Inc/error.h \
+ ../BSP/Sensors/Inc/ad7124.h ../BSP/Inc/spi_support.h \
+ ../BSP/Sensors/Inc/delay.h ../BSP/Sensors/Inc/ad7124_regs.h \
+ ../BSP/Sensors/Inc/ad7124.h ../BSP/Sensors/Inc/ad7124_support.h \
+ ../BSP/Sensors/Inc/ad7124_regs_configs.h \
+ ../BSP/Sensors/Inc/ad7124_console_app.h
+../BSP/Inc/platform_support.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
@@ -73,4 +74,14 @@ BSP/Sensors/Src/ad7124_regs_config_a.o: \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
+../Core/Inc/spi.h:
+../Core/Inc/main.h:
+../BSP/Sensors/Inc/error.h:
+../BSP/Sensors/Inc/ad7124.h:
+../BSP/Inc/spi_support.h:
 ../BSP/Sensors/Inc/delay.h:
+../BSP/Sensors/Inc/ad7124_regs.h:
+../BSP/Sensors/Inc/ad7124.h:
+../BSP/Sensors/Inc/ad7124_support.h:
+../BSP/Sensors/Inc/ad7124_regs_configs.h:
+../BSP/Sensors/Inc/ad7124_console_app.h:

@@ -47,66 +47,66 @@ POSSIBILITY OF SUCH DAMAGE.
 
 *****************************************************************************/
 
-// Include Files
-#include <math.h>
-#include <string.h>
-
-#include "platform_support.h"
-
-
-/**
-  * @brief  Retargets the C library __io_putchar function to the USART.
-  * @param  None
-  * @retval None
-  */
-int __io_putchar(int ch)
-{
-    /* Implementation of __io_putchar */
-	/* e.g. write a character to the UART1 and Loop until the end of transmission */
-    HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFFFFFF);
-
-    return ch;
-}
-
-/**
-  * @brief  Retargets the C library __io_getchar function to the USART.
-  * @param  None
-  * @retval character read uart
-  */
-int __io_getchar(void)
-{
-  /* Implementation of __io_getchar */
-    char rxChar;
-
-    // This loops in case of HAL timeout, but if an ok or error occurs, we continue
-    while (HAL_UART_Receive(&huart2, (uint8_t *)&rxChar, 1, 0xFFFFFFFF) == HAL_TIMEOUT);
-
-    return rxChar;
-}
-
-
-/**
-  * @brief  getchar, but does not block if nothing waiting to be read
-  * @param  None
-  * @retval character if available, -1 otherwise
-  */
-int16_t getchar_nonblocking()
-{
-	uint8_t ch;
-
-	if (HAL_UART_Receive(&huart2, (uint8_t *)&ch, 1, 0x0) == HAL_OK) {
-	    return (uint16_t)ch;
-	} else {
-		return (-1); // Indicates no character read
-	}
-}
-
-
-/**
-  * @brief  toggles an LED to show something has happened
-  * @param  None
-  * @retval None
-  */
-void toggle_activity_led(void){
-	HAL_GPIO_TogglePin(LED_PIN_GPIO_Port, LED_PIN_Pin);
-}
+//// Include Files
+//#include <math.h>
+//#include <string.h>
+//
+//#include "platform_support.h"
+//
+//
+///**
+//  * @brief  Retargets the C library __io_putchar function to the USART.
+//  * @param  None
+//  * @retval None
+//  */
+//int __io_putchar(int ch)
+//{
+//    /* Implementation of __io_putchar */
+//	/* e.g. write a character to the UART1 and Loop until the end of transmission */
+//    HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFFFFFF);
+//
+//    return ch;
+//}
+//
+///**
+//  * @brief  Retargets the C library __io_getchar function to the USART.
+//  * @param  None
+//  * @retval character read uart
+//  */
+//int __io_getchar(void)
+//{
+//  /* Implementation of __io_getchar */
+//    char rxChar;
+//
+//    // This loops in case of HAL timeout, but if an ok or error occurs, we continue
+//    while (HAL_UART_Receive(&huart2, (uint8_t *)&rxChar, 1, 0xFFFFFFFF) == HAL_TIMEOUT);
+//
+//    return rxChar;
+//}
+//
+//
+///**
+//  * @brief  getchar, but does not block if nothing waiting to be read
+//  * @param  None
+//  * @retval character if available, -1 otherwise
+//  */
+//int16_t getchar_nonblocking()
+//{
+//	uint8_t ch;
+//
+//	if (HAL_UART_Receive(&huart2, (uint8_t *)&ch, 1, 0x0) == HAL_OK) {
+//	    return (uint16_t)ch;
+//	} else {
+//		return (-1); // Indicates no character read
+//	}
+//}
+//
+//
+///**
+//  * @brief  toggles an LED to show something has happened
+//  * @param  None
+//  * @retval None
+//  */
+//void toggle_activity_led(void){
+//	HAL_GPIO_TogglePin(LED_PIN_GPIO_Port, LED_PIN_Pin);
+//}

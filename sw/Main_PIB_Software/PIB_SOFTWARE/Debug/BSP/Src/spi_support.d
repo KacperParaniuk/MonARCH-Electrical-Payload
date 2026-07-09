@@ -1,5 +1,5 @@
-BSP/Src/spi.o: ../BSP/Src/spi.c ../Core/Inc/spi.h ../Core/Inc/main.h \
- ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h \
+BSP/Src/spi_support.o: ../BSP/Src/spi_support.c ../BSP/Inc/spi_support.h \
+ ../Core/Inc/main.h ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h \
  ../Core/Inc/stm32l4xx_hal_conf.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h \
@@ -32,9 +32,8 @@ BSP/Src/spi.o: ../BSP/Src/spi.c ../Core/Inc/spi.h ../Core/Inc/main.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
- ../BSP/Inc/platform_support.h ../Core/Inc/main.h \
- ../BSP/Sensors/Inc/error.h
-../Core/Inc/spi.h:
+ ../BSP/Inc/platform_support.h ../BSP/Sensors/Inc/error.h
+../BSP/Inc/spi_support.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
@@ -70,5 +69,4 @@ BSP/Src/spi.o: ../BSP/Src/spi.c ../Core/Inc/spi.h ../Core/Inc/main.h \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
 ../BSP/Inc/platform_support.h:
-../Core/Inc/main.h:
 ../BSP/Sensors/Inc/error.h:

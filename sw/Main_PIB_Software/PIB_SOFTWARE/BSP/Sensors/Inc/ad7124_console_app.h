@@ -49,16 +49,16 @@ POSSIBILITY OF SUCH DAMAGE.
 #ifndef AD7124_CONSOLE_APP_H_
 #define AD7124_CONSOLE_APP_H_
 
-#include "adi_console_menu.h"
+//#include "adi_console_menu.h" not using menu
 
 /* #defines */
 #define AD7124_CONFIG_A       0
 #define AD7124_CONFIG_B       1
 
 /* Public Declarations */
-int32_t ad7124_app_initialize(uint8_t configID);
+int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs);
 
-extern console_menu ad7124_main_menu;
+//extern console_menu ad7124_main_menu; << not using menu
 
 
 #endif /* AD7124_CONSOLE_APP_H_ */
