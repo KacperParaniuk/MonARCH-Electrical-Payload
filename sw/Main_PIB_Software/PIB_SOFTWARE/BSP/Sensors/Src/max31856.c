@@ -163,7 +163,46 @@ bool has_fault(uint8_t error_reg, max31856_fault_t fault){
 }
 
 
-void print_errors(){
+const char *discern_error(max31856_fault_t fault){
+	switch (fault){
+		case MAX31856_FAULT_OPEN: return "No Thermocouple Connected: Open Circuit Fault";
+		case MAX31856_FAULT_OVUV: return "Voltage is negative or greater than Vdd";
+		case MAX31856_FAULT_TCLOW: return "Thermcouple Reading Low Fault";
+		case MAX31856_FAULT_TCHIGH: return "Temperature Reading High Fault";
+		case MAX31856_FAULT_CJLOW: return "Cold Junction Low Fault";
+		case MAX31856_FAULT_CJHIGH: return "Cold Junction High Fault";
+		case MAX31856_FAULT_TCRANGE: return "Thermocouple Hot Junction temperature is outside of the normal operating range.";
+		case MAX31856_FAULT_CJRANGE: return "The Cold-Junction temperature is outside of the normal operating range.";
+		default:                     return "Unknown Fault";
+
+	}
+
+}
+
+
+// Test in Hardware Test.
+
+void print_errors(uint8_t error_reg){
+
+	static const max31856_fault_t faults[]= {
+			MAX31856_FAULT_OPEN, MAX31856_FAULT_OVUV, MAX31856_FAULT_TCLOW, MAX31856_FAULT_TCHIGH,
+			MAX31856_FAULT_CJLOW,MAX31856_FAULT_CJHIGH,MAX31856_FAULT_TCRANGE,MAX31856_FAULT_CJRANGE
+	};
+
+	for(int i =0; i<8;i++){
+		if(has_fault(error_reg, faults[i])){
+			printf(discern_error(faults[i]));
+		}
+	}
+
+
+
+
+
+
+
+
+
 
 
 
