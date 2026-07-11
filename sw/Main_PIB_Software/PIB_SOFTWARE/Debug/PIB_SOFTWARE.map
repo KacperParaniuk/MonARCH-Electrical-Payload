@@ -1784,11 +1784,11 @@ Discarded input sections
                 0x00000000       0x5a ./BSP/Sensors/Src/max31856.o
  .text.has_fault
                 0x00000000       0x2e ./BSP/Sensors/Src/max31856.o
- .rodata        0x00000000      0x172 ./BSP/Sensors/Src/max31856.o
+ .rodata        0x00000000      0x17e ./BSP/Sensors/Src/max31856.o
  .text.discern_error
                 0x00000000      0x100 ./BSP/Sensors/Src/max31856.o
  .text.print_errors
-                0x00000000       0x58 ./BSP/Sensors/Src/max31856.o
+                0x00000000       0x68 ./BSP/Sensors/Src/max31856.o
  .rodata.faults.0
                 0x00000000        0x8 ./BSP/Sensors/Src/max31856.o
  .debug_info    0x00000000     0x100d ./BSP/Sensors/Src/max31856.o
@@ -1860,7 +1860,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./BSP/Sensors/Src/max31856.o
  .debug_macro   0x00000000      0x146 ./BSP/Sensors/Src/max31856.o
  .debug_macro   0x00000000       0x64 ./BSP/Sensors/Src/max31856.o
- .debug_line    0x00000000      0xc4a ./BSP/Sensors/Src/max31856.o
+ .debug_line    0x00000000      0xc4f ./BSP/Sensors/Src/max31856.o
  .debug_str     0x00000000   0x1041a4 ./BSP/Sensors/Src/max31856.o
  .comment       0x00000000       0x44 ./BSP/Sensors/Src/max31856.o
  .debug_frame   0x00000000      0x2e0 ./BSP/Sensors/Src/max31856.o

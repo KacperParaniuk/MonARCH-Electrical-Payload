@@ -189,23 +189,16 @@ void print_errors(uint8_t error_reg){
 			MAX31856_FAULT_CJLOW,MAX31856_FAULT_CJHIGH,MAX31856_FAULT_TCRANGE,MAX31856_FAULT_CJRANGE
 	};
 
+	if(error_reg==0){
+		printf("No Errors");
+		return;
+	}
+
 	for(int i =0; i<8;i++){
 		if(has_fault(error_reg, faults[i])){
 			printf(discern_error(faults[i]));
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 

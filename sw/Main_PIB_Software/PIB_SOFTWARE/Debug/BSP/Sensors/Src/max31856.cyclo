@@ -17,4 +17,4 @@
 ../BSP/Sensors/Src/max31856.c:152:6:max31856_read_nregisters	1
 ../BSP/Sensors/Src/max31856.c:161:6:has_fault	1
 ../BSP/Sensors/Src/max31856.c:166:13:discern_error	12
-../BSP/Sensors/Src/max31856.c:183:6:print_errors	3
+../BSP/Sensors/Src/max31856.c:185:6:print_errors	4
