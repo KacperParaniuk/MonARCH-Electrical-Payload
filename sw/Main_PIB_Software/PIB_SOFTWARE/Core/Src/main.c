@@ -30,7 +30,8 @@
 #include "gpio_driver.h"
 #include "uart_handler.h"
 #include "uart_protocol.h"
-#include "ad7124_console_app.h"
+
+
 
 
 // ---------------- DEFINES ---------------------
@@ -60,6 +61,7 @@
 // Sensor Includes
 
 #include "ad7124_console_app.h"
+#include "ad7124.h"
 
 
 #endif
@@ -232,14 +234,11 @@ int main(void)
   }
 
 
+  uint32_t device_id;
 
-
-//////  // Variables for error status, voltage, and temperature calculation
-//  double voltage;
-
-  float voltage1;
-  float voltage2;
-  uint32_t val;
+//  float voltage1;
+//  float voltage2;
+//  uint32_t val;
 
 
 #endif
@@ -482,85 +481,40 @@ float temperature;
 
 #ifdef AD7124
 
-
-
-
 	  // read device id.
 
-	  if (ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_ID]) < 0) {
-	  	   printf("\r\nError Encountered reading ID register\r\n");
-	  }
-	  else {
-	  	   printf("\r\nRead ID Register = 0x%02lx\r\n",
-	  	   (uint32_t)ad7124_register_map[AD7124_ID].value );
-
-	  	   device_id = (uint32_t)ad7124_register_map[AD7124_ID].value;
-	  }
-
-	  device_id = val & 0xF0;
-	  printf("Device ID: %ld", device_id);
+	  device_id = ad7124_read_device_id();
+	  printf("AD7124 Device ID: %ld", device_id);
 	  if(device_id == 16){
+		  printf("SUCCESS \n");
+		  HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
+		  read_status_register();
+
+#ifdef AD7124_SINGLE_MODE
+		  /* Read all enabled channels on ADC in single conversion mode */
+		  menu_single_conversion();
+
+#endif
 
 
-	printf("SUCCESS: Status of AD2214: %d \n", status[0]);
+#ifdef AD7124_CONTINOUS_MODE
 
+		 /* Continously Read all enabled channels on ADC for 10 iterations (change to desire / add functionality for commanding) */
 
-			  /* Optional: check for errors */
-			  status[1U] = AD7124_ErrorCheck(&AD7124_Handler, &ad7124_error);
+		 do_continuous_conversion(DISPLAY_DATA_TABULAR);
 
-			  printf("Error Check of AD2214: %d \n", status[1]);
-			  printf("Error #: %ld \n", ad7124_error);
+#endif
 
-
-
-			  /* Read conversion results from ADC */
-			  status[2U] = AD7124_ReadSampleData(&AD7124_Handler);
-
-			  printf("Read Sample AD2214 Result: %d \n", status[2]);
-
-			  if (AD7124_ChannelSamples[2] && AD7124_ChannelSamples[3])
-			  {
-			  // Convert raw ADC data from channel 0 to millivolts (example scaling)
-		//	      voltage = ( ( (double)(AD7124_ChannelSamples[0U] / 8388608.0) - 1.0) * 2.5) * 1000.0;
-
-				  printf("Channel Sample 1 %ld", AD7124_ChannelSamples[2U]);
-				  printf("Channel Sample 2 %ld", AD7124_ChannelSamples[3U]);
-
-
-			  // Convert raw ADC data from channel to voltage
-				voltage1 = (AD7124_ChannelSamples[2U] * 3.3) / 16777216;
-
-				voltage2 = (AD7124_ChannelSamples[2U] * 3.3) / 16777216;
-
-
-				printf("Voltage 1:  %f", voltage1);
-
-				printf("Voltage 2:  %f", voltage2);
-
-			  }
-		  }
 	  }
+	  else{
+		  // read error register;
+		  read_error_register();
+		  // check status of chip
+		  read_status_register();
 
+		  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
-
-#ifdef AD7124_CONTINOUS
-
-
-  // displays all of the channel voltages
-
-  dislay_channel_samples(false, DISPLAY_DATA_TABULAR);
-
-
-#endif
-
-
-
-#ifdef AD7124_SINGLE
-
-
-
-#endif
-
+	  }
 
 #endif
 

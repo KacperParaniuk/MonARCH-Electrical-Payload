@@ -57,6 +57,18 @@ POSSIBILITY OF SUCH DAMAGE.
 
 /* Public Declarations */
 int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs);
+int32_t ad7124_read_device_id();
+int32_t ad7124_reset_function();
+void read_status_register();
+void read_error_register();
+
+
+
+// Functionality
+
+int32_t menu_single_conversion();
+
+
 
 //extern console_menu ad7124_main_menu; << not using menu
 

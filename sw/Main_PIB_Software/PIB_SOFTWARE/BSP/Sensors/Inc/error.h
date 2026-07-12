@@ -46,4 +46,6 @@
 #define SUCCESS		0
 #define FAILURE		-1
 
+// implement every error ad7124 can encounter
+
 #endif // ERROR_H_

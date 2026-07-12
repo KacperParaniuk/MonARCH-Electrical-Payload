@@ -178,7 +178,7 @@ int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs)
  *
  * @details
  */
-static void read_status_register(void)
+void read_status_register(void)
 {
 	if (ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_Status]) < 0) {
 	   printf("\r\nError Encountered reading Status register\r\n");
@@ -187,6 +187,74 @@ static void read_status_register(void)
        printf("\r\nRead Status Register = 0x%02lx\r\n", status_value);
 	}
 }
+
+
+
+
+void read_error_register(){
+	if (ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_Error])<0){
+		uint32_t error_value = (uint32_t)ad7124_register_map[AD7124_Error].value;
+		if((error_value & AD7124_ERR_REG_ROM_CRC_ERR) != 0){
+			printf("ROM Contents changed: CRC calculation fail: ROM error. \n");
+		}
+		if((error_value & AD7124_ERR_REG_MM_CRC_ERR) != 0){
+			printf("CRC proves memory map changed: Memory map error. \n");
+		}
+		if((error_value & AD7124_ERR_REG_SPI_CRC_ERR) != 0){
+			printf("CRC proves SPI read/write failed \n");
+		}
+		if((error_value & AD7124_ERR_REG_SPI_WRITE_ERR) != 0){
+			printf("SPI write operation failed:  write to invalid addresses or write to read-only registers \n");
+		}
+		if((error_value & AD7124_ERR_REG_SPI_READ_ERR) != 0){
+			printf("SPI read operation failed: attempt to read from invalid addresses \n");
+		}
+		if((error_value & AD7124_ERR_REG_SPI_SLCK_CNT_ERR) != 0){
+			printf("The SCLK counter is enabled. All read and write operations to the ADC are multiples of eight bits: SCLK pulses used during a communication were not a multiple of eight \n");
+		}
+		if((error_value & AD7124_ERR_REG_SPI_IGNORE_ERR) != 0){
+			printf("write operations are ignored from on chip registers ADC is busy and the write instruction has been ignored \n");
+		}
+		if((error_value & AD7124_ERR_REG_ALDO_PSM_ERR) != 0){
+			printf("analog ldo: voltage being output from the analog LDO is outside specification. \n");
+		}
+		if((error_value & AD7124_ERR_REG_DLDO_PSM_ERR) != 0){
+			printf("digital ldo: input to the test circuit is tied to DGND instead of the LDO output \n");
+		}
+		if((error_value & AD7124_ERR_REG_REF_DET_ERR) != 0){
+			printf("External reference is an open circuit or has a value of less than 0.7 V. \n");
+		}
+		if((error_value & AD7124_ERR_REG_AINM_UV_ERR) != 0){
+			printf("Undervoltage detection on AINM. \n");
+		}
+		if((error_value & AD7124_ERR_REG_AINM_OV_ERR) != 0){
+			printf("Overvoltage detection on AINM. \n");
+		}
+		if((error_value & AD7124_ERR_REG_AINP_UV_ERR) != 0){
+			printf("Undervoltage detection on AINP. \n");
+		}
+		if((error_value & AD7124_ERR_REG_AINP_OV_ERR) != 0){
+			printf("Overvoltage detection on AINP \n");
+		}
+		if((error_value & AD7124_ERR_REG_ADC_SAT_ERR) != 0){
+			printf("ADC saturation flag. This flag is set if the modulator is saturated during a conversion. \n");
+		}
+		if((error_value & AD7124_ERR_REG_ADC_CONV_ERR) != 0){
+			printf("error occured during a conversion.");
+		}
+		if((error_value & AD7124_ERR_REG_ADC_CAL_ERR) != 0){
+			printf("calibration error");
+		}
+		if((error_value & AD7124_ERR_REG_LDO_CAP_ERR) != 0){
+			printf(" decoupling capacitors required for the analog and digital LDOs are not connected to the AD7124-8.");
+		}
+	}
+	else{
+		printf("Error reading error register");
+	}
+
+}
+
 
 
 /*!
@@ -432,7 +500,7 @@ static int32_t do_continuous_conversion(uint8_t display_mode)
  *             single conversion run again, until no channels are enabled.
  *             The original enable state of each channel is then restored.
  */
-static int32_t menu_single_conversion(void)
+int32_t menu_single_conversion(void)
 {
 	int32_t    error_code;
 	uint16_t   channel_enable_mask = 0;
@@ -597,7 +665,7 @@ static int32_t menu_single_conversion(void)
  *
  * @details
  */
-static int32_t ad7124_reset_function(void)
+int32_t ad7124_reset_function(void)
 {
 	if (ad7124_reset(pAd7124_dev)  < 0)
 	{
@@ -612,6 +680,24 @@ static int32_t ad7124_reset_function(void)
 	return(MENU_CONTINUE);
 }
 
+
+
+
+int32_t ad7124_read_device_id(){
+	  if (ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_ID]) < 0) {
+	  	   printf("\r\nError Encountered reading ID register\r\n");
+	  }
+	  else {
+	  	   printf("\r\nRead ID Register = 0x%02lx\r\n",
+	  	   (uint32_t)ad7124_register_map[AD7124_ID].value );
+
+	  	   return (uint32_t)ad7124_register_map[AD7124_ID].value;
+	  }
+
+	  return -1;
+
+
+}
 
 /*!
  * @brief      Reset and set the ad7124 with configuration A
