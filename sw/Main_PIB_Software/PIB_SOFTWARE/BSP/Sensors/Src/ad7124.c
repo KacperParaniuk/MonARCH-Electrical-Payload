@@ -504,9 +504,11 @@ int32_t ad7124_setup(struct ad7124_dev **device,
 
 
 	/* Initialize the SPI communication. */
-	ret = spi_init(&dev->spi_desc, &init_param.spi_init);
-	if (ret < 0)
-		return ret;
+//	ret = spi_init(&dev->spi_desc, &init_param.spi_init);
+//	if (ret < 0)
+//		return ret;
+
+	// already init by stm32cubemx auto code
 
 	/*  Reset the device interface.*/
 	ret = ad7124_reset(dev);

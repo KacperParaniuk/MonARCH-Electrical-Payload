@@ -54,7 +54,7 @@ POSSIBILITY OF SUCH DAMAGE.
 /* PGA Gain Value */
 #define AD7124_PGA_GAIN(x) (1 << (x))
 
-#define AD7124_REF_VOLTAGE 2.5
+#define AD7124_REF_VOLTAGE 2.5 // reference come from REFOUT
 #define AD7124_ADC_N_BITS 24
 
 uint8_t ad7124_get_channel_setup(struct ad7124_dev *dev, uint8_t channel);

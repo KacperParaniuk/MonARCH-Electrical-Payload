@@ -30,13 +30,14 @@
 #include "gpio_driver.h"
 #include "uart_handler.h"
 #include "uart_protocol.h"
+#include "ad7124_console_app.h"
 
 
 // ---------------- DEFINES ---------------------
 
 
 
-//#define AD7124
+#define AD7124
 //#define FDC2214
 //#define MAX31856
 //#define MAX31856_T1
@@ -57,9 +58,8 @@
 #ifdef AD7124
 
 // Sensor Includes
-#include "ad7124.h"
 
-#include "ad7124_config.h"
+#include "ad7124_console_app.h"
 
 
 #endif
@@ -184,7 +184,7 @@ int main(void)
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_GPIO_WritePin(LED_PIN_GPIO_Port, LED_PIN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
 
 
@@ -216,43 +216,30 @@ int main(void)
 
 
 
-	  /* Initialize the AD7124 application before the main loop */
-  int32_t setupResult;
-  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A)) < 0 ) {
-		// Handle error setting up AD7124 here
-  }
-//
-//  extern AD7124_ConfigTypeDef AD7124_Handler;
-//  extern uint32_t AD7124_ChannelSamples[AD7124_ENABLED_CHANNELS];
-//  extern AD7124_RegisterTypeDef configA;
+/* Initialize the AD7124 application before the main loop */
 
-////   Status array for tracking return values from driver functions
-//   AD7124_StatusTypeDef status[3U];
-////
-//////  // Flag for DOUT/RDY interrupt
-//////  volatile uint8_t ad7124_rdy_flag = 0U;
-//////
+  // this setup will be for POWER
+  // added param for cs -> CS = 0 = AD7124 POWER      |
+  				//       CS = 1 = AD7124 PRESSURE   | for measuring
+
+  int32_t setupResult;
+
+  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,0)) < 0) {
+		// Handle error setting up AD7124 here
+	  printf("Failed to init ad7124 power");
+	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+
+  }
+
+
+
+
 //////  // Variables for error status, voltage, and temperature calculation
-  int32_t ad7124_error = 0U;
 //  double voltage;
+
   float voltage1;
   float voltage2;
   uint32_t val;
-//////
-////
-////  /* Configure AD7124 handler structure */
-  AD7124_Handler.SPIx = &hspi2;        // SPI peripheral used
-  AD7124_Handler.csPort = PT_EN_GPIO_Port;       // GPIO port for CS
-  AD7124_Handler.csPin = PT_EN_Pin;  // GPIO pin for CS
-  AD7124_Handler.IRQn = EXTI9_5_IRQn;  // External interrupt line connected to DOUT/RDY
-
-  HAL_NVIC_DisableIRQ(AD7124_Handler.IRQn);  // Disable IRQ during initial config
-  status[0U] = AD7124_Config(&AD7124_Handler, &configA);  // Initialize and configure the AD7124
-
-//   let's try without interrupt
-//  HAL_NVIC_EnableIRQ(AD7124_Handler.IRQn);   // Re-enable interrupt after initialization
-
-//
 
 
 #endif
@@ -421,7 +408,7 @@ float temperature;
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_TogglePin(LED_PIN_GPIO_Port, LED_PIN_Pin);
+	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
 
 	  HAL_Delay(200);
 
@@ -496,28 +483,26 @@ float temperature;
 #ifdef AD7124
 
 
-	  // Create new with new driver
 
 
+	  // read device id.
 
-
-
-
-
-
-	  status[2U] = AD7124_ReadRegister(&AD7124_Handler, AD7124_ID_REG, 1, &val);
-
-	  if(status[2U]){
-		  printf("failed to read device id: check spi \n");
-		  printf("Error: %d", status[2U]);
+	  if (ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_ID]) < 0) {
+	  	   printf("\r\nError Encountered reading ID register\r\n");
 	  }
-	  else{
-		  device_id = val & 0xF0;
-		  printf("Device ID: %ld", device_id);
-		  if(device_id == 16){
+	  else {
+	  	   printf("\r\nRead ID Register = 0x%02lx\r\n",
+	  	   (uint32_t)ad7124_register_map[AD7124_ID].value );
+
+	  	   device_id = (uint32_t)ad7124_register_map[AD7124_ID].value;
+	  }
+
+	  device_id = val & 0xF0;
+	  printf("Device ID: %ld", device_id);
+	  if(device_id == 16){
 
 
-			  printf("SUCCESS: Status of AD2214: %d \n", status[0]);
+	printf("SUCCESS: Status of AD2214: %d \n", status[0]);
 
 
 			  /* Optional: check for errors */
@@ -555,6 +540,27 @@ float temperature;
 			  }
 		  }
 	  }
+
+
+
+#ifdef AD7124_CONTINOUS
+
+
+  // displays all of the channel voltages
+
+  dislay_channel_samples(false, DISPLAY_DATA_TABULAR);
+
+
+#endif
+
+
+
+#ifdef AD7124_SINGLE
+
+
+
+#endif
+
 
 #endif
 

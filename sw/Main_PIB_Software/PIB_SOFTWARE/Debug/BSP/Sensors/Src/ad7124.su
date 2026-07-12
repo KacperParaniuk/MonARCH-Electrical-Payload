@@ -11,4 +11,4 @@
 ../BSP/Sensors/Src/ad7124.c:442:6:ad7124_update_crcsetting	24	static
 ../BSP/Sensors/Src/ad7124.c:466:6:ad7124_update_dev_spi_settings	24	static
 ../BSP/Sensors/Src/ad7124.c:491:9:ad7124_setup	40	static
-../BSP/Sensors/Src/ad7124.c:547:9:ad7124_remove	24	static
+../BSP/Sensors/Src/ad7124.c:549:9:ad7124_remove	24	static

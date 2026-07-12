@@ -50,8 +50,9 @@ POSSIBILITY OF SUCH DAMAGE.
 //// Include Files
 //#include <math.h>
 //#include <string.h>
+
 //
-//#include "platform_support.h"
+#include "platform_support.h"
 //
 //
 ///**
@@ -107,6 +108,6 @@ POSSIBILITY OF SUCH DAMAGE.
 //  * @param  None
 //  * @retval None
 //  */
-//void toggle_activity_led(void){
-//	HAL_GPIO_TogglePin(LED_PIN_GPIO_Port, LED_PIN_Pin);
-//}
+void toggle_activity_led(void){
+	HAL_GPIO_TogglePin(LED_PIN_BLUE_GPIO_Port, LED_PIN_BLUE_Pin); // BLUE LED MEANS IN PROGRESS
+}
