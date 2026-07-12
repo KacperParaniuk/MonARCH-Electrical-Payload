@@ -39,6 +39,8 @@
 
 
 #define AD7124
+#define AD7124_SINGLE_MODE
+//#define AD7124_CONTINOUS_MODE
 //#define FDC2214
 //#define MAX31856
 //#define MAX31856_T1
@@ -46,7 +48,7 @@
 //#define MAX31856_T3
 //#define MAX31856_T4
 //#define MAX31856_T5
-//#define B2B
+#define B2B
 //#define VALVE_TEST
 //#define I2C_SCANNER
 //#define HEATER
@@ -542,30 +544,32 @@ float temperature;
 
 
 // // Read PT Valves
+
+
  			case CMD_READ_PT1:
- 				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT0);
+ 				value = display_channel_sample(CH_READ_PT0);
  				// will need to convert the voltage value to a current / temp reading function eventually in ad7124.h
  				Serial_Printf("Pressure Reading PT 1: %d \r\n", value);
  			case CMD_READ_PT2:
- 				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT1);
+ 				value = display_channel_sample(CH_READ_PT1);
  				Serial_Printf("Pressure Reading PT 2: %d \r\n", value);
  			case CMD_READ_PT3:
- 				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT2);
+ 				value = display_channel_sample(CH_READ_PT2);
  				Serial_Printf("Pressure Reading PT 3: %d \r\n", value);
  			case CMD_READ_PT4:
- 				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT3);
+ 				value = display_channel_sample(CH_READ_PT3);
  				Serial_Printf("Pressure Reading PT 4: %d \r\n", value);
  			case CMD_READ_PT5:
- 				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT4);
+ 				value = display_channel_sample(CH_READ_PT4);
  				Serial_Printf("Pressure Reading PT 5: %d \r\n", value);
  			case CMD_READ_PT6:
- 				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT5);
+ 				value = display_channel_sample(CH_READ_PT5);
  				Serial_Printf("Pressure Reading PT 6: %d \r\n", value);
  			case CMD_READ_PT7:
- 				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT6);
+ 				value = display_channel_sample(CH_READ_PT6);
  				Serial_Printf("Pressure Reading PT 7: %d \r\n", value);
  			case CMD_READ_PT8:
- 				value = ad7124_read_channel_voltage(ad7124, CH_READ_PT7);
+ 				value = display_channel_sample(CH_READ_PT7);
  				Serial_Printf("Pressure Reading PT 8: %d \r\n", value);
 
 

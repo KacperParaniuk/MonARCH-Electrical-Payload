@@ -312,6 +312,19 @@ static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console
 }
 
 
+void display_channel_sample(uint8_t channel){
+
+	float value;
+	// sample data into array
+	menu_single_conversion();
+
+	// print channel
+	value = ad7124_convert_sample_to_voltage(pAd7124_dev, channel, channel_samples[channel]);
+	printf("Channel %d: Voltage: %f ",channel, value);
+
+}
+
+
 /*!
  * @brief      resets the channelSampleCounts to zero
  *
@@ -333,7 +346,7 @@ static void clear_channel_samples(void)
  *            and assigned to the channel they come from. Escape key an be used
  *            to exit the loop
  */
-static int32_t do_continuous_conversion(uint8_t display_mode)
+int32_t do_continuous_conversion(uint8_t display_mode)
 //
 //
 //

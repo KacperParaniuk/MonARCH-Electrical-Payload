@@ -64,10 +64,12 @@ void read_error_register();
 
 
 
+
 // Functionality
 
 int32_t menu_single_conversion();
-
+int32_t do_continous_conversion(uint8_t display_mode);
+void display_channel_sample(uint8_t channel);
 
 
 //extern console_menu ad7124_main_menu; << not using menu
