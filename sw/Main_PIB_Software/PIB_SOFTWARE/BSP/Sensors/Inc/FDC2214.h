@@ -72,8 +72,6 @@
 #define FDC2214_DEGLITCH_10MHZ      (0x0005)
 #define FDC2214_DEGLITCH_33MHZ      (0x0007)
 
-
-
 // =============================================================================
 // CONFIG register fields
 // =============================================================================
@@ -91,6 +89,14 @@
 // CONFIG reserved bits the datasheet requires to be set (bit 12 + bit 0).
 #define FDC2214_CONFIG_RESERVED     (0x1001)
 
+// =============================================================================
+// DATA_MSB upper-nibble error flags
+// =============================================================================
+#define FDC2214_DATA_ERR_AW         (1 << 15)  // amplitude warning
+#define FDC2214_DATA_ERR_WD         (1 << 14)  // watchdog timeout
+#define FDC2214_DATA_ERR_AH         (1 << 13)  // amplitude high
+#define FDC2214_DATA_ERR_AL         (1 << 12)  // amplitude low
+#define FDC2214_DATA_MASK_28BIT     (0x0FFFFFFFUL)
 
 
 // =============================================================================
@@ -99,6 +105,15 @@
 #define FDC2214_FIN_SEL_LOW_FREQ    (0x1000)  // sensor < 8.75 MHz, divider = 1
 #define FDC2214_FIN_SEL_HIGH_FREQ   (0x2000)  // sensor 0.01 - 10 MHz, divider = 2
 
+
+// =============================================================================
+// STATUS register bit masks
+// =============================================================================
+#define FDC2214_STATUS_DRDY         (1 << 6)   // Data ready (any channel)
+#define FDC2214_STATUS_CH0_UNREAD   (1 << 3)
+#define FDC2214_STATUS_CH1_UNREAD   (1 << 2)
+#define FDC2214_STATUS_CH2_UNREAD   (1 << 1)
+#define FDC2214_STATUS_CH3_UNREAD   (1 << 0)
 
 typedef enum {
     FDC2214_CH0 = 0,
@@ -117,23 +132,25 @@ uint16_t  _clock_div[4];
 
 // ------------------------------------------------------------- lifecycle
 uint8_t FDC2214_Begin();
-uint8_t FDC2214_Init();
 uint8_t reset_fdc2214();
 void FDC2214_Device_ID(uint8_t buffer);
 int FDC2214_Check_Device_ID();
+uint8_t isConnected();
+uint16_t readStatus();
 
 // -------------------------------------------------------- channel config
-void      setReferenceCount(fdc2214_channel_t ch, uint16_t rcount);
-void      setSettleCount(fdc2214_channel_t ch, uint16_t scount);
-void      setOffset(fdc2214_channel_t ch, uint16_t offset);
-void      setClockDividers(fdc2214_channel_t ch, uint16_t fin_sel, uint16_t fref_div);
-void      setDriveCurrent(fdc2214_channel_t ch, uint8_t idrive_5bit);
+void setReferenceCount(fdc2214_channel_t ch, uint16_t rcount);
+void setSettleCount(fdc2214_channel_t ch, uint16_t scount);
+void setOffset(fdc2214_channel_t ch, uint16_t offset);
+void setClockDividers(fdc2214_channel_t ch, uint16_t fin_sel, uint16_t fref_div);
+void setDriveCurrent(fdc2214_channel_t ch, uint8_t idrive_5bit);
 
 // --------------------- config
 uint8_t FDC2214_configure_defaults(void);
+void write_config();
+void write_mux_config();
 
 // ------------------------------------------------------ device-wide config
-
 void FDC2214_set_active_channel(fdc2214_channel_t ch);
 void FDC2214_setAutoscan(uint8_t enable);
 void FDC2214_setDeglitch(uint16_t deglitch_field);
@@ -147,16 +164,18 @@ void FDC2214_sleep();
 uint16_t read_register(uint16_t reg);
 uint8_t write_register(uint16_t reg, uint16_t value);
 
+// ------------------------------------------------------------ data access
+
 uint32_t FDC2214_get_capacitance_data(uint8_t channel);
-uint32_t FDC2214_read_data(uint8_t channel);
-float FDC2214_read_capacitance(uint8_t channel, float *cap_pf);
+//uint32_t FDC2214_read_data(uint8_t channel);
+uint8_t FDC2214_is_data_ready(fdc2214_channel_t ch);
+uint32_t FDC2214_readRawChannel(fdc2214_channel_t ch);
+float FDC2214_readFrequencyHz(fdc2214_channel_t ch);
+float FDC2214_readCapacitancePf(fdc2214_channel_t ch, float inductance_uH);
 float FDC2214_read_differential_capacitance(uint8_t accumulator);
 uint8_t FDC2214_read_accumulator_height(uint8_t accumulator);
-uint8_t isConnected();
 
 
-void write_config();
-void write_mux_config();
 
 
 

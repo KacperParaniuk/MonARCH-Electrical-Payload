@@ -96,11 +96,9 @@ int FDC2214_Check_Device_ID(){
 
 }
 
-
 // ============================================================================
 // Channel configuration
 // ============================================================================
-
 
 void setReferenceCount(fdc2214_channel_t ch, uint16_t rcount){
 	write_register(RCOUNT_CH0 + ch, rcount);
@@ -138,16 +136,11 @@ void setDriveCurrent(fdc2214_channel_t ch, uint8_t idrive_5bit){
 
 }
 
-
 // ============================================================================
 // One-shot sensible defaults
 // ============================================================================
 
-
-
-
 uint8_t FDC2214_configure_defaults(void)
-
 {
 	// FDC2214 Register Setup.
 
@@ -177,7 +170,6 @@ uint8_t FDC2214_configure_defaults(void)
     write_config();
 
     return 0;
-
 
 }
 
@@ -464,8 +456,6 @@ uint8_t FDC2214_configure_defaults(void)
 //		return -22;
 //	}
 
-
-
 void FDC2214_set_active_channel(fdc2214_channel_t ch){
 	_config &= ~0xC000;
 	_config |= ((uint16_t)ch) << 14;
@@ -527,91 +517,151 @@ void FDC2214_sleep()
 // ============================================================================
 
 
+uint8_t FDC2214_is_data_ready(fdc2214_channel_t ch){
+
+    uint16_t status = readStatus();
+    uint16_t mask;
+    switch (ch) {
+        case FDC2214_CH0: mask = FDC2214_STATUS_CH0_UNREAD; break;
+        case FDC2214_CH1: mask = FDC2214_STATUS_CH1_UNREAD; break;
+        case FDC2214_CH2: mask = FDC2214_STATUS_CH2_UNREAD; break;
+        case FDC2214_CH3: mask = FDC2214_STATUS_CH3_UNREAD; break;
+        default: return -1;
+    }
+    return (status & mask) != 0;
+}
+
 
 // data = ( f_sensor * 2^28 ) / f_ref
 
-uint32_t FDC2214_read_data(uint8_t channel) // read 28 bit value. (RAW)
-{
-	volatile uint32_t data;
-	uint8_t pdata[4];
-
-	switch (channel)
-	{
-	case 0:
-		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_MSB_CH0, I2C_MEMADD_SIZE_8BIT, pdata, 2, 100); // size of two indicates two bytes.
-		HAL_Delay(20);
-
-		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_LSB_CH0, I2C_MEMADD_SIZE_8BIT, pdata + 2, 2, 100); // pdata + 2 = third item in the array
-		HAL_Delay(20);
-
-		data = ((pdata[0] << 24 | pdata[1] << 16 | pdata[2] << 8 | pdata[3]) & 0x0fffffff); // & masks off status bits. but they can be read also if wanted in the future.
-		return data;
-	case 1:
-		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_MSB_CH1, I2C_MEMADD_SIZE_8BIT, pdata, 2, 100);
-		HAL_Delay(20);
-
-		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_LSB_CH1, I2C_MEMADD_SIZE_8BIT, pdata + 2, 2, 100);
-		HAL_Delay(20);
-
-		data = ((pdata[0] << 24 | pdata[1] << 16 | pdata[2] << 8 | pdata[3]) & 0x0fffffff);
-		return data;
-	case 2:
-		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_MSB_CH2, I2C_MEMADD_SIZE_8BIT, pdata, 2, 100);
-		HAL_Delay(20);
-
-		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_LSB_CH2, I2C_MEMADD_SIZE_8BIT, pdata + 2, 2, 100);
-		HAL_Delay(20);
-
-		data = ((pdata[0] << 24 | pdata[1] << 16 | pdata[2] << 8 | pdata[3]) & 0x0fffffff);
-		return data;
-	case 3:
-		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_MSB_CH3, I2C_MEMADD_SIZE_8BIT, pdata, 2, 100);
-		HAL_Delay(20);
-
-		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_LSB_CH3, I2C_MEMADD_SIZE_8BIT, pdata + 2, 2, 100);
-		HAL_Delay(20);
-
-		data = ((pdata[0] << 24 | pdata[1] << 16 | pdata[2] << 8 | pdata[3]) & 0x0fffffff); // strip status / error bits
-		return data;
-	default:
-		return 0;
-	}
-}
+//uint32_t FDC2214_read_data(uint8_t channel) // read 28 bit value. (RAW)
+//{
+//	volatile uint32_t data;
+//	uint8_t pdata[4];
+//
+//	switch (channel)
+//	{
+//	case 0:
+//		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_MSB_CH0, I2C_MEMADD_SIZE_8BIT, pdata, 2, 100); // size of two indicates two bytes.
+//		HAL_Delay(20);
+//
+//		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_LSB_CH0, I2C_MEMADD_SIZE_8BIT, pdata + 2, 2, 100); // pdata + 2 = third item in the array
+//		HAL_Delay(20);
+//
+//		data = ((pdata[0] << 24 | pdata[1] << 16 | pdata[2] << 8 | pdata[3]) & 0x0fffffff); // & masks off status bits. but they can be read also if wanted in the future.
+//		return data;
+//	case 1:
+//		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_MSB_CH1, I2C_MEMADD_SIZE_8BIT, pdata, 2, 100);
+//		HAL_Delay(20);
+//
+//		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_LSB_CH1, I2C_MEMADD_SIZE_8BIT, pdata + 2, 2, 100);
+//		HAL_Delay(20);
+//
+//		data = ((pdata[0] << 24 | pdata[1] << 16 | pdata[2] << 8 | pdata[3]) & 0x0fffffff);
+//		return data;
+//	case 2:
+//		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_MSB_CH2, I2C_MEMADD_SIZE_8BIT, pdata, 2, 100);
+//		HAL_Delay(20);
+//
+//		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_LSB_CH2, I2C_MEMADD_SIZE_8BIT, pdata + 2, 2, 100);
+//		HAL_Delay(20);
+//
+//		data = ((pdata[0] << 24 | pdata[1] << 16 | pdata[2] << 8 | pdata[3]) & 0x0fffffff);
+//		return data;
+//	case 3:
+//		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_MSB_CH3, I2C_MEMADD_SIZE_8BIT, pdata, 2, 100);
+//		HAL_Delay(20);
+//
+//		HAL_I2C_Mem_Read(&hi2c4, FDC2214, DATA_LSB_CH3, I2C_MEMADD_SIZE_8BIT, pdata + 2, 2, 100);
+//		HAL_Delay(20);
+//
+//		data = ((pdata[0] << 24 | pdata[1] << 16 | pdata[2] << 8 | pdata[3]) & 0x0fffffff); // strip status / error bits
+//		return data;
+//	default:
+//		return 0;
+//	}
+//}
 
 
 // takes a capacitance_reading data and converts it into an actual capacitance
 // the digitized output for each channel is proportional to the ratio of fSENSOR/fREF
 // calculate Fsensor from reading.
 
-
-float FDC2214_read_capacitance(uint8_t channel, float *cap_pf){
-
-	uint64_t raw = FDC2214_read_data(channel);
-	uint64_t f_sensor;
-
-	// convert into f_sensor data
-
-	f_sensor = (((float) raw) / ((float)(1UL << 28))) * FDC2214_F_REF; // datasheet equation
-
-    /* Step 2: frequency -> total capacitance (pF) */
-
-	float omega = 2.0f * 3.14159265f * f_sensor;
-	float total_c = (1.0f/(FDC2214_L_HENRY * omega * omega));
+// ============================================================================
+// Data access
+// ============================================================================
 
 
-	/* Step 3: Subtract Parallel Capacitor */
+uint32_t FDC2214_readRawChannel(fdc2214_channel_t ch)
+{
+    uint16_t msb = read_register(DATA_MSB_CH0 + (ch * 2));
+    uint16_t lsb = read_register(DATA_LSB_CH0 + (ch * 2));
 
-	*cap_pf = (total_c - (FDC2214_C_PARALLEL)) * (1e12);
-
-	return 1;
-
+    // Top 4 bits are error flags; data is 28 bits.
+    uint32_t raw = ((uint32_t)(msb & 0x0FFF) << 16) | lsb;
+    return raw & FDC2214_DATA_MASK_28BIT;
 }
+
+float FDC2214_readFrequencyHz(fdc2214_channel_t ch)
+{
+    uint32_t raw = FDC2214_readRawChannel(ch);
+    if (raw == 0) return 0.0f;
+
+    uint16_t cdiv     = _clock_div[ch];
+    uint16_t fref_div = cdiv & 0x03FF;
+    if (fref_div == 0) fref_div = 1;
+
+    // CH_FIN_DIVIDER is 1 for low-freq sensor mode, 2 for high-freq mode.
+    float ch_fin_divider = ((cdiv & 0x3000) == FDC2214_FIN_SEL_HIGH_FREQ) ? 2.0f : 1.0f;
+    float f_ref          = FDC2214_F_REF / (float)fref_div;
+
+    // f_sensor = (DATA / 2^28) * f_REF * CH_FIN_DIVIDER
+    return ((float)raw / 268435456.0f) * f_ref * ch_fin_divider;
+}
+
+float FDC2214_readCapacitancePf(fdc2214_channel_t ch, float inductance_uH)
+{
+    float f = FDC2214_readFrequencyHz(ch);
+    if (f <= 0.0f || inductance_uH <= 0.0f) return 0.0f;
+
+    // C = 1 / (L * (2*pi*f)^2). Result in farads.
+    float L = inductance_uH * 1.0e-6f;
+    float w = 2.0f * 3.14 * f;
+    float C = 1.0f / (L * w * w);
+
+    return C * 1.0e12f; // farads -> picofarads
+}
+
+
+
+//float FDC2214_read_capacitance(uint8_t channel, float *cap_pf){
+//
+//	uint64_t raw = FDC2214_read_data(channel);
+//	uint64_t f_sensor;
+//
+//	// convert into f_sensor data
+//
+//	f_sensor = (((float) raw) / ((float)(1UL << 28))) * FDC2214_F_REF; // datasheet equation
+//
+//    /* Step 2: frequency -> total capacitance (pF) */
+//
+//	float omega = 2.0f * 3.14159265f * f_sensor;
+//	float total_c = (1.0f/(FDC2214_L_HENRY * omega * omega));
+//
+//
+//	/* Step 3: Subtract Parallel Capacitor */
+//
+//	*cap_pf = (total_c - (FDC2214_C_PARALLEL)) * (1e12);
+//
+//	return 1;
+//
+//}
 
 
 float FDC2214_read_differential_capacitance(uint8_t accumulator){
 
-	float c1;
-	float c2;
+//	float c1;
+//	float c2;
 
 
 	// eliminates any errors due to noise
@@ -619,16 +669,21 @@ float FDC2214_read_differential_capacitance(uint8_t accumulator){
 	switch(accumulator){
 	// 1st Accumulator
 		case 1:
-			FDC2214_read_capacitance(0, &c1);
-			FDC2214_read_capacitance(1, &c2);
-			return c2 - c1;
+
+			return FDC2214_readCapacitancePf(0, FDC2214_L_HENRY); // reads from channel 0
+
+//			c1 = FDC2214_readCapacitancePf(0, FDC2214_L_HENRY);
+//			c2 = FDC2214_readCapacitancePf(1, FDC2214_L_HENRY);
+//			return c2 - c1;
 
 	// 2nd Accumulator
 		case 2:
-			FDC2214_read_capacitance(2, &c1);
-			FDC2214_read_capacitance(3, &c2);
-			return c2 - c1;
+			return FDC2214_readCapacitancePf(1, FDC2214_L_HENRY); // reads from channel 1
 
+
+//			c1 = FDC2214_readCapacitancePf(2, FDC2214_L_HENRY);
+//			c2 = FDC2214_readCapacitancePf(3, FDC2214_L_HENRY);
+//			return c2 - c1;
 	}
 
 	return -1;

@@ -406,13 +406,6 @@ float temperature;
    	FDC2214_setAutoscan(0); // false
    	FDC2214_Wakeup();
 
-
-
-
-//  Init FDC2214 ALL FOUR CHANNELS w/ config AND adequate register settings
-
-   	FDC2214_Init();
-
 #endif
 
 
@@ -859,42 +852,23 @@ float temperature;
 
  	  printf("Reading Device ID's... \n");
 
- 	  bool val = FDC2214_Check_Device_ID();
- 	  if(val){
+ 	  if(isConnected()==0){
  		  printf("FDC NOMINAL \n");
  	  }
  	  else{
  		  printf("FDC FAIL \n");
  	  }
- 	  printf("FDC2214 Device Read: %d\n", val);
-
- 	  FDC2214_Device_ID(device_id);
- 	  printf("FDC2214 Device ID: %d\n", device_id);
-
-//
-//// 	  The float formatting support is not enabled, check your MCU Settings from "Project Properties >
-// 	  // C/C++ Build > Settings > Tool Settings", or add manually "-u _printf_float" in linker flags.
-//
-//
- 	for(int i =0; i<4; i++){
-
- 		uint64_t raw = FDC2214_read_data(i);
- 		double f_sensor;
-
- 		f_sensor = (((float) raw) / ((float)(1UL << 28))) * FDC2214_F_REF; // datasheet equation
-
- 		double omega = 2.0f * 3.14159265f * f_sensor;
- 		double total_c = (1.0f/(FDC2214_L_HENRY * omega * omega));
-
- 		// 	 capacitance = FDC2214_read_capacitance(3, &c1);
- 		// 	 capacitance = FDC2214_read_capacitance(3, &c2);
- 		printf("Channel: %d \n", i);
- 		printf("F_Sensor: %lf \r\n", f_sensor);
- 		printf("Omega: %lf \r\n", omega);
- 		printf("total_c: %lf \r\n", total_c);
 
 
- 	}
+ 	  // READ DATA FROM CH0
+ 	  if(FDC2214_is_data_ready(FDC2214_CH0)){
+ 	        float f_hz = FDC2214_readFrequencyH(FDC2214_CH0);
+ 	        float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0, FDC2214_L_HENRY);
+
+ 	        Serial.print(f_hz / 1.0e6f, 6);
+ 	        Serial.print('\t');
+ 	        Serial.println(c_pf, 4);
+ 	  }
 
 #endif
 
