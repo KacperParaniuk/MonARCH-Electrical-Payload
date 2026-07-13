@@ -38,8 +38,8 @@
 
 
 
-#define AD7124
-#define AD7124_SINGLE_MODE
+//#define AD7124
+//#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214
 //#define MAX31856
@@ -48,7 +48,7 @@
 //#define MAX31856_T3
 //#define MAX31856_T4
 //#define MAX31856_T5
-#define B2B
+//#define B2B
 //#define VALVE_TEST
 //#define I2C_SCANNER
 //#define HEATER
@@ -527,14 +527,14 @@ float temperature;
 	   Serial_Printf("Temperature Test %d C\r\n", 100); // Serial_Print custom formatted print function
 
 
-	   TEST READS...
+//	   TEST READS...
 
 	   Serial_Print("Test IC Reads"); // Serial_Print custom function test.
 
-	   For Repo Branch...
+//	   For Repo Branch...
 
 
-	   polling method -> Blocks CPU until UART receive is done.
+//	   polling method -> Blocks CPU until UART receive is done.
  	  while(HAL_UART_Receive(&huart3, &RX_CMD, 8,1000)){ // uart receive block will continously try to fetch.
  		  // Polling for Seperate Pressure Sensors.
 
@@ -624,66 +624,66 @@ float temperature;
 
 // // Read PC104 Voltages
 
- 			case CMD_READ_12VA_VB:
- 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VB);
- 				Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
- 			case CMD_READ_12VA_VA:
- 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VA);
- 				Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
- 			case CMD_READ_3V3_VB:
- 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VB);
- 				Serial_Printf("PC104 Voltage Reading 3V3_VB: %d \r\n", value);
- 			case CMD_READ_3V3_VA:
- 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VA);
- 				Serial_Printf("PC104 Voltage Reading 3V3_VA: %d \r\n", value);
-
- 			case CMD_READ_VBAT_VA:
- 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VA);
- 				Serial_Printf("PC104 Voltage Reading VBAT_VA: %d \r\n", value);
- 			case CMD_READ_VBAT_VB:
- 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VB);
- 				Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
-
- 			case CMD_READ_12VB_VA:
- 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VA);
- 				Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
-
- 			case CMD_READ_12VB_VB:
- 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VB);
- 				Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
-
-// // Read PC104 Currents
- 			case CMD_READ_12VA_VB_CURRENT:
- 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VB);
- 				Serial_Printf("PC104 Current Reading 12VA_VB: %d \r\n", value);
-
- 			case CMD_READ_12VA_VA_CURRENT:
- 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VA);
- 				Serial_Printf("PC104 Current Reading 12VA_VA: %d \r\n", value);
-
- 			case CMD_READ_3V3_VB_CURRENT:
- 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VB);
- 				Serial_Printf("PC104 Current Reading 3V3_VB : %d \r\n", value);
-
- 			case CMD_READ_3V3_VA_CURRENT:
- 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VA);
- 				Serial_Printf("PC104 Current Reading 3V3_VA : %d \r\n", value);
-
- 			case CMD_READ_VBAT_VA_CURRENT:
- 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VA);
- 				Serial_Printf("PC104 Current Reading VBAT_VA : %d \r\n", value);
-
- 			case CMD_READ_VBAT_VB_CURRENT:
- 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VB);
- 				Serial_Printf("PC104 Current Reading VBAT_VB : %d \r\n", value);
-
- 			case CMD_READ_12VB_VA_CURRENT:
- 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VA);
- 				Serial_Printf("PC104 Current Reading 12VB_VA: %d \r\n",  value);
-
- 			case CMD_READ_12VB_VB_CURRENT:
- 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VB);
- 				Serial_Printf("PC104 Current Reading 12VB_VB: %d \r\n", value);
+// 			case CMD_READ_12VA_VB:
+// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VB);
+// 				Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
+// 			case CMD_READ_12VA_VA:
+// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VA);
+// 				Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
+// 			case CMD_READ_3V3_VB:
+// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VB);
+// 				Serial_Printf("PC104 Voltage Reading 3V3_VB: %d \r\n", value);
+// 			case CMD_READ_3V3_VA:
+// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VA);
+// 				Serial_Printf("PC104 Voltage Reading 3V3_VA: %d \r\n", value);
+//
+// 			case CMD_READ_VBAT_VA:
+// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VA);
+// 				Serial_Printf("PC104 Voltage Reading VBAT_VA: %d \r\n", value);
+// 			case CMD_READ_VBAT_VB:
+// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VB);
+// 				Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
+//
+// 			case CMD_READ_12VB_VA:
+// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VA);
+// 				Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
+//
+// 			case CMD_READ_12VB_VB:
+// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VB);
+// 				Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
+//
+//// // Read PC104 Currents
+// 			case CMD_READ_12VA_VB_CURRENT:
+// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VB);
+// 				Serial_Printf("PC104 Current Reading 12VA_VB: %d \r\n", value);
+//
+// 			case CMD_READ_12VA_VA_CURRENT:
+// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VA);
+// 				Serial_Printf("PC104 Current Reading 12VA_VA: %d \r\n", value);
+//
+// 			case CMD_READ_3V3_VB_CURRENT:
+// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VB);
+// 				Serial_Printf("PC104 Current Reading 3V3_VB : %d \r\n", value);
+//
+// 			case CMD_READ_3V3_VA_CURRENT:
+// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VA);
+// 				Serial_Printf("PC104 Current Reading 3V3_VA : %d \r\n", value);
+//
+// 			case CMD_READ_VBAT_VA_CURRENT:
+// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VA);
+// 				Serial_Printf("PC104 Current Reading VBAT_VA : %d \r\n", value);
+//
+// 			case CMD_READ_VBAT_VB_CURRENT:
+// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VB);
+// 				Serial_Printf("PC104 Current Reading VBAT_VB : %d \r\n", value);
+//
+// 			case CMD_READ_12VB_VA_CURRENT:
+// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VA);
+// 				Serial_Printf("PC104 Current Reading 12VB_VA: %d \r\n",  value);
+//
+// 			case CMD_READ_12VB_VB_CURRENT:
+// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VB);
+// 				Serial_Printf("PC104 Current Reading 12VB_VB: %d \r\n", value);
 
 
 // // Open Solenoids (ON/OFF)
