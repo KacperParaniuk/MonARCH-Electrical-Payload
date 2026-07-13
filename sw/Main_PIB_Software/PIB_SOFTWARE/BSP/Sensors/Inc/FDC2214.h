@@ -54,12 +54,14 @@
 #define FDC2214_CAP_EMPTY   0 // insert capacitance reading when container is empty
 #define FDC2214_ACUM_HREF  500 // (mm)  insert height of container (units of desire)
 
+uint8_t FDC2214_Begin();
 uint8_t FDC2214_Init();
 uint32_t FDC2214_get_capacitance_data(uint8_t channel);
 uint32_t FDC2214_read_data(uint8_t channel);
 float FDC2214_read_capacitance(uint8_t channel, float *cap_pf);
 float FDC2214_read_differential_capacitance(uint8_t accumulator);
 uint8_t FDC2214_read_accumulator_height(uint8_t accumulator);
+uint8_t isConnected();
 
 void FDC2214_Device_ID(uint8_t buffer);
 int FDC2214_Check_Device_ID();

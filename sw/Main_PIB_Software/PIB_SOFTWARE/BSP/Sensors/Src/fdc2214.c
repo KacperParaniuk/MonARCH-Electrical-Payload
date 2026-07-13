@@ -10,6 +10,53 @@ volatile uint16_t check[2];
 HAL_StatusTypeDef ret;
 
 // INIT ALL CHANNELS.
+
+uint8_t FDC2214_Begin(){
+
+	if(isConnected()!=0){
+		return -1;
+	}
+	else{
+		return 0;
+	}
+
+
+}
+
+
+
+
+uint8_t isConnected(){
+
+	ret = HAL_I2C_Mem_Read(&hi2c4, FDC2214, MANUFACTURER_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -24;
+	}
+
+	check[0] = cof[1] | cof[0] << 8; // big endian 	(RECONSTRUCT BITS INTO A 16 BIT VALUE) assuming we are using big endian
+
+
+	ret = HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return -25;
+	}
+
+	check[1] = cof[1] | cof[0] << 8;
+	if ((check[0] == MANUFACTURER_ID_val) && (check[1] == DEVICE_ID_val))
+		return 0;
+	else
+		return -1;
+
+
+}
+
+
+
+
 uint8_t FDC2214_Init(void)
 
 {
@@ -301,33 +348,48 @@ uint8_t FDC2214_Init(void)
 	}
 
 
-	// ID's
+	// Verify Device / Manufacturer ID.
 
-	ret = HAL_I2C_Mem_Read(&hi2c4, FDC2214, MANUFACTURER_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	return isConnected();
+}
+
+
+
+
+uint16_t read_register(uint16_t reg){
+
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, reg, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	HAL_Delay(200);
+
+
+
+	if(ret != HAL_OK){
+		return -22;
+	}
+
+	return (cof[0] << 8) | cof[1];
+
+
+
+}
+
+
+uint16_t write_register(uint16_t reg, uint16_t value){
+
+
+	cof[0] = (uint8_t) (value >> 8);
+	cof[1] = (uint8_t) (value & 0xFF);
+
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, reg, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
 
 	if(ret != HAL_OK){
 		return -23;
 	}
-	// Verify Device / Manufacturer ID.
 
-	check[0] = cof[1] | cof[0] << 8;
+	return 0;
 
-	ret = HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
-	HAL_Delay(20);
-
-	if(ret != HAL_OK){
-		return -24;
-	}
-
-	check[1] = cof[1] | cof[0] << 8;
-	if ((check[0] == MANUFACTURER_ID_val) && (check[1] == DEVICE_ID_val))
-		return 1;
-	else
-		return 0;
 }
-
-
 
 // data = ( f_sensor * 2^28 ) / f_ref
 
@@ -446,18 +508,11 @@ uint8_t FDC2214_read_accumulator_height(uint8_t accumulator){
 }
 
 
-
-void reset_fdc2214(){
+uint8_t reset_fdc2214(){
 	// Reset Registers in Device.
 
-	uint8_t cof[2];
-	cof[0] = 0x80;
-	cof[1] = 0x00;
-	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, RESET_DEV, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
-	HAL_Delay(200);
-	if(ret != HAL_OK){
+	return write_register(RESET_DEV, 0x8000);
 
-	}
 
 }
 
@@ -491,15 +546,6 @@ int FDC2214_Check_Device_ID(){
 }
 
 
-void FDC2214_Device_ID(uint8_t buffer){
-
-	HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
-	HAL_Delay(20);
-
-	buffer = cof[1];
-
-	 // DEVICE ID in second position
-}
 
 // Functions to implement (if needed)
 
