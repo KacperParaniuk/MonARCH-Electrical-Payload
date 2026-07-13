@@ -1,0 +1,9 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "INA226-Q1")(type "KiCad")(uri "${KIPRJMOD}/INA226-Q1/INA226-Q1.kicad_sym")(options "")(descr ""))
+  (lib (name "FDC2214")(type "KiCad")(uri "${KIPRJMOD}/FDC2214/FDC2214.kicad_sym")(options "")(descr ""))
+  (lib (name "Connectors 4 Pin")(type "KiCad")(uri "${KIPRJMOD}/5037630491/KiCADv6/2026-02-24_17-38-04.kicad_sym")(options "")(descr ""))
+  (lib (name "Connectors 2 Pin")(type "KiCad")(uri "${KIPRJMOD}/5037630291/KiCADv6/2026-02-23_19-26-29.kicad_sym")(options "")(descr ""))
+  (lib (name "SIT5000AI-2E-33N0-40.000000X")(type "KiCad")(uri "${KIPRJMOD}/SIT5000AI-2E-33N0-40.000000X/SIT5000AI-2E-33N0-40.000000X.kicad_sym")(options "")(descr ""))
+  (lib (name "OPA320")(type "KiCad")(uri "${KIPRJMOD}/OPA320/KiCADv6/OP320A.kicad_sym")(options "")(descr ""))
+)
