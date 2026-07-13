@@ -1627,6 +1627,11 @@ Discarded input sections
  .bss           0x00000000        0x0 ./BSP/Sensors/Src/fdc2214.o
  .rodata.CHANNEL_OFFSET_TAB
                 0x00000000        0x7 ./BSP/Sensors/Src/fdc2214.o
+ .bss._config   0x00000000        0x2 ./BSP/Sensors/Src/fdc2214.o
+ .bss._mux_config
+                0x00000000        0x2 ./BSP/Sensors/Src/fdc2214.o
+ .bss._clock_div
+                0x00000000        0x8 ./BSP/Sensors/Src/fdc2214.o
  .bss.cof       0x00000000        0x2 ./BSP/Sensors/Src/fdc2214.o
  .bss.check     0x00000000        0x4 ./BSP/Sensors/Src/fdc2214.o
  .bss.ret       0x00000000        0x1 ./BSP/Sensors/Src/fdc2214.o
@@ -1634,12 +1639,26 @@ Discarded input sections
                 0x00000000       0x18 ./BSP/Sensors/Src/fdc2214.o
  .text.isConnected
                 0x00000000       0xd8 ./BSP/Sensors/Src/fdc2214.o
- .text.FDC2214_Init
-                0x00000000      0x590 ./BSP/Sensors/Src/fdc2214.o
+ .text.reset_fdc2214
+                0x00000000       0x12 ./BSP/Sensors/Src/fdc2214.o
+ .text.FDC2214_Check_Device_ID
+                0x00000000       0x68 ./BSP/Sensors/Src/fdc2214.o
+ .text.setReferenceCount
+                0x00000000       0x2a ./BSP/Sensors/Src/fdc2214.o
+ .text.setSettleCount
+                0x00000000       0x2a ./BSP/Sensors/Src/fdc2214.o
+ .text.setOffset
+                0x00000000       0x2a ./BSP/Sensors/Src/fdc2214.o
+ .text.setClockDividers
+                0x00000000       0x60 ./BSP/Sensors/Src/fdc2214.o
+ .text.setDriveCurrent
+                0x00000000       0x32 ./BSP/Sensors/Src/fdc2214.o
+ .text.FDC2214_configure_defaults
+                0x00000000      0x4c8 ./BSP/Sensors/Src/fdc2214.o
  .text.read_register
                 0x00000000       0x68 ./BSP/Sensors/Src/fdc2214.o
  .text.write_register
-                0x00000000       0x70 ./BSP/Sensors/Src/fdc2214.o
+                0x00000000       0x6c ./BSP/Sensors/Src/fdc2214.o
  .text.FDC2214_read_data
                 0x00000000      0x1b8 ./BSP/Sensors/Src/fdc2214.o
  .text.FDC2214_read_capacitance
@@ -1648,16 +1667,16 @@ Discarded input sections
                 0x00000000       0x70 ./BSP/Sensors/Src/fdc2214.o
  .text.FDC2214_read_accumulator_height
                 0x00000000       0x3c ./BSP/Sensors/Src/fdc2214.o
- .text.reset_fdc2214
-                0x00000000       0x44 ./BSP/Sensors/Src/fdc2214.o
- .text.FDC2214_Check_Device_ID
-                0x00000000       0x68 ./BSP/Sensors/Src/fdc2214.o
- .debug_info    0x00000000      0x935 ./BSP/Sensors/Src/fdc2214.o
- .debug_abbrev  0x00000000      0x26a ./BSP/Sensors/Src/fdc2214.o
+ .text.write_config
+                0x00000000       0x18 ./BSP/Sensors/Src/fdc2214.o
+ .text.write_mux_config
+                0x00000000       0x18 ./BSP/Sensors/Src/fdc2214.o
+ .debug_info    0x00000000      0xb07 ./BSP/Sensors/Src/fdc2214.o
+ .debug_abbrev  0x00000000      0x2ae ./BSP/Sensors/Src/fdc2214.o
  .debug_aranges
-                0x00000000       0x70 ./BSP/Sensors/Src/fdc2214.o
+                0x00000000       0xa8 ./BSP/Sensors/Src/fdc2214.o
  .debug_rnglists
-                0x00000000       0x53 ./BSP/Sensors/Src/fdc2214.o
+                0x00000000       0x7d ./BSP/Sensors/Src/fdc2214.o
  .debug_macro   0x00000000      0x223 ./BSP/Sensors/Src/fdc2214.o
  .debug_macro   0x00000000      0xad8 ./BSP/Sensors/Src/fdc2214.o
  .debug_macro   0x00000000      0x1b3 ./BSP/Sensors/Src/fdc2214.o
@@ -1702,10 +1721,10 @@ Discarded input sections
  .debug_macro   0x00000000      0x433 ./BSP/Sensors/Src/fdc2214.o
  .debug_macro   0x00000000      0x215 ./BSP/Sensors/Src/fdc2214.o
  .debug_macro   0x00000000      0x106 ./BSP/Sensors/Src/fdc2214.o
- .debug_line    0x00000000      0xced ./BSP/Sensors/Src/fdc2214.o
- .debug_str     0x00000000   0x100ec8 ./BSP/Sensors/Src/fdc2214.o
+ .debug_line    0x00000000      0xd5b ./BSP/Sensors/Src/fdc2214.o
+ .debug_str     0x00000000   0x100fd3 ./BSP/Sensors/Src/fdc2214.o
  .comment       0x00000000       0x44 ./BSP/Sensors/Src/fdc2214.o
- .debug_frame   0x00000000      0x19c ./BSP/Sensors/Src/fdc2214.o
+ .debug_frame   0x00000000      0x284 ./BSP/Sensors/Src/fdc2214.o
  .ARM.attributes
                 0x00000000       0x34 ./BSP/Sensors/Src/fdc2214.o
  .group         0x00000000        0xc ./BSP/Sensors/Src/max31856.o

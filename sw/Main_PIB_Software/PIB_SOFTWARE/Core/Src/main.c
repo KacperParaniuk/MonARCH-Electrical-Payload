@@ -392,14 +392,14 @@ float temperature;
 
 #ifdef FDC2214
 
-
-
-   	ret = reset_fdc2214();
-
-   	if(ret!=0){
-   		printf("Failed to reset fdc2214");
-
+   	ret = FDC2214_Begin();
+   	if(ret != 0){
+   		printf("Failed to communicate with FDCC2214");
    	}
+
+
+
+
 
 
 //  Init FDC2214 ALL FOUR CHANNELS w/ config AND adequate register settings

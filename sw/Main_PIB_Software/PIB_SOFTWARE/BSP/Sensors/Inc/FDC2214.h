@@ -54,8 +54,39 @@
 #define FDC2214_CAP_EMPTY   0 // insert capacitance reading when container is empty
 #define FDC2214_ACUM_HREF  500 // (mm)  insert height of container (units of desire)
 
+typedef enum {
+    FDC2214_CH0 = 0,
+    FDC2214_CH1 = 1,
+    FDC2214_CH2 = 2,
+    FDC2214_CH3 = 3
+} fdc2214_channel_t;
+
+// Cached CONFIG and MUX_CONFIG so individual setters can update single fields
+// without losing the rest of the word.
+uint16_t  _config;
+uint16_t  _mux_config;
+
+// Cached per-channel CLOCK_DIVIDERS so frequency conversion knows CH_FIN_DIVIDER.
+uint16_t  _clock_div[4];
+
+// ------------------------------------------------------------- lifecycle
 uint8_t FDC2214_Begin();
 uint8_t FDC2214_Init();
+uint8_t reset_fdc2214();
+void FDC2214_Device_ID(uint8_t buffer);
+int FDC2214_Check_Device_ID();
+
+// -------------------------------------------------------- channel config
+void      setReferenceCount(fdc2214_channel_t ch, uint16_t rcount);
+void      setSettleCount(fdc2214_channel_t ch, uint16_t scount);
+void      setOffset(fdc2214_channel_t ch, uint16_t offset);
+void      setClockDividers(fdc2214_channel_t ch, uint16_t fin_sel, uint16_t fref_div);
+void      setDriveCurrent(fdc2214_channel_t ch, uint8_t idrive_5bit);
+
+
+uint16_t read_register(uint16_t reg);
+uint8_t write_register(uint16_t reg, uint16_t value);
+
 uint32_t FDC2214_get_capacitance_data(uint8_t channel);
 uint32_t FDC2214_read_data(uint8_t channel);
 float FDC2214_read_capacitance(uint8_t channel, float *cap_pf);
@@ -63,12 +94,10 @@ float FDC2214_read_differential_capacitance(uint8_t accumulator);
 uint8_t FDC2214_read_accumulator_height(uint8_t accumulator);
 uint8_t isConnected();
 
-void FDC2214_Device_ID(uint8_t buffer);
-int FDC2214_Check_Device_ID();
 
 
-void reset_fdc2214();
-
+void write_config();
+void write_mux_config();
 
 
 
