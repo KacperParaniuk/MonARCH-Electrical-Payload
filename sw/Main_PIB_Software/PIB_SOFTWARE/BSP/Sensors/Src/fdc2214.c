@@ -164,8 +164,6 @@ uint8_t FDC2214_configure_defaults(void)
 		setDriveCurrent(ch, 0x0F);
 	}
 
-
-
     // Disable per-channel error reporting on data outputs (kept clean by default).
     write_register(ERROR_CONFIG, 0x0000);
 
@@ -176,12 +174,12 @@ uint8_t FDC2214_configure_defaults(void)
     // CONFIG: hold device in sleep until start() is called. Internal oscillator,
     // INTB enabled, full-current sensor activation, low-current drive.
     _config = FDC2214_CONFIG_RESERVED | FDC2214_CONFIG_ACTIVE_CH0 | FDC2214_CONFIG_SLEEP_EN;
-    writeConfig();
+    write_config();
 
     return 0;
 
 
-
+}
 
 	// R-COUNT || R-Count MAXIMIZED = Highest Accuracy (Num Bits of Accuracy)
 
@@ -466,51 +464,67 @@ uint8_t FDC2214_configure_defaults(void)
 //		return -22;
 //	}
 
+
+
+void FDC2214_set_active_channel(fdc2214_channel_t ch){
+	_config &= ~0xC000;
+	_config |= ((uint16_t)ch) << 14;
+	write_config();
 }
 
 
-void FDC2214_set_active_channel(){
-
+void FDC2214_setAutoscan(uint8_t enable)
+{
+	uint16_t rr_sequence = FDC2214_RR_SEQ_ALL;
+    _mux_config &= ~(0x8000 | 0x6000);
+    if (enable) {
+        _mux_config |= FDC2214_AUTOSCAN_ENABLED;
+        _mux_config |= (rr_sequence & 0x6000);
+    }
+    write_mux_config();
 }
 
-
-
-
-uint16_t read_register(uint16_t reg){
-
-	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, reg, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
-	HAL_Delay(200);
-
-
-
-	if(ret != HAL_OK){
-		return -22;
-	}
-
-	return (cof[0] << 8) | cof[1];
-
-
-
+void FDC2214_setDeglitch(uint16_t deglitch_field)
+{
+    _mux_config &= ~0x0007;
+    _mux_config |= (deglitch_field & 0x0007);
+    write_mux_config();
 }
 
-
-uint8_t write_register(uint16_t reg, uint16_t value){
-
-
-	cof[0] = (uint8_t) (value >> 8);
-	cof[1] = (uint8_t) (value & 0xFF);
-
-	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, reg, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
-	HAL_Delay(20);
-
-	if(ret != HAL_OK){
-		return 2;
-	}
-
-	return 0;
-
+void FDC2214_setReferenceClockSource(uint8_t external)
+{
+    if (external) _config |= FDC2214_CONFIG_REF_CLK_EXT;
+    else          _config &= ~FDC2214_CONFIG_REF_CLK_EXT;
+    write_config();
 }
 
+void FDC2214_setHighCurrentDrive(uint8_t enable)
+{
+    if (enable) _config |= FDC2214_CONFIG_HIGH_CURRENT;
+    else        _config &= ~FDC2214_CONFIG_HIGH_CURRENT;
+    write_config();
+}
+
+void FDC2214_setSleep(uint8_t sleep)
+{
+    if (sleep) _config |= FDC2214_CONFIG_SLEEP_EN;
+    else       _config &= ~FDC2214_CONFIG_SLEEP_EN;
+    write_config();
+}
+
+void FDC2214_wakeup()
+{
+    _config &= ~FDC2214_CONFIG_SLEEP_EN;
+    write_config();
+}
+
+void FDC2214_sleep()
+{
+    _config |= FDC2214_CONFIG_SLEEP_EN;
+    write_config();
+}
+
+// ============================================================================
 
 
 
@@ -642,6 +656,41 @@ uint16_t readErrorConfig()
 }
 
 
+
+uint16_t read_register(uint16_t reg){
+
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, reg, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	HAL_Delay(200);
+
+
+
+	if(ret != HAL_OK){
+		return -22;
+	}
+
+	return (cof[0] << 8) | cof[1];
+
+
+
+}
+
+
+uint8_t write_register(uint16_t reg, uint16_t value){
+
+
+	cof[0] = (uint8_t) (value >> 8);
+	cof[1] = (uint8_t) (value & 0xFF);
+
+	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, reg, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	HAL_Delay(20);
+
+	if(ret != HAL_OK){
+		return 2;
+	}
+
+	return 0;
+
+}
 
 void write_config(){
 	write_register(CONFIG, _config);

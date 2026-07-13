@@ -397,7 +397,14 @@ float temperature;
    		printf("Failed to communicate with FDCC2214");
    	}
 
+   	// set default FDC2214 configurations
+   	FDC2214_configure_defaults();
 
+   	// toggle channel
+
+   	FDC2214_set_active_channel(FDC2214_CH0);
+   	FDC2214_setAutoscan(0); // false
+   	FDC2214_Wakeup();
 
 
 
