@@ -32,6 +32,9 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+extern SPI_HandleTypeDef hspi1;
+extern UART_HandleTypeDef huart2;
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -81,10 +84,14 @@ void Error_Handler(void);
 #define USART3_TX_OBC_GPIO_Port GPIOC
 #define USART3_RX_OBC_Pin GPIO_PIN_5
 #define USART3_RX_OBC_GPIO_Port GPIOC
-#define TIM__CH1_VALVE6_Pin GPIO_PIN_9 // IEP VALVE 6
+#define TIM__CH1_VALVE6_Pin GPIO_PIN_9
 #define TIM__CH1_VALVE6_GPIO_Port GPIOE
-#define LED_PIN_Pin GPIO_PIN_15
-#define LED_PIN_GPIO_Port GPIOE
+#define LED_PIN_BLUE_Pin GPIO_PIN_13
+#define LED_PIN_BLUE_GPIO_Port GPIOE
+#define LED_PIN_GREEN_Pin GPIO_PIN_14
+#define LED_PIN_GREEN_GPIO_Port GPIOE
+#define LED_PIN_RED_Pin GPIO_PIN_15
+#define LED_PIN_RED_GPIO_Port GPIOE
 #define I2C4_SCL_BREAKOUT_Pin GPIO_PIN_10
 #define I2C4_SCL_BREAKOUT_GPIO_Port GPIOB
 #define I2C4_SDA_BREAKOUT_Pin GPIO_PIN_11
@@ -101,7 +108,7 @@ void Error_Handler(void);
 #define valve7_GPIO_Port GPIOD
 #define valve8_Pin GPIO_PIN_9
 #define valve8_GPIO_Port GPIOD
-#define TIM8_CH1_VALVE4_Pin GPIO_PIN_6 // IEP VALVE 4
+#define TIM8_CH1_VALVE4_Pin GPIO_PIN_6
 #define TIM8_CH1_VALVE4_GPIO_Port GPIOC
 #define valve9_Pin GPIO_PIN_7
 #define valve9_GPIO_Port GPIOC

@@ -32,7 +32,12 @@
 
 /* USER CODE END 1 */
 
-/** Configure pins
+/** Configure pins as
+        * Analog
+        * Input
+        * Output
+        * EVENT_OUT
+        * EXTI
 */
 void MX_GPIO_Init(void)
 {
@@ -48,8 +53,8 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, T4_EN_Pin|T2_EN_Pin|PT_EN_Pin|LED_PIN_Pin
-                          |T3_EN_Pin|T5_EN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, T4_EN_Pin|T2_EN_Pin|PT_EN_Pin|LED_PIN_BLUE_Pin
+                          |LED_PIN_GREEN_Pin|LED_PIN_RED_Pin|T3_EN_Pin|T5_EN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(POW12_EN_GPIO_Port, POW12_EN_Pin, GPIO_PIN_RESET);
@@ -68,10 +73,10 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, valve9_Pin|valve10_Pin|valve11_Pin|valve13_Pin
                           |valve14_Pin|valve16_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : T4_EN_Pin T2_EN_Pin PT_EN_Pin LED_PIN_Pin
-                           T3_EN_Pin T5_EN_Pin */
-  GPIO_InitStruct.Pin = T4_EN_Pin|T2_EN_Pin|PT_EN_Pin|LED_PIN_Pin
-                          |T3_EN_Pin|T5_EN_Pin;
+  /*Configure GPIO pins : T4_EN_Pin T2_EN_Pin PT_EN_Pin LED_PIN_BLUE_Pin
+                           LED_PIN_GREEN_Pin LED_PIN_RED_Pin T3_EN_Pin T5_EN_Pin */
+  GPIO_InitStruct.Pin = T4_EN_Pin|T2_EN_Pin|PT_EN_Pin|LED_PIN_BLUE_Pin
+                          |LED_PIN_GREEN_Pin|LED_PIN_RED_Pin|T3_EN_Pin|T5_EN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
