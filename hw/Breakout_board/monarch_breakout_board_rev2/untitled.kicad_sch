@@ -8,288 +8,7 @@
 		(comment 4 "Kacper Paraniuk")
 	)
 	(lib_symbols
-		(symbol "Connector:TestPoint"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.762)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "test point"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Connector_Generic:Conn_01x02"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x02"
-				(at 0 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Conn_01x02_1_1"
-				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Connectors 4 Pin:5037630491"
+		(symbol "5037630491_3"
 			(body_styles demorgan)
 			(pin_names
 				(offset 0.254)
@@ -386,7 +105,7 @@
 					)
 				)
 			)
-			(symbol "5037630491_1_1"
+			(symbol "5037630491_3_1_1"
 				(polyline
 					(pts
 						(xy 5.08 2.54) (xy 5.08 -10.16)
@@ -397,6 +116,18 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+				(rectangle
+					(start 5.08 2.54)
+					(end 12.7 -10.16)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type color)
+						(color 255 255 194 1)
 					)
 				)
 				(polyline
@@ -567,18 +298,6 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy 12.7 -10.16) (xy 12.7 2.54)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(pin unspecified line
 					(at 0 0 0)
 					(length 5.08)
@@ -652,7 +371,7 @@
 					)
 				)
 			)
-			(symbol "5037630491_1_2"
+			(symbol "5037630491_3_1_2"
 				(polyline
 					(pts
 						(xy 5.08 2.54) (xy 5.08 -10.16)
@@ -910,6 +629,129 @@
 						)
 					)
 					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1581,16 +1423,6 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 31.75) (xy 118.11 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4eb37085-df88-4df9-a36f-916f7ba00b4c")
-	)
-	(wire
-		(pts
 			(xy 39.37 33.02) (xy 44.45 33.02)
 		)
 		(stroke
@@ -1651,16 +1483,6 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 39.37) (xy 118.11 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8a1021b2-214e-4f4b-84eb-eb324b1466d4")
-	)
-	(wire
-		(pts
 			(xy 39.37 35.56) (xy 44.45 35.56)
 		)
 		(stroke
@@ -1668,16 +1490,6 @@
 			(type default)
 		)
 		(uuid "8be0c057-a6cf-4086-bd0e-d5250dd23af5")
-	)
-	(wire
-		(pts
-			(xy 113.03 36.83) (xy 118.11 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a7f80dfe-4e12-4ba7-817f-263f269237d7")
 	)
 	(wire
 		(pts
@@ -1698,16 +1510,6 @@
 			(type default)
 		)
 		(uuid "cb60ad08-45bb-460b-9d35-fe9354961ad6")
-	)
-	(wire
-		(pts
-			(xy 113.03 34.29) (xy 118.11 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d0cff9ef-919e-420d-9ac2-2d658fcba9d8")
 	)
 	(wire
 		(pts
@@ -1739,245 +1541,115 @@
 		)
 		(uuid "e4cdf821-4276-4015-beba-49450b7632c0")
 	)
-	(global_label "Cap2-"
-		(shape input)
-		(at 113.03 34.29 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "27da0416-d694-4c1f-86fe-4e80f74c045b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 103.6949 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "Cap0+"
-		(shape input)
-		(at 39.37 33.02 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2d50b941-3c32-41aa-bd23-aeb3010f6e90")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 30.0349 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "Cap1-"
-		(shape input)
-		(at 39.37 40.64 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "59e4316f-a532-46af-95a7-586d3cea88eb")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 30.0349 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "Cap3-"
-		(shape input)
-		(at 113.03 39.37 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "811c3237-5332-4889-bc56-4e7c0421ba59")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 103.6949 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "Cap1+"
-		(shape input)
-		(at 39.37 38.1 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a56a8b2d-52a7-489c-911d-78a969e5bfef")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 30.0349 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "Cap0-"
-		(shape input)
-		(at 39.37 35.56 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d3cab15e-339e-4799-87ab-bfb582da484f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 30.0349 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "Cap2+"
-		(shape input)
-		(at 113.03 31.75 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d5995f88-58ab-44a2-9a7c-5b6be226de99")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 103.6949 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "I2C4_SCL"
+	(hierarchical_label "Cap2-"
 		(shape bidirectional)
-		(at 177.8 39.37 180)
-		(fields_autoplaced yes)
+		(at 116.84 34.29 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "d79fba46-1360-4c5f-a1ef-1549741fe73e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 164.9345 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
+		(uuid "326aafb9-3a24-49bf-a28f-3a62cace09df")
 	)
-	(global_label "Cap3+"
-		(shape input)
-		(at 113.03 36.83 180)
-		(fields_autoplaced yes)
+	(hierarchical_label "Cap2+"
+		(shape bidirectional)
+		(at 116.84 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "edede020-239c-4dfd-807e-38daa6020831")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 103.6949 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
+		(uuid "42da2b87-64f1-4035-8920-597a10171fef")
 	)
-	(global_label "I2C4_SDA"
+	(hierarchical_label "I2C4_SDA"
 		(shape bidirectional)
 		(at 196.85 41.91 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "f04609b2-6fd0-4ebc-815d-98a70b31e11e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 183.924 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
+		(uuid "60638f37-dba7-4e09-8758-c6dccca7baba")
+	)
+	(hierarchical_label "Cap1+"
+		(shape bidirectional)
+		(at 39.37 38.1 180)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
+		(uuid "6cf5ebb9-be54-457f-9759-5374f21145b7")
+	)
+	(hierarchical_label "Cap0+"
+		(shape bidirectional)
+		(at 39.37 33.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a1f03883-3f92-4c7d-84ff-d5f0a2baf803")
+	)
+	(hierarchical_label "I2C4_SCL"
+		(shape bidirectional)
+		(at 177.8 39.37 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b2024f84-a1d4-40e5-9b98-ac514b4ff76c")
+	)
+	(hierarchical_label "Cap3-"
+		(shape bidirectional)
+		(at 116.84 39.37 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "dd9319ad-7801-4673-b04b-a90c7ce6176f")
+	)
+	(hierarchical_label "Cap0-"
+		(shape bidirectional)
+		(at 39.37 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e8510d02-23e2-4668-9038-ddcdf3e16538")
+	)
+	(hierarchical_label "Cap3+"
+		(shape bidirectional)
+		(at 116.84 36.83 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fb44deaf-9a15-46b0-809e-89e1ed271155")
+	)
+	(hierarchical_label "Cap1-"
+		(shape bidirectional)
+		(at 39.37 40.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fec0a91d-d025-4d37-b861-e64a32aab077")
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
@@ -2138,96 +1810,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connectors 4 Pin:5037630491")
-		(at 118.11 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "20f30e97-b0ad-4591-a0aa-970660fa2216")
-		(property "Reference" "J3"
-			(at 132.08 34.2899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "5037630491"
-			(at 132.08 36.8299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector 4 Pin:CONN_5037630000-SD_04_MOL"
-			(at 118.11 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630491?display=pdf"
-			(at 118.11 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 118.11 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e0a491fd-5af6-4c46-a86f-6b6d83282ed3")
-		)
-		(pin "4"
-			(uuid "8530de3d-92d9-47c9-aecc-a6f1be600063")
-		)
-		(pin "2"
-			(uuid "d30e8eb0-da0b-422e-b7e3-66f496023143")
-		)
-		(pin "3"
-			(uuid "eac4adbb-6e10-4724-97ba-cb67defff476")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 177.8 36.83 270)
 		(unit 1)
@@ -2238,7 +1820,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2dc431c6-fec9-4ed7-9874-ad54a1f1fe95")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR09"
 			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -2299,7 +1881,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR08")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -2382,6 +1964,97 @@
 		)
 	)
 	(symbol
+		(lib_name "5037630491_3")
+		(lib_id "5037630491:5037630491")
+		(at 116.84 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6e357042-8497-4bab-b63b-b064b1a7e108")
+		(property "Reference" "J2"
+			(at 130.81 34.2899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2200980471"
+			(at 130.81 36.8299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
+			(at 116.84 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/2200980471"
+			(at 116.84 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "124a3ac4-9af3-4b1b-ad81-3d96a68b0a8a")
+		)
+		(pin "2"
+			(uuid "e6686569-f632-4fb3-b532-53ff3159f567")
+		)
+		(pin "3"
+			(uuid "a1c24b1c-731e-4f32-919b-28776d8e36e5")
+		)
+		(pin "1"
+			(uuid "77abf460-c8e7-4df2-b6d9-d58daf47e216")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 198.12 33.02 0)
 		(unit 1)
@@ -2392,7 +2065,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "84aa1003-0ba4-4d00-9bce-326c32661f13")
-		(property "Reference" "TP4"
+		(property "Reference" "TP3"
 			(at 199.39 27.686 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2454,97 +2127,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "TP4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connectors 4 Pin:5037630491")
-		(at 199.39 34.29 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "876b0371-48ec-4a1d-96ef-8c163b1d7d2e")
-		(property "Reference" "J1"
-			(at 213.36 36.8299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "5037630491"
-			(at 213.36 39.3699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector 4 Pin:CONN_5037630000-SD_04_MOL"
-			(at 199.39 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630491?display=pdf"
-			(at 199.39 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 199.39 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a1f37802-8bf3-441b-864f-124a6eb90cdd")
-		)
-		(pin "4"
-			(uuid "833a30bc-9084-4152-bf34-a87e0f26994c")
-		)
-		(pin "2"
-			(uuid "51e624f9-2bc4-43a0-9970-62729fda5823")
-		)
-		(pin "3"
-			(uuid "8e8a30ba-b229-4d7f-954a-3de3e7d44f63")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J1")
+					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -2638,7 +2221,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b33872bd-3874-4198-b877-88d346fde06d")
-		(property "Reference" "TP3"
+		(property "Reference" "TP4"
 			(at 200.66 46.4819 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2700,7 +2283,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "TP3")
+					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -2717,7 +2300,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b6324083-999b-404f-a574-46142b32c04c")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR010"
 			(at 199.39 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -2778,7 +2361,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR09")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -2862,96 +2445,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connectors 4 Pin:5037630491")
-		(at 44.45 33.02 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ba7c2e13-80e3-4243-b315-a61611ab1741")
-		(property "Reference" "J2"
-			(at 58.42 35.5599 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "5037630491"
-			(at 58.42 38.0999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector 4 Pin:CONN_5037630000-SD_04_MOL"
-			(at 44.45 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5037630491?display=pdf"
-			(at 44.45 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 44.45 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "65f8f3fa-cd52-458b-9ece-8aa3609ab443")
-		)
-		(pin "4"
-			(uuid "4cf3aebc-c423-45e2-b70d-0c24b5ead3ee")
-		)
-		(pin "2"
-			(uuid "328bdf63-71db-4f00-a213-af81ae5d95c7")
-		)
-		(pin "3"
-			(uuid "2e9cd2c5-559f-4bf4-825b-9d37f18bd439")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 255.27 36.83 0)
 		(unit 1)
@@ -3022,6 +2515,97 @@
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
 					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "5037630491_3")
+		(lib_id "5037630491:5037630491")
+		(at 44.45 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c431d995-64b3-4cc9-92df-3c10ac6c5cd1")
+		(property "Reference" "J1"
+			(at 58.42 35.5599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2200980471"
+			(at 58.42 38.0999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
+			(at 44.45 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/2200980471"
+			(at 44.45 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 44.45 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "761f2fe5-f8f5-4e19-8852-0f11c6aeb032")
+		)
+		(pin "2"
+			(uuid "39c213d0-b63e-4a80-bbe5-abd9f25276ca")
+		)
+		(pin "3"
+			(uuid "d448687b-050b-479d-b633-8e6723a51802")
+		)
+		(pin "1"
+			(uuid "b702d484-1d1e-4985-9db4-a62fe52bdb92")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -3104,8 +2688,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 172.72 67.31 0)
+		(lib_name "5037630491_3")
+		(lib_id "5037630491:5037630491")
+		(at 199.39 34.29 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3114,31 +2699,55 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ee27b157-8920-4b6e-9cef-422f62f861bc")
-		(property "Reference" "J4"
-			(at 175.26 67.3099 0)
+		(uuid "e9093e41-710d-45bb-8ae4-0e3b22f9f04c")
+		(property "Reference" "J3"
+			(at 213.36 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x02"
-			(at 175.26 69.8499 0)
+		(property "Value" "2200980471"
+			(at 213.36 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 172.72 67.31 0)
+		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
+			(at 199.39 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/2200980471"
+			(at 199.39 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 199.39 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3148,38 +2757,22 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 172.72 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 172.72 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c26fa02a-4547-4970-a62e-589c653f00a4")
+		(pin "4"
+			(uuid "00156484-48e0-4830-8c78-1230f8120d49")
 		)
 		(pin "2"
-			(uuid "69b1c9e3-ef7f-4e93-9fae-62fa68e1e382")
+			(uuid "3405aa36-be52-4281-9666-72b72c0bab1d")
+		)
+		(pin "3"
+			(uuid "ff8672a7-0f7e-4aa4-b91a-b3d90470a2e5")
+		)
+		(pin "1"
+			(uuid "12d809dc-5848-4832-a08b-1b75cbc90ecb")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J4")
+					(reference "J3")
 					(unit 1)
 				)
 			)
