@@ -679,9 +679,14 @@
         "filename": "monarch_payload_interface_board_rev2.kicad_sch",
         "name": "monarch_payload_interface_board_rev2",
         "uuid": "bf7ee58d-ac53-49d1-a6b2-96a87d67b737"
+      },
+      {
+        "filename": "circuit-diagram.kicad_sch",
+        "name": "Circuit-Diagram",
+        "uuid": "f7c0ffb6-637d-4ce4-8cab-8b816595eedf"
       }
     ],
-    "used_designators": "#PWR3,#PWR96,#PWR108,#PWR189,#PWR191-194,#PWR196,#PWR199-200,#PWR219-220,#PWR224,#PWR226,#PWR230-261,D2-7,R29,R50,R56-60,R64-67,J2-5,J7-8,J14-25,J103,C60,C62,C65-93,TP1-5",
+    "used_designators": "#PWR3,#PWR96,#PWR108-111,#PWR118,#PWR138,#PWR189,#PWR191-194,#PWR196,#PWR199-200,#PWR219-221,#PWR223-224,#PWR226,#PWR230-415,D2-13,R27-29,R49-50,R56-60,R64-117,J2-5,J7-12,J14-40,J103,C57-60,C62,C65-144,TP1-10,U15-27,SW3-4,CR19-36,Q20-38,L2",
     "variants": []
   },
   "sheets": [
@@ -720,6 +725,10 @@
     [
       "10c1972a-6116-4d44-bea5-5978e381b1a9",
       "Heater"
+    ],
+    [
+      "f7c0ffb6-637d-4ce4-8cab-8b816595eedf",
+      "Circuit-Diagram"
     ]
   ],
   "text_variables": {},
