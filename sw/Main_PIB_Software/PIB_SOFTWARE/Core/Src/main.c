@@ -159,6 +159,9 @@ int main(void)
    // UART Inits
    uint8_t RX_CMD= 0; // single byte for all UART commands.
    uint8_t TX_Buffer[] = "Hello, World!\r\n";
+
+   uint8_t RxData[1];
+
    // "\r" move cursor to start of line
    // "\n" new line
 
@@ -189,6 +192,9 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
+
+  // initialize the UART interrupt.
+  HAL_UART_Receive_IT(&huart3, RxData, 1); // set up UART interrupt to capture one byte
 
   HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
@@ -1021,6 +1027,23 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
+// interrupt for UART
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	// do something with the data
+
+
+
+
+
+
+
+
+
+	HAL_UART_Receive_IT(&huart3, RxData, 5);
+}
+
 
 // Retarget __io_putchar(*ptr++) to a specific hardware function for printf to work.
 
@@ -1031,7 +1054,7 @@ int _write(int file, char *ptr, int len)
 
   for (DataIdx = 0; DataIdx < len; DataIdx++)
   {
-    ITM_SendChar(*ptr++);
+    ITM_SendChar(*ptr++); // used for serial monitor
   }
   return len;
 }
