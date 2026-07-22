@@ -33,10 +33,9 @@
 
 
 
-// ---------------- DEFINES --------------------- \\
 
 
-//#define AD7124
+#define AD7124
 //#define FDC2213
 //#define MAX31856
 
@@ -229,6 +228,7 @@ int main(void)
   float voltage1;
   float voltage2;
   uint32_t val;
+  uint8_t device_id;
 //////
 ////
 ////  /* Configure AD7124 handler structure */
@@ -563,7 +563,7 @@ int main(void)
 	  }
 	  else{
 		  device_id = val & 0xF0;
-		  printf("Device ID: %ld", device_id);
+		  printf("Device ID: %d", device_id);
 		  if(device_id == 16){
 
 

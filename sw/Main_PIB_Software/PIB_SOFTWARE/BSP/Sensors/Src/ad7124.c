@@ -203,13 +203,15 @@ AD7124_StatusTypeDef AD7124_ReadRegister(const AD7124_ConfigTypeDef *pADC, uint8
 
                 *pRegValue = data; 
             }
-//            else
-//            {
-//            	// CRC ERROR
-//                status = AD7124_ERROR;
-//
-//                // read error
+            else
+            {
+            	// CRC ERROR
+                status = AD7124_ERROR;
 
+                // read error
+            }
+
+        }
 
 
     }
@@ -653,6 +655,7 @@ AD7124_StatusTypeDef AD7124_Calibration(const AD7124_ConfigTypeDef *pADC, AD7124
 
     return status; 
 }
+
 
 
 /* ad7124.c */
