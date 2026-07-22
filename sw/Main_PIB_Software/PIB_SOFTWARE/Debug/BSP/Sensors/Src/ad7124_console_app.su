@@ -1,4 +1,4 @@
-../BSP/Sensors/Src/ad7124_console_app.c:106:9:ad7124_app_initialize	48	static
+../BSP/Sensors/Src/ad7124_console_app.c:106:9:ad7124_app_initialize	56	static
 ../BSP/Sensors/Src/ad7124_console_app.c:181:6:read_status_register	16	static
 ../BSP/Sensors/Src/ad7124_console_app.c:194:6:read_error_register	16	static
 ../BSP/Sensors/Src/ad7124_console_app.c:268:13:dislay_channel_samples	48	static

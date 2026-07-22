@@ -133,8 +133,8 @@ int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs)
   	{
   		// spi_init_param type
   		{
-  			2500000, 		// Max SPI Speed
-  			cs,				// Chip Select
+  			156000, 		// Max SPI Speed
+  			1,				// Chip Select
 			SPI_MODE_3,		// CPOL = 1, CPHA =1
 			NULL
   		},

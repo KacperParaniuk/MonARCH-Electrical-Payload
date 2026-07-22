@@ -78,6 +78,7 @@ int32_t spi_init(struct spi_desc **desc,
 	/* Set up CS to AD7124 chip */
 
 
+
 	if (desc) {
 		// Unused variable - fix compiler warning
 		if(param->chip_select){

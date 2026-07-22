@@ -42,8 +42,8 @@
 //#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214
-//#define MAX31856
-//#define MAX31856_T1
+#define MAX31856
+#define MAX31856_T1
 //#define MAX31856_T2
 //#define MAX31856_T3
 //#define MAX31856_T4
@@ -188,7 +188,7 @@ int main(void)
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
 
 
@@ -227,6 +227,8 @@ int main(void)
   				//       CS = 1 = AD7124 PRESSURE   | for measuring
 
   int32_t setupResult;
+  uint32_t device_id;
+
 
   if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,0)) < 0) {
 		// Handle error setting up AD7124 here
@@ -235,8 +237,10 @@ int main(void)
 
   }
 
+  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
-  uint32_t device_id;
+
+
 
 //  float voltage1;
 //  float voltage2;

@@ -209,6 +209,7 @@ void max31856_write_nregisters(max31856_t *max31856, uint8_t reg_addr, uint8_t *
 uint8_t max31856_read_register(max31856_t *max31856, uint8_t reg_addr);
 void max31856_read_nregisters(max31856_t *max31856, uint8_t reg_addr, uint8_t *buff, uint16_t len);
 
+void print_errors(uint8_t error_reg);
 #ifdef __cplusplus
  }
 #endif
