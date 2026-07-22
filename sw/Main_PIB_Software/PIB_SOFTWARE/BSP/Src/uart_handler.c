@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+
+
 void Serial_Print(const char *message){ // need pointer b/c messages will be stored in READ ONLY flash memory
 	char buf[128];
 	int len = sprintf(buf, "%s\r\n", message); // string print formatted
@@ -27,7 +29,6 @@ void Serial_Printf(const char *format, ...){ // used for Serial_Printf("Temperat
 }
 
 
-
 //%d      // integer          → 42
 //%f      // float            → 3.140000
 //%.2f    // float 2 decimals → 3.14
@@ -35,5 +36,38 @@ void Serial_Printf(const char *format, ...){ // used for Serial_Printf("Temperat
 //%c      // single char      → 'A'
 //%X      // hex uppercase    → 2A
 //%02X    // hex padded       → 0B  (useful for printing command bytes)
+
+
+
+// functions for receiving UART commands
+
+
+void uart_driver_init(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 

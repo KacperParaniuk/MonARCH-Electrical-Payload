@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "uart_handler.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,12 +48,52 @@
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
-/* Definitions for defaultTask */
-osThreadId_t defaultTaskHandle;
-const osThreadAttr_t defaultTask_attributes = {
-  .name = "defaultTask",
+/* Definitions for heart_beat */
+osThreadId_t heart_beatHandle;
+const osThreadAttr_t heart_beat_attributes = {
+  .name = "heart_beat",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for TASK_UART_RX */
+osThreadId_t TASK_UART_RXHandle;
+const osThreadAttr_t TASK_UART_RX_attributes = {
+  .name = "TASK_UART_RX",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
+};
+/* Definitions for TASK_Safety */
+osThreadId_t TASK_SafetyHandle;
+const osThreadAttr_t TASK_Safety_attributes = {
+  .name = "TASK_Safety",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityAboveNormal1,
+};
+/* Definitions for TASK_Experiment */
+osThreadId_t TASK_ExperimentHandle;
+const osThreadAttr_t TASK_Experiment_attributes = {
+  .name = "TASK_Experiment",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityAboveNormal1,
+};
+/* Definitions for TASK_UART_TX */
+osThreadId_t TASK_UART_TXHandle;
+const osThreadAttr_t TASK_UART_TX_attributes = {
+  .name = "TASK_UART_TX",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for TASK_DATA */
+osThreadId_t TASK_DATAHandle;
+const osThreadAttr_t TASK_DATA_attributes = {
+  .name = "TASK_DATA",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal1,
+};
+/* Definitions for sem_receive */
+osSemaphoreId_t sem_receiveHandle;
+const osSemaphoreAttr_t sem_receive_attributes = {
+  .name = "sem_receive"
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -61,6 +102,11 @@ const osThreadAttr_t defaultTask_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
+void StartTask02(void *argument);
+void StartTask03(void *argument);
+void StartTask04(void *argument);
+void StartTask05(void *argument);
+void StartTask06(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -72,11 +118,20 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 
+	// setup receiver semaphore
+	uart_driver_init();
+
+
+
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
+
+  /* Create the semaphores(s) */
+  /* creation of sem_receive */
+  sem_receiveHandle = osSemaphoreNew(1, 1, &sem_receive_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -91,8 +146,23 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+  /* creation of heart_beat */
+  heart_beatHandle = osThreadNew(StartDefaultTask, NULL, &heart_beat_attributes);
+
+  /* creation of TASK_UART_RX */
+  TASK_UART_RXHandle = osThreadNew(StartTask02, NULL, &TASK_UART_RX_attributes);
+
+  /* creation of TASK_Safety */
+  TASK_SafetyHandle = osThreadNew(StartTask03, NULL, &TASK_Safety_attributes);
+
+  /* creation of TASK_Experiment */
+  TASK_ExperimentHandle = osThreadNew(StartTask04, NULL, &TASK_Experiment_attributes);
+
+  /* creation of TASK_UART_TX */
+  TASK_UART_TXHandle = osThreadNew(StartTask05, NULL, &TASK_UART_TX_attributes);
+
+  /* creation of TASK_DATA */
+  TASK_DATAHandle = osThreadNew(StartTask06, NULL, &TASK_DATA_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -122,6 +192,96 @@ void StartDefaultTask(void *argument)
     osDelay(500);
   }
   /* USER CODE END StartDefaultTask */
+}
+
+/* USER CODE BEGIN Header_StartTask02 */
+/**
+* @brief Function implementing the TASK_UART_RX thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask02 */
+void StartTask02(void *argument)
+{
+  /* USER CODE BEGIN StartTask02 */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTask02 */
+}
+
+/* USER CODE BEGIN Header_StartTask03 */
+/**
+* @brief Function implementing the TASK_Safety thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask03 */
+void StartTask03(void *argument)
+{
+  /* USER CODE BEGIN StartTask03 */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTask03 */
+}
+
+/* USER CODE BEGIN Header_StartTask04 */
+/**
+* @brief Function implementing the TASK_Experiment thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask04 */
+void StartTask04(void *argument)
+{
+  /* USER CODE BEGIN StartTask04 */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTask04 */
+}
+
+/* USER CODE BEGIN Header_StartTask05 */
+/**
+* @brief Function implementing the TASK_UART_TX thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask05 */
+void StartTask05(void *argument)
+{
+  /* USER CODE BEGIN StartTask05 */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTask05 */
+}
+
+/* USER CODE BEGIN Header_StartTask06 */
+/**
+* @brief Function implementing the TASK_DATA thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask06 */
+void StartTask06(void *argument)
+{
+  /* USER CODE BEGIN StartTask06 */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTask06 */
 }
 
 /* Private application code --------------------------------------------------*/

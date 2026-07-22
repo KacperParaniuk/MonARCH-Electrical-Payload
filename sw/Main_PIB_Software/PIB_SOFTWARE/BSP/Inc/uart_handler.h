@@ -13,9 +13,19 @@
 #include <stdarg.h>
 #include "stm32l4xx_hal.h"
 
+#include "FreeRTOS.h"
+#include "task.h"
+#include "main.h"
+#include "cmsis_os.h"
+
+
+// create uart error enum
+
 void Serial_Print(const char *message);
 void Serial_Printf(const char *format, ...);
 
+
+void uart_driver_init();
 
 
 
