@@ -481,7 +481,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -681,8 +681,8 @@
         "uuid": "bf7ee58d-ac53-49d1-a6b2-96a87d67b737"
       },
       {
-        "filename": "monarch_payload_interface_board_rev2.kicad_sch",
-        "name": "monarch_payload_interface_board_rev2",
+        "filename": "circuit-diagram.kicad_sch",
+        "name": "Circuit-Diagram",
         "uuid": "f7c0ffb6-637d-4ce4-8cab-8b816595eedf"
       }
     ],

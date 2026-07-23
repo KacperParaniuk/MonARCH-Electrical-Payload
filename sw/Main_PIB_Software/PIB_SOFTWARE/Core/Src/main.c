@@ -41,7 +41,7 @@
 //#define AD7124
 //#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
-#define FDC2214_S
+//#define FDC2214_S
 //#define MAX31856
 //#define MAX31856_T1
 //#define MAX31856_T2
