@@ -26,5 +26,5 @@
 ../BSP/Sensors/Src/fdc2214.c:720:10:readErrorConfig	8	static
 ../BSP/Sensors/Src/fdc2214.c:727:10:read_register	32	static
 ../BSP/Sensors/Src/fdc2214.c:745:9:write_register	32	static
-../BSP/Sensors/Src/fdc2214.c:762:6:write_config	8	static
-../BSP/Sensors/Src/fdc2214.c:766:6:write_mux_config	8	static
+../BSP/Sensors/Src/fdc2214.c:764:6:write_config	8	static
+../BSP/Sensors/Src/fdc2214.c:768:6:write_mux_config	8	static

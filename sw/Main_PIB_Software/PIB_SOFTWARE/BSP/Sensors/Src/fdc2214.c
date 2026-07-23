@@ -1,4 +1,4 @@
-#include <fdc2214.h>
+#include <FDC2214.h>
 
 // Kacper Paraniuk 03/21/26
 
@@ -758,6 +758,8 @@ uint8_t write_register(uint16_t reg, uint16_t value){
 	return 0;
 
 }
+
+
 
 void write_config(){
 	write_register(CONFIG, _config);

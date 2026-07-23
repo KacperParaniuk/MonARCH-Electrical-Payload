@@ -5,7 +5,7 @@
 #include "main.h"
 #include "i2c.h"
 
-#define FDC2214 0x2A
+#define FDC2214 (0x2A << 1)
 #define DATA_MSB_CH0 0x00
 #define DATA_LSB_CH0 0x01
 #define DATA_MSB_CH1 0x02
