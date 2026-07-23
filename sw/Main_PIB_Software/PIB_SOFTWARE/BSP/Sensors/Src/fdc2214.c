@@ -14,6 +14,15 @@ uint8_t cof[2];
 volatile uint16_t check[2];
 HAL_StatusTypeDef ret;
 
+// Cached CONFIG and MUX_CONFIG so individual setters can update single fields
+// without losing the rest of the word.
+static uint16_t  _config;
+static uint16_t  _mux_config;
+
+// Cached per-channel CLOCK_DIVIDERS so frequency conversion knows CH_FIN_DIVIDER.
+static uint16_t  _clock_div[4];
+
+
 
 
 // ============================================================================
@@ -42,7 +51,7 @@ uint8_t isConnected(){
 		return -24;
 	}
 
-	check[0] = cof[1] | cof[0] << 8; // big endian 	(RECONSTRUCT BITS INTO A 16 BIT VALUE) assuming we are using big endian
+	check[0] = ((uint16_t)cof[0] << 8) | cof[1];  // big endian 	(RECONSTRUCT BITS INTO A 16 BIT VALUE) assuming we are using big endian
 
 
 	ret = HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
@@ -52,7 +61,8 @@ uint8_t isConnected(){
 		return -25;
 	}
 
-	check[1] = cof[1] | cof[0] << 8;
+	check[1] = ((uint16_t)cof[0] << 8) | cof[1];
+
 	if ((check[0] == MANUFACTURER_ID_val) && (check[1] == DEVICE_ID_val))
 		return 0;
 	else
@@ -76,19 +86,19 @@ int FDC2214_Check_Device_ID(){
 	HAL_Delay(20);
 
 
-	check[0] = cof[1] | cof[0] << 8;
+	check[0] = ((uint16_t)cof[0] << 8) | cof[1];  // big endian 	(RECONSTRUCT BITS INTO A 16 BIT VALUE) assuming we are using big endian
 
 	if(check[0] == MANUFACTURER_ID_val){
 		return 1;
 	}
 	else{
-		return -1;
+		return check[0];
 	}
 
 	HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(20);
 
-	check[1] = cof[1] | cof[0] << 8;
+	check[1] = ((uint16_t)cof[0] << 8) | cof[1];
 
 	if ((check[0] == MANUFACTURER_ID_val) && (check[1] == DEVICE_ID_val))
 		return 1;
@@ -716,7 +726,7 @@ uint16_t readErrorConfig()
 
 uint16_t read_register(uint16_t reg){
 
-	ret = HAL_I2C_Mem_Write(&hi2c4, FDC2214, reg, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	ret = HAL_I2C_Mem_Read(&hi2c4, FDC2214, reg, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
 	HAL_Delay(200);
 
 

@@ -41,7 +41,7 @@
 //#define AD7124
 //#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
-//#define FDC2214_S
+#define FDC2214_S
 //#define MAX31856
 //#define MAX31856_T1
 //#define MAX31856_T2
@@ -198,16 +198,16 @@ int main(void)
 
 
   // SPI 2 BUS
-  HAL_GPIO_WritePin(T1_EN_GPIO_Port, T1_EN_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(T2_EN_GPIO_Port, T2_EN_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(T3_EN_GPIO_Port, T3_EN_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(T4_EN_GPIO_Port, T4_EN_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(T5_EN_GPIO_Port, T5_EN_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(PT_EN_GPIO_Port, PT_EN_Pin, GPIO_PIN_SET);
-
-  // SPI 1 BUS
-
-  HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(T1_EN_GPIO_Port, T1_EN_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(T2_EN_GPIO_Port, T2_EN_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(T3_EN_GPIO_Port, T3_EN_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(T4_EN_GPIO_Port, T4_EN_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(T5_EN_GPIO_Port, T5_EN_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(PT_EN_GPIO_Port, PT_EN_Pin, GPIO_PIN_SET);
+//
+//  // SPI 1 BUS
+//
+//  HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
 
 
 // External driver structures and buffers
@@ -397,19 +397,29 @@ float temperature;
 #ifdef FDC2214_S
    	uint8_t ret;
 
+
+
+
    	ret = FDC2214_Begin();
    	if(ret != 0){
    		printf("Failed to communicate with FDCC2214");
+   		reset_fdc2214();
+   		printf("Try Again");
+   		FDC2214_Begin();
+   	}
+   	else{
+
+   	   	// set default FDC2214 configurations
+   	   	FDC2214_configure_defaults();
+
+   	   	// toggle channel
+
+   	   	FDC2214_set_active_channel(FDC2214_CH0);
+   	   	FDC2214_setAutoscan(0); // false
+   	   	FDC2214_wakeup();
+
    	}
 
-   	// set default FDC2214 configurations
-   	FDC2214_configure_defaults();
-
-   	// toggle channel
-
-   	FDC2214_set_active_channel(FDC2214_CH0);
-   	FDC2214_setAutoscan(0); // false
-   	FDC2214_wakeup();
 
 #endif
 
@@ -422,9 +432,9 @@ float temperature;
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-
-	  HAL_Delay(200);
+//	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
+//
+//	  HAL_Delay(200);
 
 #ifdef B2B
 
@@ -859,21 +869,23 @@ float temperature;
 
  	  if(isConnected()==0){
  		  printf("FDC NOMINAL \n");
+
+ 		 // READ DATA FROM CH0
+ 		 if(FDC2214_is_data_ready(FDC2214_CH0)){
+ 		 float f_hz = FDC2214_readFrequencyHz(FDC2214_CH0);
+ 		 float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0, FDC2214_L_HENRY);
+
+ 		 printf("hertz %f", f_hz / 1.0e6f);
+ 		// 	        printf('\t');
+ 		 printf("Capacitance (pF): %f", c_pf);
+ 		 }
  	  }
  	  else{
- 		  printf("FDC FAIL \n");
+ 		  printf("FDC FAIL IS NOT CONNECTED \n");
  	  }
 
 
- 	  // READ DATA FROM CH0
- 	  if(FDC2214_is_data_ready(FDC2214_CH0)){
- 	        float f_hz = FDC2214_readFrequencyHz(FDC2214_CH0);
- 	        float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0, FDC2214_L_HENRY);
 
- 	        printf("hertz %f", f_hz / 1.0e6f);
-// 	        printf('\t');
- 	        printf("Capacitance (pF): %f", c_pf);
- 	  }
 
 #endif
 
