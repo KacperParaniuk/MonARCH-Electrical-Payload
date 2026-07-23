@@ -41,9 +41,9 @@
 //#define AD7124
 //#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
-//#define FDC2214
-#define MAX31856
-#define MAX31856_T1
+#define FDC2214_S
+//#define MAX31856
+//#define MAX31856_T1
 //#define MAX31856_T2
 //#define MAX31856_T3
 //#define MAX31856_T4
@@ -76,7 +76,7 @@
 #endif
 
 
-#ifdef FDC2214
+#ifdef FDC2214_S
 
 #include "fdc2214.h"
 
@@ -394,7 +394,8 @@ float temperature;
 
 //   	// Reset Registers in Device.
 
-#ifdef FDC2214
+#ifdef FDC2214_S
+   	uint8_t ret;
 
    	ret = FDC2214_Begin();
    	if(ret != 0){
@@ -408,7 +409,7 @@ float temperature;
 
    	FDC2214_set_active_channel(FDC2214_CH0);
    	FDC2214_setAutoscan(0); // false
-   	FDC2214_Wakeup();
+   	FDC2214_wakeup();
 
 #endif
 
@@ -866,12 +867,12 @@ float temperature;
 
  	  // READ DATA FROM CH0
  	  if(FDC2214_is_data_ready(FDC2214_CH0)){
- 	        float f_hz = FDC2214_readFrequencyH(FDC2214_CH0);
+ 	        float f_hz = FDC2214_readFrequencyHz(FDC2214_CH0);
  	        float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0, FDC2214_L_HENRY);
 
- 	        Serial.print(f_hz / 1.0e6f, 6);
- 	        Serial.print('\t');
- 	        Serial.println(c_pf, 4);
+ 	        printf("hertz %f", f_hz / 1.0e6f);
+// 	        printf('\t');
+ 	        printf("Capacitance (pF): %f", c_pf);
  	  }
 
 #endif

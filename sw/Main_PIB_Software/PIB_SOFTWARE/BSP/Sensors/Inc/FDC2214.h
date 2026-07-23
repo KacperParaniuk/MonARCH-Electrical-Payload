@@ -124,11 +124,11 @@ typedef enum {
 
 // Cached CONFIG and MUX_CONFIG so individual setters can update single fields
 // without losing the rest of the word.
-uint16_t  _config;
-uint16_t  _mux_config;
+static uint16_t  _config;
+static uint16_t  _mux_config;
 
 // Cached per-channel CLOCK_DIVIDERS so frequency conversion knows CH_FIN_DIVIDER.
-uint16_t  _clock_div[4];
+static uint16_t  _clock_div[4];
 
 // ------------------------------------------------------------- lifecycle
 uint8_t FDC2214_Begin();
