@@ -232,13 +232,13 @@ int main(void)
 
   if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,1)) < 0) {
 		// Handle error setting up AD7124 here
-	  printf("Failed to init ad7124 pressure");
-	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+	  printf("Failed to init ad7124 pressure \n");
+//	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
   }
 
   printf("Setup Result: %ld", setupResult);
-  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
 
 
@@ -510,9 +510,11 @@ float temperature;
 	  // read device id.
 
 	  device_id = ad7124_read_device_id();
-	  printf("AD7124 Device ID: %ld", device_id);
-	  if(device_id == 16){
-		  printf("SUCCESS \n");
+
+	  printf("AD7124 Device ID: %ld ", device_id);
+	  if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
+
+		  printf("|| SUCCESS \n");
 		  HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
 		  read_status_register();
 
@@ -538,7 +540,7 @@ float temperature;
 		  // check status of chip
 		  read_status_register();
 
-		  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+//		  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
 	  }
 

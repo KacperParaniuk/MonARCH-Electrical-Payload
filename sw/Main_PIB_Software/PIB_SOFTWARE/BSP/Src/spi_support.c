@@ -40,6 +40,7 @@
 /***************************** Include Files **********************************/
 /******************************************************************************/
 #include <stdint.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "spi_support.h"
@@ -75,29 +76,30 @@ static uint8_t spi_rx_buffer[SPI_BUFFER_SIZE] = {0};
 int32_t spi_init(struct spi_desc **desc,
 		 const struct spi_init_param *param)
 {
-	/* Set up CS to AD7124 chip */
+	if (!desc || !param) {
+		return FAILURE;
+	}
 
-
-
-	if (desc) {
-		// Unused variable - fix compiler warning
-		if(param->chip_select){
-			(*desc)->GPIO_Pin = PT_EN_Pin; // insert the pressure chip select
-			(*desc)->GPIOx = PT_EN_GPIO_Port;
-		}
-		else{
-			(*desc)->GPIO_Pin = ADC_EN_Pin; // insert the voltage chip select
-			(*desc)->GPIOx = ADC_EN_GPIO_Port;
+	if (!*desc) {
+		*desc = (struct spi_desc *)calloc(1, sizeof(**desc));
+		if (!*desc) {
+			return FAILURE;
 		}
 	}
 
-	if (param->max_speed_hz) {
-		// Unused variable - fix compiler warning
+	(*desc)->max_speed_hz = param->max_speed_hz;
+	(*desc)->chip_select = param->chip_select;
+	(*desc)->mode = param->mode;
+	(*desc)->extra = param->extra;
+
+	/* Set up CS to the selected AD7124 chip */
+	if (param->chip_select) {
+		(*desc)->GPIO_Pin = PT_EN_Pin;
+		(*desc)->GPIOx = PT_EN_GPIO_Port;
+	} else {
+		(*desc)->GPIO_Pin = ADC_EN_Pin;
+		(*desc)->GPIOx = ADC_EN_GPIO_Port;
 	}
-
-
-
-
 
 	return SUCCESS;
 }
@@ -110,7 +112,7 @@ int32_t spi_init(struct spi_desc **desc,
 int32_t spi_remove(struct spi_desc *desc)
 {
 	if (desc) {
-		// Unused variable - fix compiler warning
+		free(desc);
 	}
 
 	return SUCCESS;

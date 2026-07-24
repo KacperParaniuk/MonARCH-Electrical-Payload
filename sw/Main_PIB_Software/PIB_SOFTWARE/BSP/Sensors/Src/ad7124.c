@@ -500,6 +500,7 @@ int32_t ad7124_setup(struct ad7124_dev **device,
 		return INVALID_VAL;
 
 	dev->regs = init_param.regs;
+	dev->spi_desc = NULL;
 	dev->spi_rdy_poll_cnt = init_param.spi_rdy_poll_cnt;
 
 //	dev->use_crc = AD7124_DISABLE_CRC;
