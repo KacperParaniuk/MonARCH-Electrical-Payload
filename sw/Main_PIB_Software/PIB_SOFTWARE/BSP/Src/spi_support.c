@@ -137,7 +137,7 @@ int32_t spi_write_and_read(struct spi_desc *desc,
 	 * general, and flexible with pin choice.
 	 */
 	HAL_GPIO_WritePin(desc->GPIOx, desc->GPIO_Pin, GPIO_PIN_RESET);
-    if (HAL_SPI_TransmitReceive(&hspi1, data, (uint8_t *)spi_rx_buffer, bytes_number, 5000) != HAL_OK) {
+    if (HAL_SPI_TransmitReceive(&hspi2, data, (uint8_t *)spi_rx_buffer, bytes_number, 5000) != HAL_OK) {
 	    return FAILURE;
 	}
     HAL_GPIO_WritePin(desc->GPIOx, desc->GPIO_Pin, GPIO_PIN_SET);

@@ -681,8 +681,8 @@
         "uuid": "bf7ee58d-ac53-49d1-a6b2-96a87d67b737"
       },
       {
-        "filename": "circuit-diagram.kicad_sch",
-        "name": "Circuit-Diagram",
+        "filename": "monarch_payload_interface_board_rev2.kicad_sch",
+        "name": "monarch_payload_interface_board_rev2",
         "uuid": "f7c0ffb6-637d-4ce4-8cab-8b816595eedf"
       }
     ],

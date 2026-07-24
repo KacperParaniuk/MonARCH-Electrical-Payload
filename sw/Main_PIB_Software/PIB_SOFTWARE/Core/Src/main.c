@@ -38,10 +38,10 @@
 
 
 
-//#define AD7124
+#define AD7124
 //#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
-#define FDC2214_S
+//#define FDC2214_S
 //#define MAX31856
 //#define MAX31856_T1
 //#define MAX31856_T2
@@ -198,16 +198,16 @@ int main(void)
 
 
   // SPI 2 BUS
-//  HAL_GPIO_WritePin(T1_EN_GPIO_Port, T1_EN_Pin, GPIO_PIN_SET);
-//  HAL_GPIO_WritePin(T2_EN_GPIO_Port, T2_EN_Pin, GPIO_PIN_SET);
-//  HAL_GPIO_WritePin(T3_EN_GPIO_Port, T3_EN_Pin, GPIO_PIN_SET);
-//  HAL_GPIO_WritePin(T4_EN_GPIO_Port, T4_EN_Pin, GPIO_PIN_SET);
-//  HAL_GPIO_WritePin(T5_EN_GPIO_Port, T5_EN_Pin, GPIO_PIN_SET);
-//  HAL_GPIO_WritePin(PT_EN_GPIO_Port, PT_EN_Pin, GPIO_PIN_SET);
-//
-//  // SPI 1 BUS
-//
-//  HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(T1_EN_GPIO_Port, T1_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(T2_EN_GPIO_Port, T2_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(T3_EN_GPIO_Port, T3_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(T4_EN_GPIO_Port, T4_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(T5_EN_GPIO_Port, T5_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(PT_EN_GPIO_Port, PT_EN_Pin, GPIO_PIN_SET);
+
+  // SPI 1 BUS
+
+  HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
 
 
 // External driver structures and buffers
@@ -230,13 +230,14 @@ int main(void)
   uint32_t device_id;
 
 
-  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,0)) < 0) {
+  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,1)) < 0) {
 		// Handle error setting up AD7124 here
-	  printf("Failed to init ad7124 power");
+	  printf("Failed to init ad7124 pressure");
 	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
   }
 
+  printf("Setup Result: %ld", setupResult);
   HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
 

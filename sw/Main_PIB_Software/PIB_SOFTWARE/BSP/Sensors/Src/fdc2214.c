@@ -6,6 +6,8 @@
 // Inspired by Protocentral_fdc2214_arduino driver
 // https://github.com/Protocentral/protocentral_fdc2214_arduino/blob/main/src/Protocentral_FDC2214.cpp#L268
 
+// Also inspired by lifzcn STM32 HAL Driver.
+// https://github.com/lifzcn/FDC2214_C_HAL/blob/main/Drivers/fdc2214.c
 
 extern I2C_HandleTypeDef hi2c4;
 
