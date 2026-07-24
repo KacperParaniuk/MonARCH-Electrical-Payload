@@ -38,8 +38,8 @@
 
 
 
-#define AD7124
-#define AD7124_SINGLE_MODE
+//#define AD7124
+//#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
 //#define MAX31856
@@ -49,7 +49,7 @@
 //#define MAX31856_T4
 //#define MAX31856_T5
 //#define B2B
-//#define VALVE_TEST
+#define VALVE_TEST
 //#define I2C_SCANNER
 //#define HEATER
 
@@ -433,8 +433,11 @@ float temperature;
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+
 //	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
 //
+
 //	  HAL_Delay(200);
 
 #ifdef B2B
@@ -446,27 +449,39 @@ float temperature;
 
 
 #ifdef VALVE_TEST
-	  printf("Actuation of Valve 15 Starting... in 15 seconds");
 
-	  HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
 
-	  HAL_Delay(5000);
-
-	  HAL_Delay(5000);
-
-	  printf("Actuation of Valve 15 Starting... in 10 seconds");
+	  printf("Actuation of Valve 2 Starting... in 15 seconds \n");
 
 
 	  HAL_Delay(5000);
 
-	  printf("Actuation of Valve 15 Starting... in 5 seconds");
 
 	  HAL_Delay(5000);
 
 
-	  HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
 
-	  printf("Valve 15 Actuated");
+	  printf("Actuation of Valve 2 Starting... in 10 seconds \n");
+
+
+	  HAL_Delay(5000);
+
+	  printf("Actuation of Valve 2 Starting... in 5 seconds \n");
+
+	  HAL_Delay(5000);
+
+
+	  HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_SET);
+
+	  printf("Valve 2 Actuated \n");
+
+	  HAL_Delay(2000);
+
+	  HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_RESET);
+
+	  printf("Valve 2 Closed \n");
+
+
 
 #endif
 
