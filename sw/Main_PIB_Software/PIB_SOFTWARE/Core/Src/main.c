@@ -35,7 +35,7 @@
 
 
 
-#define AD7124
+//#define AD7124
 //#define FDC2213
 //#define MAX31856
 
@@ -517,37 +517,41 @@ int main(void)
 	  HAL_GPIO_TogglePin(LED_PIN_GPIO_Port, LED_PIN_Pin);
 
 	  HAL_Delay(200);
+
+	  HAL_GPIO_TogglePin(LED_PIN_GPIO_Port, LED_PIN_Pin);
+
 //	  printf("We made it 1 ");
-
-
 
 
 
 //	  HAL_UART_Transmit(&huart3,TX_Buffer,sizeof(TX_Buffer),1000); // "Hello World!" // UART Direct Test
 
-//	  printf("Actuation of Valve 15 Starting... in 15 seconds");
-
-//	  HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
-
-//	  HAL_Delay(5000);
+	  printf("Actuation of Valve 2 Starting... in 15 secoonds \n");
 
 
+	  HAL_Delay(5000);
 
-//	  HAL_Delay(5000);
-//
-//	  printf("Actuation of Valve 15 Starting... in 10 seconds");
-//
-//
-//	  HAL_Delay(5000);
-//
-//	  printf("Actuation of Valve 15 Starting... in 5 seconds");
-//
-//	  HAL_Delay(5000);
-//
-//
-//	  HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
-//
-//	  printf("Valve 15 Actuated");
+	  printf("Actuation of Valve 2 Starting... in 10 seconds \n");
+
+	  HAL_Delay(5000);
+
+
+	  printf("Actuation of Valve 2 Starting... in 5 seconds \n");
+
+	  HAL_Delay(5000);
+
+
+	  HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_SET);
+
+	  printf("Valve 2 Actuated \n");
+
+	  HAL_Delay(3000);
+
+	  HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_RESET);
+
+	  printf("Valve 2 Closed \n");
+
+
 
 
 
