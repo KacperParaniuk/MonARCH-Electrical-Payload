@@ -1,0 +1,2 @@
+../BSP/Src/uart_handler.c:14:6:Serial_Print	152	static
+../BSP/Src/uart_handler.c:20:6:Serial_Printf	144	static
