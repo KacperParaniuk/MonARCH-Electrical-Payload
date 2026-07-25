@@ -38,18 +38,18 @@
 
 
 
-//#define AD7124
-//#define AD7124_SINGLE_MODE
+#define AD7124
+#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
-//#define MAX31856
-//#define MAX31856_T1
+#define MAX31856
+#define MAX31856_T1
 //#define MAX31856_T2
 //#define MAX31856_T3
 //#define MAX31856_T4
 //#define MAX31856_T5
 //#define B2B
-#define VALVE_TEST
+//#define VALVE_TEST
 //#define I2C_SCANNER
 //#define HEATER
 
@@ -435,10 +435,10 @@ float temperature;
   {
 
 
-//	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-//
+	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
 
-//	  HAL_Delay(200);
+
+	  HAL_Delay(200);
 
 #ifdef B2B
 
