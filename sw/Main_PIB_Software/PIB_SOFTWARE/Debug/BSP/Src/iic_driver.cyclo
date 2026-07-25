@@ -1,4 +1,0 @@
-../BSP/Src/iic_driver.c:23:5:iic_read_8BIT	1
-../BSP/Src/iic_driver.c:37:5:iic_write_8BIT	1
-../BSP/Src/iic_driver.c:49:5:iic_read_16BIT	1
-../BSP/Src/iic_driver.c:60:5:iic_write_16BIT	1
