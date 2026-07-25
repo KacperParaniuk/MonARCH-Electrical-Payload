@@ -500,15 +500,18 @@ int32_t ad7124_setup(struct ad7124_dev **device,
 		return INVALID_VAL;
 
 	dev->regs = init_param.regs;
+	dev->spi_desc = NULL;
 	dev->spi_rdy_poll_cnt = init_param.spi_rdy_poll_cnt;
+
+//	dev->use_crc = AD7124_DISABLE_CRC;
+
 
 
 	/* Initialize the SPI communication. */
-//	ret = spi_init(&dev->spi_desc, &init_param.spi_init);
-//	if (ret < 0)
-//		return ret;
+	ret = spi_init(&dev->spi_desc, &init_param.spi_init);
+	if (ret < 0)
 
-	// already init by stm32cubemx auto code
+		return ret;
 
 	/*  Reset the device interface.*/
 	ret = ad7124_reset(dev);

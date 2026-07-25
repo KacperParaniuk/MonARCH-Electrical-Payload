@@ -188,69 +188,70 @@ void read_status_register(void)
 	}
 }
 
+static uint32_t error_value = 0;
 
 
 
 void read_error_register(){
-	if (ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_Error])<0){
-		uint32_t error_value = (uint32_t)ad7124_register_map[AD7124_Error].value;
+	if (ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_Error])==0){
+		error_value = (uint32_t)ad7124_register_map[AD7124_Error].value;
 		if((error_value & AD7124_ERR_REG_ROM_CRC_ERR) != 0){
-			printf("ROM Contents changed: CRC calculation fail: ROM error. \n");
+			printf("\r\n ROM Contents changed: CRC calculation fail: ROM error. \n");
 		}
 		if((error_value & AD7124_ERR_REG_MM_CRC_ERR) != 0){
-			printf("CRC proves memory map changed: Memory map error. \n");
+			printf("\r\n CRC proves memory map changed: Memory map error. \n");
 		}
 		if((error_value & AD7124_ERR_REG_SPI_CRC_ERR) != 0){
-			printf("CRC proves SPI read/write failed \n");
+			printf("\r\n CRC proves SPI read/write failed \n");
 		}
 		if((error_value & AD7124_ERR_REG_SPI_WRITE_ERR) != 0){
-			printf("SPI write operation failed:  write to invalid addresses or write to read-only registers \n");
+			printf("\r\n SPI write operation failed:  write to invalid addresses or write to read-only registers \n");
 		}
 		if((error_value & AD7124_ERR_REG_SPI_READ_ERR) != 0){
-			printf("SPI read operation failed: attempt to read from invalid addresses \n");
+			printf("\r\n SPI read operation failed: attempt to read from invalid addresses \n");
 		}
 		if((error_value & AD7124_ERR_REG_SPI_SLCK_CNT_ERR) != 0){
-			printf("The SCLK counter is enabled. All read and write operations to the ADC are multiples of eight bits: SCLK pulses used during a communication were not a multiple of eight \n");
+			printf("\r\n The SCLK counter is enabled. All read and write operations to the ADC are multiples of eight bits: SCLK pulses used during a communication were not a multiple of eight \n");
 		}
 		if((error_value & AD7124_ERR_REG_SPI_IGNORE_ERR) != 0){
-			printf("write operations are ignored from on chip registers ADC is busy and the write instruction has been ignored \n");
+			printf("\r\n write operations are ignored from on chip registers ADC is busy and the write instruction has been ignored \n");
 		}
 		if((error_value & AD7124_ERR_REG_ALDO_PSM_ERR) != 0){
-			printf("analog ldo: voltage being output from the analog LDO is outside specification. \n");
+			printf("\r\n analog ldo: voltage being output from the analog LDO is outside specification. \n");
 		}
 		if((error_value & AD7124_ERR_REG_DLDO_PSM_ERR) != 0){
-			printf("digital ldo: input to the test circuit is tied to DGND instead of the LDO output \n");
+			printf("\r\n digital ldo: input to the test circuit is tied to DGND instead of the LDO output \n");
 		}
 		if((error_value & AD7124_ERR_REG_REF_DET_ERR) != 0){
-			printf("External reference is an open circuit or has a value of less than 0.7 V. \n");
+			printf("\r\n External reference is an open circuit or has a value of less than 0.7 V. \n");
 		}
 		if((error_value & AD7124_ERR_REG_AINM_UV_ERR) != 0){
-			printf("Undervoltage detection on AINM. \n");
+			printf("\r\n Undervoltage detection on AINM. \n");
 		}
 		if((error_value & AD7124_ERR_REG_AINM_OV_ERR) != 0){
-			printf("Overvoltage detection on AINM. \n");
+			printf("\r\n Overvoltage detection on AINM. \n");
 		}
 		if((error_value & AD7124_ERR_REG_AINP_UV_ERR) != 0){
-			printf("Undervoltage detection on AINP. \n");
+			printf("\r\n Undervoltage detection on AINP. \n");
 		}
 		if((error_value & AD7124_ERR_REG_AINP_OV_ERR) != 0){
-			printf("Overvoltage detection on AINP \n");
+			printf("\r\n Overvoltage detection on AINP \n");
 		}
 		if((error_value & AD7124_ERR_REG_ADC_SAT_ERR) != 0){
-			printf("ADC saturation flag. This flag is set if the modulator is saturated during a conversion. \n");
+			printf("\r\n ADC saturation flag. This flag is set if the modulator is saturated during a conversion. \n");
 		}
 		if((error_value & AD7124_ERR_REG_ADC_CONV_ERR) != 0){
-			printf("error occured during a conversion.");
+			printf("\r\n error occured during a conversion.");
 		}
 		if((error_value & AD7124_ERR_REG_ADC_CAL_ERR) != 0){
-			printf("calibration error");
+			printf("\r\n calibration error");
 		}
 		if((error_value & AD7124_ERR_REG_LDO_CAP_ERR) != 0){
-			printf(" decoupling capacitors required for the analog and digital LDOs are not connected to the AD7124-8.");
+			printf("\r\n decoupling capacitors required for the analog and digital LDOs are not connected to the AD7124-8.");
 		}
 	}
 	else{
-		printf("Error reading error register");
+		printf("\r\n Error reading error register \n");
 	}
 
 }

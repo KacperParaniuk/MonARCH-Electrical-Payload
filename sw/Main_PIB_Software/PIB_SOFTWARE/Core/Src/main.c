@@ -38,12 +38,12 @@
 
 
 
-//#define AD7124
-//#define AD7124_SINGLE_MODE
+#define AD7124
+#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
-//#define FDC2214
-//#define MAX31856
-//#define MAX31856_T1
+//#define FDC2214_S
+#define MAX31856
+#define MAX31856_T1
 //#define MAX31856_T2
 //#define MAX31856_T3
 //#define MAX31856_T4
@@ -76,7 +76,7 @@
 #endif
 
 
-#ifdef FDC2214
+#ifdef FDC2214_S
 
 #include "fdc2214.h"
 
@@ -188,7 +188,7 @@ int main(void)
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
 
 
@@ -227,16 +227,21 @@ int main(void)
   				//       CS = 1 = AD7124 PRESSURE   | for measuring
 
   int32_t setupResult;
+  uint32_t device_id;
 
-  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,0)) < 0) {
+
+  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,1)) < 0) {
 		// Handle error setting up AD7124 here
-	  printf("Failed to init ad7124 power");
-	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+	  printf("Failed to init ad7124 pressure \n");
+//	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
   }
 
+  printf("Setup Result: %ld", setupResult);
+//  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
-  uint32_t device_id;
+
+
 
 //  float voltage1;
 //  float voltage2;
@@ -390,21 +395,32 @@ float temperature;
 
 //   	// Reset Registers in Device.
 
-#ifdef FDC2214
+#ifdef FDC2214_S
+   	uint8_t ret;
+
+
+
 
    	ret = FDC2214_Begin();
    	if(ret != 0){
    		printf("Failed to communicate with FDCC2214");
+   		reset_fdc2214();
+   		printf("Try Again");
+   		FDC2214_Begin();
+   	}
+   	else{
+
+   	   	// set default FDC2214 configurations
+   	   	FDC2214_configure_defaults();
+
+   	   	// toggle channel
+
+   	   	FDC2214_set_active_channel(FDC2214_CH0);
+   	   	FDC2214_setAutoscan(0); // false
+   	   	FDC2214_wakeup();
+
    	}
 
-   	// set default FDC2214 configurations
-   	FDC2214_configure_defaults();
-
-   	// toggle channel
-
-   	FDC2214_set_active_channel(FDC2214_CH0);
-   	FDC2214_setAutoscan(0); // false
-   	FDC2214_Wakeup();
 
 #endif
 
@@ -417,7 +433,10 @@ float temperature;
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+
 	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
+
 
 	  HAL_Delay(200);
 
@@ -430,27 +449,39 @@ float temperature;
 
 
 #ifdef VALVE_TEST
-	  printf("Actuation of Valve 15 Starting... in 15 seconds");
 
-	  HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
 
-	  HAL_Delay(5000);
-
-	  HAL_Delay(5000);
-
-	  printf("Actuation of Valve 15 Starting... in 10 seconds");
+	  printf("Actuation of Valve 2 Starting... in 15 seconds \n");
 
 
 	  HAL_Delay(5000);
 
-	  printf("Actuation of Valve 15 Starting... in 5 seconds");
 
 	  HAL_Delay(5000);
 
 
-	  HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
 
-	  printf("Valve 15 Actuated");
+	  printf("Actuation of Valve 2 Starting... in 10 seconds \n");
+
+
+	  HAL_Delay(5000);
+
+	  printf("Actuation of Valve 2 Starting... in 5 seconds \n");
+
+	  HAL_Delay(5000);
+
+
+	  HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_SET);
+
+	  printf("Valve 2 Actuated \n");
+
+	  HAL_Delay(2000);
+
+	  HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_RESET);
+
+	  printf("Valve 2 Closed \n");
+
+
 
 #endif
 
@@ -494,9 +525,11 @@ float temperature;
 	  // read device id.
 
 	  device_id = ad7124_read_device_id();
-	  printf("AD7124 Device ID: %ld", device_id);
-	  if(device_id == 16){
-		  printf("SUCCESS \n");
+
+	  printf("AD7124 Device ID: %ld ", device_id);
+	  if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
+
+		  printf("|| SUCCESS \n");
 		  HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
 		  read_status_register();
 
@@ -522,7 +555,7 @@ float temperature;
 		  // check status of chip
 		  read_status_register();
 
-		  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+//		  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
 	  }
 
@@ -854,21 +887,23 @@ float temperature;
 
  	  if(isConnected()==0){
  		  printf("FDC NOMINAL \n");
+
+ 		 // READ DATA FROM CH0
+ 		 if(FDC2214_is_data_ready(FDC2214_CH0)){
+ 		 float f_hz = FDC2214_readFrequencyHz(FDC2214_CH0);
+ 		 float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0, FDC2214_L_HENRY);
+
+ 		 printf("hertz %f", f_hz / 1.0e6f);
+ 		// 	        printf('\t');
+ 		 printf("Capacitance (pF): %f", c_pf);
+ 		 }
  	  }
  	  else{
- 		  printf("FDC FAIL \n");
+ 		  printf("FDC FAIL IS NOT CONNECTED \n");
  	  }
 
 
- 	  // READ DATA FROM CH0
- 	  if(FDC2214_is_data_ready(FDC2214_CH0)){
- 	        float f_hz = FDC2214_readFrequencyH(FDC2214_CH0);
- 	        float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0, FDC2214_L_HENRY);
 
- 	        Serial.print(f_hz / 1.0e6f, 6);
- 	        Serial.print('\t');
- 	        Serial.println(c_pf, 4);
- 	  }
 
 #endif
 

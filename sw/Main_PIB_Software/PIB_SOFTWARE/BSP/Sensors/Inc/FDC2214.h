@@ -5,7 +5,7 @@
 #include "main.h"
 #include "i2c.h"
 
-#define FDC2214 0x2A
+#define FDC2214 (0x2A << 1)
 #define DATA_MSB_CH0 0x00
 #define DATA_LSB_CH0 0x01
 #define DATA_MSB_CH1 0x02
@@ -122,13 +122,6 @@ typedef enum {
     FDC2214_CH3 = 3
 } fdc2214_channel_t;
 
-// Cached CONFIG and MUX_CONFIG so individual setters can update single fields
-// without losing the rest of the word.
-uint16_t  _config;
-uint16_t  _mux_config;
-
-// Cached per-channel CLOCK_DIVIDERS so frequency conversion knows CH_FIN_DIVIDER.
-uint16_t  _clock_div[4];
 
 // ------------------------------------------------------------- lifecycle
 uint8_t FDC2214_Begin();
