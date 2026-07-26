@@ -42,8 +42,8 @@
 //#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
-//#define MAX31856
-//#define MAX31856_T1
+#define MAX31856
+#define MAX31856_T1
 //#define MAX31856_T2
 //#define MAX31856_T3
 //#define MAX31856_T4
@@ -111,7 +111,7 @@
 
 uint8_t rx_cmd[1]; // single byte for all UART commands.
 uint8_t tx_cmd[1];
-
+char uart_buffer[64];
 
 /* USER CODE END PV */
 
@@ -604,14 +604,14 @@ float temperature;
 
 
 
-
-	char uart_buffer[64];
-	uint32_t sensor_value = 42; // Replace with actual sensor reading
-
-	int len = snprintf(uart_buffer, sizeof(uart_buffer), "Sensor: %lu\r\n", sensor_value);
-
-	HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
-	HAL_Delay(1000);
+// testing
+//	char uart_buffer[64];
+//	uint32_t sensor_value = 42; // Replace with actual sensor reading
+//
+//	int len = snprintf(uart_buffer, sizeof(uart_buffer), "Sensor: %lu\r\n", sensor_value);
+//
+//	HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
+//	HAL_Delay(1000);
 
 
  	switch(rx_cmd[0]){
@@ -674,6 +674,19 @@ float temperature;
  	    case CMD_TOGGLE_LED_RED:
  		    HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
  			HAL_Delay(2000);
+
+
+
+ 	    case CMD_READ_TC1:
+ 		   temperature = max31856_read_CJ_temp(&max31856T1);
+
+ 		   // we may need to add if there's ever an error...
+
+
+ 		   int len = snprintf(uart_buffer, sizeof(uart_buffer), "Cold Junction Temperature Reading TC1: %f\r\n", temperature);
+ 	 	   HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
+
+
 
 
 

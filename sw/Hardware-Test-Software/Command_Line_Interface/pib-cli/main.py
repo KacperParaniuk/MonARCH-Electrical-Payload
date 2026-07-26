@@ -140,7 +140,14 @@ class SerialLink:
         if not 0 <= code <= 255:
             raise ValueError(f"Command code out of range for 1 byte: {code}")
         payload = struct.pack("B", code)
-        self.conn.write(payload) # sends the bit value
+        self.conn.write(payload) # sends the bit value'
+
+    def read_response(self, terminator: bytes = b'\n') -> str:
+        """Read a line of text response from the device."""
+        if not self.conn:
+            return ""
+        line = self.conn.readline()  # blocks until terminator or timeout
+        return line.decode('utf-8', errors='replace').strip()
  
     # TODO: read_response() - once you know what the PIB sends back for a
     # "read" command (a single byte? multiple bytes? ASCII?), define the
@@ -179,15 +186,15 @@ class PIBShell(cmd.Cmd):
         try: 
             valve = int(arg)
         except ValueError:
-            print("Invalid input. Please enter a number between 0 and 18.")
+            print("Invalid input. Please enter a number between 1 and 18.")
             return
 
-        if(valve < 0 or valve > 18):
-            print("Invalid valve number. Please enter a number between 0 and 18.")
+        if(valve < 1 or valve > 18):
+            print("Invalid valve number. Please enter a number between 1 and 18.")
             return
         else:
             print("Opening valve " + arg + "...")
-            self.pib.send_command(CMD_OPEN_SOL1 + valve) # takes valve 1 and adds the valve number to obtain the correct command.
+            self.pib.send_command(CMD_OPEN_SOL1 + (valve-1)) # takes valve 1 and adds the valve number to obtain the correct command.
             
       
     def do_close_valve(self, arg):
@@ -195,16 +202,34 @@ class PIBShell(cmd.Cmd):
         try: 
             valve = int(arg)
         except ValueError:
-            print("Invalid input. Please enter a number between 0 and 18.")
+            print("Invalid input. Please enter a number between 1 and 18.")
             return
 
-        if(valve < 0 or valve > 18):
-            print("Invalid valve number. Please enter a number between 0 and 18.")
+        if(valve < 1 or valve > 18):
+            print("Invalid valve number. Please enter a number between 1 and 18.")
             return
         else:
             print("Closing valve " + arg + "...")
-            self.pib.send_command(CMD_CLOSE_SOL1 + valve) # takes valve 1 and adds the valve number to obtain the correct command.
+            self.pib.send_command(CMD_CLOSE_SOL1 + (valve-1)) # takes valve 1 and adds the valve number to obtain the correct command.
+    def do_read_cj_temp(self,arg):
+        """Read the temperature from the payload interface board."""
+        try: 
+            sensor = int(arg)
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 5.")
+            return
 
+        if(sensor < 1 or sensor > 5):
+            print("Invalid sensor number. Please enter a number between 1 and 5.")
+            return
+        else:
+            print("Reading temperature from sensor " + arg + "...")
+            self.pib.send_command(CMD_READ_TC1 + (sensor - 1)) # takes sensor 1 and adds the sensor number - 1 to obtain the correct command.
+            response = self.pib.read_response()
+            if response:
+                print(f"PIB says: {response}" + " Celcius degrees")
+
+        
     def do_run_sequence(self, arg):
         """Run a predefined sequence on the payload interface board."""
         
