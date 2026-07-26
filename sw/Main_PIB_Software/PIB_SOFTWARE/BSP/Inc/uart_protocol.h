@@ -133,6 +133,12 @@
 
 
 
+#define CMD_TOGGLE_LED_RED 0x4E
+
+
+
+
+
 
 
 

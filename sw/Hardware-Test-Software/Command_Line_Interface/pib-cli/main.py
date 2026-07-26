@@ -1,7 +1,7 @@
 import cmd 
 import serial 
 import argparse
-
+import struct
 
 
 ''' INTERNAL COMMANDS '''
@@ -87,29 +87,31 @@ CMD_READ_12VB_VB_CURRENT  = 77
 
 # UART Commands for FDC2214
 
-READ_CAPACITANCE_A1  = 55
-READ_CAPACITANCE_A2  = 56
-READ_CATALYST_LEVEL_A1  = 57
-READ_CATALYST_LEVEL_A2  = 58
+CMD_READ_CAPACITANCE_A1  = 55
+CMD_READ_CAPACITANCE_A2  = 56
+CMD_READ_CATALYST_LEVEL_A1  = 57
+CMD_READ_CATALYST_LEVEL_A2  = 58
 
 
 # UART Command for heater
 
-HEAT_CATALYST  = 59
+CMD_HEAT_CATALYST  = 59
 
 
 # UART Commands for Pressure Regulation (PWM / PID)
 
-REGULATE_PRESSURE_INPUT_VALUE  = 60
-REGULATE_PRESSURE_2_INPUT_VALUE  = 61
+CMD_REGULATE_PRESSURE_INPUT_VALUE  = 60
+CMD_REGULATE_PRESSURE_2_INPUT_VALUE  = 61
 
 
 # UART Commands for PPU Control (OBC -> PIB)
 
-PPU_CURRENT_READ_1  = 62
-PPU_CURRENT_READ_2  = 63
-PPU_ON  = 64
-PPU_OFF  = 65
+CMD_PPU_CURRENT_READ_1  = 62
+CMD_PPU_CURRENT_READ_2  = 63
+CMD_PPU_ON  = 64
+CMD_PPU_OFF  = 65
+
+CMD_TOGGLE_LED_RED = 78
 
 
 
@@ -150,6 +152,10 @@ class PIBShell(cmd.Cmd):
     intro = "Welcome to the PIB shell. Use with an arduino to command the payload interface board of MonARCH. Type help or ? to list commands.\n"
     prompt = "(pib) "
 
+    def __init__(self, pib: SerialLink):
+        super().__init__()
+        self.pib = pib
+
     def do_greet(self, arg):
         """Greet the user."""
         print(f"Hello, {arg}!")
@@ -159,6 +165,11 @@ class PIBShell(cmd.Cmd):
         print("Exiting the PIB shell.")
         return True
 
+
+    def do_toggle_red_led(self, arg):
+        """Toggle the LED on the payload interface board."""
+        print("Toggling LED...")
+        self.pib.send_command(CMD_TOGGLE_LED_RED)  
     # def do_pib(self, arg): // probably not needed 
     #     """Send a command g the payload interface board."""
     #     print(f"Sending command to PIB: {arg}")
@@ -213,13 +224,27 @@ class PIBShell(cmd.Cmd):
         super().do_help(arg) 
 
 
+def parse_args(): # Parse command-line arguments when running the script directly. This allows the user to specify the serial port and baud rate for the Arduino connection.
+    parser = argparse.ArgumentParser(description="PIB command-line interface")
+    parser.add_argument(
+        "--port",
+        default="COM12",
+        help="Serial port the Arduino is connected to (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--baud",
+        type=int,
+        default=115200,
+        help="Baud rate for the serial link (default: %(default)s)",
+    )
+    return parser.parse_args()
+
 
 if __name__ == "__main__":
-    # TODO: argparse for --port / --baud instead of hardcoding
-    link = SerialLink(port="COM3", baud=115200)
+    args = parse_args()
+    link = SerialLink(port=args.port, baud=args.baud)
     link.open()
     try:
         PIBShell(link).cmdloop()
     finally:
         link.close()
-

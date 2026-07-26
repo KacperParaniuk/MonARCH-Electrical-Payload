@@ -8,66 +8,80 @@ const byte txPin = 3;  // TX of the device
 
 SoftwareSerial mySerial(rxPin, txPin);  
 
-#define LED_1 8
-#define LED_2 9
-
-
+#define LED_1 13
 
 
 
 void setup() {
   Serial.begin(115200);      // For Serial Monitor
-  mySerial.begin(115200);    // For STM32 (use lower baud like 9600 if issues)
+  mySerial.begin(9600);    // For STM32 (use lower baud like 9600 if issues)
 
 
   pinMode(LED_1, OUTPUT);
-  pinMode(LED_2, OUTPUT);
+
 
 }
 
 void loop() {
-  if (mySerial.available()) {
-    char c = mySerial.read();
-    Serial.println(c);  // Echo to Serial Monitor for debugging
-    digitalWrite(LED_1, 1);
+
+  // uint8_t cmd = 78;
+
+  // mySerial.write(cmd);  // need write to print the raw binary value
+
+  // // Serial.print(78);
+
+//  delay(1000);
+
+//   digitalWrite(LED_1, 1);
+
+//   delay(200);
+
+//   digitalWrite(LED_1,0);
 
 
-    if(c==1){
-// led ON 
-      digitalWrite(LED_2, 1);
+  if (Serial.available()) {
+    uint8_t cmd = Serial.read();
 
+    mySerial.write(cmd);
+
+    if(cmd>=0 && cmd<14){
+      Serial.print("(READ CMD) ");
+       if(mySerial.available()){
+      // uint8_t cmd = mySerial.read();
+      // Serial.println(cmd);
+      // Read the incoming bytes until a newline character is found
+      String incomingData = mySerial.readStringUntil('\n');
+      
+      // Trim any trailing carriage returns (\r)
+      incomingData.trim();
+      
+      // Print the received data to the Serial Monitor
+      Serial.print("Received from STM32: ");
+      Serial.println(incomingData);
+      }
     }
-    else if(c==0){
-// LED OFF
-      digitalWrite(LED_2, 0);
 
+
+
+    digitalWrite(LED_1, 1);
+    delay(100);
+    digitalWrite(LED_1, 0);
+    delay(100);
+    digitalWrite(LED_1, 1);
+    delay(100);
+    digitalWrite(LED_1, 0);
+    delay(100);
 
     }
     else{
-
-      digitalWrite(LED_1, 1);
-      delay(100);
-      digitalWrite(LED_1, 0);
-      delay(100);
-      digitalWrite(LED_1, 1);
-      delay(100);
-      digitalWrite(LED_1, 0);
-      delay(100);
+    delay(500);
+    digitalWrite(LED_1, 0);
 
     }
 
-    delay(500);
-
-
-
-
-  }
-  else{
-    delay(500);
-    Serial.println("Nothing");
-    digitalWrite(LED_1, 0);
-
-  }
+//     delay(500);
 
   
 }
+
+
