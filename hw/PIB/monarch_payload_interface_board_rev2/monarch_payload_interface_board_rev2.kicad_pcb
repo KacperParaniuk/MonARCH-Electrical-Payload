@@ -686,6 +686,7 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x04_P2.54mm_Vertical.step"
+			(hide yes)
 			(offset
 				(xyz 0 0 0)
 			)
@@ -934,6 +935,7 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_1.00mm.3dshapes/PinHeader_1x02_P1.00mm_Vertical.step"
+			(hide yes)
 			(offset
 				(xyz 0 0 0)
 			)
@@ -1284,6 +1286,17 @@
 			(uuid "c13752b5-bda8-4351-9d4f-81a98a1c74d7")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980671.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "fzt:SOT230P700X170-4N"
 		(layer "F.Cu")
@@ -1602,7 +1615,7 @@
 			(uuid "d50cdb94-c5fb-4f11-82f7-103baf90c40f")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -2100,6 +2113,17 @@
 			(uuid "33322f22-2094-44cd-aa88-1369d1d3a941")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980671.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "LED_SMD:LED_0603_1608Metric"
 		(layer "F.Cu")
@@ -3071,7 +3095,7 @@
 			(uuid "4e2930f9-4650-49f0-b723-70aff1859f43")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -3897,6 +3921,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
 		(layer "F.Cu")
@@ -4216,6 +4251,17 @@
 			(uuid "cee42ae4-92d0-404c-be33-209953b28451")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980471.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "s1j:SMA_DIO-L"
 		(layer "F.Cu")
@@ -4881,13 +4927,24 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "MAX31856MUD_T:SOP65P640X110-14N"
 		(layer "F.Cu")
 		(uuid "13f06dbf-8aed-4f11-8856-68066c1d2f30")
 		(at 102.94 42.765 -90)
 		(property "Reference" "U8"
-			(at -0.015 -4.06 180)
+			(at -0.015 -4.06 0)
 			(layer "F.SilkS")
 			(uuid "0d2d10d1-da52-421f-9978-9a95892e3b0f")
 			(effects
@@ -5932,6 +5989,17 @@
 			(uuid "8b9d14a7-6ffc-43a3-9480-47cce7cdeef4")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/MAX31856MUD_T/MAX31856MUD_T.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "TestPoint:TestPoint_Pad_D1.0mm"
 		(layer "F.Cu")
@@ -7151,6 +7219,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
@@ -7765,7 +7844,7 @@
 			(uuid "5d549cb2-5fab-43ac-a1fd-3eb5d0522fd2")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -8589,6 +8668,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -12820,6 +12910,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -14039,6 +14140,7 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_2x04_P2.54mm_Vertical.step"
+			(hide yes)
 			(offset
 				(xyz 0 0 0)
 			)
@@ -14714,6 +14816,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "fzt:SOT230P700X170-4N"
 		(layer "F.Cu")
@@ -15032,7 +15145,7 @@
 			(uuid "e590094e-bb5c-406b-b03c-b3b62846628b")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -15954,6 +16067,17 @@
 			(uuid "226ab399-ac5f-45c9-b11d-a2129aeb9884")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980471.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "fzt:SOT230P700X170-4N"
 		(layer "F.Cu")
@@ -16272,7 +16396,7 @@
 			(uuid "6c51582c-01a2-4ec5-b826-ba547b3fd211")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -16948,6 +17072,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
@@ -17562,7 +17697,7 @@
 			(uuid "e0d096b6-87a6-4495-b0fb-38806857e1e4")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -18241,6 +18376,7 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x06_P2.54mm_Vertical.step"
+			(hide yes)
 			(offset
 				(xyz 0 0 0)
 			)
@@ -20253,6 +20389,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "s1j:SMA_DIO-L"
 		(layer "F.Cu")
@@ -20918,6 +21065,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "fzt:SOT230P700X170-4N"
 		(layer "F.Cu")
@@ -21236,7 +21394,7 @@
 			(uuid "c6e0c133-37a4-442c-9bff-69e7d48b3443")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -22208,6 +22366,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
@@ -22674,7 +22843,7 @@
 			(uuid "5cfd177f-41f5-452f-8b3d-41e247cf02d2")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -23297,7 +23466,7 @@
 			(uuid "66a6f72a-8d6a-455d-8446-bdd35fe76986")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -25378,6 +25547,17 @@
 			(uuid "1c88bc1e-00c3-49e5-ad08-4a79d6cba239")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/AD7124_8BCPZ_RL/CP-32-12_ADI.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -28338,6 +28518,17 @@
 			(uuid "8ecb1f61-1cf1-4cc2-837f-ec50c4f6bb54")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/MAX31856MUD_T/MAX31856MUD_T.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -28870,6 +29061,7 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_1.00mm.3dshapes/PinHeader_1x02_P1.00mm_Vertical.step"
+			(hide yes)
 			(offset
 				(xyz 0 0 0)
 			)
@@ -29221,6 +29413,17 @@
 			(uuid "9e67d149-9123-4034-8c8f-8334cd68f23b")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980671.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -29709,6 +29912,17 @@
 			(uuid "902c141f-1e58-49b8-868a-2e893827d48e")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980671.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "s1j:SMA_DIO-L"
 		(layer "F.Cu")
@@ -30374,6 +30588,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -31069,6 +31294,7 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x05_P2.54mm_Vertical.step"
+			(hide yes)
 			(offset
 				(xyz 0 0 0)
 			)
@@ -32135,7 +32361,7 @@
 			(uuid "369d6db4-5653-4d80-9090-1325cc0d6331")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -33103,6 +33329,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -34064,6 +34301,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"
 		(layer "F.Cu")
@@ -34317,6 +34565,7 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x05_P2.54mm_Vertical.step"
+			(hide yes)
 			(offset
 				(xyz 0 0 0)
 			)
@@ -34645,7 +34894,7 @@
 			(uuid "38ea13e7-46d9-409b-a815-8b98ca61b10f")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -34997,6 +35246,17 @@
 			(uuid "abe43eb3-1340-4942-bdeb-32bd06b9c555")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980671.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
@@ -35610,7 +35870,7 @@
 			(uuid "62285756-8e71-43ff-ac70-2ef6a895b333")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -35990,7 +36250,7 @@
 			(at 3.125 2.084199 90)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "71f4d7dc-e06e-4f9a-ba49-eecb3a17f364")
+			(uuid "b19bc39b-c92d-45f5-a115-43585724ac24")
 			(effects
 				(font
 					(size 1 1)
@@ -36002,7 +36262,7 @@
 			(at 3.125 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "a0b1349c-a156-4ba0-9a8a-efa74b5d6dc4")
+			(uuid "f289218c-a743-4781-b22f-1fc6cca55815")
 			(effects
 				(font
 					(size 1 1)
@@ -36014,7 +36274,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a8855c22-fdb1-4390-91f5-3424fca4b826")
+			(uuid "3b2d0aa6-5bff-462a-915c-e62d60a5beea")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36025,7 +36285,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "667a0a4a-b1f1-4162-af47-2b385962456b")
+			(uuid "0c03efc0-7f07-4e18-ba3f-8d33510d4a1d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36320,6 +36580,17 @@
 			(uuid "c724c930-bfe0-4255-b1e4-18e8ea2502eb")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980671.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -37082,7 +37353,7 @@
 			(uuid "eeb3c6aa-12d5-4f0d-838b-41cbe090d4cc")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -37727,6 +37998,17 @@
 			(uuid "f7904961-d493-47e3-b574-84c10a7a30b6")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980671.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -37884,7 +38166,7 @@
 		(descr "FZT600TA-")
 		(tags "Transistor BJT NPN")
 		(property "Reference" "Q9"
-			(at 2.92 3.28 180)
+			(at 2.92 3.28 0)
 			(layer "F.SilkS")
 			(uuid "5f7d937e-1e3e-4b24-9858-b110e4f65588")
 			(effects
@@ -38194,7 +38476,7 @@
 			(uuid "bdbf4de6-0523-4695-81e1-05f3a6dcfeac")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -39081,6 +39363,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "s1j:SMA_DIO-L"
 		(layer "F.Cu")
@@ -39746,6 +40039,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "s1j:SMA_DIO-L"
 		(layer "F.Cu")
@@ -40411,6 +40715,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "MAX31856MUD_T:SOP65P640X110-14N"
 		(layer "F.Cu")
@@ -41462,6 +41777,17 @@
 			(uuid "bd602c0f-a384-40db-9c89-3a4805c04133")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/MAX31856MUD_T/MAX31856MUD_T.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
@@ -41928,7 +42254,7 @@
 			(uuid "57d20b95-5188-41b3-9d1b-5504e23c9381")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -42553,6 +42879,17 @@
 			(uuid "c8c5d4ba-efa7-4eda-9f34-f8d491b6a4da")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980471.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "fzt:SOT230P700X170-4N"
 		(layer "F.Cu")
@@ -42561,7 +42898,7 @@
 		(descr "FZT600TA-")
 		(tags "Transistor BJT NPN")
 		(property "Reference" "Q8"
-			(at 3.05 3.05 180)
+			(at 3.05 3.05 0)
 			(layer "F.SilkS")
 			(uuid "3677c063-d370-4922-af56-5a50046056e9")
 			(effects
@@ -42871,7 +43208,7 @@
 			(uuid "6aa205f8-92dd-42f8-a6c6-78d2ce24847e")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -43627,6 +43964,17 @@
 			(uuid "879a8c9c-09db-4ea6-af9f-416f712ecf3b")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980671.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
 		(layer "F.Cu")
@@ -43945,6 +44293,17 @@
 			(uuid "22153e02-1285-46d5-8fed-6f2b29fb2e74")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980471.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -44411,7 +44770,7 @@
 			(uuid "eb96b1c6-0a66-4d71-81f0-26de22d31f92")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -45087,6 +45446,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
@@ -45898,6 +46268,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/S1J_13_F/SMA_DIO.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -46512,7 +46893,7 @@
 			(uuid "6f893649-652d-4d80-b6ae-4a28c5cb2102")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -47871,6 +48252,17 @@
 			(uuid "2e988f7a-a09e-4093-8903-2b96b4778a63")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/MAX31856MUD_T/MAX31856MUD_T.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "MAX31856MUD_T:SOP65P640X110-14N"
 		(layer "F.Cu")
@@ -48923,6 +49315,17 @@
 			(uuid "87a05dba-1c7f-43e2-ac84-5f63c8764cc5")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/MAX31856MUD_T/MAX31856MUD_T.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "LED_SMD:LED_0603_1608Metric"
 		(layer "F.Cu")
@@ -49535,6 +49938,17 @@
 			(uuid "9b26f6bb-f335-4e8f-b13e-70ccf685018e")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_PPU/3D-Model/534260210.stp"
+			(offset
+				(xyz 1.3 -12 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -0 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -49839,7 +50253,7 @@
 		(descr "FZT600TA-")
 		(tags "Transistor BJT NPN")
 		(property "Reference" "Q13"
-			(at 3.22 3.57 180)
+			(at 3.22 3.57 0)
 			(layer "F.SilkS")
 			(uuid "b58516c6-a551-4a73-b275-7c1857c41e28")
 			(effects
@@ -50149,7 +50563,7 @@
 			(uuid "4bdcb63c-65a7-4d5f-b5a9-68328d5f063a")
 		)
 		(embedded_fonts no)
-		(model "FZT600TA.stp"
+		(model "${KIPRJMOD}/LIB_FZT600TA/FZT600TA/3D/FZT600TA.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -50942,6 +51356,17 @@
 			(uuid "365c16c6-4c92-4cab-871e-1f573e438d8d")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/3D-Models/2200980671.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "B.Cu")
@@ -51346,6 +51771,17 @@
 			(uuid "32852e05-4ae2-4ab1-a9b0-db7f45752ab6")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/ul_WSK06121L000FEA/WSK0612.step"
+			(offset
+				(xyz 0 -1.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "B.Cu")
@@ -56438,6 +56874,17 @@
 			(uuid "82b4bb38-e12f-46cc-a1a6-e62a1ef3aa94")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/ul_WSK06121L000FEA/WSK0612.step"
+			(offset
+				(xyz 0 -1.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "B.Cu")
@@ -58161,6 +58608,17 @@
 			(uuid "5bf7292a-ef4f-4828-b1f3-d333e4fe2a29")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/ul_WSK06121L000FEA/WSK0612.step"
+			(offset
+				(xyz 0 -1.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "B.Cu")
@@ -60699,6 +61157,17 @@
 			(uuid "d81a9a38-b22d-47c4-be08-2d9e61ef208b")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/AD7124_8BCPZ_RL/CP-32-12_ADI.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "B.Cu")
@@ -61678,6 +62147,17 @@
 			(uuid "8930b6e9-b125-4630-8242-086974982efe")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/TPS61088QRHLRQ1/RHL0020A.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "B.Cu")
@@ -70170,6 +70650,568 @@
 		(layer "In1.Cu")
 		(net "/Connectors/UART_PPU_RX")
 		(uuid "f2944786-24e6-4b22-9bd7-c0090bc18da9")
+	)
+	(segment
+		(start 45.923798 52.979399)
+		(end 47.024798 51.878399)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "12b6f1bc-f21e-49bc-ac57-a203d5f201c6")
+	)
+	(segment
+		(start 43.384798 26.305202)
+		(end 44.53 25.16)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "3f41bf0b-71f5-454e-821d-3f99aef831fe")
+	)
+	(segment
+		(start 55.446 58.496)
+		(end 54.612176 58.496)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "4b941e19-a486-46b7-a1d7-9a1b536ec5c9")
+	)
+	(segment
+		(start 46.568748 58.059399)
+		(end 45.923798 57.414449)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "4c4ec154-dd36-401f-8e13-b1a0ae2f41bc")
+	)
+	(segment
+		(start 55.495 58.545)
+		(end 55.446 58.496)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "61543ef1-d3bb-4195-a89a-e145d314927b")
+	)
+	(segment
+		(start 54.612176 58.496)
+		(end 54.577176 58.461)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "6cf9f2ac-faad-42a7-b3ab-c289d2a42678")
+	)
+	(segment
+		(start 44.090764 50.5)
+		(end 43.384798 49.794034)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "723fd906-f52d-4295-a1b2-234ccce9c75f")
+	)
+	(segment
+		(start 47.024798 51.878399)
+		(end 45.646399 50.5)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "882bc561-ffd1-42a6-b5b3-9ef284a7102e")
+	)
+	(segment
+		(start 54.577176 58.461)
+		(end 50.500299 58.461)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "90a89055-65aa-40f4-8b8f-7ac65e6f98a7")
+	)
+	(segment
+		(start 50.098698 58.059399)
+		(end 46.568748 58.059399)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "a3d56c92-ce42-4a1b-b24e-a7e957d4dbd5")
+	)
+	(segment
+		(start 45.923798 57.414449)
+		(end 45.923798 52.979399)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "a49919ee-d229-4c42-94c8-14a328cb3a6b")
+	)
+	(segment
+		(start 45.646399 50.5)
+		(end 44.090764 50.5)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "ab50d9ed-c949-4170-8b9c-6e819980bf7d")
+	)
+	(segment
+		(start 43.384798 49.794034)
+		(end 43.384798 26.305202)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "bab8a2a5-9446-4dad-aed8-b3e7231ee663")
+	)
+	(segment
+		(start 50.500299 58.461)
+		(end 50.098698 58.059399)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "ee00ed3f-a3e0-4bf4-b162-854df37b3b7f")
+	)
+	(via
+		(at 44.53 25.16)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "fb31a8ca-c174-4007-9e02-bb8216422557")
+	)
+	(segment
+		(start 58.767627 25.16)
+		(end 60.08 26.472373)
+		(width 0.2)
+		(layer "In1.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "14f89b86-bb8e-4672-bead-498a94d02fb7")
+	)
+	(segment
+		(start 60.08 27.44)
+		(end 58.27 29.25)
+		(width 0.2)
+		(layer "In1.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "4dd7bdd4-2f99-4516-8c40-b51866c18863")
+	)
+	(segment
+		(start 44.53 25.16)
+		(end 58.767627 25.16)
+		(width 0.2)
+		(layer "In1.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "979fb02a-f82b-4fbf-bdc9-fdbca190c0bb")
+	)
+	(segment
+		(start 60.08 26.472373)
+		(end 60.08 27.44)
+		(width 0.2)
+		(layer "In1.Cu")
+		(net "/Connectors/USART3_RX")
+		(uuid "c523ea72-1e24-4a47-8f97-dc151dbc3efc")
+	)
+	(segment
+		(start 48.722901 56.116502)
+		(end 48.550365 56.289035)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "006ca642-d375-44b5-9107-087c279eeab3")
+	)
+	(segment
+		(start 48.032764 55.426365)
+		(end 47.740035 55.133636)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "0203fcd2-5498-47a4-b4eb-b95619916f3b")
+	)
+	(segment
+		(start 48.741288 57.478392)
+		(end 48.65502 57.392124)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "132832ec-0a3a-4e44-914f-18df63cc3798")
+	)
+	(segment
+		(start 48.055391 56.438941)
+		(end 47.969123 56.352673)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "27d409a2-f51d-4768-9b29-23220cf69571")
+	)
+	(segment
+		(start 50.189447 57.237979)
+		(end 50.51613 56.911295)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "2a35499a-85b2-4f97-a4ad-851383efcd1f")
+	)
+	(segment
+		(start 49.222119 55.617285)
+		(end 48.722901 56.116502)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "3b352d90-56e8-4bce-b45e-edd86a29749e")
+	)
+	(segment
+		(start 55.5 31.5)
+		(end 53 34)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "4135e57b-e07f-4a94-bdb8-123cb3ba10b6")
+	)
+	(segment
+		(start 53 43.5)
+		(end 52 44.5)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "53efbe45-95f1-4892-afab-476246bba656")
+	)
+	(segment
+		(start 55.495 58.045)
+		(end 55.48 58.06)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "5854ed64-e1c2-4d78-b30b-465670197b95")
+	)
+	(segment
+		(start 52 58.06)
+		(end 50.666399 58.06)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "58beeaad-8f28-49c4-9fa1-2ffe4ca28462")
+	)
+	(segment
+		(start 62.62 30.96)
+		(end 62.08 31.5)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "5d715797-5443-4a03-9ff9-b6c0133a84a2")
+	)
+	(segment
+		(start 49.154238 56.547839)
+		(end 49.653455 56.048621)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "602d4870-0ff5-4d84-bf0d-7acdd8942478")
+	)
+	(segment
+		(start 49.585575 56.979176)
+		(end 49.086356 57.478392)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "729a1ac1-00f5-489d-a7b3-1ad1be0a5987")
+	)
+	(segment
+		(start 62.37 29.25)
+		(end 62.62 29.5)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "72b92d9a-465f-43ba-812f-424ed3bb774f")
+	)
+	(segment
+		(start 50.084794 56.479959)
+		(end 49.75811 56.806642)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "7a44c6ca-9d5a-48b3-8430-0be14f09bc58")
+	)
+	(segment
+		(start 50.666399 58.06)
+		(end 50.189447 57.583048)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "7c56424a-8476-43d9-ad47-4478f4fb02e7")
+	)
+	(segment
+		(start 49.75811 56.806642)
+		(end 49.585576 56.979176)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "8269119b-9c48-44a7-bc18-3d06e85cf528")
+	)
+	(segment
+		(start 62.62 29.5)
+		(end 62.62 30.96)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "843f7622-705f-4f39-bd2d-39d5dad6ad77")
+	)
+	(segment
+		(start 62.08 31.5)
+		(end 55.5 31.5)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "86233f65-6056-4704-ac38-77bd826f8261")
+	)
+	(segment
+		(start 55.48 58.06)
+		(end 52 58.06)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "8959b88a-1c1d-43bf-8ff9-650367007226")
+	)
+	(segment
+		(start 60.81 29.25)
+		(end 62.37 29.25)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "8e000eca-7eea-4bc7-9739-f039c0666eef")
+	)
+	(segment
+		(start 52 44.5)
+		(end 52 58.06)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "933a3758-98d6-425f-8c9f-b6f65e2fee82")
+	)
+	(segment
+		(start 49.653455 55.703553)
+		(end 49.567187 55.617285)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "9462ffe7-b401-4653-9e64-bd264f5c416a")
+	)
+	(segment
+		(start 49.585576 56.979176)
+		(end 49.585575 56.979176)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "9ff14951-5e33-4765-a8a7-45d5d29d23ed")
+	)
+	(segment
+		(start 47.969123 56.007605)
+		(end 48.11903 55.857699)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "a255ce6b-a109-4c23-b87c-4e19ead0ed90")
+	)
+	(segment
+		(start 53 34)
+		(end 53 43.5)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "af742295-7c4d-4bd4-966e-f47162ea676b")
+	)
+	(segment
+		(start 47.740035 55.133636)
+		(end 47.024798 54.418399)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "bce24b34-d3d3-42c9-9187-bbf5dc1866e6")
+	)
+	(segment
+		(start 50.51613 56.566227)
+		(end 50.429862 56.479959)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "c9dece99-0e41-40c3-b37d-9479be946510")
+	)
+	(segment
+		(start 48.65502 57.047056)
+		(end 49.154238 56.547839)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "ce38665e-fb62-474c-a15a-4a6ebcc627fc")
+	)
+	(segment
+		(start 48.550365 56.289035)
+		(end 48.400459 56.438941)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "f804a091-75a2-482b-bf07-cea9098c7c78")
+	)
+	(segment
+		(start 48.11903 55.512631)
+		(end 48.032764 55.426365)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "fe41dc9d-e0b5-4cf3-abd1-243ecf6c4273")
+	)
+	(arc
+		(start 50.51613 56.911295)
+		(mid 50.587596 56.738761)
+		(end 50.51613 56.566227)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "059b21ca-9f5d-4b23-b254-9b0be5be68f9")
+	)
+	(arc
+		(start 48.65502 57.392124)
+		(mid 48.583554 57.21959)
+		(end 48.65502 57.047056)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "06ac3b42-acf1-4006-ae19-138da2ab61c4")
+	)
+	(arc
+		(start 50.429862 56.479959)
+		(mid 50.257328 56.408493)
+		(end 50.084794 56.479959)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "06e670ce-c171-4d62-bde7-a23b32b45bb9")
+	)
+	(arc
+		(start 49.653455 56.048621)
+		(mid 49.724921 55.876087)
+		(end 49.653455 55.703553)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "1ef20c93-9929-4149-a714-3f7b5bc4ed12")
+	)
+	(arc
+		(start 50.189447 57.583048)
+		(mid 50.11798 57.410514)
+		(end 50.189447 57.237979)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "34f50603-afd1-4f36-b0e1-3087376aea4d")
+	)
+	(arc
+		(start 49.086356 57.478392)
+		(mid 48.913822 57.549858)
+		(end 48.741288 57.478392)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "48a1e758-fe76-4f9a-a57c-8662b5c9b4c8")
+	)
+	(arc
+		(start 47.969123 56.352673)
+		(mid 47.897657 56.180139)
+		(end 47.969123 56.007605)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "55f25580-d07b-4813-b9e9-8ec97569ea12")
+	)
+	(arc
+		(start 48.11903 55.857699)
+		(mid 48.190496 55.685165)
+		(end 48.11903 55.512631)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "7bc6ff26-ded7-4ec5-8523-9d99471c6d41")
+	)
+	(arc
+		(start 48.400459 56.438941)
+		(mid 48.227925 56.510407)
+		(end 48.055391 56.438941)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "bf5c8e7b-1314-4241-8579-ece5aeeb137c")
+	)
+	(arc
+		(start 49.567187 55.617285)
+		(mid 49.394653 55.545819)
+		(end 49.222119 55.617285)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Connectors/USART3_TX")
+		(uuid "fc211226-3c72-4ed0-a493-5378b43fd12f")
+	)
+	(segment
+		(start 73.729143 57.473)
+		(end 73.801143 57.545)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "Net-(U2-PH3)")
+		(uuid "23f9363c-8674-421d-8636-93792697278c")
+	)
+	(segment
+		(start 74.195 57.545)
+		(end 74.2 57.55)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "Net-(U2-PH3)")
+		(uuid "3197374a-d48f-47dd-bb7d-8933e4d0b735")
+	)
+	(segment
+		(start 72.5 57.545)
+		(end 72.7 57.345)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "Net-(U2-PH3)")
+		(uuid "63950801-b33d-4a88-83b3-ce4b0e64557a")
+	)
+	(segment
+		(start 73.164561 57.345)
+		(end 73.292561 57.473)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "Net-(U2-PH3)")
+		(uuid "6f80a3fa-d8da-414f-8a18-ecc10e14d06d")
+	)
+	(segment
+		(start 74.2 57.55)
+		(end 74.58 57.55)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "Net-(U2-PH3)")
+		(uuid "a08ea908-0cd0-4528-82f7-6fe0dc0546ce")
+	)
+	(segment
+		(start 73.292561 57.473)
+		(end 73.729143 57.473)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "Net-(U2-PH3)")
+		(uuid "a8b49cf7-87b3-4630-9c65-5048a45f1946")
+	)
+	(segment
+		(start 73.801143 57.545)
+		(end 74.195 57.545)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "Net-(U2-PH3)")
+		(uuid "ac8d649f-c838-474e-b637-cf1fcda42125")
+	)
+	(segment
+		(start 70.845 57.545)
+		(end 72.5 57.545)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "Net-(U2-PH3)")
+		(uuid "afda3a2e-2872-414d-b115-7189f3696467")
+	)
+	(segment
+		(start 72.7 57.345)
+		(end 73.164561 57.345)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "Net-(U2-PH3)")
+		(uuid "e71dbef9-c01d-44ec-88c0-e7aa43405b48")
 	)
 	(segment
 		(start 72.32 25.07)
@@ -85255,568 +86297,6 @@
 		(layer "B.Cu")
 		(net "12VB_VA+")
 		(uuid "ee90e0d4-7c39-4d93-8aa2-7833d61c5e01")
-	)
-	(segment
-		(start 48.722901 56.116502)
-		(end 48.550365 56.289035)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "006ca642-d375-44b5-9107-087c279eeab3")
-	)
-	(segment
-		(start 48.032764 55.426365)
-		(end 47.740035 55.133636)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "0203fcd2-5498-47a4-b4eb-b95619916f3b")
-	)
-	(segment
-		(start 48.741288 57.478392)
-		(end 48.65502 57.392124)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "132832ec-0a3a-4e44-914f-18df63cc3798")
-	)
-	(segment
-		(start 48.055391 56.438941)
-		(end 47.969123 56.352673)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "27d409a2-f51d-4768-9b29-23220cf69571")
-	)
-	(segment
-		(start 50.189447 57.237979)
-		(end 50.51613 56.911295)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "2a35499a-85b2-4f97-a4ad-851383efcd1f")
-	)
-	(segment
-		(start 49.222119 55.617285)
-		(end 48.722901 56.116502)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "3b352d90-56e8-4bce-b45e-edd86a29749e")
-	)
-	(segment
-		(start 55.5 31.5)
-		(end 53 34)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "4135e57b-e07f-4a94-bdb8-123cb3ba10b6")
-	)
-	(segment
-		(start 53 43.5)
-		(end 52 44.5)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "53efbe45-95f1-4892-afab-476246bba656")
-	)
-	(segment
-		(start 55.495 58.045)
-		(end 55.48 58.06)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "5854ed64-e1c2-4d78-b30b-465670197b95")
-	)
-	(segment
-		(start 52 58.06)
-		(end 50.666399 58.06)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "58beeaad-8f28-49c4-9fa1-2ffe4ca28462")
-	)
-	(segment
-		(start 62.62 30.96)
-		(end 62.08 31.5)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "5d715797-5443-4a03-9ff9-b6c0133a84a2")
-	)
-	(segment
-		(start 49.154238 56.547839)
-		(end 49.653455 56.048621)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "602d4870-0ff5-4d84-bf0d-7acdd8942478")
-	)
-	(segment
-		(start 49.585575 56.979176)
-		(end 49.086356 57.478392)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "729a1ac1-00f5-489d-a7b3-1ad1be0a5987")
-	)
-	(segment
-		(start 62.37 29.25)
-		(end 62.62 29.5)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "72b92d9a-465f-43ba-812f-424ed3bb774f")
-	)
-	(segment
-		(start 50.084794 56.479959)
-		(end 49.75811 56.806642)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "7a44c6ca-9d5a-48b3-8430-0be14f09bc58")
-	)
-	(segment
-		(start 50.666399 58.06)
-		(end 50.189447 57.583048)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "7c56424a-8476-43d9-ad47-4478f4fb02e7")
-	)
-	(segment
-		(start 49.75811 56.806642)
-		(end 49.585576 56.979176)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "8269119b-9c48-44a7-bc18-3d06e85cf528")
-	)
-	(segment
-		(start 62.62 29.5)
-		(end 62.62 30.96)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "843f7622-705f-4f39-bd2d-39d5dad6ad77")
-	)
-	(segment
-		(start 62.08 31.5)
-		(end 55.5 31.5)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "86233f65-6056-4704-ac38-77bd826f8261")
-	)
-	(segment
-		(start 55.48 58.06)
-		(end 52 58.06)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "8959b88a-1c1d-43bf-8ff9-650367007226")
-	)
-	(segment
-		(start 60.81 29.25)
-		(end 62.37 29.25)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "8e000eca-7eea-4bc7-9739-f039c0666eef")
-	)
-	(segment
-		(start 52 44.5)
-		(end 52 58.06)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "933a3758-98d6-425f-8c9f-b6f65e2fee82")
-	)
-	(segment
-		(start 49.653455 55.703553)
-		(end 49.567187 55.617285)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "9462ffe7-b401-4653-9e64-bd264f5c416a")
-	)
-	(segment
-		(start 49.585576 56.979176)
-		(end 49.585575 56.979176)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "9ff14951-5e33-4765-a8a7-45d5d29d23ed")
-	)
-	(segment
-		(start 47.969123 56.007605)
-		(end 48.11903 55.857699)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "a255ce6b-a109-4c23-b87c-4e19ead0ed90")
-	)
-	(segment
-		(start 53 34)
-		(end 53 43.5)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "af742295-7c4d-4bd4-966e-f47162ea676b")
-	)
-	(segment
-		(start 47.740035 55.133636)
-		(end 47.024798 54.418399)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "bce24b34-d3d3-42c9-9187-bbf5dc1866e6")
-	)
-	(segment
-		(start 50.51613 56.566227)
-		(end 50.429862 56.479959)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "c9dece99-0e41-40c3-b37d-9479be946510")
-	)
-	(segment
-		(start 48.65502 57.047056)
-		(end 49.154238 56.547839)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "ce38665e-fb62-474c-a15a-4a6ebcc627fc")
-	)
-	(segment
-		(start 48.550365 56.289035)
-		(end 48.400459 56.438941)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "f804a091-75a2-482b-bf07-cea9098c7c78")
-	)
-	(segment
-		(start 48.11903 55.512631)
-		(end 48.032764 55.426365)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "fe41dc9d-e0b5-4cf3-abd1-243ecf6c4273")
-	)
-	(arc
-		(start 50.51613 56.911295)
-		(mid 50.587596 56.738761)
-		(end 50.51613 56.566227)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "059b21ca-9f5d-4b23-b254-9b0be5be68f9")
-	)
-	(arc
-		(start 48.65502 57.392124)
-		(mid 48.583554 57.21959)
-		(end 48.65502 57.047056)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "06ac3b42-acf1-4006-ae19-138da2ab61c4")
-	)
-	(arc
-		(start 50.429862 56.479959)
-		(mid 50.257328 56.408493)
-		(end 50.084794 56.479959)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "06e670ce-c171-4d62-bde7-a23b32b45bb9")
-	)
-	(arc
-		(start 49.653455 56.048621)
-		(mid 49.724921 55.876087)
-		(end 49.653455 55.703553)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "1ef20c93-9929-4149-a714-3f7b5bc4ed12")
-	)
-	(arc
-		(start 50.189447 57.583048)
-		(mid 50.11798 57.410514)
-		(end 50.189447 57.237979)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "34f50603-afd1-4f36-b0e1-3087376aea4d")
-	)
-	(arc
-		(start 49.086356 57.478392)
-		(mid 48.913822 57.549858)
-		(end 48.741288 57.478392)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "48a1e758-fe76-4f9a-a57c-8662b5c9b4c8")
-	)
-	(arc
-		(start 47.969123 56.352673)
-		(mid 47.897657 56.180139)
-		(end 47.969123 56.007605)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "55f25580-d07b-4813-b9e9-8ec97569ea12")
-	)
-	(arc
-		(start 48.11903 55.857699)
-		(mid 48.190496 55.685165)
-		(end 48.11903 55.512631)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "7bc6ff26-ded7-4ec5-8523-9d99471c6d41")
-	)
-	(arc
-		(start 48.400459 56.438941)
-		(mid 48.227925 56.510407)
-		(end 48.055391 56.438941)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "bf5c8e7b-1314-4241-8579-ece5aeeb137c")
-	)
-	(arc
-		(start 49.567187 55.617285)
-		(mid 49.394653 55.545819)
-		(end 49.222119 55.617285)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_TX")
-		(uuid "fc211226-3c72-4ed0-a493-5378b43fd12f")
-	)
-	(segment
-		(start 45.923798 52.979399)
-		(end 47.024798 51.878399)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "12b6f1bc-f21e-49bc-ac57-a203d5f201c6")
-	)
-	(segment
-		(start 43.384798 26.305202)
-		(end 44.53 25.16)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "3f41bf0b-71f5-454e-821d-3f99aef831fe")
-	)
-	(segment
-		(start 55.446 58.496)
-		(end 54.612176 58.496)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "4b941e19-a486-46b7-a1d7-9a1b536ec5c9")
-	)
-	(segment
-		(start 46.568748 58.059399)
-		(end 45.923798 57.414449)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "4c4ec154-dd36-401f-8e13-b1a0ae2f41bc")
-	)
-	(segment
-		(start 55.495 58.545)
-		(end 55.446 58.496)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "61543ef1-d3bb-4195-a89a-e145d314927b")
-	)
-	(segment
-		(start 54.612176 58.496)
-		(end 54.577176 58.461)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "6cf9f2ac-faad-42a7-b3ab-c289d2a42678")
-	)
-	(segment
-		(start 44.090764 50.5)
-		(end 43.384798 49.794034)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "723fd906-f52d-4295-a1b2-234ccce9c75f")
-	)
-	(segment
-		(start 47.024798 51.878399)
-		(end 45.646399 50.5)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "882bc561-ffd1-42a6-b5b3-9ef284a7102e")
-	)
-	(segment
-		(start 54.577176 58.461)
-		(end 50.500299 58.461)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "90a89055-65aa-40f4-8b8f-7ac65e6f98a7")
-	)
-	(segment
-		(start 50.098698 58.059399)
-		(end 46.568748 58.059399)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "a3d56c92-ce42-4a1b-b24e-a7e957d4dbd5")
-	)
-	(segment
-		(start 45.923798 57.414449)
-		(end 45.923798 52.979399)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "a49919ee-d229-4c42-94c8-14a328cb3a6b")
-	)
-	(segment
-		(start 45.646399 50.5)
-		(end 44.090764 50.5)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "ab50d9ed-c949-4170-8b9c-6e819980bf7d")
-	)
-	(segment
-		(start 43.384798 49.794034)
-		(end 43.384798 26.305202)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "bab8a2a5-9446-4dad-aed8-b3e7231ee663")
-	)
-	(segment
-		(start 50.500299 58.461)
-		(end 50.098698 58.059399)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "ee00ed3f-a3e0-4bf4-b162-854df37b3b7f")
-	)
-	(via
-		(at 44.53 25.16)
-		(size 0.6)
-		(drill 0.3)
-		(layers "F.Cu" "B.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "fb31a8ca-c174-4007-9e02-bb8216422557")
-	)
-	(segment
-		(start 58.767627 25.16)
-		(end 60.08 26.472373)
-		(width 0.2)
-		(layer "In1.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "14f89b86-bb8e-4672-bead-498a94d02fb7")
-	)
-	(segment
-		(start 60.08 27.44)
-		(end 58.27 29.25)
-		(width 0.2)
-		(layer "In1.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "4dd7bdd4-2f99-4516-8c40-b51866c18863")
-	)
-	(segment
-		(start 44.53 25.16)
-		(end 58.767627 25.16)
-		(width 0.2)
-		(layer "In1.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "979fb02a-f82b-4fbf-bdc9-fdbca190c0bb")
-	)
-	(segment
-		(start 60.08 26.472373)
-		(end 60.08 27.44)
-		(width 0.2)
-		(layer "In1.Cu")
-		(net "/Connectors/USART3_RX")
-		(uuid "c523ea72-1e24-4a47-8f97-dc151dbc3efc")
-	)
-	(segment
-		(start 73.729143 57.473)
-		(end 73.801143 57.545)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "Net-(U2-PH3)")
-		(uuid "23f9363c-8674-421d-8636-93792697278c")
-	)
-	(segment
-		(start 74.195 57.545)
-		(end 74.2 57.55)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "Net-(U2-PH3)")
-		(uuid "3197374a-d48f-47dd-bb7d-8933e4d0b735")
-	)
-	(segment
-		(start 72.5 57.545)
-		(end 72.7 57.345)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "Net-(U2-PH3)")
-		(uuid "63950801-b33d-4a88-83b3-ce4b0e64557a")
-	)
-	(segment
-		(start 73.164561 57.345)
-		(end 73.292561 57.473)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "Net-(U2-PH3)")
-		(uuid "6f80a3fa-d8da-414f-8a18-ecc10e14d06d")
-	)
-	(segment
-		(start 74.2 57.55)
-		(end 74.58 57.55)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "Net-(U2-PH3)")
-		(uuid "a08ea908-0cd0-4528-82f7-6fe0dc0546ce")
-	)
-	(segment
-		(start 73.292561 57.473)
-		(end 73.729143 57.473)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "Net-(U2-PH3)")
-		(uuid "a8b49cf7-87b3-4630-9c65-5048a45f1946")
-	)
-	(segment
-		(start 73.801143 57.545)
-		(end 74.195 57.545)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "Net-(U2-PH3)")
-		(uuid "ac8d649f-c838-474e-b637-cf1fcda42125")
-	)
-	(segment
-		(start 70.845 57.545)
-		(end 72.5 57.545)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "Net-(U2-PH3)")
-		(uuid "afda3a2e-2872-414d-b115-7189f3696467")
-	)
-	(segment
-		(start 72.7 57.345)
-		(end 73.164561 57.345)
-		(width 0.2)
-		(layer "F.Cu")
-		(net "Net-(U2-PH3)")
-		(uuid "e71dbef9-c01d-44ec-88c0-e7aa43405b48")
 	)
 	(zone
 		(net "+3V3")

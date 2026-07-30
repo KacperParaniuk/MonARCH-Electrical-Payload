@@ -13,7 +13,10 @@ HOW TO SET UP:
 
 cd pib-cli
 uv run python main.py
+OR
+uv run python main.py --port {Input COMX} --baud {Input Baud Rate}
 
+Allows the user to specify the serial port and baud rate for the Arduino connection.
 
 
 
