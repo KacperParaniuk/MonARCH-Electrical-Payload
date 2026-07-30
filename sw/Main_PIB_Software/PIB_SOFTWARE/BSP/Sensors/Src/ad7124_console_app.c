@@ -84,7 +84,12 @@ POSSIBILITY OF SUCH DAMAGE.
 static struct ad7124_st_reg ad7124_register_map[AD7124_REG_NO];
 
 // Pointer to the struct representing the AD7124 device // need to be able to utilize two ad7124 devices.
-static struct ad7124_dev * pAd7124_dev = NULL;
+static struct ad7124_dev * pAd7124_dev = NULL; // p for pressure
+
+// should be easy enough to add another ad7124 here.
+
+
+
 
 // Last Sampled values for All ADC channels
 static uint32_t channel_samples[AD7124_CHANNEL_COUNT] = {0};
