@@ -1213,7 +1213,7 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
-    if (huart->Instance != UART3) return;  // protect against any other UART commands
+    if (huart->Instance != USART3) return;  // protect against any other UART commands
 
 	HAL_UART_Receive_IT(&huart3, rx_cmd, 1);
 	printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
@@ -1223,7 +1223,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		// release semaphore so that the UART task can decipher.
 		BaseType_t xWoken = pdFALSE; // used to directly go to the UART_RX task rather than go back to what was previously going on in the program before the ISR and then seeing the semaphore
 		xSemaphoreGiveFromISR(s_rx_semaphoreHandle, &xWoken); // FreeRTOS will set xWoken if there's a task waiting on this semaphore
-		portYield_FROM_ISR(xWoken);
+		portYIELD_FROM_ISR(xWoken);
 	}
 
 
@@ -1243,8 +1243,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
-
-
   if (htim->Instance == TIM6)
   {
     HAL_IncTick();

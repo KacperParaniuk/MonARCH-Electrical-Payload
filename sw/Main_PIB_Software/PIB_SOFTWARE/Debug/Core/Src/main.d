@@ -45,7 +45,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/spi.h ../Core/Inc/tim.h \
  ../Core/Inc/usart.h ../Core/Inc/gpio.h ../BSP/Inc/gpio_driver.h \
- ../BSP/Inc/uart_handler.h ../BSP/Inc/uart_protocol.h
+ ../BSP/Inc/uart_handler.h ../BSP/Inc/uart_protocol.h \
+ ../BSP/Inc/uart_protocol.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
@@ -100,3 +104,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../BSP/Inc/gpio_driver.h:
 ../BSP/Inc/uart_handler.h:
 ../BSP/Inc/uart_protocol.h:
+../BSP/Inc/uart_protocol.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:

@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+
 void Serial_Print(const char *message){ // need pointer b/c messages will be stored in READ ONLY flash memory
 	char buf[128];
 	int len = sprintf(buf, "%s\r\n", message); // string print formatted
@@ -37,3 +38,16 @@ void Serial_Printf(const char *format, ...){ // used for Serial_Printf("Temperat
 //%02X    // hex padded       → 0B  (useful for printing command bytes)
 
 
+uint8_t cmd_is_safety(uint8_t rx_cmd){
+
+	// change CMD_SAFETY_BEGIN val to appropriate starting position of safety cmds
+	if(rx_cmd - CMD_SAFETY_BEGIN >= 0){
+		return 1;
+	}
+	else{
+		return 0;
+	}
+
+
+
+}

@@ -136,6 +136,15 @@
 #define CMD_TOGGLE_LED_RED 0x4E
 
 
+// Safety Commands
+
+#define CMD_SAFETY_BEGIN 0x64
+
+
+
+
+
+
 
 
 

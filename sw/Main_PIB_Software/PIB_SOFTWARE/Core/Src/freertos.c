@@ -26,6 +26,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "uart_handler.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,6 +47,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
+
+extern uint8_t rx_cmd[];
 
 /* USER CODE END Variables */
 /* Definitions for heart_beat */
@@ -88,6 +92,16 @@ const osThreadAttr_t Task_Data_attributes = {
   .name = "Task_Data",
   .stack_size = 500 * 4,
   .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for q_safety_cmds */
+osMessageQueueId_t q_safety_cmdsHandle;
+const osMessageQueueAttr_t q_safety_cmds_attributes = {
+  .name = "q_safety_cmds"
+};
+/* Definitions for q_normal_cmds */
+osMessageQueueId_t q_normal_cmdsHandle;
+const osMessageQueueAttr_t q_normal_cmds_attributes = {
+  .name = "q_normal_cmds"
 };
 /* Definitions for s_rx_semaphore */
 osSemaphoreId_t s_rx_semaphoreHandle;
@@ -134,6 +148,13 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
+
+  /* Create the queue(s) */
+  /* creation of q_safety_cmds */
+  q_safety_cmdsHandle = osMessageQueueNew (10, sizeof(uint8_t), &q_safety_cmds_attributes);
+
+  /* creation of q_normal_cmds */
+  q_normal_cmdsHandle = osMessageQueueNew (10, sizeof(uint8_t), &q_normal_cmds_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -207,24 +228,18 @@ void StartTask02(void *argument)
 	 // wait for semaphore to be released. This means the interrupt fired.
 
 
-	if(osSemaphoreAcquire(s_rx_semaphoreHandle, osWaitForever)== osOk){
+	if(osSemaphoreAcquire(s_rx_semaphoreHandle, osWaitForever)== osOK){
 
-
-
-		// decipher the rx_cmd
-
-		// safety or normal command
-
-
+		// decipher the rx_cmd - safety or normal command
+		if(cmd_is_safety(rx_cmd[0])){
 			// add cmds to queue so that either safety_cmd can execute or normal in task_experiment
+			osMessageQueuePut(q_safety_cmdsHandle, &rx_cmd[0], 0, 0);
+		}
+		else{
 
+			osMessageQueuePut(q_normal_cmdsHandle, &rx_cmd[0], 0, 0);
+		}
 
-
-
-
-
-		// release semaphore as the UART task has been decoded.
-		osSemaphoreRelease(s_rx_semaphoreHandle);
 	}
 
 
