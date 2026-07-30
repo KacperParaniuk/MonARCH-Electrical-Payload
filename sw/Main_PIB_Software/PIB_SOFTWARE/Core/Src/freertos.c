@@ -89,6 +89,11 @@ const osThreadAttr_t Task_Data_attributes = {
   .stack_size = 500 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for s_rx_semaphore */
+osSemaphoreId_t s_rx_semaphoreHandle;
+const osSemaphoreAttr_t s_rx_semaphore_attributes = {
+  .name = "s_rx_semaphore"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -117,6 +122,10 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
+
+  /* Create the semaphores(s) */
+  /* creation of s_rx_semaphore */
+  s_rx_semaphoreHandle = osSemaphoreNew(1, 0, &s_rx_semaphore_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
