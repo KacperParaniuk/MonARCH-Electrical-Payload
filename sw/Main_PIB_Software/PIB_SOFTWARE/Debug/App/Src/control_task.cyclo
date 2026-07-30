@@ -2,7 +2,7 @@
 ../App/Src/control_task.c:23:6:close_solenoid	1
 ../App/Src/control_task.c:31:6:pressurize_lines	1
 ../App/Src/control_task.c:37:6:fill_accumulators	1
-../App/Src/control_task.c:71:6:fill_espray	1
-../App/Src/control_task.c:76:6:toggle_nominal_espray_run	1
-../App/Src/control_task.c:84:6:run_chemical_thruster	1
-../App/Src/control_task.c:93:5:heat_catalyst	4
+../App/Src/control_task.c:73:6:fill_espray	1
+../App/Src/control_task.c:78:6:toggle_nominal_espray_run	1
+../App/Src/control_task.c:86:6:run_chemical_thruster	1
+../App/Src/control_task.c:95:5:heat_catalyst	4

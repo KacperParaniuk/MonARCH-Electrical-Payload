@@ -42,16 +42,17 @@
 //#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
-#define MAX31856
-#define MAX31856_T1
+//#define MAX31856
+//#define MAX31856_T1
 //#define MAX31856_T2
 //#define MAX31856_T3
 //#define MAX31856_T4
 //#define MAX31856_T5
-#define B2B_ARDUINO
+//#define B2B_ARDUINO
 //#define VALVE_TEST
 //#define I2C_SCANNER
 //#define HEATER
+#define PWM_VALVE_6
 
 
 
@@ -188,8 +189,8 @@ int main(void)
   MX_SPI2_Init();
   MX_UART4_Init();
   MX_USART3_UART_Init();
-  MX_TIM1_Init();
   MX_TIM8_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
 //  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
@@ -198,6 +199,8 @@ int main(void)
   // blocking no work
 //  HAL_UART_Receive(&huart3, rx_cmd, 1,0xFFFF);
 //  HAL_UART_Transmit(&huart3, rx_cmd, 1, 0xFFFF);
+
+  // start receiving UART commands.
 
   HAL_UART_Receive_IT(&huart3, rx_cmd, 1);
 
@@ -630,13 +633,24 @@ float temperature;
  		 	HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_SET);
 
  		case CMD_OPEN_SOL4: // IEP VALVE (PWM)
+
+
+
  		 	HAL_GPIO_WritePin(TIM8_CH1_VALVE4_GPIO_Port, TIM8_CH1_VALVE4_Pin, GPIO_PIN_SET);
 
  		case CMD_OPEN_SOL5:
  		 	HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_SET);
 
+
+
+
+
  		case CMD_OPEN_SOL6: // IEP VALVE (PWM)
  		 	HAL_GPIO_WritePin(TIM__CH1_VALVE6_GPIO_Port, TIM__CH1_VALVE6_Pin, GPIO_PIN_SET);
+
+
+
+
 
  		case CMD_OPEN_SOL7:
  		    HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_SET);
@@ -1019,6 +1033,28 @@ float temperature;
 
 #endif
 
+
+#ifdef PWM_VALVE_6
+
+
+ 	 HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
+
+ 	 // see duty cycle and if does not look good uncomment the bottom code. This is for testing.
+
+// 	  // change duty cycle to 50 %
+// 	 int duty = 50
+// 	 __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, duty);  // TIM1->CCR1 = duty;
+// 	  HAL_Delay(500);  // Wait 500ms before changing duty cycle
+//
+
+
+
+
+
+
+
+
+#endif
 
 
 //
