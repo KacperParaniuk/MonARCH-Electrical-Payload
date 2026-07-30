@@ -28,10 +28,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "gpio_driver.h"
-#include "uart_handler.h"
-#include "uart_protocol.h"
-
 
 /* Native FreeRTOS — needed for ISR-safe functions */
 #include "FreeRTOS.h"
@@ -119,7 +115,7 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 
 uint8_t rx_cmd[1]; // single byte for all UART commands.
 uint8_t tx_cmd[1];
-char uart_buffer[64];
+char uart_buffer[64]; // used for sending data across uart3
 
 /* USER CODE END PV */
 
@@ -235,6 +231,37 @@ int main(void)
 
 
 // ADC7124 || PT Readings Init
+
+
+
+  // create a setup function for all sensors and turn red_led if fails to setup / read from device id's of all sensors
+
+  // RED = MAX31856 Fail
+  // AMBER = ADC2214
+  // RED + AMBER = FDC2214
+  // Green = Everything Setup Correctly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #ifdef AD7124
@@ -624,109 +651,6 @@ float temperature;
 
 
 
-// testing
-//	char uart_buffer[64];
-//	uint32_t sensor_value = 42; // Replace with actual sensor reading
-//
-//	int len = snprintf(uart_buffer, sizeof(uart_buffer), "Sensor: %lu\r\n", sensor_value);
-//
-//	HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
-//	HAL_Delay(1000);
-
-
- 	switch(rx_cmd[0]){
-
-
- 		  // Read AD7124
-
-// // Read PT Valves
- 		case CMD_OPEN_SOL1:
- 			HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL2:
- 			HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL3:
- 		 	HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL4: // IEP VALVE (PWM)
-
-
-
- 		 	HAL_GPIO_WritePin(TIM8_CH1_VALVE4_GPIO_Port, TIM8_CH1_VALVE4_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL5:
- 		 	HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_SET);
-
-
-
-
-
- 		case CMD_OPEN_SOL6: // IEP VALVE (PWM)
- 		 	HAL_GPIO_WritePin(TIM__CH1_VALVE6_GPIO_Port, TIM__CH1_VALVE6_Pin, GPIO_PIN_SET);
-
-
-
-
-
- 		case CMD_OPEN_SOL7:
- 		    HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL8:
- 		 	HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL9:
- 		    HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL10:
- 		    HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL11:
- 		    HAL_GPIO_WritePin(valve11_GPIO_Port, valve11_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL12:
- 		 	HAL_GPIO_WritePin(valve12_GPIO_Port, valve12_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL13:
- 		    HAL_GPIO_WritePin(valve13_GPIO_Port, valve13_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL14:
- 		    HAL_GPIO_WritePin(valve14_GPIO_Port, valve14_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL15:
- 		 	HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL16:
- 		    HAL_GPIO_WritePin(valve16_GPIO_Port, valve16_Pin, GPIO_PIN_SET);
-
- 		case CMD_OPEN_SOL17:
- 		 	HAL_GPIO_WritePin(valve17_GPIO_Port, valve17_Pin, GPIO_PIN_SET);
-
- 	    case CMD_TOGGLE_LED_RED:
- 		    HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
- 			HAL_Delay(2000);
-
-
-
- 	    case CMD_READ_TC1:
- 		   temperature = max31856_read_CJ_temp(&max31856T1);
-
- 		   // we may need to add if there's ever an error...
-
-
- 		   int len = snprintf(uart_buffer, sizeof(uart_buffer), "Cold Junction Temperature Reading TC1: %f\r\n", temperature);
- 	 	   HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
-
-
-
-
-
- 		rx_cmd[0]=0;
-
- 		break;
- 	}
-
-
 
 #endif
 #ifdef ARDUNIO
@@ -869,112 +793,6 @@ float temperature;
 // 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VB);
 // 				Serial_Printf("PC104 Current Reading 12VB_VB: %d \r\n", value);
 
-
-// // Open Solenoids (ON/OFF)
-
- 			case CMD_OPEN_SOL1:
- 				HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL2:
- 				HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL3:
- 				HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL4: // IEP VALVE (PWM)
- 				HAL_GPIO_WritePin(TIM8_CH1_VALVE4_GPIO_Port, TIM8_CH1_VALVE4_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL5:
- 				HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL6: // IEP VALVE (PWM)
- 				HAL_GPIO_WritePin(TIM__CH1_VALVE6_GPIO_Port, TIM__CH1_VALVE6_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL7:
- 				HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL8:
- 				HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL9:
- 				HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL10:
- 				HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL11:
- 				HAL_GPIO_WritePin(valve11_GPIO_Port, valve11_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL12:
- 				HAL_GPIO_WritePin(valve12_GPIO_Port, valve12_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL13:
- 				HAL_GPIO_WritePin(valve13_GPIO_Port, valve13_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL14:
- 				HAL_GPIO_WritePin(valve14_GPIO_Port, valve14_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL15:
- 				HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL16:
- 				HAL_GPIO_WritePin(valve16_GPIO_Port, valve16_Pin, GPIO_PIN_SET);
-
- 			case CMD_OPEN_SOL17:
- 				HAL_GPIO_WritePin(valve17_GPIO_Port, valve17_Pin, GPIO_PIN_SET);
-
-// // Close Valves
-
- 			case CMD_CLOSE_SOL1:
- 				HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL2:
- 				HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL3:
- 				HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL4: // IEP VALVE 4
- 				HAL_GPIO_WritePin(TIM8_CH1_VALVE4_GPIO_Port, TIM8_CH1_VALVE4_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL5:
- 				HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL6: // IEP VALVE 6
- 				HAL_GPIO_WritePin(TIM__CH1_VALVE6_GPIO_Port, TIM__CH1_VALVE6_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL7:
- 				HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL8:
- 				HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL9:
- 				HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL10:
- 				HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL11:
- 				HAL_GPIO_WritePin(valve11_GPIO_Port, valve11_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL12:
- 				HAL_GPIO_WritePin(valve12_GPIO_Port, valve12_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL13:
- 				HAL_GPIO_WritePin(valve13_GPIO_Port, valve13_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL14:
- 				HAL_GPIO_WritePin(valve14_GPIO_Port, valve14_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL15:
- 				HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL16:
- 				HAL_GPIO_WritePin(valve16_GPIO_Port, valve16_Pin, GPIO_PIN_RESET);
-
- 			case CMD_CLOSE_SOL17:
- 				HAL_GPIO_WritePin(valve17_GPIO_Port, valve17_Pin, GPIO_PIN_RESET);
 
 // // READ FDC2214 Capacitance Measurements.
 

@@ -32,7 +32,10 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-extern SPI_HandleTypeDef hspi2;
+#include "gpio_driver.h"
+#include "uart_handler.h"
+#include "uart_protocol.h"
+
 
 /* USER CODE END Includes */
 
@@ -145,6 +148,9 @@ void Error_Handler(void);
 #define T5_EN_GPIO_Port GPIOE
 
 /* USER CODE BEGIN Private defines */
+
+extern SPI_HandleTypeDef hspi2;
+
 
 /* USER CODE END Private defines */
 

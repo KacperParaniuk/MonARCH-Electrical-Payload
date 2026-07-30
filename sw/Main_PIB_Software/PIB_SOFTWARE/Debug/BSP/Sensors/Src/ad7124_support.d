@@ -34,6 +34,8 @@ BSP/Sensors/Src/ad7124_support.o: ../BSP/Sensors/Src/ad7124_support.c \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
+ ../BSP/Inc/gpio_driver.h ../BSP/Inc/uart_handler.h \
+ ../BSP/Inc/uart_protocol.h ../BSP/Inc/uart_protocol.h \
  ../BSP/Sensors/Inc/delay.h
 ../BSP/Sensors/Inc/ad7124_support.h:
 ../BSP/Sensors/Inc/ad7124.h:
@@ -72,4 +74,8 @@ BSP/Sensors/Src/ad7124_support.o: ../BSP/Sensors/Src/ad7124_support.c \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
+../BSP/Inc/gpio_driver.h:
+../BSP/Inc/uart_handler.h:
+../BSP/Inc/uart_protocol.h:
+../BSP/Inc/uart_protocol.h:
 ../BSP/Sensors/Inc/delay.h:

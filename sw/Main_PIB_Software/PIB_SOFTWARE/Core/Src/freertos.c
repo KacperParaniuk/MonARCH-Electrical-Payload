@@ -18,15 +18,41 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "FreeRTOS.h"
-#include "task.h"
-#include "main.h"
-#include "cmsis_os.h"
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
+#include <cmsis_os.h>
+#include <cmsis_os2.h>
+#include <main.h>
+#include <stdio.h>
+#include <stm32l4xx_hal.h>
+#include <stm32l4xx_hal_gpio.h>
+#include <sys/_stdint.h>
+#include <uart_handler.h>
+#include <uart_protocol.h>
 
-#include "uart_handler.h"
+
+#ifdef AD7124
+
+// Sensor Includes
+
+#include "ad7124_console_app.h"
+#include "ad7124.h"
+
+
+#endif
+
+
+#ifdef MAX31856
+
+#include "max31856.h"
+
+#endif
+
+
+#ifdef FDC2214_S
+
+#include "fdc2214.h"
+
+#endif
 
 /* USER CODE END Includes */
 
@@ -49,6 +75,10 @@
 /* USER CODE BEGIN Variables */
 
 extern uint8_t rx_cmd[];
+extern char uart_buffer[];
+
+float temperature;
+
 
 /* USER CODE END Variables */
 /* Definitions for heart_beat */
@@ -262,6 +292,23 @@ void StartTask03(void *argument)
   /* Infinite loop */
   for(;;)
   {
+
+	  // SAFETY TASK
+
+	  if(osMessageQueueGet(q_safety_cmdsHandle, &rx_cmd[0], NULL, osWaitForever)==osOK){
+
+		  printf("SAFETY COMMAND");
+
+
+
+
+
+	  }
+
+
+
+
+
     osDelay(1);
   }
   /* USER CODE END StartTask03 */
@@ -280,6 +327,110 @@ void StartTask04(void *argument)
   /* Infinite loop */
   for(;;)
   {
+
+	  // experiment / normal cmd task
+
+	  // block until cmd gets pushed onto queue.
+
+	  if(osMessageQueueGet(q_normal_cmdsHandle, &rx_cmd[0], NULL, osWaitForever)==osOK){
+
+		  printf("Normal CMD Received");
+
+		  // fsm integration here?
+		 	switch(rx_cmd[0]){
+
+		 		// decode command and execute
+
+		 		case CMD_OPEN_SOL1:
+		 			HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL2:
+		 			HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL3:
+		 		 	HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL4: // IEP VALVE (PWM)
+		 		 	HAL_GPIO_WritePin(TIM8_CH1_VALVE4_GPIO_Port, TIM8_CH1_VALVE4_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL5:
+		 		 	HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL6: // IEP VALVE (PWM)
+		 		 	HAL_GPIO_WritePin(TIM3_CH3_VALVE6_GPIO_Port, TIM3_CH3_VALVE6_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL7:
+		 		    HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL8:
+		 		 	HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL9:
+		 		    HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL10:
+		 		    HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL11:
+		 		    HAL_GPIO_WritePin(valve11_GPIO_Port, valve11_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL12:
+		 		 	HAL_GPIO_WritePin(valve12_GPIO_Port, valve12_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL13:
+		 		    HAL_GPIO_WritePin(valve13_GPIO_Port, valve13_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL14:
+		 		    HAL_GPIO_WritePin(valve14_GPIO_Port, valve14_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL15:
+		 		 	HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL16:
+		 		    HAL_GPIO_WritePin(valve16_GPIO_Port, valve16_Pin, GPIO_PIN_SET);
+
+		 		case CMD_OPEN_SOL17:
+		 		 	HAL_GPIO_WritePin(valve17_GPIO_Port, valve17_Pin, GPIO_PIN_SET);
+
+		 	    case CMD_TOGGLE_LED_RED:
+		 		    HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
+		 			HAL_Delay(2000);
+
+		 	    case CMD_READ_TC1:
+
+		 	    	// until we get two AD7124's wqrking at once.
+//		 		   temperature = max31856_read_CJ_temp(&max31856T1);
+//
+//		 		   // we may need to add if there's ever an error...
+//		 		   int len = snprintf(uart_buffer, sizeof(uart_buffer), "Cold Junction Temperature Reading TC1: %f\r\n", temperature);
+//		 	 	   HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
+
+
+
+		 		rx_cmd[0]=0;
+
+		 		break;
+		 	}
+
+
+
+
+
+
+
+
+
+
+	  }
+
+
+
+
+
+
+
+
+
     osDelay(1);
   }
   /* USER CODE END StartTask04 */
