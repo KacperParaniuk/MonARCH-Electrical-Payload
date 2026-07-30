@@ -181,7 +181,11 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+
+	// the lowest priority task the heart beat of the program.
+	HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+    osDelay(500);
+
   }
   /* USER CODE END StartDefaultTask */
 }
@@ -199,6 +203,32 @@ void StartTask02(void *argument)
   /* Infinite loop */
   for(;;)
   {
+
+	 // wait for semaphore to be released. This means the interrupt fired.
+
+
+	if(osSemaphoreAcquire(s_rx_semaphoreHandle, osWaitForever)== osOk){
+
+
+
+		// decipher the rx_cmd
+
+		// safety or normal command
+
+
+			// add cmds to queue so that either safety_cmd can execute or normal in task_experiment
+
+
+
+
+
+
+		// release semaphore as the UART task has been decoded.
+		osSemaphoreRelease(s_rx_semaphoreHandle);
+	}
+
+
+
     osDelay(1);
   }
   /* USER CODE END StartTask02 */
