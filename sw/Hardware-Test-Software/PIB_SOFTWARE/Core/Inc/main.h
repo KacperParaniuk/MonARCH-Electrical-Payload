@@ -65,6 +65,8 @@ void Error_Handler(void);
 #define T2_EN_GPIO_Port GPIOE
 #define PT_EN_Pin GPIO_PIN_4
 #define PT_EN_GPIO_Port GPIOE
+#define TIM3_CH3_VALVE6_Pin GPIO_PIN_5
+#define TIM3_CH3_VALVE6_GPIO_Port GPIOE
 #define POW12_EN_Pin GPIO_PIN_0
 #define POW12_EN_GPIO_Port GPIOH
 #define UART4_TX_PPU_Pin GPIO_PIN_0
@@ -83,8 +85,6 @@ void Error_Handler(void);
 #define USART3_TX_OBC_GPIO_Port GPIOC
 #define USART3_RX_OBC_Pin GPIO_PIN_5
 #define USART3_RX_OBC_GPIO_Port GPIOC
-#define TIM__CH1_VALVE6_Pin GPIO_PIN_9
-#define TIM__CH1_VALVE6_GPIO_Port GPIOE
 #define LED_PIN_BLUE_Pin GPIO_PIN_13
 #define LED_PIN_BLUE_GPIO_Port GPIOE
 #define LED_PIN_GREEN_Pin GPIO_PIN_14

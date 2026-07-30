@@ -38,20 +38,21 @@
 
 
 
-#define AD7124
-#define AD7124_SINGLE_MODE
+//#define AD7124
+//#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
-#define MAX31856
-#define MAX31856_T1
+//#define MAX31856
+//#define MAX31856_T1
 //#define MAX31856_T2
 //#define MAX31856_T3
 //#define MAX31856_T4
 //#define MAX31856_T5
-//#define B2B
+//#define B2B_ARDUINO
 //#define VALVE_TEST
 //#define I2C_SCANNER
 //#define HEATER
+#define PWM_VALVE_6
 
 
 
@@ -109,6 +110,10 @@
 
 /* USER CODE BEGIN PV */
 
+uint8_t rx_cmd[1]; // single byte for all UART commands.
+uint8_t tx_cmd[1];
+char uart_buffer[64];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -153,10 +158,10 @@ int main(void)
 
 //   uint32_t device_id;
 
-#ifdef B2B
+#ifdef B2B_ARDUINO
    // UART Inits
-   uint8_t RX_CMD= 0; // single byte for all UART commands.
-   uint8_t TX_Buffer[] = "Hello, World!\r\n";
+//   uint8_t rx_cmd[1]; // single byte for all UART commands.
+//   uint8_t TX_Buffer[] = "Hello, World!\r\n";
    // "\r" move cursor to start of line
    // "\n" new line
 
@@ -184,12 +189,20 @@ int main(void)
   MX_SPI2_Init();
   MX_UART4_Init();
   MX_USART3_UART_Init();
-  MX_TIM1_Init();
   MX_TIM8_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
 //  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
+
+  // blocking no work
+//  HAL_UART_Receive(&huart3, rx_cmd, 1,0xFFFF);
+//  HAL_UART_Transmit(&huart3, rx_cmd, 1, 0xFFFF);
+
+  // start receiving UART commands.
+
+  HAL_UART_Receive_IT(&huart3, rx_cmd, 1);
 
 
 // DEACTIVATE ALL SPI2 ICs
@@ -434,15 +447,15 @@ float temperature;
   while (1)
   {
 
-
-	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-
-
-	  HAL_Delay(200);
+//
+//	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
+//
+//
+//	  HAL_Delay(200);
 
 #ifdef B2B
 
-	  HAL_UART_Transmit(&huart3,TX_Buffer,sizeof(TX_Buffer),1000); // "Hello World!" // UART Direct Test
+//	  HAL_UART_Transmit(&huart3,TX_Buffer,sizeof(TX_Buffer),1000); // "Hello World!" // UART Direct Test
 
 
 #endif
@@ -562,31 +575,144 @@ float temperature;
 #endif
 
 
-#ifdef B2B
-	  Serial_Print("Transmitting"); // Serial_Print custom function test.
-
-	   Serial_Printf("Temperature Test %d C\r\n", 100); // Serial_Print custom formatted print function
+#ifdef B2B_ARDUINO
+//	  Serial_Print("Transmitting"); // Serial_Print custom function test.
+//
+//	   Serial_Printf("Temperature Test %d C\r\n", 100); // Serial_Print custom formatted print function
 
 
 //	   TEST READS...
 
-	   Serial_Print("Test IC Reads"); // Serial_Print custom function test.
+//	   Serial_Print("Test IC Reads"); // Serial_Print custom function test.
 
 //	   For Repo Branch...
 
 
 //	   polling method -> Blocks CPU until UART receive is done.
- 	  while(HAL_UART_Receive(&huart3, &RX_CMD, 8,1000)){ // uart receive block will continously try to fetch.
+ 	  // uart receive block will continously try to fetch.
  		  // Polling for Seperate Pressure Sensors.
 
- 		switch(RX_CMD){
+//	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
+//	  HAL_Delay(500);
+//
+//
+//	if(*rx_cmd == CMD_TOGGLE_LED_RED){
+//		  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
+
+//		  HAL_Delay(2000);
+
+//	}
+
+
+
+
+
+// testing
+//	char uart_buffer[64];
+//	uint32_t sensor_value = 42; // Replace with actual sensor reading
+//
+//	int len = snprintf(uart_buffer, sizeof(uart_buffer), "Sensor: %lu\r\n", sensor_value);
+//
+//	HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
+//	HAL_Delay(1000);
+
+
+ 	switch(rx_cmd[0]){
+
 
  		  // Read AD7124
 
-
 // // Read PT Valves
+ 		case CMD_OPEN_SOL1:
+ 			HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL2:
+ 			HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL3:
+ 		 	HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL4: // IEP VALVE (PWM)
 
 
+
+ 		 	HAL_GPIO_WritePin(TIM8_CH1_VALVE4_GPIO_Port, TIM8_CH1_VALVE4_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL5:
+ 		 	HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_SET);
+
+
+
+
+
+ 		case CMD_OPEN_SOL6: // IEP VALVE (PWM)
+ 		 	HAL_GPIO_WritePin(TIM__CH1_VALVE6_GPIO_Port, TIM__CH1_VALVE6_Pin, GPIO_PIN_SET);
+
+
+
+
+
+ 		case CMD_OPEN_SOL7:
+ 		    HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL8:
+ 		 	HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL9:
+ 		    HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL10:
+ 		    HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL11:
+ 		    HAL_GPIO_WritePin(valve11_GPIO_Port, valve11_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL12:
+ 		 	HAL_GPIO_WritePin(valve12_GPIO_Port, valve12_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL13:
+ 		    HAL_GPIO_WritePin(valve13_GPIO_Port, valve13_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL14:
+ 		    HAL_GPIO_WritePin(valve14_GPIO_Port, valve14_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL15:
+ 		 	HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL16:
+ 		    HAL_GPIO_WritePin(valve16_GPIO_Port, valve16_Pin, GPIO_PIN_SET);
+
+ 		case CMD_OPEN_SOL17:
+ 		 	HAL_GPIO_WritePin(valve17_GPIO_Port, valve17_Pin, GPIO_PIN_SET);
+
+ 	    case CMD_TOGGLE_LED_RED:
+ 		    HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
+ 			HAL_Delay(2000);
+
+
+
+ 	    case CMD_READ_TC1:
+ 		   temperature = max31856_read_CJ_temp(&max31856T1);
+
+ 		   // we may need to add if there's ever an error...
+
+
+ 		   int len = snprintf(uart_buffer, sizeof(uart_buffer), "Cold Junction Temperature Reading TC1: %f\r\n", temperature);
+ 	 	   HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
+
+
+
+
+
+ 		rx_cmd[0]=0;
+
+ 		break;
+ 	}
+
+
+
+#endif
+#ifdef ARDUNIO
  			case CMD_READ_PT1:
  				value = display_channel_sample(CH_READ_PT0);
  				// will need to convert the voltage value to a current / temp reading function eventually in ad7124.h
@@ -908,6 +1034,28 @@ float temperature;
 #endif
 
 
+#ifdef PWM_VALVE_6
+
+
+ 	 HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
+
+ 	 // see duty cycle and if does not look good uncomment the bottom code. This is for testing.
+
+// 	  // change duty cycle to 50 %
+// 	 int duty = 50
+// 	 __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, duty);  // TIM1->CCR1 = duty;
+// 	  HAL_Delay(500);  // Wait 500ms before changing duty cycle
+//
+
+
+
+
+
+
+
+
+#endif
+
 
 //
 //// 	  // MAX31856 Error Reading
@@ -1040,21 +1188,12 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
+/* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	HAL_UART_Receive_IT(&huart3, rx_cmd, 1);
+	printf("Value %d \r\n", rx_cmd[0]);
 
-// Retarget __io_putchar(*ptr++) to a specific hardware function for printf to work.
-
-int _write(int file, char *ptr, int len)
-{
-  (void)file;
-  int DataIdx;
-
-  for (DataIdx = 0; DataIdx < len; DataIdx++)
-  {
-    ITM_SendChar(*ptr++);
-  }
-  return len;
 }
-
 /* USER CODE END 4 */
 
 /**

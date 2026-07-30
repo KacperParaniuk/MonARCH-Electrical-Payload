@@ -38,8 +38,10 @@ void fill_accumulators(){
 
 	// Sequence:
 
+	// this will change to be freertos friendly.
+
 	open_solenoid(valve5_GPIO_Port, valve5_Pin);
-	open_solenoid(TIM__CH1_VALVE6_GPIO_Port, TIM__CH1_VALVE6_Pin);
+	open_solenoid(TIM3_CH3_VALVE6_GPIO_Port, TIM3_CH3_VALVE6_Pin);
 	HAL_Delay(1000); // 1 second delay
 	open_solenoid(valve7_GPIO_Port, valve7_Pin);
 	HAL_Delay(1000); // 1 second delay
@@ -50,7 +52,7 @@ void fill_accumulators(){
 	HAL_Delay(1000); // 1 second delay
 	open_solenoid(valve1_GPIO_Port, valve1_Pin);
 	open_solenoid(valve2_GPIO_Port, valve2_Pin);
-	close_solenoid(TIM__CH1_VALVE6_GPIO_Port, TIM__CH1_VALVE6_Pin);
+	close_solenoid(TIM3_CH3_VALVE6_GPIO_Port, TIM3_CH3_VALVE6_Pin);
 	close_solenoid(valve13_GPIO_Port, valve13_Pin);
 	close_solenoid(valve11_GPIO_Port, valve11_Pin);
 
