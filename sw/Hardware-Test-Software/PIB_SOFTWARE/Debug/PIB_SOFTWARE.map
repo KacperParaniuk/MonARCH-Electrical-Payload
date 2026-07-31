@@ -281,7 +281,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./App/Src/control_task.o
  .debug_macro   0x00000000       0x44 ./App/Src/control_task.o
  .debug_macro   0x00000000      0x433 ./App/Src/control_task.o
- .debug_macro   0x00000000      0x20e ./App/Src/control_task.o
+ .debug_macro   0x00000000      0x20f ./App/Src/control_task.o
  .debug_macro   0x00000000       0x22 ./App/Src/control_task.o
  .debug_macro   0x00000000       0x61 ./App/Src/control_task.o
  .debug_macro   0x00000000       0x2a ./App/Src/control_task.o
@@ -465,7 +465,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./App/Src/pid.o
  .debug_macro   0x00000000       0x44 ./App/Src/pid.o
  .debug_macro   0x00000000      0x433 ./App/Src/pid.o
- .debug_macro   0x00000000      0x20e ./App/Src/pid.o
+ .debug_macro   0x00000000      0x20f ./App/Src/pid.o
  .debug_macro   0x00000000       0x29 ./App/Src/pid.o
  .debug_line    0x00000000      0xca6 ./App/Src/pid.o
  .debug_str     0x00000000   0x1039b4 ./App/Src/pid.o
@@ -569,8 +569,8 @@ Discarded input sections
                 0x00000000       0xe0 ./BSP/Sensors/Src/ad7124.o
  .text.ad7124_remove
                 0x00000000       0x24 ./BSP/Sensors/Src/ad7124.o
- .debug_info    0x00000000      0xab3 ./BSP/Sensors/Src/ad7124.o
- .debug_abbrev  0x00000000      0x277 ./BSP/Sensors/Src/ad7124.o
+ .debug_info    0x00000000      0xf7f ./BSP/Sensors/Src/ad7124.o
+ .debug_abbrev  0x00000000      0x2b9 ./BSP/Sensors/Src/ad7124.o
  .debug_aranges
                 0x00000000       0x88 ./BSP/Sensors/Src/ad7124.o
  .debug_rnglists
@@ -635,11 +635,11 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Sensors/Src/ad7124.o
  .debug_macro   0x00000000       0x44 ./BSP/Sensors/Src/ad7124.o
  .debug_macro   0x00000000      0x433 ./BSP/Sensors/Src/ad7124.o
- .debug_macro   0x00000000      0x20e ./BSP/Sensors/Src/ad7124.o
+ .debug_macro   0x00000000      0x20f ./BSP/Sensors/Src/ad7124.o
  .debug_macro   0x00000000       0x10 ./BSP/Sensors/Src/ad7124.o
  .debug_macro   0x00000000      0x516 ./BSP/Sensors/Src/ad7124.o
  .debug_line    0x00000000      0xe48 ./BSP/Sensors/Src/ad7124.o
- .debug_str     0x00000000   0x105854 ./BSP/Sensors/Src/ad7124.o
+ .debug_str     0x00000000   0x105c21 ./BSP/Sensors/Src/ad7124.o
  .comment       0x00000000       0x44 ./BSP/Sensors/Src/ad7124.o
  .debug_frame   0x00000000      0x22c ./BSP/Sensors/Src/ad7124.o
  .ARM.attributes
@@ -723,12 +723,15 @@ Discarded input sections
                 0x00000000      0x390 ./BSP/Sensors/Src/ad7124_console_app.o
  .bss.pAd7124_dev
                 0x00000000        0x4 ./BSP/Sensors/Src/ad7124_console_app.o
+ .bss.vAd7124_dev
+                0x00000000        0x4 ./BSP/Sensors/Src/ad7124_console_app.o
+ .bss.status    0x00000000        0x4 ./BSP/Sensors/Src/ad7124_console_app.o
  .bss.channel_samples
                 0x00000000       0x40 ./BSP/Sensors/Src/ad7124_console_app.o
  .bss.channel_samples_count
                 0x00000000       0x40 ./BSP/Sensors/Src/ad7124_console_app.o
  .text.ad7124_app_initialize
-                0x00000000       0x9c ./BSP/Sensors/Src/ad7124_console_app.o
+                0x00000000       0xf0 ./BSP/Sensors/Src/ad7124_console_app.o
  .rodata        0x00000000      0x88b ./BSP/Sensors/Src/ad7124_console_app.o
  .text.read_status_register
                 0x00000000       0x48 ./BSP/Sensors/Src/ad7124_console_app.o
@@ -750,8 +753,8 @@ Discarded input sections
                 0x00000000       0x50 ./BSP/Sensors/Src/ad7124_console_app.o
  .text.ad7124_read_device_id
                 0x00000000       0x4c ./BSP/Sensors/Src/ad7124_console_app.o
- .debug_info    0x00000000      0x9a4 ./BSP/Sensors/Src/ad7124_console_app.o
- .debug_abbrev  0x00000000      0x300 ./BSP/Sensors/Src/ad7124_console_app.o
+ .debug_info    0x00000000      0xef2 ./BSP/Sensors/Src/ad7124_console_app.o
+ .debug_abbrev  0x00000000      0x359 ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_aranges
                 0x00000000       0x68 ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_rnglists
@@ -821,16 +824,16 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_macro   0x00000000       0x44 ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_macro   0x00000000      0x433 ./BSP/Sensors/Src/ad7124_console_app.o
- .debug_macro   0x00000000      0x20e ./BSP/Sensors/Src/ad7124_console_app.o
+ .debug_macro   0x00000000      0x20f ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_macro   0x00000000       0x16 ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_macro   0x00000000       0x16 ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_macro   0x00000000      0x516 ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_macro   0x00000000       0x1c ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_macro   0x00000000       0x16 ./BSP/Sensors/Src/ad7124_console_app.o
- .debug_line    0x00000000      0xe88 ./BSP/Sensors/Src/ad7124_console_app.o
- .debug_str     0x00000000   0x10605d ./BSP/Sensors/Src/ad7124_console_app.o
+ .debug_line    0x00000000      0xe99 ./BSP/Sensors/Src/ad7124_console_app.o
+ .debug_str     0x00000000   0x10646d ./BSP/Sensors/Src/ad7124_console_app.o
  .comment       0x00000000       0x44 ./BSP/Sensors/Src/ad7124_console_app.o
- .debug_frame   0x00000000      0x174 ./BSP/Sensors/Src/ad7124_console_app.o
+ .debug_frame   0x00000000      0x178 ./BSP/Sensors/Src/ad7124_console_app.o
  .ARM.attributes
                 0x00000000       0x34 ./BSP/Sensors/Src/ad7124_console_app.o
  .group         0x00000000        0xc ./BSP/Sensors/Src/ad7124_regs.o
@@ -930,7 +933,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Sensors/Src/ad7124_regs.o
  .debug_macro   0x00000000       0x44 ./BSP/Sensors/Src/ad7124_regs.o
  .debug_macro   0x00000000      0x433 ./BSP/Sensors/Src/ad7124_regs.o
- .debug_macro   0x00000000      0x20e ./BSP/Sensors/Src/ad7124_regs.o
+ .debug_macro   0x00000000      0x20f ./BSP/Sensors/Src/ad7124_regs.o
  .debug_macro   0x00000000       0x10 ./BSP/Sensors/Src/ad7124_regs.o
  .debug_macro   0x00000000      0x516 ./BSP/Sensors/Src/ad7124_regs.o
  .debug_line    0x00000000      0x803 ./BSP/Sensors/Src/ad7124_regs.o
@@ -1035,7 +1038,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Sensors/Src/ad7124_regs_config_a.o
  .debug_macro   0x00000000       0x44 ./BSP/Sensors/Src/ad7124_regs_config_a.o
  .debug_macro   0x00000000      0x433 ./BSP/Sensors/Src/ad7124_regs_config_a.o
- .debug_macro   0x00000000      0x20e ./BSP/Sensors/Src/ad7124_regs_config_a.o
+ .debug_macro   0x00000000      0x20f ./BSP/Sensors/Src/ad7124_regs_config_a.o
  .debug_macro   0x00000000       0x10 ./BSP/Sensors/Src/ad7124_regs_config_a.o
  .debug_macro   0x00000000      0x516 ./BSP/Sensors/Src/ad7124_regs_config_a.o
  .debug_line    0x00000000      0x80c ./BSP/Sensors/Src/ad7124_regs_config_a.o
@@ -1140,7 +1143,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Sensors/Src/ad7124_regs_config_b.o
  .debug_macro   0x00000000       0x44 ./BSP/Sensors/Src/ad7124_regs_config_b.o
  .debug_macro   0x00000000      0x433 ./BSP/Sensors/Src/ad7124_regs_config_b.o
- .debug_macro   0x00000000      0x20e ./BSP/Sensors/Src/ad7124_regs_config_b.o
+ .debug_macro   0x00000000      0x20f ./BSP/Sensors/Src/ad7124_regs_config_b.o
  .debug_macro   0x00000000       0x10 ./BSP/Sensors/Src/ad7124_regs_config_b.o
  .debug_macro   0x00000000      0x516 ./BSP/Sensors/Src/ad7124_regs_config_b.o
  .debug_line    0x00000000      0x80c ./BSP/Sensors/Src/ad7124_regs_config_b.o
@@ -1207,8 +1210,8 @@ Discarded input sections
                 0x00000000       0x38 ./BSP/Sensors/Src/ad7124_support.o
  .text.ad7124_convert_sample_to_voltage
                 0x00000000       0xf8 ./BSP/Sensors/Src/ad7124_support.o
- .debug_info    0x00000000      0x5be ./BSP/Sensors/Src/ad7124_support.o
- .debug_abbrev  0x00000000      0x184 ./BSP/Sensors/Src/ad7124_support.o
+ .debug_info    0x00000000      0xa88 ./BSP/Sensors/Src/ad7124_support.o
+ .debug_abbrev  0x00000000      0x1cf ./BSP/Sensors/Src/ad7124_support.o
  .debug_aranges
                 0x00000000       0x38 ./BSP/Sensors/Src/ad7124_support.o
  .debug_rnglists
@@ -1256,12 +1259,12 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Sensors/Src/ad7124_support.o
  .debug_macro   0x00000000       0x44 ./BSP/Sensors/Src/ad7124_support.o
  .debug_macro   0x00000000      0x433 ./BSP/Sensors/Src/ad7124_support.o
- .debug_macro   0x00000000      0x20e ./BSP/Sensors/Src/ad7124_support.o
+ .debug_macro   0x00000000      0x20f ./BSP/Sensors/Src/ad7124_support.o
  .debug_macro   0x00000000       0x10 ./BSP/Sensors/Src/ad7124_support.o
  .debug_macro   0x00000000      0x516 ./BSP/Sensors/Src/ad7124_support.o
  .debug_macro   0x00000000       0x16 ./BSP/Sensors/Src/ad7124_support.o
  .debug_line    0x00000000      0x8d9 ./BSP/Sensors/Src/ad7124_support.o
- .debug_str     0x00000000   0x1024fd ./BSP/Sensors/Src/ad7124_support.o
+ .debug_str     0x00000000   0x1028ca ./BSP/Sensors/Src/ad7124_support.o
  .comment       0x00000000       0x44 ./BSP/Sensors/Src/ad7124_support.o
  .debug_frame   0x00000000       0xa4 ./BSP/Sensors/Src/ad7124_support.o
  .ARM.attributes
@@ -1401,7 +1404,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Sensors/Src/delay.o
  .debug_macro   0x00000000       0x44 ./BSP/Sensors/Src/delay.o
  .debug_macro   0x00000000      0x433 ./BSP/Sensors/Src/delay.o
- .debug_macro   0x00000000      0x20e ./BSP/Sensors/Src/delay.o
+ .debug_macro   0x00000000      0x20f ./BSP/Sensors/Src/delay.o
  .debug_line    0x00000000      0x964 ./BSP/Sensors/Src/delay.o
  .debug_str     0x00000000   0x103ca4 ./BSP/Sensors/Src/delay.o
  .comment       0x00000000       0x44 ./BSP/Sensors/Src/delay.o
@@ -1743,7 +1746,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Sensors/Src/fdc2214.o
  .debug_macro   0x00000000       0x44 ./BSP/Sensors/Src/fdc2214.o
  .debug_macro   0x00000000      0x433 ./BSP/Sensors/Src/fdc2214.o
- .debug_macro   0x00000000      0x214 ./BSP/Sensors/Src/fdc2214.o
+ .debug_macro   0x00000000      0x215 ./BSP/Sensors/Src/fdc2214.o
  .debug_macro   0x00000000      0x1c6 ./BSP/Sensors/Src/fdc2214.o
  .debug_line    0x00000000      0xcab ./BSP/Sensors/Src/fdc2214.o
  .debug_str     0x00000000   0x101529 ./BSP/Sensors/Src/fdc2214.o
@@ -2039,7 +2042,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Src/gpio_driver.o
  .debug_macro   0x00000000       0x44 ./BSP/Src/gpio_driver.o
  .debug_macro   0x00000000      0x433 ./BSP/Src/gpio_driver.o
- .debug_macro   0x00000000      0x20e ./BSP/Src/gpio_driver.o
+ .debug_macro   0x00000000      0x20f ./BSP/Src/gpio_driver.o
  .debug_line    0x00000000      0x837 ./BSP/Src/gpio_driver.o
  .debug_str     0x00000000   0x1006b3 ./BSP/Src/gpio_driver.o
  .comment       0x00000000       0x44 ./BSP/Src/gpio_driver.o
@@ -2149,7 +2152,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Src/iic_driver.o
  .debug_macro   0x00000000       0x44 ./BSP/Src/iic_driver.o
  .debug_macro   0x00000000      0x433 ./BSP/Src/iic_driver.o
- .debug_macro   0x00000000      0x20e ./BSP/Src/iic_driver.o
+ .debug_macro   0x00000000      0x20f ./BSP/Src/iic_driver.o
  .debug_line    0x00000000      0x826 ./BSP/Src/iic_driver.o
  .debug_str     0x00000000   0x100a6a ./BSP/Src/iic_driver.o
  .comment       0x00000000       0x44 ./BSP/Src/iic_driver.o
@@ -2257,7 +2260,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Src/mosfet_ctrl.o
  .debug_macro   0x00000000       0x44 ./BSP/Src/mosfet_ctrl.o
  .debug_macro   0x00000000      0x433 ./BSP/Src/mosfet_ctrl.o
- .debug_macro   0x00000000      0x20e ./BSP/Src/mosfet_ctrl.o
+ .debug_macro   0x00000000      0x20f ./BSP/Src/mosfet_ctrl.o
  .debug_line    0x00000000      0x813 ./BSP/Src/mosfet_ctrl.o
  .debug_str     0x00000000   0x10063a ./BSP/Src/mosfet_ctrl.o
  .comment       0x00000000       0x44 ./BSP/Src/mosfet_ctrl.o
@@ -2399,7 +2402,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Src/platform_support.o
  .debug_macro   0x00000000       0x44 ./BSP/Src/platform_support.o
  .debug_macro   0x00000000      0x433 ./BSP/Src/platform_support.o
- .debug_macro   0x00000000      0x20e ./BSP/Src/platform_support.o
+ .debug_macro   0x00000000      0x20f ./BSP/Src/platform_support.o
  .debug_line    0x00000000      0x934 ./BSP/Src/platform_support.o
  .debug_str     0x00000000   0x103ce6 ./BSP/Src/platform_support.o
  .comment       0x00000000       0x44 ./BSP/Src/platform_support.o
@@ -2483,13 +2486,13 @@ Discarded input sections
  .bss.spi_rx_buffer
                 0x00000000       0xff ./BSP/Src/spi_support.o
  .text.spi_init
-                0x00000000       0xa4 ./BSP/Src/spi_support.o
+                0x00000000       0xd0 ./BSP/Src/spi_support.o
  .text.spi_remove
                 0x00000000       0x1e ./BSP/Src/spi_support.o
  .text.spi_write_and_read
                 0x00000000       0x6c ./BSP/Src/spi_support.o
- .debug_info    0x00000000      0x8f6 ./BSP/Src/spi_support.o
- .debug_abbrev  0x00000000      0x1ee ./BSP/Src/spi_support.o
+ .debug_info    0x00000000      0x90b ./BSP/Src/spi_support.o
+ .debug_abbrev  0x00000000      0x1f0 ./BSP/Src/spi_support.o
  .debug_aranges
                 0x00000000       0x30 ./BSP/Src/spi_support.o
  .debug_rnglists
@@ -2556,7 +2559,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Src/spi_support.o
  .debug_macro   0x00000000       0x44 ./BSP/Src/spi_support.o
  .debug_macro   0x00000000      0x433 ./BSP/Src/spi_support.o
- .debug_macro   0x00000000      0x20e ./BSP/Src/spi_support.o
+ .debug_macro   0x00000000      0x20f ./BSP/Src/spi_support.o
  .debug_macro   0x00000000       0x10 ./BSP/Src/spi_support.o
  .debug_macro   0x00000000       0x1c ./BSP/Src/spi_support.o
  .debug_macro   0x00000000       0x10 ./BSP/Src/spi_support.o
@@ -2564,8 +2567,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./BSP/Src/spi_support.o
  .debug_macro   0x00000000      0x146 ./BSP/Src/spi_support.o
  .debug_macro   0x00000000       0x16 ./BSP/Src/spi_support.o
- .debug_line    0x00000000      0xa68 ./BSP/Src/spi_support.o
- .debug_str     0x00000000   0x1043bd ./BSP/Src/spi_support.o
+ .debug_line    0x00000000      0xa74 ./BSP/Src/spi_support.o
+ .debug_str     0x00000000   0x1043c8 ./BSP/Src/spi_support.o
  .comment       0x00000000       0x44 ./BSP/Src/spi_support.o
  .debug_frame   0x00000000       0x7c ./BSP/Src/spi_support.o
  .ARM.attributes
@@ -2690,7 +2693,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./BSP/Src/uart_handler.o
  .debug_macro   0x00000000       0x44 ./BSP/Src/uart_handler.o
  .debug_macro   0x00000000      0x433 ./BSP/Src/uart_handler.o
- .debug_macro   0x00000000      0x214 ./BSP/Src/uart_handler.o
+ .debug_macro   0x00000000      0x215 ./BSP/Src/uart_handler.o
  .debug_macro   0x00000000       0x61 ./BSP/Src/uart_handler.o
  .debug_macro   0x00000000       0x2a ./BSP/Src/uart_handler.o
  .debug_macro   0x00000000       0x43 ./BSP/Src/uart_handler.o
@@ -2803,7 +2806,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./Core/Src/gpio.o
  .debug_macro   0x00000000       0x44 ./Core/Src/gpio.o
  .debug_macro   0x00000000      0x433 ./Core/Src/gpio.o
- .debug_macro   0x00000000      0x20e ./Core/Src/gpio.o
+ .debug_macro   0x00000000      0x20f ./Core/Src/gpio.o
  .group         0x00000000        0xc ./Core/Src/i2c.o
  .group         0x00000000        0xc ./Core/Src/i2c.o
  .group         0x00000000        0xc ./Core/Src/i2c.o
@@ -2894,7 +2897,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./Core/Src/i2c.o
  .debug_macro   0x00000000       0x44 ./Core/Src/i2c.o
  .debug_macro   0x00000000      0x433 ./Core/Src/i2c.o
- .debug_macro   0x00000000      0x20e ./Core/Src/i2c.o
+ .debug_macro   0x00000000      0x20f ./Core/Src/i2c.o
  .group         0x00000000        0xc ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/main.o
@@ -3006,7 +3009,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./Core/Src/main.o
  .debug_macro   0x00000000       0x44 ./Core/Src/main.o
  .debug_macro   0x00000000      0x433 ./Core/Src/main.o
- .debug_macro   0x00000000      0x20e ./Core/Src/main.o
+ .debug_macro   0x00000000      0x20f ./Core/Src/main.o
  .debug_macro   0x00000000       0x58 ./Core/Src/main.o
  .debug_macro   0x00000000       0x61 ./Core/Src/main.o
  .debug_macro   0x00000000       0x2a ./Core/Src/main.o
@@ -3116,7 +3119,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./Core/Src/spi.o
  .debug_macro   0x00000000       0x44 ./Core/Src/spi.o
  .debug_macro   0x00000000      0x433 ./Core/Src/spi.o
- .debug_macro   0x00000000      0x20e ./Core/Src/spi.o
+ .debug_macro   0x00000000      0x20f ./Core/Src/spi.o
  .group         0x00000000        0xc ./Core/Src/stm32l4xx_hal_msp.o
  .group         0x00000000        0xc ./Core/Src/stm32l4xx_hal_msp.o
  .group         0x00000000        0xc ./Core/Src/stm32l4xx_hal_msp.o
@@ -3205,7 +3208,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./Core/Src/stm32l4xx_hal_msp.o
  .debug_macro   0x00000000       0x44 ./Core/Src/stm32l4xx_hal_msp.o
  .debug_macro   0x00000000      0x433 ./Core/Src/stm32l4xx_hal_msp.o
- .debug_macro   0x00000000      0x20e ./Core/Src/stm32l4xx_hal_msp.o
+ .debug_macro   0x00000000      0x20f ./Core/Src/stm32l4xx_hal_msp.o
  .group         0x00000000        0xc ./Core/Src/stm32l4xx_it.o
  .group         0x00000000        0xc ./Core/Src/stm32l4xx_it.o
  .group         0x00000000        0xc ./Core/Src/stm32l4xx_it.o
@@ -3294,7 +3297,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./Core/Src/stm32l4xx_it.o
  .debug_macro   0x00000000       0x44 ./Core/Src/stm32l4xx_it.o
  .debug_macro   0x00000000      0x433 ./Core/Src/stm32l4xx_it.o
- .debug_macro   0x00000000      0x20e ./Core/Src/stm32l4xx_it.o
+ .debug_macro   0x00000000      0x20f ./Core/Src/stm32l4xx_it.o
  .group         0x00000000        0xc ./Core/Src/syscalls.o
  .group         0x00000000        0xc ./Core/Src/syscalls.o
  .group         0x00000000        0xc ./Core/Src/syscalls.o
@@ -3615,7 +3618,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./Core/Src/tim.o
  .debug_macro   0x00000000       0x44 ./Core/Src/tim.o
  .debug_macro   0x00000000      0x433 ./Core/Src/tim.o
- .debug_macro   0x00000000      0x20e ./Core/Src/tim.o
+ .debug_macro   0x00000000      0x20f ./Core/Src/tim.o
  .group         0x00000000        0xc ./Core/Src/usart.o
  .group         0x00000000        0xc ./Core/Src/usart.o
  .group         0x00000000        0xc ./Core/Src/usart.o
@@ -3706,7 +3709,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x5cf ./Core/Src/usart.o
  .debug_macro   0x00000000       0x44 ./Core/Src/usart.o
  .debug_macro   0x00000000      0x433 ./Core/Src/usart.o
- .debug_macro   0x00000000      0x20e ./Core/Src/usart.o
+ .debug_macro   0x00000000      0x20f ./Core/Src/usart.o
  .text          0x00000000       0x14 ./Core/Startup/startup_stm32l4a6vgtx.o
  .data          0x00000000        0x0 ./Core/Startup/startup_stm32l4a6vgtx.o
  .bss           0x00000000        0x0 ./Core/Startup/startup_stm32l4a6vgtx.o

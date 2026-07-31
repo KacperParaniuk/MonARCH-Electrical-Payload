@@ -96,9 +96,12 @@ int32_t spi_init(struct spi_desc **desc,
 	if (param->chip_select) {
 		(*desc)->GPIO_Pin = PT_EN_Pin;
 		(*desc)->GPIOx = PT_EN_GPIO_Port;
+		(*desc)->hSPI = hspi2;
 	} else {
 		(*desc)->GPIO_Pin = ADC_EN_Pin;
 		(*desc)->GPIOx = ADC_EN_GPIO_Port;
+		(*desc)->hSPI = hspi1;
+
 	}
 
 	return SUCCESS;

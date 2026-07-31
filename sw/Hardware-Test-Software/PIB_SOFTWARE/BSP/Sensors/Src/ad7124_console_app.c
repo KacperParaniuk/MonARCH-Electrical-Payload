@@ -84,13 +84,20 @@ POSSIBILITY OF SUCH DAMAGE.
 static struct ad7124_st_reg ad7124_register_map[AD7124_REG_NO];
 
 // Pointer to the struct representing the AD7124 device // need to be able to utilize two ad7124 devices.
-static struct ad7124_dev * pAd7124_dev = NULL;
+
+static struct ad7124_dev * pAd7124_dev = NULL; // p for pressure
+
+// --------------
+
+static struct ad7124_dev * vAd7124_dev = NULL; // v for voltage
+
+
+uint32_t status;
 
 // Last Sampled values for All ADC channels
 static uint32_t channel_samples[AD7124_CHANNEL_COUNT] = {0};
 // How many times a given channel is sampled in total for one sample run
 static uint32_t channel_samples_count[AD7124_CHANNEL_COUNT] = {0};
-
 
 // MAY USE THESE WHEN INTEGRATING DRIVER FUNCTIONS INTO MAIN.C
 
@@ -103,7 +110,7 @@ static uint32_t channel_samples_count[AD7124_CHANNEL_COUNT] = {0};
  *  		   the device.  A call to init the SPI port is made, but may not
  *  		   actually do very much, depending on the platform
  */
-int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs)
+int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs, AD7124_CHIP chip)
 
 // added param for cs -> CS = 0 = AD7124 POWER      |
 				//       CS = 1 = AD7124 PRESSURE   | for measuring
@@ -128,22 +135,56 @@ int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs)
 			return(FAILURE);
 	}
 
-	// Used to create the ad7124 device
-    struct	ad7124_init_param sAd7124_init = // ensure that when you are setting modfe
-  	{
-  		// spi_init_param type
-  		{
-  			2500000, 		// Max SPI Speed
-  			cs,				// Chip Select
-			SPI_MODE_3,		// CPOL = 1, CPHA =1
-			NULL
-  		},
-  		ad7124_register_map,
 
-  		10000				// Retry count for polling
-  	};
 
-  return(ad7124_setup(&pAd7124_dev, sAd7124_init));
+
+	if(chip==PRESSURE){
+
+		// Used to create the ad7124 device (pressure)
+	    struct	ad7124_init_param sAd7124_init = // ensure that when you are setting modfe
+	  	{
+	  		// spi_init_param type
+	  		{
+	  			2500000, 		// Max SPI Speed
+	  			cs,				// Chip Select
+				SPI_MODE_3,		// CPOL = 1, CPHA =1
+				NULL
+	  		},
+	  		ad7124_register_map,
+
+	  		10000				// Retry count for polling
+	  	};
+
+	    return(ad7124_setup(&pAd7124_dev, sAd7124_init));
+
+	}
+
+	else if(chip == VOLTAGE){
+
+		// Used to create the ad7124 device (voltage)
+	    struct	ad7124_init_param svAd7124_init = // ensure that when you are setting modfe
+	  	{
+	  		// spi_init_param type
+	  		{
+	  			2500000, 		// Max SPI Speed
+	  			cs,				// Chip Select
+				SPI_MODE_3,		// CPOL = 1, CPHA =1
+				NULL
+
+	  		},
+	  		ad7124_register_map,
+
+	  		10000				// Retry count for polling
+	  	};
+
+
+	    return(ad7124_setup(&vAd7124_dev, svAd7124_init));
+
+
+	}
+
+	return -20;
+
 }
 
 

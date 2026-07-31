@@ -44,7 +44,6 @@
 /******************************************************************************/
 
 #include <stdint.h>
-
 #include <main.h>
 
 /******************************************************************************/
@@ -70,6 +69,7 @@ typedef struct spi_init_param {
 	uint8_t		chip_select;
 	enum spi_mode	mode;
 	void		*extra;
+
 } spi_init_param;
 
 typedef struct spi_desc {
@@ -80,6 +80,7 @@ typedef struct spi_desc {
 	// added for multiple chip configurations
 	GPIO_TypeDef* GPIOx;
 	uint16_t GPIO_Pin;
+	SPI_HandleTypeDef hSPI;
 
 } spi_desc;
 

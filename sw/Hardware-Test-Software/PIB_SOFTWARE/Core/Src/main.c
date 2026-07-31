@@ -243,6 +243,9 @@ int main(void)
   uint32_t device_id;
 
 
+  // setup both pressure and voltage ADC.
+
+
   if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,1)) < 0) {
 		// Handle error setting up AD7124 here
 	  printf("Failed to init ad7124 pressure \n");

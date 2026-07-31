@@ -55,8 +55,17 @@ POSSIBILITY OF SUCH DAMAGE.
 #define AD7124_CONFIG_A       0
 #define AD7124_CONFIG_B       1
 
+
+typedef enum AD7124_CHIP {
+	PRESSURE,
+	VOLTAGE
+} AD7124_CHIP;
+
+
+
+
 /* Public Declarations */
-int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs);
+int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs, AD7124_CHIP chip);
 int32_t ad7124_read_device_id();
 int32_t ad7124_reset_function();
 void read_status_register();
