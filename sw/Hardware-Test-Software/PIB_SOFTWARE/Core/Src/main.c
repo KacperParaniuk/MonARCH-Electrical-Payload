@@ -40,7 +40,7 @@
 
 #define AD7124
 #define AD7124_P
-#define AD7124_V
+//#define AD7124_V
 #define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
@@ -54,7 +54,7 @@
 //#define VALVE_TEST
 //#define I2C_SCANNER
 //#define HEATER
-#define PWM_VALVE_6
+//#define PWM_VALVE_6
 
 
 
