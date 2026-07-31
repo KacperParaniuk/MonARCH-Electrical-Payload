@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "Accelerometer_Analog-Devices") (type "KiCad") (uri "${KIPRJMOD}/ADXL355BEZ") (options "") (descr ""))
+)

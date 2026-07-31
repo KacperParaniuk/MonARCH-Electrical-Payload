@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "23e243c3-a518-49fb-a340-7bf4401a8a68")
+	(uuid "fe213df2-638f-43b7-b272-6f8ecb696010")
 	(paper "A4")
 	(lib_symbols
 		(symbol "5037630491_3"
@@ -1229,18 +1229,6 @@
 		)
 	)
 	(rectangle
-		(start 13.97 59.69)
-		(end 53.34 88.9)
-		(stroke
-			(width 0)
-			(type dash)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "2911108f-5ad3-4359-b923-3c2950f2c55d")
-	)
-	(rectangle
 		(start 13.97 13.97)
 		(end 83.82 58.674)
 		(stroke
@@ -1250,7 +1238,7 @@
 		(fill
 			(type none)
 		)
-		(uuid "40d90860-cf04-46d9-a404-52761f44172c")
+		(uuid "8da01414-8e62-41dd-b308-aa30686a1908")
 	)
 	(rectangle
 		(start 85.09 13.97)
@@ -1262,7 +1250,19 @@
 		(fill
 			(type none)
 		)
-		(uuid "d93c6043-d1c9-49ef-ad84-a9a0416e385a")
+		(uuid "c0cd0904-37b7-4a42-8f1d-9578fd1d17ee")
+	)
+	(rectangle
+		(start 13.97 59.69)
+		(end 53.34 88.9)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "cfb06361-47f3-4c5f-91ba-c1a680c8336b")
 	)
 	(text "Mounting Holes\n"
 		(exclude_from_sim no)
@@ -1275,20 +1275,17 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "31eb834b-692f-4552-8cac-28424ae5b486")
+		(uuid "234f9d42-a5c3-44fd-8951-9a974ae67fa3")
 	)
-	(text "Breakout Board Connection"
+	(text "will become 6 connector if switch to spi"
 		(exclude_from_sim no)
-		(at 85.344 17.78 0)
+		(at 118.618 51.562 0)
 		(effects
 			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
+				(size 1.27 1.27)
 			)
-			(justify left bottom)
 		)
-		(uuid "8b033b4c-c2f9-49e3-96fa-ef137eee755a")
+		(uuid "5be3e497-857f-4a5b-887a-9cca2b20d768")
 	)
 	(text "PIB Connection"
 		(exclude_from_sim no)
@@ -1301,97 +1298,80 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "daab0d31-0d31-4db1-8f75-a5354197bf0d")
+		(uuid "d44435c1-1811-4729-aed1-dcf2fb09f570")
 	)
-	(junction
-		(at 102.87 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "00846cc6-df8b-4b64-87b4-cbd607af5da1")
-	)
-	(junction
-		(at 105.41 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "04c76ff3-2595-4b46-a884-a975588a9109")
-	)
-	(junction
-		(at 34.29 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "08902427-dfcd-41bd-9b72-03515ecc9699")
-	)
-	(junction
-		(at 38.1 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0c5f4f76-06e4-49b6-a75f-2ab49b15f7ef")
-	)
-	(junction
-		(at 120.65 40.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1f9f03dd-722f-4690-b64f-3890fe9efd2d")
-	)
-	(junction
-		(at 49.53 33.02)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2ee2a0eb-88cd-46cd-a48a-b7e87eee88b0")
+	(text "Breakout Board Connection"
+		(exclude_from_sim no)
+		(at 85.344 17.78 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "f43aa899-fe90-4987-9f36-8510c6a4763b")
 	)
 	(junction
 		(at 120.65 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "786ec6b5-8126-4408-89b7-6308711dba19")
+		(uuid "095640f7-a79d-4e76-a012-50f295cc5e09")
 	)
 	(junction
-		(at 31.75 38.1)
+		(at 49.53 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7f3cf1c0-9310-4a1b-a5b5-da61e3465f5e")
+		(uuid "14ed9f2e-d3c0-4cef-aba4-91fc846dbb9c")
 	)
 	(junction
-		(at 109.22 35.56)
+		(at 34.29 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c7ea2530-0a5c-4025-9878-63852fd07058")
+		(uuid "7674d41b-7a27-4270-b8e5-efef42ce54fb")
+	)
+	(junction
+		(at 38.1 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a001b17c-febf-4363-afd6-b19a46479e36")
 	)
 	(junction
 		(at 49.53 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d1353e2d-8d7b-48e5-8193-384428f7b935")
+		(uuid "bbd7f4c9-3b59-4668-8d3b-63f718cb20c0")
 	)
-	(wire
-		(pts
-			(xy 102.87 39.37) (xy 102.87 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "02b7c4cb-9d10-438f-b50b-ff56b12668cf")
+	(junction
+		(at 105.41 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ce02329b-6fb1-42fb-91ed-817ae8094ee9")
 	)
-	(wire
-		(pts
-			(xy 38.1 34.29) (xy 38.1 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0bdcc015-b764-4868-83e0-dc75083dc5cc")
+	(junction
+		(at 102.87 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dac1e95b-503d-443c-a80c-ba92352fd381")
 	)
-	(wire
-		(pts
-			(xy 102.87 38.1) (xy 121.92 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f31685b-4900-4509-b8be-7c7d1a87cb07")
+	(junction
+		(at 31.75 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ddca124a-7d95-4cc0-84ef-88e1e4b73ed8")
+	)
+	(junction
+		(at 120.65 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e1815028-5792-450e-b2d5-2bb7e2c85d11")
+	)
+	(junction
+		(at 109.22 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fdd1be22-00bf-430e-875d-80affc348837")
 	)
 	(wire
 		(pts
@@ -1401,167 +1381,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "152ac619-c1f1-4a5c-af23-3d57477b0a80")
-	)
-	(wire
-		(pts
-			(xy 49.53 33.02) (xy 50.8 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1ac36257-8682-4dad-8d2c-795e22662b95")
-	)
-	(wire
-		(pts
-			(xy 49.53 40.64) (xy 50.8 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1d3206ef-90ee-4932-8fdf-e55db765091c")
-	)
-	(wire
-		(pts
-			(xy 105.41 34.29) (xy 105.41 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "234b2410-46d4-48fe-8719-a0df25612bf8")
-	)
-	(wire
-		(pts
-			(xy 120.65 33.02) (xy 121.92 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35bbeb34-3764-4dcd-81e3-11e779b99f76")
-	)
-	(wire
-		(pts
-			(xy 49.53 41.91) (xy 49.53 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4dd26c89-bc5a-4e58-8628-8b57bab4198d")
-	)
-	(wire
-		(pts
-			(xy 46.99 33.02) (xy 49.53 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f5d9473-985c-4b61-87d3-0b384312f103")
-	)
-	(wire
-		(pts
-			(xy 48.26 40.64) (xy 49.53 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "52df50b6-5f91-4c57-bfe3-4a86ed915a3b")
-	)
-	(wire
-		(pts
-			(xy 118.11 33.02) (xy 120.65 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5625af56-9eed-4b38-b106-23770c224108")
-	)
-	(wire
-		(pts
-			(xy 109.22 35.56) (xy 121.92 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "59622ccf-e7d1-4098-b3d3-3da89b389aae")
-	)
-	(wire
-		(pts
-			(xy 105.41 35.56) (xy 109.22 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6e027c4c-1014-4062-a7f4-477ecdc5423f")
-	)
-	(wire
-		(pts
-			(xy 34.29 35.56) (xy 38.1 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "80e82195-f3e6-4c1f-8fb1-122e3611d4a3")
-	)
-	(wire
-		(pts
-			(xy 31.75 38.1) (xy 50.8 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "817417fa-febc-4649-a6f6-26410e334a85")
-	)
-	(wire
-		(pts
-			(xy 100.33 38.1) (xy 102.87 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "82f0f1e8-66bf-434f-b92a-7f7fd449598f")
-	)
-	(wire
-		(pts
-			(xy 120.65 41.91) (xy 120.65 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "85ab0634-af2c-4364-aea3-dac648563ad0")
-	)
-	(wire
-		(pts
-			(xy 100.33 35.56) (xy 105.41 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "879bd3a0-c740-4bba-ab40-a109e97db9f0")
-	)
-	(wire
-		(pts
-			(xy 34.29 34.29) (xy 34.29 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "87e5bbd4-2c57-48aa-8071-094bf13db25f")
+		(uuid "04dc8334-62be-4431-89a7-fce1b1225f19")
 	)
 	(wire
 		(pts
@@ -1571,37 +1391,17 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "903f0ff1-a9e6-4ff6-98bc-dfc88704b2d0")
+		(uuid "051ab6e3-2655-4e7c-aacd-96a70d768750")
 	)
 	(wire
 		(pts
-			(xy 29.21 38.1) (xy 31.75 38.1)
+			(xy 49.53 33.02) (xy 50.8 33.02)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "998288dc-60c4-4a09-9872-9d9ac1f2940e")
-	)
-	(wire
-		(pts
-			(xy 120.65 31.75) (xy 120.65 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a8ecd27f-35aa-4648-bbac-eaea24289fc9")
-	)
-	(wire
-		(pts
-			(xy 120.65 40.64) (xy 121.92 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b58a8946-8d4a-4647-b578-e6a7ff603cc5")
+		(uuid "09787514-7c60-4c1c-8200-6867081346fe")
 	)
 	(wire
 		(pts
@@ -1611,27 +1411,27 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "bb5fc896-4f05-4541-a1c5-1f4cfd9b2ec6")
+		(uuid "0c69c45b-d2fe-4fd6-9eb1-d3ef9117d916")
 	)
 	(wire
 		(pts
-			(xy 109.22 34.29) (xy 109.22 35.56)
+			(xy 120.65 33.02) (xy 121.92 33.02)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cfc6a645-4d72-42b3-92b2-b39e7a896af7")
+		(uuid "0dae1843-e7a1-436d-bb26-3ac4499e1804")
 	)
 	(wire
 		(pts
-			(xy 29.21 35.56) (xy 34.29 35.56)
+			(xy 120.65 31.75) (xy 120.65 33.02)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "efe6112d-2938-432f-b71d-fe6bef22848e")
+		(uuid "161474ae-e764-41ee-a39c-9d510287c3c8")
 	)
 	(wire
 		(pts
@@ -1641,7 +1441,217 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "feba7c7f-54a7-4dd2-8f56-6ad358649a9c")
+		(uuid "1d32f8bb-6edd-436b-9b2f-590aa866a361")
+	)
+	(wire
+		(pts
+			(xy 49.53 41.91) (xy 49.53 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "278b81e8-f791-49b9-bf53-3fd771e4170f")
+	)
+	(wire
+		(pts
+			(xy 109.22 35.56) (xy 121.92 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e5041be-08b3-413c-a8b2-03f6b43aaa85")
+	)
+	(wire
+		(pts
+			(xy 34.29 35.56) (xy 38.1 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33d6e2ee-cb34-4e4e-a376-20a8660dac71")
+	)
+	(wire
+		(pts
+			(xy 102.87 38.1) (xy 121.92 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ea9d5aa-30ca-46e8-8cfb-6d7449cc6eb2")
+	)
+	(wire
+		(pts
+			(xy 102.87 39.37) (xy 102.87 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "421639b4-7640-4d1e-bcc4-e4fc5f618305")
+	)
+	(wire
+		(pts
+			(xy 38.1 34.29) (xy 38.1 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4859571a-25e0-440b-b322-bde778f0fee0")
+	)
+	(wire
+		(pts
+			(xy 46.99 33.02) (xy 49.53 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f24a363-5bee-4229-af86-eb357abb1a60")
+	)
+	(wire
+		(pts
+			(xy 29.21 38.1) (xy 31.75 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b74ba4c-d519-48e3-b5dd-640b7313b060")
+	)
+	(wire
+		(pts
+			(xy 29.21 35.56) (xy 34.29 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f3e2ef8-71ec-4c18-92b5-f5d730345a5f")
+	)
+	(wire
+		(pts
+			(xy 118.11 33.02) (xy 120.65 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7eeb216f-a567-435a-bf17-341648ea74b3")
+	)
+	(wire
+		(pts
+			(xy 120.65 40.64) (xy 121.92 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8308f290-1e73-4a2b-8755-ce50fdf59e4f")
+	)
+	(wire
+		(pts
+			(xy 34.29 34.29) (xy 34.29 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "938ef5fa-6a26-4fcf-9c82-ab3c92b2c3f4")
+	)
+	(wire
+		(pts
+			(xy 31.75 38.1) (xy 50.8 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a77edf1c-f333-4643-90cd-f9cd119fdeb4")
+	)
+	(wire
+		(pts
+			(xy 120.65 41.91) (xy 120.65 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab43c56b-fc0c-4042-8b3b-51e60555a64e")
+	)
+	(wire
+		(pts
+			(xy 49.53 40.64) (xy 50.8 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aee4b5d9-0cc0-4e85-a4d0-066daeadc787")
+	)
+	(wire
+		(pts
+			(xy 48.26 40.64) (xy 49.53 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0059fa2-ebfb-4d10-a0ed-68aaeb7875a7")
+	)
+	(wire
+		(pts
+			(xy 105.41 34.29) (xy 105.41 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0c93454-d08c-4967-b162-f74464febc35")
+	)
+	(wire
+		(pts
+			(xy 100.33 38.1) (xy 102.87 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d50fcf1b-7455-4ec7-b0ad-a961fc9e102c")
+	)
+	(wire
+		(pts
+			(xy 109.22 34.29) (xy 109.22 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbe5addb-5847-4d7c-b536-5bde6852a1f5")
+	)
+	(wire
+		(pts
+			(xy 105.41 35.56) (xy 109.22 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3ca3712-5aea-4f79-a7eb-3fc8102c79c8")
+	)
+	(wire
+		(pts
+			(xy 100.33 35.56) (xy 105.41 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9b6566b-b1d8-47a9-a18c-c563a34f8ede")
 	)
 	(hierarchical_label "I2C4_SCL"
 		(shape bidirectional)
@@ -1652,7 +1662,7 @@
 			)
 			(justify right)
 		)
-		(uuid "31ab69d8-db5d-41c2-a98e-c7b287d635e6")
+		(uuid "062b6984-4b7f-407b-85a9-7887698304a8")
 	)
 	(hierarchical_label "I2C4_SDA"
 		(shape bidirectional)
@@ -1663,18 +1673,7 @@
 			)
 			(justify right)
 		)
-		(uuid "3906f499-b1fe-4a90-ae9d-c743cdd2af96")
-	)
-	(hierarchical_label "I2C4_SDA"
-		(shape bidirectional)
-		(at 119.38 40.64 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a9adb7c5-cf02-4c52-a001-56608e44050d")
+		(uuid "3b9a1097-d488-41b7-b8c8-26dfef1d3871")
 	)
 	(hierarchical_label "I2C4_SCL"
 		(shape bidirectional)
@@ -1685,7 +1684,172 @@
 			)
 			(justify right)
 		)
-		(uuid "d8443e1b-1f8d-42bc-93c4-16cf84ac570c")
+		(uuid "6cd79ca2-200c-4100-b198-03b72b40d7c7")
+	)
+	(hierarchical_label "I2C4_SDA"
+		(shape bidirectional)
+		(at 119.38 40.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cc6b1c03-130e-40cb-aa32-bc7245488a4a")
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 35.56 81.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "347ae8b9-6b0a-494f-9639-1ef25cf6404a")
+		(property "Reference" "H4"
+			(at 38.1 80.0099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 38.1 82.5499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
+			(at 35.56 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 35.56 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 29.21 35.56 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3c7c6594-51eb-44d6-a5ca-5adaa60736d1")
+		(property "Reference" "#PWR09"
+			(at 22.86 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 25.146 35.56 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 29.21 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 29.21 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 29.21 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "56f0d604-7e87-4790-b3fd-cd3e301be9cf")
+		)
+		(instances
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
@@ -1697,7 +1861,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "030e074b-0dca-4e93-adc0-b6776c5deecf")
+		(uuid "3e149827-8522-43c2-9926-56af5721f199")
 		(property "Reference" "#FLG04"
 			(at 105.41 32.385 0)
 			(hide yes)
@@ -1753,15 +1917,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "b23ca88c-ea2c-4a5b-9382-686972b2be81")
+			(uuid "283bce6b-e456-4c87-a80b-01422a07f1ec")
 		)
 		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "#FLG04")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
 					(reference "#FLG04")
 					(unit 1)
 				)
@@ -1780,7 +1940,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "14644640-f68b-41bd-96bf-b7958d5ae96e")
+		(uuid "4683219b-6ddb-408e-8f98-922282b30750")
 		(property "Reference" "J3"
 			(at 64.77 35.5599 0)
 			(show_name no)
@@ -1839,192 +1999,21 @@
 			)
 		)
 		(pin "4"
-			(uuid "8b88e591-b518-4083-907a-2b7e1d1176e2")
+			(uuid "f3e91660-6f2a-443b-b717-9e2697c97b94")
 		)
 		(pin "2"
-			(uuid "4e353a3a-0910-475d-ad68-74f451acc3e0")
+			(uuid "538b4306-7ddc-40f9-8d1a-020d25a386a8")
 		)
 		(pin "3"
-			(uuid "64530e2c-649e-40bc-bd35-9cf300cbd607")
+			(uuid "df511a11-581d-487a-b6f3-19df08f546ce")
 		)
 		(pin "1"
-			(uuid "37efd9cf-dfc9-401e-9a83-4cd608e91ef2")
+			(uuid "214ec44f-a12f-45b9-a69e-e405484132d2")
 		)
 		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
 					(reference "J3")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 31.75 39.37 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "16c7e800-84a8-497b-87f5-ac66638012ff")
-		(property "Reference" "TP1"
-			(at 29.972 41.402 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 31.242 40.894 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 26.67 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 26.67 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 31.75 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "47d8854b-6386-40e8-946d-cd2c8ed6a2c9")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "TP1")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "TP9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 120.65 41.91 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "37ce5419-597f-4851-bcb9-b0df87c277f4")
-		(property "Reference" "TP8"
-			(at 123.19 45.2119 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 118.11 43.9421 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 115.57 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 115.57 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 120.65 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1b6282d6-a318-4411-a94d-8adf3d6c1607")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "TP8")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "TP16")
 					(unit 1)
 				)
 			)
@@ -2032,7 +2021,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 35.56 81.28 0)
+		(at 17.78 69.85 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2041,9 +2030,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "68e28cea-b1d5-4d32-9d72-2cbd596810cd")
-		(property "Reference" "H4"
-			(at 38.1 80.0099 0)
+		(uuid "6900244d-87e7-4e5b-bfa2-a57b4b9b0e41")
+		(property "Reference" "H1"
+			(at 20.32 68.5799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2054,7 +2043,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 38.1 82.5499 0)
+			(at 20.32 71.1199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2065,7 +2054,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 35.56 81.28 0)
+			(at 17.78 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2076,7 +2065,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 35.56 81.28 0)
+			(at 17.78 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2087,7 +2076,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 35.56 81.28 0)
+			(at 17.78 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2098,31 +2087,28 @@
 			)
 		)
 		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "H4")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "H8")
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
+					(reference "H1")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 102.87 39.37 180)
+		(lib_id "Mechanical:MountingHole")
+		(at 17.78 81.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "6fbb91d7-476e-46c5-a315-0471828ebcb7")
-		(property "Reference" "TP5"
-			(at 101.092 41.402 0)
+		(fields_autoplaced yes)
+		(uuid "6bb8c802-333a-45f6-9229-43a08b7166dc")
+		(property "Reference" "H2"
+			(at 20.32 80.0099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2132,9 +2118,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
-			(at 102.362 40.894 0)
-			(hide yes)
+		(property "Value" "MountingHole"
+			(at 20.32 82.5499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2144,8 +2129,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 97.79 39.37 0)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
+			(at 17.78 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2156,7 +2141,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 97.79 39.37 0)
+			(at 17.78 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2166,8 +2151,8 @@
 				)
 			)
 		)
-		(property "Description" "test point"
-			(at 102.87 39.37 0)
+		(property "Description" "Mounting Hole without connection"
+			(at 17.78 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2176,100 +2161,11 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "1"
-			(uuid "b5bab4de-765a-4e97-93d1-0bb5a77c0fff")
 		)
 		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "TP5")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "TP13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 46.99 33.02 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "71d83825-51d4-4ce0-b57a-9f5bb8b75d84")
-		(property "Reference" "#PWR010"
-			(at 50.8 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 43.688 33.02 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 46.99 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 46.99 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 46.99 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0fd901d3-032c-4566-930b-624644bcd826")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "#PWR010")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "#PWR010")
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -2285,7 +2181,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "79369ef7-d6d2-4dc8-96b6-5c0d97a133de")
+		(uuid "703a2947-21d8-4320-a99b-a185d835d533")
 		(property "Reference" "#PWR015"
 			(at 121.92 33.02 0)
 			(hide yes)
@@ -2342,16 +2238,169 @@
 			)
 		)
 		(pin "1"
-			(uuid "34d7c678-22fd-4ffe-9122-3ba456e6dcbf")
+			(uuid "771ac860-148f-4ad3-b039-29383a2c8497")
 		)
 		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
 					(reference "#PWR015")
 					(unit 1)
 				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "#PWR015")
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 49.53 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7eb9a66e-e78d-41c7-9853-64e3a86cd392")
+		(property "Reference" "TP3"
+			(at 50.8 26.416 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 54.61 26.162 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
+			(at 54.61 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 54.61 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 49.53 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6be59655-135b-4f52-87f6-36c8ee43e8e9")
+		)
+		(instances
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 100.33 35.56 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8a2a8575-9762-468d-a818-7ce0455bfb58")
+		(property "Reference" "#PWR014"
+			(at 93.98 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 96.266 35.56 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.33 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 100.33 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fccee874-3b65-41fc-989c-ba26dc6593cf")
+		)
+		(instances
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -2367,7 +2416,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "7c4d417c-ddfe-413e-abca-592e6afc96b6")
+		(uuid "9182c858-baf7-4124-945c-5a5640496ff1")
 		(property "Reference" "TP2"
 			(at 39.37 28.194 0)
 			(show_name no)
@@ -2425,263 +2474,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "eef2cae8-4bb8-42dd-ab87-49ec70744ff9")
+			(uuid "2d12dd05-f416-4c82-9c29-cd63a0690d21")
 		)
 		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
 					(reference "TP2")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "TP10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 17.78 69.85 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8bd463f0-9efc-484c-8b7c-460be6824cd5")
-		(property "Reference" "H1"
-			(at 20.32 68.5799 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole"
-			(at 20.32 71.1199 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 17.78 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 17.78 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 17.78 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "H1")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "H5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 120.65 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8e49c038-03cd-470d-b934-6f4ccad29dcf")
-		(property "Reference" "TP7"
-			(at 121.92 26.416 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 125.73 26.162 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 125.73 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 125.73 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 120.65 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "25c61722-7908-48b1-a090-e7edb13c9223")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "TP7")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "TP15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 49.53 41.91 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9915bcfa-f86f-44b6-982a-c56d9aa8ee48")
-		(property "Reference" "TP4"
-			(at 52.07 45.2119 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 46.99 43.9421 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 44.45 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 44.45 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 49.53 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "50c0e6fe-a60e-4b51-9bd3-ccd5579c6dd1")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "TP4")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "TP12")
 					(unit 1)
 				)
 			)
@@ -2699,7 +2497,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9e66dd99-83ff-4e7d-b353-86c658ca94f4")
+		(uuid "be1336b5-e4a8-4799-9610-8169aa08eb40")
 		(property "Reference" "J4"
 			(at 135.89 35.5599 0)
 			(show_name no)
@@ -2758,350 +2556,21 @@
 			)
 		)
 		(pin "4"
-			(uuid "30b2491a-8f1f-4dca-ac29-dae39c12bde1")
+			(uuid "423f7865-68dd-4942-919d-bff16663a50d")
 		)
 		(pin "2"
-			(uuid "59e36dca-dc99-4d99-83d7-a6da0a47cb91")
+			(uuid "5aa352b6-2caa-4644-95c7-9b348562eddb")
 		)
 		(pin "3"
-			(uuid "1dd21a21-d2cc-4d6b-b208-13d4686b0d25")
+			(uuid "99a08ce6-2eaf-43a2-b063-9513736a3d7b")
 		)
 		(pin "1"
-			(uuid "c9b748ee-16ba-42ce-8688-dbcfec9b2bd2")
+			(uuid "fab281da-9e7a-4990-bdb6-4d2fc7c91bd5")
 		)
 		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
 					(reference "J4")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "J5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 17.78 81.28 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a1bdc24b-8610-4ced-a8c5-48f663f081c3")
-		(property "Reference" "H2"
-			(at 20.32 80.0099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole"
-			(at 20.32 82.5499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 17.78 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 17.78 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 17.78 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "H2")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "H6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 100.33 35.56 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a48c0af2-c0ed-451f-a33b-27d263b43779")
-		(property "Reference" "#PWR014"
-			(at 93.98 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 96.266 35.56 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 100.33 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 100.33 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f3901015-e329-4af5-9138-d0d3d3d067c2")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "#PWR014")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "#PWR014")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 29.21 35.56 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d796d206-567c-49da-abb3-42960436df67")
-		(property "Reference" "#PWR09"
-			(at 22.86 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 25.146 35.56 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 29.21 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 29.21 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 29.21 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d2d10997-1d18-4cf1-ba09-bdfb57b0f3d5")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "#PWR09")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "#PWR09")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 34.29 34.29 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "da746b7f-084a-4cb4-97d4-ad309e453239")
-		(property "Reference" "#FLG03"
-			(at 34.29 32.385 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 30.226 30.734 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 34.29 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 34.29 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 34.29 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cc79cfae-0ab8-44ed-b9e4-b3d44afe028b")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "#FLG03")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "#FLG03")
 					(unit 1)
 				)
 			)
@@ -3109,7 +2578,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 49.53 31.75 0)
+		(at 49.53 41.91 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3117,9 +2586,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "ea2521d8-f98a-4b5e-93c3-fdc2d659b296")
-		(property "Reference" "TP3"
-			(at 50.8 26.416 0)
+		(fields_autoplaced yes)
+		(uuid "d15a8b5b-9d11-4347-a80a-27a00664fc15")
+		(property "Reference" "TP4"
+			(at 52.07 45.2119 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3130,7 +2600,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 54.61 26.162 0)
+			(at 46.99 43.9421 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3138,11 +2608,11 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 54.61 31.75 0)
+			(at 44.45 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3153,7 +2623,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 54.61 31.75 0)
+			(at 44.45 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3164,7 +2634,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 49.53 31.75 0)
+			(at 49.53 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3175,16 +2645,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "7ba46451-8e95-4e79-a24f-49e152595fb7")
+			(uuid "5ad27fe8-5348-40a4-85f5-e86daa68e129")
 		)
 		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "TP3")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "TP11")
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
+					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -3201,7 +2667,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f204cdf1-c7e6-4458-9459-26b8952f1ddc")
+		(uuid "d729ee41-77db-43e1-8b5c-36ab77ba81fd")
 		(property "Reference" "H3"
 			(at 38.1 68.5799 0)
 			(show_name no)
@@ -3258,21 +2724,17 @@
 			)
 		)
 		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
 					(reference "H3")
-					(unit 1)
-				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "H7")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 109.22 34.29 0)
+		(lib_id "power:+3V3")
+		(at 46.99 33.02 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3280,20 +2742,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "f3ef614f-87db-4c96-94ea-f26e8b617ccf")
-		(property "Reference" "TP6"
-			(at 110.49 28.194 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 118.872 27.94 0)
+		(uuid "db4c5ada-840f-433f-8025-5fc3c0f1e861")
+		(property "Reference" "#PWR010"
+			(at 50.8 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3301,11 +2752,21 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 114.3 34.29 0)
+		(property "Value" "+3V3"
+			(at 43.688 33.02 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 46.99 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3316,7 +2777,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 34.29 0)
+			(at 46.99 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3326,8 +2787,8 @@
 				)
 			)
 		)
-		(property "Description" "test point"
-			(at 109.22 34.29 0)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 46.99 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3338,16 +2799,168 @@
 			)
 		)
 		(pin "1"
-			(uuid "8124f18f-b06f-4f80-ad39-d708ea83fabd")
+			(uuid "d860aa44-242a-407e-9a3c-03018eda1821")
 		)
 		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "TP6")
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
+					(reference "#PWR010")
 					(unit 1)
 				)
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/51fb0d9e-13dd-4646-9739-03c7f4c08998"
-					(reference "TP14")
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 31.75 39.37 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ea03109f-2397-4611-8093-7c9f80ddfc28")
+		(property "Reference" "TP1"
+			(at 29.972 41.402 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 31.242 40.894 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
+			(at 26.67 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 26.67 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 31.75 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3ea098cf-22b0-45f9-bae2-3bd9b74d8cb2")
+		)
+		(instances
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 34.29 34.29 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f8f36a28-681d-4abe-9e9e-d094fd56b206")
+		(property "Reference" "#FLG03"
+			(at 34.29 32.385 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 30.226 30.734 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 34.29 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 34.29 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 34.29 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3586c030-4efb-4713-b4b9-2fc96725a094")
+		)
+		(instances
+			(project "Accelerometer_Board"
+				(path "/3d8d4161-08ea-415b-af70-32856267c4e8/dded9fe0-89a5-4111-b5d6-b8ed9607c34b"
+					(reference "#FLG03")
 					(unit 1)
 				)
 			)

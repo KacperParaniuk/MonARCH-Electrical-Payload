@@ -648,7 +648,7 @@
         "uuid": "2e1d3673-27b9-4604-80fb-036cec98a912"
       }
     ],
-    "used_designators": "R66,J1-4,#FLG3-4,#PWR9-10,#PWR14-15,#PWR78-81,#PWR91,#PWR97,#PWR225-229,#PWR239-242,H1-4,TP1-8,C46-47,C61,C63-64,C70-76,U1,U9",
+    "used_designators": "R66,J1-5,#FLG3-4,#PWR9-10,#PWR14-15,#PWR78-81,#PWR91,#PWR97,#PWR225-229,#PWR239-242,H1-8,TP1-16,C46-47,C61,C63-64,C70-76,U1,U9",
     "variants": []
   },
   "sheets": [
@@ -659,6 +659,10 @@
     [
       "4097d861-b189-461e-b768-3d03272bff16",
       "Connectors"
+    ],
+    [
+      "51fb0d9e-13dd-4646-9739-03c7f4c08998",
+      "Voltage Regulator"
     ]
   ],
   "text_variables": {},

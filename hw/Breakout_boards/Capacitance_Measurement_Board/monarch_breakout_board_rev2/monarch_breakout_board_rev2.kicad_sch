@@ -2553,6 +2553,16 @@
 		)
 		(uuid "ffd67bdb-04fd-420d-b130-634197c710b2")
 	)
+	(label "board revision do we want to keep this differential pair setup?"
+		(at -54.61 45.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "45128a5d-2a7a-4508-8ac0-7fae6037009a")
+	)
 	(label "needs to be grounded to tell the chip it's using the internal clock"
 		(at 40.64 39.37 0)
 		(effects
@@ -4813,7 +4823,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(page "3")
+					(page "2")
 				)
 			)
 		)

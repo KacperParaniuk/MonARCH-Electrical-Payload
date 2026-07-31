@@ -1270,6 +1270,16 @@
 	)
 	(wire
 		(pts
+			(xy 205.74 45.72) (xy 201.93 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08401450-05bc-452f-b5eb-ef9fe335f580")
+	)
+	(wire
+		(pts
 			(xy 115.57 43.18) (xy 121.92 43.18)
 		)
 		(stroke
@@ -1370,7 +1380,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 31.75) (xy 179.07 31.75)
+			(xy 179.07 29.21) (xy 180.34 29.21)
 		)
 		(stroke
 			(width 0)
@@ -1440,6 +1450,16 @@
 	)
 	(wire
 		(pts
+			(xy 189.23 43.18) (xy 189.23 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53ea6bc5-079f-4fab-a5cd-61ea3c0d5737")
+	)
+	(wire
+		(pts
 			(xy 20.32 44.45) (xy 24.13 44.45)
 		)
 		(stroke
@@ -1460,6 +1480,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 39.37) (xy 195.58 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61163813-9c0d-4a4e-8850-a33e1430e815")
+	)
+	(wire
+		(pts
 			(xy 24.13 31.75) (xy 38.1 31.75)
 		)
 		(stroke
@@ -1470,6 +1500,36 @@
 	)
 	(wire
 		(pts
+			(xy 198.12 39.37) (xy 198.12 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d3edec9-5acf-4490-8b7c-761df704a1c2")
+	)
+	(wire
+		(pts
+			(xy 175.26 35.56) (xy 180.34 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b38d122-6029-4fd4-b6df-6d9b0feb8de8")
+	)
+	(wire
+		(pts
+			(xy 208.28 43.18) (xy 204.47 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7cd028ec-a371-41a9-8256-f1cc65e0b4f8")
+	)
+	(wire
+		(pts
 			(xy 129.54 43.18) (xy 137.16 43.18)
 		)
 		(stroke
@@ -1477,6 +1537,26 @@
 			(type default)
 		)
 		(uuid "7f6cf49d-d13e-45a8-8b41-389fc71e4743")
+	)
+	(wire
+		(pts
+			(xy 204.47 39.37) (xy 204.47 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8142c46f-16ac-42a3-bdb5-71870308aa09")
+	)
+	(wire
+		(pts
+			(xy 191.77 45.72) (xy 191.77 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83ed4787-1513-43ef-8a47-e9a0cfe5c695")
 	)
 	(wire
 		(pts
@@ -1580,6 +1660,16 @@
 	)
 	(wire
 		(pts
+			(xy 201.93 45.72) (xy 201.93 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a76f6c71-66b8-4ce6-8bfc-96ad874a56bf")
+	)
+	(wire
+		(pts
 			(xy 72.39 45.72) (xy 60.96 45.72)
 		)
 		(stroke
@@ -1630,6 +1720,16 @@
 	)
 	(wire
 		(pts
+			(xy 187.96 43.18) (xy 189.23 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9c44906-5014-4c40-ac83-c50cfdb7fa53")
+	)
+	(wire
+		(pts
 			(xy 93.98 31.75) (xy 93.98 27.94)
 		)
 		(stroke
@@ -1637,6 +1737,16 @@
 			(type default)
 		)
 		(uuid "c1be7ab5-5780-41fe-a364-0626d7073dac")
+	)
+	(wire
+		(pts
+			(xy 175.26 33.02) (xy 180.34 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c951b05f-6ccb-4190-914b-3ba72f963dc1")
 	)
 	(wire
 		(pts
@@ -1660,6 +1770,16 @@
 	)
 	(wire
 		(pts
+			(xy 190.5 45.72) (xy 191.77 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd807d53-11a2-49f0-9043-4679aa9312f4")
+	)
+	(wire
+		(pts
 			(xy 24.13 74.93) (xy 38.1 74.93)
 		)
 		(stroke
@@ -1680,7 +1800,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 29.21) (xy 179.07 29.21)
+			(xy 179.07 26.67) (xy 180.34 26.67)
 		)
 		(stroke
 			(width 0)
@@ -1728,6 +1848,28 @@
 		)
 		(uuid "e83c9294-5424-4894-b77d-e7075e1cfb07")
 	)
+	(hierarchical_label "Cap0+"
+		(shape bidirectional)
+		(at 175.26 33.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "07d245fe-431f-410a-85a8-1165c6594bbe")
+	)
+	(hierarchical_label "Cap2-"
+		(shape bidirectional)
+		(at 198.12 48.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "22aca71d-04ee-4f02-9339-4ffef6b32f63")
+	)
 	(hierarchical_label "I2C4_SCL"
 		(shape bidirectional)
 		(at 137.16 43.18 0)
@@ -1739,9 +1881,20 @@
 		)
 		(uuid "2783becb-93f1-4943-81f3-5d8bcd61086a")
 	)
+	(hierarchical_label "Cap0-"
+		(shape bidirectional)
+		(at 175.26 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2878269b-9825-43a2-acea-1ebaa1122059")
+	)
 	(hierarchical_label "I2C4_SCL"
 		(shape bidirectional)
-		(at 177.8 29.21 180)
+		(at 179.07 26.67 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1750,9 +1903,31 @@
 		)
 		(uuid "65c36e1a-6bf3-45c5-a5e7-a4cfaab3476b")
 	)
+	(hierarchical_label "Cap1+"
+		(shape bidirectional)
+		(at 187.96 43.18 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8ad9fa7b-02b4-4952-910b-77ac51d5eedd")
+	)
+	(hierarchical_label "Cap3+"
+		(shape bidirectional)
+		(at 205.74 45.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a706c3c3-8ceb-439a-9c84-bdbd7ccbbde0")
+	)
 	(hierarchical_label "I2C4_SDA"
 		(shape bidirectional)
-		(at 177.8 31.75 180)
+		(at 179.07 29.21 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1760,6 +1935,39 @@
 			(justify right)
 		)
 		(uuid "b300fff0-6465-408d-8293-3be19287a56c")
+	)
+	(hierarchical_label "Cap1-"
+		(shape bidirectional)
+		(at 190.5 45.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cc767262-3eee-4969-bad0-3ecebc0aa4c6")
+	)
+	(hierarchical_label "Cap2+"
+		(shape bidirectional)
+		(at 195.58 48.26 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cf139a14-4397-4201-9457-ed079672b9b1")
+	)
+	(hierarchical_label "Cap3-"
+		(shape bidirectional)
+		(at 208.28 43.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d0f1fba3-085d-4af0-bcba-1da2ec74a865")
 	)
 	(hierarchical_label "I2C4_SDA"
 		(shape bidirectional)
@@ -2120,7 +2328,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Acceloremeter_Analog:E_14_1-M"
+		(property "Footprint" "ADXL355:E_14_1-M"
 			(at 50.8 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -2925,7 +3133,7 @@
 		)
 	)
 	(sheet
-		(at 179.07 26.67)
+		(at 180.34 24.13)
 		(size 27.94 15.24)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2941,7 +3149,7 @@
 		)
 		(uuid "dded9fe0-89a5-4111-b5d6-b8ed9607c34b")
 		(property "Sheetname" "Connectors"
-			(at 179.07 25.9584 0)
+			(at 180.34 23.4184 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2952,7 +3160,7 @@
 			)
 		)
 		(property "Sheetfile" "untitled.kicad_sch"
-			(at 179.07 42.4946 0)
+			(at 180.34 39.9546 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2964,7 +3172,7 @@
 			)
 		)
 		(pin "I2C4_SDA" bidirectional
-			(at 179.07 31.75 180)
+			(at 180.34 29.21 180)
 			(uuid "fc8e6ae1-87ee-4d7a-b999-d819849a86d4")
 			(effects
 				(font
@@ -2973,8 +3181,88 @@
 				(justify left)
 			)
 		)
+		(pin "Cap1-" bidirectional
+			(at 191.77 39.37 270)
+			(uuid "ed64e06a-1dd6-4f41-a160-f2cdf6ee16fa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Cap1+" bidirectional
+			(at 189.23 39.37 270)
+			(uuid "24d9357e-01d9-40f9-abac-2e65ae805f9c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Cap0-" bidirectional
+			(at 180.34 35.56 180)
+			(uuid "b62a8639-59f9-476d-97b2-f9bec3a43de4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Cap0+" bidirectional
+			(at 180.34 33.02 180)
+			(uuid "64571a3c-2dbe-43a1-8ceb-94c4cefb0bdc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Cap2+" bidirectional
+			(at 195.58 39.37 270)
+			(uuid "f4acc01d-5518-4bd7-a0ad-c7bb43c8b6eb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Cap3-" bidirectional
+			(at 204.47 39.37 270)
+			(uuid "62cfd88e-ab12-4d90-ae9a-ae055e9399f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Cap3+" bidirectional
+			(at 201.93 39.37 270)
+			(uuid "95dce0b8-fc3d-4741-923a-08549c344892")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Cap2-" bidirectional
+			(at 198.12 39.37 270)
+			(uuid "53d350b3-0d56-49a4-84b0-607d86be442b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "I2C4_SCL" bidirectional
-			(at 179.07 29.21 180)
+			(at 180.34 26.67 180)
 			(uuid "9d81db16-78ce-463e-854a-7bd29d05ed07")
 			(effects
 				(font

@@ -1465,7 +1465,7 @@
 	)
 	(rectangle
 		(start 101.092 12.7)
-		(end 236.22 81.28)
+		(end 219.71 81.28)
 		(stroke
 			(width 0)
 			(type dash)
@@ -1477,7 +1477,7 @@
 	)
 	(rectangle
 		(start 12.7 160.02)
-		(end 78.74 195.58)
+		(end 78.74 196.85)
 		(stroke
 			(width 0)
 			(type dash)
@@ -1500,8 +1500,20 @@
 		(uuid "4d3f4c2b-e075-4e39-909c-409d65232cc2")
 	)
 	(rectangle
+		(start 127 160.02)
+		(end 176.53 196.85)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "53b25520-8995-4bf0-85eb-5134f2521c66")
+	)
+	(rectangle
 		(start 12.7 82.55)
-		(end 179.07 158.75)
+		(end 176.53 158.75)
 		(stroke
 			(width 0)
 			(type dash)
@@ -1512,8 +1524,8 @@
 		(uuid "992bb1d7-05c8-41bd-a65b-85d19f709afd")
 	)
 	(rectangle
-		(start 179.832 82.55)
-		(end 284.48 158.75)
+		(start 177.8 82.55)
+		(end 284.48 165.1)
 		(stroke
 			(width 0)
 			(type dash)
@@ -1525,7 +1537,7 @@
 	)
 	(rectangle
 		(start 80.01 160.02)
-		(end 125.73 195.58)
+		(end 125.73 196.85)
 		(stroke
 			(width 0)
 			(type dash)
@@ -3124,7 +3136,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3c290c78-5401-401c-b434-f3f1cd662e97")
 		(property "Reference" "#PWR0229"
 			(at 162.56 127 0)
@@ -3138,7 +3149,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 170.18 126.9999 90)
+			(at 164.084 124.714 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5185,6 +5196,52 @@
 			(project "Plume_Measurment_Board"
 				(path "/2e1d3673-27b9-4604-80fb-036cec98a912"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 138.43 168.91)
+		(size 24.13 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "51fb0d9e-13dd-4646-9739-03c7f4c08998")
+		(property "Sheetname" "Voltage Regulator"
+			(at 138.43 168.1984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "untitled.kicad_sch"
+			(at 138.43 184.7346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Plume_Measurment_Board"
+				(path "/2e1d3673-27b9-4604-80fb-036cec98a912"
+					(page "3")
 				)
 			)
 		)

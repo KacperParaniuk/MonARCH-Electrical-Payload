@@ -1,0 +1,5 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "Acceloremeter_Analog") (type "KiCad") (uri "${KIPRJMOD}/ADXL355BEZ/ADXL355.pretty") (options "") (descr ""))
+	(lib (name "Micro-Lock-Connectors_Molex") (type "KiCad") (uri "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/Connector_Molex_Micro-Lock-Plus.pretty") (options "") (descr ""))
+)
