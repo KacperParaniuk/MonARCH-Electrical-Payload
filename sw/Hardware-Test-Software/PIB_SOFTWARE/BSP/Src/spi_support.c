@@ -96,12 +96,11 @@ int32_t spi_init(struct spi_desc **desc,
 	if (param->chip_select) {
 		(*desc)->GPIO_Pin = PT_EN_Pin;
 		(*desc)->GPIOx = PT_EN_GPIO_Port;
-		(*desc)->hSPI = hspi2;
+		(*desc)->hSPI = hspi2;  // select correct SPI for chip
 	} else {
 		(*desc)->GPIO_Pin = ADC_EN_Pin;
 		(*desc)->GPIOx = ADC_EN_GPIO_Port;
 		(*desc)->hSPI = hspi1;
-
 	}
 
 	return SUCCESS;
@@ -128,8 +127,7 @@ int32_t spi_remove(struct spi_desc *desc)
  * @param bytes_number - Number of bytes to write/read.
  * @return SUCCESS in case of success, FAILURE otherwise.
  */
-int32_t spi_write_and_read(struct spi_desc *desc,
-			   uint8_t *data,
+int32_t spi_write_and_read(struct spi_desc *desc, uint8_t *data,
 			   uint8_t bytes_number)
 {
 	if (desc) {
@@ -142,7 +140,7 @@ int32_t spi_write_and_read(struct spi_desc *desc,
 	 * general, and flexible with pin choice.
 	 */
 	HAL_GPIO_WritePin(desc->GPIOx, desc->GPIO_Pin, GPIO_PIN_RESET);
-    if (HAL_SPI_TransmitReceive(&hspi2, data, (uint8_t *)spi_rx_buffer, bytes_number, 5000) != HAL_OK) {
+    if (HAL_SPI_TransmitReceive(&(desc->hSPI), data, (uint8_t *)spi_rx_buffer, bytes_number, 5000) != HAL_OK) { // let's see if this works....
 	    return FAILURE;
 	}
     HAL_GPIO_WritePin(desc->GPIOx, desc->GPIO_Pin, GPIO_PIN_SET);
