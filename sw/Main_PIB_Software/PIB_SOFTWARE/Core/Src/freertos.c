@@ -234,7 +234,7 @@ void StartDefaultTask(void *argument)
   {
 
 	// the lowest priority task the heart beat of the program.
-	HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+	HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
     osDelay(500);
 
   }

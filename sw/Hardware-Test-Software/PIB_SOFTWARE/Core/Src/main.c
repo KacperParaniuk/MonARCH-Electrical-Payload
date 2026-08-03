@@ -52,7 +52,7 @@
 //#define VALVE_TEST
 //#define I2C_SCANNER
 //#define HEATER
-#define PWM_VALVE_6
+//#define PWM_VALVE_6
 
 
 
