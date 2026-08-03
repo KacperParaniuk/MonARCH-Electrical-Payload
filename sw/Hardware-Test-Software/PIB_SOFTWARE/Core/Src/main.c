@@ -39,6 +39,8 @@
 
 
 //#define AD7124
+//#define AD7124_P
+//#define AD7124_V
 //#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
@@ -236,23 +238,43 @@ int main(void)
 /* Initialize the AD7124 application before the main loop */
 
   // this setup will be for POWER
-  // added param for cs -> CS = 0 = AD7124 POWER      |
+  // added param for cs -> CS = 0 = AD7124 VOLTAGE      |
   				//       CS = 1 = AD7124 PRESSURE   | for measuring
 
   int32_t setupResult;
   uint32_t device_id;
 
 
-  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,1)) < 0) {
+  // setup pressure ADC
+
+#ifdef AD7124_P
+
+  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,PRESSURE)) < 0) {
 		// Handle error setting up AD7124 here
 	  printf("Failed to init ad7124 pressure \n");
-//	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+  }
+  printf("Setup Pressure Result: %ld", setupResult);
+//  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+
+#endif
+
+
+#ifdef AD7124_V
+
+
+  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,VOLTAGE)) < 0) {
+		// Handle error setting up AD7124 here
+	  printf("Failed to init ad7124 voltage \n");
+	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
   }
 
-  printf("Setup Result: %ld", setupResult);
-//  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+  printf("Setup voltage Result: %ld", setupResult);
 
+
+
+#endif
 
 
 
@@ -537,18 +559,18 @@ float temperature;
 
 	  // read device id.
 
-	  device_id = ad7124_read_device_id();
+	  device_id = ad7124_read_device_id(PRESSURE);
 
 	  printf("AD7124 Device ID: %ld ", device_id);
 	  if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
 
 		  printf("|| SUCCESS \n");
 		  HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
-		  read_status_register();
+		  read_status_register(PRESSURE);
 
 #ifdef AD7124_SINGLE_MODE
 		  /* Read all enabled channels on ADC in single conversion mode */
-		  menu_single_conversion();
+		  menu_single_conversion(PRESSURE);
 
 #endif
 
@@ -557,6 +579,7 @@ float temperature;
 
 		 /* Continously Read all enabled channels on ADC for 10 iterations (change to desire / add functionality for commanding) */
 
+		  // NOT YET CONFIGURED FOR TWO ICS
 		 do_continuous_conversion(DISPLAY_DATA_TABULAR);
 
 #endif
@@ -564,9 +587,9 @@ float temperature;
 	  }
 	  else{
 		  // read error register;
-		  read_error_register();
+		  read_error_register(PRESSURE);
 		  // check status of chip
-		  read_status_register();
+		  read_status_register(PRESSURE);
 
 //		  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 

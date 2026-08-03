@@ -84,13 +84,25 @@ POSSIBILITY OF SUCH DAMAGE.
 static struct ad7124_st_reg ad7124_register_map[AD7124_REG_NO];
 
 // Pointer to the struct representing the AD7124 device // need to be able to utilize two ad7124 devices.
-static struct ad7124_dev * pAd7124_dev = NULL;
+
+static struct ad7124_dev * pAd7124_dev = NULL; // p for pressure
+
+// --------------
+
+static struct ad7124_dev * vAd7124_dev = NULL; // v for voltage
+
+
+
+struct ad7124_dev * adc_dev = NULL;
+
+
+
+uint32_t status;
 
 // Last Sampled values for All ADC channels
 static uint32_t channel_samples[AD7124_CHANNEL_COUNT] = {0};
 // How many times a given channel is sampled in total for one sample run
 static uint32_t channel_samples_count[AD7124_CHANNEL_COUNT] = {0};
-
 
 // MAY USE THESE WHEN INTEGRATING DRIVER FUNCTIONS INTO MAIN.C
 
@@ -103,7 +115,7 @@ static uint32_t channel_samples_count[AD7124_CHANNEL_COUNT] = {0};
  *  		   the device.  A call to init the SPI port is made, but may not
  *  		   actually do very much, depending on the platform
  */
-int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs)
+int32_t ad7124_app_initialize(uint8_t configID, AD7124_CHIP chip)
 
 // added param for cs -> CS = 0 = AD7124 POWER      |
 				//       CS = 1 = AD7124 PRESSURE   | for measuring
@@ -128,22 +140,56 @@ int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs)
 			return(FAILURE);
 	}
 
-	// Used to create the ad7124 device
-    struct	ad7124_init_param sAd7124_init = // ensure that when you are setting modfe
-  	{
-  		// spi_init_param type
-  		{
-  			2500000, 		// Max SPI Speed
-  			cs,				// Chip Select
-			SPI_MODE_3,		// CPOL = 1, CPHA =1
-			NULL
-  		},
-  		ad7124_register_map,
 
-  		10000				// Retry count for polling
-  	};
 
-  return(ad7124_setup(&pAd7124_dev, sAd7124_init));
+
+	if(chip==PRESSURE){
+
+		// Used to create the ad7124 device (pressure)
+	    struct	ad7124_init_param sAd7124_init = // ensure that when you are setting modfe
+	  	{
+	  		// spi_init_param type
+	  		{
+	  			2500000, 		// Max SPI Speed
+	  			chip,				// Chip Select
+				SPI_MODE_3,		// CPOL = 1, CPHA =1
+				NULL
+	  		},
+	  		ad7124_register_map,
+
+	  		10000				// Retry count for polling
+	  	};
+
+	    return(ad7124_setup(&pAd7124_dev, sAd7124_init));
+
+	}
+
+	else if(chip == VOLTAGE){
+
+		// Used to create the ad7124 device (voltage)
+	    struct	ad7124_init_param svAd7124_init = // ensure that when you are setting modfe
+	  	{
+	  		// spi_init_param type
+	  		{
+	  			2500000, 		// Max SPI Speed
+	  			chip,				// Chip Select
+				SPI_MODE_3,		// CPOL = 1, CPHA =1
+				NULL
+
+	  		},
+	  		ad7124_register_map,
+
+	  		10000				// Retry count for polling
+	  	};
+
+
+	    return(ad7124_setup(&vAd7124_dev, svAd7124_init));
+
+
+	}
+
+	return -20;
+
 }
 
 
@@ -178,9 +224,22 @@ int32_t ad7124_app_initialize(uint8_t configID, uint8_t cs)
  *
  * @details
  */
-void read_status_register(void)
+void read_status_register(AD7124_CHIP chip)
 {
-	if (ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_Status]) < 0) {
+
+	// I wonder if writing to the same arrays on two different devs is going to mess things up?
+
+
+	if(chip==PRESSURE){
+		status = ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_Status]);
+
+	}
+	else{
+		status = ad7124_read_register(vAd7124_dev, &ad7124_register_map[AD7124_Status]);
+
+	}
+
+	if (status < 0) {
 	   printf("\r\nError Encountered reading Status register\r\n");
 	} else {
 	    uint32_t status_value = (uint32_t)ad7124_register_map[AD7124_Status].value;
@@ -192,8 +251,19 @@ static uint32_t error_value = 0;
 
 
 
-void read_error_register(){
-	if (ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_Error])==0){
+void read_error_register(AD7124_CHIP chip){
+
+
+    if(chip==PRESSURE){
+    	adc_dev = pAd7124_dev;
+	}
+	else{
+		adc_dev = vAd7124_dev;
+	}
+
+
+
+	if (ad7124_read_register(adc_dev, &ad7124_register_map[AD7124_Error])==0){
 		error_value = (uint32_t)ad7124_register_map[AD7124_Error].value;
 		if((error_value & AD7124_ERR_REG_ROM_CRC_ERR) != 0){
 			printf("\r\n ROM Contents changed: CRC calculation fail: ROM error. \n");
@@ -266,8 +336,17 @@ void read_error_register(){
  * @param showOnlyEnabledChannels  only channels that are enabled are displayed
  *
  */
-static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console_mode)
+static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console_mode, AD7124_CHIP chip)
 {
+
+	if(chip==PRESSURE){
+	    adc_dev = pAd7124_dev;
+	}
+	else{
+		adc_dev = vAd7124_dev;
+	}
+
+
 	switch(console_mode) {
 		case DISPLAY_DATA_TABULAR:
 		{
@@ -277,7 +356,7 @@ static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console
 				if ((showOnlyEnabledChannels == false) || (ad7124_register_map[AD7124_Channel_0 + i].value & AD7124_CH_MAP_REG_CH_ENABLE) ) {
 				   printf("\t%-2d\t%-10ld\t%ld\t\t% .6f\r\n",
 							i, channel_samples[i], channel_samples_count[i],
-							ad7124_convert_sample_to_voltage(pAd7124_dev, i, channel_samples[i]) );
+							ad7124_convert_sample_to_voltage(adc_dev, i, channel_samples[i]) );
 				}
 			}
 			break;
@@ -298,7 +377,7 @@ static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console
 					   printf(", ");
 				   }
 					printf("%.6f",
-							ad7124_convert_sample_to_voltage(pAd7124_dev, i, channel_samples[i]) );
+							ad7124_convert_sample_to_voltage(adc_dev, i, channel_samples[i]) );
 					channel_printed = true;
 				}
 			}
@@ -313,14 +392,25 @@ static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console
 }
 
 
-void display_channel_sample(uint8_t channel){
-
+void display_channel_sample(uint8_t channel, AD7124_CHIP chip){
 	float value;
+
+	if(chip==PRESSURE){
+	    adc_dev = pAd7124_dev;
+	}
+	else{
+		adc_dev = vAd7124_dev;
+	}
+
+
+
 	// sample data into array
-	menu_single_conversion();
+	menu_single_conversion(chip);
+
+
 
 	// print channel
-	value = ad7124_convert_sample_to_voltage(pAd7124_dev, channel, channel_samples[channel]);
+	value = ad7124_convert_sample_to_voltage(adc_dev, channel, channel_samples[channel]);
 	printf("Channel %d: Voltage: %f ",channel, value);
 
 }
@@ -446,7 +536,7 @@ int32_t do_continuous_conversion(uint8_t display_mode)
 			printf("Channel Read was %d, which is not < AD7124_CHANNEL_COUNT\r\n", channel_read);
 		}
 
-		dislay_channel_samples(SHOW_ENABLED_CHANNELS, display_mode);
+		dislay_channel_samples(SHOW_ENABLED_CHANNELS, display_mode, PRESSURE);
 
 		HAL_Delay(1000); // One second delay see if it breaks
 
@@ -514,12 +604,24 @@ int32_t do_continuous_conversion(uint8_t display_mode)
  *             single conversion run again, until no channels are enabled.
  *             The original enable state of each channel is then restored.
  */
-int32_t menu_single_conversion(void)
+int32_t menu_single_conversion(AD7124_CHIP chip)
 {
 	int32_t    error_code;
 	uint16_t   channel_enable_mask = 0;
 	uint8_t    channel_count = 0;
 	int32_t    sample_data;
+
+
+
+
+    if(chip==PRESSURE){
+    	adc_dev = pAd7124_dev;
+
+	}
+	else{
+		adc_dev = vAd7124_dev;
+	}
+
 
 	// Need to store which channels are enabled in this config so it can be restored
 	for (uint8_t i = 0; i < AD7124_CHANNEL_COUNT; i++) {
@@ -545,7 +647,7 @@ int32_t menu_single_conversion(void)
     	// 1 = single conversion mode
         ad7124_register_map[AD7124_ADC_Control].value |= AD7124_ADC_CTRL_REG_MODE(1);
 
-    	if ( (error_code = ad7124_write_register(pAd7124_dev, ad7124_register_map[AD7124_ADC_Control]) ) < 0) {
+    	if ( (error_code = ad7124_write_register(adc_dev, ad7124_register_map[AD7124_ADC_Control]) ) < 0) {
     		printf("Error (%ld) setting AD7124 Single conversion mode.\r\n", error_code);
 //    		adi_press_any_key_to_continue();
     		continue;
@@ -556,12 +658,12 @@ int32_t menu_single_conversion(void)
          *  this also ensures the STATUS register value is up to date and contains the
          *  channel that was sampled as well. No need to read STATUS separately
          */
-    	if ( (error_code = ad7124_wait_for_conv_ready(pAd7124_dev, 10000)) < 0) {
+    	if ( (error_code = ad7124_wait_for_conv_ready(adc_dev, 10000)) < 0) {
     		printf("Error/Timeout waiting for conversion ready %ld\r\n", error_code);
     		continue;
     	}
 
-    	if ( (error_code = ad7124_read_data(pAd7124_dev, &sample_data)) < 0) {
+    	if ( (error_code = ad7124_read_data(adc_dev, &sample_data)) < 0) {
 			printf("Error reading ADC Data (%ld).\r\n", error_code);
 			continue;
 		}
@@ -576,7 +678,7 @@ int32_t menu_single_conversion(void)
 
 			/* also need to clear the channel enable bit so the next single conversion cycle will sample the next channel */
 			ad7124_register_map[AD7124_Channel_0 + channelRead].value &= ~AD7124_CH_MAP_REG_CH_ENABLE;
-			if ( (error_code = ad7124_write_register(pAd7124_dev, ad7124_register_map[AD7124_Channel_0 + channelRead]) ) < 0) {
+			if ( (error_code = ad7124_write_register(adc_dev, ad7124_register_map[AD7124_Channel_0 + channelRead]) ) < 0) {
 				printf("Error (%ld) Clearing channel %d Enable bit.\r\n", error_code, channelRead);
 //				adi_press_any_key_to_continue();
 				continue;
@@ -595,7 +697,7 @@ int32_t menu_single_conversion(void)
 	for (uint8_t i = 0; i < AD7124_CHANNEL_COUNT; i++) {
 		if (channel_enable_mask & (1 << i)) {
 			ad7124_register_map[AD7124_Channel_0 + i].value |= AD7124_CH_MAP_REG_CH_ENABLE;
-	    	if ( (error_code = ad7124_write_register(pAd7124_dev, ad7124_register_map[AD7124_Channel_0 + i]) ) < 0) {
+	    	if ( (error_code = ad7124_write_register(adc_dev, ad7124_register_map[AD7124_Channel_0 + i]) ) < 0) {
 	    		printf("Error (%ld) Setting channel %d Enable bit.\r\r\n", error_code, i);
 //	    		adi_press_any_key_to_continue();
 	    		return(MENU_CONTINUE);
@@ -604,7 +706,7 @@ int32_t menu_single_conversion(void)
 	}
 
 	printf("Single Conversion completed...\r\n\r\n");
-	dislay_channel_samples(SHOW_ENABLED_CHANNELS, DISPLAY_DATA_TABULAR);
+	dislay_channel_samples(SHOW_ENABLED_CHANNELS, DISPLAY_DATA_TABULAR, chip);
 
 //	adi_press_any_key_to_continue();
 	return(MENU_CONTINUE);
@@ -697,8 +799,20 @@ int32_t ad7124_reset_function(void)
 
 
 
-int32_t ad7124_read_device_id(){
-	  if (ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_ID]) < 0) {
+int32_t ad7124_read_device_id(AD7124_CHIP chip){
+
+
+	if(chip==PRESSURE){
+		status = ad7124_read_register(pAd7124_dev, &ad7124_register_map[AD7124_ID]);
+
+	}
+	else{
+		status = ad7124_read_register(vAd7124_dev, &ad7124_register_map[AD7124_ID]);
+
+	}
+
+
+	  if (status < 0) {
 	  	   printf("\r\nError Encountered reading ID register\r\n");
 	  }
 	  else {
