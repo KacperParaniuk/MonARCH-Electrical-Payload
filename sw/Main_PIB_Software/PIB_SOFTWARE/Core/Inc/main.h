@@ -150,6 +150,7 @@ void Error_Handler(void);
 /* USER CODE BEGIN Private defines */
 
 extern SPI_HandleTypeDef hspi2;
+extern SPI_HandleTypeDef hspi1;
 
 
 /* USER CODE END Private defines */
