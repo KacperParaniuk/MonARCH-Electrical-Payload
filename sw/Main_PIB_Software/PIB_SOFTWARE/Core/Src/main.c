@@ -51,8 +51,7 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 //#define MAX31856_T3
 //#define MAX31856_T4
 //#define MAX31856_T5
-//#define B2B_ARDUINO
-//#define VALVE_TEST
+
 //#define I2C_SCANNER
 //#define HEATER
 //#define PWM_VALVE_6
@@ -60,17 +59,11 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 
 
 
-// ----------------- HARDWARE TESTS -----------------------
+// ----------------- Sensor Includes -----------------------
 
-#ifdef AD7124
-
-// Sensor Includes
 
 #include "ad7124_console_app.h"
 #include "ad7124.h"
-
-
-#endif
 
 
 #ifdef MAX31856
@@ -227,10 +220,48 @@ int main(void)
   HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
 
 
-// External driver structures and buffers
-
+// ------------------ SET-UP SENSORS -------------------- \\
 
 // ADC7124 || PT Readings Init
+
+
+
+  /* Initialize the AD7124 application before the main loop */
+
+    // this setup will be for POWER
+    // added param for cs -> CS = 0 = AD7124 VOLTAGE      |
+    				//       CS = 1 = AD7124 PRESSURE   | for measuring
+
+    int32_t setupResult;
+    uint32_t device_id;
+
+
+// Setup pressure ADC
+
+    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,PRESSURE)) < 0) {
+  		// Handle error setting up AD7124 here
+  	  printf("Failed to init ad7124 pressure \n");
+  	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+    }
+    printf("Setup Pressure Result: %ld", setupResult);
+  //  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+
+
+
+
+// Setup Voltage ADC
+
+
+    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,VOLTAGE)) < 0) {
+  		// Handle error setting up AD7124 here
+  	  printf("Failed to init ad7124 voltage \n");
+  	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+
+    }
+
+    printf("Setup voltage Result: %ld", setupResult);
+
+
 
 
 
@@ -240,26 +271,6 @@ int main(void)
   // AMBER = ADC2214
   // RED + AMBER = FDC2214
   // Green = Everything Setup Correctly
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -497,50 +508,7 @@ float temperature;
 //
 //	  HAL_Delay(200);
 
-#ifdef B2B
 
-//	  HAL_UART_Transmit(&huart3,TX_Buffer,sizeof(TX_Buffer),1000); // "Hello World!" // UART Direct Test
-
-
-#endif
-
-
-#ifdef VALVE_TEST
-
-
-	  printf("Actuation of Valve 2 Starting... in 15 seconds \n");
-
-
-	  HAL_Delay(5000);
-
-
-	  HAL_Delay(5000);
-
-
-
-	  printf("Actuation of Valve 2 Starting... in 10 seconds \n");
-
-
-	  HAL_Delay(5000);
-
-	  printf("Actuation of Valve 2 Starting... in 5 seconds \n");
-
-	  HAL_Delay(5000);
-
-
-	  HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_SET);
-
-	  printf("Valve 2 Actuated \n");
-
-	  HAL_Delay(2000);
-
-	  HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_RESET);
-
-	  printf("Valve 2 Closed \n");
-
-
-
-#endif
 
 
 #ifdef HEATER
