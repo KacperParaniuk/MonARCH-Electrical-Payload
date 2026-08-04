@@ -5,6 +5,10 @@
 	(uuid "0f165a76-6fcb-46fc-ae2b-e858ac98c8aa")
 	(paper "A4")
 	(title_block
+		(title "Breakout Board")
+		(date "2026-08-04")
+		(rev "REV_2")
+		(company "EP + LASSI LAB")
 		(comment 4 "Kacper Paraniuk")
 	)
 	(lib_symbols
@@ -639,6 +643,192 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:Conn_Coaxial"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0.254 3.048 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_Coaxial"
+				(at 2.921 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_Coaxial_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.778 0)
+					(mid 0.222 -1.8079)
+					(end -1.778 -0.508)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.778 0.508)
+					(mid 0.2221 1.8084)
+					(end 1.778 0)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Conn_Coaxial_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "In"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "Ext"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:TestPoint"
 			(pin_numbers
 				(hide yes)
@@ -1232,20 +1422,8 @@
 		)
 	)
 	(rectangle
-		(start 15.24 60.96)
-		(end 87.63 105.664)
-		(stroke
-			(width 0)
-			(type dash)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "23f18a2b-6e61-4c76-95d8-fb80cfadd013")
-	)
-	(rectangle
-		(start 233.68 15.24)
-		(end 273.05 44.45)
+		(start 12.7 58.42)
+		(end 52.07 87.63)
 		(stroke
 			(width 0)
 			(type dash)
@@ -1256,8 +1434,8 @@
 		(uuid "566f3eb1-d95c-40cd-893e-42091a802401")
 	)
 	(rectangle
-		(start 15.24 15.24)
-		(end 87.63 59.944)
+		(start 12.7 12.7)
+		(end 99.06 57.404)
 		(stroke
 			(width 0)
 			(type dash)
@@ -1268,8 +1446,8 @@
 		(uuid "c51c22e4-a27a-43b1-abab-2640b496cf24")
 	)
 	(rectangle
-		(start 88.9 15.24)
-		(end 161.29 59.944)
+		(start 100.33 12.7)
+		(end 201.93 57.404)
 		(stroke
 			(width 0)
 			(type dash)
@@ -1280,8 +1458,8 @@
 		(uuid "f9a22466-62f9-42f4-a38a-7bec39a44fd3")
 	)
 	(rectangle
-		(start 162.56 15.24)
-		(end 232.41 59.944)
+		(start 203.2 12.7)
+		(end 284.48 57.404)
 		(stroke
 			(width 0)
 			(type dash)
@@ -1291,22 +1469,9 @@
 		)
 		(uuid "fe19f53f-5451-4601-8b6b-b1fc29110e14")
 	)
-	(text "Breakout Board Connection"
-		(exclude_from_sim no)
-		(at 15.494 64.77 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "98051404-d8fc-4923-a4d3-91246496cf2d")
-	)
 	(text "Mounting Holes\n"
 		(exclude_from_sim no)
-		(at 234.442 18.288 0)
+		(at 13.462 61.468 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1319,7 +1484,7 @@
 	)
 	(text "PIB Connection"
 		(exclude_from_sim no)
-		(at 163.322 19.558 0)
+		(at 203.962 17.018 0)
 		(effects
 			(font
 				(size 2 2)
@@ -1332,7 +1497,7 @@
 	)
 	(text "Feed System Accumulator #1/#2 Connection"
 		(exclude_from_sim no)
-		(at 16.256 19.05 0)
+		(at 13.716 16.51 0)
 		(effects
 			(font
 				(size 2 2)
@@ -1345,7 +1510,7 @@
 	)
 	(text "Feed System Accumulator #3/#4 Connection"
 		(exclude_from_sim no)
-		(at 89.916 19.05 0)
+		(at 101.346 16.51 0)
 		(effects
 			(font
 				(size 2 2)
@@ -1357,44 +1522,38 @@
 		(uuid "ff8447c4-b398-4437-9d9e-9f292018e129")
 	)
 	(junction
-		(at 31.75 87.63)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "39a5caed-d9dc-418e-8698-05f5ca5ecfad")
-	)
-	(junction
-		(at 182.88 36.83)
+		(at 232.41 34.29)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3ec7f29e-8073-40f1-91e6-0be33aede591")
 	)
 	(junction
-		(at 180.34 39.37)
+		(at 229.87 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5edfe3a3-5790-432d-8ed6-c995fd1006ee")
 	)
 	(junction
-		(at 186.69 36.83)
+		(at 236.22 34.29)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8e24f7d0-8878-4b59-be2f-36543a12d713")
 	)
 	(junction
-		(at 198.12 41.91)
+		(at 247.65 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8ef04750-db6b-480c-a558-15e472ab447b")
 	)
 	(junction
-		(at 198.12 34.29)
+		(at 247.65 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cb9ed160-b0a2-4141-85b6-bc0134fe5208")
 	)
 	(wire
 		(pts
-			(xy 182.88 35.56) (xy 182.88 36.83)
+			(xy 232.41 33.02) (xy 232.41 34.29)
 		)
 		(stroke
 			(width 0)
@@ -1404,17 +1563,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 82.55) (xy 52.07 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "035701a2-69a5-4d2e-b4a1-dd27e3e7e273")
-	)
-	(wire
-		(pts
-			(xy 186.69 35.56) (xy 186.69 36.83)
+			(xy 236.22 33.02) (xy 236.22 34.29)
 		)
 		(stroke
 			(width 0)
@@ -1424,7 +1573,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 39.37) (xy 180.34 39.37)
+			(xy 227.33 36.83) (xy 229.87 36.83)
 		)
 		(stroke
 			(width 0)
@@ -1434,17 +1583,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 87.63) (xy 52.07 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1511a664-46df-4a2e-8e42-e63cbc82290d")
-	)
-	(wire
-		(pts
-			(xy 198.12 33.02) (xy 198.12 34.29)
+			(xy 247.65 30.48) (xy 247.65 31.75)
 		)
 		(stroke
 			(width 0)
@@ -1454,7 +1593,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 40.64) (xy 180.34 39.37)
+			(xy 229.87 38.1) (xy 229.87 36.83)
 		)
 		(stroke
 			(width 0)
@@ -1464,47 +1603,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 85.09) (xy 52.07 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "416d8043-69f3-4145-afdc-805f6e1c42d7")
-	)
-	(wire
-		(pts
-			(xy 39.37 40.64) (xy 44.45 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44313180-3343-47ce-a885-3f31972e9e15")
-	)
-	(wire
-		(pts
-			(xy 39.37 33.02) (xy 44.45 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "54326a2c-e3f3-4a4c-8a44-813e3d589aaa")
-	)
-	(wire
-		(pts
-			(xy 39.37 38.1) (xy 44.45 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "550c97ff-fbe4-4218-9b5f-c4ab5492a7d7")
-	)
-	(wire
-		(pts
-			(xy 198.12 34.29) (xy 199.39 34.29)
+			(xy 247.65 31.75) (xy 248.92 31.75)
 		)
 		(stroke
 			(width 0)
@@ -1514,7 +1613,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 36.83) (xy 186.69 36.83)
+			(xy 232.41 34.29) (xy 236.22 34.29)
 		)
 		(stroke
 			(width 0)
@@ -1524,7 +1623,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 34.29) (xy 198.12 34.29)
+			(xy 245.11 31.75) (xy 247.65 31.75)
 		)
 		(stroke
 			(width 0)
@@ -1534,7 +1633,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 36.83) (xy 182.88 36.83)
+			(xy 227.33 34.29) (xy 232.41 34.29)
 		)
 		(stroke
 			(width 0)
@@ -1544,17 +1643,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 35.56) (xy 44.45 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8be0c057-a6cf-4086-bd0e-d5250dd23af5")
-	)
-	(wire
-		(pts
-			(xy 196.85 41.91) (xy 198.12 41.91)
+			(xy 246.38 39.37) (xy 247.65 39.37)
 		)
 		(stroke
 			(width 0)
@@ -1564,27 +1653,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 90.17) (xy 31.75 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b04ff14c-9157-4532-bb96-8aad877c4d13")
-	)
-	(wire
-		(pts
-			(xy 45.72 80.01) (xy 52.07 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c4510d9e-bebc-492d-a5ac-b93c1527444f")
-	)
-	(wire
-		(pts
-			(xy 198.12 41.91) (xy 199.39 41.91)
+			(xy 247.65 39.37) (xy 248.92 39.37)
 		)
 		(stroke
 			(width 0)
@@ -1594,7 +1663,7 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 36.83) (xy 199.39 36.83)
+			(xy 236.22 34.29) (xy 248.92 34.29)
 		)
 		(stroke
 			(width 0)
@@ -1604,7 +1673,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 39.37) (xy 199.39 39.37)
+			(xy 229.87 36.83) (xy 248.92 36.83)
 		)
 		(stroke
 			(width 0)
@@ -1614,7 +1683,7 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 43.18) (xy 198.12 41.91)
+			(xy 247.65 40.64) (xy 247.65 39.37)
 		)
 		(stroke
 			(width 0)
@@ -1622,31 +1691,20 @@
 		)
 		(uuid "e4cdf821-4276-4015-beba-49450b7632c0")
 	)
-	(hierarchical_label "Cap2-"
+	(hierarchical_label "Cap3-"
 		(shape bidirectional)
-		(at 116.84 34.29 180)
+		(at 173.99 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "326aafb9-3a24-49bf-a28f-3a62cace09df")
-	)
-	(hierarchical_label "Cap2+"
-		(shape bidirectional)
-		(at 116.84 31.75 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "42da2b87-64f1-4035-8920-597a10171fef")
+		(uuid "3bf6e519-36e3-4a57-b959-d30b3c7a9b6d")
 	)
 	(hierarchical_label "I2C4_SDA"
 		(shape bidirectional)
-		(at 196.85 41.91 180)
+		(at 246.38 39.37 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1655,42 +1713,53 @@
 		)
 		(uuid "60638f37-dba7-4e09-8758-c6dccca7baba")
 	)
-	(hierarchical_label "Cap1+"
+	(hierarchical_label "Cap3+"
 		(shape bidirectional)
-		(at 39.37 38.1 180)
+		(at 153.67 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "6cf5ebb9-be54-457f-9759-5374f21145b7")
+		(uuid "606554fb-f512-48d3-a294-22d547e44080")
 	)
-	(hierarchical_label "I2C4_SCL"
+	(hierarchical_label "Cap2-"
 		(shape bidirectional)
-		(at 45.72 80.01 180)
+		(at 135.89 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "8df564a0-dc44-4126-a0ae-e7c2233ee7bc")
+		(uuid "619bedd4-9a0c-4b1c-80a4-c8641e3cc6a1")
+	)
+	(hierarchical_label "Cap1-"
+		(shape bidirectional)
+		(at 81.28 31.75 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8421e64a-9d36-415d-ad83-0456ab81dca3")
 	)
 	(hierarchical_label "Cap0+"
 		(shape bidirectional)
-		(at 39.37 33.02 180)
+		(at 25.4 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "a1f03883-3f92-4c7d-84ff-d5f0a2baf803")
+		(uuid "957d1bbb-7077-4c8a-9f2a-5277398a8294")
 	)
 	(hierarchical_label "I2C4_SCL"
 		(shape bidirectional)
-		(at 177.8 39.37 180)
+		(at 227.33 36.83 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1699,64 +1768,42 @@
 		)
 		(uuid "b2024f84-a1d4-40e5-9b98-ac514b4ff76c")
 	)
-	(hierarchical_label "Cap3-"
+	(hierarchical_label "Cap1+"
 		(shape bidirectional)
-		(at 116.84 39.37 180)
+		(at 60.96 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "dd9319ad-7801-4673-b04b-a90c7ce6176f")
+		(uuid "b49bf2c9-4019-4454-815c-8a491d9cabe8")
+	)
+	(hierarchical_label "Cap2+"
+		(shape bidirectional)
+		(at 118.11 31.75 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c5ff1f80-bf56-450b-bf29-6e7802f09013")
 	)
 	(hierarchical_label "Cap0-"
 		(shape bidirectional)
-		(at 39.37 35.56 180)
+		(at 43.18 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "e8510d02-23e2-4668-9038-ddcdf3e16538")
-	)
-	(hierarchical_label "I2C4_SDA"
-		(shape bidirectional)
-		(at 31.75 82.55 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ec355972-2a08-407f-a2a4-6522cd6f8a58")
-	)
-	(hierarchical_label "Cap3+"
-		(shape bidirectional)
-		(at 116.84 36.83 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "fb44deaf-9a15-46b0-809e-89e1ed271155")
-	)
-	(hierarchical_label "Cap1-"
-		(shape bidirectional)
-		(at 39.37 40.64 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "fec0a91d-d025-4d37-b861-e64a32aab077")
+		(uuid "ea727ddb-2dbe-4c74-acf7-0260a21e0ed2")
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 186.69 35.56 0)
+		(at 236.22 33.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1766,7 +1813,7 @@
 		(dnp no)
 		(uuid "09c13526-8119-4f3a-b1fc-3910e97fcb8c")
 		(property "Reference" "TP2"
-			(at 187.96 29.464 0)
+			(at 237.49 26.924 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1777,7 +1824,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 196.342 29.21 0)
+			(at 245.872 26.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1789,7 +1836,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 191.77 35.56 0)
+			(at 241.3 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1800,7 +1847,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 191.77 35.56 0)
+			(at 241.3 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1811,7 +1858,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 186.69 35.56 0)
+			(at 236.22 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1835,7 +1882,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 180.34 40.64 180)
+		(at 229.87 38.1 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1845,7 +1892,7 @@
 		(dnp no)
 		(uuid "1169b594-aaf0-4af8-9bc6-7b6e6b9c80c1")
 		(property "Reference" "TP1"
-			(at 178.562 42.672 0)
+			(at 228.092 40.132 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1856,7 +1903,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 179.832 42.164 0)
+			(at 229.362 39.624 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1868,7 +1915,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 175.26 40.64 0)
+			(at 224.79 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1879,7 +1926,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 175.26 40.64 0)
+			(at 224.79 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1890,7 +1937,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 180.34 40.64 0)
+			(at 229.87 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1914,7 +1961,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 177.8 36.83 270)
+		(at 179.07 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1922,9 +1969,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "2dc431c6-fec9-4ed7-9874-ad54a1f1fe95")
-		(property "Reference" "#PWR09"
-			(at 171.45 36.83 0)
+		(fields_autoplaced yes)
+		(uuid "27e2b71b-fc72-40d1-97a3-23b0a4dc8fce")
+		(property "Reference" "#PWR028"
+			(at 179.07 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1935,18 +1983,17 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 173.736 36.83 90)
+			(at 179.07 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 177.8 36.83 0)
+			(at 179.07 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1957,7 +2004,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 177.8 36.83 0)
+			(at 179.07 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1968,7 +2015,166 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 177.8 36.83 0)
+			(at 179.07 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "37af9c5a-84a0-4617-90de-da33b070904b")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 140.97 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2cf1e18a-e5a4-43b4-9bde-878a9f991f74")
+		(property "Reference" "J12"
+			(at 139.7 25.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 134.874 27.432 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 140.97 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 140.97 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "24b15b45-8d54-4a29-94e9-6d9d7bfc1549")
+		)
+		(pin "1"
+			(uuid "82f49e17-7ebb-48cd-80d3-4dec685b2b06")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 227.33 34.29 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2dc431c6-fec9-4ed7-9874-ad54a1f1fe95")
+		(property "Reference" "#PWR09"
+			(at 220.98 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 223.266 34.29 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 227.33 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 227.33 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 227.33 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1991,8 +2197,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 44.45 85.09 270)
+		(lib_id "Connector:Conn_Coaxial")
+		(at 179.07 31.75 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2000,9 +2206,334 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "4937b235-8660-4e6d-ae1d-22eb2e9aa9c2")
-		(property "Reference" "#PWR014"
-			(at 38.1 85.09 0)
+		(uuid "2e9fe1ad-eeb8-4cd0-ab6c-6009e13f8b12")
+		(property "Reference" "J14"
+			(at 177.546 25.146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 172.212 27.178 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 179.07 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 179.07 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 179.07 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "8d853ab6-3b80-4169-9781-8dde7b9e1209")
+		)
+		(pin "1"
+			(uuid "abc4582a-3622-45cd-9e29-2a1626964bae")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 158.75 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "31d7d117-4005-4e82-a438-03736f860c2e")
+		(property "Reference" "J13"
+			(at 157.48 25.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 152.908 27.432 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 158.75 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 158.75 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 158.75 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4af9caf6-d15f-4188-a305-426d37ba43fc")
+		)
+		(pin "1"
+			(uuid "00f232c2-1d17-4d39-a34a-786b5b4af916")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 66.04 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4a885a3a-6c52-443e-b4f2-81640e175a49")
+		(property "Reference" "J8"
+			(at 64.77 25.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 60.198 27.432 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 66.04 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "14414a95-713f-457c-867a-ea02ce5d12c5")
+		)
+		(pin "1"
+			(uuid "5bbc8617-c330-4ec1-976a-9a29ee326d4a")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 48.26 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5488e0cf-faa5-4928-b837-131285f3fb9e")
+		(property "Reference" "J7"
+			(at 46.99 25.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 42.164 27.432 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 48.26 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 48.26 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "5fa3a244-db15-4507-aace-66acee0ed750")
+		)
+		(pin "1"
+			(uuid "811f947a-7a3c-40ab-aff9-2f716abc9b2f")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 48.26 36.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "58a19b48-ff55-40ac-b1b6-a8e4989d5549")
+		(property "Reference" "#PWR022"
+			(at 48.26 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2013,18 +2544,17 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 40.386 85.09 90)
+			(at 48.26 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 44.45 85.09 0)
+			(at 48.26 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2035,7 +2565,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 44.45 85.09 0)
+			(at 48.26 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2046,7 +2576,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 44.45 85.09 0)
+			(at 48.26 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2057,12 +2587,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "50b8fd22-b52a-494f-a2b9-ffceed88dd9c")
+			(uuid "62b1ae6e-1b67-4b7d-8f6e-6ea8ef2ad2c7")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR014")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -2070,7 +2600,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 237.49 36.83 0)
+		(at 16.51 80.01 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2081,7 +2611,7 @@
 		(fields_autoplaced yes)
 		(uuid "5d0ff674-f92e-4e27-96de-05bf880885c9")
 		(property "Reference" "H2"
-			(at 240.03 35.5599 0)
+			(at 19.05 78.7399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2092,7 +2622,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 240.03 38.0999 0)
+			(at 19.05 81.2799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2103,7 +2633,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 237.49 36.83 0)
+			(at 16.51 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2114,7 +2644,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 237.49 36.83 0)
+			(at 16.51 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2125,7 +2655,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 237.49 36.83 0)
+			(at 16.51 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2145,9 +2675,8 @@
 		)
 	)
 	(symbol
-		(lib_name "5037630491_3")
-		(lib_id "5037630491:5037630491")
-		(at 116.84 31.75 0)
+		(lib_id "power:GND")
+		(at 158.75 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2156,55 +2685,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "6e357042-8497-4bab-b63b-b064b1a7e108")
-		(property "Reference" "J2"
-			(at 130.81 34.2899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2200980471"
-			(at 130.81 36.8299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
-			(at 116.84 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/2200980471"
-			(at 116.84 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 116.84 31.75 0)
+		(uuid "7a7cef64-17d9-4a82-8209-289b376528e1")
+		(property "Reference" "#PWR027"
+			(at 158.75 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2214,22 +2697,56 @@
 				)
 			)
 		)
-		(pin "4"
-			(uuid "124a3ac4-9af3-4b1b-ad81-3d96a68b0a8a")
+		(property "Value" "GND"
+			(at 158.75 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
-		(pin "2"
-			(uuid "e6686569-f632-4fb3-b532-53ff3159f567")
+		(property "Footprint" ""
+			(at 158.75 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
-		(pin "3"
-			(uuid "a1c24b1c-731e-4f32-919b-28776d8e36e5")
+		(property "Datasheet" ""
+			(at 158.75 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 158.75 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(pin "1"
-			(uuid "77abf460-c8e7-4df2-b6d9-d58daf47e216")
+			(uuid "bbf8ffde-40df-4f30-883f-4f0d66fa45eb")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J2")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -2237,7 +2754,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 198.12 33.02 0)
+		(at 247.65 30.48 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2247,7 +2764,7 @@
 		(dnp no)
 		(uuid "84aa1003-0ba4-4d00-9bce-326c32661f13")
 		(property "Reference" "TP3"
-			(at 199.39 27.686 0)
+			(at 248.92 25.146 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2258,7 +2775,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 203.2 27.432 0)
+			(at 252.73 24.892 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2270,7 +2787,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 203.2 33.02 0)
+			(at 252.73 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2281,7 +2798,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.2 33.02 0)
+			(at 252.73 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2292,7 +2809,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 198.12 33.02 0)
+			(at 247.65 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2315,8 +2832,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 31.75 87.63 90)
+		(lib_id "power:GND")
+		(at 123.19 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2324,9 +2841,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "87307c2b-b8ec-473a-9e16-c8cedde05a32")
-		(property "Reference" "#PWR015"
-			(at 35.56 87.63 0)
+		(fields_autoplaced yes)
+		(uuid "8bb9f262-07eb-42e8-8ca4-63d5ccfcf195")
+		(property "Reference" "#PWR025"
+			(at 123.19 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2336,19 +2854,18 @@
 				)
 			)
 		)
-		(property "Value" "+3V3"
-			(at 28.448 87.63 90)
+		(property "Value" "GND"
+			(at 123.19 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 31.75 87.63 0)
+			(at 123.19 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2359,7 +2876,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 87.63 0)
+			(at 123.19 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2369,8 +2886,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 31.75 87.63 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 123.19 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2381,53 +2898,52 @@
 			)
 		)
 		(pin "1"
-			(uuid "173db818-25dd-4640-a3ee-891d71c471ff")
+			(uuid "8de2909f-de3b-45e0-a797-d38ffe5ebfc1")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR015")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 255.27 25.4 0)
+		(lib_id "power:GND")
+		(at 66.04 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9ecbdacd-3e1c-4f09-bf21-82cd76f3df28")
-		(property "Reference" "H3"
-			(at 257.81 24.1299 0)
+		(uuid "8c7f5008-7270-4b59-bf2d-1e2b8032bf8e")
+		(property "Reference" "#PWR023"
+			(at 66.04 43.18 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "MountingHole"
-			(at 257.81 26.6699 0)
+		(property "Value" "GND"
+			(at 66.04 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 255.27 25.4 0)
+		(property "Footprint" ""
+			(at 66.04 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2438,7 +2954,167 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 255.27 25.4 0)
+			(at 66.04 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 66.04 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bdb082a7-2644-4ba2-80f9-ac81f161614f")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 123.19 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8c87b79f-3aa6-4576-bdbd-89b318b8662b")
+		(property "Reference" "J11"
+			(at 121.412 25.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 117.094 27.432 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.19 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.19 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 123.19 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "cb22e03a-7f7b-4d72-aba0-ef6eb9078c79")
+		)
+		(pin "1"
+			(uuid "cb5de347-1064-4df1-8c31-cd5016c3df8b")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 34.29 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9ecbdacd-3e1c-4f09-bf21-82cd76f3df28")
+		(property "Reference" "H3"
+			(at 36.83 67.3099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 36.83 69.8499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
+			(at 34.29 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 34.29 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2449,7 +3125,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 255.27 25.4 0)
+			(at 34.29 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2470,7 +3146,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 198.12 43.18 180)
+		(at 247.65 40.64 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2481,7 +3157,7 @@
 		(fields_autoplaced yes)
 		(uuid "b33872bd-3874-4198-b877-88d346fde06d")
 		(property "Reference" "TP4"
-			(at 200.66 46.4819 0)
+			(at 250.19 43.9419 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2492,7 +3168,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 195.58 45.2121 0)
+			(at 245.11 42.6721 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2504,7 +3180,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Keystone_5000-5004_Miniature"
-			(at 193.04 43.18 0)
+			(at 242.57 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2515,7 +3191,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 43.18 0)
+			(at 242.57 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2526,7 +3202,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 198.12 43.18 0)
+			(at 247.65 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2549,85 +3225,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 31.75 90.17 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b36ae8b2-de1f-4300-b9c4-913bdb28f0ab")
-		(property "Reference" "#FLG04"
-			(at 31.75 92.075 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 28.702 94.488 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 31.75 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 31.75 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c1e938f1-d9f7-43b8-a0ea-23e1d83b20db")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#FLG04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3V3")
-		(at 195.58 34.29 90)
+		(at 245.11 31.75 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2637,7 +3236,7 @@
 		(dnp no)
 		(uuid "b6324083-999b-404f-a574-46142b32c04c")
 		(property "Reference" "#PWR010"
-			(at 199.39 34.29 0)
+			(at 248.92 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2648,7 +3247,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 192.278 34.29 90)
+			(at 241.808 31.75 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2659,7 +3258,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 195.58 34.29 0)
+			(at 245.11 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2670,7 +3269,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 195.58 34.29 0)
+			(at 245.11 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2681,7 +3280,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 195.58 34.29 0)
+			(at 245.11 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2705,7 +3304,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 182.88 35.56 0)
+		(at 232.41 33.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2715,7 +3314,7 @@
 		(dnp no)
 		(uuid "b9f27ec2-c6a3-4aeb-ad24-e86e860fa515")
 		(property "Reference" "#FLG03"
-			(at 182.88 33.655 0)
+			(at 232.41 31.115 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2726,7 +3325,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 178.816 32.004 0)
+			(at 228.346 29.464 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2736,7 +3335,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 182.88 35.56 0)
+			(at 232.41 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2747,7 +3346,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 182.88 35.56 0)
+			(at 232.41 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2758,7 +3357,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 182.88 35.56 0)
+			(at 232.41 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2781,41 +3380,40 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 255.27 36.83 0)
+		(lib_id "power:GND")
+		(at 86.36 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c41a3626-2831-4e3e-ba45-30123a6e4d03")
-		(property "Reference" "H4"
-			(at 257.81 35.5599 0)
+		(uuid "bf59dd86-8b50-4a1f-911c-5d3647ea378b")
+		(property "Reference" "#PWR024"
+			(at 86.36 43.18 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "MountingHole"
-			(at 257.81 38.0999 0)
+		(property "Value" "GND"
+			(at 86.36 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 255.27 36.83 0)
+		(property "Footprint" ""
+			(at 86.36 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2826,7 +3424,86 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 255.27 36.83 0)
+			(at 86.36 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 86.36 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9e4e69b4-dc9a-4be0-8cf7-bccaf9230908")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 34.29 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c41a3626-2831-4e3e-ba45-30123a6e4d03")
+		(property "Reference" "H4"
+			(at 36.83 78.7399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 36.83 81.2799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
+			(at 34.29 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 34.29 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2837,7 +3514,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 255.27 36.83 0)
+			(at 34.29 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2857,9 +3534,8 @@
 		)
 	)
 	(symbol
-		(lib_name "5037630491_3")
-		(lib_id "5037630491:5037630491")
-		(at 44.45 33.02 0)
+		(lib_id "power:GND")
+		(at 30.48 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2868,55 +3544,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c431d995-64b3-4cc9-92df-3c10ac6c5cd1")
-		(property "Reference" "J1"
-			(at 58.42 35.5599 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2200980471"
-			(at 58.42 38.0999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
-			(at 44.45 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/2200980471"
-			(at 44.45 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 44.45 33.02 0)
+		(uuid "cd4aa64e-a899-47e2-bb49-604ef1a156d8")
+		(property "Reference" "#PWR021"
+			(at 30.48 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2926,89 +3556,8 @@
 				)
 			)
 		)
-		(pin "4"
-			(uuid "761f2fe5-f8f5-4e19-8852-0f11c6aeb032")
-		)
-		(pin "2"
-			(uuid "39c213d0-b63e-4a80-bbe5-abd9f25276ca")
-		)
-		(pin "3"
-			(uuid "d448687b-050b-479d-b633-8e6723a51802")
-		)
-		(pin "1"
-			(uuid "b702d484-1d1e-4985-9db4-a62fe52bdb92")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "5037630491_3")
-		(lib_id "5037630491:5037630491")
-		(at 52.07 80.01 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d02a2eb6-2634-45c2-bec0-a08ac5a87055")
-		(property "Reference" "J4"
-			(at 66.04 82.5499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2200980471"
-			(at 66.04 85.0899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
-			(at 52.07 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/2200980471"
-			(at 52.07 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 52.07 80.01 0)
-			(hide yes)
+		(property "Value" "GND"
+			(at 30.48 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3017,63 +3566,8 @@
 				)
 			)
 		)
-		(pin "4"
-			(uuid "6d6c86ab-f5a8-41a1-a557-73130ff81f1c")
-		)
-		(pin "2"
-			(uuid "86c1f893-f242-498f-ad91-364686fd9a74")
-		)
-		(pin "3"
-			(uuid "ce68e710-b259-4fb1-81ee-dbc53c4ee6c8")
-		)
-		(pin "1"
-			(uuid "bcade301-8e27-470c-b45e-148e9b408a00")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 237.49 25.4 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e51eb49b-89b4-4f67-84df-553365f81e40")
-		(property "Reference" "H1"
-			(at 240.03 24.1299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole"
-			(at 240.03 26.6699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 237.49 25.4 0)
+		(property "Footprint" ""
+			(at 30.48 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3084,7 +3578,248 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 237.49 25.4 0)
+			(at 30.48 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 30.48 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a4a69708-1906-48d4-abba-69552c4f0b26")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 30.48 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d1ea7917-fd5e-44bc-91da-196ae46664a7")
+		(property "Reference" "J5"
+			(at 28.702 25.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 24.384 27.432 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 30.48 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 30.48 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "e896c691-7c46-41c8-84df-f0250e706197")
+		)
+		(pin "1"
+			(uuid "b698cc91-f28b-451e-97d2-c4537d3ba483")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 86.36 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d88f502b-012a-4147-9ead-d94bf0f84e66")
+		(property "Reference" "J9"
+			(at 84.836 25.146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 79.502 27.178 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 86.36 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 86.36 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "71cfc7e6-699a-43ea-a567-c2fd7a3aaf8a")
+		)
+		(pin "1"
+			(uuid "db3eeb43-85d0-43a9-b6ad-5a4ec5de2147")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 16.51 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e51eb49b-89b4-4f67-84df-553365f81e40")
+		(property "Reference" "H1"
+			(at 19.05 67.3099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 19.05 69.8499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
+			(at 16.51 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 16.51 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3095,7 +3830,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 237.49 25.4 0)
+			(at 16.51 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3117,7 +3852,7 @@
 	(symbol
 		(lib_name "5037630491_3")
 		(lib_id "5037630491:5037630491")
-		(at 199.39 34.29 0)
+		(at 248.92 31.75 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3128,7 +3863,7 @@
 		(fields_autoplaced yes)
 		(uuid "e9093e41-710d-45bb-8ae4-0e3b22f9f04c")
 		(property "Reference" "J3"
-			(at 213.36 36.8299 0)
+			(at 262.89 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3139,7 +3874,7 @@
 			)
 		)
 		(property "Value" "2200980471"
-			(at 213.36 39.3699 0)
+			(at 262.89 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3150,7 +3885,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980471_1x04_P1.25mm_Horizontal"
-			(at 199.39 34.29 0)
+			(at 248.92 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3162,7 +3897,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/2200980471"
-			(at 199.39 34.29 0)
+			(at 248.92 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3174,7 +3909,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 199.39 34.29 0)
+			(at 248.92 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3200,6 +3935,84 @@
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
 					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 140.97 36.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe3555c4-abf9-4fb9-8922-e2a7481acb43")
+		(property "Reference" "#PWR026"
+			(at 140.97 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 140.97 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 140.97 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 140.97 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "88293cf0-414e-4ed3-8eeb-63b445a7f165")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
