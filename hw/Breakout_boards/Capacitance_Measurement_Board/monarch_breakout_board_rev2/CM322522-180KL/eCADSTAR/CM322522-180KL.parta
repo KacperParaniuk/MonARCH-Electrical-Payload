@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_961442"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2026-04-20-11:05:21)
+    (utime 2026-04-20-12:44:23)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "CM322522-180KL")
+)
+
+
+(pinAssign "ECS_961442"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2026-04-20-11:05:21)
+    (utime 2026-04-20-12:44:23)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_961442")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "CM322522-180KL")
+)
+
+
+(part "CM322522-180KL"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2026-04-20-11:05:21)
+    (utime 2026-04-20-12:44:23)
+    (packageRef "CM322522-180KL")
+    (pinAssignRef "ECS_961442")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "L")
+    (property "description" "Power Inductors - SMD 18uH 10% Wirewound")
+    (property "Mouser_Part_Number" "652-CM322522-180KL")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Bourns/CM322522-180KL?qs=jraqILX6wiSvRdOCrzjQ4g%3D%3D")
+    (property "Manufacturer_Name" "Bourns")
+    (property "Manufacturer_Part_Number" "CM322522-180KL")
+    (property "Datasheet_Link" "https://www.bourns.com/docs/Product-Datasheets/cm322522.pdf")
+    (property "compAreaTopHeight" 2.4)
+)
+
+

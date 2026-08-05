@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "RF1-01A-D-00-75-M"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2020-12-05-16:33:40)
+    (mountForm default
+        (footprintRef "RF101AD0075M")
+        (spec "System")
+    )
+)

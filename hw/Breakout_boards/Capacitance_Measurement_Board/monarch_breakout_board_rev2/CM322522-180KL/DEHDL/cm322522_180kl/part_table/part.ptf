@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'CM322522_180KL'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Bourns", "CM322522-180KL" (!) = "", "INDM3225X240N", "Inductor Moulded", "652-CM322522-180KL", "https://www.mouser.co.uk/ProductDetail/Bourns/CM322522-180KL?qs=jraqILX6wiSvRdOCrzjQ4g%3D%3D", "Power Inductors - SMD 18uH 10% Wirewound", "https://www.bourns.com/docs/Product-Datasheets/cm322522.pdf", "2.4 mm"
+END_PART
+
+END.

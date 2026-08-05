@@ -1,0 +1,16 @@
+.CM322522-180KL :1 ;Power Inductors - SMD 18uH 10% Wirewound
+INDM3225X240N
+*STM L
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN CM322522-180KL
+~!Mouser Part Number (652-CM322522-180KL)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Bourns/CM322522-180KL?qs=jraqILX6wiSvRdOCrzjQ4g%3D%3D)
+~!Manufacturer_Name (Bourns)
+~!Manufacturer_Part_Number (CM322522-180KL)
+~!Link Datasheet (https://www.bourns.com/docs/Product-Datasheets/cm322522.pdf)
+~!Height (2.4mm)
+~!3D_Model (CM322522-180KL)
+CM322522-180KL
+1.1!U 2.1!U 

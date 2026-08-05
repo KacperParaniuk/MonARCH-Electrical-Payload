@@ -1,0 +1,161 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "RF1-01A-D-00-75-M"
+   (description "BNC R/A LOW PROFILE INSUL PCB SK")
+   (family "CON")
+   (package "RF101AD0075M")
+   (attribute "Datasheet Link" "https://www.mouser.com/datasheet/3/6015/1/rf1_01a_d_00_75_m_data_sheet.pdf")
+   (attribute "Geometry.Height" "16.181mm")
+   (attribute "Manufacturer_Name" "Adam Tech")
+   (attribute "Manufacturer_Part_Number" "RF1-01A-D-00-75-M")
+   (attribute "Mouser Part Number" "")
+   (attribute "Mouser Price/Stock" "")
+   (attribute "Arrow Part Number" "")
+   (attribute "Arrow Price/Stock" "")
+   (gate
+    (symbol "RF1-01A-D-00-75-M")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+    (pin "MH1" MH1 PS)
+    (pin "MH2" MH2 PS)
+   )
+  )
+  (symbol "RF1-01A-D-00-75-M"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 700 100) (pt 700 -200) (pt 200 -200) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 900 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 900 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "RF101AD0075M"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -7.35 12.68)
+      (pt 7.35 12.68)
+      (pt 7.35 -2.12)
+      (pt -7.35 -2.12)
+      (pt -7.35 12.68))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -7.35 12.68)
+      (pt 7.35 12.68)
+      (pt 7.35 -2.12)
+      (pt -7.35 -2.12)
+      (pt -7.35 12.68))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -8.35 34.38)
+      (pt 8.35 34.38)
+      (pt 8.35 -3.12)
+      (pt -8.35 -3.12)
+      (pt -8.35 34.38))))
+   (layer TASM
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -5.5 12.68)
+      (pt -5.5 21.38)
+      (pt 5.5 21.38)
+      (pt 5.5 12.68))))
+   (layer TASM
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -4.8 21.38)
+      (pt -4.8 33.38)
+      (pt 4.8 33.38)
+      (pt 4.8 21.38))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -5.5 12.68)
+      (pt -5.5 21.38)
+      (pt 5.5 21.38)
+      (pt 5.5 12.68))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -4.8 21.38)
+      (pt -4.8 33.38)
+      (pt 4.8 33.38)
+      (pt 4.8 21.38))))
+   (leg 1 (pt 0.000 0.000) (padstack 0))
+   (leg 2 (pt -2.540 0.000) (padstack 0))
+   (leg MH1 (pt 5.080 5.080) (padstack 3))
+   (leg MH2 (pt -5.080 5.080) (padstack 4))
+   (padstack 0
+    (hole 0.89)
+    (plated true)
+    (pad (layer TCOP) (round 1.446))
+    (pad (layer INNER) (round 1.446))
+    (pad (layer BCOP) (round 1.446))
+   )
+   (padstack 3
+    (hole 2.01)
+    (plated true)
+    (pad (layer TCOP) (round 3.015))
+    (pad (layer INNER) (round 3.015))
+    (pad (layer BCOP) (round 3.015))
+   )
+   (padstack 4
+    (hole 2.01)
+    (plated true)
+    (pad (layer TCOP) (round 3.015))
+    (pad (layer INNER) (round 3.015))
+    (pad (layer BCOP) (round 3.015))
+   )
+   (model "RF1-01A-D-00-75-M.stp"
+    (euler -90 180 0)
+    (offset 0 33.380001068115234 10.25)
+   )
+  )
+ )
+)

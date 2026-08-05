@@ -1971,7 +1971,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "27e2b71b-fc72-40d1-97a3-23b0a4dc8fce")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR024"
 			(at 179.07 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -2031,7 +2031,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR028")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -2047,9 +2047,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "2cf1e18a-e5a4-43b4-9bde-878a9f991f74")
-		(property "Reference" "J12"
-			(at 139.7 25.654 0)
+		(uuid "2a00cd18-0a56-4484-8325-18a44cae7527")
+		(property "Reference" "J6"
+			(at 139.192 25.654 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2070,7 +2070,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
 			(at 140.97 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -2081,7 +2081,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
 			(at 140.97 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -2104,15 +2104,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "24b15b45-8d54-4a29-94e9-6d9d7bfc1549")
+			(uuid "461743a4-c5ce-4db2-9253-d10146cfd4fe")
 		)
 		(pin "1"
-			(uuid "82f49e17-7ebb-48cd-80d3-4dec685b2b06")
+			(uuid "703c067e-d6f5-4d36-82de-00d331a60148")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J12")
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -2129,7 +2129,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2dc431c6-fec9-4ed7-9874-ad54a1f1fe95")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR025"
 			(at 220.98 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -2190,331 +2190,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR09")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 179.07 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2e9fe1ad-eeb8-4cd0-ab6c-6009e13f8b12")
-		(property "Reference" "J14"
-			(at 177.546 25.146 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 172.212 27.178 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 179.07 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 179.07 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 179.07 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "8d853ab6-3b80-4169-9781-8dde7b9e1209")
-		)
-		(pin "1"
-			(uuid "abc4582a-3622-45cd-9e29-2a1626964bae")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 158.75 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "31d7d117-4005-4e82-a438-03736f860c2e")
-		(property "Reference" "J13"
-			(at 157.48 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 152.908 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 158.75 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 158.75 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 158.75 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "4af9caf6-d15f-4188-a305-426d37ba43fc")
-		)
-		(pin "1"
-			(uuid "00f232c2-1d17-4d39-a34a-786b5b4af916")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 66.04 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4a885a3a-6c52-443e-b4f2-81640e175a49")
-		(property "Reference" "J8"
-			(at 64.77 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 60.198 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 66.04 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 66.04 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "14414a95-713f-457c-867a-ea02ce5d12c5")
-		)
-		(pin "1"
-			(uuid "5bbc8617-c330-4ec1-976a-9a29ee326d4a")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 48.26 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5488e0cf-faa5-4928-b837-131285f3fb9e")
-		(property "Reference" "J7"
-			(at 46.99 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 42.164 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 48.26 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 48.26 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 48.26 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "5fa3a244-db15-4507-aace-66acee0ed750")
-		)
-		(pin "1"
-			(uuid "811f947a-7a3c-40ab-aff9-2f716abc9b2f")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J7")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -2532,7 +2208,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "58a19b48-ff55-40ac-b1b6-a8e4989d5549")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR018"
 			(at 48.26 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -2592,7 +2268,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR022")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -2686,7 +2362,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7a7cef64-17d9-4a82-8209-289b376528e1")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR023"
 			(at 158.75 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -2746,7 +2422,88 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR027")
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 158.75 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "82e3d526-7a3c-48ce-89e7-31a41e054c46")
+		(property "Reference" "J7"
+			(at 156.972 25.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 152.654 27.432 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
+			(at 158.75 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
+			(at 158.75 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 158.75 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "ad77095f-6126-4734-8e63-8ae412aa0c43")
+		)
+		(pin "1"
+			(uuid "d8361ce2-7faf-4699-8fd5-bfd8712c43a1")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -2843,7 +2600,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8bb9f262-07eb-42e8-8ca4-63d5ccfcf195")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR021"
 			(at 123.19 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -2903,7 +2660,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR025")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -2921,7 +2678,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8c7f5008-7270-4b59-bf2d-1e2b8032bf8e")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR019"
 			(at 66.04 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -2981,88 +2738,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR023")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 123.19 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8c87b79f-3aa6-4576-bdbd-89b318b8662b")
-		(property "Reference" "J11"
-			(at 121.412 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 117.094 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 123.19 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 123.19 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 123.19 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "cb22e03a-7f7b-4d72-aba0-ef6eb9078c79")
-		)
-		(pin "1"
-			(uuid "cb5de347-1064-4df1-8c31-cd5016c3df8b")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J11")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -3139,6 +2815,87 @@
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
 					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 48.26 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ad842b9e-d0f8-41b9-b31a-7502463dd128")
+		(property "Reference" "J2"
+			(at 46.482 25.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 42.164 27.432 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
+			(at 48.26 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
+			(at 48.26 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 48.26 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "71715268-b670-4667-9d64-1245a48823c5")
+		)
+		(pin "1"
+			(uuid "295f11b9-911d-4725-9176-735818d2c75c")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -3235,7 +2992,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b6324083-999b-404f-a574-46142b32c04c")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR026"
 			(at 248.92 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -3296,7 +3053,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR010")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -3391,7 +3148,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bf59dd86-8b50-4a1f-911c-5d3647ea378b")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR020"
 			(at 86.36 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -3451,7 +3208,88 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR024")
+					(reference "#PWR020")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 179.07 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bf8f6014-08d0-4e45-a8e9-3ad2ae73a806")
+		(property "Reference" "J8"
+			(at 177.292 25.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 172.974 27.432 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
+			(at 179.07 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
+			(at 179.07 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 179.07 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "8f8f082d-ff2e-4e5b-98e1-f80dfb81f8c4")
+		)
+		(pin "1"
+			(uuid "15522802-47fd-44be-86d4-33fb9deef608")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -3534,6 +3372,87 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 123.19 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c5c96720-3e7e-4354-a298-dc92d32041bc")
+		(property "Reference" "J5"
+			(at 121.412 25.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 117.094 27.432 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
+			(at 123.19 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
+			(at 123.19 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 123.19 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "42149731-9b35-4fae-971d-66b936c30c8f")
+		)
+		(pin "1"
+			(uuid "1a411ea9-191c-4b87-b620-f60b772567f0")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 30.48 36.83 0)
 		(unit 1)
@@ -3545,7 +3464,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cd4aa64e-a899-47e2-bb49-604ef1a156d8")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR017"
 			(at 30.48 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -3605,7 +3524,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR021")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -3622,7 +3541,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d1ea7917-fd5e-44bc-91da-196ae46664a7")
-		(property "Reference" "J5"
+		(property "Reference" "J1"
 			(at 28.702 25.654 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3644,7 +3563,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
 			(at 30.48 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -3655,7 +3574,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
 			(at 30.48 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -3686,7 +3605,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J5")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -3694,7 +3613,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_Coaxial")
-		(at 86.36 31.75 0)
+		(at 66.04 31.75 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3702,9 +3621,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "d88f502b-012a-4147-9ead-d94bf0f84e66")
-		(property "Reference" "J9"
-			(at 84.836 25.146 0)
+		(uuid "ddfe269f-f3bd-4fc8-9a16-6df0db8da763")
+		(property "Reference" "J3"
+			(at 64.262 25.654 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3715,7 +3634,7 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 79.502 27.178 0)
+			(at 59.944 27.432 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3725,8 +3644,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 86.36 31.75 0)
+		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
+			(at 66.04 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3736,8 +3655,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 86.36 31.75 0)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
+			(at 66.04 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3748,7 +3667,7 @@
 			)
 		)
 		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 86.36 31.75 0)
+			(at 66.04 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3759,15 +3678,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "71cfc7e6-699a-43ea-a567-c2fd7a3aaf8a")
+			(uuid "ad9d5138-5e19-454a-b7c6-d39b09adaaca")
 		)
 		(pin "1"
-			(uuid "db3eeb43-85d0-43a9-b6ad-5a4ec5de2147")
+			(uuid "a2dc1ace-a1af-482d-afc6-7a16da9ef1d8")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J9")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -3862,7 +3781,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e9093e41-710d-45bb-8ae4-0e3b22f9f04c")
-		(property "Reference" "J3"
+		(property "Reference" "J9"
 			(at 262.89 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3934,7 +3853,88 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J3")
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 86.36 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f9ec4da3-f166-4c39-abcb-5833c85cee8d")
+		(property "Reference" "J4"
+			(at 84.582 25.654 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 80.264 27.432 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
+			(at 86.36 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
+			(at 86.36 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 86.36 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "d2bdd6d2-0b74-4de0-a487-8a4297189306")
+		)
+		(pin "1"
+			(uuid "9ea2030b-f2b9-41f9-a9a8-90f94e72314d")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -3952,7 +3952,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fe3555c4-abf9-4fb9-8922-e2a7481acb43")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR022"
 			(at 140.97 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -4012,7 +4012,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR026")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)

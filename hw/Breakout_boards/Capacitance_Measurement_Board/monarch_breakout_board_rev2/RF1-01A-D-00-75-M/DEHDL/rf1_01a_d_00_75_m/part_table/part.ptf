@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'RF1_01A_D_00_75_M'
+CLASS = IO
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Adam Tech", "RF1-01A-D-00-75-M" (!) = "", "RF101AD0075M", "Other", "", "", "", "", "BNC R/A LOW PROFILE INSUL PCB SK", "https://www.mouser.com/datasheet/3/6015/1/rf1_01a_d_00_75_m_data_sheet.pdf", "16.181 mm"
+END_PART
+
+END.

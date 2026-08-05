@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CM322522-180KL
+D Power Inductors - SMD 18uH 10% Wirewound
+K
+F https://www.bourns.com/docs/Product-Datasheets/cm322522.pdf
+$ENDCMP
+#
+#End Doc Library

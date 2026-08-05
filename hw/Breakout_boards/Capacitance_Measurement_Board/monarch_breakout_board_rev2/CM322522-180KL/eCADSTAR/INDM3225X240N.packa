@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "CM322522-180KL"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2023-07-14-10:29:39)
+    (mountForm default
+        (footprintRef "INDM3225X240N")
+        (spec "System")
+    )
+)

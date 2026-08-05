@@ -167,184 +167,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:L"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "L"
-				(at -1.27 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "L"
-				(at 1.905 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Inductor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "inductor choke coil reactor magnetic"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Choke_* *Coil* Inductor_* L_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "L_0_1"
-				(arc
-					(start 0 2.54)
-					(mid 0.6323 1.905)
-					(end 0 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 1.27)
-					(mid 0.6323 0.635)
-					(end 0 0)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 0)
-					(mid 0.6323 -0.635)
-					(end 0 -1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -1.27)
-					(mid 0.6323 -1.905)
-					(end 0 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "L_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:LED"
 			(pin_numbers
 				(hide yes)
@@ -529,6 +351,208 @@
 					(at 3.81 0 180)
 					(length 2.54)
 					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:L_Iron"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "L"
+				(at -1.27 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "L_Iron"
+				(at 2.794 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Inductor with iron core"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "inductor choke coil reactor magnetic"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Choke_* *Coil* Inductor_* L_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "L_Iron_0_1"
+				(arc
+					(start 0 2.54)
+					(mid 0.6323 1.905)
+					(end 0 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 1.27)
+					(mid 0.6323 0.635)
+					(end 0 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0)
+					(mid 0.6323 -0.635)
+					(end 0 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -1.27)
+					(mid 0.6323 -1.905)
+					(end 0 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 2.54) (xy 1.016 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 -2.54) (xy 1.524 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "L_Iron_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1661,10 +1685,22 @@
 		(uuid "f2ab62db-91fc-43e0-9c0e-ca1bd398a201")
 	)
 	(junction
-		(at 40.64 81.28)
+		(at 38.1 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "040e2634-17ef-466f-92c7-2cbd9b9aa5cd")
+		(uuid "0445657b-25b3-43b2-8015-8e4e1115d30f")
+	)
+	(junction
+		(at 29.21 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "07a57299-3d95-4682-b86d-93caabd3311a")
+	)
+	(junction
+		(at 29.21 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0a3610cf-9337-4f5b-8a42-dcc32655f225")
 	)
 	(junction
 		(at 58.42 102.87)
@@ -1685,22 +1721,16 @@
 		(uuid "1590f536-b808-4e97-8e59-bbbdbec93277")
 	)
 	(junction
-		(at 31.75 102.87)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "16651e97-a9ec-4da0-ade6-0c5a8167c1f0")
-	)
-	(junction
-		(at 31.75 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "214448c9-dd0e-4e70-9862-f7f260c75702")
-	)
-	(junction
 		(at 185.42 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "23e13357-33e8-4d50-943e-5bce48db976c")
+	)
+	(junction
+		(at 29.21 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "28fca706-958d-4ae3-bda4-6b25de779ede")
 	)
 	(junction
 		(at 71.12 110.49)
@@ -1713,12 +1743,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4ad796ee-ce03-4492-9ddb-7610cb2cfb46")
-	)
-	(junction
-		(at 31.75 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "506d68bf-bfbb-4528-b1be-2c41f903098f")
 	)
 	(junction
 		(at 71.12 81.28)
@@ -1745,10 +1769,22 @@
 		(uuid "5986356b-d5f8-418a-8f92-d7aab7fc770f")
 	)
 	(junction
-		(at 40.64 102.87)
+		(at 29.21 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5ffd3631-7177-4cc3-95d8-74627ad685fb")
+		(uuid "59e452a8-e0b8-458b-af96-032ea72a7999")
+	)
+	(junction
+		(at 38.1 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5a223b62-5374-44f9-9792-5ce36dca202f")
+	)
+	(junction
+		(at 29.21 118.11)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "613a2696-49bf-448b-b854-b8f825c0c3af")
 	)
 	(junction
 		(at 68.58 53.34)
@@ -1757,16 +1793,22 @@
 		(uuid "64057b42-597c-468a-b4f8-ffc8ad6d7c74")
 	)
 	(junction
-		(at 40.64 96.52)
+		(at 38.1 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "71251136-d672-4415-b222-1e238f1005d3")
+		(uuid "69b13317-32e8-4904-917c-0071e69d2902")
 	)
 	(junction
-		(at 40.64 53.34)
+		(at 38.1 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "79d87bc1-0049-44f8-9a01-83c24511a4b1")
+		(uuid "74c0f17e-bc8f-4df8-84ab-47ae98872861")
+	)
+	(junction
+		(at 29.21 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7698398c-849b-4cef-8f33-692af0111ed9")
 	)
 	(junction
 		(at 124.46 41.91)
@@ -1785,12 +1827,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "964bd534-9c16-4af7-805d-2ae0f26309e6")
-	)
-	(junction
-		(at 40.64 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9de65f4d-4d58-42bb-a9b2-6a3193c3cba9")
 	)
 	(junction
 		(at 64.77 74.93)
@@ -1835,16 +1871,22 @@
 		(uuid "ba014fdf-225f-412c-917b-6f3fdf86012f")
 	)
 	(junction
+		(at 38.1 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bc7e3970-0299-450f-b8e7-6d664a75507b")
+	)
+	(junction
+		(at 38.1 118.11)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bf74ad13-c4cf-476f-be83-ea3e0902a0bf")
+	)
+	(junction
 		(at 71.12 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c40fdda5-87c1-47fd-b8f1-23d090429001")
-	)
-	(junction
-		(at 40.64 118.11)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c75f078a-d63e-4e95-9be4-953d085a65e9")
 	)
 	(junction
 		(at 68.58 45.72)
@@ -1853,10 +1895,10 @@
 		(uuid "c866f7da-0379-42f5-8077-7bfa6a355d59")
 	)
 	(junction
-		(at 40.64 74.93)
+		(at 29.21 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "cab30136-5b3a-45e5-a19e-9ac0ff761b6e")
+		(uuid "d2f0674a-f2aa-488c-856e-8d67a64e323c")
 	)
 	(junction
 		(at 58.42 81.28)
@@ -1877,22 +1919,16 @@
 		(uuid "d96fde4a-292c-46a4-ba9b-507d595cf7ad")
 	)
 	(junction
-		(at 31.75 53.34)
+		(at 29.21 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d9c1ffa3-2d6c-42ef-8576-1442ad536285")
+		(uuid "df6530ce-8bb5-4d58-8f71-6cc0126052ef")
 	)
 	(junction
-		(at 31.75 118.11)
+		(at 38.1 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e46c7758-db35-47ac-b968-a5f765e571dc")
-	)
-	(junction
-		(at 40.64 59.69)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e4dfc930-3f87-4f89-acad-48a92a626d57")
+		(uuid "e6f89d65-ae1a-457a-8d52-7dce67cc545b")
 	)
 	(junction
 		(at 71.12 102.87)
@@ -1901,28 +1937,16 @@
 		(uuid "ea0d4969-ba5c-4f12-b232-b5d78e9856c4")
 	)
 	(junction
-		(at 31.75 59.69)
+		(at 38.1 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "edd651d5-41de-426f-ae61-3843a9c128c8")
+		(uuid "ed170415-4601-4af8-b09b-378cc5d690b2")
 	)
 	(junction
 		(at 52.07 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f167a8b4-c05f-4e03-b04f-313a4ca1e5c4")
-	)
-	(junction
-		(at 31.75 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f20d5d86-52c0-4bb5-87e0-c29cf5599d07")
-	)
-	(junction
-		(at 31.75 96.52)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f4409dbd-bbc6-49c7-be2c-23e32fd0d2da")
 	)
 	(junction
 		(at 124.46 46.99)
@@ -1947,16 +1971,6 @@
 			(type default)
 		)
 		(uuid "00b0f623-a842-428e-a6ba-085d6a890842")
-	)
-	(wire
-		(pts
-			(xy 31.75 38.1) (xy 31.75 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "01a5575f-c2f9-49b6-ae81-3c052d2809a9")
 	)
 	(wire
 		(pts
@@ -1990,7 +2004,17 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 59.69) (xy 31.75 59.69)
+			(xy 38.1 74.93) (xy 52.07 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04e177c6-1242-4bc7-a0bb-a62a8ac136ed")
+	)
+	(wire
+		(pts
+			(xy 26.67 59.69) (xy 29.21 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2007,16 +2031,6 @@
 			(type default)
 		)
 		(uuid "0a7ba2fb-9648-4499-9137-6ae21457095b")
-	)
-	(wire
-		(pts
-			(xy 40.64 81.28) (xy 31.75 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0eb985ef-1169-422c-94ef-5d7744b08518")
 	)
 	(wire
 		(pts
@@ -2040,6 +2054,16 @@
 	)
 	(wire
 		(pts
+			(xy 29.21 102.87) (xy 29.21 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14caf9c9-856d-4f9e-8cd3-9c6a29f183d0")
+	)
+	(wire
+		(pts
 			(xy 81.28 77.47) (xy 106.68 77.47)
 		)
 		(stroke
@@ -2050,13 +2074,23 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 102.87) (xy 31.75 106.68)
+			(xy 38.1 102.87) (xy 38.1 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "18bcaa44-70ec-4c62-9d7e-c265acf7dfda")
+		(uuid "17113be4-7e76-495b-a6b8-c98a4f476ef7")
+	)
+	(wire
+		(pts
+			(xy 29.21 53.34) (xy 38.1 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1952fc28-b092-464a-935f-41a1bdd6c4c2")
 	)
 	(wire
 		(pts
@@ -2070,16 +2104,6 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 96.52) (xy 31.75 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "19fa9fde-659c-4a71-ba5c-f3d1835b1b19")
-	)
-	(wire
-		(pts
 			(xy 210.82 72.39) (xy 208.28 72.39)
 		)
 		(stroke
@@ -2090,43 +2114,23 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 81.28) (xy 31.75 81.28)
+			(xy 38.1 96.52) (xy 58.42 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2058515f-e6e1-4b8d-8fb6-0403a456dc48")
+		(uuid "2a4dde51-51d2-40eb-bd4d-88a22bd07dff")
 	)
 	(wire
 		(pts
-			(xy 40.64 53.34) (xy 31.75 53.34)
+			(xy 29.21 81.28) (xy 38.1 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "226db12f-bca8-474c-b6d8-596b3783d585")
-	)
-	(wire
-		(pts
-			(xy 40.64 38.1) (xy 55.88 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2471a898-b614-4afc-9f12-8e49012fb9e2")
-	)
-	(wire
-		(pts
-			(xy 40.64 96.52) (xy 31.75 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "25c40908-bd11-4e6e-a70d-1be30f34b0f6")
+		(uuid "2e0ca9b9-414b-4ca9-8739-fd43e269eec6")
 	)
 	(wire
 		(pts
@@ -2140,7 +2144,7 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 118.11) (xy 31.75 118.11)
+			(xy 26.67 118.11) (xy 29.21 118.11)
 		)
 		(stroke
 			(width 0)
@@ -2150,7 +2154,7 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 74.93) (xy 31.75 74.93)
+			(xy 26.67 74.93) (xy 29.21 74.93)
 		)
 		(stroke
 			(width 0)
@@ -2167,16 +2171,6 @@
 			(type default)
 		)
 		(uuid "36e6df69-76cf-47ce-b6dd-e9b7df1a6e42")
-	)
-	(wire
-		(pts
-			(xy 40.64 102.87) (xy 40.64 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3762291d-8751-40e1-8060-61727f936e1a")
 	)
 	(wire
 		(pts
@@ -2260,13 +2254,73 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 38.1) (xy 31.75 38.1)
+			(xy 26.67 38.1) (xy 29.21 38.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "4570e991-9fdb-43b0-97b1-489ff2c395c9")
+	)
+	(wire
+		(pts
+			(xy 38.1 59.69) (xy 52.07 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45b4f263-c2e7-4e19-b425-9eb357f198cf")
+	)
+	(wire
+		(pts
+			(xy 29.21 96.52) (xy 29.21 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4600549e-6879-4468-bffa-8b624ce15f4c")
+	)
+	(wire
+		(pts
+			(xy 29.21 118.11) (xy 38.1 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46135252-9ba0-48a4-8e8a-3c1702b2b9b1")
+	)
+	(wire
+		(pts
+			(xy 38.1 53.34) (xy 55.88 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4658cc87-3398-44d7-af29-272511dac487")
+	)
+	(wire
+		(pts
+			(xy 38.1 118.11) (xy 58.42 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47110b40-231d-4399-b7e9-909b4377faaa")
+	)
+	(wire
+		(pts
+			(xy 38.1 81.28) (xy 38.1 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47578df0-5c29-481d-b6d1-1752e7a67c18")
 	)
 	(wire
 		(pts
@@ -2300,16 +2354,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 118.11) (xy 40.64 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5267f427-9829-47a8-92c4-20bfe2d791d6")
-	)
-	(wire
-		(pts
 			(xy 58.42 102.87) (xy 71.12 102.87)
 		)
 		(stroke
@@ -2320,6 +2364,16 @@
 	)
 	(wire
 		(pts
+			(xy 29.21 96.52) (xy 38.1 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5552dbb4-dd35-4006-aadb-8680cdddf492")
+	)
+	(wire
+		(pts
 			(xy 147.32 68.58) (xy 148.59 68.58)
 		)
 		(stroke
@@ -2327,6 +2381,16 @@
 			(type default)
 		)
 		(uuid "56ef84db-8934-4b69-bf3a-06712b123c2f")
+	)
+	(wire
+		(pts
+			(xy 29.21 118.11) (xy 29.21 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ff52a9f-95bb-4502-83fd-4e62cf1ce87f")
 	)
 	(wire
 		(pts
@@ -2350,6 +2414,16 @@
 	)
 	(wire
 		(pts
+			(xy 38.1 38.1) (xy 38.1 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "688dbcd8-a809-43c4-8d41-e385d514dd44")
+	)
+	(wire
+		(pts
 			(xy 208.28 44.45) (xy 204.47 44.45)
 		)
 		(stroke
@@ -2357,26 +2431,6 @@
 			(type default)
 		)
 		(uuid "6a5f76f4-0ea3-4f45-a82f-c570cd4c6b9a")
-	)
-	(wire
-		(pts
-			(xy 31.75 118.11) (xy 31.75 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6bd24099-2030-4de0-ad77-4a852d586d6e")
-	)
-	(wire
-		(pts
-			(xy 40.64 102.87) (xy 58.42 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "704022d3-81e2-4dbf-a549-c31320d271ec")
 	)
 	(wire
 		(pts
@@ -2400,13 +2454,13 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 53.34) (xy 31.75 53.34)
+			(xy 29.21 38.1) (xy 38.1 38.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7576cd10-7c9e-47f9-a3d2-59e3d6b3e613")
+		(uuid "7408773d-bd2d-4cc5-bfe4-fa515b2c1edf")
 	)
 	(wire
 		(pts
@@ -2420,13 +2474,23 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 74.93) (xy 31.75 74.93)
+			(xy 38.1 92.71) (xy 38.1 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7cb79887-2475-4b10-9ff5-1c9daad56f84")
+		(uuid "8049dc02-b353-4cd6-96f6-6f64929707d7")
+	)
+	(wire
+		(pts
+			(xy 38.1 49.53) (xy 38.1 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80773cca-b995-40b5-8064-755099762224")
 	)
 	(wire
 		(pts
@@ -2480,6 +2544,16 @@
 	)
 	(wire
 		(pts
+			(xy 29.21 59.69) (xy 38.1 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8fa50119-420a-46cf-82b8-0d225e3d57b7")
+	)
+	(wire
+		(pts
 			(xy 58.42 81.28) (xy 71.12 81.28)
 		)
 		(stroke
@@ -2487,26 +2561,6 @@
 			(type default)
 		)
 		(uuid "921a8aad-70bf-4078-a426-9c7e6c07136b")
-	)
-	(wire
-		(pts
-			(xy 40.64 38.1) (xy 31.75 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "950492eb-941e-4c05-a5d2-6f32ff4d263b")
-	)
-	(wire
-		(pts
-			(xy 40.64 53.34) (xy 40.64 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9541bad2-5bbc-4d7d-b800-30ca8ed9fd52")
 	)
 	(wire
 		(pts
@@ -2540,16 +2594,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 38.1) (xy 40.64 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "97f339a2-7c51-4324-a0b4-79155ceceffb")
-	)
-	(wire
-		(pts
 			(xy 71.12 67.31) (xy 71.12 68.58)
 		)
 		(stroke
@@ -2557,16 +2601,6 @@
 			(type default)
 		)
 		(uuid "99186130-9622-4e80-8cbf-b020fbf10fc8")
-	)
-	(wire
-		(pts
-			(xy 40.64 118.11) (xy 58.42 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "99e30ff9-1fe4-42c1-bfe5-5e3e9456292a")
 	)
 	(wire
 		(pts
@@ -2587,6 +2621,16 @@
 			(type default)
 		)
 		(uuid "9ed3abe2-23ca-4eff-8e54-19a8ca620e92")
+	)
+	(wire
+		(pts
+			(xy 38.1 102.87) (xy 58.42 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0afbc02-f484-483c-a46b-70aeee0a8058")
 	)
 	(wire
 		(pts
@@ -2620,16 +2664,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 81.28) (xy 40.64 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a247eb03-6e5f-4a5c-b059-effc0dc5f72f")
-	)
-	(wire
-		(pts
 			(xy 190.5 46.99) (xy 191.77 46.99)
 		)
 		(stroke
@@ -2637,6 +2671,26 @@
 			(type default)
 		)
 		(uuid "a392e75d-1573-4c25-9c1b-0514accb8567")
+	)
+	(wire
+		(pts
+			(xy 38.1 71.12) (xy 38.1 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a440c18f-15db-4e93-ad26-60c61b32a435")
+	)
+	(wire
+		(pts
+			(xy 29.21 74.93) (xy 38.1 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4745e40-3285-49e3-945e-8159f7811527")
 	)
 	(wire
 		(pts
@@ -2670,16 +2724,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 74.93) (xy 52.07 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ab5f2d0d-1e32-4109-a4d6-8429b2d77be8")
-	)
-	(wire
-		(pts
 			(xy 58.42 118.11) (xy 71.12 118.11)
 		)
 		(stroke
@@ -2710,7 +2754,17 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 59.69) (xy 40.64 63.5)
+			(xy 38.1 114.3) (xy 38.1 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2d2b20b-a354-4f1e-822a-4f98225a52c8")
+	)
+	(wire
+		(pts
+			(xy 29.21 59.69) (xy 29.21 63.5)
 		)
 		(stroke
 			(width 0)
@@ -2720,23 +2774,23 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 96.52) (xy 40.64 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b487450e-bd2f-4c13-8fd0-b318ba7d4eb3")
-	)
-	(wire
-		(pts
-			(xy 40.64 102.87) (xy 31.75 102.87)
+			(xy 26.67 102.87) (xy 29.21 102.87)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "b52ad3fe-3f4f-47b6-a418-4de7dec745ba")
+	)
+	(wire
+		(pts
+			(xy 38.1 59.69) (xy 38.1 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b676d0f8-deb4-40df-bb64-92d29a2ecf05")
 	)
 	(wire
 		(pts
@@ -2760,17 +2814,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 118.11) (xy 31.75 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b7e11702-aa40-44f0-a3e0-58925c0840a4")
-	)
-	(wire
-		(pts
-			(xy 40.64 74.93) (xy 40.64 71.12)
+			(xy 29.21 74.93) (xy 29.21 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2787,26 +2831,6 @@
 			(type default)
 		)
 		(uuid "bb28d6dc-30fe-461d-929b-846a752ba9a2")
-	)
-	(wire
-		(pts
-			(xy 26.67 102.87) (xy 31.75 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bc854b5e-4497-47c5-a97d-f8c534d3717b")
-	)
-	(wire
-		(pts
-			(xy 40.64 59.69) (xy 52.07 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bd9b91b5-2ba0-4ffc-afc3-97dab7a9f230")
 	)
 	(wire
 		(pts
@@ -2840,17 +2864,17 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 81.28) (xy 31.75 85.09)
+			(xy 29.21 38.1) (xy 29.21 41.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c5afd246-a930-409b-8748-5acf81c9f792")
+		(uuid "c60335c0-7f33-44ae-b936-c3b3d4d7d29e")
 	)
 	(wire
 		(pts
-			(xy 40.64 81.28) (xy 58.42 81.28)
+			(xy 26.67 81.28) (xy 29.21 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2880,6 +2904,16 @@
 	)
 	(wire
 		(pts
+			(xy 29.21 53.34) (xy 29.21 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc2f6a83-b0d3-4f5f-aa72-0f2f672fa3e3")
+	)
+	(wire
+		(pts
 			(xy 175.26 34.29) (xy 180.34 34.29)
 		)
 		(stroke
@@ -2897,16 +2931,6 @@
 			(type default)
 		)
 		(uuid "d0de125d-0dd3-4aae-9bf2-3ee29b2b93e7")
-	)
-	(wire
-		(pts
-			(xy 31.75 74.93) (xy 31.75 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d1db5995-3748-4acd-bb9b-61107cc54670")
 	)
 	(wire
 		(pts
@@ -2930,6 +2954,16 @@
 	)
 	(wire
 		(pts
+			(xy 38.1 38.1) (xy 55.88 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de890c6d-fee2-4970-bce3-37cf2cfffb7f")
+	)
+	(wire
+		(pts
 			(xy 58.42 110.49) (xy 64.77 110.49)
 		)
 		(stroke
@@ -2950,6 +2984,16 @@
 	)
 	(wire
 		(pts
+			(xy 29.21 81.28) (xy 29.21 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4a27a83-b592-4614-8601-3c19c48d314c")
+	)
+	(wire
+		(pts
 			(xy 147.32 69.85) (xy 147.32 68.58)
 		)
 		(stroke
@@ -2957,16 +3001,6 @@
 			(type default)
 		)
 		(uuid "e50c27da-c36a-4f49-b051-a121ea2140da")
-	)
-	(wire
-		(pts
-			(xy 26.67 96.52) (xy 31.75 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e5c0234e-4f3b-4c27-9d29-277df123e798")
 	)
 	(wire
 		(pts
@@ -3000,7 +3034,7 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 53.34) (xy 55.88 53.34)
+			(xy 26.67 53.34) (xy 29.21 53.34)
 		)
 		(stroke
 			(width 0)
@@ -3030,13 +3064,23 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 53.34) (xy 31.75 49.53)
+			(xy 38.1 81.28) (xy 58.42 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ed8e5aa5-80af-472c-9207-268c66a90211")
+		(uuid "ed467769-0fe8-4d5e-9c3f-aea572cd2e76")
+	)
+	(wire
+		(pts
+			(xy 29.21 102.87) (xy 38.1 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef4474d9-ce04-4640-9b3d-d883a82e3c29")
 	)
 	(wire
 		(pts
@@ -3120,7 +3164,7 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 96.52) (xy 58.42 96.52)
+			(xy 26.67 96.52) (xy 29.21 96.52)
 		)
 		(stroke
 			(width 0)
@@ -3137,26 +3181,6 @@
 			(type default)
 		)
 		(uuid "fad7864d-41cf-4245-a544-e789eb453171")
-	)
-	(wire
-		(pts
-			(xy 26.67 59.69) (xy 31.75 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc612b56-1563-4f84-8ce5-a4985ef8b5d1")
-	)
-	(wire
-		(pts
-			(xy 31.75 59.69) (xy 31.75 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fce5e323-2f35-4ff6-ad95-4cf8e1b1f608")
 	)
 	(wire
 		(pts
@@ -3409,7 +3433,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "03a09615-8135-410d-94cd-06d06ff96b77")
-		(property "Reference" "C15"
+		(property "Reference" "C9"
 			(at 52.578 83.566 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3442,7 +3466,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 58.42 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -3473,7 +3497,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C15")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -3523,7 +3547,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 71.12 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -3572,7 +3596,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "193857dd-b77b-474a-8ac0-cdb1394414fa")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR02"
 			(at 63.5 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -3632,7 +3656,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR011")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -3649,7 +3673,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1b085b36-7593-4682-b91f-dff5d941cf43")
-		(property "Reference" "C8"
+		(property "Reference" "C7"
 			(at 51.308 40.386 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3682,7 +3706,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 55.88 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -3713,7 +3737,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C8")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -3730,7 +3754,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1b654be0-2f6d-4566-8526-e5a689693ce2")
-		(property "Reference" "C9"
+		(property "Reference" "C15"
 			(at 71.628 40.894 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3763,7 +3787,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 68.58 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -3794,7 +3818,89 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C9")
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L_Iron")
+		(at 38.1 67.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1ee79548-4d33-4e85-b44a-6005b6f505e0")
+		(property "Reference" "L2"
+			(at 40.64 66.0399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "18uH"
+			(at 40.64 68.5799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_Bourns:INDM3225X240N"
+			(at 38.1 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/bourns-inc/CM322522-180KL/3741386"
+			(at 38.1 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Inductor with drum core"
+			(at 38.1 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4b798c8d-59ba-487b-9c7b-18a1df5e43e9")
+		)
+		(pin "2"
+			(uuid "b14cbc3e-f5fd-43c7-be74-2160390ec506")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
+					(reference "L2")
 					(unit 1)
 				)
 			)
@@ -3811,7 +3917,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "21b361bb-b389-4663-817c-2678d0c6d415")
-		(property "Reference" "C20"
+		(property "Reference" "C12"
 			(at 53.594 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3844,7 +3950,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 58.42 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -3875,7 +3981,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C20")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -3893,7 +3999,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "249baaa1-668e-47ae-97d6-2c92ca29f708")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR013"
 			(at 153.67 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -3954,170 +4060,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR07")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:L")
-		(at 31.75 67.31 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "327add1d-db4e-42cc-92f0-9e49b0d70727")
-		(property "Reference" "L2"
-			(at 33.02 66.0399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "18uH"
-			(at 33.02 68.5799 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
-			(at 31.75 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Inductor"
-			(at 31.75 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7ebe45eb-03a8-4011-973e-e5f07b840f99")
-		)
-		(pin "2"
-			(uuid "f6198a8e-c12b-4d1e-98c2-039a82e84c23")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "L2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 40.64 110.49 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3e3c612d-0405-4684-9481-129569898c26")
-		(property "Reference" "C4"
-			(at 43.688 109.474 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "33pF"
-			(at 42.164 114.046 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 41.6052 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
-			(at 40.64 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 40.64 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "58b3e872-d1ba-47f8-8416-f561c5596ab7")
-		)
-		(pin "2"
-			(uuid "88c2dbde-5ca9-4977-8a7b-f4e8780d3a8e")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C4")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -4134,7 +4077,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3e8c252c-b956-4f6b-a4b7-20be7e8801ed")
-		(property "Reference" "C22"
+		(property "Reference" "C20"
 			(at 73.406 115.062 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4167,7 +4110,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 71.12 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -4198,7 +4141,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C22")
+					(reference "C20")
 					(unit 1)
 				)
 			)
@@ -4215,7 +4158,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "48ed716c-99fa-4a6a-ba2f-91a70b2409d6")
-		(property "Reference" "C6"
+		(property "Reference" "C22"
 			(at 128.016 57.15 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4277,88 +4220,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 40.64 88.9 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4f7ce4fe-9d04-4b1c-a392-17cb9d6f6fa6")
-		(property "Reference" "C3"
-			(at 43.688 87.884 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "33pF"
-			(at 42.164 92.456 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 41.6052 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
-			(at 40.64 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 40.64 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0981ca81-e206-4147-a79d-a8323893884b")
-		)
-		(pin "2"
-			(uuid "55566403-3cb5-4a4c-9377-e27d903613d7")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C3")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -4376,7 +4238,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4f963857-417f-4fc7-bd75-385fc249babe")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR07"
 			(at 78.74 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -4436,7 +4298,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR012")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -4534,7 +4396,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "609e2758-ee84-4a55-9401-51d720f0dd62")
-		(property "Reference" "#FLG01"
+		(property "Reference" "#FLG02"
 			(at 185.42 70.485 0)
 			(hide yes)
 			(show_name no)
@@ -4594,7 +4456,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#FLG01")
+					(reference "#FLG02")
 					(unit 1)
 				)
 			)
@@ -4611,7 +4473,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "63064425-a552-428a-a78f-d452e0c5ac63")
-		(property "Reference" "U2"
+		(property "Reference" "U1"
 			(at 105.664 58.674 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4720,7 +4582,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "U2")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -4737,7 +4599,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "710bd4b5-197e-486e-b4f2-18b56c93a316")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR06"
 			(at 77.47 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -4797,7 +4659,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR018")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -4814,7 +4676,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "80daf77a-001c-4798-ac84-02e346ccf9c8")
-		(property "Reference" "C7"
+		(property "Reference" "C8"
 			(at 51.054 48.006 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4847,7 +4709,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 55.88 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -4878,7 +4740,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C7")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -4896,7 +4758,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "83d9482d-878a-48be-a19d-754da728e992")
-		(property "Reference" "#FLG02"
+		(property "Reference" "#FLG01"
 			(at 122.555 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -4957,7 +4819,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#FLG02")
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)
@@ -4974,7 +4836,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "872b4cc9-380a-486d-86d1-0ec4ac8a5fc6")
-		(property "Reference" "C16"
+		(property "Reference" "C10"
 			(at 53.594 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5007,7 +4869,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 58.42 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -5038,7 +4900,171 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C16")
+					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L_Iron")
+		(at 38.1 45.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8ae0139d-9405-442f-ad32-79e4dc89facc")
+		(property "Reference" "L1"
+			(at 40.64 44.4499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "18uH"
+			(at 40.64 46.9899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_Bourns:INDM3225X240N"
+			(at 38.1 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/bourns-inc/CM322522-180KL/3741386"
+			(at 38.1 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Inductor with drum core"
+			(at 38.1 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4e03749c-0c59-4e9f-ba1c-589960320f4c")
+		)
+		(pin "2"
+			(uuid "98408e64-44f3-4cd5-8ce0-56fee65bf762")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
+					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L_Iron")
+		(at 38.1 88.9 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8ccc0a32-381b-4bfe-a040-7b9a96469d0d")
+		(property "Reference" "L3"
+			(at 40.64 87.6299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "18uH"
+			(at 40.64 90.1699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_Bourns:INDM3225X240N"
+			(at 38.1 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/bourns-inc/CM322522-180KL/3741386"
+			(at 38.1 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Inductor with drum core"
+			(at 38.1 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "33be595a-b721-499a-87ef-958a46ee37cb")
+		)
+		(pin "2"
+			(uuid "d5eb2064-3324-41a2-9cc1-99b14f8940d5")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
+					(reference "L3")
 					(unit 1)
 				)
 			)
@@ -5055,7 +5081,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8f91cea8-82d8-40b3-8e7f-2775f29949d0")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR05"
 			(at 71.12 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -5115,7 +5141,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR016")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -5165,7 +5191,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 64.77 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -5246,7 +5272,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 64.77 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -5327,7 +5353,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 71.12 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -5375,7 +5401,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9a232107-10d5-4d85-87f2-eb33d49c25a5")
-		(property "Reference" "C10"
+		(property "Reference" "C16"
 			(at 71.628 48.514 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5408,7 +5434,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 68.58 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -5439,15 +5465,15 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C10")
+					(reference "C16")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:L")
-		(at 31.75 110.49 0)
+		(lib_id "Device:L_Iron")
+		(at 38.1 110.49 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5456,9 +5482,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9e8d3709-f56a-440d-a188-0453c4b590e8")
+		(uuid "9e20b6fb-d4b2-418e-83b5-643d0edcde52")
 		(property "Reference" "L4"
-			(at 33.02 109.2199 0)
+			(at 40.64 109.2199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5469,7 +5495,7 @@
 			)
 		)
 		(property "Value" "18uH"
-			(at 33.02 111.7599 0)
+			(at 40.64 111.7599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5479,8 +5505,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
-			(at 31.75 110.49 0)
+		(property "Footprint" "Inductor_Bourns:INDM3225X240N"
+			(at 38.1 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5490,8 +5516,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 31.75 110.49 0)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/bourns-inc/CM322522-180KL/3741386"
+			(at 38.1 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5501,8 +5527,8 @@
 				)
 			)
 		)
-		(property "Description" "Inductor"
-			(at 31.75 110.49 0)
+		(property "Description" "Inductor with drum core"
+			(at 38.1 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5513,10 +5539,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "8c553e59-04d6-4e3e-84ec-ae8e72a0a4d1")
+			(uuid "fdb30f72-b77e-42d3-901e-8afeebf7fca8")
 		)
 		(pin "2"
-			(uuid "f0164314-36cb-4ecb-9b46-9fe0fa3ee7af")
+			(uuid "c3459c25-7db6-42cb-be5e-eb65579c3001")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
@@ -5538,7 +5564,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9ede863c-9cd9-42c2-894f-66a9e7aeee7d")
-		(property "Reference" "C19"
+		(property "Reference" "C11"
 			(at 52.578 105.156 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5571,7 +5597,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 58.42 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -5602,7 +5628,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C19")
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -5619,7 +5645,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a649cdf2-81d7-4155-9a5d-44f61e6ea3c6")
-		(property "Reference" "C12"
+		(property "Reference" "C6"
 			(at 47.244 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5652,7 +5678,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 52.07 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -5683,7 +5709,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C12")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -5700,7 +5726,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a994d4d7-e051-48bc-aa6a-3a3d46887190")
-		(property "Reference" "C11"
+		(property "Reference" "C5"
 			(at 46.228 61.976 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5733,7 +5759,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 52.07 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -5764,7 +5790,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C11")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -5772,88 +5798,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 40.64 45.72 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "aa2671ca-09dd-42f3-888e-b0260c983786")
-		(property "Reference" "C1"
-			(at 43.688 44.704 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "33pF"
-			(at 42.164 49.276 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 41.6052 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
-			(at 40.64 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 40.64 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "326f6fd7-b305-47ca-a302-bc73f45d4959")
-		)
-		(pin "2"
-			(uuid "f1ae7733-1319-4e82-b2bd-5ea9b01a4389")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 40.64 67.31 0)
+		(at 29.21 67.31 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5863,7 +5808,7 @@
 		(dnp no)
 		(uuid "aa68a8f4-4923-450b-b8bc-5d8bc6285a36")
 		(property "Reference" "C2"
-			(at 40.894 65.278 0)
+			(at 29.464 65.278 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5874,7 +5819,7 @@
 			)
 		)
 		(property "Value" "33pF"
-			(at 40.64 69.596 0)
+			(at 29.21 69.596 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5885,7 +5830,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 41.6052 71.12 0)
+			(at 30.1752 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5896,7 +5841,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
-			(at 40.64 67.31 0)
+			(at 29.21 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5907,7 +5852,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 40.64 67.31 0)
+			(at 29.21 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5944,7 +5889,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ad02db84-a8c5-4804-986b-029ff954fa74")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR04"
 			(at 64.77 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -6004,7 +5949,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR019")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -6021,7 +5966,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ae2da255-4623-4788-9fb8-3bc9f0781e0e")
-		(property "Reference" "C5"
+		(property "Reference" "C21"
 			(at 128.27 43.18 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6083,7 +6028,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C5")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -6101,7 +6046,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "af2af705-40f9-43bb-aedd-ea7490c20909")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR014"
 			(at 154.94 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -6162,7 +6107,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR08")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -6179,7 +6124,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "af539f03-5717-43e9-a874-487d7422122d")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR08"
 			(at 80.01 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -6239,7 +6184,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR020")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -6256,7 +6201,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "af63ef0b-1567-4452-96d2-4eee8753a102")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR03"
 			(at 64.77 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -6316,89 +6261,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR017")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:L")
-		(at 31.75 88.9 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b1d17098-f56a-4f6c-9f68-3f4722611ddc")
-		(property "Reference" "L3"
-			(at 33.02 87.6299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "18uH"
-			(at 33.02 90.1699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
-			(at 31.75 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Inductor"
-			(at 31.75 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f29ba2de-f595-4cb3-ba93-592298efcfec")
-		)
-		(pin "2"
-			(uuid "e3434a34-6a11-4a87-a82d-1e10ab08b501")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "L3")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -6415,7 +6278,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b77ee572-8f79-49a6-8294-a78e8cef14fd")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR015"
 			(at 185.42 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -6476,7 +6339,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR01")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -6493,7 +6356,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b7981e6b-97b7-4e26-95ad-8b1d6768d55f")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR09"
 			(at 95.25 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -6553,7 +6416,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR02")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -6651,6 +6514,87 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 29.21 45.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bf458228-f165-47e2-b22b-785d474556fd")
+		(property "Reference" "C1"
+			(at 29.464 43.688 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "33pF"
+			(at 29.21 48.006 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 30.1752 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+			(at 29.21 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 29.21 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a2fd9cb3-5220-4e5d-ac01-cb51dfe9e282")
+		)
+		(pin "2"
+			(uuid "a1042c37-7e8a-4293-b5d4-975fd0b07f9a")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 59.69 68.58 0)
 		(unit 1)
@@ -6662,7 +6606,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c0234651-e59f-4523-9c4b-44fff5b74ff1")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR01"
 			(at 59.69 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -6722,7 +6666,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR013")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -6740,7 +6684,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cafee530-91b0-40e7-a5ca-f73cef351b7a")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR011"
 			(at 124.46 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -6800,7 +6744,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR05")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -6817,7 +6761,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cdaf20ef-0663-4780-844b-4b30a62a73c8")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR012"
 			(at 142.24 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6877,7 +6821,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR06")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -6894,7 +6838,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dc87e929-2129-40a3-889c-0b3e9e785eb6")
-		(property "Reference" "C21"
+		(property "Reference" "C19"
 			(at 73.914 105.664 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6927,7 +6871,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C2A180JA01D/586990?msockid=204984925ffe6bb7012893f25e556a13"
 			(at 71.12 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -6958,7 +6902,88 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "C21")
+					(reference "C19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 29.21 88.9 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "df2e49ca-1389-439f-9294-9afd072c6e62")
+		(property "Reference" "C3"
+			(at 29.464 86.868 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "33pF"
+			(at 29.21 91.186 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 30.1752 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+			(at 29.21 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 29.21 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2d785937-2faf-4094-bbee-338fe535fc64")
+		)
+		(pin "2"
+			(uuid "47e1e7ed-a9db-42cf-8e5b-35078a38f88f")
+		)
+		(instances
+			(project "monarch_breakout_board_rev2"
+				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -6976,7 +7001,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e23cb2f8-8a63-4999-b74d-bd042323973d")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR016"
 			(at 210.82 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -7036,7 +7061,7 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR03")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -7053,7 +7078,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "eb363d15-8b9f-4ccd-883f-fff89018158c")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR010"
 			(at 124.46 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -7114,15 +7139,15 @@
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "#PWR04")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:L")
-		(at 31.75 45.72 0)
+		(lib_id "Device:C")
+		(at 29.21 110.49 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7130,10 +7155,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "edb850ae-8c30-4a72-89d3-ffd95c260c65")
-		(property "Reference" "L1"
-			(at 33.02 44.4499 0)
+		(uuid "eed3565e-d32b-4f5f-9fb6-07d5862c7eba")
+		(property "Reference" "C4"
+			(at 29.464 108.458 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7143,8 +7167,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "18uH"
-			(at 33.02 46.9899 0)
+		(property "Value" "33pF"
+			(at 29.21 112.776 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7154,8 +7178,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
-			(at 31.75 45.72 0)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 30.1752 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7165,8 +7189,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 31.75 45.72 0)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E330GB01D/11618733?s=N4IgTCBcDaIOICkCyAGAzGgrAYQIwFEMU4AhFXAERAF0BfIA"
+			(at 29.21 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7176,8 +7200,8 @@
 				)
 			)
 		)
-		(property "Description" "Inductor"
-			(at 31.75 45.72 0)
+		(property "Description" "Unpolarized capacitor"
+			(at 29.21 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7188,15 +7212,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "580a08ba-234c-4f67-bcfd-116b3d9c6a42")
+			(uuid "22c7be84-347a-4810-8677-ec293ab9d1f3")
 		)
 		(pin "2"
-			(uuid "4e1c6772-e057-45df-9819-0c07f67d668b")
+			(uuid "26723d7f-2da6-4f63-9761-822d3049e21c")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce"
-					(reference "L1")
+					(reference "C4")
 					(unit 1)
 				)
 			)

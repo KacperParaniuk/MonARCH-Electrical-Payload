@@ -7,4 +7,6 @@
 	(lib (name "OPA320") (type "KiCad") (uri "${KIPRJMOD}/OPA320/KiCADv6/footprints.pretty") (options "") (descr ""))
 	(lib (name "Connector_Molex_Micro-Lock-Plus") (type "KiCad") (uri "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/Connector_Molex_Micro-Lock-Plus.pretty") (options "") (descr ""))
 	(lib (name "ADXL355") (type "KiCad") (uri "${KIPRJMOD}/ADXL355BEZ/ADXL355.pretty") (options "") (descr ""))
+	(lib (name "Inductor_Bourns") (type "KiCad") (uri "${KIPRJMOD}/CM322522-180KL/KiCad") (options "") (descr ""))
+	(lib (name "BNC_Adam_Tech") (type "KiCad") (uri "${KIPRJMOD}/RF1-01A-D-00-75-M/KiCad") (options "") (descr ""))
 )

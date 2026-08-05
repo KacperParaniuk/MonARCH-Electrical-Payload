@@ -1,0 +1,19 @@
+.RF1-01A-D-00-75-M :1 ;BNC R/A LOW PROFILE INSUL PCB SK
+RF101AD0075M
+*STM J
+*NGS
+*PNM 1=1 2=2 3=MH1 4=MH2
+*PLB 1="1" 2="2" 3="MH1" 4="MH2"
+*MXP 4
+*DFN RF1-01A-D-00-75-M
+~!Manufacturer_Name (Adam Tech)
+~!Manufacturer_Part_Number (RF1-01A-D-00-75-M)
+~!Mouser Part Number (-)
+~!Mouser Price/Stock (-)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Link Datasheet (https://www.mouser.com/datasheet/3/6015/1/rf1_01a_d_00_75_m_data_sheet.pdf)
+~!Height (16.181mm)
+~!3D_Model (RF1-01A-D-00-75-M)
+RF1-01A-D-00-75-M
+1.1!U 2.1!U 3.1!U 4.1!U 

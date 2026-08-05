@@ -1,0 +1,9 @@
+Manufacturer=Bourns
+PartNumber=CM322522-180KL
+PartCategory=Inductor
+PackageCategory=Inductor Moulded
+PinCount=2
+Version=1.1
+Released=2026-04-20 11:05:21
+Downloaded=2026-08-05 16:45:19
+3D=Y
