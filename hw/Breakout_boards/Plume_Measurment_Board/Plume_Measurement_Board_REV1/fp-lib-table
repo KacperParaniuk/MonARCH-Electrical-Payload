@@ -3,4 +3,5 @@
 	(lib (name "Amplifier_Texas_Instruments") (type "KiCad") (uri "${KIPRJMOD}/ul_LMP7721MA-NOPB/KiCADv6/footprints.pretty") (options "") (descr ""))
 	(lib (name "Voltage_Regulator_Texas_Instruments") (type "KiCad") (uri "${KIPRJMOD}/TPS62153RGTR/KiCADv6/footprints.pretty") (options "") (descr ""))
 	(lib (name "Connector_Molex_Micro-Lock-Plus") (type "KiCad") (uri "${KIPRJMOD}/Connector_Molex_Micro-Lock-Plus/Connector_Molex_Micro-Lock-Plus.pretty") (options "") (descr ""))
+	(lib (name "Inductor_TDK") (type "KiCad") (uri "${KIPRJMOD}/VLS3012CX-2R2M-1") (options "") (descr ""))
 )

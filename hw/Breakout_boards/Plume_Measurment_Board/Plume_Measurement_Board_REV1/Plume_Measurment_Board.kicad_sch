@@ -2919,16 +2919,6 @@
 	)
 	(wire
 		(pts
-			(xy 266.7 63.5) (xy 273.05 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "53849a14-ea86-42d6-ae45-e471adcdaed0")
-	)
-	(wire
-		(pts
 			(xy 246.38 104.14) (xy 246.38 106.68)
 		)
 		(stroke
@@ -2996,6 +2986,16 @@
 			(type default)
 		)
 		(uuid "7469b2fc-5dda-4fa9-b5cd-d5ccdb10b2a5")
+	)
+	(wire
+		(pts
+			(xy 266.7 60.96) (xy 273.05 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "750c0fb3-1089-4352-a74b-6b8fb58bc776")
 	)
 	(wire
 		(pts
@@ -3106,6 +3106,16 @@
 			(type default)
 		)
 		(uuid "b3406b7d-eec8-474e-b5cc-94e60dffbf6a")
+	)
+	(wire
+		(pts
+			(xy 266.7 63.5) (xy 273.05 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b54bfaed-ec1e-467f-83d7-bb2100475a11")
 	)
 	(wire
 		(pts
@@ -3373,6 +3383,17 @@
 			(justify left)
 		)
 		(uuid "9ef4b127-f707-4caa-91fd-13939750c5d8")
+	)
+	(hierarchical_label "+5V"
+		(shape output)
+		(at 273.05 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a7605a04-d06e-4d3e-8f0e-a71c063c6cb9")
 	)
 	(hierarchical_label "SPI1_SCK"
 		(shape bidirectional)
@@ -6467,6 +6488,16 @@
 		(pin "+VBAT" input
 			(at 266.7 63.5 0)
 			(uuid "9ece6d5a-af07-462a-8c25-c81274d538cc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "+5V" input
+			(at 266.7 60.96 0)
+			(uuid "65632213-979d-4dab-848b-22ee90de3a8b")
 			(effects
 				(font
 					(size 1.27 1.27)
