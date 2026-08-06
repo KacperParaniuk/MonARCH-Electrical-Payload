@@ -4,6 +4,13 @@
 	(generator_version "10.0")
 	(uuid "2e1d3673-27b9-4604-80fb-036cec98a912")
 	(paper "A4")
+	(title_block
+		(title "Plume Measurement Board")
+		(date "2026-08-06")
+		(rev "REV1")
+		(company "Electric Propulsion Lab")
+		(comment 4 "Kacper Paraniuk")
+	)
 	(lib_symbols
 		(symbol "ADC_Analog_Devices:AD7124-8BCPZ-RL"
 			(pin_names
@@ -2590,6 +2597,17 @@
 		)
 		(uuid "15271b14-5d3a-47fc-8644-2dfa5c8941c9")
 	)
+	(text "V_out = - I * R_G\n\n"
+		(exclude_from_sim no)
+		(at 30.988 80.01 0)
+		(effects
+			(font
+				(size 2.286 2.286)
+				(italic yes)
+			)
+		)
+		(uuid "21d0a480-6ac5-44a9-ab12-2c567e7b32ab")
+	)
 	(text "Buffers"
 		(exclude_from_sim no)
 		(at 13.462 86.614 0)
@@ -2869,6 +2887,16 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 177.8) (xy 167.64 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32165aa5-4b47-4227-86c8-b718bca2c066")
+	)
+	(wire
+		(pts
 			(xy 138.43 118.11) (xy 138.43 115.57)
 		)
 		(stroke
@@ -2906,6 +2934,16 @@
 			(type default)
 		)
 		(uuid "4c4510f2-1f53-4ffe-b5c8-3ea879378d12")
+	)
+	(wire
+		(pts
+			(xy 173.99 186.69) (xy 163.83 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "505a3d49-0c7c-4baa-b3ca-7c3db5fdaf1d")
 	)
 	(wire
 		(pts
@@ -2989,7 +3027,7 @@
 	)
 	(wire
 		(pts
-			(xy 266.7 60.96) (xy 273.05 60.96)
+			(xy 266.7 60.96) (xy 275.59 60.96)
 		)
 		(stroke
 			(width 0)
@@ -3079,6 +3117,16 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 182.88) (xy 165.1 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3db8ed0-9c72-4a95-92e5-5f3e39a74323")
+	)
+	(wire
+		(pts
 			(xy 228.6 114.3) (xy 233.68 114.3)
 		)
 		(stroke
@@ -3139,6 +3187,16 @@
 	)
 	(wire
 		(pts
+			(xy 173.99 185.42) (xy 173.99 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8857cca-370d-493b-ad75-9bc34e9bc004")
+	)
+	(wire
+		(pts
 			(xy 133.35 186.69) (xy 135.89 186.69)
 		)
 		(stroke
@@ -3196,6 +3254,16 @@
 			(type default)
 		)
 		(uuid "d9f54a47-5c99-473f-84e7-db935112842c")
+	)
+	(wire
+		(pts
+			(xy 275.59 55.88) (xy 275.59 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e58f803d-98fd-46c5-8179-16b5951ebbe0")
 	)
 	(wire
 		(pts
@@ -3329,6 +3397,17 @@
 		)
 		(uuid "34bb3323-076b-4cb0-9272-36e3f1fb085e")
 	)
+	(hierarchical_label "Plume"
+		(shape output)
+		(at 167.64 177.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4a53cb4a-213e-4557-9ff8-f59ff20906f4")
+	)
 	(hierarchical_label "SPI1_MOSI"
 		(shape input)
 		(at 133.35 179.07 180)
@@ -3384,17 +3463,6 @@
 		)
 		(uuid "9ef4b127-f707-4caa-91fd-13939750c5d8")
 	)
-	(hierarchical_label "+5V"
-		(shape output)
-		(at 273.05 60.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a7605a04-d06e-4d3e-8f0e-a71c063c6cb9")
-	)
 	(hierarchical_label "SPI1_SCK"
 		(shape bidirectional)
 		(at 133.35 184.15 180)
@@ -3416,6 +3484,17 @@
 			(justify right)
 		)
 		(uuid "be42c32f-2278-458a-b852-e445c92f3314")
+	)
+	(hierarchical_label "+VBAT"
+		(shape output)
+		(at 165.1 182.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d4380a5a-32d7-4bc7-a13a-9f0b4008f5ae")
 	)
 	(hierarchical_label "SPI1_SCK"
 		(shape bidirectional)
@@ -3984,6 +4063,83 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
+		(at 173.99 185.42 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "374ab8ea-020b-4690-a46a-1f57ed971ad4")
+		(property "Reference" "#PWR0243"
+			(at 173.99 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 173.482 180.594 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 173.99 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 173.99 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 173.99 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c635c36c-d41f-4904-b1b8-f7312fefefc9")
+		)
+		(instances
+			(project "Plume_Measurment_Board"
+				(path "/2e1d3673-27b9-4604-80fb-036cec98a912"
+					(reference "#PWR0243")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
 		(at 278.13 124.46 270)
 		(unit 1)
 		(body_style 1)
@@ -4220,6 +4376,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 275.59 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "689c7985-5521-4283-b176-bd27a77d3416")
+		(property "Reference" "#PWR0244"
+			(at 275.59 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 275.59 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 275.59 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 275.59 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 275.59 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "98244193-0908-42a4-812b-006dee95737a")
+		)
+		(instances
+			(project "Plume_Measurment_Board"
+				(path "/2e1d3673-27b9-4604-80fb-036cec98a912"
+					(reference "#PWR0244")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Amplifier_Buffer_Texas_Instruments:AD8475ARMZ")
 		(at 20.32 111.76 0)
 		(unit 1)
@@ -4404,7 +4638,7 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Texas_Instruments:LMP2022MA_NOPB")
-		(at 120.65 40.64 0)
+		(at 140.97 41.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4415,7 +4649,7 @@
 		(fields_autoplaced yes)
 		(uuid "735d40a4-4ab4-4ee7-881f-6b20a3a8f778")
 		(property "Reference" "U3"
-			(at 149.86 31.75 0)
+			(at 170.18 33.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4425,7 +4659,7 @@
 			)
 		)
 		(property "Value" "LMP2022MA/NOPB"
-			(at 149.86 34.29 0)
+			(at 170.18 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4435,7 +4669,7 @@
 			)
 		)
 		(property "Footprint" "M08A"
-			(at 132.08 40.64 0)
+			(at 152.4 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4447,7 +4681,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.ti.com/lit/gpn/lmp2022"
-			(at 133.858 24.13 0)
+			(at 154.178 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4459,7 +4693,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 120.65 40.64 0)
+			(at 140.97 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6430,7 +6664,7 @@
 			)
 		)
 		(pin "Plume" input
-			(at 163.83 179.07 0)
+			(at 163.83 177.8 0)
 			(uuid "fe0fc324-e035-4661-90f9-ec3f37dbf058")
 			(effects
 				(font
@@ -6460,7 +6694,7 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0)
+			(color 255 255 194 1)
 		)
 		(uuid "51fb0d9e-13dd-4646-9739-03c7f4c08998")
 		(property "Sheetname" "Voltage Regulator"

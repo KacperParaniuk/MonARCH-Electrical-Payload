@@ -4,6 +4,13 @@
 	(generator_version "10.0")
 	(uuid "23e243c3-a518-49fb-a340-7bf4401a8a68")
 	(paper "A4")
+	(title_block
+		(title "Plume Measurement Board")
+		(date "2026-08-06")
+		(rev "REV1")
+		(company "Electric Propulsion Lab")
+		(comment 4 "Kacper Paraniuk")
+	)
 	(lib_symbols
 		(symbol "Connector:Conn_Coaxial"
 			(pin_names
@@ -407,6 +414,145 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:+3V3"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+3V3_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3V3_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -600,7 +746,7 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 35.56) (xy 34.29 34.29)
+			(xy 33.02 35.56) (xy 33.02 34.29)
 		)
 		(stroke
 			(width 0)
@@ -610,7 +756,17 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 34.29) (xy 46.99 34.29)
+			(xy 36.83 36.83) (xy 36.83 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c0cbfdd-88af-4a11-afe3-d2817eb360c2")
+	)
+	(wire
+		(pts
+			(xy 33.02 34.29) (xy 46.99 34.29)
 		)
 		(stroke
 			(width 0)
@@ -638,6 +794,16 @@
 		)
 		(uuid "8b8552eb-745c-4adf-956f-973fe781020c")
 	)
+	(wire
+		(pts
+			(xy 46.99 36.83) (xy 36.83 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c703dcef-0bfc-419e-9b28-52b70189c622")
+	)
 	(hierarchical_label "PM_CS"
 		(shape output)
 		(at 116.84 39.37 180)
@@ -648,17 +814,6 @@
 			(justify right)
 		)
 		(uuid "01befd02-f6a2-4e1e-8ca7-26b46be75b55")
-	)
-	(hierarchical_label "3V3"
-		(shape input)
-		(at 46.99 36.83 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3fd63127-38e4-4d97-b793-020effedf487")
 	)
 	(hierarchical_label "SPI1_CLK"
 		(shape bidirectional)
@@ -795,7 +950,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 34.29 35.56 0)
+		(at 33.02 35.56 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -806,7 +961,7 @@
 		(fields_autoplaced yes)
 		(uuid "07b36440-b2a6-4af3-840f-935a89fe176a")
 		(property "Reference" "#PWR01"
-			(at 34.29 41.91 0)
+			(at 33.02 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -817,7 +972,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 34.29 40.64 0)
+			(at 33.02 40.64 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -827,7 +982,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 34.29 35.56 0)
+			(at 33.02 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -838,7 +993,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 34.29 35.56 0)
+			(at 33.02 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -849,7 +1004,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 34.29 35.56 0)
+			(at 33.02 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1114,6 +1269,83 @@
 			(project "Plume_Measurment_Board"
 				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 36.83 30.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c103e07b-02f2-4a68-be6f-3f411f06b1c7")
+		(property "Reference" "#PWR0246"
+			(at 36.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 36.83 26.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 36.83 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 36.83 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 36.83 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "18871afe-3c2f-4807-b010-d4b8e881cf6a")
+		)
+		(instances
+			(project "Plume_Measurment_Board"
+				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
+					(reference "#PWR0246")
 					(unit 1)
 				)
 			)
