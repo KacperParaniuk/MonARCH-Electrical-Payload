@@ -356,6 +356,20 @@ enum ad7124_registers {
 	AD7124_REG_NO
 };
 
+
+enum voltage_channel{
+	CH_12VA_VB = 1,
+	CH_12VA_VA,
+	CH_3v3_VB,
+	CH_3v3_VA,
+	CH_VBAT_VA,
+	CH_VBAT_VB,
+	CH_12VB_VA,
+	CH_12VB_VB
+};
+
+
+
 /*
  * The structure describes the device and is used with the ad7124 driver.
  * @spi_desc: A reference to the SPI configuration of the device.

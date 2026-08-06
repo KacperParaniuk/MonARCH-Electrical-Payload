@@ -416,6 +416,56 @@ void display_channel_sample(uint8_t channel, AD7124_CHIP chip){
 }
 
 
+float get_channel_sample(uint8_t channel, AD7124_CHIP chip){
+	float value;
+
+	if(chip==PRESSURE){
+	    adc_dev = pAd7124_dev;
+	}
+	else{
+		adc_dev = vAd7124_dev;
+	}
+
+
+
+	// sample data into array
+	menu_single_conversion(chip);
+
+
+
+	// print channel
+	return ad7124_convert_sample_to_voltage(adc_dev, channel, channel_samples[channel]);
+
+
+}
+
+
+float ad7124_read_differential_channel_voltage(uint8_t channel, AD7124_CHIP chip){
+
+
+	float val_pos;
+	float val_neg;
+
+
+	val_pos = get_channel_sample((channel*2)-1, chip);
+	val_neg = get_channel_sample(((channel*2)-2),chip);
+
+
+	return val_pos - val_neg;
+
+
+
+}
+
+float ad7124_read_channel_current_pc104(uint8_t channel){
+
+	float v_shunt = ad7124_read_differential_channel_voltage(channel, VOLTAGE);
+	return v_shunt / 100000; // ohms law V=IR > I = V/R
+
+
+}
+
+
 /*!
  * @brief      resets the channelSampleCounts to zero
  *

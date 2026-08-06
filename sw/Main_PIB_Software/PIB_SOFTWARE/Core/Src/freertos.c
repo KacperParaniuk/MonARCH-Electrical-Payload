@@ -30,29 +30,13 @@
 #include <uart_protocol.h>
 
 
-#ifdef AD7124
-
 // Sensor Includes
 
 #include "ad7124_console_app.h"
 #include "ad7124.h"
-
-
-#endif
-
-
-#ifdef MAX31856
-
 #include "max31856.h"
-
-#endif
-
-
-#ifdef FDC2214_S
-
 #include "fdc2214.h"
 
-#endif
 
 /* USER CODE END Includes */
 
@@ -79,7 +63,7 @@ extern char uart_buffer[];
 extern uint32_t device_id;
 extern int32_t setupResult;
 extern float temperature;
-
+extern float value;
 
 /* USER CODE END Variables */
 /* Definitions for heart_beat */
@@ -423,75 +407,67 @@ void StartTask04(void *argument)
 // read device id's
 
 
-
-
-
-
-
-
-
-
-
 // READ PC104 ADC CHANNELS
 
 				case CMD_READ_12VA_VB:
-					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VB);
+					value = ad7124_read_differential_channel_voltage(CH_12VA_VB,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
 				case CMD_READ_12VA_VA:
-					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VA);
+					value = ad7124_read_differential_channel_voltage(CH_12VA_VA,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
 				case CMD_READ_3V3_VB:
-					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VB);
+					value = ad7124_read_differential_channel_voltage(CH_3v3_VB,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 3V3_VB: %d \r\n", value);
 				case CMD_READ_3V3_VA:
-					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VA);
+					value = ad7124_read_differential_channel_voltage(CH_3v3_VA,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 3V3_VA: %d \r\n", value);\
 				case CMD_READ_VBAT_VA:
-					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VA);
+					value = ad7124_read_differential_channel_voltage(CH_VBAT_VA,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading VBAT_VA: %d \r\n", value);
 				case CMD_READ_VBAT_VB:
-					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VB);
+					value = ad7124_read_differential_channel_voltage(CH_VBAT_VB,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
 
 				case CMD_READ_12VB_VA:
-					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VA);
+					value = ad7124_read_differential_channel_voltage(CH_VBAT_VA,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
 
 				case CMD_READ_12VB_VB:
-					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VB);
+					value = ad7124_read_differential_channel_voltage(CH_VBAT_VB,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
+
 
 // Read PC104 Currents
 				case CMD_READ_12VA_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VB);
+					value = ad7124_read_channel_current_pc104(CH_12VA_VB);
 					Serial_Printf("PC104 Current Reading 12VA_VB: %d \r\n", value);
 
 				case CMD_READ_12VA_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VA);
+					value = ad7124_read_channel_current_pc104(CH_12VA_VA);
 					Serial_Printf("PC104 Current Reading 12VA_VA: %d \r\n", value);
 
 				case CMD_READ_3V3_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VB);
+					value = ad7124_read_channel_current_pc104(CH_3v3_VB);
 					Serial_Printf("PC104 Current Reading 3V3_VB : %d \r\n", value);
 
 				case CMD_READ_3V3_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VA);
+					value = ad7124_read_channel_current_pc104(CH_3v3_VA);
 					Serial_Printf("PC104 Current Reading 3V3_VA : %d \r\n", value);
 
 				case CMD_READ_VBAT_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VA);
+					value = ad7124_read_channel_current_pc104(CH_VBAT_VA);
 					Serial_Printf("PC104 Current Reading VBAT_VA : %d \r\n", value);
 
 				case CMD_READ_VBAT_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VB);
+					value = ad7124_read_channel_current_pc104(CH_VBAT_VB);
 					Serial_Printf("PC104 Current Reading VBAT_VB : %d \r\n", value);
 
 				case CMD_READ_12VB_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VA);
+					value = ad7124_read_channel_current_pc104(CH_12VB_VA);
 					Serial_Printf("PC104 Current Reading 12VB_VA: %d \r\n",  value);
 
 				case CMD_READ_12VB_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VB);
+					value = ad7124_read_channel_current_pc104(CH_12VB_VB);
 					Serial_Printf("PC104 Current Reading 12VB_VB: %d \r\n", value);
 
 

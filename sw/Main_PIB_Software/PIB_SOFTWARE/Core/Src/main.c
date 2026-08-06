@@ -88,6 +88,7 @@ uint8_t rx_cmd[1]; // single byte for all UART commands.
 uint8_t tx_cmd[1];
 char uart_buffer[64]; // used for sending data across uart3
 float temperature;
+float value;
 
 /* USER CODE END PV */
 
@@ -213,17 +214,6 @@ int main(void)
     }
 
     printf("Setup voltage Result: %ld", setupResult);
-
-
-
-
-
-
-#ifdef MAX31856
-
-float temperature;
-
-#endif
 
 
 // MAX31856 Setup || Temperature Reading K-Type Thermocouples Readings INIT
@@ -439,20 +429,6 @@ float temperature;
 #endif
 
 
-#ifdef I2C_SCANNER
-
-//	  0x3054 Device ID (FDC2112, FDC2114 only)
-//	  0x3055 Device ID (FDC2212, FDC2214 only)
-
-	  // 0x7F
-
-
-	  // take a look at obsidian for tutorial
-
-
-
-
-#endif
 
 #ifdef AD7124
 
