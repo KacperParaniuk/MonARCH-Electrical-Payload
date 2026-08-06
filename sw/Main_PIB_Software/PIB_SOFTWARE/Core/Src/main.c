@@ -37,34 +37,10 @@
 extern osSemaphoreId_t s_rx_semaphoreHandle;
 
 
-// ---------------- DEFINES ---------------------
-
-
-
-//#define AD7124
-//#define AD7124_SINGLE_MODE
-//#define AD7124_CONTINOUS_MODE
-//#define FDC2214_S
-//#define MAX31856
-//#define MAX31856_T1
-//#define MAX31856_T2
-//#define MAX31856_T3
-//#define MAX31856_T4
-//#define MAX31856_T5
-
-//#define I2C_SCANNER
-//#define HEATER
-//#define PWM_VALVE_6
-
-
-
-
 // ----------------- Sensor Includes -----------------------
-
 
 #include "ad7124_console_app.h"
 #include "ad7124.h"
-
 
 #ifdef MAX31856
 
@@ -106,9 +82,12 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 
 /* USER CODE BEGIN PV */
 
+int32_t setupResult;
+uint32_t device_id;
 uint8_t rx_cmd[1]; // single byte for all UART commands.
 uint8_t tx_cmd[1];
 char uart_buffer[64]; // used for sending data across uart3
+float temperature;
 
 /* USER CODE END PV */
 
@@ -136,9 +115,6 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 
-
-
-
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -147,24 +123,6 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
-
-
-
-  // Device ID's
-
-//   uint32_t device_id;
-
-#ifdef B2B_ARDUINO
-   // UART Inits
-//   uint8_t rx_cmd[1]; // single byte for all UART commands.
-//   uint8_t TX_Buffer[] = "Hello, World!\r\n";
-   // "\r" move cursor to start of line
-   // "\n" new line
-
-#endif
-
-
 
 
   /* USER CODE END Init */
@@ -219,22 +177,22 @@ int main(void)
 
   HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
 
+ // create a setup function for all sensors and turn red_led if fails to setup / read from device id's of all sensors
+
+    // RED = MAX31856 Fail
+    // AMBER = ADC2214
+    // RED + AMBER = FDC2214
+    // Green = Everything Setup Correctly
 
 // ------------------ SET-UP SENSORS -------------------- \\
 
 // ADC7124 || PT Readings Init
 
-
-
-  /* Initialize the AD7124 application before the main loop */
+  /* Initialize the AD7124 application before the FreeRTOS takes over  */
 
     // this setup will be for POWER
     // added param for cs -> CS = 0 = AD7124 VOLTAGE      |
     				//       CS = 1 = AD7124 PRESSURE   | for measuring
-
-    int32_t setupResult;
-    uint32_t device_id;
-
 
 // Setup pressure ADC
 
@@ -244,13 +202,8 @@ int main(void)
   	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
     }
     printf("Setup Pressure Result: %ld", setupResult);
-  //  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
-
-
-
 
 // Setup Voltage ADC
-
 
     if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,VOLTAGE)) < 0) {
   		// Handle error setting up AD7124 here
@@ -264,50 +217,6 @@ int main(void)
 
 
 
-
-  // create a setup function for all sensors and turn red_led if fails to setup / read from device id's of all sensors
-
-  // RED = MAX31856 Fail
-  // AMBER = ADC2214
-  // RED + AMBER = FDC2214
-  // Green = Everything Setup Correctly
-
-
-
-
-#ifdef AD7124
-
-
-
-/* Initialize the AD7124 application before the main loop */
-
-  // this setup will be for POWER
-  // added param for cs -> CS = 0 = AD7124 POWER      |
-  				//       CS = 1 = AD7124 PRESSURE   | for measuring
-
-  int32_t setupResult;
-  uint32_t device_id;
-
-
-  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,1)) < 0) {
-		// Handle error setting up AD7124 here
-	  printf("Failed to init ad7124 pressure \n");
-//	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
-
-  }
-
-  printf("Setup Result: %ld", setupResult);
-//  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
-
-
-
-
-//  float voltage1;
-//  float voltage2;
-//  uint32_t val;
-
-
-#endif
 
 
 #ifdef MAX31856

@@ -50,6 +50,14 @@
 #define CMD_READ_TC4	0x0C
 #define CMD_READ_TC5	0x0D
 
+// UART Commands for MAX31856 Cold-Junction Readings
+
+#define CMD_READ_TC1_CJ   
+#define CMD_READ_TC2_CJ	
+#define CMD_READ_TC3_CJ	
+#define CMD_READ_TC4_CJ	
+#define CMD_READ_TC5_CJ	
+
 
 // UART Commands for Solenoid Valves
 

@@ -5,7 +5,7 @@
 	(uuid "7f71233a-1f17-423c-a2e8-36ba020ec1ce")
 	(paper "A4")
 	(title_block
-		(title "Breakout Board")
+		(title "Capacitance Measurement Board")
 		(date "2026-08-04")
 		(rev "REV_2")
 		(company "EP + LASSI LAB")

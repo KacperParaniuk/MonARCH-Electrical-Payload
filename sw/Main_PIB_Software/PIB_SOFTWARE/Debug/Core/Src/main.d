@@ -49,7 +49,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/usart.h ../Core/Inc/gpio.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ ../BSP/Sensors/Inc/ad7124_console_app.h ../BSP/Sensors/Inc/ad7124.h \
+ ../BSP/Inc/spi_support.h ../BSP/Sensors/Inc/delay.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
@@ -108,3 +110,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+../BSP/Sensors/Inc/ad7124_console_app.h:
+../BSP/Sensors/Inc/ad7124.h:
+../BSP/Inc/spi_support.h:
+../BSP/Sensors/Inc/delay.h:

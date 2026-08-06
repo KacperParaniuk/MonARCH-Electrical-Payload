@@ -76,8 +76,9 @@
 
 extern uint8_t rx_cmd[];
 extern char uart_buffer[];
-
-float temperature;
+extern uint32_t device_id;
+extern int32_t setupResult;
+extern float temperature;
 
 
 /* USER CODE END Variables */
@@ -337,136 +338,196 @@ void StartTask04(void *argument)
 		  printf("Normal CMD Received");
 
 		  // fsm integration here?
-		 	switch(rx_cmd[0]){
 
-		 		// decode command and execute
 
+		 	switch(rx_cmd[0]){ // decode command and execute
+// Open Solenoid Valve Commands
 		 		case CMD_OPEN_SOL1:
 		 			HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL2:
 		 			HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL3:
 		 		 	HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL4: // IEP VALVE (PWM)
 		 		 	HAL_GPIO_WritePin(TIM8_CH1_VALVE4_GPIO_Port, TIM8_CH1_VALVE4_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL5:
 		 		 	HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL6: // IEP VALVE (PWM)
 		 		 	HAL_GPIO_WritePin(TIM3_CH3_VALVE6_GPIO_Port, TIM3_CH3_VALVE6_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL7:
 		 		    HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL8:
 		 		 	HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL9:
 		 		    HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL10:
 		 		    HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL11:
 		 		    HAL_GPIO_WritePin(valve11_GPIO_Port, valve11_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL12:
-		 		 	  HAL_GPIO_WritePin(valve12_GPIO_Port, valve12_Pin, GPIO_PIN_SET);
-
+		 		    HAL_GPIO_WritePin(valve12_GPIO_Port, valve12_Pin, GPIO_PIN_SET);
 		 		case CMD_OPEN_SOL13:
 		 		    HAL_GPIO_WritePin(valve13_GPIO_Port, valve13_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL14:
 		 		    HAL_GPIO_WritePin(valve14_GPIO_Port, valve14_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL15:
-		 		 	  HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
-
+		 		    HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_SET);
 		 		case CMD_OPEN_SOL16:
 		 		    HAL_GPIO_WritePin(valve16_GPIO_Port, valve16_Pin, GPIO_PIN_SET);
-
 		 		case CMD_OPEN_SOL17:
-		 		 	  HAL_GPIO_WritePin(valve17_GPIO_Port, valve17_Pin, GPIO_PIN_SET);
+		 		    HAL_GPIO_WritePin(valve17_GPIO_Port, valve17_Pin, GPIO_PIN_SET);
+		 		case CMD_OPEN_SOL18:
+		 		    HAL_GPIO_WritePin(valve18_GPIO_Port, valve18_Pin, GPIO_PIN_SET);
 
-		 	  case CMD_TOGGLE_LED_RED:
-		 		    HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-		 		  	HAL_Delay(2000);
-        case CMD_READ_12VA_VB:
-            value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VB);
-            Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
-        case CMD_READ_12VA_VA:
-            value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VA);
-            Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
-        case CMD_READ_3V3_VB:
-            value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VB);
-            Serial_Printf("PC104 Voltage Reading 3V3_VB: %d \r\n", value);
-        case CMD_READ_3V3_VA:
-            value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VA);
-            Serial_Printf("PC104 Voltage Reading 3V3_VA: %d \r\n", value);\
-        case CMD_READ_VBAT_VA:
-            value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VA);
-            Serial_Printf("PC104 Voltage Reading VBAT_VA: %d \r\n", value);
-        case CMD_READ_VBAT_VB:
-            value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VB);
-            Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
+// Close Solenoid Valve Commands
 
-        case CMD_READ_12VB_VA:
-            value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VA);
-            Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
+		 		case CMD_CLOSE_SOL1:
+		 			HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL2:
+		 			HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL3:
+		 		 	HAL_GPIO_WritePin(valve3_GPIO_Port, valve3_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL4: // IEP VALVE (PWM)
+		 		 	HAL_GPIO_WritePin(TIM8_CH1_VALVE4_GPIO_Port, TIM8_CH1_VALVE4_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL5:
+		 		 	HAL_GPIO_WritePin(valve5_GPIO_Port, valve5_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL6: // IEP VALVE (PWM)
+		 		 	HAL_GPIO_WritePin(TIM3_CH3_VALVE6_GPIO_Port, TIM3_CH3_VALVE6_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL7:
+		 		    HAL_GPIO_WritePin(valve7_GPIO_Port, valve7_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL8:
+		 		 	HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL9:
+		 		    HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL10:
+		 		    HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL11:
+		 		    HAL_GPIO_WritePin(valve11_GPIO_Port, valve11_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL12:
+		 		 	HAL_GPIO_WritePin(valve12_GPIO_Port, valve12_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL13:
+		 		    HAL_GPIO_WritePin(valve13_GPIO_Port, valve13_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL14:
+		 		    HAL_GPIO_WritePin(valve14_GPIO_Port, valve14_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL15:
+		 		 	HAL_GPIO_WritePin(valve15_GPIO_Port, valve15_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL16:
+		 		    HAL_GPIO_WritePin(valve16_GPIO_Port, valve16_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL17:
+		 		 	HAL_GPIO_WritePin(valve17_GPIO_Port, valve17_Pin, GPIO_PIN_RESET);
+		 		case CMD_CLOSE_SOL18:
+		 	        HAL_GPIO_WritePin(valve18_GPIO_Port, valve18_Pin, GPIO_PIN_RESET);
 
-        case CMD_READ_12VB_VB:
-            value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VB);
-            Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
+          		 	    	// until we get two AD7124's wqrking at once.
 
-  // // Read PC104 Currents
-        case CMD_READ_12VA_VB_CURRENT:
-            value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VB);
-            Serial_Printf("PC104 Current Reading 12VA_VB: %d \r\n", value);
+// read device id's
 
-        case CMD_READ_12VA_VA_CURRENT:
-            value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VA);
-            Serial_Printf("PC104 Current Reading 12VA_VA: %d \r\n", value);
 
-        case CMD_READ_3V3_VB_CURRENT:
-            value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VB);
-            Serial_Printf("PC104 Current Reading 3V3_VB : %d \r\n", value);
 
-        case CMD_READ_3V3_VA_CURRENT:
-            value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VA);
-            Serial_Printf("PC104 Current Reading 3V3_VA : %d \r\n", value);
 
-        case CMD_READ_VBAT_VA_CURRENT:
-            value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VA);
-            Serial_Printf("PC104 Current Reading VBAT_VA : %d \r\n", value);
 
-        case CMD_READ_VBAT_VB_CURRENT:
-            value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VB);
-            Serial_Printf("PC104 Current Reading VBAT_VB : %d \r\n", value);
 
-        case CMD_READ_12VB_VA_CURRENT:
-            value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VA);
-            Serial_Printf("PC104 Current Reading 12VB_VA: %d \r\n",  value);
 
-        case CMD_READ_12VB_VB_CURRENT:
-            value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VB);
-            Serial_Printf("PC104 Current Reading 12VB_VB: %d \r\n", value);
 
-		 	  case CMD_READ_TC1:
 
-		 	    	// until we get two AD7124's wqrking at once.
+
+
+// READ PC104 ADC CHANNELS
+
+				case CMD_READ_12VA_VB:
+					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VB);
+					Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
+				case CMD_READ_12VA_VA:
+					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VA);
+					Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
+				case CMD_READ_3V3_VB:
+					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VB);
+					Serial_Printf("PC104 Voltage Reading 3V3_VB: %d \r\n", value);
+				case CMD_READ_3V3_VA:
+					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VA);
+					Serial_Printf("PC104 Voltage Reading 3V3_VA: %d \r\n", value);\
+				case CMD_READ_VBAT_VA:
+					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VA);
+					Serial_Printf("PC104 Voltage Reading VBAT_VA: %d \r\n", value);
+				case CMD_READ_VBAT_VB:
+					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VB);
+					Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
+
+				case CMD_READ_12VB_VA:
+					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VA);
+					Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
+
+				case CMD_READ_12VB_VB:
+					value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VB);
+					Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
+
+// Read PC104 Currents
+				case CMD_READ_12VA_VB_CURRENT:
+					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VB);
+					Serial_Printf("PC104 Current Reading 12VA_VB: %d \r\n", value);
+
+				case CMD_READ_12VA_VA_CURRENT:
+					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VA);
+					Serial_Printf("PC104 Current Reading 12VA_VA: %d \r\n", value);
+
+				case CMD_READ_3V3_VB_CURRENT:
+					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VB);
+					Serial_Printf("PC104 Current Reading 3V3_VB : %d \r\n", value);
+
+				case CMD_READ_3V3_VA_CURRENT:
+					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VA);
+					Serial_Printf("PC104 Current Reading 3V3_VA : %d \r\n", value);
+
+				case CMD_READ_VBAT_VA_CURRENT:
+					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VA);
+					Serial_Printf("PC104 Current Reading VBAT_VA : %d \r\n", value);
+
+				case CMD_READ_VBAT_VB_CURRENT:
+					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VB);
+					Serial_Printf("PC104 Current Reading VBAT_VB : %d \r\n", value);
+
+				case CMD_READ_12VB_VA_CURRENT:
+					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VA);
+					Serial_Printf("PC104 Current Reading 12VB_VA: %d \r\n",  value);
+
+				case CMD_READ_12VB_VB_CURRENT:
+					value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VB);
+					Serial_Printf("PC104 Current Reading 12VB_VB: %d \r\n", value);
+
+
+// Read MAX31856 Temperatures
+
+		 	    case CMD_READ_TC1:
+
+
+
 //		 		   temperature = max31856_read_CJ_temp(&max31856T1);
 //
 //		 		   // we may need to add if there's ever an error...
 //		 		   int len = snprintf(uart_buffer, sizeof(uart_buffer), "Cold Junction Temperature Reading TC1: %f\r\n", temperature);
 //		 	 	   HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
 
+// Read MAX31856 Cold-Junction Temperatures
 
 
-		 		rx_cmd[0]=0;
+
+
+
+
+
+
+
+
+
+// Miscellaneous Commands
+
+		 		case CMD_TOGGLE_LED_RED:
+		 		     HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
+		 		  	 HAL_Delay(2000);
+
+
+
+		 		rx_cmd[0]=0;  // reset received command so it does not execute more than once.
 
 		 		break;
 		 	}
