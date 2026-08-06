@@ -643,192 +643,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:Conn_Coaxial"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0.254 3.048 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_Coaxial"
-				(at 2.921 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Conn_Coaxial_0_1"
-				(polyline
-					(pts
-						(xy -2.54 0) (xy -0.508 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 1.778 0)
-					(mid 0.222 -1.8079)
-					(end -1.778 -0.508)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.778 0.508)
-					(mid 0.2221 1.8084)
-					(end 1.778 0)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 0.508)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Conn_Coaxial_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "In"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 90)
-					(length 2.54)
-					(name "Ext"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:TestPoint"
 			(pin_numbers
 				(hide yes)
@@ -942,6 +756,164 @@
 						)
 					)
 					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1693,7 +1665,7 @@
 	)
 	(hierarchical_label "Cap3-"
 		(shape bidirectional)
-		(at 173.99 31.75 180)
+		(at 161.29 35.56 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1715,7 +1687,7 @@
 	)
 	(hierarchical_label "Cap3+"
 		(shape bidirectional)
-		(at 153.67 31.75 180)
+		(at 161.29 33.02 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1726,7 +1698,7 @@
 	)
 	(hierarchical_label "Cap2-"
 		(shape bidirectional)
-		(at 135.89 31.75 180)
+		(at 125.73 35.56 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1737,7 +1709,7 @@
 	)
 	(hierarchical_label "Cap1-"
 		(shape bidirectional)
-		(at 81.28 31.75 180)
+		(at 68.58 35.56 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1748,7 +1720,7 @@
 	)
 	(hierarchical_label "Cap0+"
 		(shape bidirectional)
-		(at 25.4 31.75 180)
+		(at 33.02 33.02 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1770,7 +1742,7 @@
 	)
 	(hierarchical_label "Cap1+"
 		(shape bidirectional)
-		(at 60.96 31.75 180)
+		(at 68.58 33.02 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1781,7 +1753,7 @@
 	)
 	(hierarchical_label "Cap2+"
 		(shape bidirectional)
-		(at 118.11 31.75 180)
+		(at 125.73 33.02 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1792,7 +1764,7 @@
 	)
 	(hierarchical_label "Cap0-"
 		(shape bidirectional)
-		(at 43.18 31.75 180)
+		(at 33.02 35.56 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1960,8 +1932,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 179.07 36.83 0)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 38.1 33.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1970,30 +1942,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "27e2b71b-fc72-40d1-97a3-23b0a4dc8fce")
-		(property "Reference" "#PWR024"
-			(at 179.07 43.18 0)
-			(hide yes)
+		(uuid "21235a32-383a-4400-980e-1d14f236a6a2")
+		(property "Reference" "J1"
+			(at 40.64 33.0199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 179.07 41.91 0)
+		(property "Value" "Conn_01x02"
+			(at 40.64 35.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 179.07 36.83 0)
+		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980271_1x02_P1.25mm_Horizontal"
+			(at 38.1 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2004,7 +1977,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 179.07 36.83 0)
+			(at 38.1 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2014,8 +1987,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 179.07 36.83 0)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 38.1 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2026,93 +1999,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "37af9c5a-84a0-4617-90de-da33b070904b")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR024")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 140.97 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2a00cd18-0a56-4484-8325-18a44cae7527")
-		(property "Reference" "J6"
-			(at 139.192 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 134.874 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
-			(at 140.97 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
-			(at 140.97 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 140.97 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
+			(uuid "021d894e-8246-497a-a53d-6d8c479e4864")
 		)
 		(pin "2"
-			(uuid "461743a4-c5ce-4db2-9253-d10146cfd4fe")
-		)
-		(pin "1"
-			(uuid "703c067e-d6f5-4d36-82de-00d331a60148")
+			(uuid "f2aaeade-34c9-478b-a7af-4ccb7974bc9d")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J6")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -2197,8 +2092,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 48.26 36.83 0)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 73.66 33.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2207,30 +2102,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "58a19b48-ff55-40ac-b1b6-a8e4989d5549")
-		(property "Reference" "#PWR018"
-			(at 48.26 43.18 0)
-			(hide yes)
+		(uuid "3eb9fcb9-3e83-4f78-91e1-083908d815bb")
+		(property "Reference" "J2"
+			(at 76.2 33.0199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 48.26 41.91 0)
+		(property "Value" "Conn_01x02"
+			(at 76.2 35.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 48.26 36.83 0)
+		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980271_1x02_P1.25mm_Horizontal"
+			(at 73.66 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2241,7 +2137,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 36.83 0)
+			(at 73.66 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2251,8 +2147,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 48.26 36.83 0)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 73.66 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2263,12 +2159,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "62b1ae6e-1b67-4b7d-8f6e-6ea8ef2ad2c7")
+			(uuid "992944bd-6c8b-42a0-b428-11a00587692e")
+		)
+		(pin "2"
+			(uuid "2b2e83ec-a7fe-4ed5-a933-a24b014d798c")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR018")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -2345,165 +2244,6 @@
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
 					(reference "H2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 158.75 36.83 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7a7cef64-17d9-4a82-8209-289b376528e1")
-		(property "Reference" "#PWR023"
-			(at 158.75 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 158.75 41.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 158.75 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 158.75 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 158.75 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bbf8ffde-40df-4f30-883f-4f0d66fa45eb")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR023")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 158.75 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "82e3d526-7a3c-48ce-89e7-31a41e054c46")
-		(property "Reference" "J7"
-			(at 156.972 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 152.654 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
-			(at 158.75 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
-			(at 158.75 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 158.75 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "ad77095f-6126-4734-8e63-8ae412aa0c43")
-		)
-		(pin "1"
-			(uuid "d8361ce2-7faf-4699-8fd5-bfd8712c43a1")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -2589,8 +2329,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 123.19 36.83 0)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 130.81 33.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2599,30 +2339,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "8bb9f262-07eb-42e8-8ca4-63d5ccfcf195")
-		(property "Reference" "#PWR021"
-			(at 123.19 43.18 0)
-			(hide yes)
+		(uuid "9d5bd895-a440-4d36-bba2-196b4362fe97")
+		(property "Reference" "J3"
+			(at 133.35 33.0199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 123.19 41.91 0)
+		(property "Value" "Conn_01x02"
+			(at 133.35 35.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 123.19 36.83 0)
+		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980271_1x02_P1.25mm_Horizontal"
+			(at 130.81 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2633,7 +2374,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 123.19 36.83 0)
+			(at 130.81 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2643,86 +2384,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 123.19 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8de2909f-de3b-45e0-a797-d38ffe5ebfc1")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR021")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 66.04 36.83 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8c7f5008-7270-4b59-bf2d-1e2b8032bf8e")
-		(property "Reference" "#PWR019"
-			(at 66.04 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 66.04 41.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 66.04 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 66.04 36.83 0)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 130.81 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2733,12 +2396,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "bdb082a7-2644-4ba2-80f9-ac81f161614f")
+			(uuid "10bc53ad-e1b1-413c-a69f-80668e6519b0")
+		)
+		(pin "2"
+			(uuid "80b65384-34f9-43ed-90ee-68767c4a2adc")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR019")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -2815,87 +2481,6 @@
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
 					(reference "H3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 48.26 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ad842b9e-d0f8-41b9-b31a-7502463dd128")
-		(property "Reference" "J2"
-			(at 46.482 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 42.164 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
-			(at 48.26 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
-			(at 48.26 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 48.26 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "71715268-b670-4667-9d64-1245a48823c5")
-		)
-		(pin "1"
-			(uuid "295f11b9-911d-4725-9176-735818d2c75c")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -3137,165 +2722,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 86.36 36.83 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "bf59dd86-8b50-4a1f-911c-5d3647ea378b")
-		(property "Reference" "#PWR020"
-			(at 86.36 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 86.36 41.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 86.36 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 86.36 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 86.36 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9e4e69b4-dc9a-4be0-8cf7-bccaf9230908")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR020")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 179.07 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "bf8f6014-08d0-4e45-a8e9-3ad2ae73a806")
-		(property "Reference" "J8"
-			(at 177.292 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 172.974 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
-			(at 179.07 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
-			(at 179.07 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 179.07 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "8f8f082d-ff2e-4e5b-98e1-f80dfb81f8c4")
-		)
-		(pin "1"
-			(uuid "15522802-47fd-44be-86d4-33fb9deef608")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 34.29 80.01 0)
 		(unit 1)
@@ -3372,89 +2798,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 123.19 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c5c96720-3e7e-4354-a298-dc92d32041bc")
-		(property "Reference" "J5"
-			(at 121.412 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 117.094 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
-			(at 123.19 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
-			(at 123.19 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 123.19 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "42149731-9b35-4fae-971d-66b936c30c8f")
-		)
-		(pin "1"
-			(uuid "1a411ea9-191c-4b87-b620-f60b772567f0")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 30.48 36.83 0)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 166.37 33.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3463,30 +2808,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "cd4aa64e-a899-47e2-bb49-604ef1a156d8")
-		(property "Reference" "#PWR017"
-			(at 30.48 43.18 0)
-			(hide yes)
+		(uuid "c80dedcf-9df6-40ea-8be3-354ac91b39a3")
+		(property "Reference" "J4"
+			(at 168.91 33.0199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 30.48 41.91 0)
+		(property "Value" "Conn_01x02"
+			(at 168.91 35.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 30.48 36.83 0)
+		(property "Footprint" "Connector_Molex_Micro-Lock-Plus:Molex_Micro-Lock_2200980271_1x02_P1.25mm_Horizontal"
+			(at 166.37 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3497,7 +2843,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 30.48 36.83 0)
+			(at 166.37 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3507,8 +2853,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 30.48 36.83 0)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 166.37 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3519,174 +2865,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "a4a69708-1906-48d4-abba-69552c4f0b26")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR017")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 30.48 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d1ea7917-fd5e-44bc-91da-196ae46664a7")
-		(property "Reference" "J1"
-			(at 28.702 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 24.384 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
-			(at 30.48 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
-			(at 30.48 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 30.48 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
+			(uuid "1032971c-e9a1-4b2f-a410-c2746076bc23")
 		)
 		(pin "2"
-			(uuid "e896c691-7c46-41c8-84df-f0250e706197")
-		)
-		(pin "1"
-			(uuid "b698cc91-f28b-451e-97d2-c4537d3ba483")
+			(uuid "fea0f7eb-2a16-4769-8f80-d53dc7205de7")
 		)
 		(instances
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 66.04 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ddfe269f-f3bd-4fc8-9a16-6df0db8da763")
-		(property "Reference" "J3"
-			(at 64.262 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 59.944 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
-			(at 66.04 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
-			(at 66.04 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 66.04 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "ad9d5138-5e19-454a-b7c6-d39b09adaaca")
-		)
-		(pin "1"
-			(uuid "a2dc1ace-a1af-482d-afc6-7a16da9ef1d8")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J3")
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -3854,165 +3041,6 @@
 			(project "monarch_breakout_board_rev2"
 				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
 					(reference "J9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 86.36 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f9ec4da3-f166-4c39-abcb-5833c85cee8d")
-		(property "Reference" "J4"
-			(at 84.582 25.654 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 80.264 27.432 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "BNC_Adam_Tech:RF101AD0075M"
-			(at 86.36 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/RF1-01A-D-00-75-M/9831054?gclsrc=aw.ds&gad_source=1&gad_campaignid=17336967819&gbraid=0AAAAADrbLlhRq9ptAIkmG0xXJHOXDnaTD&gclid=CjwKCAjwj7HTBhBiEiwA8s35Or8BKNyE8T8YQNFbOL1zD48EV8S7RL0HZBdXKT8hfJ_T3G-DGK5rChoC9vMQAvD_BwE"
-			(at 86.36 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 86.36 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "d2bdd6d2-0b74-4de0-a487-8a4297189306")
-		)
-		(pin "1"
-			(uuid "9ea2030b-f2b9-41f9-a9a8-90f94e72314d")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 140.97 36.83 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fe3555c4-abf9-4fb9-8922-e2a7481acb43")
-		(property "Reference" "#PWR022"
-			(at 140.97 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 140.97 41.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 140.97 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 140.97 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 140.97 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "88293cf0-414e-4ed3-8eeb-63b445a7f165")
-		)
-		(instances
-			(project "monarch_breakout_board_rev2"
-				(path "/7f71233a-1f17-423c-a2e8-36ba020ec1ce/d2936efb-ac99-4794-953e-44c7a20a0345"
-					(reference "#PWR022")
 					(unit 1)
 				)
 			)

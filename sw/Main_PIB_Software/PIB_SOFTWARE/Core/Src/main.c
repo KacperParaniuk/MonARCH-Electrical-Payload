@@ -41,19 +41,9 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 
 #include "ad7124_console_app.h"
 #include "ad7124.h"
-
-#ifdef MAX31856
-
 #include "max31856.h"
-
-#endif
-
-
-#ifdef FDC2214_S
-
 #include "fdc2214.h"
 
-#endif
 
 
 // Serial Interface For Debugging || Serial wire JTAG debug port (SWJ-DP)
@@ -507,32 +497,6 @@ int main(void)
 
 #endif
 #ifdef ARDUNIO
- 			case CMD_READ_PT1:
- 				value = display_channel_sample(CH_READ_PT0);
- 				// will need to convert the voltage value to a current / temp reading function eventually in ad7124.h
- 				Serial_Printf("Pressure Reading PT 1: %d \r\n", value);
- 			case CMD_READ_PT2:
- 				value = display_channel_sample(CH_READ_PT1);
- 				Serial_Printf("Pressure Reading PT 2: %d \r\n", value);
- 			case CMD_READ_PT3:
- 				value = display_channel_sample(CH_READ_PT2);
- 				Serial_Printf("Pressure Reading PT 3: %d \r\n", value);
- 			case CMD_READ_PT4:
- 				value = display_channel_sample(CH_READ_PT3);
- 				Serial_Printf("Pressure Reading PT 4: %d \r\n", value);
- 			case CMD_READ_PT5:
- 				value = display_channel_sample(CH_READ_PT4);
- 				Serial_Printf("Pressure Reading PT 5: %d \r\n", value);
- 			case CMD_READ_PT6:
- 				value = display_channel_sample(CH_READ_PT5);
- 				Serial_Printf("Pressure Reading PT 6: %d \r\n", value);
- 			case CMD_READ_PT7:
- 				value = display_channel_sample(CH_READ_PT6);
- 				Serial_Printf("Pressure Reading PT 7: %d \r\n", value);
- 			case CMD_READ_PT8:
- 				value = display_channel_sample(CH_READ_PT7);
- 				Serial_Printf("Pressure Reading PT 8: %d \r\n", value);
-
 
 
 // // Read TC Valves
