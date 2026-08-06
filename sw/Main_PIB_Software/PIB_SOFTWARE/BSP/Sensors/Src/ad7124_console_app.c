@@ -466,6 +466,33 @@ float ad7124_read_channel_current_pc104(uint8_t channel){
 }
 
 
+
+float ad7124_read_channel_current_pressure(uint8_t channel){
+
+
+	float v_shunt = ad7124_read_differential_channel_voltage(channel, PRESSURE);
+	return v_shunt / 125; // ohms law V=IR > I = V/R
+
+
+
+
+
+}
+// https://www.divize.com/techinfo/4-20ma-calculator.html
+// https://sino-inst.com/pressure-transmitter-4-20ma-guide-testing-and-troubleshooting/
+// need info about max / min to compute the slope and an equation to get pressure as pressure is linearly proportional
+
+
+float ad7124_read_pressure(uint8_t channel){
+
+
+	float current_reading = ad7124_read_channel_current_pressure(channel);
+	return ((HIGH_PRESSURE_RANGE - LOW_PRESSURE_RANGE) / (HIGH_CURRENT_PRESSURE - LOW_CURRENT_PRESSURE)) * (current_reading-LOW_CURRENT_PRESSURE); // translation into pressure assuming linearity
+
+
+}
+
+
 /*!
  * @brief      resets the channelSampleCounts to zero
  *

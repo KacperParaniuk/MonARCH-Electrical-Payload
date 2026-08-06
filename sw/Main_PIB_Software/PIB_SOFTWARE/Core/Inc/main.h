@@ -153,6 +153,15 @@ extern SPI_HandleTypeDef hspi2;
 extern SPI_HandleTypeDef hspi1;
 
 
+
+
+#define LOW_PRESSURE_RANGE 0
+#define HIGH_PRESSURE_RANGE 40 // MPa|| CHANGE once yk the pressure range of pressure transducer
+
+#define HIGH_CURRENT_PRESSURE 20 // (mA)
+#define LOW_CURRENT_PRESSURE 4 // (mA)
+
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

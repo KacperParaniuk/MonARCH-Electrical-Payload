@@ -583,68 +583,6 @@ int main(void)
  				Serial_Printf("Temperature Reading TC5: %f \r\n", temp);
 
 
-// // Read PC104 Voltages
-
-// 			case CMD_READ_12VA_VB:
-// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VB);
-// 				Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
-// 			case CMD_READ_12VA_VA:
-// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VA);
-// 				Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
-// 			case CMD_READ_3V3_VB:
-// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VB);
-// 				Serial_Printf("PC104 Voltage Reading 3V3_VB: %d \r\n", value);
-// 			case CMD_READ_3V3_VA:
-// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VA);
-// 				Serial_Printf("PC104 Voltage Reading 3V3_VA: %d \r\n", value);
-//
-// 			case CMD_READ_VBAT_VA:
-// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VA);
-// 				Serial_Printf("PC104 Voltage Reading VBAT_VA: %d \r\n", value);
-// 			case CMD_READ_VBAT_VB:
-// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VB);
-// 				Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
-//
-// 			case CMD_READ_12VB_VA:
-// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VA);
-// 				Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
-//
-// 			case CMD_READ_12VB_VB:
-// 				value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VB);
-// 				Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
-//
-//// // Read PC104 Currents
-// 			case CMD_READ_12VA_VB_CURRENT:
-// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VB);
-// 				Serial_Printf("PC104 Current Reading 12VA_VB: %d \r\n", value);
-//
-// 			case CMD_READ_12VA_VA_CURRENT:
-// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VA);
-// 				Serial_Printf("PC104 Current Reading 12VA_VA: %d \r\n", value);
-//
-// 			case CMD_READ_3V3_VB_CURRENT:
-// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VB);
-// 				Serial_Printf("PC104 Current Reading 3V3_VB : %d \r\n", value);
-//
-// 			case CMD_READ_3V3_VA_CURRENT:
-// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VA);
-// 				Serial_Printf("PC104 Current Reading 3V3_VA : %d \r\n", value);
-//
-// 			case CMD_READ_VBAT_VA_CURRENT:
-// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VA);
-// 				Serial_Printf("PC104 Current Reading VBAT_VA : %d \r\n", value);
-//
-// 			case CMD_READ_VBAT_VB_CURRENT:
-// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VB);
-// 				Serial_Printf("PC104 Current Reading VBAT_VB : %d \r\n", value);
-//
-// 			case CMD_READ_12VB_VA_CURRENT:
-// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VA);
-// 				Serial_Printf("PC104 Current Reading 12VB_VA: %d \r\n",  value);
-//
-// 			case CMD_READ_12VB_VB_CURRENT:
-// 				value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VB);
-// 				Serial_Printf("PC104 Current Reading 12VB_VB: %d \r\n", value);
 
 
 // // READ FDC2214 Capacitance Measurements.
@@ -748,46 +686,6 @@ int main(void)
 //
 //// 	  // MAX31856 Error Reading
 //
-//
-//// 	  printf("Reading PC104 Voltages...");
-//
-// 	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VB);
-// 	  printf("PC104 Voltage Reading 12VA_VB: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VA_VA);
-// 	  printf("PC104 Voltage Reading 12VA_VA: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VB);
-// 	  printf("PC104 Voltage Reading 3V3_VB: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_3V3_VA);
-// 	  printf("PC104 Voltage Reading 3V3_VA: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VA);
-// 	  printf("PC104 Voltage Reading VBAT_VA: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_VBAT_VB);
-// 	  printf("PC104 Voltage Reading VBAT_VB: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VA);
-// 	  printf("PC104 Voltage Reading 12VB_VA: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124_pc104, CH_READ_12VB_VB);
-// 	  printf("PC104 Voltage Reading 12VB_VB: %d \r\n", (int)value);
-
-
-// 	  printf("Reading PC104 Currents...");
-
-
-// 	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VB);
-// 	  printf("PC104 Current Reading 12VA_VB: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VA_VA);
-// 	  printf("PC104 Current Reading 12VA_VA: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VB);
-// 	  printf("PC104 Current Reading 3V3_VB : %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_3V3_VA);
-// 	  printf("PC104 Current Reading 3V3_VA : %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VA);
-// 	  printf("PC104 Current Reading VBAT_VA : %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_VBAT_VB);
-// 	  printf("PC104 Current Reading VBAT_VB : %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VA);
-// 	  printf("PC104 Current Reading 12VB_VA: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_current_pc104(ad7124_pc104, CH_READ_12VB_VB);
-// 	  printf("PC104 Current Reading 12VB_VB: %d \r\n", (int)value);
 
 
 

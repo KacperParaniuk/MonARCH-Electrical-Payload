@@ -3,5 +3,5 @@
 ../Core/Src/freertos.c:236:6:StartTask02	16	static
 ../Core/Src/freertos.c:274:6:StartTask03	16	static
 ../Core/Src/freertos.c:309:6:StartTask04	16	static
-../Core/Src/freertos.c:542:6:StartTask05	16	static
-../Core/Src/freertos.c:560:6:StartTask06	16	static
+../Core/Src/freertos.c:571:6:StartTask05	16	static
+../Core/Src/freertos.c:589:6:StartTask06	16	static

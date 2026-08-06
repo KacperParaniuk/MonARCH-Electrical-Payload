@@ -2,6 +2,6 @@
 ../Core/Src/freertos.c:214:6:StartDefaultTask	1
 ../Core/Src/freertos.c:236:6:StartTask02	3
 ../Core/Src/freertos.c:274:6:StartTask03	2
-../Core/Src/freertos.c:309:6:StartTask04	55
-../Core/Src/freertos.c:542:6:StartTask05	1
-../Core/Src/freertos.c:560:6:StartTask06	1
+../Core/Src/freertos.c:309:6:StartTask04	63
+../Core/Src/freertos.c:571:6:StartTask05	1
+../Core/Src/freertos.c:589:6:StartTask06	1

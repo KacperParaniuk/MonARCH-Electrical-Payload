@@ -83,7 +83,8 @@ void display_channel_sample(uint8_t channel, AD7124_CHIP chip);
 float get_channel_sample(uint8_t channel, AD7124_CHIP chip);
 float ad7124_read_differential_channel_voltage(uint8_t channel, AD7124_CHIP chip);
 float ad7124_read_channel_current_pc104(uint8_t channel);
-
+float ad7124_read_channel_current_pressure(uint8_t channel);
+float ad7124_read_pressure(uint8_t channel);
 
 //extern console_menu ad7124_main_menu; << not using menu
 

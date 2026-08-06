@@ -368,6 +368,17 @@ enum voltage_channel{
 	CH_12VB_VB
 };
 
+enum pressure_channel{
+	CH_P0 = 1,
+	CH_P1,
+	CH_P2,
+	CH_P3,
+	CH_P4,
+	CH_P5,
+	CH_P6,
+	CH_P7
+};
+
 
 
 /*
