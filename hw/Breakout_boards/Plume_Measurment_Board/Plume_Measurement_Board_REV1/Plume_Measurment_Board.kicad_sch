@@ -1762,192 +1762,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:Conn_Coaxial"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0.254 3.048 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_Coaxial"
-				(at 2.921 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Conn_Coaxial_0_1"
-				(polyline
-					(pts
-						(xy -2.54 0) (xy -0.508 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 1.778 0)
-					(mid 0.222 -1.8079)
-					(end -1.778 -0.508)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.778 0.508)
-					(mid 0.2221 1.8084)
-					(end 1.778 0)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 0.508)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Conn_Coaxial_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "In"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 90)
-					(length 2.54)
-					(name "Ext"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:C_Small"
 			(pin_numbers
 				(hide yes)
@@ -2537,7 +2351,7 @@
 		(uuid "4d3f4c2b-e075-4e39-909c-409d65232cc2")
 	)
 	(rectangle
-		(start 245.11 44.45)
+		(start 245.11 12.7)
 		(end 284.48 81.28)
 		(stroke
 			(width 0)
@@ -2572,17 +2386,16 @@
 		)
 		(uuid "b432b9f3-da84-4c5d-970a-e02728760686")
 	)
-	(rectangle
-		(start 245.11 12.7)
-		(end 284.48 43.18)
-		(stroke
-			(width 0)
-			(type dash)
+	(text "V_out = - (R_feedback /  Rf_in) * V_in"
+		(exclude_from_sim no)
+		(at 138.938 78.74 0)
+		(effects
+			(font
+				(size 2.286 2.286)
+				(italic yes)
+			)
 		)
-		(fill
-			(type none)
-		)
-		(uuid "dacc1ad2-8dc2-4075-9a10-ec3d4d70a3cf")
+		(uuid "00a0b560-89be-4edc-a6ca-b75690064431")
 	)
 	(text "Breakout Board Connectors"
 		(exclude_from_sim no)
@@ -2597,9 +2410,9 @@
 		)
 		(uuid "15271b14-5d3a-47fc-8644-2dfa5c8941c9")
 	)
-	(text "V_out = - I * R_G\n\n"
+	(text "V_out = - I_in * R_feedback + V_offs\n\n\n"
 		(exclude_from_sim no)
-		(at 30.988 80.01 0)
+		(at 47.752 83.312 0)
 		(effects
 			(font
 				(size 2.286 2.286)
@@ -2664,9 +2477,9 @@
 		)
 		(uuid "58a55089-a2db-4753-b69a-1fdb929cd041")
 	)
-	(text "BNC Connector"
+	(text "5V Regulator"
 		(exclude_from_sim no)
-		(at 245.618 17.018 0)
+		(at 246.126 16.764 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2675,7 +2488,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "738d0106-21ab-479d-bdb2-9215b53f7c8c")
+		(uuid "809a30e1-7614-4394-99c2-b99de82cf3f1")
 	)
 	(text "LMP7721\n"
 		(exclude_from_sim no)
@@ -2712,6 +2525,16 @@
 			(justify left bottom)
 		)
 		(uuid "c3884992-8151-46ef-a7b4-bd31fbc5ba2e")
+	)
+	(text "Pico-Ammeter Design Inspiration: https://repository.lsu.edu/honors_etd/1432/"
+		(exclude_from_sim no)
+		(at 52.832 194.818 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "de89054e-f46a-4576-a07b-68327ee4bab0")
 	)
 	(junction
 		(at 245.11 132.08)
@@ -3027,7 +2850,7 @@
 	)
 	(wire
 		(pts
-			(xy 266.7 60.96) (xy 275.59 60.96)
+			(xy 266.7 44.45) (xy 275.59 44.45)
 		)
 		(stroke
 			(width 0)
@@ -3157,7 +2980,7 @@
 	)
 	(wire
 		(pts
-			(xy 266.7 63.5) (xy 273.05 63.5)
+			(xy 266.7 46.99) (xy 273.05 46.99)
 		)
 		(stroke
 			(width 0)
@@ -3257,7 +3080,7 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 55.88) (xy 275.59 60.96)
+			(xy 275.59 39.37) (xy 275.59 44.45)
 		)
 		(stroke
 			(width 0)
@@ -3431,8 +3254,8 @@
 		(uuid "79c2bd18-b020-4ddd-a89f-a207d2cb7d61")
 	)
 	(hierarchical_label "+VBAT"
-		(shape output)
-		(at 273.05 63.5 0)
+		(shape input)
+		(at 273.05 46.99 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3486,7 +3309,7 @@
 		(uuid "be42c32f-2278-458a-b852-e445c92f3314")
 	)
 	(hierarchical_label "+VBAT"
-		(shape output)
+		(shape input)
 		(at 165.1 182.88 0)
 		(effects
 			(font
@@ -4377,7 +4200,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 275.59 55.88 0)
+		(at 275.59 39.37 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4388,7 +4211,7 @@
 		(fields_autoplaced yes)
 		(uuid "689c7985-5521-4283-b176-bd27a77d3416")
 		(property "Reference" "#PWR0244"
-			(at 275.59 59.69 0)
+			(at 275.59 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4399,7 +4222,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 275.59 50.8 0)
+			(at 275.59 34.29 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4409,7 +4232,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 275.59 55.88 0)
+			(at 275.59 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4420,7 +4243,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 275.59 55.88 0)
+			(at 275.59 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4431,7 +4254,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 275.59 55.88 0)
+			(at 275.59 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6164,87 +5987,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 265.43 27.94 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d9fdbc43-0386-42cc-943d-ce71e09ba1a5")
-		(property "Reference" "J1"
-			(at 266.7 24.892 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 260.096 23.114 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 265.43 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 265.43 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 265.43 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b8b39d54-7e9e-412d-8b1e-cfb1aedc7c34")
-		)
-		(pin "2"
-			(uuid "d45a082f-1b49-4e73-9b12-94851d308d36")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 138.43 113.03 180)
 		(unit 1)
@@ -6682,7 +6424,7 @@
 		)
 	)
 	(sheet
-		(at 250.19 58.42)
+		(at 250.19 41.91)
 		(size 16.51 7.62)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6698,7 +6440,7 @@
 		)
 		(uuid "51fb0d9e-13dd-4646-9739-03c7f4c08998")
 		(property "Sheetname" "Voltage Regulator"
-			(at 250.19 57.7084 0)
+			(at 250.19 41.1984 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6709,7 +6451,7 @@
 			)
 		)
 		(property "Sheetfile" "Voltage_Regulator.kicad_sch"
-			(at 250.19 66.6246 0)
+			(at 250.19 50.1146 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6720,7 +6462,7 @@
 			)
 		)
 		(pin "+VBAT" input
-			(at 266.7 63.5 0)
+			(at 266.7 46.99 0)
 			(uuid "9ece6d5a-af07-462a-8c25-c81274d538cc")
 			(effects
 				(font
@@ -6730,7 +6472,7 @@
 			)
 		)
 		(pin "+5V" input
-			(at 266.7 60.96 0)
+			(at 266.7 44.45 0)
 			(uuid "65632213-979d-4dab-848b-22ee90de3a8b")
 			(effects
 				(font
