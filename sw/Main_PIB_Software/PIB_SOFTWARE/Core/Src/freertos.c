@@ -406,6 +406,8 @@ void StartTask04(void *argument)
 
 // read device id's
 
+		 		case CMD_READ_D
+
 
 // READ PC104 ADC CHANNELS
 
@@ -499,10 +501,20 @@ void StartTask04(void *argument)
 	 				Serial_Printf("Pressure Reading PT 8: %d \r\n", value);
 
 
-
 // Read MAX31856 Temperatures
 
 		 	    case CMD_READ_TC1:
+		 	    	value = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
+		 		    if (max31856T1.sr.val) {
+		 		    	Serial_Print("TC TEMP Read Fail ");
+		 		   	   	Serial_Printf("ERROR TC1 #: %d ",max31856T1.sr.val);
+		 		   	   	print_errors(max31856T1.sr.val); // test functionality of error discerning
+
+		 		    }
+		 		    Serial_Printf("Temperature Reading TC1: %f \r\n", value);
+
+
+
 
 
 

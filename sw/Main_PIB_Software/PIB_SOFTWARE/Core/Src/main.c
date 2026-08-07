@@ -210,7 +210,7 @@ int main(void)
 
 // T1
 
-#ifdef MAX31856_T1
+
    	max31856_gpio_t max31856T1PIN = {
    	    .gpio_port = T1_EN_GPIO_Port,
    	    .gpio_pin  = T1_EN_Pin
@@ -230,9 +230,8 @@ int main(void)
    	max31856_set_thermocouple_type(&max31856T1, CR1_TC_TYPE_K); // K - type thermocouple
    	max31856_set_average_samples(&max31856T1, CR1_AVG_TC_SAMPLES_2);
    	max31856_set_open_circuit_fault_detection(&max31856T1, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
-   	max31856_set_conversion_mode(&max31856T1, CR0_CJ_DISABLED); // need to disable for single we don't have access to the DRDY pins thus we have to estimate polling time.
+   	max31856_set_conversion_mode(&max31856T1, CR0_CONV_CONTINUOUS);
 
-#endif
 
 //   	// T2
 
@@ -462,40 +461,9 @@ int main(void)
 #endif
 
 
-#ifdef B2B_ARDUINO
-//	  Serial_Print("Transmitting"); // Serial_Print custom function test.
-//
-//	   Serial_Printf("Temperature Test %d C\r\n", 100); // Serial_Print custom formatted print function
-
-
-//	   TEST READS...
-
-//	   Serial_Print("Test IC Reads"); // Serial_Print custom function test.
-
-//	   For Repo Branch...
-
-
-//	   polling method -> Blocks CPU until UART receive is done.
- 	  // uart receive block will continously try to fetch.
- 		  // Polling for Seperate Pressure Sensors.
-
-//	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-//	  HAL_Delay(500);
-//
-//
-//	if(*rx_cmd == CMD_TOGGLE_LED_RED){
-//		  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-
-//		  HAL_Delay(2000);
-
-//	}
 
 
 
-
-
-
-#endif
 #ifdef ARDUNIO
 
 

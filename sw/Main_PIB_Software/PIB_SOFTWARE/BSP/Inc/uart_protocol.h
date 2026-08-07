@@ -59,6 +59,17 @@
 #define CMD_READ_TC5_CJ	
 
 
+// READ DEVICE ID'S
+
+#define CMD_READ_ID_TC1
+#define CMD_READ_ID_TC2
+#define CMD_READ_ID_TC3
+#define CMD_READ_ID_TC4
+#define CMD_READ_ID_TC5
+
+
+
+
 // UART Commands for Solenoid Valves
 
 #define CMD_OPEN_SOL1  0x0E
