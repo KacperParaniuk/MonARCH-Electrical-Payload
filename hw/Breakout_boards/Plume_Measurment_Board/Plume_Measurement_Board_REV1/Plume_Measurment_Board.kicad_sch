@@ -2973,7 +2973,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 107.95) (xy 161.29 125.73)
+			(xy 161.29 115.57) (xy 161.29 125.73)
 		)
 		(stroke
 			(width 0)
@@ -3093,6 +3093,26 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 107.95) (xy 144.78 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cafe6d06-e7bb-4da8-b25f-30763a9d974b")
+	)
+	(wire
+		(pts
+			(xy 134.62 129.54) (xy 135.89 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc980c45-4b1a-4db4-9790-0640646e51cf")
+	)
+	(wire
+		(pts
 			(xy 177.8 128.27) (xy 175.26 128.27)
 		)
 		(stroke
@@ -3130,6 +3150,16 @@
 			(type default)
 		)
 		(uuid "df17fddd-ba7e-4f1c-9219-999b83ad33e4")
+	)
+	(wire
+		(pts
+			(xy 135.89 129.54) (xy 135.89 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df28137d-1a61-4cac-9039-068ec772b0b5")
 	)
 	(wire
 		(pts
@@ -3253,6 +3283,17 @@
 			(justify right)
 		)
 		(uuid "34bb3323-076b-4cb0-9272-36e3f1fb085e")
+	)
+	(hierarchical_label "VSS"
+		(shape input)
+		(at 134.62 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "381743df-5c1e-4b60-8fbb-7acc06239418")
 	)
 	(hierarchical_label "Plume"
 		(shape output)
@@ -3418,6 +3459,17 @@
 			(justify right)
 		)
 		(uuid "aaf604ff-3bf7-40d9-8b49-3b3b8d524891")
+	)
+	(hierarchical_label "VSS"
+		(shape input)
+		(at 134.62 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "abc9bec0-28c6-4640-b332-1c949b7bba91")
 	)
 	(hierarchical_label "+VBAT"
 		(shape input)
@@ -4542,7 +4594,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 161.29 107.95 0)
+		(at 161.29 115.57 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4553,7 +4605,7 @@
 		(fields_autoplaced yes)
 		(uuid "73d2ee4e-d3eb-4d5e-8771-90d4a6742a59")
 		(property "Reference" "#PWR0248"
-			(at 161.29 111.76 0)
+			(at 161.29 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4564,7 +4616,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 161.29 102.87 0)
+			(at 161.29 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4574,7 +4626,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 161.29 107.95 0)
+			(at 161.29 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4585,7 +4637,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 161.29 107.95 0)
+			(at 161.29 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4596,7 +4648,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 161.29 107.95 0)
+			(at 161.29 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4613,84 +4665,6 @@
 			(project "Plume_Measurment_Board"
 				(path "/2e1d3673-27b9-4604-80fb-036cec98a912"
 					(reference "#PWR0248")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 135.89 125.73 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7776ae82-8e35-4833-a7e8-3539711d307c")
-		(property "Reference" "#PWR05"
-			(at 135.89 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 135.89 130.81 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 135.89 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 135.89 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 135.89 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "44e1a879-6a86-49a0-bc98-185375214af1")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912"
-					(reference "#PWR05")
 					(unit 1)
 				)
 			)
