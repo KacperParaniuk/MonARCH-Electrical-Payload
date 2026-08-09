@@ -52,20 +52,18 @@
 
 // UART Commands for MAX31856 Cold-Junction Readings
 
-#define CMD_READ_TC1_CJ   
-#define CMD_READ_TC2_CJ	
-#define CMD_READ_TC3_CJ	
-#define CMD_READ_TC4_CJ	
-#define CMD_READ_TC5_CJ	
+#define CMD_READ_TC1_CJ 0x54
+#define CMD_READ_TC2_CJ	0x55
+#define CMD_READ_TC3_CJ	0x56
+#define CMD_READ_TC4_CJ	0x57
+#define CMD_READ_TC5_CJ	0x58
 
 
 // READ DEVICE ID'S
 
-#define CMD_READ_ID_TC1
-#define CMD_READ_ID_TC2
-#define CMD_READ_ID_TC3
-#define CMD_READ_ID_TC4
-#define CMD_READ_ID_TC5
+#define CMD_READ_ID_PT 0x51
+#define CMD_READ_ID_V 0x52
+#define CMD_READ_ID_FDC 0x53
 
 
 
@@ -150,9 +148,12 @@
 #define PIB_PPU_CURRENT_READ_2 0X03
 
 
-
+// Miscellaneous
 
 #define CMD_TOGGLE_LED_RED 0x4E
+#define CMD_TOGGLE_LED_GREEN 0x4F
+#define CMD_TOGGLE_LED_AMBER 0x50
+
 
 
 // Safety Commands

@@ -340,17 +340,12 @@ int main(void)
 
 //   	// FDC2214 SETUP
 
-//   	// Reset Registers in Device.
 
-#ifdef FDC2214_S
-   	uint8_t ret;
+   	setupResult = FDC2214_Begin();
+   	if(setupResult != 0){
 
-
-
-
-   	ret = FDC2214_Begin();
-   	if(ret != 0){
-   		printf("Failed to communicate with FDCC2214");
+   		// need to figure out what to do if an iniit fails in flight
+   		Serial_Printf("Failed to communicate with FDCC2214");
    		reset_fdc2214();
    		printf("Try Again");
    		FDC2214_Begin();
@@ -369,7 +364,6 @@ int main(void)
    	}
 
 
-#endif
 
 
 
@@ -397,25 +391,6 @@ int main(void)
 //	  HAL_Delay(200);
 
 
-
-
-#ifdef HEATER
-
-
-	  printf("Heater starting in 5 seconds");
-	  HAL_Delay(5000);
-
-	  HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
-
-
-	  printf("Heating for 10 seconds");
-	  HAL_Delay(10000);
-
-
-	  HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
-
-
-#endif
 
 
 
@@ -537,29 +512,6 @@ int main(void)
 
 #endif
 
-#ifdef MAX31856_T1
-
-//	   max31856_trigger_one_shot(&max31856T1);
-//	   HAL_Delay(200); // Wait until single is ready
-	   temperature = max31856_read_CJ_temp(&max31856T1);
-	   max31856_read_fault(&max31856T1);
-	   if (max31856T1.sr.val) {
-	   		printf("TC Read Fail ");
-	   		printf("ERROR TC1 #: %d ",max31856T1.sr.val);
-
-	   }
-	   printf("Cold Junction Temperature Reading TC1: %f \r\n", temperature);
-
-	   temperature = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
-	   if (max31856T1.sr.val) {
-	   	   	printf("TC TEMP Read Fail ");
-	   	   	printf("ERROR TC1 #: %d ",max31856T1.sr.val);
-	   	   	print_errors(max31856T1.sr.val); // test functionality of error discerning
-
-	   }
-	   printf("Temperature Reading TC1: %f \r\n", temperature);
-
-#endif
 
 // 	  // TESTING DEBUG PURPOSES w/ ST-LINK
 //
@@ -592,61 +544,16 @@ int main(void)
 #endif
 
 
-#ifdef PWM_VALVE_6
 
-
- 	 HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
-
- 	 // see duty cycle and if does not look good uncomment the bottom code. This is for testing.
-
-// 	  // change duty cycle to 50 %
-// 	 int duty = 50
-// 	 __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, duty);  // TIM1->CCR1 = duty;
-// 	  HAL_Delay(500);  // Wait 500ms before changing duty cycle
+// 	 HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
 //
-
-
-
-
-
-
-
-
-#endif
-
-
+// 	 // see duty cycle and if does not look good uncomment the bottom code. This is for testing.
 //
-//// 	  // MAX31856 Error Reading
-//
-
-
-
-// 	  printf("Reading Pressure Voltage Readings... \n");
-
-// 	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT0);
-// 	  printf("Pressure Reading PT 1: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT1);
-// 	  printf("Pressure Reading PT 2: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT2);
-// 	  printf("Pressure Reading PT 3: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT3);
-// 	  printf("Pressure Reading PT 4: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT4);
-// 	  printf("Pressure Reading PT 5: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT5);
-// 	  printf("Pressure Reading PT 6: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT6);
-// 	  printf("Pressure Reading PT 7: %d \r\n", (int)value);
-// 	  value = ad7124_read_channel_voltage(ad7124, CH_READ_PT7);
-// 	  printf("Pressure Reading PT 8: %d \r\n", (int)value);
-
-
-// 	  printf("Reading Temperature Voltage Readings... \n");
-
-
-
-
-
+//// 	  // change duty cycle to 50 %
+//// 	 int duty = 50
+//// 	 __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, duty);  // TIM1->CCR1 = duty;
+//// 	  HAL_Delay(500);  // Wait 500ms before changing duty cycle
+///
 
 
 

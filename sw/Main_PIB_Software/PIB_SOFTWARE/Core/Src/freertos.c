@@ -65,6 +65,9 @@ extern int32_t setupResult;
 extern float temperature;
 extern float value;
 
+extern max31856_t max31856T1;
+
+
 /* USER CODE END Variables */
 /* Definitions for heart_beat */
 osThreadId_t heart_beatHandle;
@@ -406,7 +409,26 @@ void StartTask04(void *argument)
 
 // read device id's
 
-		 		case CMD_READ_D
+		 		case CMD_READ_ID_PT:
+		 		    device_id = ad7124_read_device_id(PRESSURE);
+		 			Serial_Printf("AD7124 Device ID: %ld ", device_id);
+		 			if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
+		 				 Serial_Printf("|| SUCCESS \n");
+		 				 HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
+//		 				 read_status_register(); potentially integrate for error checking / sending status back
+
+
+		 		case CMD_READ_ID_V:
+		 			 device_id = ad7124_read_device_id(VOLTAGE);
+		 			 Serial_Printf("AD7124 Device ID: %ld ", device_id);
+		 			 if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
+		 				 printf("|| SUCCESS \n");
+		 				 HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
+		 		//		 				 read_status_register();
+		 		case CMD_READ_ID_FDC:
+
+
+
 
 
 // READ PC104 ADC CHANNELS
@@ -502,19 +524,36 @@ void StartTask04(void *argument)
 
 
 // Read MAX31856 Temperatures
+//
+//		 	    case CMD_READ_TC1:
+//		 	    	value = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
+//		 		    if (max31856T1.sr.val) {
+//		 		    	Serial_Print("TC TEMP Read Fail ");
+//		 		   	   	Serial_Printf("ERROR TC1 #: %d ",max31856T1.sr.val);
+//		 		   	   	print_errors(max31856T1.sr.val); // test functionality of error discerning
+//
+//		 		    }
+//		 		    Serial_Printf("Temperature Reading TC1: %f \r\n", value);
 
-		 	    case CMD_READ_TC1:
-		 	    	value = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
-		 		    if (max31856T1.sr.val) {
-		 		    	Serial_Print("TC TEMP Read Fail ");
-		 		   	   	Serial_Printf("ERROR TC1 #: %d ",max31856T1.sr.val);
-		 		   	   	print_errors(max31856T1.sr.val); // test functionality of error discerning
-
-		 		    }
-		 		    Serial_Printf("Temperature Reading TC1: %f \r\n", value);
-
+		 	    case CMD_READ_TC2:
+		 	    	//
+		 	    case CMD_READ_TC3:
+		 	    	//
+		 	    case CMD_READ_TC4:
+		 	    	//
+		 	    case CMD_READ_TC5:
+		 	    	//
 
 
+
+		 		    // reading cold junction temps
+//		 		   temperature = max31856_read_CJ_temp(&max31856T1);
+//		 		   max31856_read_fault(&max31856T1);
+//		 		   if (max31856T1.sr.val) {
+//		 		   		printf("TC Read Fail ");
+//		 		   		printf("ERROR TC1 #: %d ",max31856T1.sr.val);
+//
+//		 		   }
 
 
 
