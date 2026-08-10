@@ -66,6 +66,10 @@ extern float temperature;
 extern float value;
 
 extern max31856_t max31856T1;
+extern max31856_t max31856T2;
+extern max31856_t max31856T3;
+extern max31856_t max31856T4;
+extern max31856_t max31856T5;
 
 
 /* USER CODE END Variables */
@@ -416,17 +420,27 @@ void StartTask04(void *argument)
 		 				 Serial_Printf("|| SUCCESS \n");
 		 				 HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
 //		 				 read_status_register(); potentially integrate for error checking / sending status back
+		 			}
+
 
 
 		 		case CMD_READ_ID_V:
 		 			 device_id = ad7124_read_device_id(VOLTAGE);
 		 			 Serial_Printf("AD7124 Device ID: %ld ", device_id);
 		 			 if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
-		 				 printf("|| SUCCESS \n");
+		 				 Serial_Printf("|| SUCCESS \n");
 		 				 HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
 		 		//		 				 read_status_register();
-		 		case CMD_READ_ID_FDC:
+		 			 }
+		 			 else{
+		 				 Serial_Printf("Fail Read Voltage AD7124");
+		 			 }
 
+
+
+//		 		case CMD_READ_ID_FDC:
+//
+//
 
 
 
@@ -525,40 +539,125 @@ void StartTask04(void *argument)
 
 // Read MAX31856 Temperatures
 //
-//		 	    case CMD_READ_TC1:
-//		 	    	value = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
-//		 		    if (max31856T1.sr.val) {
-//		 		    	Serial_Print("TC TEMP Read Fail ");
-//		 		   	   	Serial_Printf("ERROR TC1 #: %d ",max31856T1.sr.val);
-//		 		   	   	print_errors(max31856T1.sr.val); // test functionality of error discerning
-//
-//		 		    }
-//		 		    Serial_Printf("Temperature Reading TC1: %f \r\n", value);
+		 	    case CMD_READ_TC1:
+		 	    	temperature = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
+	 				max31856_read_fault(&max31856T1);
+		 		    if (max31856T1.sr.val) {
+		 		    	Serial_Print("TC TEMP Read Fail ");
+		 		   	   	Serial_Printf("ERROR TC1 #: %d ",max31856T1.sr.val);
+		 		   	   	print_errors(max31856T1.sr.val); // test functionality of error discerning
+
+		 		    }
+		 		    else{
+			 		    Serial_Printf("Temperature Reading TC1: %f \r\n", temperature);
+		 		    }
 
 		 	    case CMD_READ_TC2:
-		 	    	//
+		 	    	temperature = max31856_read_TC_temp(&max31856T2);
+		 	    	max31856_read_fault(&max31856T2);
+		 		    if (max31856T2.sr.val) {
+		 		    	Serial_Print("TC TEMP Read Fail ");
+		 		   	   	Serial_Printf("ERROR TC2 #: %d ",max31856T2.sr.val);
+		 		   	   	print_errors(max31856T2.sr.val);
+
+		 		    }
+		 		    else{
+			 		    Serial_Printf("Temperature Reading TC2: %f \r\n", temperature);
+		 		    }
 		 	    case CMD_READ_TC3:
-		 	    	//
+		 	    	temperature = max31856_read_TC_temp(&max31856T3);
+		 	    	max31856_read_fault(&max31856T3);
+		 		    if (max31856T3.sr.val) {
+		 		    	Serial_Print("TC TEMP Read Fail ");
+		 		   	   	Serial_Printf("ERROR TC3 #: %d ",max31856T3.sr.val);
+		 		   	   	print_errors(max31856T3.sr.val);
+
+		 		    }
+		 		    else{
+			 		    Serial_Printf("Temperature Reading TC3: %f \r\n", temperature);
+		 		    }
 		 	    case CMD_READ_TC4:
-		 	    	//
+		 	    	temperature = max31856_read_TC_temp(&max31856T4);
+		 	    	max31856_read_fault(&max31856T4);
+		 		    if (max31856T4.sr.val) {
+		 		    	Serial_Print("TC TEMP Read Fail ");
+		 		   	   	Serial_Printf("ERROR TC4 #: %d ",max31856T4.sr.val);
+		 		   	   	print_errors(max31856T4.sr.val);
+
+		 		    }
+		 		    else{
+			 		    Serial_Printf("Temperature Reading TC4: %f \r\n", temperature);
+		 		    }
 		 	    case CMD_READ_TC5:
-		 	    	//
+		 	    	temperature = max31856_read_TC_temp(&max31856T5);
+		 	    	max31856_read_fault(&max31856T5);
+		 		    if (max31856T5.sr.val) {
+		 		    	Serial_Print("TC TEMP Read Fail ");
+		 		   	   	Serial_Printf("ERROR TC5 #: %d ",max31856T5.sr.val);
+		 		   	   	print_errors(max31856T5.sr.val);
+
+		 		    }
+		 		    else{
+			 		    Serial_Printf("Temperature Reading TC5: %f \r\n", temperature);
+		 		    }
+
+// reading cold junction temps (MAX31856 chip does NOT have a device id thus this is the next best way to see if the chip is responding.)
+
+		 	    case CMD_READ_TC1_CJ:
+		 		   temperature = max31856_read_CJ_temp(&max31856T1);
+		 		   max31856_read_fault(&max31856T1);
+		 		   if (max31856T1.sr.val) {
+		 		   		Serial_Print("TC Read Fail ");
+		 		   		Serial_Printf("ERROR TC1 #: %d ",max31856T1.sr.val);
+
+		 		   }
+		 		   else{
+			 		    Serial_Printf("Cold Junction Temperature Reading TC1: %f \r\n", temperature);
+		 		   }
+		 	    case CMD_READ_TC2_CJ:
+			 	   temperature = max31856_read_CJ_temp(&max31856T2);
+			 	   max31856_read_fault(&max31856T2);
+			 	   if (max31856T2.sr.val) {
+			 		   Serial_Print("TC Read Fail ");
+			 		   Serial_Printf("ERROR TC1 #: %d ",max31856T2.sr.val);
+			 	   }
+			 	   else{
+			 		   Serial_Printf("Cold Junction Temperature Reading TC2: %f \r\n", temperature);
+
+			 	   }
+		 	    case CMD_READ_TC3_CJ:
+				   temperature = max31856_read_CJ_temp(&max31856T3);
+				   max31856_read_fault(&max31856T3);
+				   if (max31856T3.sr.val) {
+				 	   Serial_Print("TC Read Fail ");
+				 	   Serial_Printf("ERROR TC1 #: %d ",max31856T3.sr.val);
+				   }
+				   else{
+			 		   Serial_Printf("Cold Junction Temperature Reading TC3: %f \r\n", temperature);
+
+				   }
+		 	    case CMD_READ_TC4_CJ:
+				   temperature = max31856_read_CJ_temp(&max31856T4);
+				   max31856_read_fault(&max31856T4);
+				   if (max31856T4.sr.val) {
+					   Serial_Print("TC Read Fail ");
+					   Serial_Printf("ERROR TC1 #: %d ",max31856T4.sr.val);
+				   }
+				   else{
+			 		   Serial_Printf("Cold Junction Temperature Reading TC4: %f \r\n", temperature);
+				   }
+		 	    case CMD_READ_TC5_CJ:
+				   temperature = max31856_read_CJ_temp(&max31856T5);
+				   max31856_read_fault(&max31856T5);
+			       if (max31856T5.sr.val) {
+					   Serial_Print("TC Read Fail ");
+					   Serial_Printf("ERROR TC5 #: %d ",max31856T5.sr.val);
+				   }
+			       else{
+			     	   Serial_Printf("Cold Junction Temperature Reading TC5: %f \r\n", temperature);
+			       }
 
 
-
-		 		    // reading cold junction temps
-//		 		   temperature = max31856_read_CJ_temp(&max31856T1);
-//		 		   max31856_read_fault(&max31856T1);
-//		 		   if (max31856T1.sr.val) {
-//		 		   		printf("TC Read Fail ");
-//		 		   		printf("ERROR TC1 #: %d ",max31856T1.sr.val);
-//
-//		 		   }
-
-
-
-//		 		   temperature = max31856_read_CJ_temp(&max31856T1);
-//
 //		 		   // we may need to add if there's ever an error...
 //		 		   int len = snprintf(uart_buffer, sizeof(uart_buffer), "Cold Junction Temperature Reading TC1: %f\r\n", temperature);
 //		 	 	   HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
@@ -567,19 +666,16 @@ void StartTask04(void *argument)
 
 
 
-
-
-
-
-
-
-
-
 // Miscellaneous Commands
 
 		 		case CMD_TOGGLE_LED_RED:
 		 		     HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
 		 		  	 HAL_Delay(2000);
+
+		 		case CMD_TOGGLE_LED_GREEN:
+
+
+		 		case CMD_TOGGLE_LED_AMBER:
 
 
 
@@ -597,7 +693,10 @@ void StartTask04(void *argument)
 
 
 
+
+
 	  }
+
 
 
 

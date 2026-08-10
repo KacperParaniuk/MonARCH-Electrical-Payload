@@ -157,7 +157,6 @@ void max31856_read_nregisters(max31856_t *max31856, uint8_t reg_addr, uint8_t *b
     HAL_GPIO_WritePin(max31856->cs_pin.gpio_port, max31856->cs_pin.gpio_pin, GPIO_PIN_SET);
 }
 
-
 bool has_fault(uint8_t error_reg, max31856_fault_t fault){
 	return (error_reg & fault) != 0;
 }

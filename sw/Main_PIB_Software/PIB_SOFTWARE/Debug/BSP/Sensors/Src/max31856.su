@@ -15,6 +15,6 @@
 ../BSP/Sensors/Src/max31856.c:131:6:max31856_write_nregisters	24	static
 ../BSP/Sensors/Src/max31856.c:140:9:max31856_read_register	24	static
 ../BSP/Sensors/Src/max31856.c:152:6:max31856_read_nregisters	24	static
-../BSP/Sensors/Src/max31856.c:161:6:has_fault	16	static
-../BSP/Sensors/Src/max31856.c:166:13:discern_error	16	static
-../BSP/Sensors/Src/max31856.c:185:6:print_errors	24	static
+../BSP/Sensors/Src/max31856.c:160:6:has_fault	16	static
+../BSP/Sensors/Src/max31856.c:165:13:discern_error	16	static
+../BSP/Sensors/Src/max31856.c:184:6:print_errors	24	static

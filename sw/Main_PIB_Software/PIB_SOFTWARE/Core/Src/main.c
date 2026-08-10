@@ -80,6 +80,58 @@ char uart_buffer[64]; // used for sending data across uart3
 float temperature;
 float value;
 
+// chip struct defines to be able to extern them.
+max31856_t max31856T1 = {
+    .spi_handle = &hspi2,
+    .cs_pin = { .gpio_port = T1_EN_GPIO_Port, .gpio_pin = T1_EN_Pin }
+};
+
+max31856_t max31856T2 = {
+    .spi_handle = &hspi2,
+    .cs_pin = { .gpio_port = T2_EN_GPIO_Port, .gpio_pin = T2_EN_Pin }
+};
+
+max31856_t max31856T3 = {
+    .spi_handle = &hspi2,
+    .cs_pin = { .gpio_port = T3_EN_GPIO_Port, .gpio_pin = T3_EN_Pin }
+};
+
+max31856_t max31856T4 = {
+    .spi_handle = &hspi2,
+    .cs_pin = { .gpio_port = T4_EN_GPIO_Port, .gpio_pin = T4_EN_Pin }
+};
+
+max31856_t max31856T5 = {
+    .spi_handle = &hspi2,
+    .cs_pin = { .gpio_port = T5_EN_GPIO_Port, .gpio_pin = T5_EN_Pin }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -211,16 +263,6 @@ int main(void)
 // T1
 
 
-   	max31856_gpio_t max31856T1PIN = {
-   	    .gpio_port = T1_EN_GPIO_Port,
-   	    .gpio_pin  = T1_EN_Pin
-   	};
-
-   	max31856_t max31856T1 = {
-   			.spi_handle = &hspi2,
- 			.cs_pin = max31856T1PIN
-
-   	};
 
 
    	max31856_init(&max31856T1);
@@ -233,19 +275,8 @@ int main(void)
    	max31856_set_conversion_mode(&max31856T1, CR0_CONV_CONTINUOUS);
 
 
-//   	// T2
+//   T2
 
-#ifdef MAX31856_T2
-
-   	max31856_gpio_t max31856T2PIN = {
-   			.gpio_port = T2_EN_GPIO_Port,
- 			.gpio_pin  = T2_EN_Pin
-   	  	};
-
-   	max31856_t max31856T2 = {
-   			.spi_handle = &hspi2,
-   			.cs_pin = max31856T2PIN
-   	};
 
  	max31856_init(&max31856T2);
 
@@ -257,21 +288,7 @@ int main(void)
    	max31856_set_conversion_mode(&max31856T2, CR0_CONV_CONTINUOUS); // continous mode for testing
 
 
-   	// T3
-
-#endif
-
-#ifdef MAX31856_T3
-
-   	max31856_gpio_t max31856T3PIN = {
-   		.gpio_port = T3_EN_GPIO_Port,
- 		.gpio_pin  = T3_EN_Pin
-   	};
-
-   	max31856_t max31856T3 = {
-   			.spi_handle = &hspi2,
-   			.cs_pin = max31856T3PIN
-   	};
+//   T3
 
  	max31856_init(&max31856T3);
 
@@ -282,22 +299,8 @@ int main(void)
    	max31856_set_open_circuit_fault_detection(&max31856T3, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
    	max31856_set_conversion_mode(&max31856T3, CR0_CONV_CONTINUOUS);
 
-#endif
 
-#ifdef MAX31856_T4
-
-
-   	// T4
-
-   	max31856_gpio_t max31856T4PIN = {
-   		.gpio_port = T4_EN_GPIO_Port,
- 		.gpio_pin  = T4_EN_Pin
-   	};
-
-   	max31856_t max31856T4 = {
-   			.spi_handle = &hspi2,
-   			.cs_pin = max31856T4PIN
-   	};
+//  T4
 
  	max31856_init(&max31856T4);
 
@@ -309,21 +312,9 @@ int main(void)
    	max31856_set_conversion_mode(&max31856T4, CR0_CONV_CONTINUOUS);
 
 
-#endif
 
-//   	// T5
+//  T5
 
-#ifdef MAX31856_T5
-
-   	max31856_gpio_t max31856T5PIN = {
-   		.gpio_port = T5_EN_GPIO_Port,
- 		.gpio_pin = T5_EN_Pin
-   	};
-
-   	max31856_t max31856T5 = {
-   			.spi_handle = &hspi2,
-   			.cs_pin = max31856T5PIN
-   	};
 
  	max31856_init(&max31856T5);
 
@@ -334,9 +325,6 @@ int main(void)
    	max31856_set_open_circuit_fault_detection(&max31856T5, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
    	max31856_set_conversion_mode(&max31856T5, CR0_CONV_CONTINUOUS);
 
-
-
-#endif
 
 //   	// FDC2214 SETUP
 
@@ -391,49 +379,6 @@ int main(void)
 //	  HAL_Delay(200);
 
 
-
-
-
-#ifdef AD7124
-
-	  // read device id.
-
-	  device_id = ad7124_read_device_id();
-
-	  printf("AD7124 Device ID: %ld ", device_id);
-	  if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
-
-		  printf("|| SUCCESS \n");
-		  HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
-		  read_status_register();
-
-#ifdef AD7124_SINGLE_MODE
-		  /* Read all enabled channels on ADC in single conversion mode */
-		  menu_single_conversion();
-
-#endif
-
-
-#ifdef AD7124_CONTINOUS_MODE
-
-		 /* Continously Read all enabled channels on ADC for 10 iterations (change to desire / add functionality for commanding) */
-
-		 do_continuous_conversion(DISPLAY_DATA_TABULAR);
-
-#endif
-
-	  }
-	  else{
-		  // read error register;
-		  read_error_register();
-		  // check status of chip
-		  read_status_register();
-
-//		  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
-
-	  }
-
-#endif
 
 
 

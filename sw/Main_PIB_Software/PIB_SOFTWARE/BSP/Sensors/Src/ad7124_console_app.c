@@ -417,7 +417,6 @@ void display_channel_sample(uint8_t channel, AD7124_CHIP chip){
 
 
 float get_channel_sample(uint8_t channel, AD7124_CHIP chip){
-	float value;
 
 	if(chip==PRESSURE){
 	    adc_dev = pAd7124_dev;
