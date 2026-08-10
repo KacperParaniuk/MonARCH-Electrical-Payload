@@ -746,6 +746,16 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 40.64) (xy 193.04 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e056b07-87a1-4a29-9553-96934a3464c5")
+	)
+	(wire
+		(pts
 			(xy 33.02 35.56) (xy 33.02 34.29)
 		)
 		(stroke
@@ -858,6 +868,17 @@
 			(justify right)
 		)
 		(uuid "f0ac3c16-39ac-4133-9228-c6f09125c301")
+	)
+	(hierarchical_label "+2.5V"
+		(shape input)
+		(at 193.04 46.99 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f3792b6c-1e08-4d16-9f2a-64f25892040c")
 	)
 	(hierarchical_label "SPI1_MOSI"
 		(shape output)
@@ -1060,7 +1081,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Coaxial:SMA_Molex_73251-2120_EdgeMount_Horizontal"
 			(at 193.04 35.56 0)
 			(hide yes)
 			(show_name no)
@@ -1191,84 +1212,6 @@
 			(project "Plume_Measurment_Board"
 				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
 					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 193.04 40.64 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b926cfd2-046d-4c4a-8920-a227b5d5133a")
-		(property "Reference" "#PWR03"
-			(at 193.04 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 193.04 45.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 193.04 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 193.04 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d4aac59c-54dd-436a-ae61-da120ba372e5")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "#PWR03")
 					(unit 1)
 				)
 			)

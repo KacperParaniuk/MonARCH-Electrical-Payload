@@ -4270,6 +4270,16 @@
 		)
 		(uuid "fceb893d-3a65-4a26-ad8a-36cd3a19c6cf")
 	)
+	(wire
+		(pts
+			(xy 163.83 189.23) (xy 167.64 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd9fe863-ab24-48ce-b160-25af74a35349")
+	)
 	(hierarchical_label "VSS"
 		(shape input)
 		(at 83.82 186.69 180)
@@ -4434,6 +4444,17 @@
 			(justify left)
 		)
 		(uuid "44566685-5e5e-4532-9d46-279d65c0d6c4")
+	)
+	(hierarchical_label "+2.5V"
+		(shape input)
+		(at 167.64 189.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "46652541-1322-435f-854a-5b7bf9e5fd85")
 	)
 	(hierarchical_label "VSS"
 		(shape input)
@@ -8949,6 +8970,16 @@
 		(pin "Plume" input
 			(at 163.83 177.8 0)
 			(uuid "fe0fc324-e035-4661-90f9-ec3f37dbf058")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "+2.5V" input
+			(at 163.83 189.23 0)
+			(uuid "b785e60a-96ef-40ce-a0e3-1cbd88894e4c")
 			(effects
 				(font
 					(size 1.27 1.27)
