@@ -2451,10 +2451,16 @@
 		(uuid "00d29b85-b8a0-4aab-a46b-1d1b567bb90a")
 	)
 	(junction
-		(at 149.86 41.91)
+		(at 209.55 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "0628d54e-db1b-4785-9f88-63947f227eaa")
+		(uuid "0299e42d-0502-4a75-a23d-9d26608f305e")
+	)
+	(junction
+		(at 209.55 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "03a912ec-4e7d-4479-a76b-8d3847075975")
 	)
 	(junction
 		(at 83.82 172.72)
@@ -2469,10 +2475,10 @@
 		(uuid "19a0ab64-1026-4268-9bf3-b22cac6ab975")
 	)
 	(junction
-		(at 209.55 46.99)
+		(at 149.86 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2b7edd40-5b95-49d3-acc4-0c707b23245d")
+		(uuid "1a9a5a46-9378-4574-9f9c-f98298392285")
 	)
 	(junction
 		(at 147.32 100.33)
@@ -2611,12 +2617,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f6f3f0f8-33ca-4818-a354-af6c5aa8131d")
-	)
-	(junction
-		(at 209.55 55.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f98d3dd2-9cc0-422e-abac-45874cbb36e8")
 	)
 	(no_connect
 		(at 224.79 133.35)
@@ -2842,7 +2842,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 57.15) (xy 194.31 57.15)
+			(xy 193.04 59.69) (xy 194.31 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2869,6 +2869,16 @@
 			(type default)
 		)
 		(uuid "224e35e1-9f7d-4de4-9c71-3a6a82f1533c")
+	)
+	(wire
+		(pts
+			(xy 209.55 48.26) (xy 209.55 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2293f769-66df-4904-8500-fd607c6644ac")
 	)
 	(wire
 		(pts
@@ -3062,6 +3072,16 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 59.69) (xy 193.04 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5456aad2-21bf-4249-9060-5c014b2bf50e")
+	)
+	(wire
+		(pts
 			(xy 133.35 179.07) (xy 135.89 179.07)
 		)
 		(stroke
@@ -3069,16 +3089,6 @@
 			(type default)
 		)
 		(uuid "56ea36a7-b534-4447-9e21-c4671e0e6803")
-	)
-	(wire
-		(pts
-			(xy 209.55 54.61) (xy 209.55 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5771ab91-261a-493e-b2b1-f4b8a65678ab")
 	)
 	(wire
 		(pts
@@ -4092,6 +4102,16 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 57.15) (xy 187.96 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2c3b8e2-c5bb-4078-8621-9ef31eebf24e")
+	)
+	(wire
+		(pts
 			(xy 274.32 30.48) (xy 274.32 35.56)
 		)
 		(stroke
@@ -4250,17 +4270,6 @@
 		)
 		(uuid "fceb893d-3a65-4a26-ad8a-36cd3a19c6cf")
 	)
-	(hierarchical_label "1_IN0.8+"
-		(shape input)
-		(at 147.32 41.91 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "05a63eab-4a52-4fff-849e-5efd9da80400")
-	)
 	(hierarchical_label "VSS"
 		(shape input)
 		(at 83.82 186.69 180)
@@ -4406,6 +4415,17 @@
 	)
 	(hierarchical_label "1_IN0.8+"
 		(shape input)
+		(at 209.55 40.64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "43044bc6-5f85-4d6b-bb0a-7d8ddc77c138")
+	)
+	(hierarchical_label "1_IN0.8+"
+		(shape input)
 		(at 96.52 102.87 0)
 		(effects
 			(font
@@ -4459,17 +4479,6 @@
 		)
 		(uuid "4ea52e4a-c6fa-482c-83bf-94ae30eb8cb1")
 	)
-	(hierarchical_label "Amplified_Plume_1"
-		(shape output)
-		(at 209.55 69.85 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4ef2ebfa-68ee-485c-854c-be461d40d242")
-	)
 	(hierarchical_label "-OUT_1"
 		(shape input)
 		(at 274.32 123.19 0)
@@ -4516,7 +4525,7 @@
 	)
 	(hierarchical_label "+2.5V"
 		(shape input)
-		(at 194.31 57.15 0)
+		(at 194.31 59.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4580,17 +4589,6 @@
 		)
 		(uuid "810d2e83-256e-43d7-970f-4eb9a7766f92")
 	)
-	(hierarchical_label "2_IN0.8+"
-		(shape input)
-		(at 209.55 40.64 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "8f64c882-1ac4-4eaa-8d02-f4bb00b01a18")
-	)
 	(hierarchical_label "+2.5V"
 		(shape input)
 		(at 274.32 114.3 0)
@@ -4634,6 +4632,17 @@
 			(justify left)
 		)
 		(uuid "9d2752bf-e700-4630-81a9-26526aabfb64")
+	)
+	(hierarchical_label "Amplified_Plume_1"
+		(shape output)
+		(at 209.55 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a0d7b82b-975d-42c8-9aaf-74efdbffc322")
 	)
 	(hierarchical_label "PM_CS"
 		(shape input)
@@ -4711,6 +4720,17 @@
 			(justify right)
 		)
 		(uuid "b389abd9-32af-43ea-bba3-54101955a4b8")
+	)
+	(hierarchical_label "2_IN0.8+"
+		(shape input)
+		(at 147.32 41.91 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c2a0af69-3d7b-44e4-9d34-21d004f24c4e")
 	)
 	(hierarchical_label "VSS"
 		(shape input)
@@ -7116,17 +7136,17 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 209.55 50.8 180)
+		(at 209.55 52.07 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "a3624c08-861b-41c9-ada8-eb8fa684d8cf")
 		(property "Reference" "R9"
-			(at 212.471 51.689 0)
+			(at 214.63 53.086 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7135,8 +7155,8 @@
 				)
 			)
 		)
-		(property "Value" "?"
-			(at 212.471 49.657 0)
+		(property "Value" "1000"
+			(at 214.249 50.927 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7146,7 +7166,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 208.534 50.546 90)
+			(at 208.534 51.816 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7157,7 +7177,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 209.55 50.8 0)
+			(at 209.55 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7168,7 +7188,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 209.55 50.8 0)
+			(at 209.55 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8265,10 +8285,10 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "ddc8ce18-02c4-4112-9dca-f4d26751b44b")
 		(property "Reference" "R10"
-			(at 212.471 61.849 0)
+			(at 214.884 61.976 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8277,8 +8297,8 @@
 				)
 			)
 		)
-		(property "Value" "?"
-			(at 212.471 59.817 0)
+		(property "Value" "1000"
+			(at 214.884 59.944 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
