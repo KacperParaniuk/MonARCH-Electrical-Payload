@@ -3642,6 +3642,16 @@
 	)
 	(wire
 		(pts
+			(xy 27.94 55.88) (xy 27.94 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a353c318-255e-4403-a884-b541a19b1176")
+	)
+	(wire
+		(pts
 			(xy 163.83 182.88) (xy 165.1 182.88)
 		)
 		(stroke
@@ -3649,16 +3659,6 @@
 			(type default)
 		)
 		(uuid "a3db8ed0-9c72-4a95-92e5-5f3e39a74323")
-	)
-	(wire
-		(pts
-			(xy 27.94 55.88) (xy 27.94 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a46f0c30-12f2-4be8-bb51-0acdefb984cb")
 	)
 	(wire
 		(pts
@@ -4720,6 +4720,17 @@
 			(justify right)
 		)
 		(uuid "b389abd9-32af-43ea-bba3-54101955a4b8")
+	)
+	(hierarchical_label "+2.5V"
+		(shape input)
+		(at 27.94 60.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bd73ad06-b68b-4d3e-9b85-a6acefb9c71e")
 	)
 	(hierarchical_label "2_IN0.8+"
 		(shape input)
@@ -6193,7 +6204,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "6b6fdb55-fd53-4710-b65e-b8d9f69b3662")
 		(property "Reference" "R11"
 			(at 131.318 41.402 0)
@@ -8117,84 +8128,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 27.94 58.42 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dba09511-af6d-4ed7-af28-82f9b5612509")
-		(property "Reference" "#PWR08"
-			(at 27.94 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 27.94 63.5 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 27.94 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 27.94 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 27.94 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "08bb7d03-d217-4f02-8bbe-351fc7b82738")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912"
-					(reference "#PWR08")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 135.89 121.92 0)
 		(unit 1)
@@ -8844,7 +8777,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "fb88fb84-956f-473d-9e20-4bfbadaa7bec")
 		(property "Reference" "R12"
 			(at 131.318 55.626 0)
