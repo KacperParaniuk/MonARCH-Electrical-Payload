@@ -109,29 +109,6 @@ max31856_t max31856T5 = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -262,9 +239,6 @@ int main(void)
 
 // T1
 
-
-
-
    	max31856_init(&max31856T1);
 
    	max31856_set_noise_filter(&max31856T1, CR0_FILTER_OUT_60Hz); // Noise filter is for filtering out EMI in very long wires
@@ -276,7 +250,6 @@ int main(void)
 
 
 //   T2
-
 
  	max31856_init(&max31856T2);
 
@@ -311,10 +284,7 @@ int main(void)
    	max31856_set_open_circuit_fault_detection(&max31856T4, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
    	max31856_set_conversion_mode(&max31856T4, CR0_CONV_CONTINUOUS);
 
-
-
 //  T5
-
 
  	max31856_init(&max31856T5);
 
@@ -326,8 +296,7 @@ int main(void)
    	max31856_set_conversion_mode(&max31856T5, CR0_CONV_CONTINUOUS);
 
 
-//   	// FDC2214 SETUP
-
+// FDC2214 SETUP
 
    	setupResult = FDC2214_Begin();
    	if(setupResult != 0){
@@ -353,9 +322,6 @@ int main(void)
 
 
 
-
-
-
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -372,122 +338,6 @@ int main(void)
   while (1)
   {
 
-//
-//	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-//
-//
-//	  HAL_Delay(200);
-
-
-
-
-
-
-
-#ifdef ARDUNIO
-
-
-// // Read TC Valves
- 			case CMD_READ_TC1:
-
- 				max31856_trigger_one_shot(&max31856T1);
- 				HAL_Delay(200); // Wait until single is ready
- 				temp = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
- 				max31856_read_fault(&max31856T1);
- 				  	if (max31856T1.sr.val) {
- 				  	  Serial_Print("TC1 Read Fail");
- 				  	}
- 				Serial_Printf("Temperature Reading TC1: %f \r\n", temp);
-
-
- 			case CMD_READ_TC2:
- 				temp = max31856_read_TC_temp(&max31856T2);
- 				max31856_read_fault(&max31856T2);
- 				if (max31856T2.sr.val) {
- 					Serial_Print("TC2 Read Fail");
- 				}
- 				Serial_Printf("Temperature Reading TC2: %f \r\n", temp);
-
- 			case CMD_READ_TC3:
- 				temp = max31856_read_TC_temp(&max31856T3);
- 				max31856_read_fault(&max31856T3);
- 				if (max31856T3.sr.val) {
- 					Serial_Print("TC3 Read Fail");
- 			    }
- 				Serial_Printf("Temperature Reading TC3: %f \r\n", temp);
-
-
- 			case CMD_READ_TC4:
- 				temp = max31856_read_TC_temp(&max31856T4);
- 				max31856_read_fault(&max31856T4);
- 				if (max31856T4.sr.val) {
- 					Serial_Print("TC4 Read Fail");
- 			    }
- 				Serial_Printf("Temperature Reading TC4: %f \r\n", temp);
-
-
- 			case CMD_READ_TC5:
- 				temp = max31856_read_TC_temp(&max31856T5);
- 				max31856_read_fault(&max31856T5);
- 				if (max31856T5.sr.val) {
- 					Serial_Print("TC5 Read Fail");
- 			    }
- 				Serial_Printf("Temperature Reading TC5: %f \r\n", temp);
-
-
-
-
-// // READ FDC2214 Capacitance Measurements.
-
- 			case READ_CAPACITANCE_A1:
- 				capacitance = FDC2214_read_differential_capacitance(1);
- 				Serial_Printf("Differential Capacitance Reading FDC2214 A1: %f \r\n", capacitance);
- 			case READ_CAPACITANCE_A2:
- 				capacitance = FDC2214_read_differential_capacitance(2);
- 				Serial_Printf("Differential Capacitance Reading FDC2214 A2: %f \r\n", capacitance);
- 			case READ_CATALYST_LEVEL_A1:
- 				level = FDC2214_read_accumulator_height(1);
- 				Serial_Printf("Catalyst Height Reading FDC2214 A1: %d \r\n", level);
- 			case READ_CATALYST_LEVEL_A2:
- 				level = FDC2214_read_accumulator_height(2);
- 				Serial_Printf("Catalyst Height Reading FDC2214 A2: %d \r\n", level);
-
- 		}
- 	  }
-
-#endif
-
-
-// 	  // TESTING DEBUG PURPOSES w/ ST-LINK
-//
-
-#ifdef FDC2214
- 	  printf("TESTING DEBUG PURPOSES LOADING... \n");
-
- 	  printf("Reading Device ID's... \n");
-
- 	  if(isConnected()==0){
- 		  printf("FDC NOMINAL \n");
-
- 		 // READ DATA FROM CH0
- 		 if(FDC2214_is_data_ready(FDC2214_CH0)){
- 		 float f_hz = FDC2214_readFrequencyHz(FDC2214_CH0);
- 		 float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0, FDC2214_L_HENRY);
-
- 		 printf("hertz %f", f_hz / 1.0e6f);
- 		// 	        printf('\t');
- 		 printf("Capacitance (pF): %f", c_pf);
- 		 }
- 	  }
- 	  else{
- 		  printf("FDC FAIL IS NOT CONNECTED \n");
- 	  }
-
-
-
-
-#endif
-
 
 
 // 	 HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
@@ -499,9 +349,6 @@ int main(void)
 //// 	 __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, duty);  // TIM1->CCR1 = duty;
 //// 	  HAL_Delay(500);  // Wait 500ms before changing duty cycle
 ///
-
-
-
 
 
 

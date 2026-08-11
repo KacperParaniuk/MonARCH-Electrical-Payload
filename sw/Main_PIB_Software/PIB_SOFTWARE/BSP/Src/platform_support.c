@@ -109,5 +109,5 @@ POSSIBILITY OF SUCH DAMAGE.
 //  * @retval None
 //  */
 void toggle_activity_led(void){
-	HAL_GPIO_TogglePin(LED_PIN_BLUE_GPIO_Port, LED_PIN_BLUE_Pin); // BLUE LED MEANS IN PROGRESS
+	HAL_GPIO_TogglePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin); // AMBER LED MEANS IN PROGRESS
 }

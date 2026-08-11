@@ -18,19 +18,13 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
+#include "FreeRTOS.h"
+#include "task.h"
+#include "main.h"
+#include "cmsis_os.h"
 
-#include <cmsis_os.h>
-#include <cmsis_os2.h>
-#include <main.h>
-#include <stdio.h>
-#include <stm32l4xx_hal.h>
-#include <stm32l4xx_hal_gpio.h>
-#include <sys/_stdint.h>
-#include <uart_handler.h>
-#include <uart_protocol.h>
-
-
-// Sensor Includes
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
 
 #include "ad7124_console_app.h"
 #include "ad7124.h"
@@ -421,9 +415,6 @@ void StartTask04(void *argument)
 		 				 HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
 //		 				 read_status_register(); potentially integrate for error checking / sending status back
 		 			}
-
-
-
 		 		case CMD_READ_ID_V:
 		 			 device_id = ad7124_read_device_id(VOLTAGE);
 		 			 Serial_Printf("AD7124 Device ID: %ld ", device_id);
@@ -435,15 +426,13 @@ void StartTask04(void *argument)
 		 			 else{
 		 				 Serial_Printf("Fail Read Voltage AD7124");
 		 			 }
-
-
-
-//		 		case CMD_READ_ID_FDC:
-//
-//
-
-
-
+		 		case CMD_READ_ID_FDC:
+		 		 	  if(isConnected()==0){
+		 		 		  Serial_Print("FDC NOMINAL \n");
+		 		 	  }
+		 		 	  else{
+		 		 		  Serial_Print("FDC FAIL IS NOT CONNECTED \n");
+		 		 	  }
 
 // READ PC104 ADC CHANNELS
 
@@ -603,6 +592,8 @@ void StartTask04(void *argument)
 
 // reading cold junction temps (MAX31856 chip does NOT have a device id thus this is the next best way to see if the chip is responding.)
 
+		 		   // Read MAX31856 Cold-Junction Temperatures
+
 		 	    case CMD_READ_TC1_CJ:
 		 		   temperature = max31856_read_CJ_temp(&max31856T1);
 		 		   max31856_read_fault(&max31856T1);
@@ -658,24 +649,36 @@ void StartTask04(void *argument)
 			       }
 
 
-//		 		   // we may need to add if there's ever an error...
-//		 		   int len = snprintf(uart_buffer, sizeof(uart_buffer), "Cold Junction Temperature Reading TC1: %f\r\n", temperature);
-//		 	 	   HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
+// FDC2214 Reads
+		 	    case READ_CAPACITANCE_A1:
 
-// Read MAX31856 Cold-Junction Temperatures
+		 	 		if(FDC2214_is_data_ready(FDC2214_CH0)){
+		 	 	 		 float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0, FDC2214_L_HENRY);
+		 	 	 		 Serial_Print("Capacitance (pF): %f", c_pf);
 
+		 	 		}
+
+					value = FDC2214_read_differential_capacitance(1);
+	 				Serial_Printf("Differential Capacitance Reading FDC2214 A1: %f \r\n", capacitance);
+		 	    case READ_CAPACITANCE_A2:
+					value = FDC2214_read_differential_capacitance(2);
+	 				Serial_Printf("Differential Capacitance Reading FDC2214 A2: %f \r\n", capacitance);
+	 			case READ_CATALYST_LEVEL_A1:
+	 				value = FDC2214_read_accumulator_height(1);
+	 				Serial_Printf("Catalyst Height Reading FDC2214 A1: %d \r\n", value);
+	 			case READ_CATALYST_LEVEL_A2:
+	 				value = FDC2214_read_accumulator_height(2);
+	 				Serial_Printf("Catalyst Height Reading FDC2214 A2: %d \r\n", value);
 
 
 // Miscellaneous Commands
 
 		 		case CMD_TOGGLE_LED_RED:
 		 		     HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-		 		  	 HAL_Delay(2000);
-
 		 		case CMD_TOGGLE_LED_GREEN:
-
-
+		 		     HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
 		 		case CMD_TOGGLE_LED_AMBER:
+		 		     HAL_GPIO_TogglePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin);
 
 
 
@@ -686,6 +689,10 @@ void StartTask04(void *argument)
 
 
 
+
+		 	//		 		   // we may need to add if there's ever an error...
+		 	//		 		   int len = snprintf(uart_buffer, sizeof(uart_buffer), "Cold Junction Temperature Reading TC1: %f\r\n", temperature);
+		 	//		 	 	   HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
 
 
 
