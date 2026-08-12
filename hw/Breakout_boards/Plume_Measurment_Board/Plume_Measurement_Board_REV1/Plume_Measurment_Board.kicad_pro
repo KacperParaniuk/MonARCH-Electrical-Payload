@@ -662,7 +662,7 @@
         "uuid": "2e1d3673-27b9-4604-80fb-036cec98a912"
       }
     ],
-    "used_designators": "#FLG3-4,R1-13,R66,J1-5,#PWR1-10,#PWR14-15,#PWR78-81,#PWR91,#PWR97,#PWR225-229,#PWR239-257,H1-8,TP1-16,C1-23,C46-47,C61,C63-64,C70-76,U1-7,U9,L1",
+    "used_designators": "#FLG3-4,R1-29,R66,J1-7,#PWR1-10,#PWR14-15,#PWR78-81,#PWR91,#PWR97,#PWR225-229,#PWR239-279,H1-8,TP1-16,C1-64,C70-76,U1-17,L1-2",
     "variants": []
   },
   "sheets": [
@@ -677,6 +677,14 @@
     [
       "51fb0d9e-13dd-4646-9739-03c7f4c08998",
       "Voltage Regulator"
+    ],
+    [
+      "50b6d9ad-ffd0-4478-9268-9408d397713b",
+      "E-Spray Plume Measurement 2"
+    ],
+    [
+      "f3e72cb3-678e-481d-be41-5dcc129c2c8b",
+      "E-Spray Plume Measurement 1"
     ]
   ],
   "text_variables": {},

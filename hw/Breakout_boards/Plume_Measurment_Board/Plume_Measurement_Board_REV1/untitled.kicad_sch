@@ -12,192 +12,6 @@
 		(comment 4 "Kacper Paraniuk")
 	)
 	(lib_symbols
-		(symbol "Connector:Conn_Coaxial"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0.254 3.048 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_Coaxial"
-				(at 2.921 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Conn_Coaxial_0_1"
-				(polyline
-					(pts
-						(xy -2.54 0) (xy -0.508 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 1.778 0)
-					(mid 0.222 -1.8079)
-					(end -1.778 -0.508)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.778 0.508)
-					(mid 0.2221 1.8084)
-					(end 1.778 0)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 0.508)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Conn_Coaxial_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "In"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 90)
-					(length 2.54)
-					(name "Ext"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector_Generic:Conn_01x04"
 			(pin_names
 				(offset 1.016)
@@ -693,31 +507,6 @@
 		)
 		(uuid "6bbc725e-8750-402e-a2f2-80c6537f7f65")
 	)
-	(rectangle
-		(start 157.48 12.7)
-		(end 228.6 63.5)
-		(stroke
-			(width 0)
-			(type dash)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "ecafbb7b-df6b-4d64-bea4-5f19efd2f959")
-	)
-	(text "E-spray Probe Connector\n"
-		(exclude_from_sim no)
-		(at 158.242 16.764 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "00033d44-44b2-4d81-8cff-95c668f4e935")
-	)
 	(text "Communication Protocol Connector"
 		(exclude_from_sim no)
 		(at 85.598 16.51 0)
@@ -743,16 +532,6 @@
 			(justify left bottom)
 		)
 		(uuid "4cd4dd83-a141-4e7c-9a12-d86f6af5906b")
-	)
-	(wire
-		(pts
-			(xy 193.04 40.64) (xy 193.04 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e056b07-87a1-4a29-9553-96934a3464c5")
 	)
 	(wire
 		(pts
@@ -786,26 +565,6 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 39.37) (xy 39.37 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "874fd192-6720-4e4f-b2b7-4feced95e4fc")
-	)
-	(wire
-		(pts
-			(xy 39.37 39.37) (xy 39.37 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b8552eb-745c-4adf-956f-973fe781020c")
-	)
-	(wire
-		(pts
 			(xy 46.99 36.83) (xy 36.83 36.83)
 		)
 		(stroke
@@ -814,7 +573,7 @@
 		)
 		(uuid "c703dcef-0bfc-419e-9b28-52b70189c622")
 	)
-	(hierarchical_label "PM_CS"
+	(hierarchical_label "PM_CS_2"
 		(shape output)
 		(at 116.84 39.37 180)
 		(effects
@@ -858,27 +617,16 @@
 		)
 		(uuid "d173f79d-7a0f-4b60-b7d9-85579c881701")
 	)
-	(hierarchical_label "Plume"
-		(shape input)
-		(at 187.96 35.56 180)
+	(hierarchical_label "PM_CS_1"
+		(shape output)
+		(at 46.99 39.37 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "f0ac3c16-39ac-4133-9228-c6f09125c301")
-	)
-	(hierarchical_label "+2.5V"
-		(shape input)
-		(at 193.04 46.99 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f3792b6c-1e08-4d16-9f2a-64f25892040c")
+		(uuid "dbc24eda-3eab-4efd-ab57-3a244aa0f4ac")
 	)
 	(hierarchical_label "SPI1_MOSI"
 		(shape output)
@@ -890,84 +638,6 @@
 			(justify right)
 		)
 		(uuid "f4d33588-fd69-433c-9765-63ad376e50ce")
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 39.37 40.64 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "06e350ca-482b-4b54-a8e5-21ee25533c85")
-		(property "Reference" "#PWR02"
-			(at 39.37 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 39.37 45.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 39.37 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 39.37 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "70409987-bd67-4d17-b47c-bb49545d1a43")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -1036,94 +706,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "e49aaa7b-cf14-4e01-99a5-e5788d45f775")
+			(uuid "d4a2b183-87c1-43b2-8edd-c1db5bd3390d")
 		)
 		(instances
 			(project "Plume_Measurment_Board"
 				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
 					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_Coaxial")
-		(at 193.04 35.56 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2b210504-fe69-46fc-9865-d305e6147c37")
-		(property "Reference" "J3"
-			(at 196.85 34.5831 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 196.85 37.1231 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_Coaxial:SMA_Molex_73251-2120_EdgeMount_Horizontal"
-			(at 193.04 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 193.04 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "233c0539-cdf2-48d6-9430-822b12bbaf1b")
-		)
-		(pin "1"
-			(uuid "d85eeddf-f0cb-493b-a666-4941e47dff4c")
-		)
-		(instances
-			(project "Plume_Measurment_Board"
-				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
-					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -1197,16 +785,16 @@
 			)
 		)
 		(pin "4"
-			(uuid "48fb7bf9-e92f-4ab5-9c54-9968f7dc9484")
+			(uuid "ce3789f8-02b3-4a46-84e9-b27430066e78")
 		)
 		(pin "1"
-			(uuid "ca1a6716-8047-4af0-a311-f8da770c90b8")
+			(uuid "c6c73a6c-02d8-40bf-83f5-4da763a99190")
 		)
 		(pin "2"
-			(uuid "54b3085d-35f6-4688-add0-5229706f758f")
+			(uuid "84d0b417-091b-4af6-ab15-d2df404e95f4")
 		)
 		(pin "3"
-			(uuid "dbb1e9ef-1a03-4727-b091-0897b75d9522")
+			(uuid "a15df879-8bc4-471e-80a4-a0bbbc7ed7be")
 		)
 		(instances
 			(project "Plume_Measurment_Board"
@@ -1283,7 +871,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "18871afe-3c2f-4807-b010-d4b8e881cf6a")
+			(uuid "5b75cfff-4992-43eb-b03e-c77f3a22a82c")
 		)
 		(instances
 			(project "Plume_Measurment_Board"
@@ -1362,16 +950,16 @@
 			)
 		)
 		(pin "4"
-			(uuid "6ff01495-5700-43e3-8d3a-0d81265c3aea")
+			(uuid "e8f84166-5c66-4bbc-b79c-060e536343b1")
 		)
 		(pin "1"
-			(uuid "cb04688a-aa23-492a-a329-43071ac5cd72")
+			(uuid "79a0c2aa-367d-4654-8d2b-eaa2eb9f5a6b")
 		)
 		(pin "2"
-			(uuid "ee0c8208-18d1-4420-bc4e-87618353ca28")
+			(uuid "eae76cdf-44ea-4813-ba00-43aaa94a95e5")
 		)
 		(pin "3"
-			(uuid "e1c45614-afe9-4b71-b4bc-01daa5083629")
+			(uuid "11e4af12-4fb0-4df9-b19f-55cef2401e50")
 		)
 		(instances
 			(project "Plume_Measurment_Board"

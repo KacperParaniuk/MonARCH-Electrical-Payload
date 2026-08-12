@@ -1765,10 +1765,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "aefbf997-1f7f-440f-8d4e-5b3b48fbab75")
+			(uuid "15da6ab7-5ab6-435c-b94c-93107a4a419c")
 		)
 		(pin "2"
-			(uuid "48fa3a2a-3f4e-4556-8180-c50c75605703")
+			(uuid "ff1f6c78-88e5-42dc-b9d3-de51e463059e")
 		)
 		(instances
 			(project "Plume_Measurment_Board"
@@ -1846,10 +1846,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a8498efd-f485-44fe-a0d5-a2739f4cec9d")
+			(uuid "f8fe2f19-d4c1-4f5c-b623-24d48d4395dc")
 		)
 		(pin "2"
-			(uuid "80f76819-52b2-4da6-a69c-0b7e5b404951")
+			(uuid "8733be9c-ccdc-4391-adad-8fae445a6421")
 		)
 		(instances
 			(project "Plume_Measurment_Board"
@@ -1925,10 +1925,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "b350de32-6ab3-4fa5-b6ab-4d56eeb13847")
+			(uuid "baa56a85-040e-4e55-af37-720a2c77e59a")
 		)
 		(pin "2"
-			(uuid "5b82b8d9-f38f-491e-9657-54b889ca1c4b")
+			(uuid "64a81c83-8f01-44e0-b50b-1985ac8f0961")
 		)
 		(instances
 			(project "Plume_Measurment_Board"
@@ -2006,10 +2006,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "799b46b3-258f-43ec-b05d-ad7892c8a65b")
+			(uuid "934c6126-a65b-4683-8c5c-fc32dced0dfe")
 		)
 		(pin "2"
-			(uuid "a8731f02-2b83-4727-8628-4521a8a0eba0")
+			(uuid "b019a018-6c4c-4c17-9098-81bc210bbfa3")
 		)
 		(instances
 			(project "Plume_Measurment_Board"
@@ -2088,55 +2088,55 @@
 			)
 		)
 		(pin "4"
-			(uuid "a3a1c99b-b4a3-45e0-bc4e-ff758d384d07")
+			(uuid "26dce0b8-cdee-4cb4-9dfa-d40c18a29086")
 		)
 		(pin "9"
-			(uuid "0bae4392-717c-48bb-87de-095a7ce14043")
+			(uuid "a55a0f2a-fd11-439a-9daf-2f0e9b6fa3d7")
 		)
 		(pin "7"
-			(uuid "0f6257ec-f7d5-47ba-a568-ad7e5f30a870")
+			(uuid "44fd2098-bca3-43c2-a291-4e65f52e0bc6")
 		)
 		(pin "11"
-			(uuid "71883b0e-b47a-49ad-b802-c9dc75a62c2d")
+			(uuid "fccb0e90-18b2-43ca-839c-07aec6dc6166")
 		)
 		(pin "15"
-			(uuid "9fa38175-1699-48f8-b380-c70538ff5a0a")
+			(uuid "7fe8522b-46f2-4fd1-b7fc-33eb6f29c094")
 		)
 		(pin "3"
-			(uuid "0a1c512b-6d69-4fa6-8a1f-d1f442b2b54c")
+			(uuid "07c071fc-c0fa-45b0-84eb-de99015d6656")
 		)
 		(pin "5"
-			(uuid "75ad31cb-e5fd-4c46-bf2d-7b6ec3242805")
+			(uuid "bd74cbbe-9292-4f91-b31c-1bc854f21073")
 		)
 		(pin "8"
-			(uuid "e53f3383-9f4d-49cf-8193-4a00b6e3acd4")
+			(uuid "06ec95e2-5c4d-496a-8faf-c647c4a21e75")
 		)
 		(pin "1"
-			(uuid "c811e08b-44f8-422b-bc5e-da32bba90e81")
+			(uuid "2e0d6220-8b82-4b31-8110-77795517b8af")
 		)
 		(pin "2"
-			(uuid "4a2fa23a-7b22-424d-a8b0-155f0fc44d1d")
+			(uuid "ad533d14-52c6-48f4-8d05-e0139da02fe9")
 		)
 		(pin "6"
-			(uuid "178cd985-57c8-4458-8fb8-6802d975a89d")
+			(uuid "3b571d69-5ed9-41ec-a2b9-c39e33561a31")
 		)
 		(pin "10"
-			(uuid "b0213987-e5a4-4d27-931c-e123a68f9dbe")
+			(uuid "5ac584d3-b426-4dba-a0f1-006a664c7075")
 		)
 		(pin "12"
-			(uuid "ef799fd4-05d1-4884-ab8a-13ef9454772f")
+			(uuid "f1cf0a67-95a6-4d58-a22c-9ad067496e09")
 		)
 		(pin "13"
-			(uuid "8e9f5f12-e2f4-4e69-9ce0-0872c61ccac4")
+			(uuid "332e49a0-49b4-4f71-8c3e-36e4986d6f60")
 		)
 		(pin "14"
-			(uuid "c8df0566-f28d-418e-a539-77a9fc0d9902")
+			(uuid "256b388c-0302-4677-904d-5511144e6922")
 		)
 		(pin "17"
-			(uuid "87a5ca8e-cc21-4f39-b2e1-ae8c6b036e92")
+			(uuid "ac301573-dae6-4a9e-b673-7dbda99c773b")
 		)
 		(pin "16"
-			(uuid "6c172d82-c1d6-430c-bf03-20b24014d2b3")
+			(uuid "c9bf63bd-6677-47fe-832f-d5071afe9f8c")
 		)
 		(instances
 			(project "Plume_Measurment_Board"
@@ -2214,7 +2214,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "af33e58e-eabc-43ca-8388-68e2256a6c45")
+			(uuid "be7bbc08-2533-4643-81ba-42a1f8f3b6e8")
 		)
 		(instances
 			(project "Plume_Measurment_Board"
@@ -2292,7 +2292,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "868302c7-be38-488c-a9fb-c94118e35039")
+			(uuid "24ef650b-78a7-42b4-b2cd-4e604803c3c0")
 		)
 		(instances
 			(project "Plume_Measurment_Board"
@@ -2369,10 +2369,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2b3aa5f1-4733-46b1-9893-ad90db4f8b1d")
+			(uuid "975a8c2e-d66d-43f1-a5b1-4f20f7722086")
 		)
 		(pin "2"
-			(uuid "a5568aaa-1eaf-4da7-bf13-cda6789244c9")
+			(uuid "c1f409e1-dc1f-4f26-95e1-9b3629c425aa")
 		)
 		(instances
 			(project "Plume_Measurment_Board"
