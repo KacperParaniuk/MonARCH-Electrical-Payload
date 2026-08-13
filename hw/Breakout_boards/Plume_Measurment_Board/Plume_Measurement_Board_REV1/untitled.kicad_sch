@@ -228,6 +228,105 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3V3"
 			(power global)
 			(pin_numbers
@@ -484,6 +583,18 @@
 		)
 	)
 	(rectangle
+		(start 157.48 12.7)
+		(end 228.6 63.5)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "13948d2c-2565-4371-b22b-1c0f3dcbb1d0")
+	)
+	(rectangle
 		(start 85.09 12.7)
 		(end 156.21 63.5)
 		(stroke
@@ -533,6 +644,19 @@
 		)
 		(uuid "4cd4dd83-a141-4e7c-9a12-d86f6af5906b")
 	)
+	(text "Mounting Holes\n"
+		(exclude_from_sim no)
+		(at 158.496 16.764 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "7fa5a014-23df-4a36-8ae7-49e9133a15d3")
+	)
 	(wire
 		(pts
 			(xy 33.02 35.56) (xy 33.02 34.29)
@@ -573,7 +697,7 @@
 		)
 		(uuid "c703dcef-0bfc-419e-9b28-52b70189c622")
 	)
-	(hierarchical_label "PM_CS_2"
+	(hierarchical_label "PM_CS_1"
 		(shape output)
 		(at 116.84 39.37 180)
 		(effects
@@ -582,7 +706,29 @@
 			)
 			(justify right)
 		)
-		(uuid "01befd02-f6a2-4e1e-8ca7-26b46be75b55")
+		(uuid "03dca2f8-775a-4816-ada2-9109ba889919")
+	)
+	(hierarchical_label "PM_CS_2"
+		(shape output)
+		(at 46.99 31.75 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "62e004db-2afb-4505-b2a8-18619acff1a7")
+	)
+	(hierarchical_label "SPI1_MOSI"
+		(shape output)
+		(at 116.84 34.29 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "64d02ba8-a7bd-42d9-8a3d-8646740a35ef")
 	)
 	(hierarchical_label "SPI1_CLK"
 		(shape bidirectional)
@@ -597,28 +743,6 @@
 	)
 	(hierarchical_label "+VBAT"
 		(shape input)
-		(at 46.99 31.75 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b447ee4c-ea58-4eed-a8c4-694ba39e3e0b")
-	)
-	(hierarchical_label "SPI1_MISO"
-		(shape input)
-		(at 116.84 34.29 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d173f79d-7a0f-4b60-b7d9-85579c881701")
-	)
-	(hierarchical_label "PM_CS_1"
-		(shape output)
 		(at 46.99 39.37 180)
 		(effects
 			(font
@@ -626,10 +750,10 @@
 			)
 			(justify right)
 		)
-		(uuid "dbc24eda-3eab-4efd-ab57-3a244aa0f4ac")
+		(uuid "ac0d6782-9593-478f-a837-444318bf505e")
 	)
-	(hierarchical_label "SPI1_MOSI"
-		(shape output)
+	(hierarchical_label "SPI1_MISO"
+		(shape input)
 		(at 116.84 31.75 180)
 		(effects
 			(font
@@ -637,7 +761,7 @@
 			)
 			(justify right)
 		)
-		(uuid "f4d33588-fd69-433c-9765-63ad376e50ce")
+		(uuid "b77de5f4-9327-4721-9854-9cc3386fc060")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -712,6 +836,234 @@
 			(project "Plume_Measurment_Board"
 				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 199.39 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "23d5f150-5d5e-488d-a33f-6171105cbf1c")
+		(property "Reference" "H4"
+			(at 201.93 41.9099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 201.93 44.4499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 199.39 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 199.39 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 199.39 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Plume_Measurment_Board"
+				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 199.39 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "24ededdc-21de-4b84-b170-7e9a6e6d8880")
+		(property "Reference" "H3"
+			(at 201.93 30.4799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 201.93 33.0199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 199.39 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 199.39 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 199.39 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Plume_Measurment_Board"
+				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 179.07 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8eba8c2b-1537-40fe-a4a4-f99c06af51b3")
+		(property "Reference" "H1"
+			(at 181.61 30.4799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 181.61 33.0199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 179.07 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 179.07 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 179.07 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Plume_Measurment_Board"
+				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -965,6 +1317,82 @@
 			(project "Plume_Measurment_Board"
 				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 179.07 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e1f05b94-6f2b-4be6-8f2b-9bb6f7106dfa")
+		(property "Reference" "H2"
+			(at 181.61 41.9099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 181.61 44.4499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 179.07 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 179.07 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 179.07 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Plume_Measurment_Board"
+				(path "/2e1d3673-27b9-4604-80fb-036cec98a912/4097d861-b189-461e-b768-3d03272bff16"
+					(reference "H2")
 					(unit 1)
 				)
 			)
