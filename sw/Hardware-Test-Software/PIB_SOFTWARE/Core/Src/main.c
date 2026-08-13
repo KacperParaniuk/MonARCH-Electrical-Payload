@@ -57,6 +57,12 @@
 //#define PWM_VALVE_6
 
 
+//#define ADXL355
+//#define AD7176 
+
+
+
+
 
 
 // ----------------- HARDWARE TESTS -----------------------
@@ -540,22 +546,8 @@ float temperature;
 #endif
 
 
-#ifdef I2C_SCANNER
 
-//	  0x3054 Device ID (FDC2112, FDC2114 only)
-//	  0x3055 Device ID (FDC2212, FDC2214 only)
-
-	  // 0x7F
-
-
-	  // take a look at obsidian for tutorial
-
-
-
-
-#endif
-
-#ifdef AD7124
+#ifdef AD7124_P
 
 	  // read device id.
 
@@ -572,18 +564,8 @@ float temperature;
 		  /* Read all enabled channels on ADC in single conversion mode */
 		  menu_single_conversion(PRESSURE);
 
-#endif
 
-
-#ifdef AD7124_CONTINOUS_MODE
-
-		 /* Continously Read all enabled channels on ADC for 10 iterations (change to desire / add functionality for commanding) */
-
-		  // NOT YET CONFIGURED FOR TWO ICS
-		 do_continuous_conversion(DISPLAY_DATA_TABULAR);
-
-#endif
-
+#endif	
 	  }
 	  else{
 		  // read error register;
@@ -594,6 +576,50 @@ float temperature;
 //		  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
 	  }
+
+#endif 
+
+#ifdef AD7124_V
+
+
+	  device_id = ad7124_read_device_id(VOLTAGE);
+
+	  printf("AD7124 Device ID: %ld ", device_id);
+	  if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
+
+		  printf("|| SUCCESS \n");
+		  HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
+		  read_status_register(VOLTAGE);
+		  #ifdef AD7124_SINGLE_MODE
+		  /* Read all enabled channels on ADC in single conversion mode */
+
+		  menu_single_conversion(VOLTAGE);
+
+	      #endif
+	 }
+
+	 else{
+		  // read error register;
+		  read_error_register(VOLTAGE);
+		  // check status of chip
+		  read_status_register(VOLTAGE);
+
+//		  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+
+	  }
+
+
+
+
+#endif
+
+
+#ifdef AD7124_CONTINOUS_MODE
+
+		 /* Continously Read all enabled channels on ADC for 10 iterations (change to desire / add functionality for commanding) */
+
+		  // NOT YET CONFIGURED FOR TWO ICS
+		 do_continuous_conversion(DISPLAY_DATA_TABULAR);
 
 #endif
 
@@ -1002,6 +1028,8 @@ float temperature;
 
 #endif
 
+
+
 #ifdef MAX31856_T1
 
 //	   max31856_trigger_one_shot(&max31856T1);
@@ -1025,6 +1053,98 @@ float temperature;
 	   printf("Temperature Reading TC1: %f \r\n", temperature);
 
 #endif
+
+
+#ifdef MAX31856_T2
+
+	   temperature = max31856_read_CJ_temp(&max31856T2);
+	   max31856_read_fault(&max31856T2);
+	   if (max31856T2.sr.val) {
+	   		printf("TC Read Fail ");
+	   		printf("ERROR TC2 #: %d ",max31856T2.sr.val);
+
+	   }
+	   printf("Cold Junction Temperature Reading TC2: %f \r\n", temperature);
+
+	   temperature = max31856_read_TC_temp(&max31856T2); // compensates already for cold junction reading
+	   if (max31856T2.sr.val) {
+	   	   	printf("TC TEMP Read Fail ");
+	   	   	printf("ERROR TC2 #: %d ",max31856T2.sr.val);
+	   	   	print_errors(max31856T2.sr.val); // test functionality of error discerning
+
+	   }
+	   printf("Temperature Reading TC2: %f \r\n", temperature);
+
+#endif
+
+#ifdef MAX31856_T3
+
+	   temperature = max31856_read_CJ_temp(&max31856T3);
+	   max31856_read_fault(&max31856T3);
+	   if (max31856T3.sr.val) {
+	   		printf("TC Read Fail ");
+	   		printf("ERROR TC3 #: %d ",max31856T3.sr.val);
+
+	   }
+	   printf("Cold Junction Temperature Reading TC3: %f \r\n", temperature);
+
+	   temperature = max31856_read_TC_temp(&max31856T3); // compensates already for cold junction reading
+	   if (max31856T3.sr.val) {
+	   	   	printf("TC TEMP Read Fail ");
+	   	   	printf("ERROR TC3 #: %d ",max31856T3.sr.val);
+	   	   	print_errors(max31856T3.sr.val); // test functionality of error discerning
+
+	   }
+	   printf("Temperature Reading TC3: %f \r\n", temperature);
+#endif
+
+
+#ifdef MAX31856_T4
+
+	   temperature = max31856_read_CJ_temp(&max31856T4);
+	   max31856_read_fault(&max31856T4);
+	   if (max31856T4.sr.val) {
+	   		printf("TC Read Fail ");
+	   		printf("ERROR TC4 #: %d ",max31856T4.sr.val);
+
+	   }
+	   printf("Cold Junction Temperature Reading TC4: %f \r\n", temperature);
+
+	   temperature = max31856_read_TC_temp(&max31856T4); // compensates already for cold junction reading
+	   if (max31856T4.sr.val) {
+	   	   	printf("TC TEMP Read Fail ");
+	   	   	printf("ERROR TC4 #: %d ",max31856T4.sr.val);
+	   	   	print_errors(max31856T4.sr.val); // test functionality of error discerning
+
+	   }
+	   printf("Temperature Reading TC4: %f \r\n", temperature);
+
+#endif
+
+#ifdef MAX31856_T5
+
+	   temperature = max31856_read_CJ_temp(&max31856T5);
+	   max31856_read_fault(&max31856T5);
+	   if (max31856T5.sr.val) {
+	   		printf("TC Read Fail ");
+	   		printf("ERROR TC5 #: %d ",max31856T5.sr.val);
+
+	   }
+	   printf("Cold Junction Temperature Reading TC5: %f \r\n", temperature);
+
+	   temperature = max31856_read_TC_temp(&max31856T5); // compensates already for cold junction reading
+	   if (max31856T5.sr.val) {
+	   	   	printf("TC TEMP Read Fail ");
+	   	   	printf("ERROR TC5 #: %d ",max31856T5.sr.val);
+	   	   	print_errors(max31856T5.sr.val); // test functionality of error discerning
+
+	   }
+	   printf("Temperature Reading TC5: %f \r\n", temperature);
+
+
+#endif 
+
+
 
 // 	  // TESTING DEBUG PURPOSES w/ ST-LINK
 //
