@@ -47,6 +47,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  *****************************************************************************/
 
+ //https://vscode.dev/github/richardechegaray/STM32_to_ADXL355/blob/master/Src/ADXL355.c
+// LINK TO VS CODE PROJECT 
+
+
+
 /***************************** Include Files **********************************/
 #include <stdio.h>
 #include "ADXL355.h"
@@ -215,6 +220,64 @@ uint32_t ADXL355_Read_Range (void) {
 	else if ( range == 3 )
 		return 8;
 	else return 0; //error
+}
+
+
+/*
+ * @param : ui8address - unsigned 8 bit integer that represents the address we will read from
+ *
+ * This function is a callback for the accelerometer read
+ */
+uint32_t ADXL355_SPI_Read(uint8_t ui8address) {
+
+	HAL_StatusTypeDef status;
+	uint8_t recieveData;
+	uint8_t txData;
+
+	txData = (ui8address << 1) | 1 ;
+
+	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_RESET); //ON
+
+	status = HAL_SPI_Transmit (&hspi1, &txData, 1, 100); // should be on hspi1
+
+	status = HAL_SPI_Receive (&hspi1, &recieveData, 1, 100);
+
+	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_SET); //OFF
+
+	if (status == HAL_OK)
+		return recieveData;
+	else
+		printf("\r\nError Reading: Invalid HAL_STATUS\r\n");
+
+	return 255;
+}
+
+// NEWED TO REPLACE SPI1_CS_PIN WITH THE CORRECT CS PIN we will be using for the ADXL355.
+
+/*
+ * @param : ui8address - unsigned 8 bit integer that represents the address we will write to
+ * @param : ui8Data - unsigned 8 bit integer that represents the data we will write into the corresponding address
+ * @param : enMode - regarding how many bytes of data you will write, i chose to not really use this and hardcoded a
+ *                   1 for '1 byte' in every write I ever used
+ *
+ * This function is a callback for the accelerometer write
+ */
+void ADXL355_SPI_Write(uint8_t ui8address, uint8_t ui8Data, enWriteData enMode) {
+
+	HAL_StatusTypeDef status;
+	uint8_t address;
+
+	address = ((ui8address << 1) & 0xFE); // need to do this in order to make sure the last bit is 0 for write
+
+	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_RESET); //ON
+
+	status = HAL_SPI_Transmit (&hspi1, &address, 1, 100);
+	status = HAL_SPI_Transmit (&hspi1, &ui8Data, 1, 100);
+
+	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_SET); //OFF  
+
+	if (status != HAL_OK)
+		printf("\r\nError writing: Invalid HAL STATUS\r\n");
 }
 
 
