@@ -1,0 +1,10 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"33-21052025-090385";"";
+"REFERENCE";"732512120";"";
+"TraceParts.PartTitle";"SMA";"";
+"TraceParts.InstanceId";"33-21052025-09038544S2U9F2JBTNBAYJ76Z0SOWVZ";"";
+"SUPPLIER";"Molex";"";
+"DESIGN";"SMA Jack, Straight, PCB Receptacle, Edge Mount, Brass Body, Gold (Au) Plated, without Hardware, Tray, 50 Ohms";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartLanguage";"en";"";
+"TraceParts.PartVersion";"1.0.5";"";
