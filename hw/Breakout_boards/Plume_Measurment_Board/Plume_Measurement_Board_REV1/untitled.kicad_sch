@@ -875,7 +875,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.5mm"
 			(at 199.39 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -951,7 +951,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.5mm"
 			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -1027,7 +1027,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.5mm"
 			(at 179.07 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -1356,7 +1356,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.5mm"
 			(at 179.07 43.18 0)
 			(hide yes)
 			(show_name no)
