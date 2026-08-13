@@ -437,8 +437,8 @@ static void clear_channel_samples(void)
  *            and assigned to the channel they come from. Escape key an be used
  *            to exit the loop
  */
-int32_t do_continuous_conversion(uint8_t display_mode)
 //
+int32_t do_continuous_conversion(uint8_t display_mode)
 //
 //
 //  THOUGHTS ON CONTINOUS CONVERSION

@@ -148,11 +148,7 @@ class SerialLink:
             return ""
         line = self.conn.readline()  # blocks until terminator or timeout
         return line.decode('utf-8', errors='replace').strip()
- 
-    # TODO: read_response() - once you know what the PIB sends back for a
-    # "read" command (a single byte? multiple bytes? ASCII?), define the
-    # real parsing here. Likely needs its own struct format depending on
-    # sensor value width/type.
+
  
 
 class PIBShell(cmd.Cmd):

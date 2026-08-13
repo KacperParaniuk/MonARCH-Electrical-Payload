@@ -47,7 +47,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  *****************************************************************************/
 
- //https://vscode.dev/github/richardechegaray/STM32_to_ADXL355/blob/master/Src/ADXL355.c
+//https://vscode.dev/github/richardechegaray/STM32_to_ADXL355/blob/master/Src/ADXL355.c
 // LINK TO VS CODE PROJECT 
 
 
