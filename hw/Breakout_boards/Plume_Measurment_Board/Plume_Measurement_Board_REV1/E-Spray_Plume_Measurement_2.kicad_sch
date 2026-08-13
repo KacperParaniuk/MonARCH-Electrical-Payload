@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "a85717de-fc62-4ca2-8b2f-92f80ffdc033")
+	(uuid "4ea4cd05-938c-4cd3-8a66-21efe4600685")
 	(paper "A4")
 	(lib_symbols
 		(symbol "ADC_Analog_Devices:AD7176-2BRUZ"
@@ -4893,6 +4893,25 @@
 			(justify right)
 		)
 		(uuid "f599f12b-58fd-4d3c-8f49-9c89362de6b7")
+	)
+	(rule_area
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(polyline
+			(pts
+				(xy 11.43 11.43) (xy 11.43 199.39) (xy 285.75 199.39) (xy 287.02 198.12) (xy 287.02 10.16) (xy 12.7 10.16)
+			)
+			(stroke
+				(width 0)
+				(type dash)
+			)
+			(fill
+				(type none)
+			)
+			(uuid "7d32aad3-40e0-4082-aa11-209465d81e0a")
+		)
 	)
 	(symbol
 		(lib_id "Device:C")

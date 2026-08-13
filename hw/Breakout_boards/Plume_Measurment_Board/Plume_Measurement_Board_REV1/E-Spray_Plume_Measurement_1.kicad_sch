@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "0091e45a-7c41-4b19-8214-2ec306ae4a57")
+	(uuid "63250a3e-e323-4217-b2f2-6518293a7dbb")
 	(paper "A4")
 	(lib_symbols
 		(symbol "ADC_Analog_Devices:AD7176-2BRUZ"
@@ -3266,16 +3266,6 @@
 	)
 	(wire
 		(pts
-			(xy 0.0762 0.8096) (xy 5.1562 0.8096)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "43ad8f21-d75f-4730-8153-c2d82a33b33d")
-	)
-	(wire
-		(pts
 			(xy 246.38 85.09) (xy 246.38 90.17)
 		)
 		(stroke
@@ -4354,17 +4344,6 @@
 		)
 		(uuid "fe167703-dd5a-4e26-bbb2-5e2350bd3413")
 	)
-	(hierarchical_label "VSS"
-		(shape input)
-		(at 5.1562 0.8096 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "099e9c50-1a7f-4fbf-aa8b-de7f18c3b5d9")
-	)
 	(hierarchical_label "Plume_1"
 		(shape input)
 		(at 30.48 50.8 180)
@@ -4914,6 +4893,25 @@
 			(justify right)
 		)
 		(uuid "f5f046da-309c-4413-aaa1-26f1aea8bb2e")
+	)
+	(rule_area
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(polyline
+			(pts
+				(xy 11.43 11.43) (xy 11.43 199.39) (xy 285.75 199.39) (xy 287.02 198.12) (xy 287.02 10.16) (xy 12.7 10.16)
+			)
+			(stroke
+				(width 0)
+				(type dash)
+			)
+			(fill
+				(type none)
+			)
+			(uuid "1cc7c08f-c3c9-43bb-9305-27ce1e41edf8")
+		)
 	)
 	(symbol
 		(lib_id "Device:C")
