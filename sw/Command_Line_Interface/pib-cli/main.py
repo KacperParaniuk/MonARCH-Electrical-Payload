@@ -173,10 +173,7 @@ class PIBShell(cmd.Cmd):
         """Toggle the LED on the payload interface board."""
         print("Toggling LED...")
         self.pib.send_command(CMD_TOGGLE_LED_RED)  
-    # def do_pib(self, arg): // probably not needed 
-    #     """Send a command g the payload interface board."""
-    #     print(f"Sending command to PIB: {arg}")
-    #     # Here add the code to send the command to the PIB
+
     def do_open_valve(self, arg):
         """Open the valve on the payload interface board."""
         try: 
@@ -208,7 +205,7 @@ class PIBShell(cmd.Cmd):
             print("Closing valve " + arg + "...")
             self.pib.send_command(CMD_CLOSE_SOL1 + (valve-1)) # takes valve 1 and adds the valve number to obtain the correct command.
     def do_read_cj_temp(self,arg):
-        """Read the temperature from the payload interface board."""
+        """Read the cold junction temperature from the payload interface board."""
         try: 
             sensor = int(arg)
         except ValueError:
@@ -224,6 +221,56 @@ class PIBShell(cmd.Cmd):
             response = self.pib.read_response()
             if response:
                 print(f"PIB says: {response}" + " Celcius degrees")
+
+    def do_read_temp(self, arg):
+        """Read the temperature from the payload interface board."""
+        try: 
+            sensor = int(arg)
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 5.")
+            return
+
+        if(sensor < 1 or sensor > 5):
+            print("Invalid sensor number. Please enter a number between 1 and 5.")
+            return
+        else:
+            # input logic 
+
+    def do_read_pressure(self, arg):
+        """Read the pressure from the payload interface board."""
+        try: 
+            sensor = int(arg)
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 8.")
+            return
+
+        if(sensor < 1 or sensor > 8):
+            print("Invalid sensor number. Please enter a number between 1 and 8.")
+            return
+        else:
+            # input logic 
+
+    def do_read_capacitancez(self, arg):
+        """Read the capacitance chip from the payload interface board."""
+
+    def do_read_level(self, arg):
+         """Read the level of the FAM142 propellant from the payload interface board."""
+
+    def do_read_valve_state(self, arg):
+        """Read the valve state on the payload interface board."""
+        try: 
+            valve = int(arg)
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 18.")
+            return
+
+        if(valve < 1 or valve > 18):
+            print("Invalid valve number. Please enter a number between 1 and 18.")
+            return
+        else:
+            print("Reading valve " + arg + "...")
+            # imput command.             
+      
 
         
     def do_run_sequence(self, arg):
