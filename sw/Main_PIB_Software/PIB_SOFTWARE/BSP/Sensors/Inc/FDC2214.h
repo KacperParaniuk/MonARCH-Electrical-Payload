@@ -167,7 +167,7 @@ float FDC2214_readFrequencyHz(fdc2214_channel_t ch);
 float FDC2214_readCapacitancePf(fdc2214_channel_t ch, float inductance_uH);
 float FDC2214_read_differential_capacitance(uint8_t accumulator);
 uint8_t FDC2214_read_accumulator_height(uint8_t accumulator);
-
+int FDC2214_get_device_id();
 
 
 

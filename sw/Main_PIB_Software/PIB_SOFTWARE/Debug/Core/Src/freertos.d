@@ -48,7 +48,7 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../BSP/Sensors/Inc/ad7124_console_app.h ../BSP/Sensors/Inc/ad7124.h \
  ../BSP/Inc/spi_support.h ../BSP/Sensors/Inc/delay.h \
  ../BSP/Sensors/Inc/max31856.h ../BSP/Sensors/Inc/fdc2214.h \
- ../Core/Inc/i2c.h ../Core/Inc/main.h
+ ../Core/Inc/i2c.h ../Core/Inc/main.h ../App/Inc/control_task.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -106,3 +106,4 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../BSP/Sensors/Inc/fdc2214.h:
 ../Core/Inc/i2c.h:
 ../Core/Inc/main.h:
+../App/Inc/control_task.h:

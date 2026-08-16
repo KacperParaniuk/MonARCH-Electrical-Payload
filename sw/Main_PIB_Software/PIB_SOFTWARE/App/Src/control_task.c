@@ -9,7 +9,7 @@
 
 #include "control_task.h"
 
-extern float temp;
+extern float value;
 extern max31856_t max31856T4;
 
 
@@ -94,6 +94,10 @@ void run_chemical_thruster(){
 
 int heat_catalyst(){
 
+
+
+
+
 	bool acquired = false;
 
 	HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
@@ -104,13 +108,13 @@ int heat_catalyst(){
 
 	while(!acquired){
 		//  need to select correct TC before testing.
-		temp = max31856_read_TC_temp(&max31856T4);
+		value = max31856_read_TC_temp(&max31856T4);
 		max31856_read_fault(&max31856T4);
 		if (max31856T4.sr.val) {
 			return -1;
 		}
 
-		if(temp > THRESHOLD_TEMP){ // need to set correct threshold temperature value based on the readings we are getting.
+		if(value > THRESHOLD_TEMP){ // need to set correct threshold temperature value based on the readings we are getting.
 			acquired = true;
 		}
 

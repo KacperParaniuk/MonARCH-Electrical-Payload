@@ -1,4 +1,6 @@
-Created By Kacper Paraniuk 07-09-26 
+# MonARCH Payload Interface Board Command Line Interface
+
+*Created By Kacper Paraniuk 07-09-26 
 
 
 This markdown file discusses the structure of the payload interface shell (command line interface) and how to set it up 
@@ -39,7 +41,6 @@ If you do not have python no worries UV can manage your python type (https://doc
 uv python install
 
 3. RUNNING THE CODE
-
 
 cd pib-cli # make sure you are in the pib-cli folder
 

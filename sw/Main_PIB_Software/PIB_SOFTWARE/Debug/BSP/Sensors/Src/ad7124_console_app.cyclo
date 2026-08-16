@@ -8,8 +8,8 @@
 ../BSP/Sensors/Src/ad7124_console_app.c:459:7:ad7124_read_channel_current_pc104	1
 ../BSP/Sensors/Src/ad7124_console_app.c:469:7:ad7124_read_channel_current_pressure	1
 ../BSP/Sensors/Src/ad7124_console_app.c:485:7:ad7124_read_pressure	1
-../BSP/Sensors/Src/ad7124_console_app.c:500:13:clear_channel_samples	2
-../BSP/Sensors/Src/ad7124_console_app.c:516:9:do_continuous_conversion	12
-../BSP/Sensors/Src/ad7124_console_app.c:683:9:menu_single_conversion	13
-../BSP/Sensors/Src/ad7124_console_app.c:860:9:ad7124_reset_function	2
-../BSP/Sensors/Src/ad7124_console_app.c:878:9:ad7124_read_device_id	2
+../BSP/Sensors/Src/ad7124_console_app.c:501:13:clear_channel_samples	2
+../BSP/Sensors/Src/ad7124_console_app.c:517:9:do_continuous_conversion	12
+../BSP/Sensors/Src/ad7124_console_app.c:684:9:menu_single_conversion	13
+../BSP/Sensors/Src/ad7124_console_app.c:861:9:ad7124_reset_function	2
+../BSP/Sensors/Src/ad7124_console_app.c:879:9:ad7124_read_device_id	2

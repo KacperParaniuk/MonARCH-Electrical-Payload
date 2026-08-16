@@ -80,6 +80,18 @@ uint8_t reset_fdc2214(){
 }
 
 
+int FDC2214_get_device_id(){
+
+	HAL_I2C_Mem_Read(&hi2c4, FDC2214, DEVICE_ID, I2C_MEMADD_SIZE_8BIT, cof, 2, 100);
+	HAL_Delay(20);
+
+	check[1] = ((uint16_t)cof[0] << 8) | cof[1];
+
+
+	return check[1];
+}
+
+
 
 int FDC2214_Check_Device_ID(){
 

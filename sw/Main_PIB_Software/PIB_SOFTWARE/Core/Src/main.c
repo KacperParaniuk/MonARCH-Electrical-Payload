@@ -79,6 +79,7 @@ uint8_t tx_cmd[1];
 char uart_buffer[64]; // used for sending data across uart3
 float temperature;
 float value;
+GPIO_PinState pinState;
 
 // chip struct defines to be able to extern them.
 max31856_t max31856T1 = {

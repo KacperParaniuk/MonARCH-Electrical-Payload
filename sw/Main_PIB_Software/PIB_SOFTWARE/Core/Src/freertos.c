@@ -26,11 +26,14 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+
 #include "ad7124_console_app.h"
 #include "ad7124.h"
 #include "max31856.h"
 #include "fdc2214.h"
 
+
+#include "control_task.h"
 
 /* USER CODE END Includes */
 
@@ -64,6 +67,9 @@ extern max31856_t max31856T2;
 extern max31856_t max31856T3;
 extern max31856_t max31856T4;
 extern max31856_t max31856T5;
+
+
+extern GPIO_PinState pinState;
 
 
 /* USER CODE END Variables */
@@ -409,30 +415,37 @@ void StartTask04(void *argument)
 
 		 		case CMD_READ_ID_PT:
 		 		    device_id = ad7124_read_device_id(PRESSURE);
-		 			Serial_Printf("AD7124 Device ID: %ld ", device_id);
+		 			Serial_Printf("AD7124 Device ID: %ld \n", device_id);
 		 			if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
-		 				 Serial_Printf("|| SUCCESS \n");
+		 				 printf("|| SUCCESS \n");
 		 				 HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
 //		 				 read_status_register(); potentially integrate for error checking / sending status back
 		 			}
 		 		case CMD_READ_ID_V:
 		 			 device_id = ad7124_read_device_id(VOLTAGE);
-		 			 Serial_Printf("AD7124 Device ID: %ld ", device_id);
+		 			 Serial_Printf("AD7124 Device ID: %ld \n", device_id);
 		 			 if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
-		 				 Serial_Printf("|| SUCCESS \n");
+		 				printf("|| SUCCESS \n");
 		 				 HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
 		 		//		 				 read_status_register();
 		 			 }
 		 			 else{
-		 				 Serial_Printf("Fail Read Voltage AD7124");
+		 				printf("Fail Read Voltage AD7124 \n");
 		 			 }
 		 		case CMD_READ_ID_FDC:
 		 		 	  if(isConnected()==0){
-		 		 		  Serial_Print("FDC NOMINAL \n");
+		 		 		printf("FDC NOMINAL \n");
+			 			HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
+
 		 		 	  }
 		 		 	  else{
-		 		 		  Serial_Print("FDC FAIL IS NOT CONNECTED \n");
+		 		 		printf("FDC FAIL IS NOT CONNECTED \n");
 		 		 	  }
+
+
+		 		 	  device_id = FDC2214_get_device_id();
+			 		  Serial_Printf("FDC2214 Device ID: %ld \n", device_id);
+
 
 // READ PC104 ADC CHANNELS
 
@@ -526,14 +539,178 @@ void StartTask04(void *argument)
 	 				Serial_Printf("Pressure Reading PT 8: %d \r\n", value);
 
 
+	 			case CMD_READ_VALVE_STATE1:
+	 				pinState = HAL_GPIO_ReadPin(valve1_GPIO_Port, valve1_Pin);
+	 				if (pinState == GPIO_PIN_SET){
+		 				Serial_Print("Valve ON \n");
+
+	 				}
+	 				else{
+		 				Serial_Print("Valve OFF \n");
+	 				}
+	 			case CMD_READ_VALVE_STATE2:
+	 				 pinState = HAL_GPIO_ReadPin(valve2_GPIO_Port, valve2_Pin);
+	 				 if (pinState == GPIO_PIN_SET){
+	 					Serial_Print("Valve ON \n");
+	 				 }
+	 				 else{
+	 					Serial_Print("Valve OFF \n");
+	 				 }
+
+	 			case CMD_READ_VALVE_STATE3:
+	 				pinState = HAL_GPIO_ReadPin(valve3_GPIO_Port, valve3_Pin);
+	 				if (pinState == GPIO_PIN_SET){
+		 				Serial_Print("Valve ON \n");
+
+	 				}
+	 				else{
+		 				Serial_Print("Valve OFF \n");
+	 				}
+	 			case CMD_READ_VALVE_STATE4:
+	 				 pinState = HAL_GPIO_ReadPin(TIM8_CH1_VALVE4_GPIO_Port, TIM8_CH1_VALVE4_Pin);
+	 				 if (pinState == GPIO_PIN_SET){
+	 					Serial_Print("Valve ON \n");
+	 				 }
+	 				 else{
+	 					Serial_Print("Valve OFF \n");
+	 				 }
+
+	 			case CMD_READ_VALVE_STATE5:
+	 				pinState = HAL_GPIO_ReadPin(valve5_GPIO_Port, valve5_Pin);
+	 				if (pinState == GPIO_PIN_SET){
+		 				Serial_Print("Valve ON \n");
+
+	 				}
+	 				else{
+		 				Serial_Print("Valve OFF \n");
+	 				}
+	 			case CMD_READ_VALVE_STATE6:
+	 				 pinState = HAL_GPIO_ReadPin(TIM3_CH3_VALVE6_GPIO_Port, TIM3_CH3_VALVE6_Pin);
+	 				 if (pinState == GPIO_PIN_SET){
+	 					Serial_Print("Valve ON \n");
+	 				 }
+	 				 else{
+	 					Serial_Print("Valve OFF \n");
+	 				 }
+
+	 			case CMD_READ_VALVE_STATE7:
+	 				pinState = HAL_GPIO_ReadPin(valve7_GPIO_Port, valve7_Pin);
+	 				if (pinState == GPIO_PIN_SET){
+		 				Serial_Print("Valve ON \n");
+
+	 				}
+	 				else{
+		 				Serial_Print("Valve OFF \n");
+	 				}
+	 			case CMD_READ_VALVE_STATE8:
+	 				 pinState = HAL_GPIO_ReadPin(valve8_GPIO_Port, valve8_Pin);
+	 				 if (pinState == GPIO_PIN_SET){
+	 					Serial_Print("Valve ON \n");
+	 				 }
+	 				 else{
+	 					Serial_Print("Valve OFF \n");
+	 				 }
+
+	 			case CMD_READ_VALVE_STATE9:
+	 				pinState = HAL_GPIO_ReadPin(valve9_GPIO_Port, valve9_Pin);
+	 				if (pinState == GPIO_PIN_SET){
+		 				Serial_Print("Valve ON \n");
+
+	 				}
+	 				else{
+		 				Serial_Print("Valve OFF \n");
+	 				}
+	 			case CMD_READ_VALVE_STATE10:
+	 				 pinState = HAL_GPIO_ReadPin(valve10_GPIO_Port, valve10_Pin);
+	 				 if (pinState == GPIO_PIN_SET){
+	 					Serial_Print("Valve ON \n");
+	 				 }
+	 				 else{
+	 					Serial_Print("Valve OFF \n");
+	 				 }
+
+	 			case CMD_READ_VALVE_STATE11:
+	 				pinState = HAL_GPIO_ReadPin(valve11_GPIO_Port, valve11_Pin);
+	 				if (pinState == GPIO_PIN_SET){
+		 				Serial_Print("Valve ON \n");
+
+	 				}
+	 				else{
+		 				Serial_Print("Valve OFF \n");
+	 				}
+	 			case CMD_READ_VALVE_STATE12:
+	 				 pinState = HAL_GPIO_ReadPin(valve12_GPIO_Port, valve12_Pin);
+	 				 if (pinState == GPIO_PIN_SET){
+	 					Serial_Print("Valve ON \n");
+	 				 }
+	 				 else{
+	 					Serial_Print("Valve OFF \n");
+	 				 }
+
+	 			case CMD_READ_VALVE_STATE13:
+	 				pinState = HAL_GPIO_ReadPin(valve13_GPIO_Port, valve13_Pin);
+	 				if (pinState == GPIO_PIN_SET){
+		 				Serial_Print("Valve ON \n");
+
+	 				}
+	 				else{
+		 				Serial_Print("Valve OFF \n");
+	 				}
+	 			case CMD_READ_VALVE_STATE14:
+	 				 pinState = HAL_GPIO_ReadPin(valve14_GPIO_Port, valve14_Pin);
+	 				 if (pinState == GPIO_PIN_SET){
+	 					Serial_Print("Valve ON \n");
+	 				 }
+	 				 else{
+	 					Serial_Print("Valve OFF \n");
+	 				 }
+
+	 			case CMD_READ_VALVE_STATE15:
+	 				pinState = HAL_GPIO_ReadPin(valve15_GPIO_Port, valve15_Pin);
+	 				if (pinState == GPIO_PIN_SET){
+		 				Serial_Print("Valve ON \n");
+
+	 				}
+	 				else{
+		 				Serial_Print("Valve OFF \n");
+	 				}
+	 			case CMD_READ_VALVE_STATE16:
+	 				 pinState = HAL_GPIO_ReadPin(valve16_GPIO_Port, valve16_Pin);
+	 				 if (pinState == GPIO_PIN_SET){
+	 					Serial_Print("Valve ON \n");
+	 				 }
+	 				 else{
+	 					Serial_Print("Valve OFF \n");
+	 				 }
+
+	 			case CMD_READ_VALVE_STATE17:
+	 				pinState = HAL_GPIO_ReadPin(valve17_GPIO_Port, valve17_Pin);
+	 				if (pinState == GPIO_PIN_SET){
+		 				Serial_Print("Valve ON \n");
+
+	 				}
+	 				else{
+		 				Serial_Print("Valve OFF \n");
+	 				}
+	 			case CMD_READ_VALVE_STATE18:
+	 				 pinState = HAL_GPIO_ReadPin(valve18_GPIO_Port, valve18_Pin);
+	 				 if (pinState == GPIO_PIN_SET){
+	 					Serial_Print("Valve ON \n");
+	 				 }
+	 				 else{
+	 					Serial_Print("Valve OFF \n");
+	 				 }
+
+
+
+
 // Read MAX31856 Temperatures
 //
 		 	    case CMD_READ_TC1:
 		 	    	temperature = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
 	 				max31856_read_fault(&max31856T1);
 		 		    if (max31856T1.sr.val) {
-		 		    	Serial_Print("TC TEMP Read Fail ");
-		 		   	   	Serial_Printf("ERROR TC1 #: %d ",max31856T1.sr.val);
+						Serial_Printf("TC Read Fail ERROR TC1 #: %d \n", max31856T1.sr.val);
 		 		   	   	print_errors(max31856T1.sr.val); // test functionality of error discerning
 
 		 		    }
@@ -545,8 +722,7 @@ void StartTask04(void *argument)
 		 	    	temperature = max31856_read_TC_temp(&max31856T2);
 		 	    	max31856_read_fault(&max31856T2);
 		 		    if (max31856T2.sr.val) {
-		 		    	Serial_Print("TC TEMP Read Fail ");
-		 		   	   	Serial_Printf("ERROR TC2 #: %d ",max31856T2.sr.val);
+						Serial_Printf("TC Read Fail ERROR TC2 #: %d \n", max31856T2.sr.val);
 		 		   	   	print_errors(max31856T2.sr.val);
 
 		 		    }
@@ -557,8 +733,7 @@ void StartTask04(void *argument)
 		 	    	temperature = max31856_read_TC_temp(&max31856T3);
 		 	    	max31856_read_fault(&max31856T3);
 		 		    if (max31856T3.sr.val) {
-		 		    	Serial_Print("TC TEMP Read Fail ");
-		 		   	   	Serial_Printf("ERROR TC3 #: %d ",max31856T3.sr.val);
+						Serial_Printf("TC Read Fail ERROR TC3 #: %d \n", max31856T3.sr.val);
 		 		   	   	print_errors(max31856T3.sr.val);
 
 		 		    }
@@ -569,8 +744,7 @@ void StartTask04(void *argument)
 		 	    	temperature = max31856_read_TC_temp(&max31856T4);
 		 	    	max31856_read_fault(&max31856T4);
 		 		    if (max31856T4.sr.val) {
-		 		    	Serial_Print("TC TEMP Read Fail ");
-		 		   	   	Serial_Printf("ERROR TC4 #: %d ",max31856T4.sr.val);
+						Serial_Printf("TC Read Fail ERROR TC4 #: %d \n", max31856T4.sr.val);
 		 		   	   	print_errors(max31856T4.sr.val);
 
 		 		    }
@@ -581,9 +755,8 @@ void StartTask04(void *argument)
 		 	    	temperature = max31856_read_TC_temp(&max31856T5);
 		 	    	max31856_read_fault(&max31856T5);
 		 		    if (max31856T5.sr.val) {
-		 		    	Serial_Print("TC TEMP Read Fail ");
-		 		   	   	Serial_Printf("ERROR TC5 #: %d ",max31856T5.sr.val);
-		 		   	   	print_errors(max31856T5.sr.val);
+						Serial_Printf("TC Read Fail ERROR TC5 #: %d \n", max31856T5.sr.val);
+		 		   	   	print_errors(max31856T5.sr.val); // need to test during hardware test
 
 		 		    }
 		 		    else{
@@ -598,9 +771,7 @@ void StartTask04(void *argument)
 		 		   temperature = max31856_read_CJ_temp(&max31856T1);
 		 		   max31856_read_fault(&max31856T1);
 		 		   if (max31856T1.sr.val) {
-		 		   		Serial_Print("TC Read Fail ");
-		 		   		Serial_Printf("ERROR TC1 #: %d ",max31856T1.sr.val);
-
+					   Serial_Printf("TC Read Fail ERROR TC1 #: %d \n", max31856T1.sr.val);
 		 		   }
 		 		   else{
 			 		    Serial_Printf("Cold Junction Temperature Reading TC1: %f \r\n", temperature);
@@ -609,8 +780,7 @@ void StartTask04(void *argument)
 			 	   temperature = max31856_read_CJ_temp(&max31856T2);
 			 	   max31856_read_fault(&max31856T2);
 			 	   if (max31856T2.sr.val) {
-			 		   Serial_Print("TC Read Fail ");
-			 		   Serial_Printf("ERROR TC1 #: %d ",max31856T2.sr.val);
+					   Serial_Printf("TC Read Fail ERROR TC2 #: %d \n", max31856T2.sr.val);
 			 	   }
 			 	   else{
 			 		   Serial_Printf("Cold Junction Temperature Reading TC2: %f \r\n", temperature);
@@ -620,8 +790,7 @@ void StartTask04(void *argument)
 				   temperature = max31856_read_CJ_temp(&max31856T3);
 				   max31856_read_fault(&max31856T3);
 				   if (max31856T3.sr.val) {
-				 	   Serial_Print("TC Read Fail ");
-				 	   Serial_Printf("ERROR TC1 #: %d ",max31856T3.sr.val);
+					   Serial_Printf("TC Read Fail ERROR TC3 #: %d \n", max31856T3.sr.val);
 				   }
 				   else{
 			 		   Serial_Printf("Cold Junction Temperature Reading TC3: %f \r\n", temperature);
@@ -631,8 +800,7 @@ void StartTask04(void *argument)
 				   temperature = max31856_read_CJ_temp(&max31856T4);
 				   max31856_read_fault(&max31856T4);
 				   if (max31856T4.sr.val) {
-					   Serial_Print("TC Read Fail ");
-					   Serial_Printf("ERROR TC1 #: %d ",max31856T4.sr.val);
+					   Serial_Printf("TC Read Fail ERROR TC4 #: %d \n", max31856T4.sr.val);
 				   }
 				   else{
 			 		   Serial_Printf("Cold Junction Temperature Reading TC4: %f \r\n", temperature);
@@ -641,8 +809,7 @@ void StartTask04(void *argument)
 				   temperature = max31856_read_CJ_temp(&max31856T5);
 				   max31856_read_fault(&max31856T5);
 			       if (max31856T5.sr.val) {
-					   Serial_Print("TC Read Fail ");
-					   Serial_Printf("ERROR TC5 #: %d ",max31856T5.sr.val);
+					   Serial_Printf("TC Read Fail ERROR TC5 #: %d \n", max31856T5.sr.val);
 				   }
 			       else{
 			     	   Serial_Printf("Cold Junction Temperature Reading TC5: %f \r\n", temperature);
@@ -651,22 +818,20 @@ void StartTask04(void *argument)
 
 // FDC2214 Reads
 		 	    case READ_CAPACITANCE_A1:
-
+		 	    	// test both when testing, should return the same value.
 		 	 		if(FDC2214_is_data_ready(FDC2214_CH0)){
 		 	 	 		 float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0, FDC2214_L_HENRY);
-		 	 	 		 Serial_Print("Capacitance (pF): %f", c_pf);
-
+		 	 	 		 Serial_Printf("Capacitance (pF): %f \n", c_pf);
 		 	 		}
-
-					value = FDC2214_read_differential_capacitance(1);
-	 				Serial_Printf("Differential Capacitance Reading FDC2214 A1: %f \r\n", capacitance);
+//					value = FDC2214_read_differential_capacitance(1);
+//	 				Serial_Printf("Differential Capacitance Reading FDC2214 A1: %f \r\n", capacitance);
 		 	    case READ_CAPACITANCE_A2:
 					value = FDC2214_read_differential_capacitance(2);
-	 				Serial_Printf("Differential Capacitance Reading FDC2214 A2: %f \r\n", capacitance);
-	 			case READ_CATALYST_LEVEL_A1:
+	 				Serial_Printf("Differential Capacitance Reading FDC2214 A2: %f \r\n", value);
+	 			case READ_PROPELLANT_LEVEL_A1:
 	 				value = FDC2214_read_accumulator_height(1);
 	 				Serial_Printf("Catalyst Height Reading FDC2214 A1: %d \r\n", value);
-	 			case READ_CATALYST_LEVEL_A2:
+	 			case READ_PROPELLANT_LEVEL_A2:
 	 				value = FDC2214_read_accumulator_height(2);
 	 				Serial_Printf("Catalyst Height Reading FDC2214 A2: %d \r\n", value);
 
@@ -679,6 +844,24 @@ void StartTask04(void *argument)
 		 		     HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
 		 		case CMD_TOGGLE_LED_AMBER:
 		 		     HAL_GPIO_TogglePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin);
+
+
+
+// Events
+
+		 		case HEAT_CATALYST:
+		 			heat_catalyst();
+
+
+		 		case CMD_MANUAL_HEATER_TURN_ON:
+		 		     HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
+
+		 		case CMD_MANUAL_HEATER_TURN_OFF:
+		 		     HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+
+
+
+
 
 
 

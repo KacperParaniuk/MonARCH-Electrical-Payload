@@ -484,6 +484,7 @@ float ad7124_read_channel_current_pressure(uint8_t channel){
 
 float ad7124_read_pressure(uint8_t channel){
 
+	// check to see if the pressure formula works.
 
 	float current_reading = ad7124_read_channel_current_pressure(channel);
 	return ((HIGH_PRESSURE_RANGE - LOW_PRESSURE_RANGE) / (HIGH_CURRENT_PRESSURE - LOW_CURRENT_PRESSURE)) * (current_reading-LOW_CURRENT_PRESSURE); // translation into pressure assuming linearity
