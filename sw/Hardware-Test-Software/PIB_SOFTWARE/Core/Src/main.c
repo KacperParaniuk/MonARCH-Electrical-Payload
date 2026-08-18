@@ -272,7 +272,9 @@ int main(void)
   if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,VOLTAGE)) < 0) {
 		// Handle error setting up AD7124 here
 	  printf("Failed to init ad7124 voltage \n");
-	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+	  HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
+
+
 
   }
 
@@ -478,8 +480,16 @@ float temperature;
 //
 //	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
 //
-//
 //	  HAL_Delay(200);
+//
+//	  HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+//	  HAL_Delay(200);
+//
+//	  HAL_GPIO_TogglePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin);
+//
+//	  printf("HELLO \n");
+	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+
 
 #ifdef B2B
 

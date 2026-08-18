@@ -86,8 +86,8 @@ void Error_Handler(void);
 #define USART3_TX_OBC_GPIO_Port GPIOC
 #define USART3_RX_OBC_Pin GPIO_PIN_5
 #define USART3_RX_OBC_GPIO_Port GPIOC
-#define LED_PIN_BLUE_Pin GPIO_PIN_13
-#define LED_PIN_BLUE_GPIO_Port GPIOE
+#define LED_PIN_AMBER_Pin GPIO_PIN_13
+#define LED_PIN_AMBER_GPIO_Port GPIOE
 #define LED_PIN_GREEN_Pin GPIO_PIN_14
 #define LED_PIN_GREEN_GPIO_Port GPIOE
 #define LED_PIN_RED_Pin GPIO_PIN_15

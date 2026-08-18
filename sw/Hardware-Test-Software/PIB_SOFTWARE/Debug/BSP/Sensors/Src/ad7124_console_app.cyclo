@@ -4,7 +4,7 @@
 ../BSP/Sensors/Src/ad7124_console_app.c:339:13:dislay_channel_samples	11
 ../BSP/Sensors/Src/ad7124_console_app.c:395:6:display_channel_sample	2
 ../BSP/Sensors/Src/ad7124_console_app.c:424:13:clear_channel_samples	2
-../BSP/Sensors/Src/ad7124_console_app.c:440:9:do_continuous_conversion	12
+../BSP/Sensors/Src/ad7124_console_app.c:441:9:do_continuous_conversion	12
 ../BSP/Sensors/Src/ad7124_console_app.c:607:9:menu_single_conversion	13
 ../BSP/Sensors/Src/ad7124_console_app.c:784:9:ad7124_reset_function	2
 ../BSP/Sensors/Src/ad7124_console_app.c:802:9:ad7124_read_device_id	2
