@@ -121,6 +121,8 @@
 uint8_t rx_cmd[1]; // single byte for all UART commands.
 uint8_t tx_cmd[1];
 char uart_buffer[64];
+float value;
+float value2;
 
 /* USER CODE END PV */
 
@@ -255,7 +257,7 @@ int main(void)
 
 #ifdef AD7124_P
 
-  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,PRESSURE)) < 0) {
+  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_B,PRESSURE)) < 0) {
 		// Handle error setting up AD7124 here
 	  printf("Failed to init ad7124 pressure \n");
 	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
@@ -269,10 +271,10 @@ int main(void)
 #ifdef AD7124_V
 
 
-  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,VOLTAGE)) < 0) {
+  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_B,VOLTAGE)) < 0) {
 		// Handle error setting up AD7124 here
 	  printf("Failed to init ad7124 voltage \n");
-	  HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
+	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
 
 
@@ -477,10 +479,10 @@ float temperature;
   while (1)
   {
 
-//
-//	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-//
-//	  HAL_Delay(200);
+
+	  HAL_GPIO_TogglePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin);
+
+	  HAL_Delay(200);
 //
 //	  HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
 //	  HAL_Delay(200);
@@ -488,7 +490,6 @@ float temperature;
 //	  HAL_GPIO_TogglePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin);
 //
 //	  printf("HELLO \n");
-	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
 
 #ifdef B2B
@@ -572,7 +573,12 @@ float temperature;
 
 #ifdef AD7124_SINGLE_MODE
 		  /* Read all enabled channels on ADC in single conversion mode */
-		  menu_single_conversion(PRESSURE);
+//		  menu_single_conversion(PRESSURE);
+		  for(int i =0 ; i<16; i++){
+		 			  value = display_channel_sample(i, VOLTAGE);
+		 			  printf("Channel %d: Voltage: %f ",i , value);
+
+		 }
 
 
 #endif	
@@ -594,16 +600,29 @@ float temperature;
 
 	  device_id = ad7124_read_device_id(VOLTAGE);
 
-	  printf("AD7124 Device ID: %ld ", device_id);
-	  if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
+//	  printf("AD7124 Device ID: %ld ", device_id);
+	  if(device_id == 23){ // device id for dataversion F || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
 
-		  printf("|| SUCCESS \n");
+//		  printf("|| SUCCESS \n");
 		  HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
-		  read_status_register(VOLTAGE);
+//		  read_status_register(VOLTAGE);
 		  #ifdef AD7124_SINGLE_MODE
 		  /* Read all enabled channels on ADC in single conversion mode */
 
-		  menu_single_conversion(VOLTAGE);
+		  value = display_channel_sample(0, VOLTAGE);
+		  value2 = display_channel_sample(1, VOLTAGE);
+
+		  printf("12 Volt Channel: Voltage: %f " , value2-value);
+
+
+
+//		  menu_single_conversion(VOLTAGE);
+//		  for(int i =0 ; i<2; i++){
+//			  value = display_channel_sample(i, VOLTAGE);
+//
+//		  }
+
+
 
 	      #endif
 	 }

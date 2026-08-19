@@ -392,7 +392,7 @@ static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console
 }
 
 
-void display_channel_sample(uint8_t channel, AD7124_CHIP chip){
+float display_channel_sample(uint8_t channel, AD7124_CHIP chip){
 	float value;
 
 	if(chip==PRESSURE){
@@ -409,9 +409,11 @@ void display_channel_sample(uint8_t channel, AD7124_CHIP chip){
 
 
 
+
 	// print channel
 	value = ad7124_convert_sample_to_voltage(adc_dev, channel, channel_samples[channel]);
-	printf("Channel %d: Voltage: %f ",channel, value);
+	return value;
+		//	printf("Channel %d: Voltage: %f ",channel, value);
 
 }
 
@@ -706,7 +708,7 @@ int32_t menu_single_conversion(AD7124_CHIP chip)
 	}
 
 	printf("Single Conversion completed...\r\n\r\n");
-	dislay_channel_samples(SHOW_ENABLED_CHANNELS, DISPLAY_DATA_TABULAR, chip);
+	dislay_channel_samples(SHOW_ENABLED_CHANNELS, DISPLAY_DATA_STREAM, chip);
 
 //	adi_press_any_key_to_continue();
 	return(MENU_CONTINUE);

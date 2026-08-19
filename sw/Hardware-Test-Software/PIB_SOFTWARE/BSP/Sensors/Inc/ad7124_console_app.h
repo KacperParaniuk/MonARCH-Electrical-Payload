@@ -79,7 +79,7 @@ void read_error_register(AD7124_CHIP chip);
 
 int32_t menu_single_conversion(AD7124_CHIP chip);
 int32_t do_continous_conversion(uint8_t display_mode);
-void display_channel_sample(uint8_t channel, AD7124_CHIP chip);
+float display_channel_sample(uint8_t channel, AD7124_CHIP chip);
 
 
 //extern console_menu ad7124_main_menu; << not using menu
