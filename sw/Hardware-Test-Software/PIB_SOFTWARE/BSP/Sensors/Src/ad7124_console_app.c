@@ -83,6 +83,9 @@ POSSIBILITY OF SUCH DAMAGE.
  */
 static struct ad7124_st_reg ad7124_register_map[AD7124_REG_NO];
 
+// setup a struct for this as the register_map is being
+
+x
 // Pointer to the struct representing the AD7124 device // need to be able to utilize two ad7124 devices.
 
 static struct ad7124_dev * pAd7124_dev = NULL; // p for pressure
@@ -455,7 +458,7 @@ int32_t do_continuous_conversion(uint8_t display_mode)
 
 	// Clear the ADC CTRL MODE bits, has the effect of selecting continuous mode
     ad7124_register_map[AD7124_ADC_Control].value &= ~(AD7124_ADC_CTRL_REG_MODE(0xf));
-	if ( (error_code = ad7124_write_register(pAd7124_dev, ad7124_register_map[AD7124_ADC_Control]) ) < 0) {
+	if ( (error_code = ad7124_write_register(vAd7124_dev, ad7124_register_map[AD7124_ADC_Control]) ) < 0) {
 		printf("Error (%ld) setting AD7124 Continuous conversion mode.\r\n", error_code);
 
 
@@ -516,12 +519,12 @@ int32_t do_continuous_conversion(uint8_t display_mode)
 		 *  so the channel being sampled is read back (and updated) as part of the same frame
 		 */
 
-    	if ( (error_code = ad7124_wait_for_conv_ready(pAd7124_dev, 10000)) < 0) {
+    	if ( (error_code = ad7124_wait_for_conv_ready(vAd7124_dev, 10000)) < 0) {
     		printf("Error/Timeout waiting for conversion ready %ld\r\n", error_code);
     		continue;
     	}
 
-    	if ( (error_code = ad7124_read_data(pAd7124_dev, &sample_data)) < 0) {
+    	if ( (error_code = ad7124_read_data(vAd7124_dev, &sample_data)) < 0) {
 			printf("Error reading ADC Data (%ld).\r\n", error_code);
 			continue;
 		}
@@ -538,7 +541,7 @@ int32_t do_continuous_conversion(uint8_t display_mode)
 			printf("Channel Read was %d, which is not < AD7124_CHANNEL_COUNT\r\n", channel_read);
 		}
 
-		dislay_channel_samples(SHOW_ENABLED_CHANNELS, display_mode, PRESSURE);
+		dislay_channel_samples(SHOW_ENABLED_CHANNELS, display_mode, VOLTAGE);
 
 		HAL_Delay(1000); // One second delay see if it breaks
 
