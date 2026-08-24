@@ -719,43 +719,44 @@ Discarded input sections
  .bss           0x00000000        0x0 ./BSP/Sensors/Src/ad7124_console_app.o
  .rodata.CHANNEL_OFFSET_TAB
                 0x00000000        0x7 ./BSP/Sensors/Src/ad7124_console_app.o
- .bss.ad7124_register_map
+ .bss.ad7124_register_map_p
+                0x00000000      0x390 ./BSP/Sensors/Src/ad7124_console_app.o
+ .bss.ad7124_register_map_v
                 0x00000000      0x390 ./BSP/Sensors/Src/ad7124_console_app.o
  .bss.pAd7124_dev
                 0x00000000        0x4 ./BSP/Sensors/Src/ad7124_console_app.o
  .bss.vAd7124_dev
                 0x00000000        0x4 ./BSP/Sensors/Src/ad7124_console_app.o
- .bss.adc_dev   0x00000000        0x4 ./BSP/Sensors/Src/ad7124_console_app.o
  .bss.status    0x00000000        0x4 ./BSP/Sensors/Src/ad7124_console_app.o
  .bss.channel_samples
                 0x00000000       0x40 ./BSP/Sensors/Src/ad7124_console_app.o
  .bss.channel_samples_count
                 0x00000000       0x40 ./BSP/Sensors/Src/ad7124_console_app.o
  .text.ad7124_app_initialize
-                0x00000000       0xf0 ./BSP/Sensors/Src/ad7124_console_app.o
- .rodata        0x00000000      0x82f ./BSP/Sensors/Src/ad7124_console_app.o
+                0x00000000       0xf4 ./BSP/Sensors/Src/ad7124_console_app.o
+ .rodata        0x00000000      0x813 ./BSP/Sensors/Src/ad7124_console_app.o
  .text.read_status_register
-                0x00000000       0x64 ./BSP/Sensors/Src/ad7124_console_app.o
+                0x00000000       0x58 ./BSP/Sensors/Src/ad7124_console_app.o
  .bss.error_value
                 0x00000000        0x4 ./BSP/Sensors/Src/ad7124_console_app.o
  .text.read_error_register
-                0x00000000      0x1f8 ./BSP/Sensors/Src/ad7124_console_app.o
+                0x00000000      0x1ec ./BSP/Sensors/Src/ad7124_console_app.o
  .text.dislay_channel_samples
-                0x00000000      0x164 ./BSP/Sensors/Src/ad7124_console_app.o
+                0x00000000      0x150 ./BSP/Sensors/Src/ad7124_console_app.o
  .text.display_channel_sample
-                0x00000000       0x78 ./BSP/Sensors/Src/ad7124_console_app.o
+                0x00000000       0x5c ./BSP/Sensors/Src/ad7124_console_app.o
  .text.clear_channel_samples
                 0x00000000       0x44 ./BSP/Sensors/Src/ad7124_console_app.o
  .text.do_continuous_conversion
-                0x00000000      0x1c0 ./BSP/Sensors/Src/ad7124_console_app.o
+                0x00000000      0x1e8 ./BSP/Sensors/Src/ad7124_console_app.o
  .text.menu_single_conversion
-                0x00000000      0x27c ./BSP/Sensors/Src/ad7124_console_app.o
+                0x00000000      0x288 ./BSP/Sensors/Src/ad7124_console_app.o
  .text.ad7124_reset_function
-                0x00000000       0x50 ./BSP/Sensors/Src/ad7124_console_app.o
+                0x00000000       0x64 ./BSP/Sensors/Src/ad7124_console_app.o
  .text.ad7124_read_device_id
-                0x00000000       0x6c ./BSP/Sensors/Src/ad7124_console_app.o
- .debug_info    0x00000000      0xf56 ./BSP/Sensors/Src/ad7124_console_app.o
- .debug_abbrev  0x00000000      0x31b ./BSP/Sensors/Src/ad7124_console_app.o
+                0x00000000       0x48 ./BSP/Sensors/Src/ad7124_console_app.o
+ .debug_info    0x00000000     0x101a ./BSP/Sensors/Src/ad7124_console_app.o
+ .debug_abbrev  0x00000000      0x2fb ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_aranges
                 0x00000000       0x68 ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_rnglists
@@ -831,10 +832,10 @@ Discarded input sections
  .debug_macro   0x00000000      0x516 ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_macro   0x00000000       0x1c ./BSP/Sensors/Src/ad7124_console_app.o
  .debug_macro   0x00000000       0x16 ./BSP/Sensors/Src/ad7124_console_app.o
- .debug_line    0x00000000      0xee7 ./BSP/Sensors/Src/ad7124_console_app.o
- .debug_str     0x00000000   0x10647b ./BSP/Sensors/Src/ad7124_console_app.o
+ .debug_line    0x00000000     0x1010 ./BSP/Sensors/Src/ad7124_console_app.o
+ .debug_str     0x00000000   0x106492 ./BSP/Sensors/Src/ad7124_console_app.o
  .comment       0x00000000       0x44 ./BSP/Sensors/Src/ad7124_console_app.o
- .debug_frame   0x00000000      0x188 ./BSP/Sensors/Src/ad7124_console_app.o
+ .debug_frame   0x00000000      0x18c ./BSP/Sensors/Src/ad7124_console_app.o
  .ARM.attributes
                 0x00000000       0x34 ./BSP/Sensors/Src/ad7124_console_app.o
  .group         0x00000000        0xc ./BSP/Sensors/Src/ad7124_regs.o
