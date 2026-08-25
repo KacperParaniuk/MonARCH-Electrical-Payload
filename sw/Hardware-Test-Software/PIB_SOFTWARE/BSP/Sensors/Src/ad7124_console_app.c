@@ -122,15 +122,20 @@ int32_t ad7124_app_initialize(uint8_t configID, AD7124_CHIP chip)
 	 * Requirement, not checked here, is that all the configs are the same size
 	 *
 	 */
+
+
+
+	struct ad7124_st_reg *target_map = (chip == PRESSURE) ? ad7124_register_map_p : ad7124_register_map_v;
+
 	switch(configID) {
 		case AD7124_CONFIG_A:
 		{
-			memcpy(ad7124_register_map_p, ad7124_regs_config_a, sizeof(ad7124_register_map_p));
+			memcpy(target_map, ad7124_regs_config_a, sizeof(struct ad7124_st_reg) * AD7124_REG_NO);
 			break;
 		}
 		case AD7124_CONFIG_B:
 		{
-			memcpy(ad7124_register_map_p, ad7124_regs_config_b, sizeof(ad7124_register_map_p));
+			memcpy(target_map, ad7124_regs_config_b, sizeof(struct ad7124_st_reg) * AD7124_REG_NO);
 			break;
 		}
 		default:
@@ -772,6 +777,8 @@ int32_t ad7124_read_device_id(AD7124_CHIP chip){
 
 
     struct ad7124_dev *dev = (chip == PRESSURE) ? pAd7124_dev : vAd7124_dev;
+
+	status = ad7124_read_register(dev, &dev->regs[AD7124_ID]);
 
 	  if (status < 0) {
 	  	   printf("\r\nError Encountered reading ID register\r\n");
