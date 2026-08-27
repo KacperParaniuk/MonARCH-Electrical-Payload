@@ -85,7 +85,7 @@ static struct ad7124_st_reg ad7124_register_map[AD7124_REG_NO];
 
 // setup a struct for this as the register_map is being
 
-x
+
 // Pointer to the struct representing the AD7124 device // need to be able to utilize two ad7124 devices.
 
 static struct ad7124_dev * pAd7124_dev = NULL; // p for pressure

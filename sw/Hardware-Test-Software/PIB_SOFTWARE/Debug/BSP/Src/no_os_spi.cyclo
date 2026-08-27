@@ -1,0 +1,9 @@
+../BSP/Src/no_os_spi.c:52:9:no_os_spi_init	8
+../BSP/Src/no_os_spi.c:88:9:no_os_spibus_init	2
+../BSP/Src/no_os_spi.c:116:9:no_os_spi_remove	5
+../BSP/Src/no_os_spi.c:133:6:no_os_spibus_remove	4
+../BSP/Src/no_os_spi.c:159:9:no_os_spi_write_and_read	4
+../BSP/Src/no_os_spi.c:185:9:no_os_spi_transfer	8
+../BSP/Src/no_os_spi.c:224:9:no_os_spi_transfer_dma	6
+../BSP/Src/no_os_spi.c:248:9:no_os_spi_transfer_dma_async	6
+../BSP/Src/no_os_spi.c:269:9:no_os_spi_transfer_abort	4

@@ -1,0 +1,9 @@
+../BSP/Src/no_os_spi.c:52:9:no_os_spi_init	24	static
+../BSP/Src/no_os_spi.c:88:9:no_os_spibus_init	24	static
+../BSP/Src/no_os_spi.c:116:9:no_os_spi_remove	16	static
+../BSP/Src/no_os_spi.c:133:6:no_os_spibus_remove	24	static
+../BSP/Src/no_os_spi.c:159:9:no_os_spi_write_and_read	32	static
+../BSP/Src/no_os_spi.c:185:9:no_os_spi_transfer	32	static
+../BSP/Src/no_os_spi.c:224:9:no_os_spi_transfer_dma	24	static
+../BSP/Src/no_os_spi.c:248:9:no_os_spi_transfer_dma_async	40	static
+../BSP/Src/no_os_spi.c:269:9:no_os_spi_transfer_abort	16	static

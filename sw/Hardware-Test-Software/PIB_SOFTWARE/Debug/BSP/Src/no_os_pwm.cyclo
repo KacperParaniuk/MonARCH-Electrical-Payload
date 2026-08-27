@@ -1,0 +1,12 @@
+../BSP/Src/no_os_pwm.c:51:9:no_os_pwm_init	5
+../BSP/Src/no_os_pwm.c:79:9:no_os_pwm_remove	4
+../BSP/Src/no_os_pwm.c:98:9:no_os_pwm_enable	4
+../BSP/Src/no_os_pwm.c:115:9:no_os_pwm_disable	4
+../BSP/Src/no_os_pwm.c:133:9:no_os_pwm_set_period	4
+../BSP/Src/no_os_pwm.c:151:9:no_os_pwm_get_period	4
+../BSP/Src/no_os_pwm.c:169:9:no_os_pwm_set_duty_cycle	4
+../BSP/Src/no_os_pwm.c:187:9:no_os_pwm_get_duty_cycle	4
+../BSP/Src/no_os_pwm.c:205:9:no_os_pwm_set_phase	4
+../BSP/Src/no_os_pwm.c:223:9:no_os_pwm_get_phase	4
+../BSP/Src/no_os_pwm.c:243:9:no_os_pwm_set_polarity	4
+../BSP/Src/no_os_pwm.c:263:9:no_os_pwm_get_polarity	4

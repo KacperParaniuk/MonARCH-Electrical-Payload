@@ -1,0 +1,9 @@
+../BSP/Src/stm32_gpio.c:46:16:_gpio_init	72	static
+../BSP/Src/stm32_gpio.c:183:9:stm32_gpio_get	32	static
+../BSP/Src/stm32_gpio.c:225:9:stm32_gpio_get_optional	16	static
+../BSP/Src/stm32_gpio.c:241:9:stm32_gpio_remove	16	static
+../BSP/Src/stm32_gpio.c:256:9:stm32_gpio_direction_input	24	static
+../BSP/Src/stm32_gpio.c:283:9:stm32_gpio_direction_output	24	static
+../BSP/Src/stm32_gpio.c:315:9:stm32_gpio_get_direction	24	static
+../BSP/Src/stm32_gpio.c:337:9:stm32_gpio_set_value	24	static
+../BSP/Src/stm32_gpio.c:364:9:stm32_gpio_get_value	24	static

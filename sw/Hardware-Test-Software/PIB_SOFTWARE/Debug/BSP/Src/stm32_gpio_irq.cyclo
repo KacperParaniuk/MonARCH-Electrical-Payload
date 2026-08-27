@@ -1,0 +1,17 @@
+../Drivers/CMSIS/Include/core_cm4.h:1809:22:__NVIC_SetPriority	2
+../BSP/Src/stm32_gpio_irq.c:56:16:irq_action_cmp	1
+../BSP/Src/stm32_gpio_irq.c:68:20:stm32_handle_generic_callback	3
+../BSP/Src/stm32_gpio_irq.c:88:6:HAL_GPIO_EXTI_Callback	1
+../BSP/Src/stm32_gpio_irq.c:97:6:HAL_GPIO_EXTI_Rising_Callback	1
+../BSP/Src/stm32_gpio_irq.c:106:6:HAL_GPIO_EXTI_Falling_Callback	1
+../BSP/Src/stm32_gpio_irq.c:117:12:stm32_gpio_irq_ctrl_init	17
+../BSP/Src/stm32_gpio_irq.c:181:12:stm32_gpio_irq_ctrl_remove	3
+../BSP/Src/stm32_gpio_irq.c:208:12:stm32_gpio_irq_trigger_level_set	10
+../BSP/Src/stm32_gpio_irq.c:256:12:stm32_gpio_irq_register_callback	9
+../BSP/Src/stm32_gpio_irq.c:317:12:stm32_gpio_irq_unregister_callback	5
+../BSP/Src/stm32_gpio_irq.c:341:12:stm32_gpio_irq_global_enable	1
+../BSP/Src/stm32_gpio_irq.c:351:12:stm32_gpio_irq_global_disable	1
+../BSP/Src/stm32_gpio_irq.c:362:12:stm32_gpio_irq_enable	5
+../BSP/Src/stm32_gpio_irq.c:386:12:stm32_gpio_irq_disable	5
+../BSP/Src/stm32_gpio_irq.c:411:12:stm32_gpio_irq_set_priority	5
+../BSP/Src/stm32_gpio_irq.c:436:12:stm32_irq_clear_pending	6

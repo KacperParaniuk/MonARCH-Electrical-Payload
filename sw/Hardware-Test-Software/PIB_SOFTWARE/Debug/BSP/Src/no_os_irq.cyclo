@@ -1,0 +1,13 @@
+../BSP/Src/no_os_irq.c:45:5:no_os_irq_ctrl_init	5
+../BSP/Src/no_os_irq.c:71:5:no_os_irq_ctrl_remove	5
+../BSP/Src/no_os_irq.c:92:5:no_os_irq_register_callback	4
+../BSP/Src/no_os_irq.c:112:5:no_os_irq_unregister_callback	4
+../BSP/Src/no_os_irq.c:129:5:no_os_irq_global_enable	4
+../BSP/Src/no_os_irq.c:144:5:no_os_irq_global_disable	4
+../BSP/Src/no_os_irq.c:162:5:no_os_irq_trigger_level_set	4
+../BSP/Src/no_os_irq.c:181:5:no_os_irq_enable	4
+../BSP/Src/no_os_irq.c:198:5:no_os_irq_disable	4
+../BSP/Src/no_os_irq.c:216:5:no_os_irq_set_priority	4
+../BSP/Src/no_os_irq.c:236:5:no_os_irq_get_priority	4
+../BSP/Src/no_os_irq.c:255:5:no_os_irq_clear_pending	4
+../BSP/Src/no_os_irq.c:273:5:no_os_irq_set_pending	4

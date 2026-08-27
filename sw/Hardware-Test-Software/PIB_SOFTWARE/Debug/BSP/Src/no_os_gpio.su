@@ -1,0 +1,8 @@
+../BSP/Src/no_os_gpio.c:45:9:no_os_gpio_get	24	static
+../BSP/Src/no_os_gpio.c:71:9:no_os_gpio_get_optional	24	static
+../BSP/Src/no_os_gpio.c:100:9:no_os_gpio_remove	16	static
+../BSP/Src/no_os_gpio.c:120:9:no_os_gpio_direction_input	16	static
+../BSP/Src/no_os_gpio.c:143:9:no_os_gpio_direction_output	16	static
+../BSP/Src/no_os_gpio.c:168:9:no_os_gpio_get_direction	16	static
+../BSP/Src/no_os_gpio.c:193:9:no_os_gpio_set_value	16	static
+../BSP/Src/no_os_gpio.c:217:9:no_os_gpio_get_value	16	static

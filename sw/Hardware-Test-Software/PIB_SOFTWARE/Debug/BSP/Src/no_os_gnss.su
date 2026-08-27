@@ -1,0 +1,7 @@
+../BSP/Src/no_os_gnss.c:45:9:no_os_gnss_init	16	static
+../BSP/Src/no_os_gnss.c:57:9:no_os_gnss_remove	16	static
+../BSP/Src/no_os_gnss.c:68:9:no_os_gnss_refresh_timing_data	16	static
+../BSP/Src/no_os_gnss.c:79:9:no_os_gnss_is_timing_valid	16	static
+../BSP/Src/no_os_gnss.c:90:9:no_os_gnss_get_unified_timing	16	static
+../BSP/Src/no_os_gnss.c:102:9:no_os_gnss_get_unix_epoch_unified	24	static
+../BSP/Src/no_os_gnss.c:115:9:no_os_gnss_get_position_data	16	static

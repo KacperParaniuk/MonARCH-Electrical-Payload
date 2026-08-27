@@ -1,0 +1,6 @@
+../BSP/Src/no_os_i2c.c:52:9:no_os_i2c_init	24	static
+../BSP/Src/no_os_i2c.c:86:9:no_os_i2cbus_init	24	static
+../BSP/Src/no_os_i2c.c:113:9:no_os_i2c_remove	16	static
+../BSP/Src/no_os_i2c.c:131:6:no_os_i2cbus_remove	24	static
+../BSP/Src/no_os_i2c.c:159:9:no_os_i2c_write	40	static
+../BSP/Src/no_os_i2c.c:190:9:no_os_i2c_read	40	static

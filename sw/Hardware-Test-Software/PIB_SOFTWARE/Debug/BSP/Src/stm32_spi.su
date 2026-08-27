@@ -1,0 +1,11 @@
+../BSP/Src/stm32_spi.c:52:12:stm32_spi_config	40	static
+../BSP/Src/stm32_spi.c:163:9:stm32_spi_init	32	static
+../BSP/Src/stm32_spi.c:276:9:stm32_spi_remove	24	static
+../BSP/Src/stm32_spi.c:307:9:stm32_spi_altrnate_cs_enable	24	static
+../BSP/Src/stm32_spi.c:342:9:stm32_spi_transfer	88	static
+../BSP/Src/stm32_spi.c:457:9:stm32_spi_write_and_read	56	static
+../BSP/Src/stm32_spi.c:486:9:stm32_config_dma_and_start	48	static
+../BSP/Src/stm32_spi.c:604:6:stm32_spi_dma_callback	32	static
+../BSP/Src/stm32_spi.c:642:9:stm32_spi_transfer_dma_async	40	static
+../BSP/Src/stm32_spi.c:664:9:stm32_spi_transfer_dma	40	static
+../BSP/Src/stm32_spi.c:693:9:stm32_spi_transfer_abort	32	static

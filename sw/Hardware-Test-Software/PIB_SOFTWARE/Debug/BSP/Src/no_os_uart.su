@@ -1,0 +1,8 @@
+../BSP/Src/no_os_uart.c:52:9:no_os_uart_init	24	static
+../BSP/Src/no_os_uart.c:81:9:no_os_uart_remove	16	static
+../BSP/Src/no_os_uart.c:100:10:no_os_uart_get_errors	16	static
+../BSP/Src/no_os_uart.c:118:9:no_os_uart_read	32	static
+../BSP/Src/no_os_uart.c:144:9:no_os_uart_write	32	static
+../BSP/Src/no_os_uart.c:170:9:no_os_uart_read_nonblocking	32	static
+../BSP/Src/no_os_uart.c:196:9:no_os_uart_write_nonblocking	32	static
+../BSP/Src/no_os_uart.c:216:29:no_os_uart_stdio	16	static

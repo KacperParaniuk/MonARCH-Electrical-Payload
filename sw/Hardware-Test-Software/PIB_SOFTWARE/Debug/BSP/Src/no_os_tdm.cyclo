@@ -1,0 +1,7 @@
+../BSP/Src/no_os_tdm.c:45:10:no_os_tdm_init	3
+../BSP/Src/no_os_tdm.c:64:10:no_os_tdm_remove	1
+../BSP/Src/no_os_tdm.c:76:10:no_os_tdm_read	1
+../BSP/Src/no_os_tdm.c:88:10:no_os_tdm_pause	1
+../BSP/Src/no_os_tdm.c:98:10:no_os_tdm_resume	1
+../BSP/Src/no_os_tdm.c:108:10:no_os_tdm_stop	1
+../BSP/Src/no_os_tdm.c:120:10:no_os_tdm_write	1

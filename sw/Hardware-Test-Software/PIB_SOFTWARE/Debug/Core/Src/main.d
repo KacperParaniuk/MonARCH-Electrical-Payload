@@ -35,8 +35,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/spi.h ../Core/Inc/tim.h \
  ../Core/Inc/usart.h ../Core/Inc/gpio.h ../BSP/Inc/gpio_driver.h \
  ../BSP/Inc/uart_handler.h ../BSP/Inc/uart_protocol.h \
- ../BSP/Sensors/Inc/ad7124_console_app.h ../BSP/Sensors/Inc/ad7124.h \
- ../BSP/Inc/spi_support.h ../BSP/Sensors/Inc/delay.h
+ ../BSP/Sensors/Inc/adxl355.h ../BSP/Inc/no_os_util.h \
+ ../BSP/Inc/no_os_i2c.h ../BSP/Inc/no_os_spi.h ../BSP/Inc/stm32_spi.h \
+ ../BSP/Inc/no_os_spi.h ../BSP/Inc/no_os_dma.h ../BSP/Inc/no_os_list.h \
+ ../BSP/Inc/no_os_irq.h ../BSP/Inc/no_os_mutex.h ../BSP/Inc/no_os_gpio.h \
+ ../BSP/Inc/stm32_hal.h ../BSP/Inc/stm32_gpio.h ../BSP/Inc/stm32_pwm.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
@@ -80,7 +83,17 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../BSP/Inc/gpio_driver.h:
 ../BSP/Inc/uart_handler.h:
 ../BSP/Inc/uart_protocol.h:
-../BSP/Sensors/Inc/ad7124_console_app.h:
-../BSP/Sensors/Inc/ad7124.h:
-../BSP/Inc/spi_support.h:
-../BSP/Sensors/Inc/delay.h:
+../BSP/Sensors/Inc/adxl355.h:
+../BSP/Inc/no_os_util.h:
+../BSP/Inc/no_os_i2c.h:
+../BSP/Inc/no_os_spi.h:
+../BSP/Inc/stm32_spi.h:
+../BSP/Inc/no_os_spi.h:
+../BSP/Inc/no_os_dma.h:
+../BSP/Inc/no_os_list.h:
+../BSP/Inc/no_os_irq.h:
+../BSP/Inc/no_os_mutex.h:
+../BSP/Inc/no_os_gpio.h:
+../BSP/Inc/stm32_hal.h:
+../BSP/Inc/stm32_gpio.h:
+../BSP/Inc/stm32_pwm.h:

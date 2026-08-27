@@ -1,0 +1,12 @@
+../BSP/Src/no_os_dma.c:47:13:default_sg_callback	40	static
+../BSP/Src/no_os_dma.c:90:5:no_os_dma_init	32	static
+../BSP/Src/no_os_dma.c:143:5:no_os_dma_remove	32	static
+../BSP/Src/no_os_dma.c:184:5:no_os_dma_acquire_channel	24	static
+../BSP/Src/no_os_dma.c:216:5:no_os_dma_release_channel	24	static
+../BSP/Src/no_os_dma.c:242:5:no_os_dma_config_xfer	40	static
+../BSP/Src/no_os_dma.c:317:5:no_os_dma_chan_lock	16	static
+../BSP/Src/no_os_dma.c:336:5:no_os_dma_chan_unlock	16	static
+../BSP/Src/no_os_dma.c:356:5:no_os_dma_xfer_start	24	static
+../BSP/Src/no_os_dma.c:384:5:no_os_dma_xfer_abort	24	static
+../BSP/Src/no_os_dma.c:417:6:no_os_dma_is_completed	16	static
+../BSP/Src/no_os_dma.c:434:6:no_os_dma_in_progress	24	static

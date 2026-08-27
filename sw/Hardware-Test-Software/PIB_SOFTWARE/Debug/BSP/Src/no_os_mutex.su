@@ -1,0 +1,4 @@
+../BSP/Src/no_os_mutex.c:42:29:no_os_mutex_init	16	static
+../BSP/Src/no_os_mutex.c:49:29:no_os_mutex_lock	16	static
+../BSP/Src/no_os_mutex.c:56:29:no_os_mutex_unlock	16	static
+../BSP/Src/no_os_mutex.c:63:29:no_os_mutex_remove	16	static

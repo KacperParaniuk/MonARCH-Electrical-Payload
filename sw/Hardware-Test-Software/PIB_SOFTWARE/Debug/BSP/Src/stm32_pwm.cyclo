@@ -1,0 +1,11 @@
+../BSP/Src/stm32_pwm.c:54:17:_compute_period_ticks	2
+../BSP/Src/stm32_pwm.c:98:16:stm32_init_timer	45
+../BSP/Src/stm32_pwm.c:544:16:stm32_init_pwm	15
+../BSP/Src/stm32_pwm.c:700:9:stm32_pwm_init	10
+../BSP/Src/stm32_pwm.c:778:9:stm32_pwm_remove	11
+../BSP/Src/stm32_pwm.c:847:9:stm32_pwm_enable	8
+../BSP/Src/stm32_pwm.c:952:9:stm32_pwm_disable	8
+../BSP/Src/stm32_pwm.c:1045:9:stm32_pwm_set_period	5
+../BSP/Src/stm32_pwm.c:1111:9:stm32_pwm_get_period	5
+../BSP/Src/stm32_pwm.c:1154:9:stm32_pwm_set_duty_cycle	4
+../BSP/Src/stm32_pwm.c:1190:9:stm32_pwm_get_duty_cycle	1

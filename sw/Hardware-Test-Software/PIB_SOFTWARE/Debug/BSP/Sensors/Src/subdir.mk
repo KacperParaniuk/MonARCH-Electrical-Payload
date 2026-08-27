@@ -11,6 +11,7 @@ C_SRCS += \
 ../BSP/Sensors/Src/ad7124_regs_config_a.c \
 ../BSP/Sensors/Src/ad7124_regs_config_b.c \
 ../BSP/Sensors/Src/ad7124_support.c \
+../BSP/Sensors/Src/adxl355.c \
 ../BSP/Sensors/Src/delay.c \
 ../BSP/Sensors/Src/driver_ina226.c \
 ../BSP/Sensors/Src/fdc2214.c \
@@ -23,6 +24,7 @@ OBJS += \
 ./BSP/Sensors/Src/ad7124_regs_config_a.o \
 ./BSP/Sensors/Src/ad7124_regs_config_b.o \
 ./BSP/Sensors/Src/ad7124_support.o \
+./BSP/Sensors/Src/adxl355.o \
 ./BSP/Sensors/Src/delay.o \
 ./BSP/Sensors/Src/driver_ina226.o \
 ./BSP/Sensors/Src/fdc2214.o \
@@ -35,6 +37,7 @@ C_DEPS += \
 ./BSP/Sensors/Src/ad7124_regs_config_a.d \
 ./BSP/Sensors/Src/ad7124_regs_config_b.d \
 ./BSP/Sensors/Src/ad7124_support.d \
+./BSP/Sensors/Src/adxl355.d \
 ./BSP/Sensors/Src/delay.d \
 ./BSP/Sensors/Src/driver_ina226.d \
 ./BSP/Sensors/Src/fdc2214.d \
@@ -48,7 +51,7 @@ BSP/Sensors/Src/%.o BSP/Sensors/Src/%.su BSP/Sensors/Src/%.cyclo: ../BSP/Sensors
 clean: clean-BSP-2f-Sensors-2f-Src
 
 clean-BSP-2f-Sensors-2f-Src:
-	-$(RM) ./BSP/Sensors/Src/ad7124.cyclo ./BSP/Sensors/Src/ad7124.d ./BSP/Sensors/Src/ad7124.o ./BSP/Sensors/Src/ad7124.su ./BSP/Sensors/Src/ad7124_console_app.cyclo ./BSP/Sensors/Src/ad7124_console_app.d ./BSP/Sensors/Src/ad7124_console_app.o ./BSP/Sensors/Src/ad7124_console_app.su ./BSP/Sensors/Src/ad7124_regs.cyclo ./BSP/Sensors/Src/ad7124_regs.d ./BSP/Sensors/Src/ad7124_regs.o ./BSP/Sensors/Src/ad7124_regs.su ./BSP/Sensors/Src/ad7124_regs_config_a.cyclo ./BSP/Sensors/Src/ad7124_regs_config_a.d ./BSP/Sensors/Src/ad7124_regs_config_a.o ./BSP/Sensors/Src/ad7124_regs_config_a.su ./BSP/Sensors/Src/ad7124_regs_config_b.cyclo ./BSP/Sensors/Src/ad7124_regs_config_b.d ./BSP/Sensors/Src/ad7124_regs_config_b.o ./BSP/Sensors/Src/ad7124_regs_config_b.su ./BSP/Sensors/Src/ad7124_support.cyclo ./BSP/Sensors/Src/ad7124_support.d ./BSP/Sensors/Src/ad7124_support.o ./BSP/Sensors/Src/ad7124_support.su ./BSP/Sensors/Src/delay.cyclo ./BSP/Sensors/Src/delay.d ./BSP/Sensors/Src/delay.o ./BSP/Sensors/Src/delay.su ./BSP/Sensors/Src/driver_ina226.cyclo ./BSP/Sensors/Src/driver_ina226.d ./BSP/Sensors/Src/driver_ina226.o ./BSP/Sensors/Src/driver_ina226.su ./BSP/Sensors/Src/fdc2214.cyclo ./BSP/Sensors/Src/fdc2214.d ./BSP/Sensors/Src/fdc2214.o ./BSP/Sensors/Src/fdc2214.su ./BSP/Sensors/Src/max31856.cyclo ./BSP/Sensors/Src/max31856.d ./BSP/Sensors/Src/max31856.o ./BSP/Sensors/Src/max31856.su
+	-$(RM) ./BSP/Sensors/Src/ad7124.cyclo ./BSP/Sensors/Src/ad7124.d ./BSP/Sensors/Src/ad7124.o ./BSP/Sensors/Src/ad7124.su ./BSP/Sensors/Src/ad7124_console_app.cyclo ./BSP/Sensors/Src/ad7124_console_app.d ./BSP/Sensors/Src/ad7124_console_app.o ./BSP/Sensors/Src/ad7124_console_app.su ./BSP/Sensors/Src/ad7124_regs.cyclo ./BSP/Sensors/Src/ad7124_regs.d ./BSP/Sensors/Src/ad7124_regs.o ./BSP/Sensors/Src/ad7124_regs.su ./BSP/Sensors/Src/ad7124_regs_config_a.cyclo ./BSP/Sensors/Src/ad7124_regs_config_a.d ./BSP/Sensors/Src/ad7124_regs_config_a.o ./BSP/Sensors/Src/ad7124_regs_config_a.su ./BSP/Sensors/Src/ad7124_regs_config_b.cyclo ./BSP/Sensors/Src/ad7124_regs_config_b.d ./BSP/Sensors/Src/ad7124_regs_config_b.o ./BSP/Sensors/Src/ad7124_regs_config_b.su ./BSP/Sensors/Src/ad7124_support.cyclo ./BSP/Sensors/Src/ad7124_support.d ./BSP/Sensors/Src/ad7124_support.o ./BSP/Sensors/Src/ad7124_support.su ./BSP/Sensors/Src/adxl355.cyclo ./BSP/Sensors/Src/adxl355.d ./BSP/Sensors/Src/adxl355.o ./BSP/Sensors/Src/adxl355.su ./BSP/Sensors/Src/delay.cyclo ./BSP/Sensors/Src/delay.d ./BSP/Sensors/Src/delay.o ./BSP/Sensors/Src/delay.su ./BSP/Sensors/Src/driver_ina226.cyclo ./BSP/Sensors/Src/driver_ina226.d ./BSP/Sensors/Src/driver_ina226.o ./BSP/Sensors/Src/driver_ina226.su ./BSP/Sensors/Src/fdc2214.cyclo ./BSP/Sensors/Src/fdc2214.d ./BSP/Sensors/Src/fdc2214.o ./BSP/Sensors/Src/fdc2214.su ./BSP/Sensors/Src/max31856.cyclo ./BSP/Sensors/Src/max31856.d ./BSP/Sensors/Src/max31856.o ./BSP/Sensors/Src/max31856.su
 
 .PHONY: clean-BSP-2f-Sensors-2f-Src
 

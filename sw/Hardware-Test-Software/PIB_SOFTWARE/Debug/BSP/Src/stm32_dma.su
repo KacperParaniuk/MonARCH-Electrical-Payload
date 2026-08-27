@@ -1,0 +1,5 @@
+../BSP/Src/stm32_dma.c:50:5:stm32_dma_config_xfer	24	static
+../BSP/Src/stm32_dma.c:144:5:stm32_dma_init	40	static
+../BSP/Src/stm32_dma.c:206:5:stm32_dma_xfer_start	24	static
+../BSP/Src/stm32_dma.c:237:5:stm32_dma_xfer_abort	24	static
+../BSP/Src/stm32_dma.c:264:5:stm32_dma_remove	16	static

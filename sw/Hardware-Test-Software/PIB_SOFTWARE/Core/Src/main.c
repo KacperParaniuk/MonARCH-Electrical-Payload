@@ -38,9 +38,9 @@
 
 
 
-#define AD7124
+//#define AD7124
 //#define AD7124_P
-#define AD7124_V
+//#define AD7124_V
 //#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
@@ -56,7 +56,7 @@
 //#define HEATER
 //#define PWM_VALVE_6
 
-//#define ADXL355
+#define ADXL355
 //#define AD7176 
 
 
@@ -88,6 +88,14 @@
 
 #include "fdc2214.h"
 
+#endif
+
+#ifdef ADXL355
+
+#include "adxl355.h"
+#include "stm32_spi.h"
+
+// C:\dev\monarch-payload-interface-board\sw\Hardware-Test-Software\PIB_SOFTWARE\BSP\Inc\stm32_spi.h
 #endif
 
 
@@ -122,6 +130,19 @@ uint8_t tx_cmd[1];
 char uart_buffer[64];
 float value;
 float value2;
+
+#ifdef ADXL355
+
+struct adxl355_dev *adxl355;
+
+struct no_os_spi_init_param sip = {
+        .max_speed_hz = 10000000,
+        .bit_order = NO_OS_SPI_BIT_ORDER_MSB_FIRST,
+        .mode = NO_OS_SPI_MODE_0,
+};
+
+#endif
+
 
 /* USER CODE END PV */
 
@@ -470,6 +491,51 @@ float temperature;
 
 #endif
 
+
+#ifdef ADXL355
+
+   	struct adxl355_init_param init_data_adxl355 = {
+   	        .comm_init.spi_init = sip,
+   	        .comm_type = ADXL355_SPI_COMM,
+   	};
+
+
+   	value = adxl355_init(&adxl355, init_data_adxl355);
+   	if (value < 0)
+   	        goto error;
+   	value = adxl355_soft_reset(adxl355);
+   	if (value < 0)
+   	        goto error;
+   	value = adxl355_set_odr_lpf(adxl355, ADXL355_ODR_4000HZ);
+   	if (value < 0)
+   	        goto error;
+   	value = adxl355_set_op_mode(adxl355, ADXL355_MEAS_TEMP_ON_DRDY_OFF);
+   	if (value < 0)
+   	        goto error;
+
+
+
+   	// Read single accel data
+   	struct adxl355_frac_repr x;
+   	struct adxl355_frac_repr y;
+   	struct adxl355_frac_repr z;
+
+   	value = adxl355_get_xyz(adxl355,&x, &y, &z);
+   	if (value < 0)
+   	        goto error;
+   	else{
+   		printf("X: %lld \n", x.integer);
+   		printf("Y: %lld \n", y.integer);
+   		printf("Z: %lld \n", z.integer);
+   	}
+
+
+ 	error:
+		printf("Error");
+
+
+
+#endif
 
 
 

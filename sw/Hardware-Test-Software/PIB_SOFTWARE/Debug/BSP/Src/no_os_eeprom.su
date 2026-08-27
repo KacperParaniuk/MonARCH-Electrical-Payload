@@ -1,0 +1,4 @@
+../BSP/Src/no_os_eeprom.c:45:9:no_os_eeprom_init	24	static
+../BSP/Src/no_os_eeprom.c:70:9:no_os_eeprom_remove	16	static
+../BSP/Src/no_os_eeprom.c:89:9:no_os_eeprom_write	32	static
+../BSP/Src/no_os_eeprom.c:109:9:no_os_eeprom_read	32	static
