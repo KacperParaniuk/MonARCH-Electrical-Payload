@@ -38,10 +38,10 @@
 
 
 
-//#define AD7124
-//#define AD7124_P
-//#define AD7124_V
-//#define AD7124_SINGLE_MODE
+#define AD7124
+#define AD7124_P
+#define AD7124_V
+#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
 //#define MAX31856
@@ -54,7 +54,7 @@
 //#define VALVE_TEST
 //#define I2C_SCANNER
 //#define HEATER
-#define PWM_VALVE_6
+//#define PWM_VALVE_6
 
 
 
@@ -115,7 +115,7 @@
 uint8_t rx_cmd[1]; // single byte for all UART commands.
 uint8_t tx_cmd[1];
 char uart_buffer[64];
-
+uint32_t value;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -470,11 +470,9 @@ float temperature;
   {
 
 //
-//	  HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-//
-//
-//	  HAL_Delay(200);
+	  HAL_GPIO_TogglePin(LED_PIN_BLUE_GPIO_Port, LED_PIN_BLUE_Pin);
 
+	  HAL_Delay(200);
 #ifdef B2B
 
 //	  HAL_UART_Transmit(&huart3,TX_Buffer,sizeof(TX_Buffer),1000); // "Hello World!" // UART Direct Test
@@ -555,14 +553,14 @@ float temperature;
 
 #endif
 
-#ifdef AD7124
+#ifdef AD7124_P
 
 	  // read device id.
 
 	  device_id = ad7124_read_device_id(PRESSURE);
 
-	  printf("AD7124 Device ID: %ld ", device_id);
-	  if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
+	  printf("AD7124 Device PRESSURE ID: %ld ", device_id);
+	  if(device_id == 20 || device_id == 23){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
 
 		  printf("|| SUCCESS \n");
 		  HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
@@ -570,20 +568,17 @@ float temperature;
 
 #ifdef AD7124_SINGLE_MODE
 		  /* Read all enabled channels on ADC in single conversion mode */
-		  menu_single_conversion(PRESSURE);
+//		  menu_single_conversion(PRESSURE);
+		  for(int i =0 ; i<16; i++){
+		 			  value = display_channel_sample(i, PRESSURE);
+		 			  printf("Channel %d: Voltage: %ld ",i , value);
+
+		  }
+
+
+
 
 #endif
-
-
-#ifdef AD7124_CONTINOUS_MODE
-
-		 /* Continously Read all enabled channels on ADC for 10 iterations (change to desire / add functionality for commanding) */
-
-		  // NOT YET CONFIGURED FOR TWO ICS
-		 do_continuous_conversion(DISPLAY_DATA_TABULAR);
-
-#endif
-
 	  }
 	  else{
 		  // read error register;
@@ -596,6 +591,64 @@ float temperature;
 	  }
 
 #endif
+
+#ifdef AD7124_V
+
+
+	  device_id = ad7124_read_device_id(VOLTAGE);
+
+	  printf("AD7124 Device VOLTAGE ID: %ld ", device_id);
+	  if(device_id == 23 || device_id == 20){ // device id for dataversion F || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
+
+		  printf("|| SUCCESS \n");
+		  HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
+//		  read_status_register(VOLTAGE);
+		  #ifdef AD7124_SINGLE_MODE
+		  /* Read all enabled channels on ADC in single conversion mode */
+
+//		  value = display_channel_sample(0, VOLTAGE);
+//		  value2 = display_channel_sample(8, VOLTAGE);
+
+//		  printf("3V3 Volt Channel: Voltage: %f " , value);
+
+
+
+//		  menu_single_conversion(VOLTAGE);
+//
+		  value = display_channel_sample(0, VOLTAGE);
+
+		  printf("12V Reading: %ld", (610 / 510)*(12-value));
+
+
+		  value = display_channel_sample(6, VOLTAGE);
+
+		  printf("3V3 Reading: %f", (412.5/312.5)*(3.3-value));
+
+//
+//		  for(int i =0 ; i<16; i++){
+//		 			  value = display_channel_sample(i, VOLTAGE);
+//		 			  printf("Channel %d: Voltage: %f ",i , value);
+//
+//		 }
+
+	      #endif
+	 }
+
+	 else{
+		  // read error register;
+		  read_error_register(VOLTAGE);
+		  // check status of chip
+		  read_status_register(VOLTAGE);
+
+//		  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+
+	  }
+
+
+
+
+#endif
+
 
 
 #ifdef B2B_ARDUINO
