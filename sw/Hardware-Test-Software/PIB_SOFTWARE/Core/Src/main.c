@@ -39,9 +39,9 @@
 
 
 #define AD7124
-//#define AD7124_P
+#define AD7124_P
 #define AD7124_V
-//#define AD7124_SINGLE_MODE
+#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
 //#define MAX31856
@@ -576,7 +576,7 @@ float temperature;
 		  /* Read all enabled channels on ADC in single conversion mode */
 //		  menu_single_conversion(PRESSURE);
 		  for(int i =0 ; i<16; i++){
-		 			  value = display_channel_sample(i, VOLTAGE);
+		 			  value = display_channel_sample(i, PRESSURE);
 		 			  printf("Channel %d: Voltage: %f ",i , value);
 
 		 }
