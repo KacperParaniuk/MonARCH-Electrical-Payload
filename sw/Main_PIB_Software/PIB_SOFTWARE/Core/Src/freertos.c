@@ -60,6 +60,8 @@ extern int32_t setupResult;
 extern float temperature;
 extern float value;
 
+extern uint8_t duty_cycle;
+
 extern max31856_t max31856T1;
 extern max31856_t max31856T2;
 extern max31856_t max31856T3;
@@ -68,6 +70,10 @@ extern max31856_t max31856T5;
 
 
 extern GPIO_PinState pinState;
+
+extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim8;
+
 
 
 /* USER CODE END Variables */
@@ -864,13 +870,13 @@ void StartTask04(void *argument)
 
 
 				case REGULATE_PRESSURE_INPUT_VALUE: // valve 4
-					uint8_t duty_cyle = rx_cmd[1]; // obtain duty cycle argument 
+					duty_cycle = rx_cmd[1]; // obtain duty cycle argument
 					HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
 					__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, duty_cycle); // set the duty cycle for valve 4
 
  
 				case REGULATE_PRESSURE_2_INPUT_VALUE: // valve 6
-					uint8_t duty_cyle = rx_cmd[1]; 
+					duty_cycle = rx_cmd[1];
 					HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
 					__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, duty_cycle); // set the duty cycle for valve 6
 
@@ -879,10 +885,9 @@ void StartTask04(void *argument)
 				case REGULATE_PRESSURE_1_STOP: // valve 4
 					HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_3); 
 
-				CASE REGULATE_PRESSURE_2_STOP: // valve 6
-					HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_1);`
+				case REGULATE_PRESSURE_2_STOP: // valve 6
+					HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_1);
 					
-			
 		 		rx_cmd[0]=0;  // reset received command so it does not execute more than once.
 
 		 		break;
