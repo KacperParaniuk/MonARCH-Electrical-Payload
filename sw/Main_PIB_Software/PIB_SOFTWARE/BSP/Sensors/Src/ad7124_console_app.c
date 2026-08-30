@@ -795,6 +795,22 @@ int32_t ad7124_read_device_id(AD7124_CHIP chip){
 
 }
 
+
+float ad7124_read_channel_current_pc104(uint8_t channel){
+	
+	// read the channel voltage from the ad7124
+	float voltage = display_channel_sample(channel, VOLTAGE);
+
+	// convert the voltage to current using the formula I = (Vout - 0.5) / 0.16
+	float current = (voltage) / 100000; // 100k resistor in series with all volt voltage dividers 
+
+	return current;
+
+}
+
+
+
+
 /*!
  * @brief      Reset and set the ad7124 with configuration A
  *

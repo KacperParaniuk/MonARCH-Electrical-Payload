@@ -152,6 +152,8 @@
 #define REGULATE_PRESSURE_INPUT_VALUE 0X3C
 #define REGULATE_PRESSURE_2_INPUT_VALUE 0X3D
 
+#define REGULATE_PRESSURE_1_STOP 0x6D
+#define REGULATE_PRESSURE_2_STOP 0x6E
 
 // UART Commands for PPU Control (OBC -> PIB)
 
@@ -182,7 +184,7 @@
 
 // Safety Commands
 
-#define CMD_SAFETY_BEGIN 0x64
+#define CMD_SAFETY_BEGIN 0x6F
 
 
 

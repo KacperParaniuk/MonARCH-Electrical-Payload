@@ -26,12 +26,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-
 #include "ad7124_console_app.h"
 #include "ad7124.h"
 #include "max31856.h"
 #include "fdc2214.h"
-
 
 #include "control_task.h"
 
@@ -416,7 +414,7 @@ void StartTask04(void *argument)
 		 		case CMD_READ_ID_PT:
 		 		    device_id = ad7124_read_device_id(PRESSURE);
 		 			Serial_Printf("AD7124 Device ID: %ld \n", device_id);
-		 			if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
+		 			if(device_id == 20 || device_id == 23){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
 		 				 printf("|| SUCCESS \n");
 		 				 HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
 //		 				 read_status_register(); potentially integrate for error checking / sending status back
@@ -424,7 +422,7 @@ void StartTask04(void *argument)
 		 		case CMD_READ_ID_V:
 		 			 device_id = ad7124_read_device_id(VOLTAGE);
 		 			 Serial_Printf("AD7124 Device ID: %ld \n", device_id);
-		 			 if(device_id == 20){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
+		 			 if(device_id == 20 || device_id == 23){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
 		 				printf("|| SUCCESS \n");
 		 				 HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
 		 		//		 				 read_status_register();
@@ -450,30 +448,35 @@ void StartTask04(void *argument)
 // READ PC104 ADC CHANNELS
 
 				case CMD_READ_12VA_VB:
-					value = ad7124_read_differential_channel_voltage(CH_12VA_VB,VOLTAGE);
+					value = display_channel_sample(CH_12VA_VB,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
+
+					// Resistor Values = |------ 510K ----- 100K ------|>
+
+					// need to input conversions here. 
+
 				case CMD_READ_12VA_VA:
-					value = ad7124_read_differential_channel_voltage(CH_12VA_VA,VOLTAGE);
+					value = display_channel_sample(CH_12VA_VA,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
 				case CMD_READ_3V3_VB:
-					value = ad7124_read_differential_channel_voltage(CH_3v3_VB,VOLTAGE);
+					value = display_channel_sample(CH_3V3_VB,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 3V3_VB: %d \r\n", value);
 				case CMD_READ_3V3_VA:
-					value = ad7124_read_differential_channel_voltage(CH_3v3_VA,VOLTAGE);
+					value = display_channel_sample(CH_3V3_VA,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 3V3_VA: %d \r\n", value);\
 				case CMD_READ_VBAT_VA:
-					value = ad7124_read_differential_channel_voltage(CH_VBAT_VA,VOLTAGE);
+					value = display_channel_sample(CH_VBAT_VA,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading VBAT_VA: %d \r\n", value);
 				case CMD_READ_VBAT_VB:
-					value = ad7124_read_differential_channel_voltage(CH_VBAT_VB,VOLTAGE);
+					value = display_channel_sample(CH_VBAT_VB,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
 
 				case CMD_READ_12VB_VA:
-					value = ad7124_read_differential_channel_voltage(CH_VBAT_VA,VOLTAGE);
+					value = display_channel_sample(CH_VBAT_VA,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
 
 				case CMD_READ_12VB_VB:
-					value = ad7124_read_differential_channel_voltage(CH_VBAT_VB,VOLTAGE);
+					value = display_channel_sample(CH_VBAT_VB,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
 
 
@@ -487,11 +490,11 @@ void StartTask04(void *argument)
 					Serial_Printf("PC104 Current Reading 12VA_VA: %d \r\n", value);
 
 				case CMD_READ_3V3_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_3v3_VB);
+					value = ad7124_read_channel_current_pc104(CH_3V3_VB);
 					Serial_Printf("PC104 Current Reading 3V3_VB : %d \r\n", value);
 
 				case CMD_READ_3V3_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_3v3_VA);
+					value = ad7124_read_channel_current_pc104(CH_3V3_VA);
 					Serial_Printf("PC104 Current Reading 3V3_VA : %d \r\n", value);
 
 				case CMD_READ_VBAT_VA_CURRENT:
@@ -513,32 +516,33 @@ void StartTask04(void *argument)
 // Read Pressure Sensors
 
 	 			case CMD_READ_PT1:
-	 				value = ad7124_read_pressure(CH_P0);
+	 				value =  0; // ad7124_read_pressure(CH_P0);
 	 				// will need to convert the voltage value to a current / temp reading function eventually in ad7124.h
 	 				Serial_Printf("Pressure Reading PT 1: %d \r\n", value);
 	 			case CMD_READ_PT2:
-	 				value = ad7124_read_pressure(CH_P1);
+	 				value = 0; // ad7124_read_pressure(CH_P1);
 	 				Serial_Printf("Pressure Reading PT 2: %d \r\n", value);
 	 			case CMD_READ_PT3:
-	 				value = ad7124_read_pressure(CH_P2);
+	 				value = 0; // ad7124_read_pressure(CH_P2);
 	 				Serial_Printf("Pressure Reading PT 3: %d \r\n", value);
 	 			case CMD_READ_PT4:
-	 				value = ad7124_read_pressure(CH_P3);
+	 				value = 0; // ad7124_read_pressure(CH_P3);
 	 				Serial_Printf("Pressure Reading PT 4: %d \r\n", value);
 	 			case CMD_READ_PT5:
-	 				value = ad7124_read_pressure(CH_P4);
+	 				value = 0; // ad7124_read_pressure(CH_P4);
 	 				Serial_Printf("Pressure Reading PT 5: %d \r\n", value);
 	 			case CMD_READ_PT6:
-	 				value = ad7124_read_pressure(CH_P5);
+	 				value = 0; // ad7124_read_pressure(CH_P5);
 	 				Serial_Printf("Pressure Reading PT 6: %d \r\n", value);
 	 			case CMD_READ_PT7:
-	 				value = ad7124_read_pressure(CH_P6);
+	 				value = 0; // ad7124_read_pressure(CH_P6);
 	 				Serial_Printf("Pressure Reading PT 7: %d \r\n", value);
 	 			case CMD_READ_PT8:
-	 				value = ad7124_read_pressure(CH_P7);
+	 				value = 0; // ad7124_read_pressure(CH_P7);
 	 				Serial_Printf("Pressure Reading PT 8: %d \r\n", value);
 
 
+// Read Valve States
 	 			case CMD_READ_VALVE_STATE1:
 	 				pinState = HAL_GPIO_ReadPin(valve1_GPIO_Port, valve1_Pin);
 	 				if (pinState == GPIO_PIN_SET){
@@ -705,7 +709,7 @@ void StartTask04(void *argument)
 
 
 // Read MAX31856 Temperatures
-//
+
 		 	    case CMD_READ_TC1:
 		 	    	temperature = max31856_read_TC_temp(&max31856T1); // compensates already for cold junction reading
 	 				max31856_read_fault(&max31856T1);
@@ -763,9 +767,9 @@ void StartTask04(void *argument)
 			 		    Serial_Printf("Temperature Reading TC5: %f \r\n", temperature);
 		 		    }
 
-// reading cold junction temps (MAX31856 chip does NOT have a device id thus this is the next best way to see if the chip is responding.)
+ 
+// Read MAX31856 Cold-Junction Temperatures || reading cold junction temps (MAX31856 chip does NOT have a device id thus this is the next best way to see if the chip is responding.)
 
-		 		   // Read MAX31856 Cold-Junction Temperatures
 
 		 	    case CMD_READ_TC1_CJ:
 		 		   temperature = max31856_read_CJ_temp(&max31856T1);
@@ -846,7 +850,6 @@ void StartTask04(void *argument)
 		 		     HAL_GPIO_TogglePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin);
 
 
-
 // Events
 
 		 		case HEAT_CATALYST:
@@ -860,11 +863,26 @@ void StartTask04(void *argument)
 		 		     HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
 
 
+				case REGULATE_PRESSURE_INPUT_VALUE: // valve 4
+					uint8_t duty_cyle = rx_cmd[1]; // obtain duty cycle argument 
+					HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
+					__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, duty_cycle); // set the duty cycle for valve 4
 
+ 
+				case REGULATE_PRESSURE_2_INPUT_VALUE: // valve 6
+					uint8_t duty_cyle = rx_cmd[1]; 
+					HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+					__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, duty_cycle); // set the duty cycle for valve 6
 
+					// let's see if it works!
+	
+				case REGULATE_PRESSURE_1_STOP: // valve 4
+					HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_3); 
 
-
-
+				CASE REGULATE_PRESSURE_2_STOP: // valve 6
+					HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_1);`
+					
+			
 		 		rx_cmd[0]=0;  // reset received command so it does not execute more than once.
 
 		 		break;

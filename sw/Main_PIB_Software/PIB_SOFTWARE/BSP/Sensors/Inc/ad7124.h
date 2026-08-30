@@ -271,14 +271,14 @@
 #define CH_READ_PT7    0x0E
 
 
-#define CH_READ_12VA_VB 0x00
-#define CH_READ_12VA_VA 0x02
-#define CH_READ_3V3_VB 0x04
-#define CH_READ_3V3_VA 0x06
-#define CH_READ_VBAT_VA 0x08
-#define CH_READ_VBAT_VB 0x0A
-#define CH_READ_12VB_VA 0x0C
-#define CH_READ_12VB_VB 0x0E
+#define CH_12VA_VB 0x00
+#define CH_12VA_VA 0x02
+#define CH_3V3_VB 0x04
+#define CH_3V3_VA 0x06
+#define CH_VBAT_VA 0x08
+#define CH_VBAT_VB 0x0A
+#define CH_12VB_VA 0x0C
+#define CH_12VB_VB 0x0E
 
 
 

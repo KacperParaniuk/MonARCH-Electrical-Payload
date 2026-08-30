@@ -71,6 +71,7 @@ int32_t ad7124_read_device_id(AD7124_CHIP chip);
 int32_t ad7124_reset_function(AD7124_CHIP chip);
 void read_status_register(AD7124_CHIP chip);
 void read_error_register(AD7124_CHIP chip);
+int32_t ad7124_read_device_id(AD7124_CHIP chip);
 
 
 
@@ -80,6 +81,7 @@ void read_error_register(AD7124_CHIP chip);
 int32_t menu_single_conversion(AD7124_CHIP chip);
 int32_t do_continous_conversion(uint8_t display_mode);
 float display_channel_sample(uint8_t channel, AD7124_CHIP chip);
+float ad7124_read_channel_current_pc104(uint8_t channel);
 
 
 //extern console_menu ad7124_main_menu; << not using menu

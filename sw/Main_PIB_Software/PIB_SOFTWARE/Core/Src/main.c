@@ -74,7 +74,7 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 
 int32_t setupResult;
 uint32_t device_id;
-uint8_t rx_cmd[1]; // single byte for all UART commands.
+uint8_t rx_cmd[2]; // single byte for all UART commands. second byte for arguments if needed. (e.g. for setting pressure value) 
 uint8_t tx_cmd[1];
 char uart_buffer[64]; // used for sending data across uart3
 float temperature;
@@ -193,7 +193,6 @@ int main(void)
   HAL_GPIO_WritePin(T4_EN_GPIO_Port, T4_EN_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(T5_EN_GPIO_Port, T5_EN_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(PT_EN_GPIO_Port, PT_EN_Pin, GPIO_PIN_SET);
-
   // SPI 1 BUS
 
   HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
@@ -201,7 +200,8 @@ int main(void)
  // create a setup function for all sensors and turn red_led if fails to setup / read from device id's of all sensors
 
     // RED = MAX31856 Fail
-    // AMBER = ADC2214
+    // AMBER = ADC2214 Voltage 
+    // AMBER + GREEN = ADC2214 Pressure
     // RED + AMBER = FDC2214
     // Green = Everything Setup Correctly
 
@@ -220,7 +220,8 @@ int main(void)
     if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,PRESSURE)) < 0) {
   		// Handle error setting up AD7124 here
   	  printf("Failed to init ad7124 pressure \n");
-  	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+  	  HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_RESET);
     }
     printf("Setup Pressure Result: %ld", setupResult);
 
@@ -229,7 +230,7 @@ int main(void)
     if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,VOLTAGE)) < 0) {
   		// Handle error setting up AD7124 here
   	  printf("Failed to init ad7124 voltage \n");
-  	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+  	  HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
 
     }
 
@@ -304,6 +305,10 @@ int main(void)
 
    		// need to figure out what to do if an iniit fails in flight
    		Serial_Printf("Failed to communicate with FDCC2214");
+
+      HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
+
    		reset_fdc2214();
    		printf("Try Again");
    		FDC2214_Begin();
@@ -339,19 +344,7 @@ int main(void)
   while (1)
   {
 
-
-
-// 	 HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
-//
-// 	 // see duty cycle and if does not look good uncomment the bottom code. This is for testing.
-//
-//// 	  // change duty cycle to 50 %
-//// 	 int duty = 50
-//// 	 __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, duty);  // TIM1->CCR1 = duty;
-//// 	  HAL_Delay(500);  // Wait 500ms before changing duty cycle
-///
-
-
+    // should never make it in here. 
 
     /* USER CODE END WHILE */
 
@@ -416,8 +409,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
     if (huart->Instance != USART3) return;  // protect against any other UART commands
 
-	HAL_UART_Receive_IT(&huart3, rx_cmd, 1);
+	HAL_UART_Receive_IT(&huart3, rx_cmd, 2);
 	printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
+  printf("Argument %d \r\n", rx_cmd[1]); // print argument value to stm console
 
 
 	if(rx_cmd[0]>0 && rx_cmd[0]<255){

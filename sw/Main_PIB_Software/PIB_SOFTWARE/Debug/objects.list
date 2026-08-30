@@ -1,4 +1,5 @@
 "./App/Src/control_task.o"
+"./App/Src/fsm.o"
 "./App/Src/pid.o"
 "./BSP/Sensors/Src/ad7124.o"
 "./BSP/Sensors/Src/ad7124_console_app.o"
