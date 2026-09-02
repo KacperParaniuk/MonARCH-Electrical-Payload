@@ -152,6 +152,12 @@ void Error_Handler(void);
 extern SPI_HandleTypeDef hspi2;
 extern SPI_HandleTypeDef hspi1;
 
+typedef struct {
+  uint8_t cmd;
+  uint8_t arg;
+} UART_Frame_t;
+
+
 
 
 
