@@ -122,9 +122,9 @@
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "../../../../../../Users/Kacper Paraniuk/Desktop/MonARCH/Orders/Peripheral_Boards_09-01-26/Capacitance_Breakout_Board_GERBERS/")
 		)
 	)
 	(footprint "Inductor_Bourns:INDM3225X240N"
