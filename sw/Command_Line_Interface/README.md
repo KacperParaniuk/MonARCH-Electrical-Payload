@@ -2,6 +2,21 @@
 
 *Created By Kacper Paraniuk 07-09-26 
 
+[Dependency Info](#dependency-info)
+
+[How to Set Up Dependencies](#how-to-set-up-dependencies--run-monarch-cli)
+
+[1. UV INSTALLATION](#1-uv-installation-httpsdocsastralshuvgetting-startedinstallation)
+
+[2. PYTHON](#2-python-httpsdocsastralshuvguidesinstall-python)
+
+[3. RUNNING SCRIPT](#3-running-the-code)
+
+[4. COMMANDING THE PIB](#4-commanding-the-pib)
+
+[Common Errors](#common-errors)
+
+## Dependency Info 
 
 This markdown file discusses the structure of the payload interface shell (command line interface) and how to set it up 
 
@@ -12,16 +27,22 @@ UV
 cmd module || read more here: https://docs.python.org/3/library/cmd.html
 
 pyserial — external dependency for the serial side
+
 cmd (Python stdlib, no install needed) — gives nice terminal commanding functionality  
 
 
-HOW TO SET UP DEPENDENCIES:
+## HOW TO SET UP DEPENDENCIES & RUN MonARCH CLI:
+
+- type in terminal inside of project directory and run >
+
+*If you do have UV installed:
+
+uv sync (Make sure this is correct)
 
 *If you do not have UV installed: 
 
-1. UV INSTALLATION (https://docs.astral.sh/uv/getting-started/installation/)
+### 1. UV INSTALLATION (https://docs.astral.sh/uv/getting-started/installation/)
 
-- type in terminal inside of project directory and run >
 
 WINDOWS - 
 
@@ -31,16 +52,20 @@ MAC -
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-
 RESTART TERMINAL TO ADD UV TO PATH 
 
-2. PYTHON
 
-If you do not have python no worries UV can manage your python type (https://docs.astral.sh/uv/guides/install-python/) If you have python skip this step. 
+
+### 2. PYTHON (https://docs.astral.sh/uv/guides/install-python/)
+
+If you do not have python no worries UV can manage your python type
 
 uv python install
 
-3. RUNNING THE CODE
+If you have python skip this step. 
+
+### 3. RUNNING THE CODE
+
 
 cd pib-cli # make sure you are in the pib-cli folder
 
@@ -52,19 +77,74 @@ uv run python main.py --port {Input COMX} --baud {Input Baud Rate}
 
 Allows the user to specify the serial port and baud rate for the Arduino connection.
 
+Windows: 
 
-4. Commanding the PIB!
+List COM ports with:
+
+mode 
+
+PS C:\dev\monarch-payload-interface-board\sw\Command_Line_Interface> mode
+
+Status for device COM12:
+------------------------
+    Baud:            0
+    Parity:          None
+    Data Bits:       0
+    Stop Bits:       1
+    Timeout:         OFF
+    XON/XOFF:        OFF
+    CTS handshaking: OFF
+    DSR handshaking: OFF
+    DSR sensitivity: OFF
+    DTR circuit:     OFF
+    RTS circuit:     ON
+
+
+Status for device CON:
+----------------------
+    Lines:          30
+    Columns:        120
+    Keyboard rate:  31
+    Keyboard delay: 1
+    Code page:      437
+
+
+as you can see COM12 is active. 
+
+then 
+
+uv run python main.py --port COM12
+
+
+MAC: 
+
+List COM ports with 
+
+ls /dev/cu.*
+
+and the following should show up  
+kacper@Kacpers-MacBook-Air-4 MonARCH-Payload-Control % ls /dev/cu.*
+/dev/cu.BeatsFitPro             /dev/cu.debug-console           /dev/cu.usbmodem11101
+/dev/cu.Bluetooth-Incoming-Port /dev/cu.HC-05                   /dev/cu.wlan-debug
+
+then run the following command inside of pib-cli directory 
+
+uv run python main.py --port /dev/cu.usbmodem11101
+
+
+
+ 1
+### 4. Commanding the PIB!
 
 If you sucessfully executed the program then you should see the following message:
     "Welcome to the PIB shell. Use with an arduino to command the payload interface board of MonARCH. Type help or ? to list commands."
 
 Now you can start running various commands.
 
-See the command .md [Commanding the PIB](INSERT THE LINK)
+See the command .md [Commanding the PIB](https://github.com/KacperParaniuk/MonARCH-Payload-Control/blob/main/Command_Line_Interface/cmds.md#pib-shell-commands)
 
-// make this a git repo that is more friendly to look at 
 
-Common Errors: 
+# Common Errors: 
 
  >   raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
 
