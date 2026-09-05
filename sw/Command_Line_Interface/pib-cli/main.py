@@ -4,6 +4,7 @@ import argparse
 import struct
 import time 
 
+
 ''' INTERNAL COMMANDS '''
 CMD_READ_PT1  =  1
 CMD_READ_PT2    =  2
@@ -156,20 +157,21 @@ CMD_READ_ID_FDC = 83
 
 
 
-class SerialLink:
+class SerialLink: # https://docs.python.org/3/tutorial/classes.html 
+
+# "When a class defines an __init__() method, class instantiation automatically invokes __init__() for the newly created class instance. So in this example, a new, initialized instance can be obtained by"
+
     """Computer to Arduino Link """
  
     def __init__(self, port: str, baud: int = 115200, timeout: float = 4.0):
         self.port = port
         self.baud = baud
         self.timeout = timeout
-        self.conn: serial.Serial | None = None
+        self.conn: serial.Serial | None = None # written like this so that the type checker knows that self.conn is either a serial.Serial object or None.
  
     def open(self):
-        self.conn = serial.Serial(self.port, self.baud, timeout=self.timeout)
-        # TODO: any handshake/reset-wait logic your Arduino sketch needs
-        # (e.g. Arduinos often reset on serial connect - you may need a
-        # short sleep or a "ready" byte handshake here)
+        self.conn = serial.Serial(self.port, self.baud, timeout=self.timeout) # https://pyserial.readthedocs.io/en/latest/pyserial_api.html << creating the serial connection and assigining it to the self.conn variable.
+  
  
     def close(self):
         if self.conn:
@@ -180,8 +182,8 @@ class SerialLink:
             raise ValueError(f"Command code out of range for 1 byte: {code}")
         if not 0 <= arg <= 255:
             raise ValueError(f"Argument out of range: {arg}")
-        payload = struct.pack("BB", code, arg)  # always 2 bytes
-        self.conn.write(payload) # sends the bit value
+        payload = struct.pack("BB", code, arg)  # always 2 bytes // 
+        self.conn.write(payload) # sends the bit value // 
 
     def read_response(self, terminator: bytes = b'\n') -> str:
         """Read a line of text response from the device."""
@@ -196,7 +198,7 @@ class SerialLink:
 
  
 
-class PIBShell(cmd.Cmd):
+class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/ 
     intro = "Welcome to the PIB shell. Use with an arduino to command the payload interface board of MonARCH. Type help or ? to list commands.\n"
     prompt = "(pib) "
 
@@ -558,11 +560,11 @@ def parse_args(): # Parse command-line arguments when running the script directl
     return parser.parse_args()
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": # https://realpython.com/ref/stdlib/cmd/ 
     args = parse_args()
-    link = SerialLink(port=args.port, baud=args.baud)
+    link = SerialLink(port=args.port, baud=args.baud) # instantiate the class. 
     link.open()
     try:
-        PIBShell(link).cmdloop()
+        PIBShell(link).cmdloop() # https://docs.python.org/3/library/cmd.html cmd loop 
     finally:
         link.close()
