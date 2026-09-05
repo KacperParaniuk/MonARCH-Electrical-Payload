@@ -85,6 +85,7 @@ const osThreadAttr_t heart_beat_attributes = {
   .stack_size = 500 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+
 /* Definitions for Task_UART_RX */
 osThreadId_t Task_UART_RXHandle;
 const osThreadAttr_t Task_UART_RX_attributes = {
