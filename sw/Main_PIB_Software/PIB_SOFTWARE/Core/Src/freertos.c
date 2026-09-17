@@ -26,6 +26,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "systems.h"
+
 #include "ad7124_console_app.h"
 #include "ad7124.h"
 #include "max31856.h"
@@ -33,9 +35,12 @@
 
 #include "control_task.h"
 
+
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
+typedef StaticSemaphore_t osStaticMutexDef_t;
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
@@ -85,7 +90,6 @@ const osThreadAttr_t heart_beat_attributes = {
   .stack_size = 500 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
-
 /* Definitions for Task_UART_RX */
 osThreadId_t Task_UART_RXHandle;
 const osThreadAttr_t Task_UART_RX_attributes = {
@@ -121,6 +125,13 @@ const osThreadAttr_t Task_Data_attributes = {
   .stack_size = 500 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for Task_FSM */
+osThreadId_t Task_FSMHandle;
+const osThreadAttr_t Task_FSM_attributes = {
+  .name = "Task_FSM",
+  .stack_size = 500 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
+};
 /* Definitions for q_safety_cmds */
 osMessageQueueId_t q_safety_cmdsHandle;
 const osMessageQueueAttr_t q_safety_cmds_attributes = {
@@ -130,6 +141,39 @@ const osMessageQueueAttr_t q_safety_cmds_attributes = {
 osMessageQueueId_t q_normal_cmdsHandle;
 const osMessageQueueAttr_t q_normal_cmds_attributes = {
   .name = "q_normal_cmds"
+};
+/* Definitions for fsm_mutex */
+osMutexId_t fsm_mutexHandle;
+osStaticMutexDef_t myMutex01ControlBlock;
+const osMutexAttr_t fsm_mutex_attributes = {
+  .name = "fsm_mutex",
+  .cb_mem = &myMutex01ControlBlock,
+  .cb_size = sizeof(myMutex01ControlBlock),
+};
+/* Definitions for spi_mutex */
+osMutexId_t spi_mutexHandle;
+const osMutexAttr_t spi_mutex_attributes = {
+  .name = "spi_mutex"
+};
+/* Definitions for i2c_mutex */
+osMutexId_t i2c_mutexHandle;
+const osMutexAttr_t i2c_mutex_attributes = {
+  .name = "i2c_mutex"
+};
+/* Definitions for command_flags_mutex */
+osMutexId_t command_flags_mutexHandle;
+const osMutexAttr_t command_flags_mutex_attributes = {
+  .name = "command_flags_mutex"
+};
+/* Definitions for data_mutex */
+osMutexId_t data_mutexHandle;
+const osMutexAttr_t data_mutex_attributes = {
+  .name = "data_mutex"
+};
+/* Definitions for error_flag_mutex */
+osMutexId_t error_flag_mutexHandle;
+const osMutexAttr_t error_flag_mutex_attributes = {
+  .name = "error_flag_mutex"
 };
 /* Definitions for s_rx_semaphore */
 osSemaphoreId_t s_rx_semaphoreHandle;
@@ -148,6 +192,7 @@ void StartTask03(void *argument);
 void StartTask04(void *argument);
 void StartTask05(void *argument);
 void StartTask06(void *argument);
+void StartTask07(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -160,6 +205,24 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
+  /* Create the mutex(es) */
+  /* creation of fsm_mutex */
+  fsm_mutexHandle = osMutexNew(&fsm_mutex_attributes);
+
+  /* creation of spi_mutex */
+  spi_mutexHandle = osMutexNew(&spi_mutex_attributes);
+
+  /* creation of i2c_mutex */
+  i2c_mutexHandle = osMutexNew(&i2c_mutex_attributes);
+
+  /* creation of command_flags_mutex */
+  command_flags_mutexHandle = osMutexNew(&command_flags_mutex_attributes);
+
+  /* creation of data_mutex */
+  data_mutexHandle = osMutexNew(&data_mutex_attributes);
+
+  /* creation of error_flag_mutex */
+  error_flag_mutexHandle = osMutexNew(&error_flag_mutex_attributes);
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
@@ -179,10 +242,10 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the queue(s) */
   /* creation of q_safety_cmds */
-  q_safety_cmdsHandle = osMessageQueueNew (10, sizeof(UART_Frame_t), &q_safety_cmds_attributes);
+  q_safety_cmdsHandle = osMessageQueueNew (10, sizeof(uint8_t), &q_safety_cmds_attributes);
 
   /* creation of q_normal_cmds */
-  q_normal_cmdsHandle = osMessageQueueNew (10, sizeof(UART_Frame_t), &q_normal_cmds_attributes);
+  q_normal_cmdsHandle = osMessageQueueNew (10, sizeof(uint8_t), &q_normal_cmds_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -206,6 +269,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of Task_Data */
   Task_DataHandle = osThreadNew(StartTask06, NULL, &Task_Data_attributes);
+
+  /* creation of Task_FSM */
+  Task_FSMHandle = osThreadNew(StartTask07, NULL, &Task_FSM_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -986,6 +1052,12 @@ void StartTask05(void *argument)
   for(;;)
   {
     osDelay(1);
+
+    // TX UART Task (waits for queue to get pushed to)
+
+
+
+
   }
   /* USER CODE END StartTask05 */
 }
@@ -1003,9 +1075,76 @@ void StartTask06(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	// task data acquistion 
+
+	// take data mutex 
+
+
+	
+	// poll from sensors and store in global data_log attached to Payload_System 
+
+
+	// take/release spi/i2c mutex
+
+
+
+
+
+	// push data_log onto the queue for UART_TX to send it over UART to the PC104 
+
+
+
+	// release data mutex
+
+
+
+
+
+    osDelay(1000); // poll data every second depends how much we want 
   }
   /* USER CODE END StartTask06 */
+}
+
+/* USER CODE BEGIN Header_StartTask07 */
+/**
+* @brief Function implementing the Task_FSM thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask07 */
+void StartTask07(void *argument)
+{
+  /* USER CODE BEGIN StartTask07 */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+
+
+    // fsm task.
+
+
+    // create fsm_tick struct and fetch data
+
+
+
+
+
+    // execute fsm_tick function (returns the state)
+
+
+
+
+
+    // commit fsm state and change Payload_Systems->FSM_State
+
+
+
+
+
+
+  }
+  /* USER CODE END StartTask07 */
 }
 
 /* Private application code --------------------------------------------------*/

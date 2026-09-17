@@ -158,9 +158,6 @@ typedef struct {
 } UART_Frame_t;
 
 
-
-
-
 #define LOW_PRESSURE_RANGE 0
 #define HIGH_PRESSURE_RANGE 40 // MPa|| CHANGE once yk the pressure range of pressure transducer
 

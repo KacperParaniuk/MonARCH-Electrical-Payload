@@ -20,6 +20,8 @@ void mosfet_disable(GPIO_PinConfig_t *MOSFET){
 
 void mosfet_set_duty(GPIO_PinConfig_t *MOSFET){
 	// implement the duty cycle. PWM driver
+
+	// code is in the freertos.c file 
 }
 
 

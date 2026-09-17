@@ -386,6 +386,27 @@ struct ad7124_init_param {
 	int16_t spi_rdy_poll_cnt;
 };
 
+struct PT_Data {
+	float pressure;
+};
+
+struct ADC_CH_Data {
+	float voltage;
+	float current; 
+};
+
+struct V_Data {
+	struct ADC_CH_Data _12VA_VB; 
+	struct ADC_CH_Data _12VA_VA; 
+	struct ADC_CH_Data _3V3_VB; 
+	struct ADC_CH_Data _3V3_VA; 
+	struct ADC_CH_Data _VBAT_VA; 
+	struct ADC_CH_Data _VBAT_VB;
+	struct ADC_CH_Data _12VB_VA; 
+	struct ADC_CH_Data _12VB_VB; 
+
+}; 
+
 /******************************************************************************/
 /******************* AD7124 Constants *****************************************/
 /******************************************************************************/

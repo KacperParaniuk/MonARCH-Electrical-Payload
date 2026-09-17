@@ -162,6 +162,15 @@ typedef enum {
 } max31856_fault_t;
 
 
+
+
+struct TC_Data {
+    float cj_temp;
+    float tc_temp; 
+
+    // include error flags?? hm where do we include err flags. 
+
+};
 //"""A dictionary with the status of each fault type where the key is the fault type and the
 // value is a bool if the fault is currently active
 //
@@ -179,6 +188,8 @@ typedef enum {
 // ===================   =================================
 //
 // """"
+
+
 
 
 // can create error detection code for this.
