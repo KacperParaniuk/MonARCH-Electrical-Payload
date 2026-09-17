@@ -50,6 +50,10 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 #include <stdio.h>
 
 
+// Main Struct of Entire Payload System
+#include "systems.h"
+
+
 
 /* USER CODE END Includes */
 
@@ -110,6 +114,22 @@ max31856_t max31856T5 = {
     .cs_pin = { .gpio_port = T5_EN_GPIO_Port, .gpio_pin = T5_EN_Pin }
 };
 
+
+// declare the
+
+
+struct Payload_Systems {
+	FSMState fsm_state = STATE_BOOT;
+	struct system_flags sys_flags = {
+		 .exceed_pressure_flag = false,
+		 .exceed_temp_flag = false,
+	};
+	struct error_flags err_flags = {
+
+	};
+	struct Data_Log data_log; // not initing with any values as these will be filled by data_thread
+
+};
 
 
 
