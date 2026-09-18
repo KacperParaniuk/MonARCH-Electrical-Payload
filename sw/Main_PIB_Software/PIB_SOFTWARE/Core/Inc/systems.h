@@ -4,7 +4,7 @@
 
 typedef struct {
     // main struct that will be passed into everything
-    FSMState fsm_state;  // current sys fsm state 
+    enum FSMState xfsm_state;  // current sys fsm state
     struct system_flags sys_flags;   // sys flags for allowing and rejecting commands 
     struct error_flags err_flags;  // error flags polled throughout the system 
     struct Data_Log data_log; // all of payload data 
