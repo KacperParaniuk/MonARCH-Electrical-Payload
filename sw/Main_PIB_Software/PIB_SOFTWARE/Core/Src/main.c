@@ -75,6 +75,8 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 int32_t setupResult;
 uint32_t device_id;
 uint8_t rx_cmd[2]; // single byte for all UART commands. second byte for arguments if needed. (e.g. for setting pressure value) 
+uint8_t rx_cmd_copy[2];  // task reads from here — declare this globally
+
 uint8_t tx_cmd[1];
 char uart_buffer[64]; // used for sending data across uart3
 float temperature;
@@ -181,7 +183,7 @@ int main(void)
 
   // start receiving UART commands.
 
-  HAL_UART_Receive_IT(&huart3, rx_cmd, 1);
+  HAL_UART_Receive_IT(&huart3, rx_cmd, 2);
 
 
 // DEACTIVATE ALL SPI2 ICs
@@ -412,12 +414,25 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
     if (huart->Instance != USART3) return;  // protect against any other UART commands
 
+<<<<<<< HEAD
 	HAL_UART_Receive_IT(&huart3, rx_cmd, 2); // receive cmd + arg
 	printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
 	printf("Argument %d \r\n", rx_cmd[1]); // print argument value to stm console
+=======
+    rx_cmd_copy[0] = rx_cmd[0];
+    rx_cmd_copy[1] = rx_cmd[1];
+
+	HAL_UART_Receive_IT(&huart3, rx_cmd, 2);
+
+
+	//printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
+	//printf("Argument %d \r\n", rx_cmd[1]); // print argument value to stm console
+>>>>>>> 5ae7089c1da40de279deba5f5fa63f725172f515
 
 
 	if(rx_cmd[0]>0 && rx_cmd[0]<255){
+//		HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+
 		// release semaphore so that the UART task can decipher.
 		BaseType_t xWoken = pdFALSE; // used to directly go to the UART_RX task rather than go back to what was previously going on in the program before the ISR and then seeing the semaphore
 		xSemaphoreGiveFromISR(s_rx_semaphoreHandle, &xWoken); // FreeRTOS will set xWoken if there's a task waiting on this semaphore

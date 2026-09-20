@@ -123,6 +123,14 @@ typedef enum {
 } fdc2214_channel_t;
 
 
+struct CAP_Data {
+    float accum_level_1; // the liquid level 
+    float accum_level_2; // the liquid level
+    float cap_ch_1; // differential channels 
+    float cap_ch_2; // differential channels
+};
+
+
 // ------------------------------------------------------------- lifecycle
 uint8_t FDC2214_Begin();
 uint8_t reset_fdc2214();

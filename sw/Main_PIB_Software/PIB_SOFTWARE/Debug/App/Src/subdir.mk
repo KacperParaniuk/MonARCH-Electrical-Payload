@@ -6,17 +6,14 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../App/Src/control_task.c \
-../App/Src/fsm.c \
 ../App/Src/pid.c 
 
 OBJS += \
 ./App/Src/control_task.o \
-./App/Src/fsm.o \
 ./App/Src/pid.o 
 
 C_DEPS += \
 ./App/Src/control_task.d \
-./App/Src/fsm.d \
 ./App/Src/pid.d 
 
 
@@ -27,7 +24,7 @@ App/Src/%.o App/Src/%.su App/Src/%.cyclo: ../App/Src/%.c App/Src/subdir.mk
 clean: clean-App-2f-Src
 
 clean-App-2f-Src:
-	-$(RM) ./App/Src/control_task.cyclo ./App/Src/control_task.d ./App/Src/control_task.o ./App/Src/control_task.su ./App/Src/fsm.cyclo ./App/Src/fsm.d ./App/Src/fsm.o ./App/Src/fsm.su ./App/Src/pid.cyclo ./App/Src/pid.d ./App/Src/pid.o ./App/Src/pid.su
+	-$(RM) ./App/Src/control_task.cyclo ./App/Src/control_task.d ./App/Src/control_task.o ./App/Src/control_task.su ./App/Src/pid.cyclo ./App/Src/pid.d ./App/Src/pid.o ./App/Src/pid.su
 
 .PHONY: clean-App-2f-Src
 
