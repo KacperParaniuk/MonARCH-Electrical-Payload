@@ -220,7 +220,7 @@ int main(void)
 
 // Setup pressure ADC
 
-    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_B,PRESSURE)) < 0) {
+    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,PRESSURE)) < 0) {
   		// Handle error setting up AD7124 here
   	  printf("Failed to init ad7124 pressure \n");
   	  HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
@@ -230,7 +230,7 @@ int main(void)
 
 // Setup Voltage ADC
 
-    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_B,VOLTAGE)) < 0) {
+    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,VOLTAGE)) < 0) {
   		// Handle error setting up AD7124 here
   	  printf("Failed to init ad7124 voltage \n");
   	  HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
@@ -307,7 +307,7 @@ int main(void)
    	if(setupResult != 0){
 
    		// need to figure out what to do if an iniit fails in flight
-   		printf("Failed to communicate with FDCC2214");
+   		printf("Failed to communicate with FDC2214");
 
       HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
       HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
@@ -412,7 +412,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
     if (huart->Instance != USART3) return;  // protect against any other UART commands
 
-	HAL_UART_Receive_IT(&huart3, rx_cmd, 2);
+	HAL_UART_Receive_IT(&huart3, rx_cmd, 2); // receive cmd + arg
 	printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
 	printf("Argument %d \r\n", rx_cmd[1]); // print argument value to stm console
 

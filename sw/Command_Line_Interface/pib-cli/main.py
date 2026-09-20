@@ -492,6 +492,35 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
                 print(f"PIB says: {response}" + " Milli-Amps") 
 
 
+    def do_read_id(self, arg):
+        """Read Device ID"""
+        if(arg == "PT"):
+            print("Reading Pressure AD7124 Device ID")
+
+            self.pib.send_command(CMD_READ_ID_PT)
+            response = self.pib.read_response()
+            if response:
+                print(f"PIB Says: {response}")
+        
+        elif(arg == "V"):
+            print("Reading Voltage AD7124 Device ID")
+
+            self.pib.send_command(CMD_READ_ID_V)
+            response = self.pib.read_response()
+            if response:
+                print(f"PIB Says: {response}")
+
+        elif(arg == "FDC"):
+            print("Reading Capacitance Chip Device ID")
+
+            self.pib.send_command(CMD_READ_ID_FDC)
+            response = self.pib.read_response()
+            if response:
+                print(f"PIB Says: {response}")
+
+
+
+
         # parameterized command
     def do_set_duty_1(self, args):
         '''Set the duty cycle for the pressure regulation on the payload interface board.'''
