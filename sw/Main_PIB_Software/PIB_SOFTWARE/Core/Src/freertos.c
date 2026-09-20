@@ -893,20 +893,9 @@ void StartTask04(void *argument)
 
 		 	    case CMD_READ_TC1_CJ:
 		 		   temperature = max31856_read_CJ_temp(&max31856T1);
-<<<<<<< HEAD
 		 		   // max31856_read_fault(&max31856T1);
 			 	   Serial_Printf("Cold Junction Temperature Reading TC1: %f \r\n", temperature);
 				   break; 
-=======
-		 		   max31856_read_fault(&max31856T1);
-		 		   if (max31856T1.sr.val) {
-					   Serial_Printf("TC Read Fail ERROR TC1 #: %d \n", max31856T1.sr.val);
-		 		   }
-		 		   else{
-			 		   Serial_Printf("Cold Junction Temperature Reading TC1: %f \r\n", temperature);
-		 		   }
-				   break;
->>>>>>> 5ae7089c1da40de279deba5f5fa63f725172f515
 		 	    case CMD_READ_TC2_CJ:
 			 	   temperature = max31856_read_CJ_temp(&max31856T2);
 			 	//    max31856_read_fault(&max31856T2);
@@ -916,15 +905,9 @@ void StartTask04(void *argument)
 			 	//    else{
 			 	   Serial_Printf("Cold Junction Temperature Reading TC2: %f \r\n", temperature);
 
-<<<<<<< HEAD
 	
 			 	//    }
 				   break; 
-=======
-
-			 	   }
-				   break;
->>>>>>> 5ae7089c1da40de279deba5f5fa63f725172f515
 		 	    case CMD_READ_TC3_CJ:
 				   temperature = max31856_read_CJ_temp(&max31856T3);
 				   // max31856_read_fault(&max31856T3);
@@ -934,7 +917,6 @@ void StartTask04(void *argument)
 				//    else{
 			 	// 	   Serial_Printf("Cold Junction Temperature Reading TC3: %f \r\n", temperature);
 
-<<<<<<< HEAD
 				//    }
 				   Serial_Printf("Cold Junction Temperature Reading TC3: %f \r\n", temperature);
 				   break; 
@@ -960,30 +942,6 @@ void StartTask04(void *argument)
 			    //    }
 				   Serial_Printf("Cold Junction Temperature Reading TC5: %f \r\n", temperature);
 				   break; 
-=======
-				   }
-				   break;
-		 	    case CMD_READ_TC4_CJ:
-				   temperature = max31856_read_CJ_temp(&max31856T4);
-				   max31856_read_fault(&max31856T4);
-				   if (max31856T4.sr.val) {
-					   Serial_Printf("TC Read Fail ERROR TC4 #: %d \n", max31856T4.sr.val);
-				   }
-				   else{
-			 		   Serial_Printf("Cold Junction Temperature Reading TC4: %f \r\n", temperature);
-				   }
-				   break;
-		 	    case CMD_READ_TC5_CJ:
-				   temperature = max31856_read_CJ_temp(&max31856T5);
-				   max31856_read_fault(&max31856T5);
-			       if (max31856T5.sr.val) {
-					   Serial_Printf("TC Read Fail ERROR TC5 #: %d \n", max31856T5.sr.val);
-				   }
-			       else{
-			     	   Serial_Printf("Cold Junction Temperature Reading TC5: %f \r\n", temperature);
-			       }
-				   break;
->>>>>>> 5ae7089c1da40de279deba5f5fa63f725172f515
 
 // FDC2214 Reads
 		 	    case READ_CAPACITANCE_A1:
