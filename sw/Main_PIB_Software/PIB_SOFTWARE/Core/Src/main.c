@@ -44,10 +44,15 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 #include "max31856.h"
 #include "fdc2214.h"
 
-
-
 // Serial Interface For Debugging || Serial wire JTAG debug port (SWJ-DP)
 #include <stdio.h>
+
+
+// Include main struct 
+
+#include "systems.h"
+
+
 
 
 
@@ -82,9 +87,31 @@ char uart_buffer[64]; // used for sending data across uart3
 float temperature;
 float value;
 uint8_t duty_cycle;
-
-
 GPIO_PinState pinState;
+
+
+struct system_flags payload_flags = {
+	.exceed_pressure_flag = false,
+	.exceed_temp_flag = false
+};
+
+struct error_flags error_flags = {
+
+};
+
+struct Data_Log data_payload_packet;
+
+Payload_System Payload_Sys = {
+	.fsm_state = STATE_BOOT,
+	.sys_flags = payload_flags,
+	.err_flags = error_flags,
+	.data_log = data_payload_packet
+
+};
+
+
+
+
 
 // chip struct defines to be able to extern them.
 max31856_t max31856T1 = {
@@ -414,11 +441,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
     if (huart->Instance != USART3) return;  // protect against any other UART commands
 
-<<<<<<< HEAD
-	HAL_UART_Receive_IT(&huart3, rx_cmd, 2); // receive cmd + arg
-	printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
-	printf("Argument %d \r\n", rx_cmd[1]); // print argument value to stm console
-=======
     rx_cmd_copy[0] = rx_cmd[0];
     rx_cmd_copy[1] = rx_cmd[1];
 
@@ -427,7 +449,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 	//printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
 	//printf("Argument %d \r\n", rx_cmd[1]); // print argument value to stm console
->>>>>>> 5ae7089c1da40de279deba5f5fa63f725172f515
 
 
 	if(rx_cmd[0]>0 && rx_cmd[0]<255){

@@ -81,6 +81,7 @@ extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim8;
 
 
+extern Payload_System Payload_Sys;  
 
 
 /* USER CODE END Variables */
@@ -983,7 +984,7 @@ void StartTask04(void *argument)
 					break;
 
 				case REGULATE_PRESSURE_INPUT_VALUE: // valve 4
-					duty_cycle = frame.arg; // obtain duty cycle argument
+					duty_cycle = frame.arg; // obtain duty cycle argument (0-100)
 					HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
 					__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, duty_cycle); // set the duty cycle for valve 4
 					break;
@@ -1028,11 +1029,11 @@ void StartTask05(void *argument)
     // TX UART Task (waits for queue to get pushed to) queue contains composed packet 
 
 
-	// printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.? 
+	  // printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.? 
 
     // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work? 
 
-
+    
   }
   /* USER CODE END StartTask05 */
 }
@@ -1051,8 +1052,13 @@ void StartTask06(void *argument)
   for(;;)
   {
 	// task data acquistion 
+  osDelay(2000); // wait two seconds before 
 
 	// take data mutex 
+
+
+
+
 
 
 	
