@@ -101,13 +101,7 @@ struct error_flags error_flags = {
 
 struct Data_Log data_payload_packet;
 
-Payload_System Payload_Sys = {
-	.fsm_state = STATE_BOOT,
-	.sys_flags = payload_flags,
-	.err_flags = error_flags,
-	.data_log = data_payload_packet
-
-};
+Payload_System Payload_Sys;
 
 
 
@@ -200,6 +194,15 @@ int main(void)
   MX_TIM8_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
+
+
+  // Initialize Payload Main Struct 
+  Payload_Sys.fsm_state = STATE_BOOT; 
+  Payload_Sys.err_flags = error_flags; 
+  Payload_Sys.sys_flags = payload_flags;
+  Payload_Sys.data_log = data_payload_packet;
+
+
 
 //  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 

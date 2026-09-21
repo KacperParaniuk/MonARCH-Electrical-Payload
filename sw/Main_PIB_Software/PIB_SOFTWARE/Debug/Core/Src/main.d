@@ -52,7 +52,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../BSP/Sensors/Inc/ad7124_console_app.h ../BSP/Sensors/Inc/ad7124.h \
  ../BSP/Inc/spi_support.h ../BSP/Sensors/Inc/delay.h \
- ../BSP/Sensors/Inc/max31856.h ../BSP/Sensors/Inc/fdc2214.h
+ ../BSP/Sensors/Inc/max31856.h ../BSP/Sensors/Inc/fdc2214.h \
+ ../Core/Inc/systems.h ../Core/Inc/flags.h ../Core/Inc/errors.h \
+ ../Core/Inc/fsm_states.h ../Core/Inc/data_log.h ../BSP/Inc/mosfet_ctrl.h \
+ ../BSP/Inc/gpio_driver.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
@@ -117,3 +120,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../BSP/Sensors/Inc/delay.h:
 ../BSP/Sensors/Inc/max31856.h:
 ../BSP/Sensors/Inc/fdc2214.h:
+../Core/Inc/systems.h:
+../Core/Inc/flags.h:
+../Core/Inc/errors.h:
+../Core/Inc/fsm_states.h:
+../Core/Inc/data_log.h:
+../BSP/Inc/mosfet_ctrl.h:
+../BSP/Inc/gpio_driver.h:
