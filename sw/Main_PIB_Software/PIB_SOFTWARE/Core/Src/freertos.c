@@ -589,11 +589,11 @@ void StartTask04(void *argument)
 					Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
 					break;
 				case CMD_READ_12VB_VA:
-					value = display_channel_sample(CH_VBAT_VA,VOLTAGE);
+					value = display_channel_sample(CH_12VB_VA,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
 					break;
 				case CMD_READ_12VB_VB:
-					value = display_channel_sample(CH_VBAT_VB,VOLTAGE);
+					value = display_channel_sample(CH_12VB_VB,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
 					break;
 
@@ -1086,6 +1086,8 @@ void StartTask06(void *argument)
 	// take data mutex 
 
     osMutexAcquire(data_mutexHandle, osWaitForever);
+    osMutexAcquire(spi_mutexHandle, osWaitForever);
+    osMutexAcquire(i2c_mutexHandle, osWaitForever);
 
     // Poll Valve States
 
@@ -1094,22 +1096,25 @@ void StartTask06(void *argument)
 
 	// Poll Temperature Data
 
+    update_temperature_data(&Payload_Sys);
 
 
+    // Poll Pressure Data
+
+    update_pressure_data(&Payload_Sys);
 
 
+    // Update PC104 Voltage Data
+
+    update_voltage_data(&Payload_Sys);
 	
 	// poll from sensors and store in global data_log attached to Payload_System 
 
-
 	// take/release spi/i2c mutex
 
-
-
-
-
 	// release data mutex
-
+    osMutexRelease(i2c_mutexHandle);
+    osMutexRelease(spi_mutexHandle);
 	osMutexRelease(data_mutexHandle); 
 
 	// release data_log seamphore for UART_TX to send packet over UART to the PC104 

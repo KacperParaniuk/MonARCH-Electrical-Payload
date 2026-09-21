@@ -5,4 +5,4 @@
 ../Core/Src/freertos.c:407:6:StartTask04	135
 ../Core/Src/freertos.c:1048:6:StartTask05	2
 ../Core/Src/freertos.c:1078:6:StartTask06	1
-../Core/Src/freertos.c:1134:6:StartTask07	1
+../Core/Src/freertos.c:1139:6:StartTask07	1

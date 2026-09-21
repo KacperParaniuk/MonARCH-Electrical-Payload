@@ -15,6 +15,131 @@ extern max31856_t max31856T5;
 
 
 
+void update_voltage_data(Payload_System *Payload_Sys){
+
+	float value;
+
+
+	value = display_channel_sample(CH_12VA_VB,VOLTAGE);
+
+	Payload_Sys->data_log._12VA_VB.voltage = value;
+
+	value = display_channel_sample(CH_12VA_VA,VOLTAGE);
+
+	Payload_Sys->data_log._12VA_VA.voltage = value;
+
+	value = display_channel_sample(CH_3V3_VB,VOLTAGE);
+
+	Payload_Sys->data_log._3V3_VB.voltage = value;
+
+	value = display_channel_sample(CH_3V3_VA,VOLTAGE);
+
+	Payload_Sys->data_log._3V3_VA.voltage = value;
+
+    value = display_channel_sample(CH_VBAT_VA,VOLTAGE);
+
+	Payload_Sys->data_log._VBAT_VA.voltage = value;
+
+	value = display_channel_sample(CH_VBAT_VB,VOLTAGE);
+
+	Payload_Sys->data_log._VBAT_VB.voltage = value;
+
+	value = display_channel_sample(CH_12VB_VA,VOLTAGE);
+
+	Payload_Sys->data_log._12VB_VA.voltage = value;
+
+	value = display_channel_sample(CH_12VB_VB,VOLTAGE);
+
+	Payload_Sys->data_log._12VB_VB.voltage = value;
+
+// Read PC104 Currents
+
+	value = ad7124_read_channel_current_pc104(CH_12VA_VB);
+
+	Payload_Sys->data_log._12VA_VB.current = value;
+
+	value = ad7124_read_channel_current_pc104(CH_12VA_VA);
+
+	Payload_Sys->data_log._12VA_VA.current = value;
+
+
+	value = ad7124_read_channel_current_pc104(CH_3V3_VB);
+
+	Payload_Sys->data_log._3V3_VB.current = value;
+
+
+	value = ad7124_read_channel_current_pc104(CH_3V3_VA);
+
+	Payload_Sys->data_log._3V3_VA.current = value;
+
+
+	value = ad7124_read_channel_current_pc104(CH_VBAT_VA);
+
+	Payload_Sys->data_log._VBAT_VA.current = value;
+
+
+	value = ad7124_read_channel_current_pc104(CH_VBAT_VB);
+
+	Payload_Sys->data_log._VBAT_VB.current = value;
+
+
+	value = ad7124_read_channel_current_pc104(CH_12VB_VA);
+
+	Payload_Sys->data_log._12VB_VA.current = value;
+
+
+	value = ad7124_read_channel_current_pc104(CH_12VB_VB);
+
+	Payload_Sys->data_log._12VB_VB.current = value;
+
+}
+
+
+void update_pressure_data(Payload_System *Payload_Sys){
+
+
+//
+//	case CMD_READ_PT1:
+//		value =  0; // ad7124_read_pressure(CH_P0);
+//		// will need to convert the voltage value to a current / temp reading function eventually in ad7124.h
+//		Serial_Printf("Pressure Reading PT 1: %d \r\n", value);
+//	break;
+//	case CMD_READ_PT2:
+//		value = 0; // ad7124_read_pressure(CH_P1);
+//		Serial_Printf("Pressure Reading PT 2: %d \r\n", value);
+//	break;
+//	case CMD_READ_PT3:
+//		value = 0; // ad7124_read_pressure(CH_P2);
+//		Serial_Printf("Pressure Reading PT 3: %d \r\n", value);
+//	break;
+//	case CMD_READ_PT4:
+//		value = 0; // ad7124_read_pressure(CH_P3);
+//		Serial_Printf("Pressure Reading PT 4: %d \r\n", value);
+//	break;
+//	case CMD_READ_PT5:
+//		value = 0; // ad7124_read_pressure(CH_P4);
+//		Serial_Printf("Pressure Reading PT 5: %d \r\n", value);
+//	break;
+//	case CMD_READ_PT6:
+//		value = 0; // ad7124_read_pressure(CH_P5);
+//		Serial_Printf("Pressure Reading PT 6: %d \r\n", value);
+//	break;
+//	case CMD_READ_PT7:
+//		value = 0; // ad7124_read_pressure(CH_P6);
+//		Serial_Printf("Pressure Reading PT 7: %d \r\n", value);
+//	break;
+//	case CMD_READ_PT8:
+//		value = 0; // ad7124_read_pressure(CH_P7);
+//		Serial_Printf("Pressure Reading PT 8: %d \r\n", value);
+//	break;
+
+
+
+
+}
+
+
+
 void update_temperature_data(Payload_System *Payload_Sys){
 
 	float temperature;

@@ -12,7 +12,8 @@
 
 #include "systems.h"
 
-
+void update_voltage_data(Payload_System *Payload_Sys);
+void update_pressure_data(Payload_System *Payload_Sys);
 void update_temperature_data(Payload_System *Payload_Sys);
 void update_valve_states(Payload_System *Payload_Sys);
 
