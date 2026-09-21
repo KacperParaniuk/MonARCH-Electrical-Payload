@@ -370,16 +370,11 @@ void StartTask03(void *argument)
 
 //		  printf("SAFETY COMMAND");
 
-
+		// check for cmd and set flags w/ reference to the flags. 
 
 
 
 	  }
-
-
-
-
-
     osDelay(1);
   }
   /* USER CODE END StartTask03 */
@@ -412,16 +407,15 @@ void StartTask04(void *argument)
 
 		  // fsm integration here?
 
-
-
-
-
 		  switch(frame.cmd){ // decode command and execute
 // Open Solenoid Valve Commands
 
 
 
 		 		case CMD_OPEN_SOL1:
+					// check flags before executing.
+					
+					// or create a dedicated function for actuating valves so we don't check multiple times (in cmd / sequence functions.)
 		 			HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET); break;
 		 		case CMD_OPEN_SOL2:
 		 			HAL_GPIO_WritePin(valve2_GPIO_Port, valve2_Pin, GPIO_PIN_SET); break;
@@ -1009,32 +1003,8 @@ void StartTask04(void *argument)
 					break;
 				default:
 					break;
-
-	
-					// reset the received command so it does not execute more than once.	
-
 		 	}
-//	 	 	HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
-
-			  // reset received command so it does not execute more than once.
-			// test to see if this works 
-
-		 	//		 		   // we may need to add if there's ever an error...
-		 	//		 		   int len = snprintf(uart_buffer, sizeof(uart_buffer), "Cold Junction Temperature Reading TC1: %f\r\n", temperature);
-		 	//		 	 	   HAL_UART_Transmit(&huart3, (uint8_t *)uart_buffer, len, 100);
-
-
 	  }
-
-
-
-
-
-
-
-
-
-
     osDelay(1);
   }
   /* USER CODE END StartTask04 */
@@ -1055,16 +1025,12 @@ void StartTask05(void *argument)
   {
     osDelay(1);
 
-    // TX UART Task (waits for queue to get pushed to)
+    // TX UART Task (waits for queue to get pushed to) queue contains composed packet 
 
 
-    // SEND MESSAGE OVER UART
+	// printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.? 
 
-
-
-    //
-
-
+    // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work? 
 
 
   }
@@ -1136,6 +1102,8 @@ void StartTask07(void *argument)
 
 
     // create fsm_tick struct and fetch data
+
+	
 
 
 

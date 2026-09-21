@@ -600,7 +600,7 @@ int32_t menu_single_conversion(AD7124_CHIP chip)
 	}
 
 	clear_channel_samples();
-//	adi_clear_console();
+	//	adi_clear_console();
 	printf("Running Single conversion mode...\r\nPress Escape to stop\r\n\r\n");
 
 	// Clear the ADC CTRL MODE bits, selecting continuous mode
