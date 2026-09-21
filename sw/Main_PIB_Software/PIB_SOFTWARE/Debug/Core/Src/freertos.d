@@ -35,7 +35,12 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
  ../BSP/Inc/gpio_driver.h ../Core/Inc/main.h ../BSP/Inc/uart_handler.h \
- ../BSP/Inc/uart_protocol.h ../BSP/Inc/uart_protocol.h \
+ ../BSP/Inc/uart_protocol.h ../Core/Inc/data_log.h \
+ ../BSP/Sensors/Inc/ad7124_console_app.h ../BSP/Sensors/Inc/ad7124.h \
+ ../BSP/Inc/spi_support.h ../BSP/Sensors/Inc/delay.h \
+ ../BSP/Sensors/Inc/max31856.h ../BSP/Sensors/Inc/fdc2214.h \
+ ../Core/Inc/i2c.h ../BSP/Inc/mosfet_ctrl.h ../BSP/Inc/gpio_driver.h \
+ ../BSP/Inc/uart_protocol.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
@@ -47,11 +52,10 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../Core/Inc/systems.h ../Core/Inc/flags.h ../Core/Inc/errors.h \
  ../Core/Inc/fsm_states.h ../Core/Inc/data_log.h \
- ../BSP/Sensors/Inc/ad7124_console_app.h ../BSP/Sensors/Inc/ad7124.h \
- ../BSP/Inc/spi_support.h ../BSP/Sensors/Inc/delay.h \
- ../BSP/Sensors/Inc/max31856.h ../BSP/Sensors/Inc/fdc2214.h \
- ../Core/Inc/i2c.h ../BSP/Inc/mosfet_ctrl.h ../BSP/Inc/gpio_driver.h \
- ../App/Inc/control_task.h
+ ../App/Inc/control_task.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Core/Inc/main.h:
@@ -92,6 +96,16 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Core/Inc/main.h:
 ../BSP/Inc/uart_handler.h:
 ../BSP/Inc/uart_protocol.h:
+../Core/Inc/data_log.h:
+../BSP/Sensors/Inc/ad7124_console_app.h:
+../BSP/Sensors/Inc/ad7124.h:
+../BSP/Inc/spi_support.h:
+../BSP/Sensors/Inc/delay.h:
+../BSP/Sensors/Inc/max31856.h:
+../BSP/Sensors/Inc/fdc2214.h:
+../Core/Inc/i2c.h:
+../BSP/Inc/mosfet_ctrl.h:
+../BSP/Inc/gpio_driver.h:
 ../BSP/Inc/uart_protocol.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
@@ -107,13 +121,7 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Core/Inc/errors.h:
 ../Core/Inc/fsm_states.h:
 ../Core/Inc/data_log.h:
-../BSP/Sensors/Inc/ad7124_console_app.h:
-../BSP/Sensors/Inc/ad7124.h:
-../BSP/Inc/spi_support.h:
-../BSP/Sensors/Inc/delay.h:
-../BSP/Sensors/Inc/max31856.h:
-../BSP/Sensors/Inc/fdc2214.h:
-../Core/Inc/i2c.h:
-../BSP/Inc/mosfet_ctrl.h:
-../BSP/Inc/gpio_driver.h:
 ../App/Inc/control_task.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:

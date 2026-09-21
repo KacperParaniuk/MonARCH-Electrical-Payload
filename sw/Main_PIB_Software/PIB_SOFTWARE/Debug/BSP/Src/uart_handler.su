@@ -1,3 +1,0 @@
-../BSP/Src/uart_handler.c:15:6:Serial_Print	152	static
-../BSP/Src/uart_handler.c:21:6:Serial_Printf	144	static
-../BSP/Src/uart_handler.c:41:9:cmd_is_safety	16	static

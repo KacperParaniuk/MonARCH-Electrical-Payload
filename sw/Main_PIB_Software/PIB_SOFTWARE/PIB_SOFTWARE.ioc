@@ -2,7 +2,7 @@
 CAD.formats=
 CAD.pinconfig=
 CAD.provider=
-FREERTOS.BinarySemaphores01=s_rx_semaphore,Dynamic,NULL,Depleted
+FREERTOS.BinarySemaphores01=s_rx_semaphore,Dynamic,NULL,Depleted;s_tx_semaphore,Dynamic,NULL,Depleted
 FREERTOS.FootprintOK=true
 FREERTOS.IPParameters=Tasks01,FootprintOK,configTOTAL_HEAP_SIZE,configMINIMAL_STACK_SIZE,configUSE_NEWLIB_REENTRANT,BinarySemaphores01,Queues01,Mutexes01
 FREERTOS.Mutexes01=fsm_mutex,Static,myMutex01ControlBlock,Available;spi_mutex,Dynamic,NULL,Available;i2c_mutex,Dynamic,NULL,Available;command_flags_mutex,Dynamic,NULL,Available;data_mutex,Dynamic,NULL,Available;error_flag_mutex,Dynamic,NULL,Available

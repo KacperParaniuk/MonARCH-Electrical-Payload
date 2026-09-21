@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+#include "data_log.h"
+
 
 void Serial_Print(const char *message){ // need pointer b/c messages will be stored in READ ONLY flash memory
 	char buf[128];
@@ -47,6 +49,19 @@ uint8_t cmd_is_safety(uint8_t rx_cmd){
 	else{
 		return 0;
 	}
+
+
+
+}
+
+
+
+
+void printPacketJSON(const struct Data_Log *packet){
+
+	// execute code for printing over UART
+
+
 
 
 

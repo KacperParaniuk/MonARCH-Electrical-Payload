@@ -20,35 +20,30 @@ void mosfet_disbale(GPIO_PinConfig_t *MOSFET);
 void mosfet_set_duty(GPIO_PinConfig_t *MOSFET);
 
 
-
-struct SOL_State {
-    bool state; 
-};
-
 struct SOL_State_PWM {
-    bool state; 
+    uint8_t state; 
     uint8_t duty_cyle; 
 };
 
 struct Feed_System {
-    struct SOL_State valve_1; 
-    struct SOL_State valve_2;
-    struct SOL_State valve_3;
+    uint8_t valve_1; 
+    uint8_t valve_2;
+    uint8_t valve_3;
     struct SOL_State_PWM valve_4;
-    struct SOL_State valve_5; 
+    uint8_t valve_5; 
     struct SOL_State_PWM valve_6;
-    struct SOL_State valve_7;
-    struct SOL_State valve_8;
-    struct SOL_State valve_9; 
-    struct SOL_State valve_10;
-    struct SOL_State valve_11;
-    struct SOL_State valve_12;
-    struct SOL_State valve_13; 
-    struct SOL_State valve_14;
-    struct SOL_State valve_15;
-    struct SOL_State valve_16;
-    struct SOL_State valve_17;
-    struct SOL_State valve_18;
+    uint8_t valve_7;
+    uint8_t valve_8;
+    uint8_t valve_9; 
+    uint8_t valve_10;
+    uint8_t valve_11;
+    uint8_t valve_12;
+    uint8_t valve_13; 
+    uint8_t valve_14;
+    uint8_t valve_15;
+    uint8_t valve_16;
+    uint8_t valve_17;
+    uint8_t valve_18;
 };
 
 

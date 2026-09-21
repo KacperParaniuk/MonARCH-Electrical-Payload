@@ -34,6 +34,7 @@
 #include "fdc2214.h"
 
 #include "control_task.h"
+#include "semphr.h"
 
 
 
@@ -182,6 +183,11 @@ osSemaphoreId_t s_rx_semaphoreHandle;
 const osSemaphoreAttr_t s_rx_semaphore_attributes = {
   .name = "s_rx_semaphore"
 };
+/* Definitions for s_tx_semaphore */
+osSemaphoreId_t s_tx_semaphoreHandle;
+const osSemaphoreAttr_t s_tx_semaphore_attributes = {
+  .name = "s_tx_semaphore"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -233,6 +239,9 @@ void MX_FREERTOS_Init(void) {
   /* Create the semaphores(s) */
   /* creation of s_rx_semaphore */
   s_rx_semaphoreHandle = osSemaphoreNew(1, 0, &s_rx_semaphore_attributes);
+
+  /* creation of s_tx_semaphore */
+  s_tx_semaphoreHandle = osSemaphoreNew(1, 0, &s_tx_semaphore_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -407,9 +416,14 @@ void StartTask04(void *argument)
 //		  printf("Normal CMD Received");
 
 		  // fsm integration here?
+		osMutexAcquire(spi_mutexHandle, osWaitForever);
+	    osMutexAcquire(i2c_mutexHandle, osWaitForever); // see how this pans out rather than inputting this for each and every command.
+
+
 
 		  switch(frame.cmd){ // decode command and execute
 // Open Solenoid Valve Commands
+
 
 
 
@@ -507,6 +521,7 @@ void StartTask04(void *argument)
 					break;
 		 		case CMD_READ_ID_V:
 		 			 device_id = ad7124_read_device_id(VOLTAGE);
+
 		 			 Serial_Printf("AD7124 Device ID: %ld \n", device_id);
 		 			 if(device_id == 20 || device_id == 23){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
 		 				printf("|| SUCCESS \n");
@@ -518,23 +533,25 @@ void StartTask04(void *argument)
 		 			 }
 					 break;
 		 		case CMD_READ_ID_FDC:
-		 		 	  if(isConnected()==0){
+		 		 	if(isConnected()==0){
+
 		 		 		printf("FDC NOMINAL \n");
 			 			HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
 
-		 		 	  }
-		 		 	  else{
+		 		 	}
+		 		 	else{
 		 		 		printf("FDC FAIL IS NOT CONNECTED \n");
-		 		 	  }
+		 		 	}
+					
+		 		 	device_id = FDC2214_get_device_id();
+			 		Serial_Printf("FDC2214 Device ID: %ld \n", device_id);
 
-
-		 		 	  device_id = FDC2214_get_device_id();
-			 		  Serial_Printf("FDC2214 Device ID: %ld \n", device_id);
-					  break;
+					break;
 
 // READ PC104 ADC CHANNELS
 
 				case CMD_READ_12VA_VB:
+
 					value = display_channel_sample(CH_12VA_VB,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
 
@@ -544,6 +561,7 @@ void StartTask04(void *argument)
 					break;
 
 				case CMD_READ_12VA_VA:
+				
 					value = display_channel_sample(CH_12VA_VA,VOLTAGE);
 					Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
 					break;
@@ -1005,6 +1023,8 @@ void StartTask04(void *argument)
 				default:
 					break;
 		 	}
+		osMutexRelease(spi_mutexHandle);
+		osMutexRelease(i2c_mutexHandle);
 	  }
     osDelay(1);
   }
@@ -1025,15 +1045,18 @@ void StartTask05(void *argument)
   for(;;)
   {
     osDelay(1);
-
     // TX UART Task (waits for queue to get pushed to) queue contains composed packet 
 
-
-	  // printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.? 
-
+	if(osSemaphoreAcquire(s_tx_semaphoreHandle, osWaitForever)== osOK){
+	// Take Data Mutex 
+		osMutexAcquire(data_mutexHandle, osWaitForever);
+	// printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.? 
+		printPacketJSON(&Payload_Sys.data_log);
     // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work? 
 
-    
+	// Release Data Mutex
+		osMutexRelease(data_mutexHandle); 
+	}
   }
   /* USER CODE END StartTask05 */
 }
@@ -1052,10 +1075,71 @@ void StartTask06(void *argument)
   for(;;)
   {
 	// task data acquistion 
-  osDelay(2000); // wait two seconds before 
 
 	// take data mutex 
 
+    osMutexAcquire(data_mutexHandle, osWaitForever);
+
+    // Poll Valve States
+
+	uint8_t pinState
+	pinState = HAL_GPIO_ReadPin(valve1_GPIO_Port, valve1_Pin);
+	Payload_Sys.data_log.valve_states.valve_1 = pinState;
+
+	pinState = HAL_GPIO_ReadPin(valve2_GPIO_Port, valve2_Pin);
+	Payload_Sys.data_log.valve_states.valve_2 = pinState; 
+	 				 
+	pinState = HAL_GPIO_ReadPin(valve3_GPIO_Port, valve3_Pin);
+	Payload_Sys.data_log.valve_states.valve_3 = pinState;
+
+
+	pinState = HAL_GPIO_ReadPin(valve4_GPIO_Port, valve4_Pin);
+	Payload_Sys.data_log.valve_states.valve_4.state = pinState;
+
+	pinState = HAL_GPIO_ReadPin(valve5_GPIO_Port, valve5_Pin);
+	Payload_Sys.data_log.valve_states.valve_5 = pinState;
+
+	pinState = HAL_GPIO_ReadPin(valve9_GPIO_Port, valve9_Pin);
+	Payload_Sys.data_log.valve_states.valve_6.state = pinState; 
+	 				 
+	pinState = HAL_GPIO_ReadPin(valve7_GPIO_Port, valve7_Pin);
+	Payload_Sys.data_log.valve_states.valve_7 = pinState;
+
+	pinState = HAL_GPIO_ReadPin(valve8_GPIO_Port, valve8_Pin);
+	Payload_Sys.data_log.valve_states.valve_8 = pinState;
+
+	pinState = HAL_GPIO_ReadPin(valve9_GPIO_Port, valve9_Pin);
+	Payload_Sys.data_log.valve_states.valve_9 = pinState; 
+	 				 
+	pinState = HAL_GPIO_ReadPin(valve10_GPIO_Port, valve10_Pin);
+	Payload_Sys.data_log.valve_states.valve_10 = pinState;
+
+	pinState = HAL_GPIO_ReadPin(valve11_GPIO_Port, valve11_Pin);
+	Payload_Sys.data_log.valve_states.valve_11 = pinState;
+
+	pinState = HAL_GPIO_ReadPin(valve12_GPIO_Port, valve12_Pin);
+	Payload_Sys.data_log.valve_states.valve_12 = pinState; 
+
+	pinState = HAL_GPIO_ReadPin(valve13_GPIO_Port, valve13_Pin);
+	Payload_Sys.data_log.valve_states.valve_13 = pinState;
+
+	pinState = HAL_GPIO_ReadPin(valve14_GPIO_Port, valve14_Pin);
+	Payload_Sys.data_log.valve_states.valve_14 = pinState;
+
+	pinState = HAL_GPIO_ReadPin(valve15_GPIO_Port, valve15_Pin);
+	Payload_Sys.data_log.valve_states.valve_15 = pinState; 
+	 				 
+	pinState = HAL_GPIO_ReadPin(valve16_GPIO_Port, valve16_Pin);
+	Payload_Sys.data_log.valve_states.valve_16 = pinState;
+
+	pinState = HAL_GPIO_ReadPin(valve17_GPIO_Port, valve17_Pin);
+	Payload_Sys.data_log.valve_states.valve_17 = pinState;
+
+	pinState = HAL_GPIO_ReadPin(valve18_GPIO_Port, valve18_Pin);
+	Payload_Sys.data_log.valve_states.valve_18 = pinState; 
+	 				 
+
+	// Poll Temperature Data
 
 
 
@@ -1071,17 +1155,16 @@ void StartTask06(void *argument)
 
 
 
-	// push data_log onto the queue for UART_TX to send it over UART to the PC104 
-
-
-
 	// release data mutex
 
+	osMutexRelease(data_mutexHandle); 
+
+	// release data_log seamphore for UART_TX to send packet over UART to the PC104 
+
+	xSemaphoreGive(s_tx_semaphoreHandle); // give semaphore for UART_TX to be able to take it. 
 
 
-
-
-    osDelay(1000); // poll data every second depends how much we want 
+    osDelay(1000); // poll data every second depends the frequency of data we want 
   }
   /* USER CODE END StartTask06 */
 }
