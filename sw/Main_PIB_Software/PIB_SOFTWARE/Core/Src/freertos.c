@@ -35,6 +35,13 @@
 
 #include "control_task.h"
 #include "semphr.h"
+#include "uart_handler.h"
+
+#include "sensors.h"
+
+
+
+
 
 
 
@@ -1082,62 +1089,8 @@ void StartTask06(void *argument)
 
     // Poll Valve States
 
-	uint8_t pinState
-	pinState = HAL_GPIO_ReadPin(valve1_GPIO_Port, valve1_Pin);
-	Payload_Sys.data_log.valve_states.valve_1 = pinState;
+    update_valve_states(&Payload_Sys);
 
-	pinState = HAL_GPIO_ReadPin(valve2_GPIO_Port, valve2_Pin);
-	Payload_Sys.data_log.valve_states.valve_2 = pinState; 
-	 				 
-	pinState = HAL_GPIO_ReadPin(valve3_GPIO_Port, valve3_Pin);
-	Payload_Sys.data_log.valve_states.valve_3 = pinState;
-
-
-	pinState = HAL_GPIO_ReadPin(valve4_GPIO_Port, valve4_Pin);
-	Payload_Sys.data_log.valve_states.valve_4.state = pinState;
-
-	pinState = HAL_GPIO_ReadPin(valve5_GPIO_Port, valve5_Pin);
-	Payload_Sys.data_log.valve_states.valve_5 = pinState;
-
-	pinState = HAL_GPIO_ReadPin(valve9_GPIO_Port, valve9_Pin);
-	Payload_Sys.data_log.valve_states.valve_6.state = pinState; 
-	 				 
-	pinState = HAL_GPIO_ReadPin(valve7_GPIO_Port, valve7_Pin);
-	Payload_Sys.data_log.valve_states.valve_7 = pinState;
-
-	pinState = HAL_GPIO_ReadPin(valve8_GPIO_Port, valve8_Pin);
-	Payload_Sys.data_log.valve_states.valve_8 = pinState;
-
-	pinState = HAL_GPIO_ReadPin(valve9_GPIO_Port, valve9_Pin);
-	Payload_Sys.data_log.valve_states.valve_9 = pinState; 
-	 				 
-	pinState = HAL_GPIO_ReadPin(valve10_GPIO_Port, valve10_Pin);
-	Payload_Sys.data_log.valve_states.valve_10 = pinState;
-
-	pinState = HAL_GPIO_ReadPin(valve11_GPIO_Port, valve11_Pin);
-	Payload_Sys.data_log.valve_states.valve_11 = pinState;
-
-	pinState = HAL_GPIO_ReadPin(valve12_GPIO_Port, valve12_Pin);
-	Payload_Sys.data_log.valve_states.valve_12 = pinState; 
-
-	pinState = HAL_GPIO_ReadPin(valve13_GPIO_Port, valve13_Pin);
-	Payload_Sys.data_log.valve_states.valve_13 = pinState;
-
-	pinState = HAL_GPIO_ReadPin(valve14_GPIO_Port, valve14_Pin);
-	Payload_Sys.data_log.valve_states.valve_14 = pinState;
-
-	pinState = HAL_GPIO_ReadPin(valve15_GPIO_Port, valve15_Pin);
-	Payload_Sys.data_log.valve_states.valve_15 = pinState; 
-	 				 
-	pinState = HAL_GPIO_ReadPin(valve16_GPIO_Port, valve16_Pin);
-	Payload_Sys.data_log.valve_states.valve_16 = pinState;
-
-	pinState = HAL_GPIO_ReadPin(valve17_GPIO_Port, valve17_Pin);
-	Payload_Sys.data_log.valve_states.valve_17 = pinState;
-
-	pinState = HAL_GPIO_ReadPin(valve18_GPIO_Port, valve18_Pin);
-	Payload_Sys.data_log.valve_states.valve_18 = pinState; 
-	 				 
 
 	// Poll Temperature Data
 

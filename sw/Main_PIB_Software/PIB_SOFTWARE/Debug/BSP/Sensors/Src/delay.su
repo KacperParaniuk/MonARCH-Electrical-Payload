@@ -1,0 +1,2 @@
+../BSP/Sensors/Src/delay.c:57:6:udelay	16	static
+../BSP/Sensors/Src/delay.c:69:6:mdelay	16	static

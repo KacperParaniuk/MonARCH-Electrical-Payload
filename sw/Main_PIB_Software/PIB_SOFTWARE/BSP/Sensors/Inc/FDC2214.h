@@ -2,7 +2,7 @@
 #define __FDC2214_H__
 
 #include "stm32l4xx_hal.h"
-#include "main.h"
+//#include "main.h"
 #include "i2c.h"
 
 #define FDC2214 (0x2A << 1)

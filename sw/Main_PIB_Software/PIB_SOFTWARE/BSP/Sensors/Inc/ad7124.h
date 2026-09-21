@@ -47,6 +47,7 @@
 #include <spi_support.h>
 #include <stdint.h>
 #include "delay.h"
+#include "stm32l4xx_hal.h"
 
 /******************************************************************************/
 /******************* Register map and register definitions ********************/

@@ -32,9 +32,9 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "gpio_driver.h"
-#include "uart_handler.h"
 #include "uart_protocol.h"
+
+
 
 
 /* USER CODE END Includes */

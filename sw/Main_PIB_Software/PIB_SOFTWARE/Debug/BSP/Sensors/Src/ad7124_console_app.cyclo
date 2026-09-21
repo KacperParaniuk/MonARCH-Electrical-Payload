@@ -1,0 +1,11 @@
+../BSP/Sensors/Src/ad7124_console_app.c:115:9:ad7124_app_initialize	6
+../BSP/Sensors/Src/ad7124_console_app.c:230:6:read_status_register	2
+../BSP/Sensors/Src/ad7124_console_app.c:249:6:read_error_register	21
+../BSP/Sensors/Src/ad7124_console_app.c:327:13:dislay_channel_samples	11
+../BSP/Sensors/Src/ad7124_console_app.c:377:7:display_channel_sample	2
+../BSP/Sensors/Src/ad7124_console_app.c:399:13:clear_channel_samples	2
+../BSP/Sensors/Src/ad7124_console_app.c:416:9:do_continuous_conversion	13
+../BSP/Sensors/Src/ad7124_console_app.c:584:9:menu_single_conversion	13
+../BSP/Sensors/Src/ad7124_console_app.c:753:9:ad7124_reset_function	3
+../BSP/Sensors/Src/ad7124_console_app.c:776:9:ad7124_read_device_id	2
+../BSP/Sensors/Src/ad7124_console_app.c:799:7:ad7124_read_channel_current_pc104	1

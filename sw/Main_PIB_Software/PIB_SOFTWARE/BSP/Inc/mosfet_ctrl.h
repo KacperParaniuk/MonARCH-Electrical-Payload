@@ -9,15 +9,8 @@
 #define INC_MOSFET_CTRL_H_
 
 
-#include "gpio_driver.h"
 #include <stdbool.h>
-
-
-
-
-void mosfet_enable(GPIO_PinConfig_t *MOSFET);
-void mosfet_disbale(GPIO_PinConfig_t *MOSFET);
-void mosfet_set_duty(GPIO_PinConfig_t *MOSFET);
+#include <stdint.h>
 
 
 struct SOL_State_PWM {
@@ -45,6 +38,11 @@ struct Feed_System {
     uint8_t valve_17;
     uint8_t valve_18;
 };
+
+
+
+
+
 
 
 #endif /* INC_MOSFET_CTRL_H_ */

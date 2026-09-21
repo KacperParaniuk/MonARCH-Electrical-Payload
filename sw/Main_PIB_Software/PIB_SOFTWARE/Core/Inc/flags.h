@@ -1,7 +1,4 @@
-#include "main.h"
 #include "stdbool.h"
-
-
 #include "errors.h"
 
 struct system_flags { // aka command flags that prevent or allow certain commands to be set...

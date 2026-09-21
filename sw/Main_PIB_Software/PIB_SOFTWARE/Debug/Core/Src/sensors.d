@@ -1,5 +1,6 @@
-BSP/Src/mosfet_ctrl.o: ../BSP/Src/mosfet_ctrl.c ../BSP/Inc/mosfet_ctrl.h \
- ../BSP/Inc/gpio_driver.h ../Core/Inc/main.h \
+Core/Src/sensors.o: ../Core/Src/sensors.c ../Core/Inc/sensors.h \
+ ../Core/Inc/systems.h ../Core/Inc/flags.h ../Core/Inc/errors.h \
+ ../Core/Inc/fsm_states.h ../Core/Inc/main.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h \
  ../Core/Inc/stm32l4xx_hal_conf.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h \
@@ -33,14 +34,16 @@ BSP/Src/mosfet_ctrl.o: ../BSP/Src/mosfet_ctrl.c ../BSP/Inc/mosfet_ctrl.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
- ../BSP/Inc/gpio_driver.h ../BSP/Inc/uart_handler.h \
  ../BSP/Inc/uart_protocol.h ../Core/Inc/data_log.h \
  ../BSP/Sensors/Inc/ad7124_console_app.h ../BSP/Sensors/Inc/ad7124.h \
  ../BSP/Inc/spi_support.h ../BSP/Sensors/Inc/delay.h \
- ../BSP/Sensors/Inc/max31856.h ../BSP/Sensors/Inc/fdc2214.h \
- ../Core/Inc/i2c.h ../Core/Inc/main.h ../BSP/Inc/uart_protocol.h
-../BSP/Inc/mosfet_ctrl.h:
-../BSP/Inc/gpio_driver.h:
+ ../BSP/Sensors/Inc/max31856.h ../BSP/Sensors/Inc/FDC2214.h \
+ ../Core/Inc/i2c.h ../BSP/Inc/mosfet_ctrl.h
+../Core/Inc/sensors.h:
+../Core/Inc/systems.h:
+../Core/Inc/flags.h:
+../Core/Inc/errors.h:
+../Core/Inc/fsm_states.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
@@ -75,8 +78,6 @@ BSP/Src/mosfet_ctrl.o: ../BSP/Src/mosfet_ctrl.c ../BSP/Inc/mosfet_ctrl.h \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
-../BSP/Inc/gpio_driver.h:
-../BSP/Inc/uart_handler.h:
 ../BSP/Inc/uart_protocol.h:
 ../Core/Inc/data_log.h:
 ../BSP/Sensors/Inc/ad7124_console_app.h:
@@ -84,7 +85,6 @@ BSP/Src/mosfet_ctrl.o: ../BSP/Src/mosfet_ctrl.c ../BSP/Inc/mosfet_ctrl.h \
 ../BSP/Inc/spi_support.h:
 ../BSP/Sensors/Inc/delay.h:
 ../BSP/Sensors/Inc/max31856.h:
-../BSP/Sensors/Inc/fdc2214.h:
+../BSP/Sensors/Inc/FDC2214.h:
 ../Core/Inc/i2c.h:
-../Core/Inc/main.h:
-../BSP/Inc/uart_protocol.h:
+../BSP/Inc/mosfet_ctrl.h:

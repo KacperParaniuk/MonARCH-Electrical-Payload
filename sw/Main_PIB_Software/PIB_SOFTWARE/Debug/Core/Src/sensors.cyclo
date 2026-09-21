@@ -1,0 +1,2 @@
+../Core/Src/sensors.c:18:6:update_temperature_data	1
+../Core/Src/sensors.c:76:6:update_valve_states	1

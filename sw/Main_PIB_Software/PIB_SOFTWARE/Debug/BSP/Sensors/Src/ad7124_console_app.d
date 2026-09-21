@@ -33,12 +33,11 @@ BSP/Sensors/Src/ad7124_console_app.o: \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
- ../BSP/Inc/gpio_driver.h ../BSP/Inc/uart_handler.h \
- ../BSP/Inc/uart_protocol.h ../BSP/Inc/uart_protocol.h ../Core/Inc/spi.h \
- ../Core/Inc/main.h ../BSP/Sensors/Inc/error.h \
- ../BSP/Sensors/Inc/ad7124.h ../BSP/Inc/spi_support.h \
- ../BSP/Sensors/Inc/delay.h ../BSP/Sensors/Inc/ad7124_regs.h \
- ../BSP/Sensors/Inc/ad7124.h ../BSP/Sensors/Inc/ad7124_support.h \
+ ../BSP/Inc/uart_protocol.h ../Core/Inc/spi.h ../Core/Inc/main.h \
+ ../BSP/Sensors/Inc/error.h ../BSP/Sensors/Inc/ad7124.h \
+ ../BSP/Inc/spi_support.h ../BSP/Sensors/Inc/delay.h \
+ ../BSP/Sensors/Inc/ad7124_regs.h ../BSP/Sensors/Inc/ad7124.h \
+ ../BSP/Sensors/Inc/ad7124_support.h \
  ../BSP/Sensors/Inc/ad7124_regs_configs.h \
  ../BSP/Sensors/Inc/ad7124_console_app.h
 ../BSP/Inc/platform_support.h:
@@ -76,9 +75,6 @@ BSP/Sensors/Src/ad7124_console_app.o: \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
-../BSP/Inc/gpio_driver.h:
-../BSP/Inc/uart_handler.h:
-../BSP/Inc/uart_protocol.h:
 ../BSP/Inc/uart_protocol.h:
 ../Core/Inc/spi.h:
 ../Core/Inc/main.h:
