@@ -566,6 +566,9 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
         if(arg == "run_espray"):
             print("Running e-spray sequence...")
 
+        if(arg=="run_heat_test"):
+            print("Running Heat Test")
+
         # Here add the code to open the valve on the PIB
 
     def do_help(self, arg):

@@ -62,6 +62,14 @@ void printPacketJSON(const struct Data_Log *packet){
 	// execute code for printing over UART
 
 
+    char buff[1024];
+    int len = sprintf(buff,"{\"type\": \"data\", \"value\": {\"barometer_altitude\": %f }}",packet->tc1.cj_temp);
+
+    HAL_UART_Transmit(&huart3, (uint8_t *)buff, len, 1000);
+
+
+
+
 
 
 

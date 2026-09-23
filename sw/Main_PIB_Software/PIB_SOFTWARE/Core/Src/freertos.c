@@ -1051,19 +1051,20 @@ void StartTask05(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    osDelay(1000);
     // TX UART Task (waits for queue to get pushed to) queue contains composed packet 
 
-	if(osSemaphoreAcquire(s_tx_semaphoreHandle, osWaitForever)== osOK){
-	// Take Data Mutex 
-		osMutexAcquire(data_mutexHandle, osWaitForever);
-	// printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.? 
-		printPacketJSON(&Payload_Sys.data_log);
-    // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work? 
+	 if(osSemaphoreAcquire(s_tx_semaphoreHandle, osWaitForever)== osOK){
+	 // Take Data Mutex
+	 	osMutexAcquire(data_mutexHandle, osWaitForever);
+	 // printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.?
+	 	printPacketJSON(&Payload_Sys.data_log);
+	 	HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+     // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work?
 
-	// Release Data Mutex
-		osMutexRelease(data_mutexHandle); 
-	}
+	 // Release Data Mutex
+	 	osMutexRelease(data_mutexHandle);
+	 }
   }
   /* USER CODE END StartTask05 */
 }
@@ -1089,38 +1090,38 @@ void StartTask06(void *argument)
     osMutexAcquire(spi_mutexHandle, osWaitForever);
     osMutexAcquire(i2c_mutexHandle, osWaitForever);
 
-    // Poll Valve States
-
+//    // Poll Valve States
+//
     update_valve_states(&Payload_Sys);
-
-
-	// Poll Temperature Data
-
+//
+//
+//	// Poll Temperature Data
+//
     update_temperature_data(&Payload_Sys);
-
-
-    // Poll Pressure Data
-
+//
+//
+//    // Poll Pressure Data
+//
     update_pressure_data(&Payload_Sys);
-
-
-    // Update PC104 Voltage Data
-
-    update_voltage_data(&Payload_Sys);
-	
-	// poll from sensors and store in global data_log attached to Payload_System 
-
-	// take/release spi/i2c mutex
-
-	// release data mutex
+//
+//
+//    // Update PC104 Voltage Data
+//
+    // update_voltage_data(&Payload_Sys); // found this to be killing the MCU
+//
+//	// poll from sensors and store in global data_log attached to Payload_System
+//
+//	// take/release spi/i2c mutex
+//
+//	// release data mutex
     osMutexRelease(i2c_mutexHandle);
     osMutexRelease(spi_mutexHandle);
-	osMutexRelease(data_mutexHandle); 
+	osMutexRelease(data_mutexHandle);
 
-	// release data_log seamphore for UART_TX to send packet over UART to the PC104 
-
-	xSemaphoreGive(s_tx_semaphoreHandle); // give semaphore for UART_TX to be able to take it. 
-
+//	// release data_log seamphore for UART_TX to send packet over UART to the PC104
+//
+	xSemaphoreGive(s_tx_semaphoreHandle); // give semaphore for UART_TX to be able to take it.
+//
 
     osDelay(1000); // poll data every second depends the frequency of data we want 
   }

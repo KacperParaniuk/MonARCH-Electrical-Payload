@@ -38,14 +38,14 @@
 
 
 
-#define AD7124
-#define AD7124_P
-#define AD7124_V
-#define AD7124_SINGLE_MODE
+//#define AD7124
+//#define AD7124_P
+//#define AD7124_V
+//#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
-//#define MAX31856
-//#define MAX31856_T1
+#define MAX31856
+#define MAX31856_T1
 //#define MAX31856_T2
 //#define MAX31856_T3
 //#define MAX31856_T4
@@ -232,6 +232,7 @@ int main(void)
   HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
 
   HAL_GPIO_WritePin(POW12_EN_GPIO_Port, POW12_EN_Pin, GPIO_PIN_SET);
+
 
 
 // External driver structures and buffers
@@ -621,12 +622,16 @@ float temperature;
 //
 		  value = display_channel_sample(0, VOLTAGE);
 
-		  printf("12V Reading: %f", (610 / 510)*(12-value));
+//		  printf("12V Reading: %f", (610 / 510)*(12-value));
+
+		  printf("3V3 Reading: %f", 6*value); // new way of computing.
 
 
 		  value = display_channel_sample(6, VOLTAGE);
+		  printf("3V3 Reading: %f", value*4.125); // new way of comuting 3v3.
 
-		  printf("3V3 Reading: %f", (412.5/312.5)*(3.3-value));
+
+//		  printf("3V3 Reading: %f", (412.5/312.5)*(3.3-value));
 
 //
 //		  for(int i =0 ; i<16; i++){
@@ -1071,12 +1076,13 @@ float temperature;
 
 #endif
 
+HAL_Delay(1000);
 
 
 #ifdef MAX31856_T1
 
-//	   max31856_trigger_one_shot(&max31856T1);
-//	   HAL_Delay(200); // Wait until single is ready
+	   max31856_trigger_one_shot(&max31856T1);
+	   HAL_Delay(200); // Wait until single is ready
 	   temperature = max31856_read_CJ_temp(&max31856T1);
 	   max31856_read_fault(&max31856T1);
 	   if (max31856T1.sr.val) {
@@ -1119,6 +1125,54 @@ float temperature;
 	   printf("Temperature Reading TC2: %f \r\n", temperature);
 
 #endif
+
+//
+//	   temperature = max31856_read_TC_temp(&max31856T1);
+//	   printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
+//	   if(temperature<130){
+//		    printf("ON \n");
+//			HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
+//			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+//	   }
+//	   else if(temperature>135){
+//		    printf("OFF \n");
+//		    HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+//			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
+//	   }
+//	   else{
+//	   }
+
+	    //	HAL_Delay(18000000); // wait 3 minutes.
+
+		  // 130 - 135
+
+
+
+
+//		while(!acquired){
+//			//  need to select correct TC before testing.
+//			temp = max31856_read_TC_temp(&max31856T4);
+//			max31856_read_fault(&max31856T4);
+//			if (max31856T4.sr.val) {
+//				return -1;
+//			}
+//
+//			if(temp > THRESHOLD_TEMP){ // need to set correct threshold temperature value based on the readings we are getting.
+//				acquired = true;
+//			}
+//
+//
+//
+//
+//		}
+//
+//		HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+//
+
+
+
+
+
 
 #ifdef MAX31856_T3
 
