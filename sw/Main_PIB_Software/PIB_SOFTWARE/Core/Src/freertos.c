@@ -387,6 +387,8 @@ void StartTask03(void *argument)
 
 //		  printf("SAFETY COMMAND");
 
+		// implement stop heat experiement 
+
 		// check for cmd and set flags w/ reference to the flags. 
 
 
@@ -430,13 +432,32 @@ void StartTask04(void *argument)
 
 		  switch(frame.cmd){ // decode command and execute
 // Open Solenoid Valve Commands
+		  	  	case HEAT_CATALYST:
+		  	  		osMutexAcquire(data_mutexHandle, osWaitForever);
+					Payload_Sys.sys_flags.heat_experiment = true; 
+		  	  		osMutexRelease(data_mutexHandle, osWaitForever);
+		  	  		while(Payload_Sys.sys_flags.heat_experiment){
+		  	  			float temperature;
 
+						temperature = max31856_read_TC_temp(&max31856T1);
+						//printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
+						if(temperature<130){
+							printf("ON \n");
+							HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
+							HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+						}
+						else if(temperature>135){
+							printf("OFF \n");
+							HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+							HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
+						}
+						else{
+						}
 
-
-
+		  	  		}
+		  	  		break;
 		 		case CMD_OPEN_SOL1:
 					// check flags before executing.
-					
 					// or create a dedicated function for actuating valves so we don't check multiple times (in cmd / sequence functions.)
 		 			HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET); break;
 		 		case CMD_OPEN_SOL2:
@@ -998,9 +1019,7 @@ void StartTask04(void *argument)
 
 // Events
 
-		 		case HEAT_CATALYST:
-		 			heat_catalyst();
-					break;
+
 		 		case CMD_MANUAL_HEATER_TURN_ON:
 		 		    HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
 					break;

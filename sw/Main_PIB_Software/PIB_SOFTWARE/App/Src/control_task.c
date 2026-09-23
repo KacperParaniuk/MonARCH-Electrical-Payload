@@ -10,7 +10,9 @@
 #include "control_task.h"
 
 extern float value;
-extern max31856_t max31856T4;
+extern max31856_t max31856T1;
+extern max31856_t max31856T2;
+
 
 
 
@@ -80,7 +82,9 @@ void run_chemical_thruster(){
 
 int heat_catalyst(){
 
-	//
+	
+
+		HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
 	bool acquired = false;
 
 	HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);

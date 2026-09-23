@@ -601,7 +601,7 @@ int32_t menu_single_conversion(AD7124_CHIP chip)
 
 	clear_channel_samples();
 	//	adi_clear_console();
-	printf("Running Single conversion mode...\r\nPress Escape to stop\r\n\r\n");
+	//printf("Running Single conversion mode...\r\nPress Escape to stop\r\n\r\n");
 
 	// Clear the ADC CTRL MODE bits, selecting continuous mode
     dev->regs[AD7124_ADC_Control].value &= ~(AD7124_ADC_CTRL_REG_MODE(0xf));
@@ -616,7 +616,7 @@ int32_t menu_single_conversion(AD7124_CHIP chip)
         dev->regs[AD7124_ADC_Control].value |= AD7124_ADC_CTRL_REG_MODE(1);
 
     	if ( (error_code = ad7124_write_register(dev, dev->regs[AD7124_ADC_Control]) ) < 0) {
-    		printf("Error (%ld) setting AD7124 Single conversion mode.\r\n", error_code);
+    		//printf("Error (%ld) setting AD7124 Single conversion mode.\r\n", error_code);
 //    		adi_press_any_key_to_continue();
     		continue;
     	}
@@ -647,12 +647,12 @@ int32_t menu_single_conversion(AD7124_CHIP chip)
 			/* also need to clear the channel enable bit so the next single conversion cycle will sample the next channel */
 			dev->regs[AD7124_Channel_0 + channelRead].value &= ~AD7124_CH_MAP_REG_CH_ENABLE;
 			if ( (error_code = ad7124_write_register(dev, dev->regs[AD7124_Channel_0 + channelRead]) ) < 0) {
-				printf("Error (%ld) Clearing channel %d Enable bit.\r\n", error_code, channelRead);
+				//printf("Error (%ld) Clearing channel %d Enable bit.\r\n", error_code, channelRead);
 //				adi_press_any_key_to_continue();
 				continue;
 			}
 		} else {
-			printf("Channel Read was %d, which is not < AD7124_CHANNEL_COUNT\r\n", channelRead);
+			//printf("Channel Read was %d, which is not < AD7124_CHANNEL_COUNT\r\n", channelRead);
 		}
     }
 

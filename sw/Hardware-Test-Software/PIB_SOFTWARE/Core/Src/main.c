@@ -1126,21 +1126,21 @@ HAL_Delay(1000);
 
 #endif
 
-//
-//	   temperature = max31856_read_TC_temp(&max31856T1);
-//	   printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
-//	   if(temperature<130){
-//		    printf("ON \n");
-//			HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
-//			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
-//	   }
-//	   else if(temperature>135){
-//		    printf("OFF \n");
-//		    HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
-//			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
-//	   }
-//	   else{
-//	   }
+
+	   temperature = max31856_read_TC_temp(&max31856T1);
+	   printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
+	   if(temperature<130){
+		    printf("ON \n");
+			HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+	   }
+	   else if(temperature>135){
+		    printf("OFF \n");
+		    HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
+	   }
+	   else{
+	   }
 
 	    //	HAL_Delay(18000000); // wait 3 minutes.
 
@@ -1149,25 +1149,25 @@ HAL_Delay(1000);
 
 
 
-//		while(!acquired){
-//			//  need to select correct TC before testing.
-//			temp = max31856_read_TC_temp(&max31856T4);
-//			max31856_read_fault(&max31856T4);
-//			if (max31856T4.sr.val) {
-//				return -1;
-//			}
-//
-//			if(temp > THRESHOLD_TEMP){ // need to set correct threshold temperature value based on the readings we are getting.
-//				acquired = true;
-//			}
-//
-//
-//
-//
-//		}
-//
-//		HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
-//
+		// while(!acquired){
+		// 	//  need to select correct TC before testing.
+		// 	temp = max31856_read_TC_temp(&max31856T4);
+		// 	max31856_read_fault(&max31856T4);
+		// 	if (max31856T4.sr.val) {
+		// 		return -1;
+		// 	}
+
+		// 	if(temp > THRESHOLD_TEMP){ // need to set correct threshold temperature value based on the readings we are getting.
+		// 		acquired = true;
+		// 	}
+
+
+
+
+		// }
+
+		// HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+
 
 
 
