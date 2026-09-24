@@ -152,6 +152,8 @@ CMD_READ_ID_V = 82
 CMD_READ_ID_FDC = 83 
 
 
+CMD_SAFETY_STOP_HEAT_TEST= 112
+
 
 
 
@@ -219,6 +221,11 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
         """Toggling the RED LED on the payload interface board."""
         print("Toggling LED...")
         self.pib.send_command(CMD_TOGGLE_RED_LED)  
+
+    def do_stop_heat_e(self, arg):
+            """Toggling the RED LED on the payload interface board."""
+            print("Toggling OFF Heat Experiment...")
+            self.pib.send_command(CMD_SAFETY_STOP_HEAT_TEST)  
 
     def do_toggle_green_led(self, arg):
         """Toggling the GREEN LED on the payload interface board."""
@@ -554,20 +561,24 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
         self.pib.send_command(CMD_REGULATE_PRESSURE_2_INPUT_VALUE, duty)
 
 
+
+
     def do_run_sequence(self, args):
         """Run a predefined sequence on the payload interface board."""
         
-        print(arg)
+        print(args)
 
-        if(arg == "fill_accum1"):
+        if(args == "fill_accum1"):
             print("Running fill accumulator sequence 1...")
             # Here add the code to run sequence 1 on the PIB
 
-        if(arg == "run_espray"):
+        if(args == "run_espray"):
             print("Running e-spray sequence...")
 
-        if(arg=="run_heat_test"):
+        if(args=="run_heat_test"):
             print("Running Heat Test")
+            self.pib.send_command(CMD_HEAT_CATALYST)
+
 
         # Here add the code to open the valve on the PIB
 

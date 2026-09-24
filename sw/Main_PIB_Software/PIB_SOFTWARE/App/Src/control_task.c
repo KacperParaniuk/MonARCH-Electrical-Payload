@@ -84,32 +84,32 @@ int heat_catalyst(){
 
 	
 
-		HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
-	bool acquired = false;
+	// HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+	// bool acquired = false;
 
-	HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
+	// HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
 
-    //	HAL_Delay(18000000); // wait 3 minutes.
+    // //	HAL_Delay(18000000); // wait 3 minutes.
 
-	while(!acquired){
-		//  need to select correct TC before testing.
-		value = max31856_read_TC_temp(&max31856T4);
-		max31856_read_fault(&max31856T4);
-		if (max31856T4.sr.val) {
-			return -1;
-		}
+	// while(!acquired){
+	// 	//  need to select correct TC before testing.
+	// 	value = max31856_read_TC_temp(&max31856T4);
+	// 	max31856_read_fault(&max31856T4);
+	// 	if (max31856T4.sr.val) {
+	// 		return -1;
+	// 	}
 
-		if(value > THRESHOLD_TEMP){ // need to set correct threshold temperature value based on the readings we are getting.
-			acquired = true;
-		}
-
-
-	}
-
-	HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+	// 	if(value > THRESHOLD_TEMP){ // need to set correct threshold temperature value based on the readings we are getting.
+	// 		acquired = true;
+	// 	}
 
 
-	return 1;
+	// }
+
+	// HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+
+
+	// return 1;
 
 
 

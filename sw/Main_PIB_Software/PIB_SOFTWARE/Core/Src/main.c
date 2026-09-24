@@ -104,6 +104,7 @@ struct Data_Log data_payload_packet;
 Payload_System Payload_Sys;
 
 
+extern osMutexId_t uart_mutexHandle;
 
 
 
@@ -439,18 +440,28 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
+
+
+
+
+
 /* USER CODE BEGIN 4 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+
 
     if (huart->Instance != USART3) return;  // protect against any other UART commands
 
     rx_cmd_copy[0] = rx_cmd[0];
     rx_cmd_copy[1] = rx_cmd[1];
 
+    osMutexAcquire(uart_mutexHandle, osWaitForever);
+
 	HAL_UART_Receive_IT(&huart3, rx_cmd, 2);
 
 
-	//printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
+	osMutexRelease(uart_mutexHandle);
+	printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
 	//printf("Argument %d \r\n", rx_cmd[1]); // print argument value to stm console
 
 
@@ -464,6 +475,15 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	}
 
 
+
+
+}
+
+int _write(int file, char *ptr, int len) {
+ for (int i = 0; i < len; i++) {
+ ITM_SendChar((*ptr++));
+ }
+ return len;
 }
 /* USER CODE END 4 */
 

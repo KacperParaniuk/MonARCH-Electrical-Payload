@@ -13,6 +13,10 @@
 
 #include "data_log.h"
 
+#include "cmsis_os2.h"
+
+
+extern osMutexId_t uart_mutexHandle;
 
 void Serial_Print(const char *message){ // need pointer b/c messages will be stored in READ ONLY flash memory
 	char buf[128];
@@ -63,11 +67,22 @@ void printPacketJSON(const struct Data_Log *packet){
 
 
     char buff[1024];
-    int len = sprintf(buff,"{\"type\": \"data\", \"value\": {\"temperature_1\": %f, \"temperature_2\": %f, \"temperature_3\": %f, \"temperature_4\": %f, \"temperature_5\": %f, \"cj_temperature_1\": %f, \"cj_temperature_2\": %f, \"cj_temperature_3\": %f, \"cj_temperature_4\": %f, \"cj_temperature_5\": %f, \"pressure_1\": %f, \"pressure_2\": %f, \"pressure_3\": %f, \"pressure_4\": %f, \"pressure_5\": %f, \"pressure_6\": %f, \"pressure_7\": %f, \"pressure_8\": %f, \"valve_1\": %d, \"valve_2\": %d, \"valve_3\": %d, \"valve_4\": %d, \"valve_5\": %d, \"valve_6\": %d, \"valve_7\": %d, \"valve_8\": %d, \"valve_9\": %d, \"valve_10\": %d, \"valve_11\": %d, \"valve_12\": %d, \"valve_13\": %d, \"valve_14\": %d, \"valve_15\": %d, \"valve_16\": %d, \"valve_17\": %d, \"valve_18\": %d}}"
+    int len = sprintf(buff,"{\"type\": \"data\", \"value\": {\"temperature_1\": %f, \"temperature_2\": %f, \"temperature_3\": %f, \"temperature_4\": %f, \"temperature_5\": %f, \"cj_temperature_1\": %f, \"cj_temperature_2\": %f, \"cj_temperature_3\": %f, \"cj_temperature_4\": %f, \"cj_temperature_5\": %f, \"pressure_1\": %f, \"pressure_2\": %f, \"pressure_3\": %f, \"pressure_4\": %f, \"pressure_5\": %f, \"pressure_6\": %f, \"pressure_7\": %f, \"pressure_8\": %f, \"valve_1\": %d, \"valve_2\": %d, \"valve_3\": %d, \"valve_4\": %d, \"valve_5\": %d, \"valve_6\": %d, \"valve_7\": %d, \"valve_8\": %d, \"valve_9\": %d, \"valve_10\": %d, \"valve_11\": %d, \"valve_12\": %d, \"valve_13\": %d, \"valve_14\": %d, \"valve_15\": %d, \"valve_16\": %d, \"valve_17\": %d, \"valve_18\": %d}} \n"
     		,packet->tc1.tc_temp,packet->tc2.tc_temp,packet->tc3.tc_temp,packet->tc4.tc_temp,packet->tc5.tc_temp,packet->tc1.cj_temp,packet->tc2.cj_temp,packet->tc3.cj_temp,packet->tc4.cj_temp,packet->tc5.cj_temp,packet->pressure_1.pressure,packet->pressure_2.pressure,packet->pressure_3.pressure,packet->pressure_4.pressure,packet->pressure_5.pressure,packet->pressure_6.pressure,packet->pressure_7.pressure,packet->pressure_8.pressure, packet->valve_states.valve_1, packet->valve_states.valve_2,packet->valve_states.valve_3,packet->valve_states.valve_4.state,packet->valve_states.valve_5,packet->valve_states.valve_6.state,packet->valve_states.valve_7,packet->valve_states.valve_8,packet->valve_states.valve_9,packet->valve_states.valve_10,packet->valve_states.valve_11,packet->valve_states.valve_12,packet->valve_states.valve_13,packet->valve_states.valve_14,packet->valve_states.valve_15,packet->valve_states.valve_16,packet->valve_states.valve_17,packet->valve_states.valve_18);
 
 
+    //printf("%s\n", buff); when on the arduino board is able to receive if not then no data is received
+
+    osDelay(500); // need this in order to substiture for the printf maybe the stm is just to quick as sending data/?
+
+
+
+    osMutexAcquire(uart_mutexHandle, osWaitForever);
+
     HAL_UART_Transmit(&huart3, (uint8_t *)buff, len, 1000);
+
+
+    osMutexRelease(uart_mutexHandle);
 
 
 

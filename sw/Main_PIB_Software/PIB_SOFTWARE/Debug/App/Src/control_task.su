@@ -1,6 +1,6 @@
-../App/Src/control_task.c:17:6:pressurize_lines	4	static
-../App/Src/control_task.c:23:6:fill_accumulators	4	static
-../App/Src/control_task.c:59:6:fill_espray	4	static
-../App/Src/control_task.c:64:6:toggle_nominal_espray_run	4	static
-../App/Src/control_task.c:72:6:run_chemical_thruster	4	static
-../App/Src/control_task.c:81:5:heat_catalyst	16	static
+../App/Src/control_task.c:19:6:pressurize_lines	4	static
+../App/Src/control_task.c:25:6:fill_accumulators	4	static
+../App/Src/control_task.c:61:6:fill_espray	4	static
+../App/Src/control_task.c:66:6:toggle_nominal_espray_run	4	static
+../App/Src/control_task.c:74:6:run_chemical_thruster	4	static
+../App/Src/control_task.c:83:5:heat_catalyst	4	static

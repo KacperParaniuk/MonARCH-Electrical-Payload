@@ -186,6 +186,8 @@
 
 #define CMD_SAFETY_BEGIN 0x6F
 
+#define CMD_SAFETY_STOP_HEAT_TEST 0x70
+
 
 
 

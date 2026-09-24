@@ -185,6 +185,11 @@ osMutexId_t error_flag_mutexHandle;
 const osMutexAttr_t error_flag_mutex_attributes = {
   .name = "error_flag_mutex"
 };
+/* Definitions for uart_mutex */
+osMutexId_t uart_mutexHandle;
+const osMutexAttr_t uart_mutex_attributes = {
+  .name = "uart_mutex"
+};
 /* Definitions for s_rx_semaphore */
 osSemaphoreId_t s_rx_semaphoreHandle;
 const osSemaphoreAttr_t s_rx_semaphore_attributes = {
@@ -238,6 +243,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of error_flag_mutex */
   error_flag_mutexHandle = osMutexNew(&error_flag_mutex_attributes);
+
+  /* creation of uart_mutex */
+  uart_mutexHandle = osMutexNew(&uart_mutex_attributes);
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
@@ -385,7 +393,16 @@ void StartTask03(void *argument)
 
 	  if(osMessageQueueGet(q_safety_cmdsHandle, &frame, NULL, osWaitForever)==osOK){
 
-//		  printf("SAFETY COMMAND");
+//  printf("SAFETY COMMAND");
+		  osMutexAcquire(data_mutexHandle, osWaitForever);
+
+		  switch(frame.cmd){
+			  case CMD_SAFETY_STOP_HEAT_TEST:
+				  Payload_Sys.sys_flags.heat_experiment = false; // turn off heat experiment
+				  break;
+		  }
+
+		  osMutexRelease(data_mutexHandle);
 
 		// implement stop heat experiement 
 
@@ -425,8 +442,8 @@ void StartTask04(void *argument)
 //		  printf("Normal CMD Received");
 
 		  // fsm integration here?
-		osMutexAcquire(spi_mutexHandle, osWaitForever);
-	    osMutexAcquire(i2c_mutexHandle, osWaitForever); // see how this pans out rather than inputting this for each and every command.
+	//	osMutexAcquire(spi_mutexHandle, osWaitForever);
+	  //  osMutexAcquire(i2c_mutexHandle, osWaitForever); // see how this pans out rather than inputting this for each and every command.
 
 
 
@@ -435,11 +452,14 @@ void StartTask04(void *argument)
 		  	  	case HEAT_CATALYST:
 		  	  		osMutexAcquire(data_mutexHandle, osWaitForever);
 					Payload_Sys.sys_flags.heat_experiment = true; 
-		  	  		osMutexRelease(data_mutexHandle, osWaitForever);
+		  	  		osMutexRelease(data_mutexHandle);
 		  	  		while(Payload_Sys.sys_flags.heat_experiment){
 		  	  			float temperature;
 
-						temperature = max31856_read_TC_temp(&max31856T1);
+
+
+						temperature = max31856_read_CJ_temp(&max31856T1); // change to TJ when done testing.
+						printf("%f", temperature);
 						//printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
 						if(temperature<130){
 							printf("ON \n");
@@ -1049,8 +1069,8 @@ void StartTask04(void *argument)
 				default:
 					break;
 		 	}
-		osMutexRelease(spi_mutexHandle);
-		osMutexRelease(i2c_mutexHandle);
+//		osMutexRelease(spi_mutexHandle);
+//		osMutexRelease(i2c_mutexHandle);
 	  }
     osDelay(1);
   }
@@ -1072,13 +1092,13 @@ void StartTask05(void *argument)
   {
     osDelay(1000);
     // TX UART Task (waits for queue to get pushed to) queue contains composed packet 
-
+//
 	 if(osSemaphoreAcquire(s_tx_semaphoreHandle, osWaitForever)== osOK){
 	 // Take Data Mutex
 	 	osMutexAcquire(data_mutexHandle, osWaitForever);
 	 // printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.?
-	 	printPacketJSON(&Payload_Sys.data_log);
-	 	HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+	 	//printPacketJSON(&Payload_Sys.data_log); << this UART TX breaks the commanding features
+	 	// HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
      // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work?
 
 	 // Release Data Mutex
@@ -1104,7 +1124,7 @@ void StartTask06(void *argument)
 	// task data acquistion 
 
 	// take data mutex 
-
+//
     osMutexAcquire(data_mutexHandle, osWaitForever);
     osMutexAcquire(spi_mutexHandle, osWaitForever);
     osMutexAcquire(i2c_mutexHandle, osWaitForever);
