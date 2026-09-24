@@ -71,18 +71,18 @@ void printPacketJSON(const struct Data_Log *packet){
     		,packet->tc1.tc_temp,packet->tc2.tc_temp,packet->tc3.tc_temp,packet->tc4.tc_temp,packet->tc5.tc_temp,packet->tc1.cj_temp,packet->tc2.cj_temp,packet->tc3.cj_temp,packet->tc4.cj_temp,packet->tc5.cj_temp,packet->pressure_1.pressure,packet->pressure_2.pressure,packet->pressure_3.pressure,packet->pressure_4.pressure,packet->pressure_5.pressure,packet->pressure_6.pressure,packet->pressure_7.pressure,packet->pressure_8.pressure, packet->valve_states.valve_1, packet->valve_states.valve_2,packet->valve_states.valve_3,packet->valve_states.valve_4.state,packet->valve_states.valve_5,packet->valve_states.valve_6.state,packet->valve_states.valve_7,packet->valve_states.valve_8,packet->valve_states.valve_9,packet->valve_states.valve_10,packet->valve_states.valve_11,packet->valve_states.valve_12,packet->valve_states.valve_13,packet->valve_states.valve_14,packet->valve_states.valve_15,packet->valve_states.valve_16,packet->valve_states.valve_17,packet->valve_states.valve_18);
 
 
-    //printf("%s\n", buff); when on the arduino board is able to receive if not then no data is received
+    printf("%s\n", buff); // when on the arduino board is able to receive if not then no data is received
 
     osDelay(500); // need this in order to substiture for the printf maybe the stm is just to quick as sending data/?
 
 
-
-    osMutexAcquire(uart_mutexHandle, osWaitForever);
-
-    HAL_UART_Transmit(&huart3, (uint8_t *)buff, len, 1000);
-
-
-    osMutexRelease(uart_mutexHandle);
+//
+//    osMutexAcquire(uart_mutexHandle, osWaitForever);
+//
+//    HAL_UART_Transmit(&huart3, (uint8_t *)buff, len, 1000);
+//
+//
+//    osMutexRelease(uart_mutexHandle);
 
 
 

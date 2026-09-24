@@ -456,18 +456,20 @@ void StartTask04(void *argument)
 		  	  		while(Payload_Sys.sys_flags.heat_experiment){
 		  	  			float temperature;
 
+		  	  			osDelay(1000); // allows other threads to run while experiment is running like the polling thread
 
+		  	  			printPacketJSON(&Payload_Sys.data_log);
 
-						temperature = max31856_read_CJ_temp(&max31856T1); // change to TJ when done testing.
+						temperature = Payload_Sys.data_log.tc1.tc_temp; // max31856_read_CJ_temp(&max31856T1); // change to TJ when done testing.
 						printf("%f", temperature);
 						//printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
 						if(temperature<130){
-							printf("ON \n");
+							printf(" ON \n");
 							HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
 							HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 						}
 						else if(temperature>135){
-							printf("OFF \n");
+							printf(" OFF \n");
 							HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
 							HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
 						}
@@ -1097,7 +1099,7 @@ void StartTask05(void *argument)
 	 // Take Data Mutex
 	 	osMutexAcquire(data_mutexHandle, osWaitForever);
 	 // printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.?
-	 	//printPacketJSON(&Payload_Sys.data_log); << this UART TX breaks the commanding features
+	 	// printPacketJSON(&Payload_Sys.data_log); << this UART TX breaks the commanding features
 	 	// HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
      // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work?
 
