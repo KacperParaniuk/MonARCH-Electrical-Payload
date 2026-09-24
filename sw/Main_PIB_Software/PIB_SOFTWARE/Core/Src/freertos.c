@@ -476,7 +476,9 @@ void StartTask04(void *argument)
 						else{
 						}
 
+
 		  	  		}
+		  	  		HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET); // safety for when out of loop heater turns off.
 		  	  		break;
 		 		case CMD_OPEN_SOL1:
 					// check flags before executing.
