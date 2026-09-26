@@ -5,6 +5,7 @@ struct system_flags { // aka command flags that prevent or allow certain command
     bool exceed_temp_flag;
     bool exceed_pressure_flag;
     bool heat_experiment;
+    bool JSON_reading;
 
 };
 

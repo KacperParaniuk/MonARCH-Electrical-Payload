@@ -336,6 +336,7 @@ static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console
 			for (uint8_t i = 0; i < AD7124_CHANNEL_COUNT; i++) {
 				// if showing all channels, or channel is enabled
 				if ((showOnlyEnabledChannels == false) || (dev->regs[AD7124_Channel_0 + i].value & AD7124_CH_MAP_REG_CH_ENABLE) ) {
+
 				   printf("\t%-2d\t%-10ld\t%ld\t\t% .6f\r\n",
 							i, channel_samples[i], channel_samples_count[i],
 							ad7124_convert_sample_to_voltage(dev, i, channel_samples[i]) );
@@ -674,7 +675,7 @@ int32_t menu_single_conversion(AD7124_CHIP chip)
 	}
 
 	printf("Single Conversion completed...\r\n\r\n");
-	dislay_channel_samples(SHOW_ENABLED_CHANNELS, DISPLAY_DATA_STREAM, chip);
+	dislay_channel_samples(SHOW_ENABLED_CHANNELS, DISPLAY_DATA_TABULAR, chip);
 
 //	adi_press_any_key_to_continue();
 	return(MENU_CONTINUE);

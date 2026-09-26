@@ -162,6 +162,8 @@
 #define PPU_ON 0X40
 #define PPU_OFF 0X41
 
+#define CMD_READ_DATA 0x6F
+
 
 
 
@@ -184,9 +186,12 @@
 
 // Safety Commands
 
-#define CMD_SAFETY_BEGIN 0x6F
-
+#define CMD_SAFETY_BEGIN 0x70
 #define CMD_SAFETY_STOP_HEAT_TEST 0x70
+#define CMD_SAFETY_STOP_READ_DATA 0x71
+
+
+
 
 
 

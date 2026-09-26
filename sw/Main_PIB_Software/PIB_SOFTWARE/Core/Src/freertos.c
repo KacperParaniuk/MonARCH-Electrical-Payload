@@ -400,7 +400,12 @@ void StartTask03(void *argument)
 			  case CMD_SAFETY_STOP_HEAT_TEST:
 				  Payload_Sys.sys_flags.heat_experiment = false; // turn off heat experiment
 				  break;
+			  case CMD_SAFETY_STOP_READ_DATA:
+				  Payload_Sys.sys_flags.JSON_reading = false;
 		  }
+
+
+
 
 		  osMutexRelease(data_mutexHandle);
 
@@ -449,10 +454,27 @@ void StartTask04(void *argument)
 
 		  switch(frame.cmd){ // decode command and execute
 // Open Solenoid Valve Commands
+
+
+
+		  	    case CMD_READ_DATA:
+		  	    	osMutexAcquire(data_mutexHandle, osWaitForever);
+		  	    	Payload_Sys.sys_flags.JSON_reading = true;
+		  	    	osMutexRelease(data_mutexHandle);
+		  	    	while(Payload_Sys.sys_flags.JSON_reading){
+		  	  			osDelay(1000); // allows other threads to run while experiment is running like the polling thread
+		  	  			printPacketJSON(&Payload_Sys.data_log);
+		  	    	}
+		  	    	break;
+
+
 		  	  	case HEAT_CATALYST:
 		  	  		osMutexAcquire(data_mutexHandle, osWaitForever);
 					Payload_Sys.sys_flags.heat_experiment = true; 
 		  	  		osMutexRelease(data_mutexHandle);
+		  	  		HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin,GPIO_PIN_SET);
+
+
 		  	  		while(Payload_Sys.sys_flags.heat_experiment){
 		  	  			float temperature;
 
@@ -460,15 +482,15 @@ void StartTask04(void *argument)
 
 		  	  			printPacketJSON(&Payload_Sys.data_log);
 
-						temperature = Payload_Sys.data_log.tc1.tc_temp; // max31856_read_CJ_temp(&max31856T1); // change to TJ when done testing.
+						temperature = Payload_Sys.data_log.tc2.tc_temp; // max31856_read_CJ_temp(&max31856T1); // change to TJ when done testing.
 						printf("%f", temperature);
 						//printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
-						if(temperature<130){
+						if(temperature<140){
 							printf(" ON \n");
 							HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
 							HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 						}
-						else if(temperature>135){
+						else if(temperature>145){
 							printf(" OFF \n");
 							HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
 							HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
@@ -478,6 +500,8 @@ void StartTask04(void *argument)
 
 
 		  	  		}
+		  	  		HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin,GPIO_PIN_RESET);
+
 		  	  		HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET); // safety for when out of loop heater turns off.
 		  	  		break;
 		 		case CMD_OPEN_SOL1:

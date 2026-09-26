@@ -122,6 +122,8 @@ CMD_READ_CATALYST_LEVEL_A2  = 58
 # UART Command for heater
 
 CMD_HEAT_CATALYST  = 59
+CMD_READ_DATA = 111
+
 
 CMD_MANUAL_HEATER_TURN_ON = 89
 CMD_MANUAL_HEATER_TURN_OFF = 90
@@ -152,7 +154,11 @@ CMD_READ_ID_V = 82
 CMD_READ_ID_FDC = 83 
 
 
+
+
 CMD_SAFETY_STOP_HEAT_TEST= 112
+CMD_SAFETY_STOP_READ_DATA = 113
+
 
 
 
@@ -222,10 +228,37 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
         print("Toggling LED...")
         self.pib.send_command(CMD_TOGGLE_RED_LED)  
 
+    def do_read_data(self, arg):
+        print("Reading JSON Data")
+        self.pib.send_command(CMD_READ_DATA)
+        
+    def do_stop_read(self, arg):
+        print("Reading JSON Data")
+        self.pib.send_command(CMD_SAFETY_STOP_READ_DATA)
+
     def do_stop_heat_e(self, arg):
             """Toggling the RED LED on the payload interface board."""
             print("Toggling OFF Heat Experiment...")
             self.pib.send_command(CMD_SAFETY_STOP_HEAT_TEST)  
+
+
+    def do_run_sequence(self, args):
+        """Run a predefined sequence on the payload interface board."""
+        
+        print(args)
+
+        if(args == "fill_accum1"):
+            print("Running fill accumulator sequence 1...")
+            # Here add the code to run sequence 1 on the PIB
+
+        if(args == "run_espray"):
+            print("Running e-spray sequence...")
+
+        if(args=="run_heat_test"):
+            print("Running Heat Test")
+            self.pib.send_command(CMD_HEAT_CATALYST)
+
+
 
     def do_toggle_green_led(self, arg):
         """Toggling the GREEN LED on the payload interface board."""
@@ -560,27 +593,6 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
 
         self.pib.send_command(CMD_REGULATE_PRESSURE_2_INPUT_VALUE, duty)
 
-
-
-
-    def do_run_sequence(self, args):
-        """Run a predefined sequence on the payload interface board."""
-        
-        print(args)
-
-        if(args == "fill_accum1"):
-            print("Running fill accumulator sequence 1...")
-            # Here add the code to run sequence 1 on the PIB
-
-        if(args == "run_espray"):
-            print("Running e-spray sequence...")
-
-        if(args=="run_heat_test"):
-            print("Running Heat Test")
-            self.pib.send_command(CMD_HEAT_CATALYST)
-
-
-        # Here add the code to open the valve on the PIB
 
     def do_help(self, arg):
         """List available commands with "help" or detailed help with "help cmd"."""

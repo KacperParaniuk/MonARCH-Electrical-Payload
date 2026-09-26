@@ -38,14 +38,14 @@
 
 
 
-//#define AD7124
+#define AD7124
 //#define AD7124_P
-//#define AD7124_V
-//#define AD7124_SINGLE_MODE
+#define AD7124_V
+#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
 //#define FDC2214_S
-#define MAX31856
-#define MAX31856_T1
+//#define MAX31856
+//#define MAX31856_T1
 //#define MAX31856_T2
 //#define MAX31856_T3
 //#define MAX31856_T4
@@ -620,11 +620,11 @@ float temperature;
 
 //		  menu_single_conversion(VOLTAGE);
 //
-		  value = display_channel_sample(0, VOLTAGE);
-
-//		  printf("12V Reading: %f", (610 / 510)*(12-value));
-
-		  printf("3V3 Reading: %f", 6*value); // new way of computing.
+//		  value = display_channel_sample(0, VOLTAGE);
+//
+////		  printf("12V Reading: %f", (610 / 510)*(12-value));
+//
+//		  printf("3V3 Reading: %f", 6*value); // new way of computing.
 
 
 		  value = display_channel_sample(6, VOLTAGE);
@@ -1127,20 +1127,20 @@ HAL_Delay(1000);
 #endif
 
 
-	   temperature = max31856_read_TC_temp(&max31856T1);
-	   printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
-	   if(temperature<130){
-		    printf("ON \n");
-			HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
-	   }
-	   else if(temperature>135){
-		    printf("OFF \n");
-		    HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
-	   }
-	   else{
-	   }
+//	   temperature = max31856_read_TC_temp(&max31856T1);
+//	   printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
+//	   if(temperature<130){
+//		    printf("ON \n");
+//			HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
+//			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+//	   }
+//	   else if(temperature>135){
+//		    printf("OFF \n");
+//		    HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+//			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
+//	   }
+//	   else{
+//	   }
 
 	    //	HAL_Delay(18000000); // wait 3 minutes.
 
