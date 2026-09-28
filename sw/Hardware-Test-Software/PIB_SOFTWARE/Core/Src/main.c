@@ -39,7 +39,7 @@
 
 
 #define AD7124
-//#define AD7124_P
+#define AD7124_P
 #define AD7124_V
 #define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
@@ -259,7 +259,7 @@ int main(void)
 
 #ifdef AD7124_P
 
-  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_B,PRESSURE)) < 0) {
+  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,PRESSURE)) < 0) {
 		// Handle error setting up AD7124 here
 	  printf("Failed to init ad7124 pressure \n");
 	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
@@ -576,11 +576,16 @@ float temperature;
 #ifdef AD7124_SINGLE_MODE
 		  /* Read all enabled channels on ADC in single conversion mode */
 //		  menu_single_conversion(PRESSURE);
-		  for(int i =0 ; i<16; i++){
-		 			  value = display_channel_sample(i, PRESSURE);
-		 			  printf("Channel %d: Voltage: %f ",i , value);
 
-		 }
+		  value = display_channel_sample(6, PRESSURE);
+		  printf("3V3 Reading: %f", value*4.125); // new way of comuting 3v3.
+
+
+//		  for(int i =0 ; i<16; i++){
+//		 			  value = display_channel_sample(i, PRESSURE);
+//		 			  printf("Channel %d: Voltage: %f ",i , value);
+//
+//		 }
 
 
 #endif	

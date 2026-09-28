@@ -332,6 +332,12 @@ static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console
 	switch(console_mode) {
 		case DISPLAY_DATA_TABULAR:
 		{
+			 if(chip==VOLTAGE){
+				printf("Voltage Chip");
+			 }
+			 else{
+				printf("Pressure Chip");
+			}
 			printf("\tCh\tValue\t\tCount\t\tVoltage\r\n");
 			for (uint8_t i = 0; i < AD7124_CHANNEL_COUNT; i++) {
 				// if showing all channels, or channel is enabled
@@ -356,6 +362,7 @@ static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console
 					 *  add the comma before we output the next channel but
 					 *  only if at least one channel has been printed
 					 */
+
 				   if (channel_printed) {
 					   printf(", ");
 				   }
@@ -582,7 +589,7 @@ int32_t do_continuous_conversion(uint8_t display_mode,  AD7124_CHIP chip)
  *             single conversion run again, until no channels are enabled.
  *             The original enable state of each channel is then restored.
  */
-int32_t menu_single_conversion(AD7124_CHIP chip)
+int32_t menu_single_conversion (AD7124_CHIP chip)
 {
 	int32_t    error_code;
 	uint16_t   channel_enable_mask = 0;
@@ -638,6 +645,7 @@ int32_t menu_single_conversion(AD7124_CHIP chip)
 		}
     	/*
 		 * No error, need to process the sample, what channel has been read? update that channelSample
+		 *The status bits were automatically appended due to the DATA_STATUS bit in the ADC_CONTROL_REGISTER was setrr.
 		 */
 		uint8_t channelRead = dev->regs[AD7124_Status].value & 0x0000000F;
 
