@@ -905,6 +905,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/10c1972a-6116-4d44-bea5-5978e381b1a9"
+					(reference "#PWR0211")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -984,6 +990,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/10c1972a-6116-4d44-bea5-5978e381b1a9"
+					(reference "#PWR0210")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -1059,6 +1071,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/10c1972a-6116-4d44-bea5-5978e381b1a9"
+					(reference "#PWR0213")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/10c1972a-6116-4d44-bea5-5978e381b1a9"
 					(reference "#PWR0213")
 					(unit 1)
 				)
@@ -1143,6 +1161,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/10c1972a-6116-4d44-bea5-5978e381b1a9"
+					(reference "R40")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -1216,6 +1240,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/10c1972a-6116-4d44-bea5-5978e381b1a9"
+					(reference "#PWR0212")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/10c1972a-6116-4d44-bea5-5978e381b1a9"
 					(reference "#PWR0212")
 					(unit 1)
 				)
@@ -1363,6 +1393,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/10c1972a-6116-4d44-bea5-5978e381b1a9"
+					(reference "Q19")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/10c1972a-6116-4d44-bea5-5978e381b1a9"
 					(reference "Q19")
 					(unit 1)
 				)
