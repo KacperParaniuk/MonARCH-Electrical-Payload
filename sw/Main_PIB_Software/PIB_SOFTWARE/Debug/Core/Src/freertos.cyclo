@@ -3,6 +3,6 @@
 ../Core/Src/freertos.c:341:6:StartTask02	3
 ../Core/Src/freertos.c:384:6:StartTask03	4
 ../Core/Src/freertos.c:431:6:StartTask04	140
-../Core/Src/freertos.c:1115:6:StartTask05	2
-../Core/Src/freertos.c:1146:6:StartTask06	1
-../Core/Src/freertos.c:1207:6:StartTask07	1
+../Core/Src/freertos.c:1128:6:StartTask05	2
+../Core/Src/freertos.c:1159:6:StartTask06	1
+../Core/Src/freertos.c:1220:6:StartTask07	1

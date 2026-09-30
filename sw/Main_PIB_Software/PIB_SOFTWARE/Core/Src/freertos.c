@@ -630,85 +630,85 @@ void StartTask04(void *argument)
 // Voltage Poll and Conversion are already done on a different thread.
 
 				case CMD_READ_12VA_VB:
-					value = Payload_Sys->data_log._12VA_VB.voltage;
+					value = Payload_Sys.data_log._12VA_VB.voltage;
 					//value = display_channel_sample(CH_12VA_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
 					break;
 
 				case CMD_READ_12VA_VA:
-					value = Payload_Sys->data_log._12VA_VA.voltage;
+					value = Payload_Sys.data_log._12VA_VA.voltage;
 //					value = display_channel_sample(CH_12VA_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VB:
-					value = Payload_Sys->data_log._3V3_VB.voltage;
+					value = Payload_Sys.data_log._3V3_VB.voltage;
 					//value = display_channel_sample(CH_3V3_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 3V3_VB: %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VA:
-					value = Payload_Sys->data_log._3V3_VA.voltage;
+					value = Payload_Sys.data_log._3V3_VA.voltage;
 					//value = display_channel_sample(CH_3V3_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 3V3_VA: %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VA:
-					value = Payload_Sys->data_log._VBAT_VA.voltage;
+					value = Payload_Sys.data_log._VBAT_VA.voltage;
 					//value = display_channel_sample(CH_VBAT_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading VBAT_VA: %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VB:
-					value = Payload_Sys->data_log._VBAT_VB.voltage;
+					value = Payload_Sys.data_log._VBAT_VB.voltage;
 					// value = display_channel_sample(CH_VBAT_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
 					break;
 				case CMD_READ_12VB_VA:
-					value = Payload_Sys->data_log._12VB_VA.voltage;
+					value = Payload_Sys.data_log._12VB_VA.voltage;
 					//value = display_channel_sample(CH_12VB_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
 					break;
 				case CMD_READ_12VB_VB:
-					value = Payload_Sys->data_log._12VB_VB.voltage;
+					value = Payload_Sys.data_log._12VB_VB.voltage;
 					//value = display_channel_sample(CH_12VB_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
 					break;
 
 // Read PC104 Currents
 				case CMD_READ_12VA_VB_CURRENT:
-					value = Payload_Sys->data_log._12VA_VB.current;
+					value = Payload_Sys.data_log._12VA_VB.current;
 					//value = ad7124_read_channel_current_pc104(CH_12VA_VB);
 					Serial_Printf("PC104 Current Reading 12VA_VB: %d \r\n", value);
 					break;
 				case CMD_READ_12VA_VA_CURRENT:
-					value = Payload_Sys->data_log._12VA_VA.current;
+					value = Payload_Sys.data_log._12VA_VA.current;
 					//value = ad7124_read_channel_current_pc104(CH_12VA_VA);
 					Serial_Printf("PC104 Current Reading 12VA_VA: %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VB_CURRENT:
-					value = Payload_Sys->data_log._3V3_VB.current;
+					value = Payload_Sys.data_log._3V3_VB.current;
 					//value = ad7124_read_channel_current_pc104(CH_3V3_VB);
 					Serial_Printf("PC104 Current Reading 3V3_VB : %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VA_CURRENT:
-					value = Payload_Sys->data_log._3V3_VA.current;
+					value = Payload_Sys.data_log._3V3_VA.current;
 					//value = ad7124_read_channel_current_pc104(CH_3V3_VA);
 					Serial_Printf("PC104 Current Reading 3V3_VA : %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VA_CURRENT:
-					value = Payload_Sys->data_log._VBAT_VA.current;
+					value = Payload_Sys.data_log._VBAT_VA.current;
 					//value = ad7124_read_channel_current_pc104(CH_VBAT_VA);
 					Serial_Printf("PC104 Current Reading VBAT_VA : %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VB_CURRENT:
-					value = Payload_Sys->data_log._VBAT_VB.current;
+					value = Payload_Sys.data_log._VBAT_VB.current;
 					//value = ad7124_read_channel_current_pc104(CH_VBAT_VB);
 					Serial_Printf("PC104 Current Reading VBAT_VB : %d \r\n", value);
 					break;
 				case CMD_READ_12VB_VA_CURRENT:
-					value = Payload_Sys->data_log._12VB_VA.current;
+					value = Payload_Sys.data_log._12VB_VA.current;
 					//value = ad7124_read_channel_current_pc104(CH_12VB_VA);
 					Serial_Printf("PC104 Current Reading 12VB_VA: %d \r\n",  value);
 					break;
 				case CMD_READ_12VB_VB_CURRENT:
-					value = Payload_Sys->data_log._12VB_VB.current;
+					value = Payload_Sys.data_log._12VB_VB.current;
 					//value = ad7124_read_channel_current_pc104(CH_12VB_VB);
 					Serial_Printf("PC104 Current Reading 12VB_VB: %d \r\n", value);
 					break;
