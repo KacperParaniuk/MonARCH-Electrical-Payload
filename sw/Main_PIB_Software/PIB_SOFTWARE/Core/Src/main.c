@@ -233,6 +233,8 @@ int main(void)
 
   HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
 
+  HAL_GPIO_WritePin(POW12_EN_GPIO_Port, POW12_EN_Pin, GPIO_PIN_SET); // turn on voltage regulator.
+
  // create a setup function for all sensors and turn red_led if fails to setup / read from device id's of all sensors
 
     // RED = MAX31856 Fail
@@ -253,7 +255,7 @@ int main(void)
 
 // Setup pressure ADC
 
-    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,PRESSURE)) < 0) {
+    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_B,PRESSURE)) < 0) {
   		// Handle error setting up AD7124 here
   	  printf("Failed to init ad7124 pressure \n");
   	  HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
@@ -263,7 +265,7 @@ int main(void)
 
 // Setup Voltage ADC
 
-    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,VOLTAGE)) < 0) {
+    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_B,VOLTAGE)) < 0) {
   		// Handle error setting up AD7124 here
   	  printf("Failed to init ad7124 voltage \n");
   	  HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
@@ -342,8 +344,8 @@ int main(void)
    		// need to figure out what to do if an iniit fails in flight
    		printf("Failed to communicate with FDC2214");
 
-      HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
-      HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
 
    		reset_fdc2214();
    		printf("Try Again");

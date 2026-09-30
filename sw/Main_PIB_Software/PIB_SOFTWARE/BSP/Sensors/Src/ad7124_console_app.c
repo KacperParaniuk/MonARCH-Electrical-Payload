@@ -324,63 +324,122 @@ void read_error_register(AD7124_CHIP chip){
  * @param showOnlyEnabledChannels  only channels that are enabled are displayed
  *
  */
-static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console_mode, AD7124_CHIP chip)
+static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console_mode, AD7124_CHIP chip, Payload_System *Payload_Sys)
 {
 
     struct ad7124_dev *dev = (chip == PRESSURE) ? pAd7124_dev : vAd7124_dev;
 
-	switch(console_mode) {
-		case DISPLAY_DATA_TABULAR:
-		{
-			printf("\tCh\tValue\t\tCount\t\tVoltage\r\n");
-			for (uint8_t i = 0; i < AD7124_CHANNEL_COUNT; i++) {
-				// if showing all channels, or channel is enabled
-				if ((showOnlyEnabledChannels == false) || (dev->regs[AD7124_Channel_0 + i].value & AD7124_CH_MAP_REG_CH_ENABLE) ) {
-				   printf("\t%-2d\t%-10ld\t%ld\t\t% .6f\r\n",
-							i, channel_samples[i], channel_samples_count[i],
-							ad7124_convert_sample_to_voltage(dev, i, channel_samples[i]) );
-				}
-			}
-			break;
-		}
-		case DISPLAY_DATA_STREAM:
-		{
-			// Output a CSV list of the sampled channels as voltages on a single line
-			bool channel_printed = false;
+    if(chip==VOLTAGE){
 
-			for (uint8_t i = 0; i < AD7124_CHANNEL_COUNT; i++) {
-				// if showing all channels, or channel is enabled
-				if ((showOnlyEnabledChannels == false) || (dev->regs[AD7124_Channel_0 + i].value & AD7124_CH_MAP_REG_CH_ENABLE) ) {
-					/*
-					 *  add the comma before we output the next channel but
-					 *  only if at least one channel has been printed
-					 */
-				   if (channel_printed) {
-					   printf(", ");
-				   }
-					printf("%.6f",
-							ad7124_convert_sample_to_voltage(dev, i, channel_samples[i]) );
-					channel_printed = true;
-				}
-			}
-			printf("\r\n");
-			break;
-		}
-		default:
-		{
-			// ASSERT(false);
-		}
-	}
+    	for (uint8_t i = 0; i < AD7124_CHANNEL_COUNT; i++) {
+    		float value;
+    		value = ad7124_convert_sample_to_voltage(dev, i, channel_samples[i]);
+
+
+    		// multiplying the constant accounts for the voltage divider values in order to get back to the input voltage.
+    		if(i==0){
+    			Payload_Sys->data_log._12VA_VB.voltage = value*6;
+    			Payload_Sys->data_log._12VA_VB.current = value*6 / 100000;
+    		}
+    		else if(i==2){
+    			Payload_Sys->data_log._12VA_VA.voltage = value*6;
+    			Payload_Sys->data_log._12VA_VA.current = value*6 / 100000;
+    		}
+    		else if(i==4){
+    			Payload_Sys->data_log._3V3_VB.voltage = value*4.125;
+    			Payload_Sys->data_log._3V3_VB.current = value*4.125 / 100000;
+    		}
+    		else if(i==6){
+    			Payload_Sys->data_log._3V3_VA.voltage = value*4.125;
+    			Payload_Sys->data_log._3V3_VA.current = value*4.125 / 100000;
+
+    		}
+    		else if (i==8){
+    			Payload_Sys->data_log._VBAT_VA.voltage = value*6;
+    			Payload_Sys->data_log._VBAT_VA.current = value*6 / 100000;
+
+    		}
+    		else if (i==10){
+    			Payload_Sys->data_log._VBAT_VB.voltage = value*6;
+    			Payload_Sys->data_log._VBAT_VB.current = value*6 / 100000;
+
+    		}
+    		else if (i==12){
+    			Payload_Sys->data_log._12VB_VA.voltage = value*6;
+    			Payload_Sys->data_log._12VB_VA.current = value*6 / 100000;
+
+    		}
+    		else if(i==14){
+    			Payload_Sys->data_log._12VB_VB.voltage = value*6;
+    			Payload_Sys->data_log._12VB_VB.current = value*6 / 100000;
+
+    		}
+
+    					// if showing all channels, or channel is enabled
+//    		if ((showOnlyEnabledChannels == false) || (dev->regs[AD7124_Channel_0 + i].value & AD7124_CH_MAP_REG_CH_ENABLE) ) {
+//    			printf("\t%-2d\t%-10ld\t%ld\t\t% .6f\r\n",
+//    				i, channel_samples[i], channel_samples_count[i],
+//    			ad7124_convert_sample_to_voltage(dev, i, channel_samples[i]) );
+//    		}
+    	}
+    }
+    else{
+    	// for Pressure.
+
+    }
+
+//	switch(console_mode) {
+//		case DISPLAY_DATA_TABULAR:
+//		{
+//			printf("\tCh\tValue\t\tCount\t\tVoltage\r\n");
+//			for (uint8_t i = 0; i < AD7124_CHANNEL_COUNT; i++) {
+//				// if showing all channels, or channel is enabled
+//				if ((showOnlyEnabledChannels == false) || (dev->regs[AD7124_Channel_0 + i].value & AD7124_CH_MAP_REG_CH_ENABLE) ) {
+//				   printf("\t%-2d\t%-10ld\t%ld\t\t% .6f\r\n",
+//							i, channel_samples[i], channel_samples_count[i],
+//							ad7124_convert_sample_to_voltage(dev, i, channel_samples[i]) );
+//				}
+//			}
+//			break;
+//		}
+//		case DISPLAY_DATA_STREAM:
+//		{
+//			// Output a CSV list of the sampled channels as voltages on a single line
+//			bool channel_printed = false;
+//
+//			for (uint8_t i = 0; i < AD7124_CHANNEL_COUNT; i++) {
+//				// if showing all channels, or channel is enabled
+//				if ((showOnlyEnabledChannels == false) || (dev->regs[AD7124_Channel_0 + i].value & AD7124_CH_MAP_REG_CH_ENABLE) ) {
+//					/*
+//					 *  add the comma before we output the next channel but
+//					 *  only if at least one channel has been printed
+//					 */
+//				   if (channel_printed) {
+//					   printf(", ");
+//				   }
+//					printf("%.6f",
+//							ad7124_convert_sample_to_voltage(dev, i, channel_samples[i]) );
+//					channel_printed = true;
+//				}
+//			}
+//			printf("\r\n");
+//			break;
+//		}
+//		default:
+//		{
+//			// ASSERT(false);
+//		}
+
 }
 
 
-float display_channel_sample(uint8_t channel, AD7124_CHIP chip){
+float display_channel_sample(uint8_t channel, AD7124_CHIP chip, Payload_System *Payload_Sys){
 	float value;
 
     struct ad7124_dev *dev = (chip == PRESSURE) ? pAd7124_dev : vAd7124_dev;
 
 	// sample data into array
-	menu_single_conversion(chip);
+	menu_single_conversion(chip, Payload_Sys); // Payload_Sys already a pointer.
 
 
 	// print channel
@@ -389,6 +448,24 @@ float display_channel_sample(uint8_t channel, AD7124_CHIP chip){
 		//	printf("Channel %d: Voltage: %f ",channel, value);
 
 }
+
+void update_voltage_channels(Payload_System *Payload_Sys){
+//	float value;
+//
+//    struct ad7124_dev *dev = (chip == PRESSURE) ? pAd7124_dev : vAd7124_dev;
+//
+//	// sample data into array
+	menu_single_conversion(VOLTAGE, Payload_Sys);
+//
+//
+//	// print channel
+//	value = ad7124_convert_sample_to_voltage(dev, channel, channel_samples[channel]);
+//	return value;
+//		//	printf("Channel %d: Voltage: %f ",channel, value);
+
+
+}
+
 
 
 /*!
@@ -513,7 +590,7 @@ int32_t do_continuous_conversion(uint8_t display_mode,  AD7124_CHIP chip)
 			printf("Channel Read was %d, which is not < AD7124_CHANNEL_COUNT\r\n", channel_read);
 		}
 
-		dislay_channel_samples(SHOW_ENABLED_CHANNELS, display_mode, chip);
+		//dislay_channel_samples(SHOW_ENABLED_CHANNELS, display_mode, chip);
 
 		HAL_Delay(1000); // One second delay see if it breaks
 
@@ -581,7 +658,7 @@ int32_t do_continuous_conversion(uint8_t display_mode,  AD7124_CHIP chip)
  *             single conversion run again, until no channels are enabled.
  *             The original enable state of each channel is then restored.
  */
-int32_t menu_single_conversion(AD7124_CHIP chip)
+int32_t menu_single_conversion(AD7124_CHIP chip, Payload_System *Payload_Sys)
 {
 	int32_t    error_code;
 	uint16_t   channel_enable_mask = 0;
@@ -674,7 +751,7 @@ int32_t menu_single_conversion(AD7124_CHIP chip)
 	}
 
 	printf("Single Conversion completed...\r\n\r\n");
-	dislay_channel_samples(SHOW_ENABLED_CHANNELS, DISPLAY_DATA_STREAM, chip);
+	dislay_channel_samples(SHOW_ENABLED_CHANNELS, DISPLAY_DATA_STREAM, chip, Payload_Sys);
 
 //	adi_press_any_key_to_continue();
 	return(MENU_CONTINUE);
@@ -799,12 +876,12 @@ int32_t ad7124_read_device_id(AD7124_CHIP chip){
 float ad7124_read_channel_current_pc104(uint8_t channel){
 	
 	// read the channel voltage from the ad7124
-	float voltage = display_channel_sample(channel, VOLTAGE);
+	//float voltage = display_channel_sample(channel, VOLTAGE);
 
 	// convert the voltage to current using the formula I = (Vout - 0.5) / 0.16
-	float current = (voltage) / 100000; // 100k resistor in series with all volt voltage dividers 
+	//float current = (voltage) / 100000; // 100k resistor in series with all volt voltage dividers
 
-	return current;
+	//return current;
 
 }
 

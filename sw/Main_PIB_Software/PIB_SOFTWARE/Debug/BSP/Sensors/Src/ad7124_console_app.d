@@ -39,7 +39,10 @@ BSP/Sensors/Src/ad7124_console_app.o: \
  ../BSP/Sensors/Inc/ad7124_regs.h ../BSP/Sensors/Inc/ad7124.h \
  ../BSP/Sensors/Inc/ad7124_support.h \
  ../BSP/Sensors/Inc/ad7124_regs_configs.h \
- ../BSP/Sensors/Inc/ad7124_console_app.h
+ ../BSP/Sensors/Inc/ad7124_console_app.h ../Core/Inc/systems.h \
+ ../Core/Inc/flags.h ../Core/Inc/errors.h ../Core/Inc/fsm_states.h \
+ ../Core/Inc/data_log.h ../BSP/Sensors/Inc/max31856.h \
+ ../BSP/Sensors/Inc/FDC2214.h ../Core/Inc/i2c.h ../BSP/Inc/mosfet_ctrl.h
 ../BSP/Inc/platform_support.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
@@ -87,3 +90,12 @@ BSP/Sensors/Src/ad7124_console_app.o: \
 ../BSP/Sensors/Inc/ad7124_support.h:
 ../BSP/Sensors/Inc/ad7124_regs_configs.h:
 ../BSP/Sensors/Inc/ad7124_console_app.h:
+../Core/Inc/systems.h:
+../Core/Inc/flags.h:
+../Core/Inc/errors.h:
+../Core/Inc/fsm_states.h:
+../Core/Inc/data_log.h:
+../BSP/Sensors/Inc/max31856.h:
+../BSP/Sensors/Inc/FDC2214.h:
+../Core/Inc/i2c.h:
+../BSP/Inc/mosfet_ctrl.h:

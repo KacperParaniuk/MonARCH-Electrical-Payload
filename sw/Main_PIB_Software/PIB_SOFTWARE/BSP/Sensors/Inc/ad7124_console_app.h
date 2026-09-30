@@ -50,6 +50,8 @@ POSSIBILITY OF SUCH DAMAGE.
 #define AD7124_CONSOLE_APP_H_
 
 //#include "adi_console_menu.h" not using menu
+#include "systems.h"
+
 
 /* #defines */
 #define AD7124_CONFIG_A       0
@@ -78,11 +80,12 @@ int32_t ad7124_read_device_id(AD7124_CHIP chip);
 
 // Functionality
 
-int32_t menu_single_conversion(AD7124_CHIP chip);
+int32_t menu_single_conversion(AD7124_CHIP chip, Payload_System *Payload_Sys);
 int32_t do_continous_conversion(uint8_t display_mode);
-float display_channel_sample(uint8_t channel, AD7124_CHIP chip);
+float display_channel_sample(uint8_t channel, AD7124_CHIP chip, Payload_System *Payload_Sys);
 float ad7124_read_channel_current_pc104(uint8_t channel);
 
+void update_voltage_channels(Payload_System *Payload_Sys);
 
 //extern console_menu ad7124_main_menu; << not using menu
 

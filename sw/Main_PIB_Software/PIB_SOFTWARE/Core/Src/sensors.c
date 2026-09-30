@@ -6,6 +6,8 @@
  */
 
 #include "sensors.h"
+#include "ad7124_console_app.h"
+
 
 extern max31856_t max31856T1;
 extern max31856_t max31856T2;
@@ -17,80 +19,81 @@ extern max31856_t max31856T5;
 
 void update_voltage_data(Payload_System *Payload_Sys){
 
-	float value;
+
+	update_voltage_channels(Payload_Sys);
 
 
-	value = display_channel_sample(CH_12VA_VB,VOLTAGE);
-
-	Payload_Sys->data_log._12VA_VB.voltage = value;
-
-	value = display_channel_sample(CH_12VA_VA,VOLTAGE);
-
-	Payload_Sys->data_log._12VA_VA.voltage = value;
-
-	value = display_channel_sample(CH_3V3_VB,VOLTAGE);
-
-	Payload_Sys->data_log._3V3_VB.voltage = value;
-
-	value = display_channel_sample(CH_3V3_VA,VOLTAGE);
-
-	Payload_Sys->data_log._3V3_VA.voltage = value;
-
-    value = display_channel_sample(CH_VBAT_VA,VOLTAGE);
-
-	Payload_Sys->data_log._VBAT_VA.voltage = value;
-
-	value = display_channel_sample(CH_VBAT_VB,VOLTAGE);
-
-	Payload_Sys->data_log._VBAT_VB.voltage = value;
-
-	value = display_channel_sample(CH_12VB_VA,VOLTAGE);
-
-	Payload_Sys->data_log._12VB_VA.voltage = value;
-
-	value = display_channel_sample(CH_12VB_VB,VOLTAGE);
-
-	Payload_Sys->data_log._12VB_VB.voltage = value;
+//	value = display_channel_sample(CH_12VA_VB,VOLTAGE);
+//
+//	Payload_Sys->data_log._12VA_VB.voltage = value;
+//
+//	value = display_channel_sample(CH_12VA_VA,VOLTAGE);
+//
+//	Payload_Sys->data_log._12VA_VA.voltage = value;
+//
+//	value = display_channel_sample(CH_3V3_VB,VOLTAGE);
+//
+//	Payload_Sys->data_log._3V3_VB.voltage = value;
+//
+//	value = display_channel_sample(CH_3V3_VA,VOLTAGE);
+//
+//	Payload_Sys->data_log._3V3_VA.voltage = value;
+//
+//    value = display_channel_sample(CH_VBAT_VA,VOLTAGE);
+//
+//	Payload_Sys->data_log._VBAT_VA.voltage = value;
+//
+//	value = display_channel_sample(CH_VBAT_VB,VOLTAGE);
+//
+//	Payload_Sys->data_log._VBAT_VB.voltage = value;
+//
+//	value = display_channel_sample(CH_12VB_VA,VOLTAGE);
+//
+//	Payload_Sys->data_log._12VB_VA.voltage = value;
+//
+//	value = display_channel_sample(CH_12VB_VB,VOLTAGE);
+//
+//	Payload_Sys->data_log._12VB_VB.voltage = value;
 
 // Read PC104 Currents
 
-	value = ad7124_read_channel_current_pc104(CH_12VA_VB);
-
-	Payload_Sys->data_log._12VA_VB.current = value;
-
-	value = ad7124_read_channel_current_pc104(CH_12VA_VA);
-
-	Payload_Sys->data_log._12VA_VA.current = value;
-
-
-	value = ad7124_read_channel_current_pc104(CH_3V3_VB);
-
-	Payload_Sys->data_log._3V3_VB.current = value;
-
-
-	value = ad7124_read_channel_current_pc104(CH_3V3_VA);
-
-	Payload_Sys->data_log._3V3_VA.current = value;
-
-
-	value = ad7124_read_channel_current_pc104(CH_VBAT_VA);
-
-	Payload_Sys->data_log._VBAT_VA.current = value;
-
-
-	value = ad7124_read_channel_current_pc104(CH_VBAT_VB);
-
-	Payload_Sys->data_log._VBAT_VB.current = value;
-
-
-	value = ad7124_read_channel_current_pc104(CH_12VB_VA);
-
-	Payload_Sys->data_log._12VB_VA.current = value;
-
-
-	value = ad7124_read_channel_current_pc104(CH_12VB_VB);
-
-	Payload_Sys->data_log._12VB_VB.current = value;
+//	value = ad7124_read_channel_current_pc104(CH_12VA_VB);
+//
+//	Payload_Sys->data_log._12VA_VB.current = value;
+//
+//	value = ad7124_read_channel_current_pc104(CH_12VA_VA);
+//
+//	Payload_Sys->data_log._12VA_VA.current = value;
+//
+//
+//	value = ad7124_read_channel_current_pc104(CH_3V3_VB);
+//
+//	Payload_Sys->data_log._3V3_VB.current = value;
+//
+//
+//	value = ad7124_read_channel_current_pc104(CH_3V3_VA);
+//
+//	Payload_Sys->data_log._3V3_VA.current = value;
+//
+//
+//	value = ad7124_read_channel_current_pc104(CH_VBAT_VA);
+//
+//	Payload_Sys->data_log._VBAT_VA.current = value;
+//
+//
+//	value = ad7124_read_channel_current_pc104(CH_VBAT_VB);
+//
+//	Payload_Sys->data_log._VBAT_VB.current = value;
+//
+//
+//	value = ad7124_read_channel_current_pc104(CH_12VB_VA);
+//
+//	Payload_Sys->data_log._12VB_VA.current = value;
+//
+//
+//	value = ad7124_read_channel_current_pc104(CH_12VB_VB);
+//
+//	Payload_Sys->data_log._12VB_VB.current = value;
 
 }
 

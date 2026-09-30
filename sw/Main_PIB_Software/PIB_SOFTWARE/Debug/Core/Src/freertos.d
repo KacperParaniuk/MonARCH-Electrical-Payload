@@ -47,10 +47,10 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../Core/Inc/systems.h ../Core/Inc/flags.h ../Core/Inc/errors.h \
  ../Core/Inc/fsm_states.h ../Core/Inc/data_log.h \
- ../BSP/Sensors/Inc/ad7124_console_app.h ../BSP/Sensors/Inc/ad7124.h \
- ../BSP/Inc/spi_support.h ../BSP/Sensors/Inc/delay.h \
- ../BSP/Sensors/Inc/max31856.h ../BSP/Sensors/Inc/FDC2214.h \
- ../Core/Inc/i2c.h ../BSP/Inc/mosfet_ctrl.h ../BSP/Sensors/Inc/fdc2214.h \
+ ../BSP/Sensors/Inc/ad7124.h ../BSP/Inc/spi_support.h \
+ ../BSP/Sensors/Inc/delay.h ../BSP/Sensors/Inc/max31856.h \
+ ../BSP/Sensors/Inc/FDC2214.h ../Core/Inc/i2c.h ../BSP/Inc/mosfet_ctrl.h \
+ ../BSP/Sensors/Inc/ad7124_console_app.h ../BSP/Sensors/Inc/fdc2214.h \
  ../App/Inc/control_task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
@@ -109,7 +109,6 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Core/Inc/errors.h:
 ../Core/Inc/fsm_states.h:
 ../Core/Inc/data_log.h:
-../BSP/Sensors/Inc/ad7124_console_app.h:
 ../BSP/Sensors/Inc/ad7124.h:
 ../BSP/Inc/spi_support.h:
 ../BSP/Sensors/Inc/delay.h:
@@ -117,6 +116,7 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../BSP/Sensors/Inc/FDC2214.h:
 ../Core/Inc/i2c.h:
 ../BSP/Inc/mosfet_ctrl.h:
+../BSP/Sensors/Inc/ad7124_console_app.h:
 ../BSP/Sensors/Inc/fdc2214.h:
 ../App/Inc/control_task.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:

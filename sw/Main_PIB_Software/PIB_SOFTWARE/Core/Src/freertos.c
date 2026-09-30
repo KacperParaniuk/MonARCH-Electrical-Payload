@@ -626,77 +626,90 @@ void StartTask04(void *argument)
 
 // READ PC104 ADC CHANNELS
 
+// Resistor Values = |------ 510K ----- 100K ------|>
+// Voltage Poll and Conversion are already done on a different thread.
+
 				case CMD_READ_12VA_VB:
-
-					value = display_channel_sample(CH_12VA_VB,VOLTAGE);
+					value = Payload_Sys->data_log._12VA_VB.voltage;
+					//value = display_channel_sample(CH_12VA_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
-
-					// Resistor Values = |------ 510K ----- 100K ------|>
-
-					// need to input conversions here.
 					break;
 
 				case CMD_READ_12VA_VA:
-				
-					value = display_channel_sample(CH_12VA_VA,VOLTAGE);
+					value = Payload_Sys->data_log._12VA_VA.voltage;
+//					value = display_channel_sample(CH_12VA_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VB:
-					value = display_channel_sample(CH_3V3_VB,VOLTAGE);
+					value = Payload_Sys->data_log._3V3_VB.voltage;
+					//value = display_channel_sample(CH_3V3_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 3V3_VB: %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VA:
-					value = display_channel_sample(CH_3V3_VA,VOLTAGE);
+					value = Payload_Sys->data_log._3V3_VA.voltage;
+					//value = display_channel_sample(CH_3V3_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 3V3_VA: %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VA:
-					value = display_channel_sample(CH_VBAT_VA,VOLTAGE);
+					value = Payload_Sys->data_log._VBAT_VA.voltage;
+					//value = display_channel_sample(CH_VBAT_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading VBAT_VA: %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VB:
-					value = display_channel_sample(CH_VBAT_VB,VOLTAGE);
+					value = Payload_Sys->data_log._VBAT_VB.voltage;
+					// value = display_channel_sample(CH_VBAT_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
 					break;
 				case CMD_READ_12VB_VA:
-					value = display_channel_sample(CH_12VB_VA,VOLTAGE);
+					value = Payload_Sys->data_log._12VB_VA.voltage;
+					//value = display_channel_sample(CH_12VB_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
 					break;
 				case CMD_READ_12VB_VB:
-					value = display_channel_sample(CH_12VB_VB,VOLTAGE);
+					value = Payload_Sys->data_log._12VB_VB.voltage;
+					//value = display_channel_sample(CH_12VB_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
 					break;
 
 // Read PC104 Currents
 				case CMD_READ_12VA_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_12VA_VB);
+					value = Payload_Sys->data_log._12VA_VB.current;
+					//value = ad7124_read_channel_current_pc104(CH_12VA_VB);
 					Serial_Printf("PC104 Current Reading 12VA_VB: %d \r\n", value);
 					break;
 				case CMD_READ_12VA_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_12VA_VA);
+					value = Payload_Sys->data_log._12VA_VA.current;
+					//value = ad7124_read_channel_current_pc104(CH_12VA_VA);
 					Serial_Printf("PC104 Current Reading 12VA_VA: %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_3V3_VB);
+					value = Payload_Sys->data_log._3V3_VB.current;
+					//value = ad7124_read_channel_current_pc104(CH_3V3_VB);
 					Serial_Printf("PC104 Current Reading 3V3_VB : %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_3V3_VA);
+					value = Payload_Sys->data_log._3V3_VA.current;
+					//value = ad7124_read_channel_current_pc104(CH_3V3_VA);
 					Serial_Printf("PC104 Current Reading 3V3_VA : %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_VBAT_VA);
+					value = Payload_Sys->data_log._VBAT_VA.current;
+					//value = ad7124_read_channel_current_pc104(CH_VBAT_VA);
 					Serial_Printf("PC104 Current Reading VBAT_VA : %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_VBAT_VB);
+					value = Payload_Sys->data_log._VBAT_VB.current;
+					//value = ad7124_read_channel_current_pc104(CH_VBAT_VB);
 					Serial_Printf("PC104 Current Reading VBAT_VB : %d \r\n", value);
 					break;
 				case CMD_READ_12VB_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_12VB_VA);
+					value = Payload_Sys->data_log._12VB_VA.current;
+					//value = ad7124_read_channel_current_pc104(CH_12VB_VA);
 					Serial_Printf("PC104 Current Reading 12VB_VA: %d \r\n",  value);
 					break;
 				case CMD_READ_12VB_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_12VB_VB);
+					value = Payload_Sys->data_log._12VB_VB.current;
+					//value = ad7124_read_channel_current_pc104(CH_12VB_VB);
 					Serial_Printf("PC104 Current Reading 12VB_VB: %d \r\n", value);
 					break;
 // Read Pressure Sensors
@@ -1125,8 +1138,8 @@ void StartTask05(void *argument)
 	 // Take Data Mutex
 	 	osMutexAcquire(data_mutexHandle, osWaitForever);
 	 // printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.?
-	 	// printPacketJSON(&Payload_Sys.data_log); << this UART TX breaks the commanding features
-	 	// HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+	 	printPacketJSON(&Payload_Sys.data_log); //  << this UART TX breaks the commanding features
+	 // HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
      // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work?
 
 	 // Release Data Mutex
@@ -1174,7 +1187,7 @@ void StartTask06(void *argument)
 //
 //    // Update PC104 Voltage Data
 //
-    // update_voltage_data(&Payload_Sys); // found this to be killing the MCU
+    update_voltage_data(&Payload_Sys); // found this to be killing the MCU
 //
 //	// poll from sensors and store in global data_log attached to Payload_System
 //

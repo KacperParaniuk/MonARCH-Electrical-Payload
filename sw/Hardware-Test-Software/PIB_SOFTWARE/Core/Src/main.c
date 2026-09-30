@@ -629,7 +629,7 @@ float temperature;
 //
 ////		  printf("12V Reading: %f", (610 / 510)*(12-value));
 //
-//		  printf("3V3 Reading: %f", 6*value); // new way of computing.
+//		  printf("12v Reading: %f", 6*value); // new way of computing.
 
 
 		  value = display_channel_sample(6, VOLTAGE);
