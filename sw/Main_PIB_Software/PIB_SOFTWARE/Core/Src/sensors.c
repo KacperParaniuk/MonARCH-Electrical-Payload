@@ -87,6 +87,7 @@ void update_temperature_data(Payload_System *Payload_Sys){
 
 
 
+
 void update_valve_states(Payload_System *Payload_Sys){ // pointer so we can reference the global struct
 	uint8_t pinState = 0;
 
@@ -143,5 +144,15 @@ void update_valve_states(Payload_System *Payload_Sys){ // pointer so we can refe
 
 	pinState = HAL_GPIO_ReadPin(valve18_GPIO_Port, valve18_Pin);
 	Payload_Sys->data_log.valve_states.valve_18 = pinState;
+
+}
+
+void update_capacitance_reading(){
+
+
+
+
+
+
 
 }

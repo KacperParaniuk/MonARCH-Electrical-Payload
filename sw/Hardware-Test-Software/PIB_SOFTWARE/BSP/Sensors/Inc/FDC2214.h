@@ -48,7 +48,7 @@
 
 #define FDC2214_L_HENRY       18e-6f   /* 18 uH inductor */
 //#define FDC2214_C_PARALLEL    33e-12f  /* 33 pF fixed cap */
-#define FDC2214_C_PARALLEL    100e-9f  /* 33 pF fixed cap */
+#define FDC2214_C_PARALLEL    27e-9f  /* 33 pF fixed cap */ // we are using now 27 pF
 
 #define FDC2214_F_REF         43400000.0f /* internal clock Hz Typical: 43.4 MHz */
 #define FDC2214_CAP_EMPTY   0 // insert capacitance reading when container is empty

@@ -643,7 +643,12 @@ float FDC2214_readCapacitancePf(fdc2214_channel_t ch, float inductance_uH)
     float w = 2.0f * 3.14 * f;
     float C = 1.0f / (L * w * w);
 
+    //return C - FDC2214_C_PARALLEL; // test .
+
+
     return C * 1.0e12f; // farads -> picofarads
+
+
 }
 
 
