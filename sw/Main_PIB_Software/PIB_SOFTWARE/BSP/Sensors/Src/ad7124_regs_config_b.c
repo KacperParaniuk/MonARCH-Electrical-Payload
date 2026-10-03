@@ -76,7 +76,7 @@ const struct ad7124_st_reg ad7124_regs_config_b[AD7124_REG_NO] = {
 		{0x16, 0x0001, 2, 1}, // 13
 		{0x17, 0x81CF, 2, 1}, // 14 1000 0001 1100 1111
 		{0x18, 0x0001, 2, 1}, /* AD7124_Channel_15 */
-		{0x19, 0x0060, 2, 1}, /* AD7124_Config_0 */ // set 8 to 0 if you want unipolar ( I do want to test this )
+		{0x19, 0x0860, 2, 1}, /* AD7124_Config_0 */ // set 8 to 0 if you want unipolar ( I do want to test this ) x0060
 		{0x1A, 0x0860, 2, 1},
 		{0x1B, 0x0860, 2, 1},
 		{0x1C, 0x0860, 2, 1},

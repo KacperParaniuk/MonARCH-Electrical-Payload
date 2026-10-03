@@ -329,13 +329,11 @@ static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console
 
     struct ad7124_dev *dev = (chip == PRESSURE) ? pAd7124_dev : vAd7124_dev;
 
-    if(chip==VOLTAGE){
+    for (uint8_t i = 0; i < AD7124_CHANNEL_COUNT; i++) {
+    	float value;
+    	value = ad7124_convert_sample_to_voltage(dev, i, channel_samples[i]);
 
-    	for (uint8_t i = 0; i < AD7124_CHANNEL_COUNT; i++) {
-    		float value;
-    		value = ad7124_convert_sample_to_voltage(dev, i, channel_samples[i]);
-
-
+        if(chip==VOLTAGE){
     		// multiplying the constant accounts for the voltage divider values in order to get back to the input voltage.
     		if(i==0){
     			Payload_Sys->data_log._12VA_VB.voltage = value*6;
@@ -375,17 +373,53 @@ static void dislay_channel_samples(bool showOnlyEnabledChannels, uint8_t console
 
     		}
 
-    					// if showing all channels, or channel is enabled
+   			// if showing all channels, or channel is enabled
 //    		if ((showOnlyEnabledChannels == false) || (dev->regs[AD7124_Channel_0 + i].value & AD7124_CH_MAP_REG_CH_ENABLE) ) {
 //    			printf("\t%-2d\t%-10ld\t%ld\t\t% .6f\r\n",
 //    				i, channel_samples[i], channel_samples_count[i],
 //    			ad7124_convert_sample_to_voltage(dev, i, channel_samples[i]) );
 //    		}
     	}
-    }
-    else{
-    	// for Pressure.
+        else{
+             // for Pressure.
 
+			 // convert value of adc to pressure: 
+			 // 4 to 20mA, 2-wire Loop Power
+
+			 // 4 mA = 0 PSI  (minimum)
+			 // 20 mA = 150 PSI (maximum)
+
+			float value;
+			float pressure=0; // PSI 
+    		value = ad7124_convert_sample_to_voltage(dev, i, channel_samples[i]);
+			// current = value / 125
+			pressure = ((value / 125) * (150 / .016)) - 37.5; // conversion to pressure (150 / .016 = pressure / Amp) (- 37.5 = the offset for 0 PSI)
+
+    		if(i==0){
+    			Payload_Sys->data_log.pressure_1.pressure = pressure; 
+    		}
+    		else if(i==2){
+    			Payload_Sys->data_log.pressure_2.pressure = pressure; 
+    		}
+    		else if(i==4){
+    			Payload_Sys->data_log.pressure_3.pressure = pressure; 
+    		}
+    		else if(i==6){
+    			Payload_Sys->data_log.pressure_4.pressure = pressure; 
+    		}
+    		else if (i==8){
+    			Payload_Sys->data_log.pressure_5.pressure = pressure; 
+    		}
+    		else if (i==10){
+    			Payload_Sys->data_log.pressure_6.pressure = pressure; 
+    		}
+    		else if (i==12){
+    			Payload_Sys->data_log.pressure_7.pressure = pressure; 
+    		}
+    		else if(i==14){
+        		Payload_Sys->data_log.pressure_8.pressure = pressure; 
+    		}
+        }
     }
 
 //	switch(console_mode) {
@@ -466,6 +500,10 @@ void update_voltage_channels(Payload_System *Payload_Sys){
 
 }
 
+
+void update_pressure_channels(Payload_System *Payload_Sys){
+	menu_single_conversion(PRESSURE, Payload_Sys); 
+}
 
 
 /*!

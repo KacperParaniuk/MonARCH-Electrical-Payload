@@ -100,15 +100,15 @@ void update_voltage_data(Payload_System *Payload_Sys){
 
 void update_pressure_data(Payload_System *Payload_Sys){
 
-
-	Payload_Sys->data_log.pressure_1.pressure = 0;
-	Payload_Sys->data_log.pressure_2.pressure = 0;
-	Payload_Sys->data_log.pressure_3.pressure = 0;
-	Payload_Sys->data_log.pressure_4.pressure = 0;
-	Payload_Sys->data_log.pressure_5.pressure = 0;
-	Payload_Sys->data_log.pressure_6.pressure = 0;
-	Payload_Sys->data_log.pressure_7.pressure = 0;
-	Payload_Sys->data_log.pressure_8.pressure = 0;
+	update_pressure_channels(Payload_Sys);
+	// Payload_Sys->data_log.pressure_1.pressure = 0;
+	// Payload_Sys->data_log.pressure_2.pressure = 0;
+	// Payload_Sys->data_log.pressure_3.pressure = 0;
+	// Payload_Sys->data_log.pressure_4.pressure = 0;
+	// Payload_Sys->data_log.pressure_5.pressure = 0;
+	// Payload_Sys->data_log.pressure_6.pressure = 0;
+	// Payload_Sys->data_log.pressure_7.pressure = 0;
+	// Payload_Sys->data_log.pressure_8.pressure = 0;
 //	case CMD_READ_PT1:
 //		value =  0; // ad7124_read_pressure(CH_P0);
 //		// will need to convert the voltage value to a current / temp reading function eventually in ad7124.h

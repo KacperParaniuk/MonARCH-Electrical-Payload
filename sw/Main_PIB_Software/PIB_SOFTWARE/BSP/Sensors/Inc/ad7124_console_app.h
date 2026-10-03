@@ -86,7 +86,7 @@ float display_channel_sample(uint8_t channel, AD7124_CHIP chip, Payload_System *
 float ad7124_read_channel_current_pc104(uint8_t channel);
 
 void update_voltage_channels(Payload_System *Payload_Sys);
-
+void update_pressure_channels(Payload_System *Payload_Sys);
 //extern console_menu ad7124_main_menu; << not using menu
 
 
