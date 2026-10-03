@@ -1187,7 +1187,7 @@ void StartTask06(void *argument)
 //
 //    // Update PC104 Voltage Data
 //
-    update_voltage_data(&Payload_Sys); // found this to be killing the MCU
+    update_voltage_data(&Payload_Sys);
 //
 //	// poll from sensors and store in global data_log attached to Payload_System
 //
