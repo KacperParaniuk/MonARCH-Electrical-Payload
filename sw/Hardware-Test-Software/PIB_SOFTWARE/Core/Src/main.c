@@ -38,12 +38,12 @@
 
 
 
-#define AD7124
-#define AD7124_P
-#define AD7124_V
-#define AD7124_SINGLE_MODE
+//#define AD7124
+//#define AD7124_P
+//#define AD7124_V
+//#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
-//#define FDC2214_S
+#define FDC2214_S
 //#define MAX31856
 //#define MAX31856_T1
 //#define MAX31856_T2
@@ -156,7 +156,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-   HAL_Init();
+  HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -1260,13 +1260,18 @@ HAL_Delay(1000);
  		  printf("FDC NOMINAL \n");
 
  		 // READ DATA FROM CH0
- 		 if(FDC2214_is_data_ready(FDC2214_CH0)){
- 		 float f_hz = FDC2214_readFrequencyHz(FDC2214_CH0);
- 		 float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0, FDC2214_L_HENRY);
+ 		 for(int i =0; i<4; i++){
+ 			if(FDC2214_is_data_ready(FDC2214_CH0+i)){
+ 				printf("Channel %d", i);
+ 			 	float f_hz = FDC2214_readFrequencyHz(FDC2214_CH0+i);
+ 			 	float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0+i, FDC2214_L_HENRY);
 
- 		 printf("hertz %f", f_hz / 1.0e6f);
- 		// 	        printf('\t');
- 		 printf("Capacitance (pF): %f", c_pf);
+ 			 	printf("hertz %f", f_hz / 1.0e6f);
+ 			 // 	        printf('\t');
+ 			 	printf("Capacitance (pF): %f", c_pf);
+
+ 		 }
+
  		 }
  	  }
  	  else{

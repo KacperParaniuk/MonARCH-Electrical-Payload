@@ -1,4 +1,5 @@
 ../Core/Src/sensors.c:20:6:update_voltage_data	1
-../Core/Src/sensors.c:101:6:update_pressure_data	1
-../Core/Src/sensors.c:150:6:update_temperature_data	1
-../Core/Src/sensors.c:208:6:update_valve_states	1
+../Core/Src/sensors.c:25:6:update_pressure_data	1
+../Core/Src/sensors.c:32:6:update_temperature_data	1
+../Core/Src/sensors.c:91:6:update_valve_states	1
+../Core/Src/sensors.c:150:6:update_capacitance_reading	1

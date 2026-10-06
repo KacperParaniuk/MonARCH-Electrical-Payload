@@ -345,7 +345,7 @@ int main(void)
    		printf("Failed to communicate with FDC2214");
 
         HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
    		reset_fdc2214();
    		printf("Try Again");

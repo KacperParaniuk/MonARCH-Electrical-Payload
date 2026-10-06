@@ -27,25 +27,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00017278  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0002e5e5  00000000  00000000  000172a8  2**0
+ 12 .debug_info   0002e5f7  00000000  00000000  000172a8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00006895  00000000  00000000  0004588d  2**0
+ 13 .debug_abbrev 000068ac  00000000  00000000  0004589f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00002288  00000000  00000000  0004c128  2**3
+ 14 .debug_aranges 00002290  00000000  00000000  0004c150  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_rnglists 00001a88  00000000  00000000  0004e3b0  2**0
+ 15 .debug_rnglists 00001a8e  00000000  00000000  0004e3e0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0000a572  00000000  00000000  0004fe38  2**0
+ 16 .debug_macro  0000a572  00000000  00000000  0004fe6e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0002fd80  00000000  00000000  0005a3aa  2**0
+ 17 .debug_line   0002fd90  00000000  00000000  0005a3e0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0011bcfd  00000000  00000000  0008a12a  2**0
+ 18 .debug_str    0011bd18  00000000  00000000  0008a170  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  001a5e27  2**0
+ 19 .comment      00000043  00000000  00000000  001a5e88  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00009afc  00000000  00000000  001a5e6c  2**2
+ 20 .debug_frame  00009b18  00000000  00000000  001a5ecc  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000072  00000000  00000000  001af968  2**0
+ 21 .debug_line_str 00000072  00000000  00000000  001af9e4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -9413,10 +9413,10 @@ void StartTask06(void *argument)
 //
 //    // Update PC104 Voltage Data
 //
-    update_voltage_data(&Payload_Sys); // found this to be killing the MCU
+    update_voltage_data(&Payload_Sys);
  8004768:	4812      	ldr	r0, [pc, #72]	@ (80047b4 <StartTask06+0x90>)
  800476a:	f000 fc2b 	bl	8004fc4 <update_voltage_data>
-//	// poll from sensors and store in global data_log attached to Payload_System
+//    update
 //
 //	// take/release spi/i2c mutex
 //
@@ -10393,8 +10393,8 @@ int main(void)
  8004d68:	f44f 5100 	mov.w	r1, #8192	@ 0x2000
  8004d6c:	4817      	ldr	r0, [pc, #92]	@ (8004dcc <main+0x2ac>)
  8004d6e:	f001 fb49 	bl	8006404 <HAL_GPIO_WritePin>
-        HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
- 8004d72:	2200      	movs	r2, #0
+        HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+ 8004d72:	2201      	movs	r2, #1
  8004d74:	f44f 4100 	mov.w	r1, #32768	@ 0x8000
  8004d78:	4814      	ldr	r0, [pc, #80]	@ (8004dcc <main+0x2ac>)
  8004d7a:	f001 fb43 	bl	8006404 <HAL_GPIO_WritePin>
@@ -10806,16 +10806,9 @@ void update_voltage_data(Payload_System *Payload_Sys){
  8004fc6:	b082      	sub	sp, #8
  8004fc8:	af00      	add	r7, sp, #0
  8004fca:	6078      	str	r0, [r7, #4]
-
-
 	update_voltage_channels(Payload_Sys);
  8004fcc:	6878      	ldr	r0, [r7, #4]
  8004fce:	f7fc fd77 	bl	8001ac0 <update_voltage_channels>
-//
-//	value = ad7124_read_channel_current_pc104(CH_12VB_VB);
-//
-//	Payload_Sys->data_log._12VB_VB.current = value;
-
 }
  8004fd2:	bf00      	nop
  8004fd4:	3708      	adds	r7, #8
@@ -10834,11 +10827,6 @@ void update_pressure_data(Payload_System *Payload_Sys){
 	update_pressure_channels(Payload_Sys);
  8004fe2:	6878      	ldr	r0, [r7, #4]
  8004fe4:	f7fc fd78 	bl	8001ad8 <update_pressure_channels>
-//	case CMD_READ_PT8:
-//		value = 0; // ad7124_read_pressure(CH_P7);
-//		Serial_Printf("Pressure Reading PT 8: %d \r\n", value);
-//	break;
-
 }
  8004fe8:	bf00      	nop
  8004fea:	3708      	adds	r7, #8
@@ -10978,6 +10966,7 @@ void update_temperature_data(Payload_System *Payload_Sys){
  80050b0:	20000080 	.word	0x20000080
 
 080050b4 <update_valve_states>:
+
 
 
 

@@ -1191,7 +1191,7 @@ void StartTask06(void *argument)
 //
 //	// poll from sensors and store in global data_log attached to Payload_System
 
-    update
+//    update
 //
 //	// take/release spi/i2c mutex
 //

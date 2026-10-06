@@ -639,7 +639,7 @@ float FDC2214_readCapacitancePf(fdc2214_channel_t ch, float inductance_uH)
     if (f <= 0.0f || inductance_uH <= 0.0f) return 0.0f;
 
     // C = 1 / (L * (2*pi*f)^2). Result in farads.
-    float L = inductance_uH * 1.0e-6f;
+    float L = inductance_uH; // * 1.0e-6f;
     float w = 2.0f * 3.14 * f;
     float C = 1.0f / (L * w * w);
 
