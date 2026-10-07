@@ -472,6 +472,27 @@ float temperature;
 #endif
 
 
+#ifdef AD7177
+ 	AD7177_Handle plumeSensor1;
+
+ 	plumeSensor1.hspi = &hspi1;
+ 	plumeSensor1.cs_port  = PT_EN_GPIO_Port;
+ 	plumeSensor1.cs_pin   = PT_EN_Pin;
+
+ 	plumeSensor1.ain_pos  = AD7177_AIN0;        
+ 	plumeSensor1.ain_neg  = AD7177_AIN1;       
+
+ 	plumeSensor1.ref_sel = AD7177_REF_INTERNAL;
+ 	plumeSensor1.bipolar  = 1;
+ 	plumeSensor1.odr      = AD7177_ODR_1000;
+	plumeSensor1.vref = 2.5f;
+
+
+ 	AD7177_Init(&plumeSensor1);
+
+#endif
+
+
 
 
   /* USER CODE END 2 */
@@ -1282,6 +1303,40 @@ HAL_Delay(1000);
 
 
 #endif
+
+
+
+#ifdef AD7177
+
+// 	typedef struct{
+// 		SPI_HandleTypeDef *hspi;
+// 		GPIO_TypeDef	  *cs_port;
+// 		uint16_t	   cs_pin;
+//
+// 		AD7176_Input	   ain_pos;
+// 		AD7176_Input	   ain_neg;
+// 		AD7176_RefSel	   ref_sel;
+// 		uint8_t		   bipolar; // 1 = bipolar, 0 = unipolar
+// 		uint8_t		   odr;	    // AD7176_ODR_xxx
+// 		float		   vref;    // reference voltage in volts
+// 	} AD7176_Handle;
+
+
+// spi1 controls both plume measurement
+
+
+
+ 	uint32_t adc_output = 0;
+
+ 	AD7177_ReadSingle(&plumeSensor1, &adc_output, 1000);
+
+ 	printf("Voltage: %f \n", AD7177_CodeToVolts(&plumeSensor1, adc_output));
+
+
+ 	AD7177_Reset(&plumeSensor1);
+
+#endif
+
 
 
 #ifdef PWM_VALVE_6
