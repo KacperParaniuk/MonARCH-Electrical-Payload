@@ -39,6 +39,8 @@
 
 #include "sensors.h"
 
+#include "pwm.h"
+
 
 
 
@@ -75,6 +77,7 @@ extern float temperature;
 extern float value;
 
 extern uint8_t duty_cycle;
+extern uint32_t frequency; 
 
 extern max31856_t max31856T1;
 extern max31856_t max31856T2;
@@ -271,7 +274,7 @@ void MX_FREERTOS_Init(void) {
   q_safety_cmdsHandle = osMessageQueueNew (10, sizeof(uint8_t), &q_safety_cmds_attributes);
 
   /* creation of q_normal_cmds */
-  q_normal_cmdsHandle = osMessageQueueNew (10, sizeof(uint8_t), &q_normal_cmds_attributes);
+  q_normal_cmdsHandle = osMessageQueueNew (10, sizeof(UART_Frame_t), &q_normal_cmds_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -351,8 +354,8 @@ void StartTask02(void *argument)
 	if(osSemaphoreAcquire(s_rx_semaphoreHandle, osWaitForever)== osOK){
 
 		UART_Frame_t rx_frame = {
-			.cmd = rx_cmd_copy[0],
-			.arg = rx_cmd_copy[1]
+			.cmd = rx_cmd[0],
+			.arg = rx_cmd[1]
 		};
 		
 		// decipher the rx_cmd - safety or normal command
@@ -1088,18 +1091,47 @@ void StartTask04(void *argument)
 		 		    HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
 					break;
 
-				case REGULATE_PRESSURE_INPUT_VALUE: // valve 4
+
+				case REGULATE_DC_PRESSURE_INPUT_VALUE: // valve 4
+
+					HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+
 					duty_cycle = frame.arg; // obtain duty cycle argument (0-100)
 					HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
-					__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, duty_cycle); // set the duty cycle for valve 4
+					pwm_set(&htim3,TIM_CHANNEL_3, frequency, duty_cycle);
 					break;
 
-				case REGULATE_PRESSURE_2_INPUT_VALUE: // valve 6
+
+				case CMD_REGULATE_DC_PRESSURE_TWO_INPUT_VALUE: // valve 6
 					duty_cycle = frame.arg; // obtain duty cycle argument
+					HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+
 					HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
-					__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, duty_cycle); // set the duty cycle for valve 6
+					pwm_set(&htim8,TIM_CHANNEL_1, frequency, duty_cycle);
 					break;
+
 					// let's see if it works!
+
+				case REGULATE_PRESSURE_F_INPUT_VALUE:
+					frequency = frame.arg;
+					printf("freq: %d\n", frequency);
+					HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+					HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
+					pwm_set(&htim3,TIM_CHANNEL_3, frequency, duty_cycle);
+
+					printf("%d",htim3.Instance->PSC);
+					printf("%d",htim3.Instance->ARR);
+					printf("%d",htim3.Instance->CCR3);
+
+					break; 
+
+				case REGULATE_PRESSURE_TWO_F_INPUT_VALUE:
+					HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+
+					frequency = frame.arg;
+					HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+					pwm_set(&htim8,TIM_CHANNEL_1, frequency, duty_cycle);
+					break; 
 
 				case REGULATE_PRESSURE_1_STOP: // valve 4
 					HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_3);
@@ -1138,7 +1170,7 @@ void StartTask05(void *argument)
 	 // Take Data Mutex
 	 	osMutexAcquire(data_mutexHandle, osWaitForever);
 	 // printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.?
-	 	printPacketJSON(&Payload_Sys.data_log); //  << this UART TX breaks the commanding features
+	 	//printPacketJSON(&Payload_Sys.data_log); //  << this UART TX breaks the commanding features
 	 // HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
      // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work?
 

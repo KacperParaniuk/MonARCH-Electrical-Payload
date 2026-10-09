@@ -90,6 +90,15 @@
 
 #endif
 
+#ifdef AD7177
+// Sensor Includes
+#include "ad7177.h"
+#endif
+
+
+
+
+
 
 // Serial Interface For Debugging || Serial wire JTAG debug port (SWJ-DP)
 #include <stdio.h>
@@ -444,6 +453,7 @@ float temperature;
 
 #ifdef FDC2214_S
    	uint8_t ret;
+
 
 
 
@@ -1288,7 +1298,6 @@ HAL_Delay(1000);
  			 	float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0+i, FDC2214_L_HENRY);
 
  			 	printf("hertz %f", f_hz / 1.0e6f);
- 			 // 	        printf('\t');
  			 	printf("Capacitance (pF): %f", c_pf);
 
  		 }
@@ -1296,7 +1305,17 @@ HAL_Delay(1000);
  		 }
  	  }
  	  else{
- 		  printf("FDC FAIL IS NOT CONNECTED \n");
+		reset_fdc2214();
+	  	// set default FDC2214 configurations
+	   	FDC2214_configure_defaults();
+
+	   	   	// toggle channel
+
+	   	FDC2214_set_active_channel(FDC2214_CH0);
+	   	FDC2214_setAutoscan(0); // false
+	   	FDC2214_wakeup();
+
+ 		printf("FDC FAIL IS NOT CONNECTED \n");
  	  }
 
 

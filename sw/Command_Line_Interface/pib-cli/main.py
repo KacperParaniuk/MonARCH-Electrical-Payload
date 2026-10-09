@@ -3,167 +3,156 @@ import serial
 import argparse
 import struct
 import time 
-
-
-''' INTERNAL COMMANDS '''
-CMD_READ_PT1  =  1
-CMD_READ_PT2    =  2
-CMD_READ_PT3    =  3
-CMD_READ_PT4    =  4
-CMD_READ_PT5    =  5
-CMD_READ_PT6    =  6
-CMD_READ_PT7    =  7
-CMD_READ_PT8    =  8
-
-
-# UART Commands for MAX31856 TC Readings
-
-CMD_READ_TC1    =  9
-CMD_READ_TC2	= 10
-CMD_READ_TC3	= 11
-CMD_READ_TC4	= 12
-CMD_READ_TC5	= 13
-
-CMD_READ_TC1_CJ = 84
-CMD_READ_TC2_CJ = 85
-CMD_READ_TC3_CJ = 86
-CMD_READ_TC4_CJ = 87
-CMD_READ_TC5_CJ = 88
-
-
-# UART Commands for Solenoid Valves
-
-CMD_OPEN_SOL1  = 14
-CMD_OPEN_SOL2  =  15
-CMD_OPEN_SOL3  =  17
-CMD_OPEN_SOL4  =  18
-CMD_OPEN_SOL5  =  19
-CMD_OPEN_SOL6  = 20
-CMD_OPEN_SOL7  = 21
-CMD_OPEN_SOL8  = 22
-CMD_OPEN_SOL9  = 23
-CMD_OPEN_SOL10  = 24
-CMD_OPEN_SOL11  = 25
-CMD_OPEN_SOL12  = 26
-CMD_OPEN_SOL13  = 27
-CMD_OPEN_SOL14  = 28
-CMD_OPEN_SOL15  = 29
-CMD_OPEN_SOL16  = 30
-CMD_OPEN_SOL17  = 31
-CMD_OPEN_SOL18  = 32
-
-CMD_CLOSE_SOL1  = 33
-CMD_CLOSE_SOL2  = 34
-CMD_CLOSE_SOL3   = 35
-CMD_CLOSE_SOL4  = 36
-CMD_CLOSE_SOL5  = 37
-CMD_CLOSE_SOL6  = 38
-CMD_CLOSE_SOL7  = 39
-CMD_CLOSE_SOL8  = 40
-CMD_CLOSE_SOL9  = 41
-CMD_CLOSE_SOL10  = 42
-CMD_CLOSE_SOL11  = 43
-CMD_CLOSE_SOL12  = 44
-CMD_CLOSE_SOL13  = 45
-CMD_CLOSE_SOL14  = 46
-CMD_CLOSE_SOL15  = 47
-CMD_CLOSE_SOL16  = 48
-CMD_CLOSE_SOL17  = 49
-CMD_CLOSE_SOL18  = 50
-
-CMD_READ_VALVE_STATE_1 = 91
-CMD_READ_VALVE_STATE_2 = 92
-CMD_READ_VALVE_STATE_3 = 93
-CMD_READ_VALVE_STATE_4 = 94
-CMD_READ_VALVE_STATE_5 = 95
-CMD_READ_VALVE_STATE_6 = 96
-CMD_READ_VALVE_STATE_7 = 97
-CMD_READ_VALVE_STATE_8 = 98
-CMD_READ_VALVE_STATE_9 = 99
-CMD_READ_VALVE_STATE_10 = 100
-CMD_READ_VALVE_STATE_11 = 101
-CMD_READ_VALVE_STATE_12 = 102
-CMD_READ_VALVE_STATE_13 = 103
-CMD_READ_VALVE_STATE_14 = 104
-CMD_READ_VALVE_STATE_15 = 105
-CMD_READ_VALVE_STATE_16 = 106
-CMD_READ_VALVE_STATE_17 = 107 
-CMD_READ_VALVE_STATE_18 = 108
-
+# UART Commands for ADC7124 PT Readings
+CMD_READ_PT1 = 1   # 0x01
+CMD_READ_PT2 = 2   # 0x02
+CMD_READ_PT3 = 3   # 0x03
+CMD_READ_PT4 = 4   # 0x04
+CMD_READ_PT5 = 5   # 0x05
+CMD_READ_PT6 = 6   # 0x06
+CMD_READ_PT7 = 7   # 0x07
+CMD_READ_PT8 = 8   # 0x08
 
 # UART Commands for ADC7124 PC104 Stack Readings
+CMD_READ_12VA_VB = 51   # 0x33
+CMD_READ_12VA_VA = 52   # 0x34 (Valves)
+CMD_READ_3V3_VB  = 53   # 0x35
+CMD_READ_3V3_VA  = 54   # 0x36
+CMD_READ_VBAT_VA = 66   # 0x42
+CMD_READ_VBAT_VB = 67   # 0x43
+CMD_READ_12VB_VA = 68   # 0x44
+CMD_READ_12VB_VB = 69   # 0x45
 
-CMD_READ_12VA_VB  = 51
-CMD_READ_12VA_VA  = 52 # powers all Valves except for 4,6 (which are pwm)
-CMD_READ_3V3_VB  = 53
-CMD_READ_3V3_VA  = 54
-CMD_READ_VBAT_VA  = 66
-CMD_READ_VBAT_VB  = 67
-CMD_READ_12VB_VA  = 68
-CMD_READ_12VB_VB  = 69
+CMD_READ_12VA_VB_CURRENT = 70   # 0x46
+CMD_READ_12VA_VA_CURRENT = 71   # 0x47 (Valves)
+CMD_READ_3V3_VB_CURRENT  = 72   # 0x48
+CMD_READ_3V3_VA_CURRENT  = 73   # 0x49
+CMD_READ_VBAT_VA_CURRENT = 74   # 0x4A
+CMD_READ_VBAT_VB_CURRENT = 75   # 0x4B
+CMD_READ_12VB_VA_CURRENT = 76   # 0x4C
+CMD_READ_12VB_VB_CURRENT = 77   # 0x4D
 
-CMD_READ_12VA_VB_CURRENT  = 70
-CMD_READ_12VA_VA_CURRENT  = 71 
-CMD_READ_3V3_VB_CURRENT  = 72
-CMD_READ_3V3_VA_CURRENT  = 73
-CMD_READ_VBAT_VA_CURRENT  = 74
-CMD_READ_VBAT_VB_CURRENT  = 75
-CMD_READ_12VB_VA_CURRENT  = 76
-CMD_READ_12VB_VB_CURRENT  = 77
+# UART Commands for MAX31856 TC Readings
+CMD_READ_TC1 = 9    # 0x09
+CMD_READ_TC2 = 10   # 0x0A
+CMD_READ_TC3 = 11   # 0x0B
+CMD_READ_TC4 = 12   # 0x0C
+CMD_READ_TC5 = 13   # 0x0D
+
+# UART Commands for MAX31856 Cold-Junction Readings
+CMD_READ_TC1_CJ = 84   # 0x54
+CMD_READ_TC2_CJ = 85   # 0x55
+CMD_READ_TC3_CJ = 86   # 0x56
+CMD_READ_TC4_CJ = 87   # 0x57
+CMD_READ_TC5_CJ = 88   # 0x58
+
+# READ DEVICE IDs
+CMD_READ_ID_PT  = 81   # 0x51
+CMD_READ_ID_V   = 82   # 0x52
+CMD_READ_ID_FDC = 83   # 0x53
+
+# UART Commands for Solenoid Valves
+CMD_OPEN_SOL1  = 14   # 0x0E
+CMD_OPEN_SOL2  = 15   # 0x0F
+CMD_OPEN_SOL3  = 17   # 0x11
+CMD_OPEN_SOL4  = 18   # 0x12
+CMD_OPEN_SOL5  = 19   # 0x13
+CMD_OPEN_SOL6  = 20   # 0x14
+CMD_OPEN_SOL7  = 21   # 0x15
+CMD_OPEN_SOL8  = 22   # 0x16
+CMD_OPEN_SOL9  = 23   # 0x17
+CMD_OPEN_SOL10 = 24   # 0x18
+CMD_OPEN_SOL11 = 25   # 0x19
+CMD_OPEN_SOL12 = 26   # 0x1A
+CMD_OPEN_SOL13 = 27   # 0x1B
+CMD_OPEN_SOL14 = 28   # 0x1C
+CMD_OPEN_SOL15 = 29   # 0x1D
+CMD_OPEN_SOL16 = 30   # 0x1E
+CMD_OPEN_SOL17 = 31   # 0x1F
+CMD_OPEN_SOL18 = 32   # 0x20
+
+CMD_CLOSE_SOL1  = 33   # 0x21
+CMD_CLOSE_SOL2  = 34   # 0x22
+CMD_CLOSE_SOL3  = 35   # 0x23
+CMD_CLOSE_SOL4  = 36   # 0x24
+CMD_CLOSE_SOL5  = 37   # 0x25
+CMD_CLOSE_SOL6  = 38   # 0x26
+CMD_CLOSE_SOL7  = 39   # 0x27
+CMD_CLOSE_SOL8  = 40   # 0x28
+CMD_CLOSE_SOL9  = 41   # 0x29
+CMD_CLOSE_SOL10 = 42   # 0x2A
+CMD_CLOSE_SOL11 = 43   # 0x2B
+CMD_CLOSE_SOL12 = 44   # 0x2C
+CMD_CLOSE_SOL13 = 45   # 0x2D
+CMD_CLOSE_SOL14 = 46   # 0x2E
+CMD_CLOSE_SOL15 = 47   # 0x2F
+CMD_CLOSE_SOL16 = 48   # 0x30
+CMD_CLOSE_SOL17 = 49   # 0x31
+CMD_CLOSE_SOL18 = 50   # 0x32
+
+CMD_READ_VALVE_STATE_1  = 91    # 0x5B
+CMD_READ_VALVE_STATE_2  = 92    # 0x5C
+CMD_READ_VALVE_STATE_3  = 93    # 0x5D
+CMD_READ_VALVE_STATE_4  = 94    # 0x5E
+CMD_READ_VALVE_STATE_5  = 95    # 0x5F
+CMD_READ_VALVE_STATE_6  = 96    # 0x60
+CMD_READ_VALVE_STATE_7  = 97    # 0x61
+CMD_READ_VALVE_STATE_8  = 98    # 0x62
+CMD_READ_VALVE_STATE_9  = 99    # 0x63
+CMD_READ_VALVE_STATE_10 = 100   # 0x64
+CMD_READ_VALVE_STATE_11 = 101   # 0x65
+CMD_READ_VALVE_STATE_12 = 102   # 0x66
+CMD_READ_VALVE_STATE_13 = 103   # 0x67
+CMD_READ_VALVE_STATE_14 = 104   # 0x68
+CMD_READ_VALVE_STATE_15 = 105   # 0x69
+CMD_READ_VALVE_STATE_16 = 106   # 0x6A
+CMD_READ_VALVE_STATE_17 = 107   # 0x6B
+CMD_READ_VALVE_STATE_18 = 108   # 0x6C
 
 # UART Commands for FDC2214
-
-CMD_READ_CAPACITANCE_A1  = 55
-CMD_READ_CAPACITANCE_A2  = 56
-CMD_READ_CATALYST_LEVEL_A1  = 57
-CMD_READ_CATALYST_LEVEL_A2  = 58
-
+READ_CAPACITANCE_A1      = 55   # 0x37
+READ_CAPACITANCE_A2      = 56   # 0x38
+READ_PROPELLANT_LEVEL_A1 = 57   # 0x39
+READ_PROPELLANT_LEVEL_A2 = 58   # 0x3A
 
 # UART Command for heater
-
-CMD_HEAT_CATALYST  = 59
-CMD_READ_DATA = 111
-
-
-CMD_MANUAL_HEATER_TURN_ON = 89
-CMD_MANUAL_HEATER_TURN_OFF = 90
-
+CMD_HEAT_CATALYST          = 59   # 0x3B
+CMD_MANUAL_HEATER_TURN_ON  = 89   # 0x59
+CMD_MANUAL_HEATER_TURN_OFF = 90   # 0x5A
 
 # UART Commands for Pressure Regulation (PWM / PID)
+REGULATE_PRESSURE_F_INPUT_VALUE     = 112   # 0x70
+REGULATE_PRESSURE_TWO_F_INPUT_VALUE = 113   # 0x71
 
-CMD_REGULATE_PRESSURE_INPUT_VALUE  = 60
-CMD_REGULATE_PRESSURE_2_INPUT_VALUE  = 61
+REGULATE_DC_PRESSURE_INPUT_VALUE         = 60   # 0x3C
+CMD_REGULATE_DC_PRESSURE_TWO_INPUT_VALUE = 61   # 0x3D
 
+REGULATE_PRESSURE_1_STOP = 109   # 0x6D
+REGULATE_PRESSURE_2_STOP = 110   # 0x6E
 
 # UART Commands for PPU Control (OBC -> PIB)
+PPU_CURRENT_READ_1 = 62   # 0x3E
+PPU_CURRENT_READ_2 = 63   # 0x3F
+PPU_ON             = 64   # 0x40
+PPU_OFF            = 65   # 0x41
 
-CMD_PPU_CURRENT_READ_1  = 62
-CMD_PPU_CURRENT_READ_2  = 63
-CMD_PPU_ON  = 64
-CMD_PPU_OFF  = 65
+CMD_READ_DATA = 111   # 0x6F
 
-CMD_TOGGLE_RED_LED = 78
-CMD_TOGGLE_GREEN_LED = 79
-CMD_TOGGLE_AMBER_LED = 80
+# CMDS (PIB -> PPU)
+PIB_PPU_ON             = 0   # 0x00
+PIB_PPU_OFF            = 1   # 0x01
+PIB_PPU_CURRENT_READ_1 = 2   # 0x02
+PIB_PPU_CURRENT_READ_2 = 3   # 0x03
 
+# Miscellaneous
+CMD_TOGGLE_RED_LED   = 78   # 0x4E
+CMD_TOGGLE_GREEN_LED = 79   # 0x4F
+CMD_TOGGLE_AMBER_LED = 80   # 0x50
 
-# Read Device IDs 
-
-CMD_READ_ID_PT = 81
-CMD_READ_ID_V = 82
-CMD_READ_ID_FDC = 83 
-
-
-
-
-CMD_SAFETY_STOP_HEAT_TEST= 112
-CMD_SAFETY_STOP_READ_DATA = 113
-
-
-
-
-
-
+# Safety Commands
+CMD_SAFETY_BEGIN          = 114   # 0x72
+CMD_SAFETY_STOP_HEAT_TEST = 114   # 0x72
+CMD_SAFETY_STOP_READ_DATA = 115   # 0x73
 
 class SerialLink: # https://docs.python.org/3/tutorial/classes.html 
 
@@ -236,11 +225,18 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
         print("Reading JSON Data")
         self.pib.send_command(CMD_SAFETY_STOP_READ_DATA)
 
+    
+
     def do_stop_heat_e(self, arg):
             """Toggling the RED LED on the payload interface board."""
             print("Toggling OFF Heat Experiment...")
             self.pib.send_command(CMD_SAFETY_STOP_HEAT_TEST)  
 
+    def do_stop_pwm_1(self,arg):
+        self.pib.send_command(REGULATE_PRESSURE_1_STOP)
+
+    def do_stop_pwm_1(self,arg):
+        self.pib.send_command(REGULATE_PRESSURE_2_STOP)
 
     def do_run_sequence(self, args):
         """Run a predefined sequence on the payload interface board."""
@@ -575,7 +571,7 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
             print("Invalid duty cycle. Please enter a number between 0 and 100.")
             return
 
-        self.pib.send_command(CMD_REGULATE_PRESSURE_INPUT_VALUE, duty)
+        self.pib.send_command(REGULATE_DC_PRESSURE_INPUT_VALUE, duty)
 
 
     def do_set_duty_2(self, args):
@@ -591,7 +587,39 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
             print("Invalid duty cycle. Please enter a number between 0 and 100.")
             return
 
-        self.pib.send_command(CMD_REGULATE_PRESSURE_2_INPUT_VALUE, duty)
+        self.pib.send_command(CMD_REGULATE_DC_PRESSURE_TWO_INPUT_VALUE, duty)
+
+    def do_set_f_1(self, args):
+        '''Set the duty cycle for the pressure regulation on the payload interface board.'''
+
+        try: 
+            f = int(args)
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 2.")
+            return 
+
+        if(f < 0 or f > 100):
+            print("Invalid frequency. Please enter a number between 0 and 100.")
+            return
+
+        self.pib.send_command(REGULATE_PRESSURE_F_INPUT_VALUE, f)
+
+
+    def do_set_f_2(self, args):
+        '''Set the frequency for the pressure regulation on the payload interface board.'''
+
+        try: 
+            f = int(args)
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 2.")
+            return 
+
+        if(f < 0 or f > 100):
+            print("Invalid frequency. Please enter a number between 0 and 100.")
+            return
+
+        self.pib.send_command(REGULATE_PRESSURE_TWO_F_INPUT_VALUE, f)
+
 
 
     def do_help(self, arg):

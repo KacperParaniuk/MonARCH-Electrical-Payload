@@ -56,7 +56,8 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../BSP/Inc/uart_handler.h ../BSP/Inc/uart_protocol.h \
- ../Core/Inc/data_log.h ../Core/Inc/sensors.h ../Core/Inc/systems.h
+ ../Core/Inc/data_log.h ../Core/Inc/sensors.h ../Core/Inc/systems.h \
+ ../BSP/Inc/pwm.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Core/Inc/main.h:
@@ -127,3 +128,4 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Core/Inc/data_log.h:
 ../Core/Inc/sensors.h:
 ../Core/Inc/systems.h:
+../BSP/Inc/pwm.h:

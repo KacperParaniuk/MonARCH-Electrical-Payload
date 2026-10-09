@@ -7,18 +7,21 @@
 C_SRCS += \
 ../BSP/Src/iic_driver.c \
 ../BSP/Src/platform_support.c \
+../BSP/Src/pwm.c \
 ../BSP/Src/spi_support.c \
 ../BSP/Src/uart_handler.c 
 
 OBJS += \
 ./BSP/Src/iic_driver.o \
 ./BSP/Src/platform_support.o \
+./BSP/Src/pwm.o \
 ./BSP/Src/spi_support.o \
 ./BSP/Src/uart_handler.o 
 
 C_DEPS += \
 ./BSP/Src/iic_driver.d \
 ./BSP/Src/platform_support.d \
+./BSP/Src/pwm.d \
 ./BSP/Src/spi_support.d \
 ./BSP/Src/uart_handler.d 
 
@@ -30,7 +33,7 @@ BSP/Src/%.o BSP/Src/%.su BSP/Src/%.cyclo: ../BSP/Src/%.c BSP/Src/subdir.mk
 clean: clean-BSP-2f-Src
 
 clean-BSP-2f-Src:
-	-$(RM) ./BSP/Src/iic_driver.cyclo ./BSP/Src/iic_driver.d ./BSP/Src/iic_driver.o ./BSP/Src/iic_driver.su ./BSP/Src/platform_support.cyclo ./BSP/Src/platform_support.d ./BSP/Src/platform_support.o ./BSP/Src/platform_support.su ./BSP/Src/spi_support.cyclo ./BSP/Src/spi_support.d ./BSP/Src/spi_support.o ./BSP/Src/spi_support.su ./BSP/Src/uart_handler.cyclo ./BSP/Src/uart_handler.d ./BSP/Src/uart_handler.o ./BSP/Src/uart_handler.su
+	-$(RM) ./BSP/Src/iic_driver.cyclo ./BSP/Src/iic_driver.d ./BSP/Src/iic_driver.o ./BSP/Src/iic_driver.su ./BSP/Src/platform_support.cyclo ./BSP/Src/platform_support.d ./BSP/Src/platform_support.o ./BSP/Src/platform_support.su ./BSP/Src/pwm.cyclo ./BSP/Src/pwm.d ./BSP/Src/pwm.o ./BSP/Src/pwm.su ./BSP/Src/spi_support.cyclo ./BSP/Src/spi_support.d ./BSP/Src/spi_support.o ./BSP/Src/spi_support.su ./BSP/Src/uart_handler.cyclo ./BSP/Src/uart_handler.d ./BSP/Src/uart_handler.o ./BSP/Src/uart_handler.su
 
 .PHONY: clean-BSP-2f-Src
 

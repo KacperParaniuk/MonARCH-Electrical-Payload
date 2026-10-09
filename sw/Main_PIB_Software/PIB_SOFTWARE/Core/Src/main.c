@@ -43,6 +43,10 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 #include "ad7124.h"
 #include "max31856.h"
 #include "fdc2214.h"
+#include "ad7177.h"
+
+
+
 
 // Serial Interface For Debugging || Serial wire JTAG debug port (SWJ-DP)
 #include <stdio.h>
@@ -87,6 +91,7 @@ char uart_buffer[64]; // used for sending data across uart3
 float temperature;
 float value;
 uint8_t duty_cycle;
+uint32_t frequency; 
 GPIO_PinState pinState;
 
 
@@ -202,6 +207,7 @@ int main(void)
   Payload_Sys.err_flags = error_flags; 
   Payload_Sys.sys_flags = payload_flags;
   Payload_Sys.data_log = data_payload_packet;
+
 
 
 
@@ -452,8 +458,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
     if (huart->Instance != USART3) return;  // protect against any other UART commands
 
-    rx_cmd_copy[0] = rx_cmd[0];
-    rx_cmd_copy[1] = rx_cmd[1];
+//    rx_cmd_copy[0] = rx_cmd[0];
+//    rx_cmd_copy[1] = rx_cmd[1];
 
     osMutexAcquire(uart_mutexHandle, osWaitForever);
 
