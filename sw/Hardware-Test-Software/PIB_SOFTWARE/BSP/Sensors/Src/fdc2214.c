@@ -624,7 +624,7 @@ float FDC2214_readFrequencyHz(fdc2214_channel_t ch)
     uint16_t cdiv     = _clock_div[ch];
     uint16_t fref_div = cdiv & 0x03FF;
     if (fref_div == 0) fref_div = 1;
-
+	
     // CH_FIN_DIVIDER is 1 for low-freq sensor mode, 2 for high-freq mode.
     float ch_fin_divider = ((cdiv & 0x3000) == FDC2214_FIN_SEL_HIGH_FREQ) ? 2.0f : 1.0f;
     float f_ref          = FDC2214_F_REF / (float)fref_div;

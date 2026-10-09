@@ -466,12 +466,10 @@ float temperature;
    		FDC2214_Begin();
    	}
    	else{
-
    	   	// set default FDC2214 configurations
    	   	FDC2214_configure_defaults();
 
    	   	// toggle channel
-
    	   	FDC2214_set_active_channel(FDC2214_CH0);
    	   	FDC2214_setAutoscan(0); // false
    	   	FDC2214_wakeup();
@@ -489,8 +487,8 @@ float temperature;
  	plumeSensor1.cs_port  = PT_EN_GPIO_Port;
  	plumeSensor1.cs_pin   = PT_EN_Pin;
 
- 	plumeSensor1.ain_pos  = AD7177_AIN0;        
- 	plumeSensor1.ain_neg  = AD7177_AIN1;       
+ 	plumeSensor1.ain_pos  = AD7177_AIN1;        
+ 	plumeSensor1.ain_neg  = AD7177_AIN0;       
 
  	plumeSensor1.ref_sel = AD7177_REF_INTERNAL;
  	plumeSensor1.bipolar  = 1;
