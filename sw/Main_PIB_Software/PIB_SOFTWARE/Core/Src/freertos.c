@@ -466,7 +466,7 @@ void StartTask04(void *argument)
 		  	    	osMutexRelease(data_mutexHandle);
 		  	    	while(Payload_Sys.sys_flags.JSON_reading){
 		  	  			osDelay(1000); // allows other threads to run while experiment is running like the polling thread
-		  	  			printPacketJSON(&Payload_Sys.data_log);
+		  	  			printPacketJSON_UART(&Payload_Sys.data_log); // test this new code. over uart. 
 		  	    	}
 		  	    	break;
 
@@ -1170,7 +1170,7 @@ void StartTask05(void *argument)
 	 // Take Data Mutex
 	 	osMutexAcquire(data_mutexHandle, osWaitForever);
 	 // printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.?
-	 	//printPacketJSON(&Payload_Sys.data_log); //  << this UART TX breaks the commanding features
+	 	printPacketJSON(&Payload_Sys.data_log); //  << this UART TX breaks the commanding features
 	 // HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
      // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work?
 
