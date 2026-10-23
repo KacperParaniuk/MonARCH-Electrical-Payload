@@ -1,6 +1,6 @@
  int incomingByte = 0; // for incoming serial data
 
-#include <SoftwareSerial.h>
+ #include <SoftwareSerial.h>
 
 
 
@@ -39,44 +39,51 @@ void loop() {
 
 //   digitalWrite(LED_1,0);
 
+   while (mySerial.available()){
+    Serial.write(mySerial.read());  // STM32 -> PC
+  } 
+  while (Serial.available())  {
+    mySerial.write(Serial.read());  // PC -> STM32
+  } 
 
 
-  if (Serial.available() >= 2) {
-    uint8_t cmd = Serial.read();
-    uint8_t arg = Serial.read();
+
+  // if (Serial.available() >= 2) {
+  //   uint8_t cmd = Serial.read();
+  //   uint8_t arg = Serial.read();
 
 
-    mySerial.write(cmd);
-    mySerial.write(arg);
+  //   mySerial.write(cmd);
+  //   mySerial.write(arg);
 
 
-    // wait for STM32 to respond
-    unsigned long start = millis();
-    while (!mySerial.available() && millis() - start < 3000) {
-        delay(1); 
-    }
+  //   // wait for STM32 to respond
+  //   unsigned long start = millis();
+  //   while (!mySerial.available() && millis() - start < 3000) {
+  //       delay(1); 
+  //   }
 
-    if (mySerial.available()) {
-        String incomingData = mySerial.readStringUntil('\n');
-        incomingData.trim();
-        Serial.println(incomingData);
-    }
+  //   if (mySerial.available()) {
+  //       String incomingData = mySerial.readStringUntil('\n');
+  //       incomingData.trim();
+  //       Serial.println(incomingData);
+  //   }
 
-    digitalWrite(LED_1, 1);
-    delay(100);
-    digitalWrite(LED_1, 0);
-    delay(100);
-    digitalWrite(LED_1, 1);
-    delay(100);
-    digitalWrite(LED_1, 0);
-    delay(100);
+  //   digitalWrite(LED_1, 1);
+  //   delay(100);
+  //   digitalWrite(LED_1, 0);
+  //   delay(100);
+  //   digitalWrite(LED_1, 1);
+  //   delay(100);
+  //   digitalWrite(LED_1, 0);
+  //   delay(100);
 
-    }
-    else{
-    delay(500);
-    digitalWrite(LED_1, 0);
+  //   }
+  //   else{
+  //   delay(500);
+  //   digitalWrite(LED_1, 0);
 
-    }
+  //   }
 
 //     delay(500);
 

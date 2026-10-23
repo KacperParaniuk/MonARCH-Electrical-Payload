@@ -1,5 +1,7 @@
 import cmd 
 
+import time 
+
 
 class PIBShell(cmd.Cmd):
     intro = "Welcome to the PIB shell. Use with an arduino to command the payload interface board of MonARCH. Type help or ? to list commands.\n"
@@ -31,8 +33,20 @@ class PIBShell(cmd.Cmd):
             return
         else:
             print("Opening valve " + arg + "...")
-            
-      
+
+
+ 
+    def do_test_case(self, arg):
+        while(True): # loop while user hasn't hit CTRL + C
+     # we need to aggregate the data into respective rows 
+
+            try:
+                print("No key board interrupt")
+                time.sleep(2)
+
+            except KeyboardInterrupt:
+                break; 
+                
     def do_close_valve(self, arg):
         """Close the valve on the payload interface board."""
         try: 

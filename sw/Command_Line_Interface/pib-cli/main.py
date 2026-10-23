@@ -3,6 +3,12 @@ import serial
 import argparse
 import struct
 import time 
+
+# for reading the JSON data. 
+
+import csv
+import json
+
 # UART Commands for ADC7124 PT Readings
 CMD_READ_PT1 = 1   # 0x01
 CMD_READ_PT2 = 2   # 0x02
@@ -185,14 +191,14 @@ class SerialLink: # https://docs.python.org/3/tutorial/classes.html
     def read_response(self, terminator: bytes = b'\n') -> str:
         """Read a line of text response from the device."""
         self.conn.reset_input_buffer()  # discard any stale responses
-        time.sleep(0.05)          # let STM32 start responding
+        #time.sleep(0.1)          # let STM32 start responding
         
         if not self.conn:
             return ""
 
-        line = self.conn.readline()  # blocks until terminator or timeout
-        return line.decode('utf-8', errors='replace').strip()
-
+        line = self.conn.readline()  # reads line of the terminal blocks until terminator or timeout (this should take a whole JSON packet)
+        return line.decode('utf-8', errors='replace').strip() # must be called on a bytes objec
+        # utf-8 is ASCII Compatible  
  
 
 class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/ 
@@ -217,15 +223,144 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
         print("Toggling LED...")
         self.pib.send_command(CMD_TOGGLE_RED_LED)  
 
+
+
+    # Break Works. 
+    # def do_toggle_test(self, arg):
+    #     x = 0
+    #     while(true):
+    #         x+=1 
+    #         if(x==100000):
+    #             break;
+    
+
+     
+    # def do_test_case(self, arg):
+    #     while(True): # loop while user hasn't hit CTRL + C
+    #  # we need to aggregate the data into respective rows 
+
+    #         try:
+    #             print("No key board interrupt")
+    #             time.sleep(2)
+
+    #         except KeyboardInterrupt:
+    #             break; 
+        
+
+
+# read_data "input file name"
     def do_read_data(self, arg):
+        """read_data <filename>  - log telemetry to CSV until Ctrl+C"""
         print("Reading JSON Data")
-        self.pib.send_command(CMD_READ_DATA)
+    
+        #self.pib.send_command(CMD_READ_DATA)
+    
+        self.pib.send_command(CMD_HEAT_CATALYST)
+
+        filename = arg.strip() or "telemetry.csv" # create file name using the arg put 
+
+        # https://www.geeksforgeeks.org/python/working-csv-files-python/ 
+
+        # now how do we loop from here and keep reading data until we hit Ctrl + C
+     
+        # reads the packet from serial monitor 
+
+
+        with open(filename, "w", newline="") as f: 
+            writer = None 
+            try:
+                while True:
+                    raw = self.pib.conn.readline().decode("utf-8", errors="ignore").strip()
+                    if not raw:
+                        print("No response")
+                        continue
+                    try:
+                        packet = json.loads(raw)
+                        if packet.get("type") != "data":
+                            print(packet)
+                            continue
+                        values = packet["value"]
+                    except (json.JSONDecodeError, KeyError):
+                        print("Skipping bad line: ", raw[:80])
+                        continue
+                    print("Packet Achieved")
+                    row = {"timestamp": time.time(), **values}
+
+                    if writer is None:
+
+                        writer = csv.DictWriter(f, fieldnames=list(row.keys()), extrasaction="ignore")
+                        writer.writeheader()
+
+                    writer.writerow(row)
+                    f.flush()
+            except KeyboardInterrupt:
+                print("Read Stopped")
+            finally: # finally does... 
+                self.pib.conn.close()
+
+
+
+    #     with open (filename, "w", newline='') as df 
+
+    #         try:
+    #             while(True):
+
+    #                 while(not JSON_packet):
+    #                     print("No Response")
+    #                     JSON_packet = self.pib.conn.readline().decode("utf-8", errors="ignore").strip()
+                        
+    #                 try:
+    #                     data = json.loads(JSON_packet)
+
+
+    #                 except (json.JSONDecode)
+                    
+
+
+
+
+        
+    #     data = json.loads(JSON_packet) # load packet 
+
+    #     Ed = data[ "value" ] # get values from JSON 
+
+    #     # Writing headers of CSV file
+    #     h = Ed.keys()
+    #     cw.writerow(h)
+
+    #    # Goes into a massive loop reading the JSON data and storing it into a text file  (displaying??? later feature)
+    
+    #     while(True): # loop while user hasn't hit CTRL + C
+    #         # we need to aggregate the data into respective rows 
+    #         try:
+    #             print("reading");
+    #             JSON_packet = self.pib.conn.readline().decode("utf-8", errors="ignore").strip()
+    #             if(not JSON_packet):
+    #                 print("Bad Packet \n")
+    #                 continue
+
+    #             data = json.loads(JSON_packet)
+
+    #             Ed = data["value"] # get one packet out of all the packets in the .json file. 
+
+    #             # Writing data of CSV file
+    #             print("Good Packet")
+    #             cw.writerow([time.time()] + list(Ed.values())) 
+                
+
+    #             # write a time stamp as an extra data point. 
+
+    #         # a whole new row? 
+
+    #         except KeyboardInterrupt:
+    #             self.pib.send_command(CMD_SAFETY_STOP_READ_DATA)
+    #             df.close()
+    #             break; 
+
         
     def do_stop_read(self, arg):
-        print("Reading JSON Data")
+        print("Stopping JSON Data")
         self.pib.send_command(CMD_SAFETY_STOP_READ_DATA)
-
-    
 
     def do_stop_heat_e(self, arg):
             """Toggling the RED LED on the payload interface board."""
@@ -589,7 +724,7 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
 
         self.pib.send_command(CMD_REGULATE_DC_PRESSURE_TWO_INPUT_VALUE, duty)
 
-    def do_set_f_1(self, args):
+    def do_set_f_1(self, args): # Valve 9 
         '''Set the duty cycle for the pressure regulation on the payload interface board.'''
 
         try: 
