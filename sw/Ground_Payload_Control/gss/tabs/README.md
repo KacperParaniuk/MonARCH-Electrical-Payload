@@ -1,0 +1,1 @@
+Tabs for the tkinter application will be housed in this folder

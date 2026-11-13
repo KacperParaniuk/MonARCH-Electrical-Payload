@@ -67,8 +67,8 @@ all: main-build
 main-build: PIB_SOFTWARE.elf secondary-outputs
 
 # Tool invocations
-PIB_SOFTWARE.elf PIB_SOFTWARE.map: $(OBJS) $(USER_OBJS) C:\dev\monarch-payload-interface-board\sw\Main_PIB_Software\PIB_SOFTWARE\STM32L4A6VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "PIB_SOFTWARE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\dev\monarch-payload-interface-board\sw\Main_PIB_Software\PIB_SOFTWARE\STM32L4A6VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PIB_SOFTWARE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+PIB_SOFTWARE.elf PIB_SOFTWARE.map: $(OBJS) $(USER_OBJS) C:\dev\MonARCH-Electrical-Payload\sw\Main_PIB_Software\PIB_SOFTWARE\STM32L4A6VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "PIB_SOFTWARE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\dev\MonARCH-Electrical-Payload\sw\Main_PIB_Software\PIB_SOFTWARE\STM32L4A6VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PIB_SOFTWARE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -34,6 +34,16 @@
 #include "fdc2214.h"
 
 #include "control_task.h"
+#include "semphr.h"
+#include "uart_handler.h"
+
+#include "sensors.h"
+
+#include "pwm.h"
+
+
+
+
 
 
 
@@ -67,6 +77,7 @@ extern float temperature;
 extern float value;
 
 extern uint8_t duty_cycle;
+extern uint32_t frequency; 
 
 extern max31856_t max31856T1;
 extern max31856_t max31856T2;
@@ -81,7 +92,7 @@ extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim8;
 
 
-extern Payload_System Payload_Sys;  
+extern Payload_System Payload_Sys;
 
 
 /* USER CODE END Variables */
@@ -177,10 +188,20 @@ osMutexId_t error_flag_mutexHandle;
 const osMutexAttr_t error_flag_mutex_attributes = {
   .name = "error_flag_mutex"
 };
+/* Definitions for uart_mutex */
+osMutexId_t uart_mutexHandle;
+const osMutexAttr_t uart_mutex_attributes = {
+  .name = "uart_mutex"
+};
 /* Definitions for s_rx_semaphore */
 osSemaphoreId_t s_rx_semaphoreHandle;
 const osSemaphoreAttr_t s_rx_semaphore_attributes = {
   .name = "s_rx_semaphore"
+};
+/* Definitions for s_tx_semaphore */
+osSemaphoreId_t s_tx_semaphoreHandle;
+const osSemaphoreAttr_t s_tx_semaphore_attributes = {
+  .name = "s_tx_semaphore"
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -226,6 +247,9 @@ void MX_FREERTOS_Init(void) {
   /* creation of error_flag_mutex */
   error_flag_mutexHandle = osMutexNew(&error_flag_mutex_attributes);
 
+  /* creation of uart_mutex */
+  uart_mutexHandle = osMutexNew(&uart_mutex_attributes);
+
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
@@ -233,6 +257,9 @@ void MX_FREERTOS_Init(void) {
   /* Create the semaphores(s) */
   /* creation of s_rx_semaphore */
   s_rx_semaphoreHandle = osSemaphoreNew(1, 0, &s_rx_semaphore_attributes);
+
+  /* creation of s_tx_semaphore */
+  s_tx_semaphoreHandle = osSemaphoreNew(1, 0, &s_tx_semaphore_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -300,8 +327,8 @@ void StartDefaultTask(void *argument)
   {
 
 	// the lowest priority task the heart beat of the program.
-	HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-    osDelay(500);
+	//HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
+    //osDelay(500);
 
   }
   /* USER CODE END StartDefaultTask */
@@ -327,8 +354,8 @@ void StartTask02(void *argument)
 	if(osSemaphoreAcquire(s_rx_semaphoreHandle, osWaitForever)== osOK){
 
 		UART_Frame_t rx_frame = {
-			.cmd = rx_cmd_copy[0],
-			.arg = rx_cmd_copy[1]
+			.cmd = rx_cmd[0],
+			.arg = rx_cmd[1]
 		};
 		
 		// decipher the rx_cmd - safety or normal command
@@ -369,7 +396,24 @@ void StartTask03(void *argument)
 
 	  if(osMessageQueueGet(q_safety_cmdsHandle, &frame, NULL, osWaitForever)==osOK){
 
-//		  printf("SAFETY COMMAND");
+//  printf("SAFETY COMMAND");
+		  osMutexAcquire(data_mutexHandle, osWaitForever);
+
+		  switch(frame.cmd){
+			  case CMD_SAFETY_STOP_HEAT_TEST:
+				  Payload_Sys.sys_flags.heat_experiment = false; // turn off heat experiment
+				  break;
+			  case CMD_SAFETY_STOP_READ_DATA:
+				  Payload_Sys.sys_flags.JSON_reading = false;
+				  break;
+		  }
+
+
+
+
+		  osMutexRelease(data_mutexHandle);
+
+		// implement stop heat experiement 
 
 		// check for cmd and set flags w/ reference to the flags. 
 
@@ -407,15 +451,72 @@ void StartTask04(void *argument)
 //		  printf("Normal CMD Received");
 
 		  // fsm integration here?
+	//	osMutexAcquire(spi_mutexHandle, osWaitForever);
+	  //  osMutexAcquire(i2c_mutexHandle, osWaitForever); // see how this pans out rather than inputting this for each and every command.
+
+
 
 		  switch(frame.cmd){ // decode command and execute
 // Open Solenoid Valve Commands
 
 
 
+		  	    case CMD_READ_DATA:
+		  	    	osMutexAcquire(data_mutexHandle, osWaitForever);
+		  	    	Payload_Sys.sys_flags.JSON_reading = true;
+		  	    	osMutexRelease(data_mutexHandle);
+		  	    	while(Payload_Sys.sys_flags.JSON_reading){
+		  	  			osDelay(1000); // allows other threads to run while experiment is running like the polling thread
+		  	  			osMutexAcquire(uart_mutexHandle, osWaitForever);
+		  	  			printPacketJSON_UART(&Payload_Sys.data_log); // test this new code. over uart.
+		  	  			//printf("Pressure 1 %f", Payload_Sys.data_log.pressure_1.pressure);
+		  	  			osMutexRelease(uart_mutexHandle);
+		  	    	}
+		  	    	break;
+
+
+		  	  	case HEAT_CATALYST:
+		  	  		osMutexAcquire(data_mutexHandle, osWaitForever);
+					Payload_Sys.sys_flags.heat_experiment = true;
+		  	  		osMutexRelease(data_mutexHandle);
+		  	  		HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin,GPIO_PIN_SET);
+
+
+		  	  		while(Payload_Sys.sys_flags.heat_experiment){
+		  	  			float temperature;
+
+		  	  			osDelay(1000); // allows other threads to run while experiment is running like the polling thread
+
+		  	  			//printPacketJSON(&Payload_Sys.data_log);
+		  	  			osMutexAcquire(uart_mutexHandle, osWaitForever);
+		  	  			printPacketJSON_UART(&Payload_Sys.data_log);
+		  	  			osMutexRelease(uart_mutexHandle);
+
+
+						temperature = Payload_Sys.data_log.tc1.tc_temp; // max31856_read_CJ_temp(&max31856T1); // change to TJ when done testing.
+						//printf("%f", temperature);
+						//printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
+						if(temperature<140){
+							//printf(" ON \n");
+							HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
+							HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+						}
+						else if(temperature>145){
+							//printf(" OFF \n");
+							HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+							HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
+						}
+						else{
+						}
+
+
+		  	  		}
+		  	  		HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin,GPIO_PIN_RESET);
+
+		  	  		HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET); // safety for when out of loop heater turns off.
+		  	  		break;
 		 		case CMD_OPEN_SOL1:
 					// check flags before executing.
-					
 					// or create a dedicated function for actuating valves so we don't check multiple times (in cmd / sequence functions.)
 		 			HAL_GPIO_WritePin(valve1_GPIO_Port, valve1_Pin, GPIO_PIN_SET); break;
 		 		case CMD_OPEN_SOL2:
@@ -433,7 +534,7 @@ void StartTask04(void *argument)
 		 		case CMD_OPEN_SOL8:
 		 		 	HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_SET); break;
 		 		case CMD_OPEN_SOL9:
-		 		    HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_SET); break;
+		 		    //HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_SET); break;
 		 		case CMD_OPEN_SOL10:
 		 		    HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_SET); break;
 		 		case CMD_OPEN_SOL11:
@@ -472,7 +573,7 @@ void StartTask04(void *argument)
 		 		case CMD_CLOSE_SOL8:
 		 		 	HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_RESET); break;
 		 		case CMD_CLOSE_SOL9:
-		 		    HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_RESET); break;
+		 		    //HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_RESET); break;
 		 		case CMD_CLOSE_SOL10:
 		 		    HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_RESET); break;
 		 		case CMD_CLOSE_SOL11:
@@ -507,6 +608,7 @@ void StartTask04(void *argument)
 					break;
 		 		case CMD_READ_ID_V:
 		 			 device_id = ad7124_read_device_id(VOLTAGE);
+
 		 			 Serial_Printf("AD7124 Device ID: %ld \n", device_id);
 		 			 if(device_id == 20 || device_id == 23){ // device id for dataversion E || https://ez.analog.com/data_converters/precision_adcs/f/q-a/574494/ad7124-8-device-id-question
 		 				printf("|| SUCCESS \n");
@@ -518,91 +620,107 @@ void StartTask04(void *argument)
 		 			 }
 					 break;
 		 		case CMD_READ_ID_FDC:
-		 		 	  if(isConnected()==0){
+		 		 	if(isConnected()==0){
+
 		 		 		printf("FDC NOMINAL \n");
 			 			HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin, GPIO_PIN_SET);
 
-		 		 	  }
-		 		 	  else{
+		 		 	}
+		 		 	else{
 		 		 		printf("FDC FAIL IS NOT CONNECTED \n");
-		 		 	  }
+		 		 	}
+					
+		 		 	device_id = FDC2214_get_device_id();
+			 		Serial_Printf("FDC2214 Device ID: %ld \n", device_id);
 
-
-		 		 	  device_id = FDC2214_get_device_id();
-			 		  Serial_Printf("FDC2214 Device ID: %ld \n", device_id);
-					  break;
+					break;
 
 // READ PC104 ADC CHANNELS
 
+// Resistor Values = |------ 510K ----- 100K ------|>
+// Voltage Poll and Conversion are already done on a different thread.
+
 				case CMD_READ_12VA_VB:
-					value = display_channel_sample(CH_12VA_VB,VOLTAGE);
+					value = Payload_Sys.data_log._12VA_VB.voltage;
+					//value = display_channel_sample(CH_12VA_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VA_VB: %d \r\n", value);
-
-					// Resistor Values = |------ 510K ----- 100K ------|>
-
-					// need to input conversions here.
 					break;
 
 				case CMD_READ_12VA_VA:
-					value = display_channel_sample(CH_12VA_VA,VOLTAGE);
+					value = Payload_Sys.data_log._12VA_VA.voltage;
+//					value = display_channel_sample(CH_12VA_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VA_VA: %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VB:
-					value = display_channel_sample(CH_3V3_VB,VOLTAGE);
+					value = Payload_Sys.data_log._3V3_VB.voltage;
+					//value = display_channel_sample(CH_3V3_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 3V3_VB: %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VA:
-					value = display_channel_sample(CH_3V3_VA,VOLTAGE);
+					value = Payload_Sys.data_log._3V3_VA.voltage;
+					//value = display_channel_sample(CH_3V3_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 3V3_VA: %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VA:
-					value = display_channel_sample(CH_VBAT_VA,VOLTAGE);
+					value = Payload_Sys.data_log._VBAT_VA.voltage;
+					//value = display_channel_sample(CH_VBAT_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading VBAT_VA: %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VB:
-					value = display_channel_sample(CH_VBAT_VB,VOLTAGE);
+					value = Payload_Sys.data_log._VBAT_VB.voltage;
+					// value = display_channel_sample(CH_VBAT_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading VBAT_VB: %d \r\n", value);
 					break;
 				case CMD_READ_12VB_VA:
-					value = display_channel_sample(CH_VBAT_VA,VOLTAGE);
+					value = Payload_Sys.data_log._12VB_VA.voltage;
+					//value = display_channel_sample(CH_12VB_VA,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VB_VA: %d \r\n", value);
 					break;
 				case CMD_READ_12VB_VB:
-					value = display_channel_sample(CH_VBAT_VB,VOLTAGE);
+					value = Payload_Sys.data_log._12VB_VB.voltage;
+					//value = display_channel_sample(CH_12VB_VB,VOLTAGE, &Payload_Sys);
 					Serial_Printf("PC104 Voltage Reading 12VB_VB: %d \r\n", value);
 					break;
 
 // Read PC104 Currents
 				case CMD_READ_12VA_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_12VA_VB);
+					value = Payload_Sys.data_log._12VA_VB.current;
+					//value = ad7124_read_channel_current_pc104(CH_12VA_VB);
 					Serial_Printf("PC104 Current Reading 12VA_VB: %d \r\n", value);
 					break;
 				case CMD_READ_12VA_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_12VA_VA);
+					value = Payload_Sys.data_log._12VA_VA.current;
+					//value = ad7124_read_channel_current_pc104(CH_12VA_VA);
 					Serial_Printf("PC104 Current Reading 12VA_VA: %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_3V3_VB);
+					value = Payload_Sys.data_log._3V3_VB.current;
+					//value = ad7124_read_channel_current_pc104(CH_3V3_VB);
 					Serial_Printf("PC104 Current Reading 3V3_VB : %d \r\n", value);
 					break;
 				case CMD_READ_3V3_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_3V3_VA);
+					value = Payload_Sys.data_log._3V3_VA.current;
+					//value = ad7124_read_channel_current_pc104(CH_3V3_VA);
 					Serial_Printf("PC104 Current Reading 3V3_VA : %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_VBAT_VA);
+					value = Payload_Sys.data_log._VBAT_VA.current;
+					//value = ad7124_read_channel_current_pc104(CH_VBAT_VA);
 					Serial_Printf("PC104 Current Reading VBAT_VA : %d \r\n", value);
 					break;
 				case CMD_READ_VBAT_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_VBAT_VB);
+					value = Payload_Sys.data_log._VBAT_VB.current;
+					//value = ad7124_read_channel_current_pc104(CH_VBAT_VB);
 					Serial_Printf("PC104 Current Reading VBAT_VB : %d \r\n", value);
 					break;
 				case CMD_READ_12VB_VA_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_12VB_VA);
+					value = Payload_Sys.data_log._12VB_VA.current;
+					//value = ad7124_read_channel_current_pc104(CH_12VB_VA);
 					Serial_Printf("PC104 Current Reading 12VB_VA: %d \r\n",  value);
 					break;
 				case CMD_READ_12VB_VB_CURRENT:
-					value = ad7124_read_channel_current_pc104(CH_12VB_VB);
+					value = Payload_Sys.data_log._12VB_VB.current;
+					//value = ad7124_read_channel_current_pc104(CH_12VB_VB);
 					Serial_Printf("PC104 Current Reading 12VB_VB: %d \r\n", value);
 					break;
 // Read Pressure Sensors
@@ -722,7 +840,7 @@ void StartTask04(void *argument)
 	 				}
 					break;
 	 			case CMD_READ_VALVE_STATE9:
-	 				pinState = HAL_GPIO_ReadPin(valve9_GPIO_Port, valve9_Pin);
+	 				//pinState = HAL_GPIO_ReadPin(valve9_GPIO_Port, valve9_Pin);
 	 				if (pinState == GPIO_PIN_SET){
 		 				Serial_Print("Valve ON \n");
 
@@ -973,9 +1091,7 @@ void StartTask04(void *argument)
 
 // Events
 
-		 		case HEAT_CATALYST:
-		 			heat_catalyst();
-					break;
+
 		 		case CMD_MANUAL_HEATER_TURN_ON:
 		 		    HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
 					break;
@@ -983,21 +1099,61 @@ void StartTask04(void *argument)
 		 		    HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
 					break;
 
-				case REGULATE_PRESSURE_INPUT_VALUE: // valve 4
+
+				case REGULATE_DC_PRESSURE_INPUT_VALUE: // valve 4
+
+					HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+
 					duty_cycle = frame.arg; // obtain duty cycle argument (0-100)
-					HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
-					__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, duty_cycle); // set the duty cycle for valve 4
+//					HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
+//					pwm_set(&htim3,TIM_CHANNEL_3, frequency, duty_cycle);
+//
+					HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2); // valve 9
+					pwm_set(&htim8,TIM_CHANNEL_2, frequency, duty_cycle);
 					break;
 
-				case REGULATE_PRESSURE_2_INPUT_VALUE: // valve 6
+
+				case CMD_REGULATE_DC_PRESSURE_TWO_INPUT_VALUE: // valve 6
 					duty_cycle = frame.arg; // obtain duty cycle argument
+					HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+
 					HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
-					__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, duty_cycle); // set the duty cycle for valve 6
+					pwm_set(&htim8,TIM_CHANNEL_1, frequency, duty_cycle);
 					break;
+
 					// let's see if it works!
 
+				case REGULATE_PRESSURE_F_INPUT_VALUE:
+					frequency = frame.arg;
+					printf("freq: %d\n", frequency);
+					HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+					//HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
+					HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2); // valve 9
+					//pwm_set(&htim3,TIM_CHANNEL_3, frequency, duty_cycle);
+					pwm_set(&htim8,TIM_CHANNEL_2, frequency, duty_cycle);
+
+
+//					printf("%d",htim3.Instance->PSC);
+//					printf("%d",htim3.Instance->ARR);
+//					printf("%d",htim3.Instance->CCR3);
+					printf("%d",htim8.Instance->PSC);
+					printf("%d",htim8.Instance->ARR);
+					printf("%d",htim8.Instance->CCR3);
+
+					break; 
+
+				case REGULATE_PRESSURE_TWO_F_INPUT_VALUE:
+					HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+
+					frequency = frame.arg;
+					HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+					pwm_set(&htim8,TIM_CHANNEL_1, frequency, duty_cycle);
+					break; 
+
 				case REGULATE_PRESSURE_1_STOP: // valve 4
-					HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_3);
+//					HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_3);
+					HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_2);
+
 					break;
 				case REGULATE_PRESSURE_2_STOP: // valve 6
 					HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_1);
@@ -1005,6 +1161,8 @@ void StartTask04(void *argument)
 				default:
 					break;
 		 	}
+//		osMutexRelease(spi_mutexHandle);
+//		osMutexRelease(i2c_mutexHandle);
 	  }
     osDelay(1);
   }
@@ -1024,16 +1182,28 @@ void StartTask05(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
-
+    osDelay(1000);
     // TX UART Task (waits for queue to get pushed to) queue contains composed packet 
+//
+	 if(osSemaphoreAcquire(s_tx_semaphoreHandle, osWaitForever)== osOK){
+	 // Take Data Mutex
+	 	//osMutexAcquire(data_mutexHandle, osWaitForever);
 
+	    //osMutexAcquire(uart_mutexHandle, osWaitForever);
 
-	  // printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.? 
+	 	//printf("%f \n", Payload_Sys.data_log.pressure_1.pressure);
 
-    // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work? 
+	 	//printPacketJSON(&Payload_Sys.data_log);  // (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.?
+	 	//printPacketJSON(&Payload_Sys.data_log); //  << this UART TX breaks the commanding features
 
-    
+	 	//osMutexRelease(uart_mutexHandle);
+
+	 	// HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+     // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work?
+
+	 // Release Data Mutex
+	 	//osMutexRelease(data_mutexHandle);
+	 }
   }
   /* USER CODE END StartTask05 */
 }
@@ -1052,36 +1222,51 @@ void StartTask06(void *argument)
   for(;;)
   {
 	// task data acquistion 
-  osDelay(2000); // wait two seconds before 
 
 	// take data mutex 
+//
+//    osMutexAcquire(data_mutexHandle, osWaitForever);
+//    osMutexAcquire(spi_mutexHandle, osWaitForever);
+//    osMutexAcquire(i2c_mutexHandle, osWaitForever);
 
+//    // Poll Valve States
+//
+//    update_valve_states(&Payload_Sys);
+//
+//
+//	// Poll Temperature Data
+//
+//    update_temperature_data(&Payload_Sys);
+//
+//
+//    // Poll Pressure Data
+//
+    update_pressure_data(&Payload_Sys);
+ 	printf("%f \n", Payload_Sys.data_log.pressure_1.pressure);
 
+//
+//
+//    // Update PC104 Voltage Data
+//
+//    update_voltage_data(&Payload_Sys);
+//
+//	// poll from sensors and store in global data_log attached to Payload_System
 
+//    update
+//
+//	// take/release spi/i2c mutex
+//
+//	// release data mutex
+//    osMutexRelease(i2c_mutexHandle);
+//    osMutexRelease(spi_mutexHandle);
+//	osMutexRelease(data_mutexHandle);
 
+//	// release data_log seamphore for UART_TX to send packet over UART to the PC104
+//
+	//xSemaphoreGive(s_tx_semaphoreHandle); // give semaphore for UART_TX to be able to take it.
+//
 
-
-	
-	// poll from sensors and store in global data_log attached to Payload_System 
-
-
-	// take/release spi/i2c mutex
-
-
-
-
-
-	// push data_log onto the queue for UART_TX to send it over UART to the PC104 
-
-
-
-	// release data mutex
-
-
-
-
-
-    osDelay(1000); // poll data every second depends how much we want 
+//    osDelay(1000); // poll data every second depends the frequency of data we want
   }
   /* USER CODE END StartTask06 */
 }

@@ -1,12 +1,11 @@
-#include "main.h"
 #include "stdbool.h"
-
-
 #include "errors.h"
 
 struct system_flags { // aka command flags that prevent or allow certain commands to be set...
     bool exceed_temp_flag;
     bool exceed_pressure_flag;
+    bool heat_experiment;
+    bool JSON_reading;
 
 };
 

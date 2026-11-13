@@ -6,6 +6,7 @@
 "./BSP/Sensors/Src/ad7124_regs_config_a.o"
 "./BSP/Sensors/Src/ad7124_regs_config_b.o"
 "./BSP/Sensors/Src/ad7124_support.o"
+"./BSP/Sensors/Src/ad7177.o"
 "./BSP/Sensors/Src/delay.o"
 "./BSP/Sensors/Src/driver_ina226.o"
 "./BSP/Sensors/Src/fdc2214.o"

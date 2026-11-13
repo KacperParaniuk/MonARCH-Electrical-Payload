@@ -1,0 +1,13 @@
+../BSP/Sensors/Src/ad7177.c:13:13:AD7177_CS_Low	16	static
+../BSP/Sensors/Src/ad7177.c:18:13:AD7177_CS_High	16	static
+../BSP/Sensors/Src/ad7177.c:23:9:AD7177_RegSize	16	static
+../BSP/Sensors/Src/ad7177.c:37:19:AD7177_ReadReg	64	static
+../BSP/Sensors/Src/ad7177.c:60:19:AD7177_WriteReg	32	static
+../BSP/Sensors/Src/ad7177.c:78:19:AD7177_Reset	32	static
+../BSP/Sensors/Src/ad7177.c:93:19:AD7177_ReadID	24	static
+../BSP/Sensors/Src/ad7177.c:103:19:AD7177_Init	24	static
+../BSP/Sensors/Src/ad7177.c:169:19:AD7177_SetMode	24	static
+../BSP/Sensors/Src/ad7177.c:183:19:AD7177_WaitReady	32	static
+../BSP/Sensors/Src/ad7177.c:201:19:AD7177_ReadData	32	static
+../BSP/Sensors/Src/ad7177.c:210:19:AD7177_ReadSingle	32	static
+../BSP/Sensors/Src/ad7177.c:218:7:AD7177_CodeToVolts	16	static

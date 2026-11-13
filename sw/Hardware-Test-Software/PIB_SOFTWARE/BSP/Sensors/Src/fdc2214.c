@@ -180,7 +180,7 @@ uint8_t FDC2214_configure_defaults(void)
 
     // CONFIG: hold device in sleep until start() is called. Internal oscillator,
     // INTB enabled, full-current sensor activation, low-current drive.
-    _config = FDC2214_CONFIG_RESERVED | FDC2214_CONFIG_ACTIVE_CH0 | FDC2214_CONFIG_SLEEP_EN;
+    _config = FDC2214_CONFIG_RESERVED | FDC2214_CONFIG_ACTIVE_CH0 | FDC2214_CONFIG_SLEEP_EN | FDC2214_CONFIG_ACTIVE_CH1 ;
     write_config();
 
     return 0;
@@ -624,7 +624,7 @@ float FDC2214_readFrequencyHz(fdc2214_channel_t ch)
     uint16_t cdiv     = _clock_div[ch];
     uint16_t fref_div = cdiv & 0x03FF;
     if (fref_div == 0) fref_div = 1;
-
+	
     // CH_FIN_DIVIDER is 1 for low-freq sensor mode, 2 for high-freq mode.
     float ch_fin_divider = ((cdiv & 0x3000) == FDC2214_FIN_SEL_HIGH_FREQ) ? 2.0f : 1.0f;
     float f_ref          = FDC2214_F_REF / (float)fref_div;
@@ -639,11 +639,16 @@ float FDC2214_readCapacitancePf(fdc2214_channel_t ch, float inductance_uH)
     if (f <= 0.0f || inductance_uH <= 0.0f) return 0.0f;
 
     // C = 1 / (L * (2*pi*f)^2). Result in farads.
-    float L = inductance_uH * 1.0e-6f;
+    float L = inductance_uH; // * 1.0e-6f;
     float w = 2.0f * 3.14 * f;
     float C = 1.0f / (L * w * w);
 
+    //return C - FDC2214_C_PARALLEL; // test .
+
+
     return C * 1.0e12f; // farads -> picofarads
+
+
 }
 
 

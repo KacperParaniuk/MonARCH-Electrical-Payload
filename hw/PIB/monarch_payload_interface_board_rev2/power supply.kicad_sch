@@ -3209,6 +3209,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C1")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3288,6 +3294,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR0105")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3362,6 +3374,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR0215")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR0215")
 					(unit 1)
 				)
@@ -3446,6 +3464,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "R55")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3521,6 +3545,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR05")
 					(unit 1)
 				)
@@ -3604,6 +3634,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "R47")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3679,6 +3715,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR0116")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR0116")
 					(unit 1)
 				)
@@ -3760,6 +3802,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR0184")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3834,6 +3882,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR017")
 					(unit 1)
 				)
@@ -3920,6 +3974,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C53")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3998,6 +4058,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "C9")
 					(unit 1)
 				)
@@ -4082,6 +4148,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "R48")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4157,6 +4229,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "C4")
 					(unit 1)
 				)
@@ -4239,6 +4317,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4315,6 +4399,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "C6")
 					(unit 1)
 				)
@@ -4401,6 +4491,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "R19")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4476,6 +4572,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "C7")
 					(unit 1)
 				)
@@ -4561,6 +4663,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "R21")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4636,6 +4744,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR011")
 					(unit 1)
 				)
@@ -4778,6 +4892,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "U4")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4852,6 +4972,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR013")
 					(unit 1)
 				)
@@ -4935,6 +5061,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR0119")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -5010,6 +5142,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR0106")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR0106")
 					(unit 1)
 				)
@@ -5092,6 +5230,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR0216")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -5169,6 +5313,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "C5")
 					(unit 1)
 				)
@@ -5261,6 +5411,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "U14")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -5343,6 +5499,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "R17")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -5418,6 +5580,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "R46")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "R46")
 					(unit 1)
 				)
@@ -5671,6 +5839,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "L1")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -5745,6 +5919,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR0214")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR0214")
 					(unit 1)
 				)
@@ -5831,6 +6011,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C51")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -5906,6 +6092,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR019")
 					(unit 1)
 				)
@@ -5992,6 +6184,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C2")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -6068,6 +6266,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "R20")
 					(unit 1)
 				)
@@ -6154,6 +6358,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "R18")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -6228,6 +6438,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR015")
 					(unit 1)
 				)
@@ -6314,6 +6530,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C8")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -6388,6 +6610,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR053")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR053")
 					(unit 1)
 				)
@@ -6474,6 +6702,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C3")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -6552,6 +6786,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C10")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "C10")
 					(unit 1)
 				)
@@ -6635,6 +6875,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -6710,6 +6956,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR07")
 					(unit 1)
 				)
@@ -6796,6 +7048,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C52")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -6871,6 +7129,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR0107")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR0107")
 					(unit 1)
 				)
@@ -6953,6 +7217,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR0217")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -7027,6 +7297,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR012")
 					(unit 1)
 				)
@@ -7109,6 +7385,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR018")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -7183,6 +7465,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR0183")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR0183")
 					(unit 1)
 				)
@@ -7269,6 +7557,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "C54")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -7347,6 +7641,12 @@
 					(unit 1)
 				)
 			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR04")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -7421,6 +7721,12 @@
 		(instances
 			(project "monarch_payload_interface_board_rev2"
 				(path "/bf7ee58d-ac53-49d1-a6b2-96a87d67b737/c9f26218-865c-403f-bb45-a126d537922c"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+			(project "monarch_payload_interface_board_rev2"
+				(path "/f7c0ffb6-637d-4ce4-8cab-8b816595eedf/c9f26218-865c-403f-bb45-a126d537922c"
 					(reference "#PWR016")
 					(unit 1)
 				)

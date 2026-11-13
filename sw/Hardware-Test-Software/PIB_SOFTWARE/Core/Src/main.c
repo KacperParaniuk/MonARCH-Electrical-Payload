@@ -38,12 +38,12 @@
 
 
 
-#define AD7124
-#define AD7124_P
-#define AD7124_V
-#define AD7124_SINGLE_MODE
+//#define AD7124
+//#define AD7124_P
+//#define AD7124_V
+//#define AD7124_SINGLE_MODE
 //#define AD7124_CONTINOUS_MODE
-//#define FDC2214_S
+#define FDC2214_S
 //#define MAX31856
 //#define MAX31856_T1
 //#define MAX31856_T2
@@ -89,6 +89,15 @@
 #include "fdc2214.h"
 
 #endif
+
+#ifdef AD7177
+// Sensor Includes
+#include "ad7177.h"
+#endif
+
+
+
+
 
 
 // Serial Interface For Debugging || Serial wire JTAG debug port (SWJ-DP)
@@ -156,7 +165,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-   HAL_Init();
+	HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -234,6 +243,7 @@ int main(void)
   HAL_GPIO_WritePin(POW12_EN_GPIO_Port, POW12_EN_Pin, GPIO_PIN_SET);
 
 
+
 // External driver structures and buffers
 
 
@@ -258,7 +268,7 @@ int main(void)
 
 #ifdef AD7124_P
 
-  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_B,PRESSURE)) < 0) {
+  if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,PRESSURE)) < 0) {
 		// Handle error setting up AD7124 here
 	  printf("Failed to init ad7124 pressure \n");
 	  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
@@ -447,6 +457,7 @@ float temperature;
 
 
 
+
    	ret = FDC2214_Begin();
    	if(ret != 0){
    		printf("Failed to communicate with FDCC2214");
@@ -455,18 +466,41 @@ float temperature;
    		FDC2214_Begin();
    	}
    	else{
-
    	   	// set default FDC2214 configurations
+
    	   	FDC2214_configure_defaults();
 
    	   	// toggle channel
-
    	   	FDC2214_set_active_channel(FDC2214_CH0);
+
+
+//   	   	FDC2214_set_active_channel(FDC2214_CH1);
    	   	FDC2214_setAutoscan(0); // false
    	   	FDC2214_wakeup();
 
    	}
 
+
+#endif
+
+
+#ifdef AD7177
+ 	AD7177_Handle plumeSensor1;
+
+ 	plumeSensor1.hspi = &hspi1;
+ 	plumeSensor1.cs_port  = PT_EN_GPIO_Port;
+ 	plumeSensor1.cs_pin   = PT_EN_Pin;
+
+ 	plumeSensor1.ain_pos  = AD7177_AIN1;        
+ 	plumeSensor1.ain_neg  = AD7177_AIN0;       
+
+ 	plumeSensor1.ref_sel = AD7177_REF_INTERNAL;
+ 	plumeSensor1.bipolar  = 1;
+ 	plumeSensor1.odr      = AD7177_ODR_1000;
+	plumeSensor1.vref = 2.5f;
+
+
+ 	AD7177_Init(&plumeSensor1);
 
 #endif
 
@@ -575,11 +609,16 @@ float temperature;
 #ifdef AD7124_SINGLE_MODE
 		  /* Read all enabled channels on ADC in single conversion mode */
 //		  menu_single_conversion(PRESSURE);
-		  for(int i =0 ; i<16; i++){
-		 			  value = display_channel_sample(i, PRESSURE);
-		 			  printf("Channel %d: Voltage: %f ",i , value);
 
-		 }
+		  value = display_channel_sample(6, PRESSURE);
+		  printf("3V3 Reading: %f", value*4.125); // new way of comuting 3v3.
+
+
+//		  for(int i =0 ; i<16; i++){
+//		 			  value = display_channel_sample(i, PRESSURE);
+//		 			  printf("Channel %d: Voltage: %f ",i , value);
+//
+//		 }
 
 
 #endif	
@@ -619,14 +658,18 @@ float temperature;
 
 //		  menu_single_conversion(VOLTAGE);
 //
-		  value = display_channel_sample(0, VOLTAGE);
-
-		  printf("12V Reading: %f", (610 / 510)*(12-value));
+//		  value = display_channel_sample(0, VOLTAGE);
+//
+////		  printf("12V Reading: %f", (610 / 510)*(12-value));
+//
+//		  printf("12v Reading: %f", 6*value); // new way of computing.
 
 
 		  value = display_channel_sample(6, VOLTAGE);
+		  printf("3V3 Reading: %f", value*4.125); // new way of comuting 3v3.
 
-		  printf("3V3 Reading: %f", (412.5/312.5)*(3.3-value));
+
+//		  printf("3V3 Reading: %f", (412.5/312.5)*(3.3-value));
 
 //
 //		  for(int i =0 ; i<16; i++){
@@ -1071,12 +1114,13 @@ float temperature;
 
 #endif
 
+HAL_Delay(1000);
 
 
 #ifdef MAX31856_T1
 
-//	   max31856_trigger_one_shot(&max31856T1);
-//	   HAL_Delay(200); // Wait until single is ready
+	   max31856_trigger_one_shot(&max31856T1);
+	   HAL_Delay(200); // Wait until single is ready
 	   temperature = max31856_read_CJ_temp(&max31856T1);
 	   max31856_read_fault(&max31856T1);
 	   if (max31856T1.sr.val) {
@@ -1119,6 +1163,54 @@ float temperature;
 	   printf("Temperature Reading TC2: %f \r\n", temperature);
 
 #endif
+
+
+//	   temperature = max31856_read_TC_temp(&max31856T1);
+//	   printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
+//	   if(temperature<130){
+//		    printf("ON \n");
+//			HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
+//			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
+//	   }
+//	   else if(temperature>135){
+//		    printf("OFF \n");
+//		    HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+//			HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
+//	   }
+//	   else{
+//	   }
+
+	    //	HAL_Delay(18000000); // wait 3 minutes.
+
+		  // 130 - 135
+
+
+
+
+		// while(!acquired){
+		// 	//  need to select correct TC before testing.
+		// 	temp = max31856_read_TC_temp(&max31856T4);
+		// 	max31856_read_fault(&max31856T4);
+		// 	if (max31856T4.sr.val) {
+		// 		return -1;
+		// 	}
+
+		// 	if(temp > THRESHOLD_TEMP){ // need to set correct threshold temperature value based on the readings we are getting.
+		// 		acquired = true;
+		// 	}
+
+
+
+
+		// }
+
+		// HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
+
+
+
+
+
+
 
 #ifdef MAX31856_T3
 
@@ -1201,23 +1293,83 @@ float temperature;
  		  printf("FDC NOMINAL \n");
 
  		 // READ DATA FROM CH0
- 		 if(FDC2214_is_data_ready(FDC2214_CH0)){
- 		 float f_hz = FDC2214_readFrequencyHz(FDC2214_CH0);
- 		 float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0, FDC2214_L_HENRY);
+ 		 for(int i =0; i<2; i++){
+ 			FDC2214_set_active_channel(FDC2214_CH0+i);
+ 			if(FDC2214_is_data_ready(FDC2214_CH0+i)){
+ 				printf("Channel %d", i);
+ 			 	float f_hz = FDC2214_readFrequencyHz(FDC2214_CH0+i);
+ 			 	float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0+i, FDC2214_L_HENRY);
 
- 		 printf("hertz %f", f_hz / 1.0e6f);
- 		// 	        printf('\t');
- 		 printf("Capacitance (pF): %f", c_pf);
+ 			 	printf("hertz %f", f_hz);
+ 			 	printf("Capacitance (pF): %f Channel: %d", c_pf, i);
+
+
+
+ 			}
+
  		 }
  	  }
  	  else{
- 		  printf("FDC FAIL IS NOT CONNECTED \n");
+		reset_fdc2214();
+ 		if(FDC2214_Begin()==0){
+
+ 		  	// set default FDC2214 configurations
+ 		   	FDC2214_configure_defaults();
+
+ 		   	   	// toggle channel
+
+ 		   	FDC2214_set_active_channel(FDC2214_CH0);
+// 		   	FDC2214_set_active_channel(FDC2214_CH1);
+
+ 		   	FDC2214_setAutoscan(0); // false
+ 		   	FDC2214_wakeup();
+
+ 	 		printf("FDC Restart \n");
+
+ 		}
+
  	  }
+
+
 
 
 
 
 #endif
+
+
+
+#ifdef AD7177
+
+// 	typedef struct{
+// 		SPI_HandleTypeDef *hspi;
+// 		GPIO_TypeDef	  *cs_port;
+// 		uint16_t	   cs_pin;
+//
+// 		AD7176_Input	   ain_pos;
+// 		AD7176_Input	   ain_neg;
+// 		AD7176_RefSel	   ref_sel;
+// 		uint8_t		   bipolar; // 1 = bipolar, 0 = unipolar
+// 		uint8_t		   odr;	    // AD7176_ODR_xxx
+// 		float		   vref;    // reference voltage in volts
+// 	} AD7176_Handle;
+
+
+// spi1 controls both plume measurement
+
+
+
+ 	uint32_t adc_output = 0;
+
+ 	AD7177_ReadSingle(&plumeSensor1, &adc_output, 1000);
+
+ 	printf("Voltage: %f \n", AD7177_CodeToVolts(&plumeSensor1, adc_output));
+
+
+ 	AD7177_Reset(&plumeSensor1);
+
+#endif
+
 
 
 #ifdef PWM_VALVE_6

@@ -1,3 +1,0 @@
-../BSP/Src/mosfet_ctrl.c:11:6:mosfet_enable	16	static
-../BSP/Src/mosfet_ctrl.c:16:6:mosfet_disable	16	static
-../BSP/Src/mosfet_ctrl.c:21:6:mosfet_set_duty	16	static

@@ -1,3 +1,5 @@
-../BSP/Src/uart_handler.c:15:6:Serial_Print	1
-../BSP/Src/uart_handler.c:21:6:Serial_Printf	1
-../BSP/Src/uart_handler.c:41:9:cmd_is_safety	2
+../BSP/Src/uart_handler.c:24:6:Serial_Print	1
+../BSP/Src/uart_handler.c:30:6:Serial_Printf	1
+../BSP/Src/uart_handler.c:50:9:cmd_is_safety	2
+../BSP/Src/uart_handler.c:67:6:printPacketJSON	1
+../BSP/Src/uart_handler.c:96:6:printPacketJSON_UART	1

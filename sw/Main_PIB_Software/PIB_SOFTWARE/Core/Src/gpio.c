@@ -70,8 +70,8 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOD, valve7_Pin|valve8_Pin|valve17_Pin|valve15_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, valve9_Pin|valve10_Pin|valve11_Pin|valve13_Pin
-                          |valve14_Pin|valve16_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, valve10_Pin|valve11_Pin|valve13_Pin|valve14_Pin
+                          |valve16_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : T4_EN_Pin T2_EN_Pin PT_EN_Pin LED_PIN_AMBER_Pin
                            LED_PIN_GREEN_Pin LED_PIN_RED_Pin T3_EN_Pin T5_EN_Pin */
@@ -112,10 +112,10 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : valve9_Pin valve10_Pin valve11_Pin valve13_Pin
-                           valve14_Pin valve16_Pin */
-  GPIO_InitStruct.Pin = valve9_Pin|valve10_Pin|valve11_Pin|valve13_Pin
-                          |valve14_Pin|valve16_Pin;
+  /*Configure GPIO pins : valve10_Pin valve11_Pin valve13_Pin valve14_Pin
+                           valve16_Pin */
+  GPIO_InitStruct.Pin = valve10_Pin|valve11_Pin|valve13_Pin|valve14_Pin
+                          |valve16_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

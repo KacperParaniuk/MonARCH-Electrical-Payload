@@ -43,6 +43,10 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 #include "ad7124.h"
 #include "max31856.h"
 #include "fdc2214.h"
+#include "ad7177.h"
+
+
+
 
 // Serial Interface For Debugging || Serial wire JTAG debug port (SWJ-DP)
 #include <stdio.h>
@@ -51,6 +55,8 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 // Include main struct 
 
 #include "systems.h"
+
+#include "pwm.h"
 
 
 
@@ -87,6 +93,7 @@ char uart_buffer[64]; // used for sending data across uart3
 float temperature;
 float value;
 uint8_t duty_cycle;
+uint32_t frequency; 
 GPIO_PinState pinState;
 
 
@@ -101,15 +108,10 @@ struct error_flags error_flags = {
 
 struct Data_Log data_payload_packet;
 
-Payload_System Payload_Sys = {
-	.fsm_state = STATE_BOOT,
-	.sys_flags = payload_flags,
-	.err_flags = error_flags,
-	.data_log = data_payload_packet
-
-};
+Payload_System Payload_Sys;
 
 
+extern osMutexId_t uart_mutexHandle;
 
 
 
@@ -201,6 +203,16 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
+
+  // Initialize Payload Main Struct 
+  Payload_Sys.fsm_state = STATE_BOOT;
+  Payload_Sys.err_flags = error_flags;
+  Payload_Sys.sys_flags = payload_flags;
+  Payload_Sys.data_log = data_payload_packet;
+
+
+
+
 //  HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
 
@@ -211,6 +223,9 @@ int main(void)
   // start receiving UART commands.
 
   HAL_UART_Receive_IT(&huart3, rx_cmd, 2);
+ // HAL_UART_Receive_DMA(&huart3, rx_cmd, 2);
+
+  // https://deepbluembedded.com/stm32-uart-dma-receive-transmit-rx-tx-examples/
 
 
 // DEACTIVATE ALL SPI2 ICs
@@ -227,7 +242,11 @@ int main(void)
   HAL_GPIO_WritePin(PT_EN_GPIO_Port, PT_EN_Pin, GPIO_PIN_SET);
   // SPI 1 BUS
 
+//  HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
+
   HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
+
+  HAL_GPIO_WritePin(POW12_EN_GPIO_Port, POW12_EN_Pin, GPIO_PIN_SET); // turn on voltage regulator.
 
  // create a setup function for all sensors and turn red_led if fails to setup / read from device id's of all sensors
 
@@ -249,7 +268,7 @@ int main(void)
 
 // Setup pressure ADC
 
-    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,PRESSURE)) < 0) {
+    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_B,PRESSURE)) < 0) {
   		// Handle error setting up AD7124 here
   	  printf("Failed to init ad7124 pressure \n");
   	  HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
@@ -259,7 +278,7 @@ int main(void)
 
 // Setup Voltage ADC
 
-    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_A,VOLTAGE)) < 0) {
+    if ((setupResult = ad7124_app_initialize(AD7124_CONFIG_B,VOLTAGE)) < 0) {
   		// Handle error setting up AD7124 here
   	  printf("Failed to init ad7124 voltage \n");
   	  HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
@@ -338,8 +357,8 @@ int main(void)
    		// need to figure out what to do if an iniit fails in flight
    		printf("Failed to communicate with FDC2214");
 
-      HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
-      HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(LED_PIN_AMBER_GPIO_Port, LED_PIN_AMBER_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 
    		reset_fdc2214();
    		printf("Try Again");
@@ -357,6 +376,10 @@ int main(void)
    	   	FDC2214_wakeup();
 
    	}
+
+   	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2); // valve 9
+   	//pwm_set(&htim3,TIM_CHANNEL_3, frequency, duty_cycle);
+   	pwm_set(&htim8,TIM_CHANNEL_2, 100, 10);
 
 
 
@@ -436,18 +459,27 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
+
+
+
+
+
 /* USER CODE BEGIN 4 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
     if (huart->Instance != USART3) return;  // protect against any other UART commands
 
-    rx_cmd_copy[0] = rx_cmd[0];
-    rx_cmd_copy[1] = rx_cmd[1];
+//    rx_cmd_copy[0] = rx_cmd[0];
+//    rx_cmd_copy[1] = rx_cmd[1];
 
+//    osMutexAcquire(uart_mutexHandle, osWaitForever);
+
+    //HAL_UART_Receive_DMA(&huart3, rx_cmd, 2);
 	HAL_UART_Receive_IT(&huart3, rx_cmd, 2);
 
 
-	//printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
+//	osMutexRelease(uart_mutexHandle);
+	printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
 	//printf("Argument %d \r\n", rx_cmd[1]); // print argument value to stm console
 
 
@@ -461,6 +493,15 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	}
 
 
+
+
+}
+
+int _write(int file, char *ptr, int len) {
+ for (int i = 0; i < len; i++) {
+ ITM_SendChar((*ptr++));
+ }
+ return len;
 }
 /* USER CODE END 4 */
 
