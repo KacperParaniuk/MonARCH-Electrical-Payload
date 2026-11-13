@@ -180,7 +180,7 @@ uint8_t FDC2214_configure_defaults(void)
 
     // CONFIG: hold device in sleep until start() is called. Internal oscillator,
     // INTB enabled, full-current sensor activation, low-current drive.
-    _config = FDC2214_CONFIG_RESERVED | FDC2214_CONFIG_ACTIVE_CH0 | FDC2214_CONFIG_SLEEP_EN;
+    _config = FDC2214_CONFIG_RESERVED | FDC2214_CONFIG_ACTIVE_CH0 | FDC2214_CONFIG_SLEEP_EN | FDC2214_CONFIG_ACTIVE_CH1 ;
     write_config();
 
     return 0;

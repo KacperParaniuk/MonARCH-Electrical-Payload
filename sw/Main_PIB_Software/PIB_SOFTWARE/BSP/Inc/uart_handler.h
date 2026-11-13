@@ -20,6 +20,7 @@ void Serial_Printf(const char *format, ...);
 
 uint8_t cmd_is_safety(uint8_t cmd);
 void printPacketJSON(const struct Data_Log *packet);
+void printPacketJSON_UART(const struct Data_Log *packet);
 
 
 

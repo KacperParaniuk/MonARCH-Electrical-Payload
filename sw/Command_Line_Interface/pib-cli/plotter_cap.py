@@ -1,29 +1,29 @@
-import matplotlib.pyplot as plt
-import csv
-import numpy as np 
-from sklearn.metrics import r2_score 
+# import matplotlib.pyplot as plt
+# import csv
+# import numpy as np 
+# from sklearn.metrics import r2_score 
 
 
 
-FILENAME = "voltage.csv"
+# FILENAME = "voltage.csv"
 
 
 
-import pandas as pd 
+# import pandas as pd 
 
 
 # implement reading a CSV file into a bunch of arrays 
 
 
-data = pd.read_csv("pressure_1.csv")
+# data = pd.read_csv(".csv")
 
-time = data['timestamp']
+# time = data['timestamp']
 
-t = time - time[0]
-voltage_3V3 = data['3V3_VA']
-temp1 = data['temperature_1']
-temp1_cj = data['cj_temperature_1']
-pressure1 = data['pressure_1']
+# t = time - time[0]
+# voltage_3V3 = data['3V3_VA']
+# temp1 = data['temperature_1']
+# temp1_cj = data['cj_temperature_1']
+# pressure1 = data['pressure_1']
 
 
 
@@ -39,17 +39,102 @@ pressure1 = data['pressure_1']
 
 
 
-volume = [.5, .55,.6,.65,.7,.75,.8,.85,.9]
+# volume = [.5, .55,.6,.65,.7,.75,.8,.85,.9]
 
-c1 = ((.404835+.404781+.404710+.404894+.404850)/5)
-c2 = (.404863+.404913+.404973+.405005+.404949)/5
-c3 = (.404699+.404930+.404940+.404843+.404796)/5
-c4 = (.405025+.404939+.404905+.404863+.404939)/5
-c5 = (.405091+.404990+.404938+.404972+.404966)/5
-c6 = (.404991+.405022+.405113+.405038+.405053)/5
-c7 = (.405074+.405109+.405142+.405146+.405017)/5
-c8 = (.405197+.405021+.405044+.405100+.405160)/5
-c9 = (.405124+.405101+.405046+.405151+.405125)/5
+# c1 = ((.404835+.404781+.404710+.404894+.404850)/5)
+# c2 = (.404863+.404913+.404973+.405005+.404949)/5
+# c3 = (.404699+.404930+.404940+.404843+.404796)/5
+# c4 = (.405025+.404939+.404905+.404863+.404939)/5
+# c5 = (.405091+.404990+.404938+.404972+.404966)/5
+# c6 = (.404991+.405022+.405113+.405038+.405053)/5
+# c7 = (.405074+.405109+.405142+.405146+.405017)/5
+# c8 = (.405197+.405021+.405044+.405100+.405160)/5
+# c9 = (.405124+.405101+.405046+.405151+.405125)/5
+
+# readings = np.array([
+#     [.404835, .404781, .404710, .404894, .404850],
+#     [.404863, .404913, .404973, .405005, .404949],
+#     [.404699, .404930, .404940, .404843, .404796],
+#     [.405025, .404939, .404905, .404863, .404939],
+#     [.405091, .404990, .404938, .404972, .404966],
+#     [.404991, .405022, .405113, .405038, .405053],
+#     [.405074, .405109, .405142, .405146, .405017],
+#     [.405197, .405021, .405044, .405100, .405160],
+#     [.405124, .405101, .405046, .405151, .405125],
+# ])
+
+
+
+# 3 
+# 6 
+
+
+# https://www.geeksforgeeks.org/python/errorbar-graph-in-python-using-matplotlib/ 
+
+# c_uncert = [np.std(readings[0]), np.std(readings[1]), np.std(readings[2]), np.std(readings[3]), np.std(readings[4]), np.std(readings[5]), np.std(readings[6]), np.std(readings[7]), np.std(readings[8])]/(np.sqrt(5))
+
+# c_uncert_3_6 = [np.std(readings[3]), np.std(readings[4]), np.std(readings[5]), np.std(readings[6])]
+
+
+# capacitor = [((.404835+.404781+.404710+.404894+.404850)/5),(.404863+.404913+.404973+.405005+.404949)/5, (.404699+.404930+.404940+.404843+.404796)/5,(.405025+.404939+.404905+.404863+.404939)/5,(.405091+.404990+.404938+.404972+.404966)/5,(.404991+.405022+.405113+.405038+.405053)/5,(.405074+.405109+.405142+.405146+.405017)/5,(.405197+.405021+.405044+.405100+.405160)/5, (.405124+.405101+.405046+.405151+.405125)/5]
+
+
+# volume = volume[3:7]
+# capacitor = capacitor[3:7]
+
+# slope, intercept = np.polyfit(volume, capacitor, 1)
+# slope_print = slope
+
+# volume = np.array(volume)
+
+# fit_line = slope * volume + intercept # y predicted 
+
+# r2 = r2_score(capacitor, fit_line)
+
+# # print(r2)
+
+# equation = f"y = {slope:.8f} * x + {intercept:.2f} R2: {r2:.5f}" # https://medium.com/@saicoumar/fitting-a-mathematical-function-to-a-dataset-with-python-56c9a9143470 
+
+
+
+# plt.plot(volume, capacitor, color = 'g', linestyle = 'dashed',
+#          marker = 'o',label = "FDC2214 Differential Capacitance Measurements")
+
+# plt.plot(volume, fit_line, color="k", lw=2.5)
+
+# text_x = .7  # x-coordinate
+# text_y = .40494  # y-coordinate
+
+# plt.text(text_x, text_y, equation, fontsize=15, color='red',
+#         bbox={'facecolor': 'white', 'alpha': 0.7, 'edgecolor': 'gray'})
+
+
+# plt.errorbar(volume, capacitor,
+#              yerr = c_uncert_3_6,
+#              fmt ='o')
+
+# #plt.xticks(rotation = 25)
+# plt.xlabel('Volume (mL)')
+# plt.ylabel('Capacitance (pF)')
+# plt.title('FDC2214 Capacitance Across Accumulators with Liquid Water', fontsize = 20)
+# plt.grid()
+# plt.legend()
+# plt.show()
+
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.metrics import r2_score
+
+# Font sizes (matched to the pressure script)
+TITLE_SIZE = 40
+LABEL_SIZE = 30
+TICK_SIZE = 20
+LEGEND_SIZE = 25
+TEXT_SIZE = 20   # equation box
+
+volume = [.5, .55, .6, .65, .7, .75, .8, .85, .9]
 
 readings = np.array([
     [.404835, .404781, .404710, .404894, .404850],
@@ -63,63 +148,47 @@ readings = np.array([
     [.405124, .405101, .405046, .405151, .405125],
 ])
 
+# Average of each set of 5 readings
+capacitor = readings.mean(axis=1)
 
-
-# 3 
-# 6 
-
-
-# https://www.geeksforgeeks.org/python/errorbar-graph-in-python-using-matplotlib/ 
-
-c_uncert = [np.std(readings[0]), np.std(readings[1]), np.std(readings[2]), np.std(readings[3]), np.std(readings[4]), np.std(readings[5]), np.std(readings[6]), np.std(readings[7]), np.std(readings[8])]/(np.sqrt(5))
-
-c_uncert_3_6 = [np.std(readings[3]), np.std(readings[4]), np.std(readings[5]), np.std(readings[6])]
-
-
-capacitor = [((.404835+.404781+.404710+.404894+.404850)/5),(.404863+.404913+.404973+.405005+.404949)/5, (.404699+.404930+.404940+.404843+.404796)/5,(.405025+.404939+.404905+.404863+.404939)/5,(.405091+.404990+.404938+.404972+.404966)/5,(.404991+.405022+.405113+.405038+.405053)/5,(.405074+.405109+.405142+.405146+.405017)/5,(.405197+.405021+.405044+.405100+.405160)/5, (.405124+.405101+.405046+.405151+.405125)/5]
-
-
-volume = volume[3:7]
+# Use only points 3-6 (0.65 to 0.8 mL)
+volume = np.array(volume[3:7])
 capacitor = capacitor[3:7]
+c_uncert_3_6 = [np.std(readings[i]) for i in range(3, 7)]
 
+# Linear fit
 slope, intercept = np.polyfit(volume, capacitor, 1)
-slope_print = slope
-
-volume = np.array(volume)
-
-fit_line = slope * volume + intercept # y predicted 
-
+fit_line = slope * volume + intercept
 r2 = r2_score(capacitor, fit_line)
 
-# print(r2)
+equation = f"y = {slope:.8f} * x + {intercept:.2f} R2: {r2:.5f}"
 
-equation = f"y = {slope:.8f} * x + {intercept:.2f} R2: {r2:.5f}" # https://medium.com/@saicoumar/fitting-a-mathematical-function-to-a-dataset-with-python-56c9a9143470 
+# Larger figure so the bigger fonts fit
+fig, ax = plt.subplots(figsize=(18, 12))
 
+ax.plot(volume, capacitor, color='g', linestyle='dashed', marker='o',
+        label="FDC2214 Differential Capacitance Measurements")
+ax.plot(volume, fit_line, color="k", lw=2.5)
 
-
-plt.plot(volume, capacitor, color = 'g', linestyle = 'dashed',
-         marker = 'o',label = "FDC2214 Differential Capacitance Measurements")
-
-plt.plot(volume, fit_line, color="k", lw=2.5)
-
-text_x = .7  # x-coordinate
-text_y = .40494  # y-coordinate
-
-plt.text(text_x, text_y, equation, fontsize=15, color='red',
+text_x = .652      # x-coordinate (upper left, clear of the data)
+text_y = .40510    # y-coordinate
+ax.text(text_x, text_y, equation, fontsize=30, color='red',
         bbox={'facecolor': 'white', 'alpha': 0.7, 'edgecolor': 'gray'})
 
+ax.errorbar(volume, capacitor, yerr=c_uncert_3_6, fmt='o')
 
-plt.errorbar(volume, capacitor,
-             yerr = c_uncert_3_6,
-             fmt ='o')
+ax.tick_params(axis='both', labelsize=TICK_SIZE)
+ax.set_xlabel('Volume (mL)', fontsize=LABEL_SIZE)
+ax.set_ylabel('Capacitance (pF)', fontsize=LABEL_SIZE)
+ax.set_title('FDC2214 Capacitance Across Accumulators\nwith Liquid Water',
+             fontsize=TITLE_SIZE)
+ax.grid()
+ax.legend(prop={"size": LEGEND_SIZE}, loc="lower right")
 
-#plt.xticks(rotation = 25)
-plt.xlabel('Volume (mL)')
-plt.ylabel('Capacitance (pF)')
-plt.title('FDC2214 Capacitance Across Accumulators with Liquid Water', fontsize = 20)
-plt.grid()
-plt.legend()
+fig.tight_layout()
+fig.savefig("capacitance_plot.png", dpi=200, bbox_inches="tight")  # save BEFORE show()
 plt.show()
+
 
 # implement all the graphs in one view: 
 

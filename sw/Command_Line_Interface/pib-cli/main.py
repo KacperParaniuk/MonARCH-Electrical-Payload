@@ -253,9 +253,9 @@ class PIBShell(cmd.Cmd): # https://realpython.com/ref/stdlib/cmd/
         """read_data <filename>  - log telemetry to CSV until Ctrl+C"""
         print("Reading JSON Data")
     
-        #self.pib.send_command(CMD_READ_DATA)
+        self.pib.send_command(CMD_READ_DATA)
     
-        self.pib.send_command(CMD_HEAT_CATALYST)
+        # self.pib.send_command(CMD_HEAT_CATALYST)
 
         filename = arg.strip() or "telemetry.csv" # create file name using the arg put 
 
@@ -786,3 +786,5 @@ if __name__ == "__main__": # https://realpython.com/ref/stdlib/cmd/
         PIBShell(link).cmdloop() # https://docs.python.org/3/library/cmd.html cmd loop 
     finally:
         link.close()
+
+

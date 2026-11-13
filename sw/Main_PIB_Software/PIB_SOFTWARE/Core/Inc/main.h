@@ -112,8 +112,6 @@ void Error_Handler(void);
 #define valve8_GPIO_Port GPIOD
 #define TIM8_CH1_VALVE4_Pin GPIO_PIN_6
 #define TIM8_CH1_VALVE4_GPIO_Port GPIOC
-#define valve9_Pin GPIO_PIN_7
-#define valve9_GPIO_Port GPIOC
 #define valve10_Pin GPIO_PIN_8
 #define valve10_GPIO_Port GPIOC
 #define valve11_Pin GPIO_PIN_9

@@ -92,7 +92,7 @@ extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim8;
 
 
-extern Payload_System Payload_Sys;  
+extern Payload_System Payload_Sys;
 
 
 /* USER CODE END Variables */
@@ -274,7 +274,7 @@ void MX_FREERTOS_Init(void) {
   q_safety_cmdsHandle = osMessageQueueNew (10, sizeof(uint8_t), &q_safety_cmds_attributes);
 
   /* creation of q_normal_cmds */
-  q_normal_cmdsHandle = osMessageQueueNew (10, sizeof(UART_Frame_t), &q_normal_cmds_attributes);
+  q_normal_cmdsHandle = osMessageQueueNew (10, sizeof(uint8_t), &q_normal_cmds_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -327,8 +327,8 @@ void StartDefaultTask(void *argument)
   {
 
 	// the lowest priority task the heart beat of the program.
-	HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
-    osDelay(500);
+	//HAL_GPIO_TogglePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin);
+    //osDelay(500);
 
   }
   /* USER CODE END StartDefaultTask */
@@ -405,6 +405,7 @@ void StartTask03(void *argument)
 				  break;
 			  case CMD_SAFETY_STOP_READ_DATA:
 				  Payload_Sys.sys_flags.JSON_reading = false;
+				  break;
 		  }
 
 
@@ -466,14 +467,17 @@ void StartTask04(void *argument)
 		  	    	osMutexRelease(data_mutexHandle);
 		  	    	while(Payload_Sys.sys_flags.JSON_reading){
 		  	  			osDelay(1000); // allows other threads to run while experiment is running like the polling thread
-		  	  			printPacketJSON_UART(&Payload_Sys.data_log); // test this new code. over uart. 
+		  	  			osMutexAcquire(uart_mutexHandle, osWaitForever);
+		  	  			printPacketJSON_UART(&Payload_Sys.data_log); // test this new code. over uart.
+		  	  			//printf("Pressure 1 %f", Payload_Sys.data_log.pressure_1.pressure);
+		  	  			osMutexRelease(uart_mutexHandle);
 		  	    	}
 		  	    	break;
 
 
 		  	  	case HEAT_CATALYST:
 		  	  		osMutexAcquire(data_mutexHandle, osWaitForever);
-					Payload_Sys.sys_flags.heat_experiment = true; 
+					Payload_Sys.sys_flags.heat_experiment = true;
 		  	  		osMutexRelease(data_mutexHandle);
 		  	  		HAL_GPIO_WritePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin,GPIO_PIN_SET);
 
@@ -483,18 +487,22 @@ void StartTask04(void *argument)
 
 		  	  			osDelay(1000); // allows other threads to run while experiment is running like the polling thread
 
-		  	  			printPacketJSON(&Payload_Sys.data_log);
+		  	  			//printPacketJSON(&Payload_Sys.data_log);
+		  	  			osMutexAcquire(uart_mutexHandle, osWaitForever);
+		  	  			printPacketJSON_UART(&Payload_Sys.data_log);
+		  	  			osMutexRelease(uart_mutexHandle);
 
-						temperature = Payload_Sys.data_log.tc2.tc_temp; // max31856_read_CJ_temp(&max31856T1); // change to TJ when done testing.
-						printf("%f", temperature);
+
+						temperature = Payload_Sys.data_log.tc1.tc_temp; // max31856_read_CJ_temp(&max31856T1); // change to TJ when done testing.
+						//printf("%f", temperature);
 						//printf("%f Temperature Considered", temperature);   // compensates already for cold junction reading
 						if(temperature<140){
-							printf(" ON \n");
+							//printf(" ON \n");
 							HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
 							HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_SET);
 						}
 						else if(temperature>145){
-							printf(" OFF \n");
+							//printf(" OFF \n");
 							HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_RESET);
 							HAL_GPIO_WritePin(LED_PIN_RED_GPIO_Port, LED_PIN_RED_Pin, GPIO_PIN_RESET);
 						}
@@ -526,7 +534,7 @@ void StartTask04(void *argument)
 		 		case CMD_OPEN_SOL8:
 		 		 	HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_SET); break;
 		 		case CMD_OPEN_SOL9:
-		 		    HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_SET); break;
+		 		    //HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_SET); break;
 		 		case CMD_OPEN_SOL10:
 		 		    HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_SET); break;
 		 		case CMD_OPEN_SOL11:
@@ -565,7 +573,7 @@ void StartTask04(void *argument)
 		 		case CMD_CLOSE_SOL8:
 		 		 	HAL_GPIO_WritePin(valve8_GPIO_Port, valve8_Pin, GPIO_PIN_RESET); break;
 		 		case CMD_CLOSE_SOL9:
-		 		    HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_RESET); break;
+		 		    //HAL_GPIO_WritePin(valve9_GPIO_Port, valve9_Pin, GPIO_PIN_RESET); break;
 		 		case CMD_CLOSE_SOL10:
 		 		    HAL_GPIO_WritePin(valve10_GPIO_Port, valve10_Pin, GPIO_PIN_RESET); break;
 		 		case CMD_CLOSE_SOL11:
@@ -832,7 +840,7 @@ void StartTask04(void *argument)
 	 				}
 					break;
 	 			case CMD_READ_VALVE_STATE9:
-	 				pinState = HAL_GPIO_ReadPin(valve9_GPIO_Port, valve9_Pin);
+	 				//pinState = HAL_GPIO_ReadPin(valve9_GPIO_Port, valve9_Pin);
 	 				if (pinState == GPIO_PIN_SET){
 		 				Serial_Print("Valve ON \n");
 
@@ -1097,8 +1105,11 @@ void StartTask04(void *argument)
 					HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
 
 					duty_cycle = frame.arg; // obtain duty cycle argument (0-100)
-					HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
-					pwm_set(&htim3,TIM_CHANNEL_3, frequency, duty_cycle);
+//					HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
+//					pwm_set(&htim3,TIM_CHANNEL_3, frequency, duty_cycle);
+//
+					HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2); // valve 9
+					pwm_set(&htim8,TIM_CHANNEL_2, frequency, duty_cycle);
 					break;
 
 
@@ -1116,12 +1127,18 @@ void StartTask04(void *argument)
 					frequency = frame.arg;
 					printf("freq: %d\n", frequency);
 					HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
-					HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
-					pwm_set(&htim3,TIM_CHANNEL_3, frequency, duty_cycle);
+					//HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // start pwm on timer 3 channel 3 for valve 4
+					HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2); // valve 9
+					//pwm_set(&htim3,TIM_CHANNEL_3, frequency, duty_cycle);
+					pwm_set(&htim8,TIM_CHANNEL_2, frequency, duty_cycle);
 
-					printf("%d",htim3.Instance->PSC);
-					printf("%d",htim3.Instance->ARR);
-					printf("%d",htim3.Instance->CCR3);
+
+//					printf("%d",htim3.Instance->PSC);
+//					printf("%d",htim3.Instance->ARR);
+//					printf("%d",htim3.Instance->CCR3);
+					printf("%d",htim8.Instance->PSC);
+					printf("%d",htim8.Instance->ARR);
+					printf("%d",htim8.Instance->CCR3);
 
 					break; 
 
@@ -1134,7 +1151,9 @@ void StartTask04(void *argument)
 					break; 
 
 				case REGULATE_PRESSURE_1_STOP: // valve 4
-					HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_3);
+//					HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_3);
+					HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_2);
+
 					break;
 				case REGULATE_PRESSURE_2_STOP: // valve 6
 					HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_1);
@@ -1168,14 +1187,22 @@ void StartTask05(void *argument)
 //
 	 if(osSemaphoreAcquire(s_tx_semaphoreHandle, osWaitForever)== osOK){
 	 // Take Data Mutex
-	 	osMutexAcquire(data_mutexHandle, osWaitForever);
-	 // printPacketJSON(struct Data_Log &packet); (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.?
-	 	printPacketJSON(&Payload_Sys.data_log); //  << this UART TX breaks the commanding features
-	 // HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
+	 	//osMutexAcquire(data_mutexHandle, osWaitForever);
+
+	    //osMutexAcquire(uart_mutexHandle, osWaitForever);
+
+	 	//printf("%f \n", Payload_Sys.data_log.pressure_1.pressure);
+
+	 	//printPacketJSON(&Payload_Sys.data_log);  // (to serial monitor) || We ideally want to also store data from experiments so sending it in a format where the python script is able to aggregate data into a spreadsheet format.?
+	 	//printPacketJSON(&Payload_Sys.data_log); //  << this UART TX breaks the commanding features
+
+	 	//osMutexRelease(uart_mutexHandle);
+
+	 	// HAL_GPIO_TogglePin(LED_PIN_GREEN_GPIO_Port, LED_PIN_GREEN_Pin);
      // SEND MESSAGE OVER UART - if we are always sending something over UART to computer will commanding work?
 
 	 // Release Data Mutex
-	 	osMutexRelease(data_mutexHandle);
+	 	//osMutexRelease(data_mutexHandle);
 	 }
   }
   /* USER CODE END StartTask05 */
@@ -1198,28 +1225,30 @@ void StartTask06(void *argument)
 
 	// take data mutex 
 //
-    osMutexAcquire(data_mutexHandle, osWaitForever);
-    osMutexAcquire(spi_mutexHandle, osWaitForever);
-    osMutexAcquire(i2c_mutexHandle, osWaitForever);
+//    osMutexAcquire(data_mutexHandle, osWaitForever);
+//    osMutexAcquire(spi_mutexHandle, osWaitForever);
+//    osMutexAcquire(i2c_mutexHandle, osWaitForever);
 
 //    // Poll Valve States
 //
-    update_valve_states(&Payload_Sys);
+//    update_valve_states(&Payload_Sys);
 //
 //
 //	// Poll Temperature Data
 //
-    update_temperature_data(&Payload_Sys);
+//    update_temperature_data(&Payload_Sys);
 //
 //
 //    // Poll Pressure Data
 //
     update_pressure_data(&Payload_Sys);
+ 	printf("%f \n", Payload_Sys.data_log.pressure_1.pressure);
+
 //
 //
 //    // Update PC104 Voltage Data
 //
-    update_voltage_data(&Payload_Sys);
+//    update_voltage_data(&Payload_Sys);
 //
 //	// poll from sensors and store in global data_log attached to Payload_System
 
@@ -1228,16 +1257,16 @@ void StartTask06(void *argument)
 //	// take/release spi/i2c mutex
 //
 //	// release data mutex
-    osMutexRelease(i2c_mutexHandle);
-    osMutexRelease(spi_mutexHandle);
-	osMutexRelease(data_mutexHandle);
+//    osMutexRelease(i2c_mutexHandle);
+//    osMutexRelease(spi_mutexHandle);
+//	osMutexRelease(data_mutexHandle);
 
 //	// release data_log seamphore for UART_TX to send packet over UART to the PC104
 //
-	xSemaphoreGive(s_tx_semaphoreHandle); // give semaphore for UART_TX to be able to take it.
+	//xSemaphoreGive(s_tx_semaphoreHandle); // give semaphore for UART_TX to be able to take it.
 //
 
-    osDelay(1000); // poll data every second depends the frequency of data we want 
+//    osDelay(1000); // poll data every second depends the frequency of data we want
   }
   /* USER CODE END StartTask06 */
 }

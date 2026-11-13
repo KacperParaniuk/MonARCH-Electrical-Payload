@@ -16,6 +16,8 @@
 struct SOL_State_PWM {
     uint8_t state; 
     uint8_t duty_cyle; 
+    
+    // add frequency 
 };
 
 struct Feed_System {

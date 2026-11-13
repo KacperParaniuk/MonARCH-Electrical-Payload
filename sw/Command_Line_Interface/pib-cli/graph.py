@@ -865,10 +865,13 @@ voltage2 = voltage2[3500:4500]
 y = np.arange(len(voltage2))
 
 
-print(y.shape)
-print(voltage.shape)
+# print(y.shape)
+# print(voltage.shape)
 
 plt.plot(y,voltage2.T)
+
+plt.axhline(0, color='k', linestyle='--', linewidth=1, label='Ground (0 V)')
+
 plt.xlabel('x-axis')
 plt.ylabel('y-axis')
 plt.title('Voltage over Samples')

@@ -115,7 +115,7 @@ void update_valve_states(Payload_System *Payload_Sys){ // pointer so we can refe
 	pinState = HAL_GPIO_ReadPin(valve8_GPIO_Port, valve8_Pin);
 	Payload_Sys->data_log.valve_states.valve_8 = pinState;
 
-	pinState = HAL_GPIO_ReadPin(valve9_GPIO_Port, valve9_Pin);
+	//pinState = HAL_GPIO_ReadPin(valve9_GPIO_Port, valve9_Pin);
 	Payload_Sys->data_log.valve_states.valve_9 = pinState;
 
 	pinState = HAL_GPIO_ReadPin(valve10_GPIO_Port, valve10_Pin);

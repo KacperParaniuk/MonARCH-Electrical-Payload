@@ -723,9 +723,9 @@ int32_t menu_single_conversion(AD7124_CHIP chip, Payload_System *Payload_Sys)
 
 	// read the channels, and store sample values
     for (uint8_t loopCount = 0; loopCount < channel_count ; loopCount++) {
-    	toggle_activity_led(); // blue flicker twice = running single
-    	HAL_Delay(200);
-    	toggle_activity_led();
+//    	toggle_activity_led(); // blue flicker twice = running single
+//    	HAL_Delay(200);
+//    	toggle_activity_led();
 
     	// 1 = single conversion mode
         dev->regs[AD7124_ADC_Control].value |= AD7124_ADC_CTRL_REG_MODE(1);
@@ -788,7 +788,7 @@ int32_t menu_single_conversion(AD7124_CHIP chip, Payload_System *Payload_Sys)
 		}
 	}
 
-	printf("Single Conversion completed...\r\n\r\n");
+	//printf("Single Conversion completed...\r\n\r\n");
 	dislay_channel_samples(SHOW_ENABLED_CHANNELS, DISPLAY_DATA_STREAM, chip, Payload_Sys);
 
 //	adi_press_any_key_to_continue();

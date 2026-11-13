@@ -165,7 +165,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+	HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -467,10 +467,14 @@ float temperature;
    	}
    	else{
    	   	// set default FDC2214 configurations
+
    	   	FDC2214_configure_defaults();
 
    	   	// toggle channel
    	   	FDC2214_set_active_channel(FDC2214_CH0);
+
+
+//   	   	FDC2214_set_active_channel(FDC2214_CH1);
    	   	FDC2214_setAutoscan(0); // false
    	   	FDC2214_wakeup();
 
@@ -1289,32 +1293,44 @@ HAL_Delay(1000);
  		  printf("FDC NOMINAL \n");
 
  		 // READ DATA FROM CH0
- 		 for(int i =0; i<4; i++){
+ 		 for(int i =0; i<2; i++){
+ 			FDC2214_set_active_channel(FDC2214_CH0+i);
  			if(FDC2214_is_data_ready(FDC2214_CH0+i)){
  				printf("Channel %d", i);
  			 	float f_hz = FDC2214_readFrequencyHz(FDC2214_CH0+i);
  			 	float c_pf = FDC2214_readCapacitancePf(FDC2214_CH0+i, FDC2214_L_HENRY);
 
- 			 	printf("hertz %f", f_hz / 1.0e6f);
- 			 	printf("Capacitance (pF): %f", c_pf);
+ 			 	printf("hertz %f", f_hz);
+ 			 	printf("Capacitance (pF): %f Channel: %d", c_pf, i);
 
- 		 }
+
+
+ 			}
 
  		 }
  	  }
  	  else{
 		reset_fdc2214();
-	  	// set default FDC2214 configurations
-	   	FDC2214_configure_defaults();
+ 		if(FDC2214_Begin()==0){
 
-	   	   	// toggle channel
+ 		  	// set default FDC2214 configurations
+ 		   	FDC2214_configure_defaults();
 
-	   	FDC2214_set_active_channel(FDC2214_CH0);
-	   	FDC2214_setAutoscan(0); // false
-	   	FDC2214_wakeup();
+ 		   	   	// toggle channel
 
- 		printf("FDC FAIL IS NOT CONNECTED \n");
+ 		   	FDC2214_set_active_channel(FDC2214_CH0);
+// 		   	FDC2214_set_active_channel(FDC2214_CH1);
+
+ 		   	FDC2214_setAutoscan(0); // false
+ 		   	FDC2214_wakeup();
+
+ 	 		printf("FDC Restart \n");
+
+ 		}
+
  	  }
+
+
 
 
 

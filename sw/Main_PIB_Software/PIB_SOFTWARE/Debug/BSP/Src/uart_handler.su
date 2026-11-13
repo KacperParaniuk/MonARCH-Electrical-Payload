@@ -1,4 +1,5 @@
-../BSP/Src/uart_handler.c:21:6:Serial_Print	152	static
-../BSP/Src/uart_handler.c:27:6:Serial_Printf	144	static
-../BSP/Src/uart_handler.c:47:9:cmd_is_safety	16	static
-../BSP/Src/uart_handler.c:64:6:printPacketJSON	1592	static
+../BSP/Src/uart_handler.c:24:6:Serial_Print	152	static
+../BSP/Src/uart_handler.c:30:6:Serial_Printf	144	static
+../BSP/Src/uart_handler.c:50:9:cmd_is_safety	16	static
+../BSP/Src/uart_handler.c:67:6:printPacketJSON	568	static
+../BSP/Src/uart_handler.c:96:6:printPacketJSON_UART	568	static

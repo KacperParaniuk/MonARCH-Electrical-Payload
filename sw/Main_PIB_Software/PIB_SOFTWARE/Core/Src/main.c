@@ -56,6 +56,8 @@ extern osSemaphoreId_t s_rx_semaphoreHandle;
 
 #include "systems.h"
 
+#include "pwm.h"
+
 
 
 
@@ -203,8 +205,8 @@ int main(void)
 
 
   // Initialize Payload Main Struct 
-  Payload_Sys.fsm_state = STATE_BOOT; 
-  Payload_Sys.err_flags = error_flags; 
+  Payload_Sys.fsm_state = STATE_BOOT;
+  Payload_Sys.err_flags = error_flags;
   Payload_Sys.sys_flags = payload_flags;
   Payload_Sys.data_log = data_payload_packet;
 
@@ -221,6 +223,9 @@ int main(void)
   // start receiving UART commands.
 
   HAL_UART_Receive_IT(&huart3, rx_cmd, 2);
+ // HAL_UART_Receive_DMA(&huart3, rx_cmd, 2);
+
+  // https://deepbluembedded.com/stm32-uart-dma-receive-transmit-rx-tx-examples/
 
 
 // DEACTIVATE ALL SPI2 ICs
@@ -236,6 +241,8 @@ int main(void)
   HAL_GPIO_WritePin(T5_EN_GPIO_Port, T5_EN_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(PT_EN_GPIO_Port, PT_EN_Pin, GPIO_PIN_SET);
   // SPI 1 BUS
+
+//  HAL_GPIO_WritePin(heater_en_GPIO_Port, heater_en_Pin, GPIO_PIN_SET);
 
   HAL_GPIO_WritePin(ADC_EN_GPIO_Port, ADC_EN_Pin, GPIO_PIN_SET);
 
@@ -370,6 +377,10 @@ int main(void)
 
    	}
 
+   	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2); // valve 9
+   	//pwm_set(&htim3,TIM_CHANNEL_3, frequency, duty_cycle);
+   	pwm_set(&htim8,TIM_CHANNEL_2, 100, 10);
+
 
 
   /* USER CODE END 2 */
@@ -461,12 +472,13 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 //    rx_cmd_copy[0] = rx_cmd[0];
 //    rx_cmd_copy[1] = rx_cmd[1];
 
-    osMutexAcquire(uart_mutexHandle, osWaitForever);
+//    osMutexAcquire(uart_mutexHandle, osWaitForever);
 
+    //HAL_UART_Receive_DMA(&huart3, rx_cmd, 2);
 	HAL_UART_Receive_IT(&huart3, rx_cmd, 2);
 
 
-	osMutexRelease(uart_mutexHandle);
+//	osMutexRelease(uart_mutexHandle);
 	printf("Value %d \r\n", rx_cmd[0]); // print value to stm console
 	//printf("Argument %d \r\n", rx_cmd[1]); // print argument value to stm console
 

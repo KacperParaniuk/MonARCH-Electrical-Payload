@@ -1,37 +1,102 @@
+import numpy as np
 import matplotlib.pyplot as plt
-import csv
-import numpy as np 
-from sklearn.metrics import r2_score 
+import pandas as pd
 
+# Font sizes (matched to the pressure script)
+TITLE_SIZE = 40
+LABEL_SIZE = 30
+TICK_SIZE = 20
+LEGEND_SIZE = 25
 
-
-FILENAME = "voltage.csv"
-
-
-
-import pandas as pd 
-
-
-# implement reading a CSV file into a bunch of arrays 
-
-
-data = pd.read_csv("heat_test_power_supply.csv")
+# data = pd.read_csv("heat_test_power_supply.csv")
+data = pd.read_csv("heat_plate.csv")
 
 time = data['timestamp']
-
 t = time - time[0]
-voltage_3V3 = data['3V3_VA']
 temp1 = data['temperature_1']
-temp1_cj = data['cj_temperature_1']
-pressure1 = data['pressure_1']
 
-
+# Handheld readout reference data
 temp_good = {
-    0: 22.5, 2: 22.5, 3: 22.5, 4: 22.8, 6: 24.7, 8: 28.2, 10: 34.1,
-    12: 40.2, 14: 48.5, 16: 55.9, 18: 65.1, 20: 72.9, 22: 80.8,
-    24: 86.7, 26: 88.9, 28: 90, 30: 90.3, 32: 89.7, 34: 88.7,
-    36: 87, 38: 85.3, 40: 83.1, 42: 81.6,
+    0: 25.4, 9: 25.3, 13: 25.2, 18: 25.2, 27: 25.2, 36: 26.5, 40: 28.8,
+    45: 31.6, 49: 33.6, 58: 36.9, 63: 37.9, 72: 39.3, 81: 40.1, 90: 40.7, 99: 41.1,
+    108: 41.2, 117: 40.8, 121: 41.2, 130: 41.1, 144: 41.7, 153: 44.1, 162: 45.9, 171: 46.7,
+    180: 47.1, 189: 47.2, 198: 47.3, 207: 47.1, 216: 47.9, 225: 50.4, 234: 52.1, 243: 53.2, 
+    252: 53.6, 261: 53.8, 270: 54.2, 279: 53.9, 293: 53.7, 302: 53.5, 311: 53, 320: 52.6,  
+    323: 52.3, 347: 52.3, 356: 52.8, 361: 51.5, 379: 50.5, 392: 50.2, 401: 49.9, 401: 49.5, 410: 49,
+    424: 48.8, 433: 48.4, 442: 47.9, 451: 47.4
 }
+
+
+# Remove consecutive duplicate readings
+temp = np.array(temp1)
+for i in range(temp.size - 1):
+    if temp1[i] == temp1[i + 1]:
+        temp1.pop(i)
+        t.pop(i)
+
+ref_t = list(temp_good.keys())
+
+ref_t = np.array(ref_t)/60
+# Larger figure so the bigger fonts fit
+fig, ax = plt.subplots(figsize=(18, 12))
+
+ax.scatter(t/60, temp1, s=25,
+           label="PIB Measured Temperature")
+ax.scatter(ref_t, temp_good.values(), s=25, color='r',
+           label="Handheld Readout")
+
+ax.tick_params(axis='both', labelsize=TICK_SIZE)
+ax.set_xlabel("Time (mins)", fontsize=LABEL_SIZE)
+ax.set_ylabel("Temperature (°C)", fontsize=LABEL_SIZE)
+ax.set_title("Heat Plate Temperature Offset Test\n",
+             fontsize=TITLE_SIZE)
+
+ax.legend(prop={'size': LEGEND_SIZE})
+ax.grid(True)
+
+fig.tight_layout()
+fig.savefig("Heat_Plate.png", dpi=200, bbox_inches="tight")  # save BEFORE show()
+plt.show()
+
+
+
+# import matplotlib.pyplot as plt
+# import csv
+# import numpy as np 
+# from sklearn.metrics import r2_score 
+
+
+
+# FILENAME = "voltage.csv"
+
+
+
+# import pandas as pd 
+
+
+# # implement reading a CSV file into a bunch of arrays 
+
+
+# data = pd.read_csv("heat_test_power_supply.csv")
+
+
+# # data = pd.read_csv("5W_HEAT_TEST.csv")
+
+# time = data['timestamp']
+
+# t = time - time[0]
+# voltage_3V3 = data['3V3_VA']
+# temp1 = data['temperature_1']
+# temp1_cj = data['cj_temperature_1']
+# pressure1 = data['pressure_1']
+
+
+# temp_good = {
+#     0: 22.5, 2: 22.5, 3: 22.5, 4: 22.8, 6: 24.7, 8: 28.2, 10: 34.1,
+#     12: 40.2, 14: 48.5, 16: 55.9, 18: 65.1, 20: 72.9, 22: 80.8,
+#     24: 86.7, 26: 88.9, 28: 90, 30: 90.3, 32: 89.7, 34: 88.7,
+#     36: 87, 38: 85.3, 40: 83.1, 42: 81.6,
+# }
 
 # temp_good = [0]*len(t)
 
@@ -72,34 +137,34 @@ temp_good = {
 # legend  >> pib temp sensor was closer to the heatsink injector 
 # Handheld Readout >> further from the injector (heat sink) closer 
 
-temp = np.array(temp1)
+# temp = np.array(temp1)
 
 
-for i in range (temp.size-1):
-        if(temp1[i]==temp1[i+1]):
-            temp1.pop(i)
-            t.pop(i)
-
-
-
-ref_t = list(temp_good.keys())
-
-# print(t)
-
-fig, ax = plt.subplots()
-
-ax.scatter(t, temp1, s=16, label="PIB Measured Temperature Closer to Heatsink (Injector)")
-ax.scatter(ref_t, temp_good.values(), s=20, color='r', label="Handheld Readout Further from Heatsink")  # different times
+# for i in range (temp.size-1):
+#         if(temp1[i]==temp1[i+1]):
+#             temp1.pop(i)
+#             t.pop(i)
 
 
 
-ax.set_xlabel("Time (s)")
-ax.set_ylabel("Temperature (°C)")
-plt.title('15.12 Watt Chemical Thruster Heat Test', fontsize = 20)
+# ref_t = list(temp_good.keys())
 
-ax.legend()
-ax.grid(True)
-plt.show()
+# # print(t)
+
+# fig, ax = plt.subplots()
+
+# ax.scatter(t, temp1, s=16, label="PIB Measured Temperature Closer to Heatsink (Injector)")
+# ax.scatter(ref_t, temp_good.values(), s=20, color='r', label="Handheld Readout Further from Heatsink")  # different times
+
+
+
+# ax.set_xlabel("Time (s)")
+# ax.set_ylabel("Temperature (°C)")
+# plt.title('15.12 Watt Chemical Thruster Heat Test Powered by Power Source', fontsize = 20)
+
+# ax.legend()
+# ax.grid(True)
+# plt.show()
 
 
 
